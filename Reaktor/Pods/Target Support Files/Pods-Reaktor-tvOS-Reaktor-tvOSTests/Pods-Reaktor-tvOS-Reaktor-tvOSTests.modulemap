@@ -1,0 +1,6 @@
+module Pods_Reaktor_tvOS_Reaktor_tvOSTests {
+  umbrella header "Pods-Reaktor-tvOS-Reaktor-tvOSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

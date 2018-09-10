@@ -1,0 +1,6 @@
+module Pods_Reaktor_iOS_Reaktor_iOSTests {
+  umbrella header "Pods-Reaktor-iOS-Reaktor-iOSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
