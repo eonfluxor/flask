@@ -1,0 +1,9 @@
+output: ../docs
+readme: ../README.md
+documentation: ../Documentation/*.md
+theme: fullwidth
+skip_undocumented: true
+hide_documentation_coverage: true
+author: Eonflux
+author_url: https://eonflux.io/
+github_url: https://github.com/eonfluxor/Reaktor/

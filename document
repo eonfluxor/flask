@@ -1,0 +1,8 @@
+# !usr/bin/bash
+
+cd Reaktor
+jazzy
+cd ..
+git add .
+git commit -am 'updated documentation'
+open docs/index.html

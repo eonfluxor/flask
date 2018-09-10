@@ -1,0 +1,1195 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26A82A662146D783008C8009 /* Reaktor_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A82A5D2146D783008C8009 /* Reaktor_iOS.framework */; };
+		26A82A6B2146D783008C8009 /* Reaktor_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82A6A2146D783008C8009 /* Reaktor_iOSTests.swift */; };
+		26A82A6D2146D783008C8009 /* Reaktor_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A82A5F2146D783008C8009 /* Reaktor_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26A82A9E2146D7A8008C8009 /* Reaktor_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A82A952146D7A7008C8009 /* Reaktor_macOS.framework */; };
+		26A82AA32146D7A8008C8009 /* Reaktor_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82AA22146D7A8008C8009 /* Reaktor_macOSTests.swift */; };
+		26A82AA52146D7A8008C8009 /* Reaktor_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A82A972146D7A8008C8009 /* Reaktor_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26A82ABA2146D7B2008C8009 /* Reaktor_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A82AB12146D7B2008C8009 /* Reaktor_tvOS.framework */; };
+		26A82ABF2146D7B2008C8009 /* Reaktor_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ABE2146D7B2008C8009 /* Reaktor_tvOSTests.swift */; };
+		26A82AC12146D7B2008C8009 /* Reaktor_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A82AB32146D7B2008C8009 /* Reaktor_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26A82ACB2146D819008C8009 /* Reaktor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACA2146D819008C8009 /* Reaktor.swift */; };
+		26A82ACD2146D822008C8009 /* ReaktorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACC2146D822008C8009 /* ReaktorTests.swift */; };
+		26A82ACE2146D825008C8009 /* Reaktor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACA2146D819008C8009 /* Reaktor.swift */; };
+		26A82ACF2146D826008C8009 /* Reaktor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACA2146D819008C8009 /* Reaktor.swift */; };
+		26A82AD02146D826008C8009 /* Reaktor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACA2146D819008C8009 /* Reaktor.swift */; };
+		26A82AD12146D827008C8009 /* Reaktor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACA2146D819008C8009 /* Reaktor.swift */; };
+		26A82AD22146D828008C8009 /* Reaktor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACA2146D819008C8009 /* Reaktor.swift */; };
+		26A82AD32146D82B008C8009 /* ReaktorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACC2146D822008C8009 /* ReaktorTests.swift */; };
+		26A82AD42146D82C008C8009 /* ReaktorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACC2146D822008C8009 /* ReaktorTests.swift */; };
+		3595CABE7D286B72BFA3840E /* Pods_Reaktor_macOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */; };
+		49B01758B32A87D4F2F7098C /* Pods_Reaktor_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54000D406E19649E8976133 /* Pods_Reaktor_tvOSTests.framework */; };
+		553D1E7B592EB9628035CAD6 /* Pods_Reaktor_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */; };
+		C75370AA2AC9B20719A5C549 /* Pods_Reaktor_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B8C3C2B20B3308E30782D9 /* Pods_Reaktor_tvOS.framework */; };
+		D173EDFF3CE3DE1FAC3B5796 /* Pods_Reaktor_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E7B0CA31788152E6B2DA6F /* Pods_Reaktor_iOS.framework */; };
+		DBC4D59F32B23900BF67A38D /* Pods_Reaktor_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD786C9DEE062572D24B76D /* Pods_Reaktor_macOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26A82A672146D783008C8009 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26A82A352146D769008C8009 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26A82A5C2146D783008C8009;
+			remoteInfo = "Reaktor-iOS";
+		};
+		26A82A9F2146D7A8008C8009 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26A82A352146D769008C8009 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26A82A942146D7A7008C8009;
+			remoteInfo = "Reaktor-macOS";
+		};
+		26A82ABB2146D7B2008C8009 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26A82A352146D769008C8009 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26A82AB02146D7B2008C8009;
+			remoteInfo = "Reaktor-tvOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A3CB9BE7C8696AC195D5C19 /* Pods-Reaktor-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		0C274EFCF73179B943CD3EA2 /* Pods-Reaktor-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0DD786C9DEE062572D24B76D /* Pods_Reaktor_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_macOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A82A5D2146D783008C8009 /* Reaktor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reaktor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A82A5F2146D783008C8009 /* Reaktor_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reaktor_iOS.h; sourceTree = "<group>"; };
+		26A82A602146D783008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A82A652146D783008C8009 /* Reaktor-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reaktor-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A82A6A2146D783008C8009 /* Reaktor_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor_iOSTests.swift; sourceTree = "<group>"; };
+		26A82A6C2146D783008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A82A952146D7A7008C8009 /* Reaktor_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reaktor_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A82A972146D7A8008C8009 /* Reaktor_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reaktor_macOS.h; sourceTree = "<group>"; };
+		26A82A982146D7A8008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A82A9D2146D7A8008C8009 /* Reaktor-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reaktor-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A82AA22146D7A8008C8009 /* Reaktor_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor_macOSTests.swift; sourceTree = "<group>"; };
+		26A82AA42146D7A8008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A82AB12146D7B2008C8009 /* Reaktor_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reaktor_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A82AB32146D7B2008C8009 /* Reaktor_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reaktor_tvOS.h; sourceTree = "<group>"; };
+		26A82AB42146D7B2008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A82AB92146D7B2008C8009 /* Reaktor-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reaktor-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A82ABE2146D7B2008C8009 /* Reaktor_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor_tvOSTests.swift; sourceTree = "<group>"; };
+		26A82AC02146D7B2008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A82ACA2146D819008C8009 /* Reaktor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor.swift; sourceTree = "<group>"; };
+		26A82ACC2146D822008C8009 /* ReaktorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaktorTests.swift; sourceTree = "<group>"; };
+		37B8C3C2B20B3308E30782D9 /* Pods_Reaktor_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38BFFFCD6F072157809E78A0 /* Pods-Reaktor-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4DD0926C55169B753178E95C /* Pods-Reaktor-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS/Pods-Reaktor-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		598EF4CC90CDF51D436D038E /* Pods-Reaktor-macOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9297C3098704CEE0C27B1C9D /* Pods-Reaktor-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS/Pods-Reaktor-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		92E7B0CA31788152E6B2DA6F /* Pods_Reaktor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF87E8EAD968BFA031274355 /* Pods-Reaktor-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOSTests/Pods-Reaktor-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BAE25DF2041FE9D584D9F979 /* Pods-Reaktor-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOSTests/Pods-Reaktor-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		C54000D406E19649E8976133 /* Pods_Reaktor_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2B76A4269F0ECBB16EBD1E6 /* Pods-Reaktor-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		DDC2E24140CF7BF6DB0B0D18 /* Pods-Reaktor-macOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		F7C6A21D39F67D37934C6EA8 /* Pods-Reaktor-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS/Pods-Reaktor-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		FCF9744D8DBAC7DD369275C1 /* Pods-Reaktor-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS/Pods-Reaktor-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26A82A592146D783008C8009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D173EDFF3CE3DE1FAC3B5796 /* Pods_Reaktor_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82A622146D783008C8009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A82A662146D783008C8009 /* Reaktor_iOS.framework in Frameworks */,
+				553D1E7B592EB9628035CAD6 /* Pods_Reaktor_iOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82A912146D7A7008C8009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC4D59F32B23900BF67A38D /* Pods_Reaktor_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82A9A2146D7A8008C8009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A82A9E2146D7A8008C8009 /* Reaktor_macOS.framework in Frameworks */,
+				3595CABE7D286B72BFA3840E /* Pods_Reaktor_macOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82AAD2146D7B2008C8009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75370AA2AC9B20719A5C549 /* Pods_Reaktor_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82AB62146D7B2008C8009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A82ABA2146D7B2008C8009 /* Reaktor_tvOS.framework in Frameworks */,
+				49B01758B32A87D4F2F7098C /* Pods_Reaktor_tvOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26A82A342146D769008C8009 = {
+			isa = PBXGroup;
+			children = (
+				26A82AC82146D80E008C8009 /* Sources */,
+				26A82AC92146D80E008C8009 /* Tests */,
+				26A82A5E2146D783008C8009 /* Reaktor-iOS */,
+				26A82A692146D783008C8009 /* Reaktor-iOSTests */,
+				26A82A962146D7A8008C8009 /* Reaktor-macOS */,
+				26A82AA12146D7A8008C8009 /* Reaktor-macOSTests */,
+				26A82AB22146D7B2008C8009 /* Reaktor-tvOS */,
+				26A82ABD2146D7B2008C8009 /* Reaktor-tvOSTests */,
+				26A82A3F2146D769008C8009 /* Products */,
+				AD3032DB8725C62F5A3F6997 /* Pods */,
+				E6A24196288E8AE550246B64 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		26A82A3F2146D769008C8009 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26A82A5D2146D783008C8009 /* Reaktor_iOS.framework */,
+				26A82A652146D783008C8009 /* Reaktor-iOSTests.xctest */,
+				26A82A952146D7A7008C8009 /* Reaktor_macOS.framework */,
+				26A82A9D2146D7A8008C8009 /* Reaktor-macOSTests.xctest */,
+				26A82AB12146D7B2008C8009 /* Reaktor_tvOS.framework */,
+				26A82AB92146D7B2008C8009 /* Reaktor-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26A82A5E2146D783008C8009 /* Reaktor-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				26A82A5F2146D783008C8009 /* Reaktor_iOS.h */,
+				26A82A602146D783008C8009 /* Info.plist */,
+			);
+			path = "Reaktor-iOS";
+			sourceTree = "<group>";
+		};
+		26A82A692146D783008C8009 /* Reaktor-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				26A82A6A2146D783008C8009 /* Reaktor_iOSTests.swift */,
+				26A82A6C2146D783008C8009 /* Info.plist */,
+			);
+			path = "Reaktor-iOSTests";
+			sourceTree = "<group>";
+		};
+		26A82A962146D7A8008C8009 /* Reaktor-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				26A82A972146D7A8008C8009 /* Reaktor_macOS.h */,
+				26A82A982146D7A8008C8009 /* Info.plist */,
+			);
+			path = "Reaktor-macOS";
+			sourceTree = "<group>";
+		};
+		26A82AA12146D7A8008C8009 /* Reaktor-macOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				26A82AA22146D7A8008C8009 /* Reaktor_macOSTests.swift */,
+				26A82AA42146D7A8008C8009 /* Info.plist */,
+			);
+			path = "Reaktor-macOSTests";
+			sourceTree = "<group>";
+		};
+		26A82AB22146D7B2008C8009 /* Reaktor-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				26A82AB32146D7B2008C8009 /* Reaktor_tvOS.h */,
+				26A82AB42146D7B2008C8009 /* Info.plist */,
+			);
+			path = "Reaktor-tvOS";
+			sourceTree = "<group>";
+		};
+		26A82ABD2146D7B2008C8009 /* Reaktor-tvOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				26A82ABE2146D7B2008C8009 /* Reaktor_tvOSTests.swift */,
+				26A82AC02146D7B2008C8009 /* Info.plist */,
+			);
+			path = "Reaktor-tvOSTests";
+			sourceTree = "<group>";
+		};
+		26A82AC82146D80E008C8009 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				26A82ACA2146D819008C8009 /* Reaktor.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		26A82AC92146D80E008C8009 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				26A82ACC2146D822008C8009 /* ReaktorTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		AD3032DB8725C62F5A3F6997 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9297C3098704CEE0C27B1C9D /* Pods-Reaktor-iOS.debug.xcconfig */,
+				F7C6A21D39F67D37934C6EA8 /* Pods-Reaktor-iOS.release.xcconfig */,
+				0C274EFCF73179B943CD3EA2 /* Pods-Reaktor-iOSTests.debug.xcconfig */,
+				0A3CB9BE7C8696AC195D5C19 /* Pods-Reaktor-iOSTests.release.xcconfig */,
+				38BFFFCD6F072157809E78A0 /* Pods-Reaktor-macOS.debug.xcconfig */,
+				D2B76A4269F0ECBB16EBD1E6 /* Pods-Reaktor-macOS.release.xcconfig */,
+				598EF4CC90CDF51D436D038E /* Pods-Reaktor-macOSTests.debug.xcconfig */,
+				DDC2E24140CF7BF6DB0B0D18 /* Pods-Reaktor-macOSTests.release.xcconfig */,
+				FCF9744D8DBAC7DD369275C1 /* Pods-Reaktor-tvOS.debug.xcconfig */,
+				4DD0926C55169B753178E95C /* Pods-Reaktor-tvOS.release.xcconfig */,
+				AF87E8EAD968BFA031274355 /* Pods-Reaktor-tvOSTests.debug.xcconfig */,
+				BAE25DF2041FE9D584D9F979 /* Pods-Reaktor-tvOSTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E6A24196288E8AE550246B64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92E7B0CA31788152E6B2DA6F /* Pods_Reaktor_iOS.framework */,
+				695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */,
+				0DD786C9DEE062572D24B76D /* Pods_Reaktor_macOS.framework */,
+				1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */,
+				37B8C3C2B20B3308E30782D9 /* Pods_Reaktor_tvOS.framework */,
+				C54000D406E19649E8976133 /* Pods_Reaktor_tvOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		26A82A5A2146D783008C8009 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A82A6D2146D783008C8009 /* Reaktor_iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82A922146D7A7008C8009 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A82AA52146D7A8008C8009 /* Reaktor_macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82AAE2146D7B2008C8009 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A82AC12146D7B2008C8009 /* Reaktor_tvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		26A82A5C2146D783008C8009 /* Reaktor-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A82A6E2146D783008C8009 /* Build configuration list for PBXNativeTarget "Reaktor-iOS" */;
+			buildPhases = (
+				5DA954605957A2E6C40FB238 /* [CP] Check Pods Manifest.lock */,
+				26A82A582146D783008C8009 /* Sources */,
+				26A82A592146D783008C8009 /* Frameworks */,
+				26A82A5A2146D783008C8009 /* Headers */,
+				26A82A5B2146D783008C8009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Reaktor-iOS";
+			productName = "Reaktor-iOS";
+			productReference = 26A82A5D2146D783008C8009 /* Reaktor_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		26A82A642146D783008C8009 /* Reaktor-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A82A712146D783008C8009 /* Build configuration list for PBXNativeTarget "Reaktor-iOSTests" */;
+			buildPhases = (
+				A07B363AC9EE55E208BC94B8 /* [CP] Check Pods Manifest.lock */,
+				26A82A612146D783008C8009 /* Sources */,
+				26A82A622146D783008C8009 /* Frameworks */,
+				26A82A632146D783008C8009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26A82A682146D783008C8009 /* PBXTargetDependency */,
+			);
+			name = "Reaktor-iOSTests";
+			productName = "Reaktor-iOSTests";
+			productReference = 26A82A652146D783008C8009 /* Reaktor-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		26A82A942146D7A7008C8009 /* Reaktor-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A82AA62146D7A8008C8009 /* Build configuration list for PBXNativeTarget "Reaktor-macOS" */;
+			buildPhases = (
+				ECA1BB1DF14B40C6C2AAA2DE /* [CP] Check Pods Manifest.lock */,
+				26A82A902146D7A7008C8009 /* Sources */,
+				26A82A912146D7A7008C8009 /* Frameworks */,
+				26A82A922146D7A7008C8009 /* Headers */,
+				26A82A932146D7A7008C8009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Reaktor-macOS";
+			productName = "Reaktor-macOS";
+			productReference = 26A82A952146D7A7008C8009 /* Reaktor_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		26A82A9C2146D7A8008C8009 /* Reaktor-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A82AA92146D7A8008C8009 /* Build configuration list for PBXNativeTarget "Reaktor-macOSTests" */;
+			buildPhases = (
+				DA77D50E09326149BD2B2021 /* [CP] Check Pods Manifest.lock */,
+				26A82A992146D7A8008C8009 /* Sources */,
+				26A82A9A2146D7A8008C8009 /* Frameworks */,
+				26A82A9B2146D7A8008C8009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26A82AA02146D7A8008C8009 /* PBXTargetDependency */,
+			);
+			name = "Reaktor-macOSTests";
+			productName = "Reaktor-macOSTests";
+			productReference = 26A82A9D2146D7A8008C8009 /* Reaktor-macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		26A82AB02146D7B2008C8009 /* Reaktor-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A82AC22146D7B2008C8009 /* Build configuration list for PBXNativeTarget "Reaktor-tvOS" */;
+			buildPhases = (
+				E834F6778C22D9DCFBDA1ACE /* [CP] Check Pods Manifest.lock */,
+				26A82AAC2146D7B2008C8009 /* Sources */,
+				26A82AAD2146D7B2008C8009 /* Frameworks */,
+				26A82AAE2146D7B2008C8009 /* Headers */,
+				26A82AAF2146D7B2008C8009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Reaktor-tvOS";
+			productName = "Reaktor-tvOS";
+			productReference = 26A82AB12146D7B2008C8009 /* Reaktor_tvOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		26A82AB82146D7B2008C8009 /* Reaktor-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A82AC52146D7B2008C8009 /* Build configuration list for PBXNativeTarget "Reaktor-tvOSTests" */;
+			buildPhases = (
+				0C33742F9C0609CA1C332995 /* [CP] Check Pods Manifest.lock */,
+				26A82AB52146D7B2008C8009 /* Sources */,
+				26A82AB62146D7B2008C8009 /* Frameworks */,
+				26A82AB72146D7B2008C8009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26A82ABC2146D7B2008C8009 /* PBXTargetDependency */,
+			);
+			name = "Reaktor-tvOSTests";
+			productName = "Reaktor-tvOSTests";
+			productReference = 26A82AB92146D7B2008C8009 /* Reaktor-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26A82A352146D769008C8009 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = eonflux;
+				TargetAttributes = {
+					26A82A5C2146D783008C8009 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					26A82A642146D783008C8009 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					26A82A942146D7A7008C8009 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					26A82A9C2146D7A8008C8009 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					26A82AB02146D7B2008C8009 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					26A82AB82146D7B2008C8009 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 26A82A382146D769008C8009 /* Build configuration list for PBXProject "Reaktor" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 26A82A342146D769008C8009;
+			productRefGroup = 26A82A3F2146D769008C8009 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26A82A5C2146D783008C8009 /* Reaktor-iOS */,
+				26A82A642146D783008C8009 /* Reaktor-iOSTests */,
+				26A82A942146D7A7008C8009 /* Reaktor-macOS */,
+				26A82A9C2146D7A8008C8009 /* Reaktor-macOSTests */,
+				26A82AB02146D7B2008C8009 /* Reaktor-tvOS */,
+				26A82AB82146D7B2008C8009 /* Reaktor-tvOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26A82A5B2146D783008C8009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82A632146D783008C8009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82A932146D7A7008C8009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82A9B2146D7A8008C8009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82AAF2146D7B2008C8009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82AB72146D7B2008C8009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C33742F9C0609CA1C332995 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reaktor-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DA954605957A2E6C40FB238 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reaktor-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A07B363AC9EE55E208BC94B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reaktor-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA77D50E09326149BD2B2021 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reaktor-macOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E834F6778C22D9DCFBDA1ACE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reaktor-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECA1BB1DF14B40C6C2AAA2DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reaktor-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26A82A582146D783008C8009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A82ACB2146D819008C8009 /* Reaktor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82A612146D783008C8009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A82ACE2146D825008C8009 /* Reaktor.swift in Sources */,
+				26A82A6B2146D783008C8009 /* Reaktor_iOSTests.swift in Sources */,
+				26A82ACD2146D822008C8009 /* ReaktorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82A902146D7A7008C8009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A82ACF2146D826008C8009 /* Reaktor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82A992146D7A8008C8009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A82AD32146D82B008C8009 /* ReaktorTests.swift in Sources */,
+				26A82AA32146D7A8008C8009 /* Reaktor_macOSTests.swift in Sources */,
+				26A82AD02146D826008C8009 /* Reaktor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82AAC2146D7B2008C8009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A82AD12146D827008C8009 /* Reaktor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A82AB52146D7B2008C8009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A82AD42146D82C008C8009 /* ReaktorTests.swift in Sources */,
+				26A82ABF2146D7B2008C8009 /* Reaktor_tvOSTests.swift in Sources */,
+				26A82AD22146D828008C8009 /* Reaktor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26A82A682146D783008C8009 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26A82A5C2146D783008C8009 /* Reaktor-iOS */;
+			targetProxy = 26A82A672146D783008C8009 /* PBXContainerItemProxy */;
+		};
+		26A82AA02146D7A8008C8009 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26A82A942146D7A7008C8009 /* Reaktor-macOS */;
+			targetProxy = 26A82A9F2146D7A8008C8009 /* PBXContainerItemProxy */;
+		};
+		26A82ABC2146D7B2008C8009 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26A82AB02146D7B2008C8009 /* Reaktor-tvOS */;
+			targetProxy = 26A82ABB2146D7B2008C8009 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		26A82A502146D769008C8009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		26A82A512146D769008C8009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		26A82A6F2146D783008C8009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9297C3098704CEE0C27B1C9D /* Pods-Reaktor-iOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Reaktor-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Reaktor-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26A82A702146D783008C8009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7C6A21D39F67D37934C6EA8 /* Pods-Reaktor-iOS.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Reaktor-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Reaktor-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		26A82A722146D783008C8009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C274EFCF73179B943CD3EA2 /* Pods-Reaktor-iOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Reaktor-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Reaktor-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26A82A732146D783008C8009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A3CB9BE7C8696AC195D5C19 /* Pods-Reaktor-iOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Reaktor-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Reaktor-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		26A82AA72146D7A8008C8009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38BFFFCD6F072157809E78A0 /* Pods-Reaktor-macOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Reaktor-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Reaktor-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		26A82AA82146D7A8008C8009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2B76A4269F0ECBB16EBD1E6 /* Pods-Reaktor-macOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Reaktor-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Reaktor-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		26A82AAA2146D7A8008C8009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 598EF4CC90CDF51D436D038E /* Pods-Reaktor-macOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Reaktor-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Reaktor-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		26A82AAB2146D7A8008C8009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDC2E24140CF7BF6DB0B0D18 /* Pods-Reaktor-macOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Reaktor-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Reaktor-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		26A82AC32146D7B2008C8009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCF9744D8DBAC7DD369275C1 /* Pods-Reaktor-tvOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Reaktor-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Reaktor-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Debug;
+		};
+		26A82AC42146D7B2008C8009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DD0926C55169B753178E95C /* Pods-Reaktor-tvOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Reaktor-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Reaktor-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Release;
+		};
+		26A82AC62146D7B2008C8009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF87E8EAD968BFA031274355 /* Pods-Reaktor-tvOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Reaktor-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Reaktor-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Debug;
+		};
+		26A82AC72146D7B2008C8009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAE25DF2041FE9D584D9F979 /* Pods-Reaktor-tvOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Reaktor-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Reaktor-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26A82A382146D769008C8009 /* Build configuration list for PBXProject "Reaktor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A82A502146D769008C8009 /* Debug */,
+				26A82A512146D769008C8009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26A82A6E2146D783008C8009 /* Build configuration list for PBXNativeTarget "Reaktor-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A82A6F2146D783008C8009 /* Debug */,
+				26A82A702146D783008C8009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26A82A712146D783008C8009 /* Build configuration list for PBXNativeTarget "Reaktor-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A82A722146D783008C8009 /* Debug */,
+				26A82A732146D783008C8009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26A82AA62146D7A8008C8009 /* Build configuration list for PBXNativeTarget "Reaktor-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A82AA72146D7A8008C8009 /* Debug */,
+				26A82AA82146D7A8008C8009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26A82AA92146D7A8008C8009 /* Build configuration list for PBXNativeTarget "Reaktor-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A82AAA2146D7A8008C8009 /* Debug */,
+				26A82AAB2146D7A8008C8009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26A82AC22146D7B2008C8009 /* Build configuration list for PBXNativeTarget "Reaktor-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A82AC32146D7B2008C8009 /* Debug */,
+				26A82AC42146D7B2008C8009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26A82AC52146D7B2008C8009 /* Build configuration list for PBXNativeTarget "Reaktor-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A82AC62146D7B2008C8009 /* Debug */,
+				26A82AC72146D7B2008C8009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26A82A352146D769008C8009 /* Project object */;
+}

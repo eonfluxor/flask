@@ -1,0 +1,38 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+def common_pods!
+    
+end
+
+
+target 'Reaktor-iOS' do
+    #use_frameworks!
+    common_pods!
+    
+    target 'Reaktor-iOSTests' do
+        common_pods!
+    end
+    
+end
+
+target 'Reaktor-macOS' do
+    #use_frameworks!
+    
+    common_pods!
+    target 'Reaktor-macOSTests' do
+       common_pods!
+    end
+    
+end
+
+target 'Reaktor-tvOS' do
+    #use_frameworks!
+    
+    common_pods!
+    
+    target 'Reaktor-tvOSTests' do
+        common_pods!
+    end
+    
+end
