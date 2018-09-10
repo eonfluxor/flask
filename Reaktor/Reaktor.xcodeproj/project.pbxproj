@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EA60F7A1957A20894902ADB /* libPods-Reaktor-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F3AF60CF5D5C9B9FFC2DA2 /* libPods-Reaktor-iOS.a */; };
 		0EFF46569D24DB9D22334EEF /* libPods-Reaktor-iOS-Reaktor-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6529348FC7980F8A5E989DF0 /* libPods-Reaktor-iOS-Reaktor-iOSTests.a */; };
 		26A82A662146D783008C8009 /* Reaktor_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A82A5D2146D783008C8009 /* Reaktor_iOS.framework */; };
 		26A82A6B2146D783008C8009 /* Reaktor_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82A6A2146D783008C8009 /* Reaktor_iOSTests.swift */; };
@@ -147,12 +146,13 @@
 		26D8F84E21473A9D002F7B4F /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82921473A9D002F7B4F /* SetupTests.swift */; };
 		26D8F84F21473A9D002F7B4F /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82921473A9D002F7B4F /* SetupTests.swift */; };
 		26D8F85021473A9D002F7B4F /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82921473A9D002F7B4F /* SetupTests.swift */; };
-		2EC700FB7EE31D3BC962E5A3 /* libPods-Reaktor-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7805FA053EEE6DA9A10C25 /* libPods-Reaktor-tvOS.a */; };
 		3595CABE7D286B72BFA3840E /* Pods_Reaktor_macOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */; };
 		49B01758B32A87D4F2F7098C /* Pods_Reaktor_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54000D406E19649E8976133 /* Pods_Reaktor_tvOSTests.framework */; };
 		553D1E7B592EB9628035CAD6 /* Pods_Reaktor_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */; };
-		7E6BCA9EEE5744DEB170CAFC /* libPods-Reaktor-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E11996B60E0A13A014C25511 /* libPods-Reaktor-macOS.a */; };
+		64546CC0CE0279796BADBFF2 /* Pods_Reaktor_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9FA86C8DFEE750F1FDD67 /* Pods_Reaktor_tvOS.framework */; };
+		88DB8E24BE9025C14ED61449 /* Pods_Reaktor_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88917E1F608AFE1E56480E6F /* Pods_Reaktor_macOS.framework */; };
 		AA2D1327DF75E3DBD1E3D61C /* libPods-Reaktor-macOS-Reaktor-macOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90ED7E2C99449BF00BF8C4B8 /* libPods-Reaktor-macOS-Reaktor-macOSTests.a */; };
+		E4E6EB50E577F6DFD06E25BC /* Pods_Reaktor_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1853B0440831D5B76080A717 /* Pods_Reaktor_iOS.framework */; };
 		FA015FA9018B6DCF7A083994 /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -184,6 +184,7 @@
 		075CD6D047CF6A418EAF8396 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS-Reaktor-tvOSTests/Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0A3CB9BE7C8696AC195D5C19 /* Pods-Reaktor-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		0C274EFCF73179B943CD3EA2 /* Pods-Reaktor-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1853B0440831D5B76080A717 /* Pods_Reaktor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_macOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-tvOS-Reaktor-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A82A5D2146D783008C8009 /* Reaktor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reaktor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,14 +236,14 @@
 		381DEAC3DCFB39BEACA03807 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests/Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		38BFFFCD6F072157809E78A0 /* Pods-Reaktor-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		452C9C4E09CB62E21C4E5240 /* Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests/Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		4B7805FA053EEE6DA9A10C25 /* libPods-Reaktor-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD0926C55169B753178E95C /* Pods-Reaktor-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS/Pods-Reaktor-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		54551A57CBC323C9D2D85A59 /* Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS-Reaktor-macOSTests/Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		56B9FA86C8DFEE750F1FDD67 /* Pods_Reaktor_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		598EF4CC90CDF51D436D038E /* Pods-Reaktor-macOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6529348FC7980F8A5E989DF0 /* libPods-Reaktor-iOS-Reaktor-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-iOS-Reaktor-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6800B2CB5843D3C26DF4FF9B /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS-Reaktor-tvOSTests/Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		86F3AF60CF5D5C9B9FFC2DA2 /* libPods-Reaktor-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88917E1F608AFE1E56480E6F /* Pods_Reaktor_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90ED7E2C99449BF00BF8C4B8 /* libPods-Reaktor-macOS-Reaktor-macOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-macOS-Reaktor-macOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9297C3098704CEE0C27B1C9D /* Pods-Reaktor-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS/Pods-Reaktor-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		99B8E75D79521F500CA851D4 /* Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS-Reaktor-macOSTests/Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -251,7 +252,6 @@
 		C54000D406E19649E8976133 /* Pods_Reaktor_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B76A4269F0ECBB16EBD1E6 /* Pods-Reaktor-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		DDC2E24140CF7BF6DB0B0D18 /* Pods-Reaktor-macOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		E11996B60E0A13A014C25511 /* libPods-Reaktor-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C6A21D39F67D37934C6EA8 /* Pods-Reaktor-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS/Pods-Reaktor-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		FCF9744D8DBAC7DD369275C1 /* Pods-Reaktor-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS/Pods-Reaktor-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -261,7 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EA60F7A1957A20894902ADB /* libPods-Reaktor-iOS.a in Frameworks */,
+				E4E6EB50E577F6DFD06E25BC /* Pods_Reaktor_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E6BCA9EEE5744DEB170CAFC /* libPods-Reaktor-macOS.a in Frameworks */,
+				88DB8E24BE9025C14ED61449 /* Pods_Reaktor_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +297,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EC700FB7EE31D3BC962E5A3 /* libPods-Reaktor-tvOS.a in Frameworks */,
+				64546CC0CE0279796BADBFF2 /* Pods_Reaktor_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,12 +543,12 @@
 				695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */,
 				1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */,
 				C54000D406E19649E8976133 /* Pods_Reaktor_tvOSTests.framework */,
-				86F3AF60CF5D5C9B9FFC2DA2 /* libPods-Reaktor-iOS.a */,
 				6529348FC7980F8A5E989DF0 /* libPods-Reaktor-iOS-Reaktor-iOSTests.a */,
-				E11996B60E0A13A014C25511 /* libPods-Reaktor-macOS.a */,
 				90ED7E2C99449BF00BF8C4B8 /* libPods-Reaktor-macOS-Reaktor-macOSTests.a */,
-				4B7805FA053EEE6DA9A10C25 /* libPods-Reaktor-tvOS.a */,
 				22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */,
+				1853B0440831D5B76080A717 /* Pods_Reaktor_iOS.framework */,
+				88917E1F608AFE1E56480E6F /* Pods_Reaktor_macOS.framework */,
+				56B9FA86C8DFEE750F1FDD67 /* Pods_Reaktor_tvOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -610,6 +610,7 @@
 				26A82A612146D783008C8009 /* Sources */,
 				26A82A622146D783008C8009 /* Frameworks */,
 				26A82A632146D783008C8009 /* Resources */,
+				A66B049A7718DE26DBCC32B0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -648,6 +649,7 @@
 				26A82A992146D7A8008C8009 /* Sources */,
 				26A82A9A2146D7A8008C8009 /* Frameworks */,
 				26A82A9B2146D7A8008C8009 /* Resources */,
+				29E5F400B9D62C753211C8CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -686,6 +688,7 @@
 				26A82AB52146D7B2008C8009 /* Sources */,
 				26A82AB62146D7B2008C8009 /* Frameworks */,
 				26A82AB72146D7B2008C8009 /* Resources */,
+				BD8690990F7F5B28CC9DC5C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -809,11 +812,33 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Reaktor-tvOS-Reaktor-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Reaktor-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29E5F400B9D62C753211C8CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Delayed-macOS/Delayed.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Delayed.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5DA954605957A2E6C40FB238 /* [CP] Check Pods Manifest.lock */ = {
@@ -845,11 +870,55 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Reaktor-iOS-Reaktor-iOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Reaktor-iOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A66B049A7718DE26DBCC32B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Delayed-iOS/Delayed.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Delayed.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD8690990F7F5B28CC9DC5C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Reaktor-tvOSTests/Pods-Reaktor-tvOSTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Delayed-tvOS/Delayed.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Delayed.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Reaktor-tvOSTests/Pods-Reaktor-tvOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA77D50E09326149BD2B2021 /* [CP] Check Pods Manifest.lock */ = {
@@ -863,7 +932,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Reaktor-macOS-Reaktor-macOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Reaktor-macOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1281,7 +1350,7 @@
 		};
 		26A82A722146D783008C8009 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 381DEAC3DCFB39BEACA03807 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */;
+			baseConfigurationReference = 0C274EFCF73179B943CD3EA2 /* Pods-Reaktor-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1300,7 +1369,7 @@
 		};
 		26A82A732146D783008C8009 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 452C9C4E09CB62E21C4E5240 /* Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig */;
+			baseConfigurationReference = 0A3CB9BE7C8696AC195D5C19 /* Pods-Reaktor-iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1378,7 +1447,7 @@
 		};
 		26A82AAA2146D7A8008C8009 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54551A57CBC323C9D2D85A59 /* Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig */;
+			baseConfigurationReference = 598EF4CC90CDF51D436D038E /* Pods-Reaktor-macOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -1400,7 +1469,7 @@
 		};
 		26A82AAB2146D7A8008C8009 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99B8E75D79521F500CA851D4 /* Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig */;
+			baseConfigurationReference = DDC2E24140CF7BF6DB0B0D18 /* Pods-Reaktor-macOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -1479,7 +1548,7 @@
 		};
 		26A82AC62146D7B2008C8009 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 075CD6D047CF6A418EAF8396 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = AF87E8EAD968BFA031274355 /* Pods-Reaktor-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1500,7 +1569,7 @@
 		};
 		26A82AC72146D7B2008C8009 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6800B2CB5843D3C26DF4FF9B /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = BAE25DF2041FE9D584D9F979 /* Pods-Reaktor-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

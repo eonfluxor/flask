@@ -3,7 +3,7 @@
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/3/18.
-//  Copyright © 2018 hassanvfx. All rights reserved.
+//  Copy pod 'Delayed', '~> 2.2.2'right © 2018 hassanvfx. All rights reserved.
 //
 
 #if os(iOS) || os(tvOS) || os(watchOS)

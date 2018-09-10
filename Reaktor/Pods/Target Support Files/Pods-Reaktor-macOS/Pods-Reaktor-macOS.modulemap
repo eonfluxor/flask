@@ -1,4 +1,4 @@
-module Pods_Reaktor_macOS {
+framework module Pods_Reaktor_macOS {
   umbrella header "Pods-Reaktor-macOS-umbrella.h"
 
   export *

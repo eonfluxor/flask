@@ -2,37 +2,47 @@
 # platform :ios, '9.0'
 
 def common_pods!
-     pod 'Delayed', '~> 2.2.2'
+    pod 'Delayed','~>2.2.2'
 end
 
-
 target 'Reaktor-iOS' do
-    #use_frameworks!
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+common_pods!
+  # Pods for Reaktor-iOS
+  pod 'Delayed','~>2.2.2'
+  target 'Reaktor-iOSTests' do
+    inherit! :search_paths
     common_pods!
-    
-    target 'Reaktor-iOSTests' do
-        common_pods!
-    end
-    
+    # Pods for testing
+  end
+
 end
 
 target 'Reaktor-macOS' do
-    #use_frameworks!
-    
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Reaktor-macOS
+common_pods!
+  target 'Reaktor-macOSTests' do
+    inherit! :search_paths
+    # Pods for testing
     common_pods!
-    target 'Reaktor-macOSTests' do
-       common_pods!
-    end
-    
+  end
+
 end
 
 target 'Reaktor-tvOS' do
-    #use_frameworks!
-    
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Reaktor-tvOS
+common_pods!
+  target 'Reaktor-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
     common_pods!
-    
-    target 'Reaktor-tvOSTests' do
-        common_pods!
-    end
-    
+  end
+
 end

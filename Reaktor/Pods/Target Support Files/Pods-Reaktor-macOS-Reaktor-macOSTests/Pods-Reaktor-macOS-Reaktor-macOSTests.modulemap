@@ -1,6 +1,0 @@
-module Pods_Reaktor_macOS_Reaktor_macOSTests {
-  umbrella header "Pods-Reaktor-macOS-Reaktor-macOSTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

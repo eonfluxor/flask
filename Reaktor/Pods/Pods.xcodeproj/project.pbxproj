@@ -7,607 +7,586 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03E88A018945B826612820FE78274B30 /* Pods-Reaktor-macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1789A3BD1088DF0937A72259A8392589 /* Pods-Reaktor-macOS-dummy.m */; };
-		043E2DAF77570E1F1B1FDFE1E0665F70 /* Pods-Reaktor-macOS-Reaktor-macOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F086E2647750DF68B337A8C7A8065CB /* Pods-Reaktor-macOS-Reaktor-macOSTests-dummy.m */; };
-		1BEE8C39D6D06A53B20B7427F516BB63 /* Pods-Reaktor-iOS-Reaktor-iOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA45D49E85850833AABB34C8C1B9A20 /* Pods-Reaktor-iOS-Reaktor-iOSTests-dummy.m */; };
-		2A56AD2187CD1C71C84C6E4E6A711855 /* Delayed-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7606A4A72143F9C9D336A12FA35CAD73 /* Delayed-iOS-dummy.m */; };
-		34ABE52ADC666FE3E9DD5FEB1BD3C3C8 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFB337027B3F616968F770090E3565B /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-dummy.m */; };
-		531057EBDB41B2F751CC87934E366C5D /* Pods-Reaktor-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1419EE020B147A922BB34A91609991BC /* Pods-Reaktor-iOS-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5A9C41F4AD7922961EF8C23D6326AF5A /* KronAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F911E0FA21698BB28862F9CFBD54A7 /* KronAPI.swift */; };
-		5F5AEF66D8804704DD79D07AADF08C97 /* Delayed-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5311FCC9966A80A536F39CBD2E99F05B /* Delayed-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6C4BD6415A9AAA16F9DD665F0D23356F /* Pods-Reaktor-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1EBB9A964ACA3F760D57FC5B92746F /* Pods-Reaktor-tvOS-dummy.m */; };
-		7DFF12DAB3CCCAECDFE886D3F4B0F673 /* KronAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F911E0FA21698BB28862F9CFBD54A7 /* KronAPI.swift */; };
-		80909EB787BA36CD3B37E38FE0DEBE3D /* Delayed-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F83E6818DDAB09745F9308561F47A5AB /* Delayed-iOS-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9B6B6E7E68532527ECC5330E0475E227 /* Pods-Reaktor-iOS-Reaktor-iOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 119C28982FD34342BB4C77D379FE2DEA /* Pods-Reaktor-iOS-Reaktor-iOSTests-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9B759C07D0373639999E2534A27546C4 /* Delayed-macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6606138268FF01C1157CE55A590C5F5B /* Delayed-macOS-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A7CA6F4242045636188099C1A943295A /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BE3A9D5EFED3887F21ED638A387B085 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A7E9A87B65B3537746F80FEE38E8D20D /* Kron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6ED24E4EA92E7258A1D191009FAD66 /* Kron.swift */; };
-		B6CD6E9CD7A0FCE189FA92075640EB1F /* Pods-Reaktor-macOS-Reaktor-macOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E210C11A6ED470E9D71AECE86FB92886 /* Pods-Reaktor-macOS-Reaktor-macOSTests-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BA06453ECA516059BA6ADA778F3EC014 /* Kron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6ED24E4EA92E7258A1D191009FAD66 /* Kron.swift */; };
-		C2F4E49926BBBAC659CD20B60E0A9AFC /* Pods-Reaktor-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A90ED42DD82D7AA2F1C14AB5B348B28 /* Pods-Reaktor-iOS-dummy.m */; };
-		C64A724C89C6F374C57338E689194BD9 /* Pods-Reaktor-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25FCAE90B70229EA69D66B500D10969B /* Pods-Reaktor-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DECBE9D17FCE070E995C9B243FC3807F /* Delayed-macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B96BD1B5EA7DD6BA1B9623FE139416DD /* Delayed-macOS-dummy.m */; };
-		EA4C998189125A0082AB123589632C4A /* KronAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F911E0FA21698BB28862F9CFBD54A7 /* KronAPI.swift */; };
-		F1CAB170DABE0235AE01EE1AEB637CA4 /* Kron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6ED24E4EA92E7258A1D191009FAD66 /* Kron.swift */; };
-		F9E50CAA2B6041B15D6B4BCEBC7AAC7E /* Delayed-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EED23CCDCACA03AE6BF9B5727E25EA /* Delayed-tvOS-dummy.m */; };
-		FD72AB5CF69B48F81D362086276EBEF2 /* Pods-Reaktor-macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DFCC1A544450CA42340F9B9717FFD31 /* Pods-Reaktor-macOS-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		211BA0C1ED05DB5A00D16586DDAFDB20 /* KronAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982A35C93C3D65AA459378B896C2ADAA /* KronAPI.swift */; };
+		22BEC901A2FE78C53FAA8E89E1EF8B4D /* Pods-Reaktor-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A089E8764AF8ED1ECD76073703A2EC /* Pods-Reaktor-tvOS-dummy.m */; };
+		2B36C3F351131A764CA3A7F788B33957 /* Kron.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABCFF500F4F4FDA970C9C81AE132B04 /* Kron.swift */; };
+		3273B56D24FE3AAE2FB98987A2A15BD1 /* Pods-Reaktor-iOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C09F96126B4FFDCF17229597F4D07FC /* Pods-Reaktor-iOSTests-dummy.m */; };
+		38E5C923475946127FA186CEE5FEBC56 /* KronAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982A35C93C3D65AA459378B896C2ADAA /* KronAPI.swift */; };
+		43A7CAAB6513AC2B41A678604777AD83 /* Delayed-macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8750C7733FFD7821726CB2C47F03C463 /* Delayed-macOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F0047864A2916A3218857CAA4E948E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431D334C455E16522AD0E41506C7B4D1 /* Foundation.framework */; };
+		617F109A3B77693E7C75EA06E8E5B1C8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48233FC070FA1CADC1C3A92C3D3948A1 /* Cocoa.framework */; };
+		629D62811DE01F85D55E0D6166CF1934 /* Pods-Reaktor-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54272020DB58EDC8D4FC71CA51B1F644 /* Pods-Reaktor-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		699441330B75D1F7E2E1B641D1B64150 /* Pods-Reaktor-macOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EECAFCEF6948AE66E8D7450D882E8F8 /* Pods-Reaktor-macOSTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69CD4F10E617AFFBB41FB70D3CBE4FB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC0E9850E102760A0993631966EBEDF /* Foundation.framework */; };
+		77B1E0A2DCD56207D85FF31C3A4BD3D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC0E9850E102760A0993631966EBEDF /* Foundation.framework */; };
+		787267F4345A1ACCE0273B56D9FE7027 /* Pods-Reaktor-tvOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 304AA719AB6A8A29F09FEE85E12A9928 /* Pods-Reaktor-tvOSTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		856D4011D2555ECF13D77A4BF9AC3F42 /* Delayed-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCF1FBA332EB25959D3C5B918DAA56F /* Delayed-iOS-dummy.m */; };
+		878B829BBA6FCC309F8481D7470D474B /* Pods-Reaktor-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3EA7EF12F0685FAC9AF6E6614C0B9FE /* Pods-Reaktor-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89FC861E133F441E1F6F10F92DCEB700 /* Pods-Reaktor-macOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F90F78A3E7755A062FB7DDB431D3012 /* Pods-Reaktor-macOSTests-dummy.m */; };
+		8BDA309F2A8A098A3BACAC64D52A8120 /* Delayed-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 61B7E0D9E988A9529C2B92443C5C6412 /* Delayed-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E281D90594C5A6B9FE90DC43FFFF489 /* Delayed-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D737126E6AD6152EA67235583EE2D715 /* Delayed-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABA3310E99B82FD554BF4DC746E1EDEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC0E9850E102760A0993631966EBEDF /* Foundation.framework */; };
+		B2CDCA6C46BC74161E5950C74FCF3467 /* Pods-Reaktor-macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0E622559DED05FA13C39A430B49989 /* Pods-Reaktor-macOS-dummy.m */; };
+		BCBC13A0727FF279906DC332A5678CBF /* Kron.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABCFF500F4F4FDA970C9C81AE132B04 /* Kron.swift */; };
+		C8AB39BC49C2E6C51F0D5B0DDA43B527 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431D334C455E16522AD0E41506C7B4D1 /* Foundation.framework */; };
+		CBBE8E04A075736A604BD08982DC8F21 /* KronAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982A35C93C3D65AA459378B896C2ADAA /* KronAPI.swift */; };
+		D18F9D8293A8051393F2F92ABAAD6EEF /* Delayed-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C77225FD2703F05BCF3F0DEA666621 /* Delayed-tvOS-dummy.m */; };
+		D93C610693267972E605A8A892D2229C /* Delayed-macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B3D4D9DC7696738199CD78B3BBC9E5 /* Delayed-macOS-dummy.m */; };
+		DB2ADF0E68FDA2080657E2474F241890 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431D334C455E16522AD0E41506C7B4D1 /* Foundation.framework */; };
+		DEDDFC14204BB969B3F98AADE6B957B3 /* Kron.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABCFF500F4F4FDA970C9C81AE132B04 /* Kron.swift */; };
+		E4FA1583ABB1AC80759C2B4778D2302E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48233FC070FA1CADC1C3A92C3D3948A1 /* Cocoa.framework */; };
+		E6C8A830A8D6F89AF6B7422055B81A2A /* Pods-Reaktor-iOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E680446561AA2A91789BFF362E420E0 /* Pods-Reaktor-iOSTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6F48291D0F135B87B7D9A6635FBA608 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48233FC070FA1CADC1C3A92C3D3948A1 /* Cocoa.framework */; };
+		F4B6C7EEDAFB683D5A7D5076B54E4C16 /* Pods-Reaktor-macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 64C75549FB449F13AC462B5689409AD9 /* Pods-Reaktor-macOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7ACAFBAC9E191D2019E8DCF1D22F7D3 /* Pods-Reaktor-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9396AFBDFD3EB7E249F90BA98731E913 /* Pods-Reaktor-iOS-dummy.m */; };
+		FD9D79D4748752F6E2AC4E8D85192B9D /* Pods-Reaktor-tvOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5067E879EF4FDF8C15F949A4691C1EA6 /* Pods-Reaktor-tvOSTests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		51F742F8F0D87B25C545AD1CA94776B1 /* PBXContainerItemProxy */ = {
+		124CFF147B9F7E2ECC7E38CCB6577246 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F58DCA11D9FA390A97B6F1D88D705530;
-			remoteInfo = "Delayed-iOS";
-		};
-		61062F85F42292F903C67C90509F0A13 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 807714CCC3A46665EE73CD747737A456;
-			remoteInfo = "Delayed-macOS";
-		};
-		824624BFC4A6AEA8CED7B8C50EB02061 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E780087AFF2E163DCBE31753754DE7A0;
+			remoteGlobalIDString = 3A32B454E82CEBF4B58BF538FB811F37;
 			remoteInfo = "Delayed-tvOS";
 		};
-		A063F65F06AB6B20ED910038C89EF8C9 /* PBXContainerItemProxy */ = {
+		3725C07517B123313558F79AFD1DE124 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 807714CCC3A46665EE73CD747737A456;
+			remoteGlobalIDString = 48ACE0ADF48C4C8E1ED511AF5A71454D;
 			remoteInfo = "Delayed-macOS";
 		};
-		D17D427DE630C0EBD0F544A9B4738671 /* PBXContainerItemProxy */ = {
+		3C690A6A90407A55176D6AB8C8648037 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E780087AFF2E163DCBE31753754DE7A0;
-			remoteInfo = "Delayed-tvOS";
+			remoteGlobalIDString = ED834CF7A55F29ACF218A3F09DBDD38E;
+			remoteInfo = "Pods-Reaktor-tvOS";
 		};
-		E0B4AF5655C3728D89B448B3FEF7A8C4 /* PBXContainerItemProxy */ = {
+		4F363B5DD1F7B7019809974B962E8F5A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F58DCA11D9FA390A97B6F1D88D705530;
+			remoteGlobalIDString = 51EA2D0959D5797CE78A1FB9C688595C;
+			remoteInfo = "Pods-Reaktor-iOS";
+		};
+		6BB48AD805E5BF99850A0631195FC7D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48ACE0ADF48C4C8E1ED511AF5A71454D;
+			remoteInfo = "Delayed-macOS";
+		};
+		7F8AE8EB79480871725EF407013A8C8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8474222CC14100747B4CD9E15BEAC6C;
 			remoteInfo = "Delayed-iOS";
+		};
+		B1BA1557235E9F4D77D9CDEF8EF9721D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8547A5029CF7DEDC7706CAA30DB2A82A;
+			remoteInfo = "Pods-Reaktor-macOS";
+		};
+		C54923BA89F041E64C7F4EB27F66B029 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8474222CC14100747B4CD9E15BEAC6C;
+			remoteInfo = "Delayed-iOS";
+		};
+		DF7391F68BC954C9A1C6BA114A23114A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A32B454E82CEBF4B58BF538FB811F37;
+			remoteInfo = "Delayed-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06F1B79FDEF755523478CA24D70D7A24 /* Pods-Reaktor-iOS-Reaktor-iOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reaktor-iOS-Reaktor-iOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0AB8AF9517C5867E560C10E14045D73F /* Delayed-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Delayed-tvOS-prefix.pch"; path = "../Delayed-tvOS/Delayed-tvOS-prefix.pch"; sourceTree = "<group>"; };
-		0C46315771FFBD927F0A9D27A72AAC47 /* Delayed-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "Delayed-iOS.modulemap"; path = "../../Headers/Public/Delayed/Delayed-iOS.modulemap"; sourceTree = "<group>"; };
-		0DBE81E8B8C4A8EAC449C237F71D4802 /* Pods-Reaktor-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		0F8FFFB4DDA423D377FF0483A7693486 /* Pods-Reaktor-macOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-macOS-resources.sh"; sourceTree = "<group>"; };
-		119C28982FD34342BB4C77D379FE2DEA /* Pods-Reaktor-iOS-Reaktor-iOSTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reaktor-iOS-Reaktor-iOSTests-umbrella.h"; sourceTree = "<group>"; };
-		133DC00C2ABC720C2C148B52932DEBEA /* Delayed-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Delayed-macOS.xcconfig"; path = "../Delayed-macOS/Delayed-macOS.xcconfig"; sourceTree = "<group>"; };
-		136D6BE4FAA0E3CB15D1DBA28AB376AF /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Reaktor-tvOS-Reaktor-tvOSTests.modulemap"; sourceTree = "<group>"; };
-		1419EE020B147A922BB34A91609991BC /* Pods-Reaktor-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reaktor-iOS-umbrella.h"; sourceTree = "<group>"; };
-		170F2FCB716FAB1A44E821D42D6261BB /* Delayed-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Delayed-tvOS.xcconfig"; path = "../Delayed-tvOS/Delayed-tvOS.xcconfig"; sourceTree = "<group>"; };
-		1789A3BD1088DF0937A72259A8392589 /* Pods-Reaktor-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reaktor-macOS-dummy.m"; sourceTree = "<group>"; };
-		1E45F70CC5857AB76D87B8ED07F13CA9 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reaktor-tvOS-Reaktor-tvOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1F086E2647750DF68B337A8C7A8065CB /* Pods-Reaktor-macOS-Reaktor-macOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reaktor-macOS-Reaktor-macOSTests-dummy.m"; sourceTree = "<group>"; };
-		2201FFE25CB8A26517B26FFB6AB4109F /* Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2226768E19C6F5843A1C3E5CD8066734 /* libDelayed-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libDelayed-tvOS.a"; path = "libDelayed-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		25FCAE90B70229EA69D66B500D10969B /* Pods-Reaktor-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reaktor-tvOS-umbrella.h"; sourceTree = "<group>"; };
-		2A0CA042FB6C925C4D0333BEC66A7C7E /* libPods-Reaktor-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Reaktor-iOS.a"; path = "libPods-Reaktor-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A939C4305FA087811B4D3551D098C07 /* Delayed-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Delayed-iOS-prefix.pch"; sourceTree = "<group>"; };
-		2DFCC1A544450CA42340F9B9717FFD31 /* Pods-Reaktor-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reaktor-macOS-umbrella.h"; sourceTree = "<group>"; };
-		389D99CE51CABAD51FCD86D72CA85F4F /* Pods-Reaktor-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Reaktor-macOS.modulemap"; sourceTree = "<group>"; };
-		3A09BC5F520C8C5C1BE9C0F9640D33AF /* Pods-Reaktor-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		3B4CA096868E68DFA5CA27001F775900 /* Pods-Reaktor-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		3C156B0B8F93127BE0E66957A3C8C8ED /* Pods-Reaktor-macOS-Reaktor-macOSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Reaktor-macOS-Reaktor-macOSTests.modulemap"; sourceTree = "<group>"; };
-		3FA45D49E85850833AABB34C8C1B9A20 /* Pods-Reaktor-iOS-Reaktor-iOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reaktor-iOS-Reaktor-iOSTests-dummy.m"; sourceTree = "<group>"; };
-		4121F67D0D21E02F717808F511369152 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-tvOS-Reaktor-tvOSTests-frameworks.sh"; sourceTree = "<group>"; };
-		497F3DFCA1BBA02A69CB8081BE589BF7 /* Delayed-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Delayed-iOS.xcconfig"; sourceTree = "<group>"; };
-		4A90ED42DD82D7AA2F1C14AB5B348B28 /* Pods-Reaktor-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reaktor-iOS-dummy.m"; sourceTree = "<group>"; };
-		50EEC0AC842037A5265A4F84043542C1 /* Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		5311FCC9966A80A536F39CBD2E99F05B /* Delayed-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Delayed-tvOS-umbrella.h"; path = "../../Headers/Public/Delayed/Delayed-tvOS-umbrella.h"; sourceTree = "<group>"; };
-		546B99DB674D901F5010E6A138A11217 /* libPods-Reaktor-macOS-Reaktor-macOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Reaktor-macOS-Reaktor-macOSTests.a"; path = "libPods-Reaktor-macOS-Reaktor-macOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		569BADA5ED978F3402E21E58820CC659 /* libDelayed-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libDelayed-iOS.a"; path = "libDelayed-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BC0F1F5F4B4AD52AB2906E3A8417A73 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5BE3A9D5EFED3887F21ED638A387B085 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reaktor-tvOS-Reaktor-tvOSTests-umbrella.h"; sourceTree = "<group>"; };
-		5C65D1E808BFD8D12F221B4F8625DF5E /* Pods-Reaktor-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		5D5AE26474860AE1051506C910F61298 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-tvOS-Reaktor-tvOSTests-resources.sh"; sourceTree = "<group>"; };
-		5DD511223BFAA16429A3755E289956A9 /* Pods-Reaktor-macOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reaktor-macOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		645272922031B6C10320C9F5C34C48F6 /* Pods-Reaktor-macOS-Reaktor-macOSTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-macOS-Reaktor-macOSTests-resources.sh"; sourceTree = "<group>"; };
-		6606138268FF01C1157CE55A590C5F5B /* Delayed-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Delayed-macOS-umbrella.h"; path = "../../Headers/Public/Delayed/Delayed-macOS-umbrella.h"; sourceTree = "<group>"; };
-		674739E56F17515931B7B2A9CC71C374 /* Delayed-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "Delayed-tvOS.modulemap"; path = "../../Headers/Public/Delayed/Delayed-tvOS.modulemap"; sourceTree = "<group>"; };
-		6E5FF5CF9DA949E6C6773EC55D1D9E30 /* Pods-Reaktor-tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reaktor-tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7606A4A72143F9C9D336A12FA35CAD73 /* Delayed-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Delayed-iOS-dummy.m"; sourceTree = "<group>"; };
-		76E04C652DB1FE0C9C11EDA0363BDB37 /* Pods-Reaktor-iOS-Reaktor-iOSTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-iOS-Reaktor-iOSTests-frameworks.sh"; sourceTree = "<group>"; };
-		7761AE234564BD74FA82F93C7D513676 /* Pods-Reaktor-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		7D991AE5AC8167E23D04A6508B3924AC /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reaktor-tvOS-Reaktor-tvOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		80520CAB23F7D3638266523E074825E7 /* libPods-Reaktor-iOS-Reaktor-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Reaktor-iOS-Reaktor-iOSTests.a"; path = "libPods-Reaktor-iOS-Reaktor-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		832FAC6D54B556ADEBB0AA7F5975F018 /* Delayed-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Delayed-macOS-prefix.pch"; path = "../Delayed-macOS/Delayed-macOS-prefix.pch"; sourceTree = "<group>"; };
-		8C48C68D95CDA42C5B0F1A4A10E080DE /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8C8812914ADEBBD5FB0A45DFECD20B4B /* Pods-Reaktor-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Reaktor-tvOS.modulemap"; sourceTree = "<group>"; };
-		8D2667DE4B668769E33279AB77ABE96B /* Pods-Reaktor-iOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-iOS-resources.sh"; sourceTree = "<group>"; };
+		09D62CD1FA8D43F56889794320C0672C /* Pods-Reaktor-macOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reaktor-macOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		0D58B68D947899F0DF1B1E25A4D4DE97 /* Pods_Reaktor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Reaktor_iOS.framework; path = "Pods-Reaktor-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EA1F890B0B5E9423C6B4A10A24EAC43 /* Pods_Reaktor_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Reaktor_tvOSTests.framework; path = "Pods-Reaktor-tvOSTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EECAFCEF6948AE66E8D7450D882E8F8 /* Pods-Reaktor-macOSTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reaktor-macOSTests-umbrella.h"; sourceTree = "<group>"; };
+		10E76354C0A012BB224155EB217DF2B7 /* Pods-Reaktor-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		11BF487FCB26B5A389CF239AE0541945 /* Pods-Reaktor-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Reaktor-tvOS.modulemap"; sourceTree = "<group>"; };
+		1E680446561AA2A91789BFF362E420E0 /* Pods-Reaktor-iOSTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reaktor-iOSTests-umbrella.h"; sourceTree = "<group>"; };
+		1F07B52FEC2EAAAE3A15D7C2B01D11B6 /* Pods-Reaktor-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		1F60F657A05D710CB0A30966158C927E /* Pods-Reaktor-macOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reaktor-macOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		214C8C5797C0276B351AFAC25CADA9C3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23CB46856FF76ECE69593CD736439D98 /* Pods-Reaktor-iOSTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-iOSTests-frameworks.sh"; sourceTree = "<group>"; };
+		296167318051D931D232676AF6E82827 /* Pods-Reaktor-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		2A4D5B0FBCDF15961B93E6E47144FD82 /* Delayed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Delayed.framework; path = "Delayed-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BCB0DB5A8BFB42A0B5920D64ED15A4F /* Pods-Reaktor-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		2F90F78A3E7755A062FB7DDB431D3012 /* Pods-Reaktor-macOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reaktor-macOSTests-dummy.m"; sourceTree = "<group>"; };
+		304AA719AB6A8A29F09FEE85E12A9928 /* Pods-Reaktor-tvOSTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reaktor-tvOSTests-umbrella.h"; sourceTree = "<group>"; };
+		331FDA7765376463DC458F2B55627297 /* Pods_Reaktor_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Reaktor_iOSTests.framework; path = "Pods-Reaktor-iOSTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3435681C8AFCFF9A6B7A68D678F4C2EF /* Delayed-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "Delayed-macOS.modulemap"; path = "../Delayed-macOS/Delayed-macOS.modulemap"; sourceTree = "<group>"; };
+		3455F88A680510B4531DD3996020874A /* Pods-Reaktor-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		37CDCFA766E279545C66B3F1A1FE8B97 /* Pods-Reaktor-iOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-iOS-resources.sh"; sourceTree = "<group>"; };
+		3937ECA368271088389A8E90C01D39FA /* Pods-Reaktor-macOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reaktor-macOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3B86721B10F672AE21E4423832FF7DBF /* Pods-Reaktor-iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reaktor-iOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		431D334C455E16522AD0E41506C7B4D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		47E12E17B4CA23E0EE05D2A4147AACBE /* Pods-Reaktor-tvOSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Reaktor-tvOSTests.modulemap"; sourceTree = "<group>"; };
+		48233FC070FA1CADC1C3A92C3D3948A1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		49C45CD01873ABC3A649C58900E82822 /* Pods-Reaktor-iOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reaktor-iOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4C09F96126B4FFDCF17229597F4D07FC /* Pods-Reaktor-iOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reaktor-iOSTests-dummy.m"; sourceTree = "<group>"; };
+		4CC0E9850E102760A0993631966EBEDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		504807CC3A12705AFD5CC77725017CFF /* Pods-Reaktor-tvOSTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-tvOSTests-frameworks.sh"; sourceTree = "<group>"; };
+		5067E879EF4FDF8C15F949A4691C1EA6 /* Pods-Reaktor-tvOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reaktor-tvOSTests-dummy.m"; sourceTree = "<group>"; };
+		50F0A561E875C28738DCEDC16C0B1017 /* Pods-Reaktor-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Reaktor-macOS.modulemap"; sourceTree = "<group>"; };
+		50F92AB5BBAD16B0E92D7D8D52D3959F /* Pods-Reaktor-iOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reaktor-iOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		51A089E8764AF8ED1ECD76073703A2EC /* Pods-Reaktor-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reaktor-tvOS-dummy.m"; sourceTree = "<group>"; };
+		526CFD1424AAA44426B0F347D7100FE8 /* Pods-Reaktor-tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reaktor-tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		53FB4FC1535844A600F990F3E8202B99 /* Pods-Reaktor-macOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-macOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		54272020DB58EDC8D4FC71CA51B1F644 /* Pods-Reaktor-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reaktor-iOS-umbrella.h"; sourceTree = "<group>"; };
+		554B34ABCEEC13F561902ABA96A25732 /* Delayed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Delayed.framework; path = "Delayed-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57B3D4D9DC7696738199CD78B3BBC9E5 /* Delayed-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Delayed-macOS-dummy.m"; path = "../Delayed-macOS/Delayed-macOS-dummy.m"; sourceTree = "<group>"; };
+		59BBFE8974F1E602C9F8563C91117F01 /* Pods_Reaktor_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Reaktor_tvOS.framework; path = "Pods-Reaktor-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C0E622559DED05FA13C39A430B49989 /* Pods-Reaktor-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reaktor-macOS-dummy.m"; sourceTree = "<group>"; };
+		5C1B67F5D2CD8C563D755ED754360B08 /* Delayed-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Delayed-iOS-prefix.pch"; sourceTree = "<group>"; };
+		5D5EE698AA31340C36548AE35B0E942E /* Pods-Reaktor-macOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-macOS-resources.sh"; sourceTree = "<group>"; };
+		61B7E0D9E988A9529C2B92443C5C6412 /* Delayed-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Delayed-iOS-umbrella.h"; sourceTree = "<group>"; };
+		61F00F7E80ECDCF62EF2340E0B702EFE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62850D6FD4227CB10CE2A76B0F1E346E /* Pods-Reaktor-tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reaktor-tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		63300445E3D5A1B357DE6CC4949DB24D /* Pods-Reaktor-macOSTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-macOSTests-resources.sh"; sourceTree = "<group>"; };
+		64C75549FB449F13AC462B5689409AD9 /* Pods-Reaktor-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reaktor-macOS-umbrella.h"; sourceTree = "<group>"; };
+		686A3857B661B08C74C3179A02EA7814 /* Pods-Reaktor-iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reaktor-iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		69912B54C76760B59795CCE7090D5A74 /* Delayed-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Delayed-tvOS.xcconfig"; path = "../Delayed-tvOS/Delayed-tvOS.xcconfig"; sourceTree = "<group>"; };
+		69A93F652C737F7C26402EF7589F9A80 /* Pods-Reaktor-tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-tvOS-resources.sh"; sourceTree = "<group>"; };
+		705B17D6E65E55B3D860BD7F43385767 /* Delayed-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Delayed-macOS.xcconfig"; path = "../Delayed-macOS/Delayed-macOS.xcconfig"; sourceTree = "<group>"; };
+		7821DF86D068993D65AEBC1A497D46DB /* Delayed-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Delayed-macOS-prefix.pch"; path = "../Delayed-macOS/Delayed-macOS-prefix.pch"; sourceTree = "<group>"; };
+		7B6A93CAD4899F5C0B3095DB7DC310F5 /* Pods-Reaktor-tvOSTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-tvOSTests-resources.sh"; sourceTree = "<group>"; };
+		7C129DAA47E18927C1B31F1E21540231 /* Pods-Reaktor-iOSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Reaktor-iOSTests.modulemap"; sourceTree = "<group>"; };
+		85A3BB50A4E7D3F0F2AD687E0C5B7063 /* Pods-Reaktor-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Reaktor-iOS.modulemap"; sourceTree = "<group>"; };
+		8750C7733FFD7821726CB2C47F03C463 /* Delayed-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Delayed-macOS-umbrella.h"; path = "../Delayed-macOS/Delayed-macOS-umbrella.h"; sourceTree = "<group>"; };
+		89B193F7048E57E449C982B1DE8D359E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B2009FFB282317D94F71ADEA68793A5 /* Pods-Reaktor-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		9396AFBDFD3EB7E249F90BA98731E913 /* Pods-Reaktor-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reaktor-iOS-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93B610C9B91561FFB19A9D76168A98FC /* Pods-Reaktor-iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reaktor-iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		93FC9D9FE33D2D1D6531CD8F5FA0BB95 /* Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		95D76B476203E2B7B84EB92690A746A3 /* Delayed-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "Delayed-macOS.modulemap"; path = "../../Headers/Public/Delayed/Delayed-macOS.modulemap"; sourceTree = "<group>"; };
-		97FAFEE197EE5684452F95A872C1B1AB /* Pods-Reaktor-iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reaktor-iOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D97E8DC000E7C54AFCB58293474D3B7 /* Pods-Reaktor-macOS-Reaktor-macOSTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-macOS-Reaktor-macOSTests-frameworks.sh"; sourceTree = "<group>"; };
-		9F1EBB9A964ACA3F760D57FC5B92746F /* Pods-Reaktor-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reaktor-tvOS-dummy.m"; sourceTree = "<group>"; };
-		9F6ED24E4EA92E7258A1D191009FAD66 /* Kron.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kron.swift; path = Kron/Sources/Kron.swift; sourceTree = "<group>"; };
-		A8DF2B411C711FD7DA2F6EB97BEA5A71 /* Pods-Reaktor-iOS-Reaktor-iOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reaktor-iOS-Reaktor-iOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A9EB8BEDE9812149E3B90027D808298E /* Pods-Reaktor-macOS-Reaktor-macOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reaktor-macOS-Reaktor-macOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		B7B63E01B978BB462C9D8ECA9D9B2C05 /* Pods-Reaktor-macOS-Reaktor-macOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reaktor-macOS-Reaktor-macOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B7EED23CCDCACA03AE6BF9B5727E25EA /* Delayed-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Delayed-tvOS-dummy.m"; path = "../Delayed-tvOS/Delayed-tvOS-dummy.m"; sourceTree = "<group>"; };
-		B91E481A5110958B1B90DF6717A41D5A /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		B96BD1B5EA7DD6BA1B9623FE139416DD /* Delayed-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Delayed-macOS-dummy.m"; path = "../Delayed-macOS/Delayed-macOS-dummy.m"; sourceTree = "<group>"; };
-		BC78D7BCFA309DD257A3B4010CA4140D /* Pods-Reaktor-iOS-Reaktor-iOSTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-iOS-Reaktor-iOSTests-resources.sh"; sourceTree = "<group>"; };
-		BFFB337027B3F616968F770090E3565B /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reaktor-tvOS-Reaktor-tvOSTests-dummy.m"; sourceTree = "<group>"; };
-		C3C248963A3621D74D507D9AC15CAE44 /* Pods-Reaktor-tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-tvOS-resources.sh"; sourceTree = "<group>"; };
-		C5FD80D94EF022F54226450D1CADDBB7 /* libPods-Reaktor-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Reaktor-tvOS.a"; path = "libPods-Reaktor-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6F911E0FA21698BB28862F9CFBD54A7 /* KronAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KronAPI.swift; path = Kron/Sources/KronAPI.swift; sourceTree = "<group>"; };
-		C86910F03183230F192D9F59DB470B9D /* Pods-Reaktor-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Reaktor-iOS.modulemap"; sourceTree = "<group>"; };
-		CD04E476E370F71445078DC30D2AA297 /* libDelayed-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libDelayed-macOS.a"; path = "libDelayed-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF0AFF2521DC54B6848BCB56C72FFD60 /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Reaktor-tvOS-Reaktor-tvOSTests.a"; path = "libPods-Reaktor-tvOS-Reaktor-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E210C11A6ED470E9D71AECE86FB92886 /* Pods-Reaktor-macOS-Reaktor-macOSTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reaktor-macOS-Reaktor-macOSTests-umbrella.h"; sourceTree = "<group>"; };
-		E270DFEC77CDFCE1FEEA114F51962521 /* libPods-Reaktor-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Reaktor-macOS.a"; path = "libPods-Reaktor-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED563DEA6341051600E94D72B3F14DCD /* Pods-Reaktor-iOS-Reaktor-iOSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Reaktor-iOS-Reaktor-iOSTests.modulemap"; sourceTree = "<group>"; };
-		EFF5FE4D11E3E71B9B035F5CB3A14DE4 /* Pods-Reaktor-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-macOS.release.xcconfig"; sourceTree = "<group>"; };
-		F7E54FA4337CF3E3DD9DE1773450021D /* Pods-Reaktor-tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reaktor-tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		F83E6818DDAB09745F9308561F47A5AB /* Delayed-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Delayed-iOS-umbrella.h"; path = "../../Headers/Public/Delayed/Delayed-iOS-umbrella.h"; sourceTree = "<group>"; };
-		F862530BD6F4AFF4E9310793E9D14009 /* Pods-Reaktor-macOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reaktor-macOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		982A35C93C3D65AA459378B896C2ADAA /* KronAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KronAPI.swift; path = Kron/Sources/KronAPI.swift; sourceTree = "<group>"; };
+		99F38E0FBA9236AEB4857FF5BB523191 /* Delayed-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Delayed-tvOS-prefix.pch"; path = "../Delayed-tvOS/Delayed-tvOS-prefix.pch"; sourceTree = "<group>"; };
+		9A96CB5E13D1AFF07AA07B621066B3D2 /* Pods-Reaktor-macOSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Reaktor-macOSTests.modulemap"; sourceTree = "<group>"; };
+		A3EA7EF12F0685FAC9AF6E6614C0B9FE /* Pods-Reaktor-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reaktor-tvOS-umbrella.h"; sourceTree = "<group>"; };
+		AE97940870746EFB761E8AB7297A37DF /* Delayed-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Delayed-iOS.xcconfig"; sourceTree = "<group>"; };
+		B2DD9D3EDF6DAE29E090D8C63685E6AB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B480B580D547280EDC419EFE69E4C4DB /* Pods-Reaktor-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA4690B6FA99388B3A3B3A7E67953266 /* Pods-Reaktor-tvOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reaktor-tvOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		BC2C7C83D759774FD58684B1146F84BF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Delayed-macOS/Info.plist"; sourceTree = "<group>"; };
+		C1B49720DE7FC08C67E24FD3859BF9F6 /* Pods-Reaktor-tvOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reaktor-tvOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C9589753D090D3D7D813E7A726C997A3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBB77B3B1027D9A2E5E23532651BE664 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDD4F6E0ACCF3DEB67E4DDC8CEA266C2 /* Pods_Reaktor_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Reaktor_macOSTests.framework; path = "Pods-Reaktor-macOSTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D224D2891345F29F02CB268DDDC6E637 /* Pods-Reaktor-iOSTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-iOSTests-resources.sh"; sourceTree = "<group>"; };
+		D5A9B71D093F0C861061A7E8B693E0E6 /* Pods-Reaktor-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		D5EBF2EAD6E250E498AEEF425DC6047F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Delayed-tvOS/Info.plist"; sourceTree = "<group>"; };
+		D737126E6AD6152EA67235583EE2D715 /* Delayed-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Delayed-tvOS-umbrella.h"; path = "../Delayed-tvOS/Delayed-tvOS-umbrella.h"; sourceTree = "<group>"; };
+		DABCFF500F4F4FDA970C9C81AE132B04 /* Kron.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kron.swift; path = Kron/Sources/Kron.swift; sourceTree = "<group>"; };
+		DB197ADCB21D7F785C846A8E9407ADDA /* Delayed-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "Delayed-tvOS.modulemap"; path = "../Delayed-tvOS/Delayed-tvOS.modulemap"; sourceTree = "<group>"; };
+		DFCF1FBA332EB25959D3C5B918DAA56F /* Delayed-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Delayed-iOS-dummy.m"; sourceTree = "<group>"; };
+		DFE29443BDE79B938F950EB197CD0C50 /* Pods-Reaktor-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		E215A71A4D17600B1E10455E8B793FC7 /* Pods_Reaktor_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Reaktor_macOS.framework; path = "Pods-Reaktor-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5A7C6EDD177B864D9811A93B1D0F2EA /* Delayed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Delayed.framework; path = "Delayed-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5DAE9EEDCFD6D60EBA7F130B2B8E0B1 /* Pods-Reaktor-macOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reaktor-macOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E6C77225FD2703F05BCF3F0DEA666621 /* Delayed-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Delayed-tvOS-dummy.m"; path = "../Delayed-tvOS/Delayed-tvOS-dummy.m"; sourceTree = "<group>"; };
+		ECDA0DC5195B390881D789DF3902872B /* Pods-Reaktor-macOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-macOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		F20246E98A67C534F447B38351B7050A /* Pods-Reaktor-macOSTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reaktor-macOSTests-frameworks.sh"; sourceTree = "<group>"; };
+		F7DA793BCF2F3B2D00766EF60267A6AC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F99B8EDB2737ED42CA89B2AADA8CE2FC /* Delayed-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Delayed-iOS.modulemap"; sourceTree = "<group>"; };
+		F9D970B01990C38F961D0356AF137CFB /* Pods-Reaktor-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reaktor-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2FCC8CD9B09654166A8619CDF7167A3D /* Frameworks */ = {
+		41874AD52096534280B2A848473DCEAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F0047864A2916A3218857CAA4E948E2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		57C529B753E0D6AC526FDF4805FE325E /* Frameworks */ = {
+		53A7DBF5335A3D27DF746F8E5FE639D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B1E0A2DCD56207D85FF31C3A4BD3D8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87C116F20B2B8D3888A290368B806D81 /* Frameworks */ = {
+		6FFEE733D7CAF792C1E401159A4AC552 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8AB39BC49C2E6C51F0D5B0DDA43B527 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AAACAE7EDD1EEC3F97F569BE98621EA0 /* Frameworks */ = {
+		77CECD1AB4BF1D6C4093D49D8B8A1694 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2ADF0E68FDA2080657E2474F241890 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB86235C9CEFFABFA0F803AFCE365E19 /* Frameworks */ = {
+		79B3235B1D97F7DE7F90F0A80F829EC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA3310E99B82FD554BF4DC746E1EDEB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BBCD1E78483DD1D90132907F329C97AD /* Frameworks */ = {
+		9BA704D58EC974A3241B1BFA27B75E86 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4FA1583ABB1AC80759C2B4778D2302E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3C82E5646D6440A7886E38209CB7530 /* Frameworks */ = {
+		E16E86D146AF27E8F93D32D2312D02DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69CD4F10E617AFFBB41FB70D3CBE4FB3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8FBE8837ED17C97CE70A892E5380D82 /* Frameworks */ = {
+		E37663A72627042033BD0E692173C403 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F48291D0F135B87B7D9A6635FBA608 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC729AC80D5A19E42E41899E3321A2E2 /* Frameworks */ = {
+		FAA4968B81C8E7210955BFB1D52B7968 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				617F109A3B77693E7C75EA06E8E5B1C8 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05984A9DC1FB7022DFC6BC0BEF5192C2 /* Delayed */ = {
+		1454A7829A00C5519E99251DF972ADB2 /* Pods-Reaktor-tvOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				9F6ED24E4EA92E7258A1D191009FAD66 /* Kron.swift */,
-				C6F911E0FA21698BB28862F9CFBD54A7 /* KronAPI.swift */,
-				E7B0AB0A13AEE209F097EC37B5812FB9 /* Support Files */,
+				CBB77B3B1027D9A2E5E23532651BE664 /* Info.plist */,
+				47E12E17B4CA23E0EE05D2A4147AACBE /* Pods-Reaktor-tvOSTests.modulemap */,
+				C1B49720DE7FC08C67E24FD3859BF9F6 /* Pods-Reaktor-tvOSTests-acknowledgements.markdown */,
+				BA4690B6FA99388B3A3B3A7E67953266 /* Pods-Reaktor-tvOSTests-acknowledgements.plist */,
+				5067E879EF4FDF8C15F949A4691C1EA6 /* Pods-Reaktor-tvOSTests-dummy.m */,
+				504807CC3A12705AFD5CC77725017CFF /* Pods-Reaktor-tvOSTests-frameworks.sh */,
+				7B6A93CAD4899F5C0B3095DB7DC310F5 /* Pods-Reaktor-tvOSTests-resources.sh */,
+				304AA719AB6A8A29F09FEE85E12A9928 /* Pods-Reaktor-tvOSTests-umbrella.h */,
+				F9D970B01990C38F961D0356AF137CFB /* Pods-Reaktor-tvOSTests.debug.xcconfig */,
+				B480B580D547280EDC419EFE69E4C4DB /* Pods-Reaktor-tvOSTests.release.xcconfig */,
+			);
+			name = "Pods-Reaktor-tvOSTests";
+			path = "Target Support Files/Pods-Reaktor-tvOSTests";
+			sourceTree = "<group>";
+		};
+		2269E9419F6E7129C224DA7E5FFCD76B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F99B8EDB2737ED42CA89B2AADA8CE2FC /* Delayed-iOS.modulemap */,
+				AE97940870746EFB761E8AB7297A37DF /* Delayed-iOS.xcconfig */,
+				DFCF1FBA332EB25959D3C5B918DAA56F /* Delayed-iOS-dummy.m */,
+				5C1B67F5D2CD8C563D755ED754360B08 /* Delayed-iOS-prefix.pch */,
+				61B7E0D9E988A9529C2B92443C5C6412 /* Delayed-iOS-umbrella.h */,
+				3435681C8AFCFF9A6B7A68D678F4C2EF /* Delayed-macOS.modulemap */,
+				705B17D6E65E55B3D860BD7F43385767 /* Delayed-macOS.xcconfig */,
+				57B3D4D9DC7696738199CD78B3BBC9E5 /* Delayed-macOS-dummy.m */,
+				7821DF86D068993D65AEBC1A497D46DB /* Delayed-macOS-prefix.pch */,
+				8750C7733FFD7821726CB2C47F03C463 /* Delayed-macOS-umbrella.h */,
+				DB197ADCB21D7F785C846A8E9407ADDA /* Delayed-tvOS.modulemap */,
+				69912B54C76760B59795CCE7090D5A74 /* Delayed-tvOS.xcconfig */,
+				E6C77225FD2703F05BCF3F0DEA666621 /* Delayed-tvOS-dummy.m */,
+				99F38E0FBA9236AEB4857FF5BB523191 /* Delayed-tvOS-prefix.pch */,
+				D737126E6AD6152EA67235583EE2D715 /* Delayed-tvOS-umbrella.h */,
+				BC2C7C83D759774FD58684B1146F84BF /* Info.plist */,
+				D5EBF2EAD6E250E498AEEF425DC6047F /* Info.plist */,
+				B2DD9D3EDF6DAE29E090D8C63685E6AB /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Delayed-iOS";
+			sourceTree = "<group>";
+		};
+		3D532D37F4C1C320349BC2689C41E45F /* Pods-Reaktor-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				89B193F7048E57E449C982B1DE8D359E /* Info.plist */,
+				7C129DAA47E18927C1B31F1E21540231 /* Pods-Reaktor-iOSTests.modulemap */,
+				50F92AB5BBAD16B0E92D7D8D52D3959F /* Pods-Reaktor-iOSTests-acknowledgements.markdown */,
+				49C45CD01873ABC3A649C58900E82822 /* Pods-Reaktor-iOSTests-acknowledgements.plist */,
+				4C09F96126B4FFDCF17229597F4D07FC /* Pods-Reaktor-iOSTests-dummy.m */,
+				23CB46856FF76ECE69593CD736439D98 /* Pods-Reaktor-iOSTests-frameworks.sh */,
+				D224D2891345F29F02CB268DDDC6E637 /* Pods-Reaktor-iOSTests-resources.sh */,
+				1E680446561AA2A91789BFF362E420E0 /* Pods-Reaktor-iOSTests-umbrella.h */,
+				10E76354C0A012BB224155EB217DF2B7 /* Pods-Reaktor-iOSTests.debug.xcconfig */,
+				D5A9B71D093F0C861061A7E8B693E0E6 /* Pods-Reaktor-iOSTests.release.xcconfig */,
+			);
+			name = "Pods-Reaktor-iOSTests";
+			path = "Target Support Files/Pods-Reaktor-iOSTests";
+			sourceTree = "<group>";
+		};
+		6B53BC1AF1780F22D4AC8ADC3B1068B0 /* Delayed */ = {
+			isa = PBXGroup;
+			children = (
+				DABCFF500F4F4FDA970C9C81AE132B04 /* Kron.swift */,
+				982A35C93C3D65AA459378B896C2ADAA /* KronAPI.swift */,
+				2269E9419F6E7129C224DA7E5FFCD76B /* Support Files */,
 			);
 			name = Delayed;
 			path = Delayed;
 			sourceTree = "<group>";
 		};
-		078336774F674231FAD7E774F0044F25 /* Pods-Reaktor-iOS */ = {
+		75F2E7646127D9091228F21BDAAAF7FC /* Pods-Reaktor-macOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				C86910F03183230F192D9F59DB470B9D /* Pods-Reaktor-iOS.modulemap */,
-				93B610C9B91561FFB19A9D76168A98FC /* Pods-Reaktor-iOS-acknowledgements.markdown */,
-				97FAFEE197EE5684452F95A872C1B1AB /* Pods-Reaktor-iOS-acknowledgements.plist */,
-				4A90ED42DD82D7AA2F1C14AB5B348B28 /* Pods-Reaktor-iOS-dummy.m */,
-				8D2667DE4B668769E33279AB77ABE96B /* Pods-Reaktor-iOS-resources.sh */,
-				1419EE020B147A922BB34A91609991BC /* Pods-Reaktor-iOS-umbrella.h */,
-				3B4CA096868E68DFA5CA27001F775900 /* Pods-Reaktor-iOS.debug.xcconfig */,
-				5C65D1E808BFD8D12F221B4F8625DF5E /* Pods-Reaktor-iOS.release.xcconfig */,
+				F7DA793BCF2F3B2D00766EF60267A6AC /* Info.plist */,
+				9A96CB5E13D1AFF07AA07B621066B3D2 /* Pods-Reaktor-macOSTests.modulemap */,
+				E5DAE9EEDCFD6D60EBA7F130B2B8E0B1 /* Pods-Reaktor-macOSTests-acknowledgements.markdown */,
+				09D62CD1FA8D43F56889794320C0672C /* Pods-Reaktor-macOSTests-acknowledgements.plist */,
+				2F90F78A3E7755A062FB7DDB431D3012 /* Pods-Reaktor-macOSTests-dummy.m */,
+				F20246E98A67C534F447B38351B7050A /* Pods-Reaktor-macOSTests-frameworks.sh */,
+				63300445E3D5A1B357DE6CC4949DB24D /* Pods-Reaktor-macOSTests-resources.sh */,
+				0EECAFCEF6948AE66E8D7450D882E8F8 /* Pods-Reaktor-macOSTests-umbrella.h */,
+				53FB4FC1535844A600F990F3E8202B99 /* Pods-Reaktor-macOSTests.debug.xcconfig */,
+				ECDA0DC5195B390881D789DF3902872B /* Pods-Reaktor-macOSTests.release.xcconfig */,
 			);
-			name = "Pods-Reaktor-iOS";
-			path = "Target Support Files/Pods-Reaktor-iOS";
-			sourceTree = "<group>";
-		};
-		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		36AF6F48F5A8212D365F7E9A9FA6A354 /* Pods-Reaktor-iOS-Reaktor-iOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				ED563DEA6341051600E94D72B3F14DCD /* Pods-Reaktor-iOS-Reaktor-iOSTests.modulemap */,
-				06F1B79FDEF755523478CA24D70D7A24 /* Pods-Reaktor-iOS-Reaktor-iOSTests-acknowledgements.markdown */,
-				A8DF2B411C711FD7DA2F6EB97BEA5A71 /* Pods-Reaktor-iOS-Reaktor-iOSTests-acknowledgements.plist */,
-				3FA45D49E85850833AABB34C8C1B9A20 /* Pods-Reaktor-iOS-Reaktor-iOSTests-dummy.m */,
-				76E04C652DB1FE0C9C11EDA0363BDB37 /* Pods-Reaktor-iOS-Reaktor-iOSTests-frameworks.sh */,
-				BC78D7BCFA309DD257A3B4010CA4140D /* Pods-Reaktor-iOS-Reaktor-iOSTests-resources.sh */,
-				119C28982FD34342BB4C77D379FE2DEA /* Pods-Reaktor-iOS-Reaktor-iOSTests-umbrella.h */,
-				5BC0F1F5F4B4AD52AB2906E3A8417A73 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */,
-				93FC9D9FE33D2D1D6531CD8F5FA0BB95 /* Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig */,
-			);
-			name = "Pods-Reaktor-iOS-Reaktor-iOSTests";
-			path = "Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests";
-			sourceTree = "<group>";
-		};
-		49AC7CBA8C71010E41B035EA500D90B5 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				078336774F674231FAD7E774F0044F25 /* Pods-Reaktor-iOS */,
-				36AF6F48F5A8212D365F7E9A9FA6A354 /* Pods-Reaktor-iOS-Reaktor-iOSTests */,
-				F3E680F22FA4636B2D857EA599A8E3F0 /* Pods-Reaktor-macOS */,
-				9A41D906EA835E1023FB205797893ECC /* Pods-Reaktor-macOS-Reaktor-macOSTests */,
-				D841A892F606A8FD53104D70FE3BD7A6 /* Pods-Reaktor-tvOS */,
-				BB81FFE3A9D375FDA6139F72085EE478 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests */,
-			);
-			name = "Targets Support Files";
+			name = "Pods-Reaktor-macOSTests";
+			path = "Target Support Files/Pods-Reaktor-macOSTests";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
+				E9474CE87C6AA9A851AEC24006206CAA /* Frameworks */,
 				B7A31F5D08E82DBBBE80262847E1F6BA /* Pods */,
-				F7DEC90CA26952C398F912A0C722901B /* Products */,
-				49AC7CBA8C71010E41B035EA500D90B5 /* Targets Support Files */,
+				A8245E3FDA4EBD9089B1EE95A6165852 /* Products */,
+				A5C5903DCB1E5F5414FBFBCA2B573D10 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		9A41D906EA835E1023FB205797893ECC /* Pods-Reaktor-macOS-Reaktor-macOSTests */ = {
+		A5C5903DCB1E5F5414FBFBCA2B573D10 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3C156B0B8F93127BE0E66957A3C8C8ED /* Pods-Reaktor-macOS-Reaktor-macOSTests.modulemap */,
-				B7B63E01B978BB462C9D8ECA9D9B2C05 /* Pods-Reaktor-macOS-Reaktor-macOSTests-acknowledgements.markdown */,
-				A9EB8BEDE9812149E3B90027D808298E /* Pods-Reaktor-macOS-Reaktor-macOSTests-acknowledgements.plist */,
-				1F086E2647750DF68B337A8C7A8065CB /* Pods-Reaktor-macOS-Reaktor-macOSTests-dummy.m */,
-				9D97E8DC000E7C54AFCB58293474D3B7 /* Pods-Reaktor-macOS-Reaktor-macOSTests-frameworks.sh */,
-				645272922031B6C10320C9F5C34C48F6 /* Pods-Reaktor-macOS-Reaktor-macOSTests-resources.sh */,
-				E210C11A6ED470E9D71AECE86FB92886 /* Pods-Reaktor-macOS-Reaktor-macOSTests-umbrella.h */,
-				2201FFE25CB8A26517B26FFB6AB4109F /* Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig */,
-				50EEC0AC842037A5265A4F84043542C1 /* Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig */,
+				C827F930C1378B9C8E56A92E05525515 /* Pods-Reaktor-iOS */,
+				3D532D37F4C1C320349BC2689C41E45F /* Pods-Reaktor-iOSTests */,
+				A967398B6AF9E80F1B06CEAD7FAEA611 /* Pods-Reaktor-macOS */,
+				75F2E7646127D9091228F21BDAAAF7FC /* Pods-Reaktor-macOSTests */,
+				B2923CC69CEE9AC9B038FA9C3D8C3D88 /* Pods-Reaktor-tvOS */,
+				1454A7829A00C5519E99251DF972ADB2 /* Pods-Reaktor-tvOSTests */,
 			);
-			name = "Pods-Reaktor-macOS-Reaktor-macOSTests";
-			path = "Target Support Files/Pods-Reaktor-macOS-Reaktor-macOSTests";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B7A31F5D08E82DBBBE80262847E1F6BA /* Pods */ = {
+		A8245E3FDA4EBD9089B1EE95A6165852 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				05984A9DC1FB7022DFC6BC0BEF5192C2 /* Delayed */,
+				554B34ABCEEC13F561902ABA96A25732 /* Delayed.framework */,
+				2A4D5B0FBCDF15961B93E6E47144FD82 /* Delayed.framework */,
+				E5A7C6EDD177B864D9811A93B1D0F2EA /* Delayed.framework */,
+				0D58B68D947899F0DF1B1E25A4D4DE97 /* Pods_Reaktor_iOS.framework */,
+				331FDA7765376463DC458F2B55627297 /* Pods_Reaktor_iOSTests.framework */,
+				E215A71A4D17600B1E10455E8B793FC7 /* Pods_Reaktor_macOS.framework */,
+				CDD4F6E0ACCF3DEB67E4DDC8CEA266C2 /* Pods_Reaktor_macOSTests.framework */,
+				59BBFE8974F1E602C9F8563C91117F01 /* Pods_Reaktor_tvOS.framework */,
+				0EA1F890B0B5E9423C6B4A10A24EAC43 /* Pods_Reaktor_tvOSTests.framework */,
 			);
-			name = Pods;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		BB81FFE3A9D375FDA6139F72085EE478 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests */ = {
+		A92424381BD60E468F098B2B23A5EECB /* OS X */ = {
 			isa = PBXGroup;
 			children = (
-				136D6BE4FAA0E3CB15D1DBA28AB376AF /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.modulemap */,
-				1E45F70CC5857AB76D87B8ED07F13CA9 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-acknowledgements.markdown */,
-				7D991AE5AC8167E23D04A6508B3924AC /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-acknowledgements.plist */,
-				BFFB337027B3F616968F770090E3565B /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-dummy.m */,
-				4121F67D0D21E02F717808F511369152 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-frameworks.sh */,
-				5D5AE26474860AE1051506C910F61298 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-resources.sh */,
-				5BE3A9D5EFED3887F21ED638A387B085 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-umbrella.h */,
-				8C48C68D95CDA42C5B0F1A4A10E080DE /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig */,
-				B91E481A5110958B1B90DF6717A41D5A /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig */,
+				48233FC070FA1CADC1C3A92C3D3948A1 /* Cocoa.framework */,
 			);
-			name = "Pods-Reaktor-tvOS-Reaktor-tvOSTests";
-			path = "Target Support Files/Pods-Reaktor-tvOS-Reaktor-tvOSTests";
+			name = "OS X";
 			sourceTree = "<group>";
 		};
-		D841A892F606A8FD53104D70FE3BD7A6 /* Pods-Reaktor-tvOS */ = {
+		A967398B6AF9E80F1B06CEAD7FAEA611 /* Pods-Reaktor-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				8C8812914ADEBBD5FB0A45DFECD20B4B /* Pods-Reaktor-tvOS.modulemap */,
-				6E5FF5CF9DA949E6C6773EC55D1D9E30 /* Pods-Reaktor-tvOS-acknowledgements.markdown */,
-				F7E54FA4337CF3E3DD9DE1773450021D /* Pods-Reaktor-tvOS-acknowledgements.plist */,
-				9F1EBB9A964ACA3F760D57FC5B92746F /* Pods-Reaktor-tvOS-dummy.m */,
-				C3C248963A3621D74D507D9AC15CAE44 /* Pods-Reaktor-tvOS-resources.sh */,
-				25FCAE90B70229EA69D66B500D10969B /* Pods-Reaktor-tvOS-umbrella.h */,
-				0DBE81E8B8C4A8EAC449C237F71D4802 /* Pods-Reaktor-tvOS.debug.xcconfig */,
-				7761AE234564BD74FA82F93C7D513676 /* Pods-Reaktor-tvOS.release.xcconfig */,
-			);
-			name = "Pods-Reaktor-tvOS";
-			path = "Target Support Files/Pods-Reaktor-tvOS";
-			sourceTree = "<group>";
-		};
-		E7B0AB0A13AEE209F097EC37B5812FB9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0C46315771FFBD927F0A9D27A72AAC47 /* Delayed-iOS.modulemap */,
-				497F3DFCA1BBA02A69CB8081BE589BF7 /* Delayed-iOS.xcconfig */,
-				7606A4A72143F9C9D336A12FA35CAD73 /* Delayed-iOS-dummy.m */,
-				2A939C4305FA087811B4D3551D098C07 /* Delayed-iOS-prefix.pch */,
-				F83E6818DDAB09745F9308561F47A5AB /* Delayed-iOS-umbrella.h */,
-				95D76B476203E2B7B84EB92690A746A3 /* Delayed-macOS.modulemap */,
-				133DC00C2ABC720C2C148B52932DEBEA /* Delayed-macOS.xcconfig */,
-				B96BD1B5EA7DD6BA1B9623FE139416DD /* Delayed-macOS-dummy.m */,
-				832FAC6D54B556ADEBB0AA7F5975F018 /* Delayed-macOS-prefix.pch */,
-				6606138268FF01C1157CE55A590C5F5B /* Delayed-macOS-umbrella.h */,
-				674739E56F17515931B7B2A9CC71C374 /* Delayed-tvOS.modulemap */,
-				170F2FCB716FAB1A44E821D42D6261BB /* Delayed-tvOS.xcconfig */,
-				B7EED23CCDCACA03AE6BF9B5727E25EA /* Delayed-tvOS-dummy.m */,
-				0AB8AF9517C5867E560C10E14045D73F /* Delayed-tvOS-prefix.pch */,
-				5311FCC9966A80A536F39CBD2E99F05B /* Delayed-tvOS-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Delayed-iOS";
-			sourceTree = "<group>";
-		};
-		F3E680F22FA4636B2D857EA599A8E3F0 /* Pods-Reaktor-macOS */ = {
-			isa = PBXGroup;
-			children = (
-				389D99CE51CABAD51FCD86D72CA85F4F /* Pods-Reaktor-macOS.modulemap */,
-				F862530BD6F4AFF4E9310793E9D14009 /* Pods-Reaktor-macOS-acknowledgements.markdown */,
-				5DD511223BFAA16429A3755E289956A9 /* Pods-Reaktor-macOS-acknowledgements.plist */,
-				1789A3BD1088DF0937A72259A8392589 /* Pods-Reaktor-macOS-dummy.m */,
-				0F8FFFB4DDA423D377FF0483A7693486 /* Pods-Reaktor-macOS-resources.sh */,
-				2DFCC1A544450CA42340F9B9717FFD31 /* Pods-Reaktor-macOS-umbrella.h */,
-				3A09BC5F520C8C5C1BE9C0F9640D33AF /* Pods-Reaktor-macOS.debug.xcconfig */,
-				EFF5FE4D11E3E71B9B035F5CB3A14DE4 /* Pods-Reaktor-macOS.release.xcconfig */,
+				61F00F7E80ECDCF62EF2340E0B702EFE /* Info.plist */,
+				50F0A561E875C28738DCEDC16C0B1017 /* Pods-Reaktor-macOS.modulemap */,
+				3937ECA368271088389A8E90C01D39FA /* Pods-Reaktor-macOS-acknowledgements.markdown */,
+				1F60F657A05D710CB0A30966158C927E /* Pods-Reaktor-macOS-acknowledgements.plist */,
+				5C0E622559DED05FA13C39A430B49989 /* Pods-Reaktor-macOS-dummy.m */,
+				5D5EE698AA31340C36548AE35B0E942E /* Pods-Reaktor-macOS-resources.sh */,
+				64C75549FB449F13AC462B5689409AD9 /* Pods-Reaktor-macOS-umbrella.h */,
+				1F07B52FEC2EAAAE3A15D7C2B01D11B6 /* Pods-Reaktor-macOS.debug.xcconfig */,
+				8B2009FFB282317D94F71ADEA68793A5 /* Pods-Reaktor-macOS.release.xcconfig */,
 			);
 			name = "Pods-Reaktor-macOS";
 			path = "Target Support Files/Pods-Reaktor-macOS";
 			sourceTree = "<group>";
 		};
-		F7DEC90CA26952C398F912A0C722901B /* Products */ = {
+		B2923CC69CEE9AC9B038FA9C3D8C3D88 /* Pods-Reaktor-tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				569BADA5ED978F3402E21E58820CC659 /* libDelayed-iOS.a */,
-				CD04E476E370F71445078DC30D2AA297 /* libDelayed-macOS.a */,
-				2226768E19C6F5843A1C3E5CD8066734 /* libDelayed-tvOS.a */,
-				2A0CA042FB6C925C4D0333BEC66A7C7E /* libPods-Reaktor-iOS.a */,
-				80520CAB23F7D3638266523E074825E7 /* libPods-Reaktor-iOS-Reaktor-iOSTests.a */,
-				E270DFEC77CDFCE1FEEA114F51962521 /* libPods-Reaktor-macOS.a */,
-				546B99DB674D901F5010E6A138A11217 /* libPods-Reaktor-macOS-Reaktor-macOSTests.a */,
-				C5FD80D94EF022F54226450D1CADDBB7 /* libPods-Reaktor-tvOS.a */,
-				DF0AFF2521DC54B6848BCB56C72FFD60 /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */,
+				214C8C5797C0276B351AFAC25CADA9C3 /* Info.plist */,
+				11BF487FCB26B5A389CF239AE0541945 /* Pods-Reaktor-tvOS.modulemap */,
+				62850D6FD4227CB10CE2A76B0F1E346E /* Pods-Reaktor-tvOS-acknowledgements.markdown */,
+				526CFD1424AAA44426B0F347D7100FE8 /* Pods-Reaktor-tvOS-acknowledgements.plist */,
+				51A089E8764AF8ED1ECD76073703A2EC /* Pods-Reaktor-tvOS-dummy.m */,
+				69A93F652C737F7C26402EF7589F9A80 /* Pods-Reaktor-tvOS-resources.sh */,
+				A3EA7EF12F0685FAC9AF6E6614C0B9FE /* Pods-Reaktor-tvOS-umbrella.h */,
+				3455F88A680510B4531DD3996020874A /* Pods-Reaktor-tvOS.debug.xcconfig */,
+				DFE29443BDE79B938F950EB197CD0C50 /* Pods-Reaktor-tvOS.release.xcconfig */,
 			);
-			name = Products;
+			name = "Pods-Reaktor-tvOS";
+			path = "Target Support Files/Pods-Reaktor-tvOS";
+			sourceTree = "<group>";
+		};
+		B4E5527EF294F9F1D7643CEB40AEDAC8 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				4CC0E9850E102760A0993631966EBEDF /* Foundation.framework */,
+			);
+			name = tvOS;
+			sourceTree = "<group>";
+		};
+		B7A31F5D08E82DBBBE80262847E1F6BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B53BC1AF1780F22D4AC8ADC3B1068B0 /* Delayed */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B90266215DE614AD366764DFCF072D6D /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				431D334C455E16522AD0E41506C7B4D1 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C827F930C1378B9C8E56A92E05525515 /* Pods-Reaktor-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C9589753D090D3D7D813E7A726C997A3 /* Info.plist */,
+				85A3BB50A4E7D3F0F2AD687E0C5B7063 /* Pods-Reaktor-iOS.modulemap */,
+				686A3857B661B08C74C3179A02EA7814 /* Pods-Reaktor-iOS-acknowledgements.markdown */,
+				3B86721B10F672AE21E4423832FF7DBF /* Pods-Reaktor-iOS-acknowledgements.plist */,
+				9396AFBDFD3EB7E249F90BA98731E913 /* Pods-Reaktor-iOS-dummy.m */,
+				37CDCFA766E279545C66B3F1A1FE8B97 /* Pods-Reaktor-iOS-resources.sh */,
+				54272020DB58EDC8D4FC71CA51B1F644 /* Pods-Reaktor-iOS-umbrella.h */,
+				2BCB0DB5A8BFB42A0B5920D64ED15A4F /* Pods-Reaktor-iOS.debug.xcconfig */,
+				296167318051D931D232676AF6E82827 /* Pods-Reaktor-iOS.release.xcconfig */,
+			);
+			name = "Pods-Reaktor-iOS";
+			path = "Target Support Files/Pods-Reaktor-iOS";
+			sourceTree = "<group>";
+		};
+		E9474CE87C6AA9A851AEC24006206CAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B90266215DE614AD366764DFCF072D6D /* iOS */,
+				A92424381BD60E468F098B2B23A5EECB /* OS X */,
+				B4E5527EF294F9F1D7643CEB40AEDAC8 /* tvOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		01FAA314DED84490FCF73A672CCF9E94 /* Headers */ = {
+		17D67C5AB7BDFDA6AEB9AD5AEF1BA57F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6CD6E9CD7A0FCE189FA92075640EB1F /* Pods-Reaktor-macOS-Reaktor-macOSTests-umbrella.h in Headers */,
+				9E281D90594C5A6B9FE90DC43FFFF489 /* Delayed-tvOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		22B7ABF08D17096B77309A010E48950A /* Headers */ = {
+		2F170D4BE1FCEE5E176A15D5412516A2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B6B6E7E68532527ECC5330E0475E227 /* Pods-Reaktor-iOS-Reaktor-iOSTests-umbrella.h in Headers */,
+				878B829BBA6FCC309F8481D7470D474B /* Pods-Reaktor-tvOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4664C11138DF149A2E5C825B07D6BD0A /* Headers */ = {
+		32C59C6A4D668B700ED5B5584A259687 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD72AB5CF69B48F81D362086276EBEF2 /* Pods-Reaktor-macOS-umbrella.h in Headers */,
+				629D62811DE01F85D55E0D6166CF1934 /* Pods-Reaktor-iOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6EEDCF8C1D80553566E24BF8E0CEA6B4 /* Headers */ = {
+		39C49501C2A6BA21D584006525E083E6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80909EB787BA36CD3B37E38FE0DEBE3D /* Delayed-iOS-umbrella.h in Headers */,
+				699441330B75D1F7E2E1B641D1B64150 /* Pods-Reaktor-macOSTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		887DC439EDABF0992916D702B29889DF /* Headers */ = {
+		7F6561F2C9144D6DCBE7C99CCFD42AF8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				531057EBDB41B2F751CC87934E366C5D /* Pods-Reaktor-iOS-umbrella.h in Headers */,
+				F4B6C7EEDAFB683D5A7D5076B54E4C16 /* Pods-Reaktor-macOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4A6457EABDEC042E001C989B7CC604B /* Headers */ = {
+		A5086893B55811F7B365446D8B33C316 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B759C07D0373639999E2534A27546C4 /* Delayed-macOS-umbrella.h in Headers */,
+				8BDA309F2A8A098A3BACAC64D52A8120 /* Delayed-iOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9C1957D126B0C4888B0FDD0E313583C /* Headers */ = {
+		DBF5EB78135AF34ED648E7901ABC0BE3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C64A724C89C6F374C57338E689194BD9 /* Pods-Reaktor-tvOS-umbrella.h in Headers */,
+				E6C8A830A8D6F89AF6B7422055B81A2A /* Pods-Reaktor-iOSTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D6979D71EFD954861EBB8CAF44E0DCC1 /* Headers */ = {
+		EBD595241478A79EB026D9ADD407F072 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7CA6F4242045636188099C1A943295A /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-umbrella.h in Headers */,
+				787267F4345A1ACCE0273B56D9FE7027 /* Pods-Reaktor-tvOSTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DEFFE50944A2BAE1230E48A3AA49511F /* Headers */ = {
+		ED01A9D95833F0D5B0C4ACB2D02E96A6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F5AEF66D8804704DD79D07AADF08C97 /* Delayed-tvOS-umbrella.h in Headers */,
+				43A7CAAB6513AC2B41A678604777AD83 /* Delayed-macOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		452B5FAD46104C67B8BFC1285399A65A /* Pods-Reaktor-macOS-Reaktor-macOSTests */ = {
+		3A32B454E82CEBF4B58BF538FB811F37 /* Delayed-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A4227CC4DE8D62A58622F6ED689AC3F5 /* Build configuration list for PBXNativeTarget "Pods-Reaktor-macOS-Reaktor-macOSTests" */;
+			buildConfigurationList = D8D33E67C6E107995D1339BA36B2FE14 /* Build configuration list for PBXNativeTarget "Delayed-tvOS" */;
 			buildPhases = (
-				01FAA314DED84490FCF73A672CCF9E94 /* Headers */,
-				E3D58513AE65BC331412BA5013D8D6B0 /* Sources */,
-				87C116F20B2B8D3888A290368B806D81 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				00003E637CA4D9906EDB2F5A20843290 /* PBXTargetDependency */,
-			);
-			name = "Pods-Reaktor-macOS-Reaktor-macOSTests";
-			productName = "Pods-Reaktor-macOS-Reaktor-macOSTests";
-			productReference = 546B99DB674D901F5010E6A138A11217 /* libPods-Reaktor-macOS-Reaktor-macOSTests.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		4533A99815EF60F50AB34290FA228D3E /* Pods-Reaktor-iOS-Reaktor-iOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E676149E65569493F9444214335BECD2 /* Build configuration list for PBXNativeTarget "Pods-Reaktor-iOS-Reaktor-iOSTests" */;
-			buildPhases = (
-				22B7ABF08D17096B77309A010E48950A /* Headers */,
-				4E0C0CB0848A787357013B24A5CAA590 /* Sources */,
-				D3C82E5646D6440A7886E38209CB7530 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DA08869A45C198A084235EA6C92DD0D3 /* PBXTargetDependency */,
-			);
-			name = "Pods-Reaktor-iOS-Reaktor-iOSTests";
-			productName = "Pods-Reaktor-iOS-Reaktor-iOSTests";
-			productReference = 80520CAB23F7D3638266523E074825E7 /* libPods-Reaktor-iOS-Reaktor-iOSTests.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		807714CCC3A46665EE73CD747737A456 /* Delayed-macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C95829820BE2CCB97948731A7F72A8D7 /* Build configuration list for PBXNativeTarget "Delayed-macOS" */;
-			buildPhases = (
-				A4A6457EABDEC042E001C989B7CC604B /* Headers */,
-				6AB97E5D33E8188B61FC7CAC703F785A /* Sources */,
-				FC729AC80D5A19E42E41899E3321A2E2 /* Frameworks */,
-				058D3DEF586B5B39AD12AC493C3B0236 /* Copy generated compatibility header */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Delayed-macOS";
-			productName = "Delayed-macOS";
-			productReference = CD04E476E370F71445078DC30D2AA297 /* libDelayed-macOS.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		8C803340DAD84ADB2DC5F447F285730D /* Pods-Reaktor-tvOS-Reaktor-tvOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E2585DB16E290C90B168D0FAD3BDDDED /* Build configuration list for PBXNativeTarget "Pods-Reaktor-tvOS-Reaktor-tvOSTests" */;
-			buildPhases = (
-				D6979D71EFD954861EBB8CAF44E0DCC1 /* Headers */,
-				0C97A7AE1D887C304E625FCC7DBF7AD4 /* Sources */,
-				57C529B753E0D6AC526FDF4805FE325E /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2A7EF4C4ECC753BF8C19190D785A81DA /* PBXTargetDependency */,
-			);
-			name = "Pods-Reaktor-tvOS-Reaktor-tvOSTests";
-			productName = "Pods-Reaktor-tvOS-Reaktor-tvOSTests";
-			productReference = DF0AFF2521DC54B6848BCB56C72FFD60 /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		D809A1F8F8FBD970DE9E1F5C5D095D4B /* Pods-Reaktor-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 25A800AEFE7C9DBD2E870920875BA61E /* Build configuration list for PBXNativeTarget "Pods-Reaktor-iOS" */;
-			buildPhases = (
-				887DC439EDABF0992916D702B29889DF /* Headers */,
-				56D54811509BAD24AEA3F2301C67C2E2 /* Sources */,
-				F8FBE8837ED17C97CE70A892E5380D82 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A359EF85CD0714D917D5A935569831B5 /* PBXTargetDependency */,
-			);
-			name = "Pods-Reaktor-iOS";
-			productName = "Pods-Reaktor-iOS";
-			productReference = 2A0CA042FB6C925C4D0333BEC66A7C7E /* libPods-Reaktor-iOS.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		E08B34A76E0BF1816B8F83C0E34E1235 /* Pods-Reaktor-tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3B5F7B6B133F0B8241F6B13F96A890BD /* Build configuration list for PBXNativeTarget "Pods-Reaktor-tvOS" */;
-			buildPhases = (
-				A9C1957D126B0C4888B0FDD0E313583C /* Headers */,
-				7F427CB1A52C4CCE3EE471CF085ECB46 /* Sources */,
-				BBCD1E78483DD1D90132907F329C97AD /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AAF6D2DEC93CFA9A31D1CCD9992A10E8 /* PBXTargetDependency */,
-			);
-			name = "Pods-Reaktor-tvOS";
-			productName = "Pods-Reaktor-tvOS";
-			productReference = C5FD80D94EF022F54226450D1CADDBB7 /* libPods-Reaktor-tvOS.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		E780087AFF2E163DCBE31753754DE7A0 /* Delayed-tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 00B46C2312841C6953D7BA69FBD95E6B /* Build configuration list for PBXNativeTarget "Delayed-tvOS" */;
-			buildPhases = (
-				DEFFE50944A2BAE1230E48A3AA49511F /* Headers */,
-				8F26FF09B6ABEF8D89C24AF137AFBBFE /* Sources */,
-				AAACAE7EDD1EEC3F97F569BE98621EA0 /* Frameworks */,
-				C52885C5ACE9594198EB0FF8F072582E /* Copy generated compatibility header */,
+				17D67C5AB7BDFDA6AEB9AD5AEF1BA57F /* Headers */,
+				22AA9230037F9DFE19F182C04AFD3A9B /* Sources */,
+				53A7DBF5335A3D27DF746F8E5FE639D6 /* Frameworks */,
+				724BBC2E47C214FEDCF6DE0511D4799C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -615,17 +594,133 @@
 			);
 			name = "Delayed-tvOS";
 			productName = "Delayed-tvOS";
-			productReference = 2226768E19C6F5843A1C3E5CD8066734 /* libDelayed-tvOS.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = E5A7C6EDD177B864D9811A93B1D0F2EA /* Delayed.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		F58DCA11D9FA390A97B6F1D88D705530 /* Delayed-iOS */ = {
+		48ACE0ADF48C4C8E1ED511AF5A71454D /* Delayed-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD408434262C3609BB870BE3736749CA /* Build configuration list for PBXNativeTarget "Delayed-iOS" */;
+			buildConfigurationList = 5EB46A4C780421987DB7AB0E6D74A8AF /* Build configuration list for PBXNativeTarget "Delayed-macOS" */;
 			buildPhases = (
-				6EEDCF8C1D80553566E24BF8E0CEA6B4 /* Headers */,
-				5329A739B0A19794A0D26C3295C8ABE5 /* Sources */,
-				2FCC8CD9B09654166A8619CDF7167A3D /* Frameworks */,
-				D248BB2CE2E536975363125D8E26832F /* Copy generated compatibility header */,
+				ED01A9D95833F0D5B0C4ACB2D02E96A6 /* Headers */,
+				1C2A0D76E3AB2239D0CC8EE0531B804D /* Sources */,
+				E37663A72627042033BD0E692173C403 /* Frameworks */,
+				97C5AA03CF813379144121C37DBB1FAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Delayed-macOS";
+			productName = "Delayed-macOS";
+			productReference = 2A4D5B0FBCDF15961B93E6E47144FD82 /* Delayed.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		51EA2D0959D5797CE78A1FB9C688595C /* Pods-Reaktor-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75D63178E3B0391F3CC9EBDE31494378 /* Build configuration list for PBXNativeTarget "Pods-Reaktor-iOS" */;
+			buildPhases = (
+				32C59C6A4D668B700ED5B5584A259687 /* Headers */,
+				9D73A7411BEBC08E984F4273963E6DF7 /* Sources */,
+				6FFEE733D7CAF792C1E401159A4AC552 /* Frameworks */,
+				6437D41A420302452B8160FFE5D42536 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3F1C5569710B478EEB44515E9B0E088 /* PBXTargetDependency */,
+			);
+			name = "Pods-Reaktor-iOS";
+			productName = "Pods-Reaktor-iOS";
+			productReference = 0D58B68D947899F0DF1B1E25A4D4DE97 /* Pods_Reaktor_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7416C8C1D25BD73A340384BB57415367 /* Pods-Reaktor-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8F9F09436A9BF68B346E075A9DB1783 /* Build configuration list for PBXNativeTarget "Pods-Reaktor-tvOSTests" */;
+			buildPhases = (
+				EBD595241478A79EB026D9ADD407F072 /* Headers */,
+				DBCDBECB7CA1E52C2090182C474EF227 /* Sources */,
+				79B3235B1D97F7DE7F90F0A80F829EC7 /* Frameworks */,
+				627818475D8BFCAF8954A566E3188967 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E69A64186C61476453FCFAEC8B2A801B /* PBXTargetDependency */,
+				C60BFB7781C29B4626FB5966C80E0E94 /* PBXTargetDependency */,
+			);
+			name = "Pods-Reaktor-tvOSTests";
+			productName = "Pods-Reaktor-tvOSTests";
+			productReference = 0EA1F890B0B5E9423C6B4A10A24EAC43 /* Pods_Reaktor_tvOSTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8547A5029CF7DEDC7706CAA30DB2A82A /* Pods-Reaktor-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A347B87368E341507AA12FEEA78F4343 /* Build configuration list for PBXNativeTarget "Pods-Reaktor-macOS" */;
+			buildPhases = (
+				7F6561F2C9144D6DCBE7C99CCFD42AF8 /* Headers */,
+				4FE5EEABCD268ADCCC2E9F7A3FE7C559 /* Sources */,
+				9BA704D58EC974A3241B1BFA27B75E86 /* Frameworks */,
+				D0FB5DE262CA2082CAFFB8B6E6D7FB76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52599A5861DFBC26E5A6EA2BA4B380EB /* PBXTargetDependency */,
+			);
+			name = "Pods-Reaktor-macOS";
+			productName = "Pods-Reaktor-macOS";
+			productReference = E215A71A4D17600B1E10455E8B793FC7 /* Pods_Reaktor_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AFDA35BF6689EC86C35C51E09C8E8CF2 /* Pods-Reaktor-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49DC167CDAEF0C9193C8C121B536358E /* Build configuration list for PBXNativeTarget "Pods-Reaktor-iOSTests" */;
+			buildPhases = (
+				DBF5EB78135AF34ED648E7901ABC0BE3 /* Headers */,
+				2E16CDBDC72CC97FD968ECCA0A604BC9 /* Sources */,
+				41874AD52096534280B2A848473DCEAE /* Frameworks */,
+				87857E06C49D4EA75615013EE112AF7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D1248CB2ADFDC731C4A8E00B27251A2 /* PBXTargetDependency */,
+				A2D3575E5F6C629CEFD8B04139EAFFE5 /* PBXTargetDependency */,
+			);
+			name = "Pods-Reaktor-iOSTests";
+			productName = "Pods-Reaktor-iOSTests";
+			productReference = 331FDA7765376463DC458F2B55627297 /* Pods_Reaktor_iOSTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C180F537C967BC6BB858E3B79B3099E2 /* Pods-Reaktor-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40FD54E091F83DA8AEF6B00029C8CDF4 /* Build configuration list for PBXNativeTarget "Pods-Reaktor-macOSTests" */;
+			buildPhases = (
+				39C49501C2A6BA21D584006525E083E6 /* Headers */,
+				71B6AE6039D4EB004C7C8018F3BA66F5 /* Sources */,
+				FAA4968B81C8E7210955BFB1D52B7968 /* Frameworks */,
+				EB479E66CE53EC0961982635665E59E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11E988C279908C974DD2D8B13EDA0B37 /* PBXTargetDependency */,
+				F21B317DD52EF286B544B19A29AF2614 /* PBXTargetDependency */,
+			);
+			name = "Pods-Reaktor-macOSTests";
+			productName = "Pods-Reaktor-macOSTests";
+			productReference = CDD4F6E0ACCF3DEB67E4DDC8CEA266C2 /* Pods_Reaktor_macOSTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C8474222CC14100747B4CD9E15BEAC6C /* Delayed-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 156473D41F6B8D7F87BFC3CAD7374E0A /* Build configuration list for PBXNativeTarget "Delayed-iOS" */;
+			buildPhases = (
+				A5086893B55811F7B365446D8B33C316 /* Headers */,
+				A0A722148A50983126DBC774635EA5E1 /* Sources */,
+				77CECD1AB4BF1D6C4093D49D8B8A1694 /* Frameworks */,
+				52CD42BA4E959B2E29265F48C6347EAE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -633,26 +728,27 @@
 			);
 			name = "Delayed-iOS";
 			productName = "Delayed-iOS";
-			productReference = 569BADA5ED978F3402E21E58820CC659 /* libDelayed-iOS.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 554B34ABCEEC13F561902ABA96A25732 /* Delayed.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		F5F23C80569B0B7C79F5FAB51C732A22 /* Pods-Reaktor-macOS */ = {
+		ED834CF7A55F29ACF218A3F09DBDD38E /* Pods-Reaktor-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C66A8CD1FCB26D58C7D530B899B3A7E /* Build configuration list for PBXNativeTarget "Pods-Reaktor-macOS" */;
+			buildConfigurationList = A4E607F2A5C6BE4D20905E5E26F2256A /* Build configuration list for PBXNativeTarget "Pods-Reaktor-tvOS" */;
 			buildPhases = (
-				4664C11138DF149A2E5C825B07D6BD0A /* Headers */,
-				78EC2405DC7280701CB1BDA30E67B6E6 /* Sources */,
-				AB86235C9CEFFABFA0F803AFCE365E19 /* Frameworks */,
+				2F170D4BE1FCEE5E176A15D5412516A2 /* Headers */,
+				5E8C00067BFDDB0233C9BAD0096C1C16 /* Sources */,
+				E16E86D146AF27E8F93D32D2312D02DF /* Frameworks */,
+				A44846221617FF44E0DDCAE0C8898104 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4D34805E72FF77F367189E13F14526CF /* PBXTargetDependency */,
+				90368891E9B3AB796E9BF2F4EC82D0E4 /* PBXTargetDependency */,
 			);
-			name = "Pods-Reaktor-macOS";
-			productName = "Pods-Reaktor-macOS";
-			productReference = E270DFEC77CDFCE1FEEA114F51962521 /* libPods-Reaktor-macOS.a */;
-			productType = "com.apple.product-type.library.static";
+			name = "Pods-Reaktor-tvOS";
+			productName = "Pods-Reaktor-tvOS";
+			productReference = 59BBFE8974F1E602C9F8563C91117F01 /* Pods_Reaktor_tvOS.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -671,272 +767,345 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = F7DEC90CA26952C398F912A0C722901B /* Products */;
+			productRefGroup = A8245E3FDA4EBD9089B1EE95A6165852 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F58DCA11D9FA390A97B6F1D88D705530 /* Delayed-iOS */,
-				807714CCC3A46665EE73CD747737A456 /* Delayed-macOS */,
-				E780087AFF2E163DCBE31753754DE7A0 /* Delayed-tvOS */,
-				D809A1F8F8FBD970DE9E1F5C5D095D4B /* Pods-Reaktor-iOS */,
-				4533A99815EF60F50AB34290FA228D3E /* Pods-Reaktor-iOS-Reaktor-iOSTests */,
-				F5F23C80569B0B7C79F5FAB51C732A22 /* Pods-Reaktor-macOS */,
-				452B5FAD46104C67B8BFC1285399A65A /* Pods-Reaktor-macOS-Reaktor-macOSTests */,
-				E08B34A76E0BF1816B8F83C0E34E1235 /* Pods-Reaktor-tvOS */,
-				8C803340DAD84ADB2DC5F447F285730D /* Pods-Reaktor-tvOS-Reaktor-tvOSTests */,
+				C8474222CC14100747B4CD9E15BEAC6C /* Delayed-iOS */,
+				48ACE0ADF48C4C8E1ED511AF5A71454D /* Delayed-macOS */,
+				3A32B454E82CEBF4B58BF538FB811F37 /* Delayed-tvOS */,
+				51EA2D0959D5797CE78A1FB9C688595C /* Pods-Reaktor-iOS */,
+				AFDA35BF6689EC86C35C51E09C8E8CF2 /* Pods-Reaktor-iOSTests */,
+				8547A5029CF7DEDC7706CAA30DB2A82A /* Pods-Reaktor-macOS */,
+				C180F537C967BC6BB858E3B79B3099E2 /* Pods-Reaktor-macOSTests */,
+				ED834CF7A55F29ACF218A3F09DBDD38E /* Pods-Reaktor-tvOS */,
+				7416C8C1D25BD73A340384BB57415367 /* Pods-Reaktor-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		058D3DEF586B5B39AD12AC493C3B0236 /* Copy generated compatibility header */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		52CD42BA4E959B2E29265F48C6347EAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
-				"${PODS_ROOT}/Headers/Public/Delayed/Delayed-macOS.modulemap",
-				"${PODS_ROOT}/Headers/Public/Delayed/Delayed-macOS-umbrella.h",
-			);
-			name = "Copy generated compatibility header";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
-				"${BUILT_PRODUCTS_DIR}/Delayed-macOS-umbrella.h",
-				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
-			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Delayed/Delayed-macOS.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Delayed/Delayed-macOS-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-			showEnvVarsInLog = 1;
 		};
-		C52885C5ACE9594198EB0FF8F072582E /* Copy generated compatibility header */ = {
-			isa = PBXShellScriptBuildPhase;
+		627818475D8BFCAF8954A566E3188967 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
-				"${PODS_ROOT}/Headers/Public/Delayed/Delayed-tvOS.modulemap",
-				"${PODS_ROOT}/Headers/Public/Delayed/Delayed-tvOS-umbrella.h",
-			);
-			name = "Copy generated compatibility header";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
-				"${BUILT_PRODUCTS_DIR}/Delayed-tvOS-umbrella.h",
-				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
-			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Delayed/Delayed-tvOS.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Delayed/Delayed-tvOS-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-			showEnvVarsInLog = 1;
 		};
-		D248BB2CE2E536975363125D8E26832F /* Copy generated compatibility header */ = {
-			isa = PBXShellScriptBuildPhase;
+		6437D41A420302452B8160FFE5D42536 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
-				"${PODS_ROOT}/Headers/Public/Delayed/Delayed-iOS.modulemap",
-				"${PODS_ROOT}/Headers/Public/Delayed/Delayed-iOS-umbrella.h",
-			);
-			name = "Copy generated compatibility header";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
-				"${BUILT_PRODUCTS_DIR}/Delayed-iOS-umbrella.h",
-				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		724BBC2E47C214FEDCF6DE0511D4799C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Delayed/Delayed-iOS.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Delayed/Delayed-iOS-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-			showEnvVarsInLog = 1;
 		};
-/* End PBXShellScriptBuildPhase section */
+		87857E06C49D4EA75615013EE112AF7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97C5AA03CF813379144121C37DBB1FAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A44846221617FF44E0DDCAE0C8898104 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0FB5DE262CA2082CAFFB8B6E6D7FB76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB479E66CE53EC0961982635665E59E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0C97A7AE1D887C304E625FCC7DBF7AD4 /* Sources */ = {
+		1C2A0D76E3AB2239D0CC8EE0531B804D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34ABE52ADC666FE3E9DD5FEB1BD3C3C8 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests-dummy.m in Sources */,
+				D93C610693267972E605A8A892D2229C /* Delayed-macOS-dummy.m in Sources */,
+				DEDDFC14204BB969B3F98AADE6B957B3 /* Kron.swift in Sources */,
+				38E5C923475946127FA186CEE5FEBC56 /* KronAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4E0C0CB0848A787357013B24A5CAA590 /* Sources */ = {
+		22AA9230037F9DFE19F182C04AFD3A9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BEE8C39D6D06A53B20B7427F516BB63 /* Pods-Reaktor-iOS-Reaktor-iOSTests-dummy.m in Sources */,
+				D18F9D8293A8051393F2F92ABAAD6EEF /* Delayed-tvOS-dummy.m in Sources */,
+				BCBC13A0727FF279906DC332A5678CBF /* Kron.swift in Sources */,
+				CBBE8E04A075736A604BD08982DC8F21 /* KronAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5329A739B0A19794A0D26C3295C8ABE5 /* Sources */ = {
+		2E16CDBDC72CC97FD968ECCA0A604BC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A56AD2187CD1C71C84C6E4E6A711855 /* Delayed-iOS-dummy.m in Sources */,
-				BA06453ECA516059BA6ADA778F3EC014 /* Kron.swift in Sources */,
-				5A9C41F4AD7922961EF8C23D6326AF5A /* KronAPI.swift in Sources */,
+				3273B56D24FE3AAE2FB98987A2A15BD1 /* Pods-Reaktor-iOSTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56D54811509BAD24AEA3F2301C67C2E2 /* Sources */ = {
+		4FE5EEABCD268ADCCC2E9F7A3FE7C559 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2F4E49926BBBAC659CD20B60E0A9AFC /* Pods-Reaktor-iOS-dummy.m in Sources */,
+				B2CDCA6C46BC74161E5950C74FCF3467 /* Pods-Reaktor-macOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6AB97E5D33E8188B61FC7CAC703F785A /* Sources */ = {
+		5E8C00067BFDDB0233C9BAD0096C1C16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECBE9D17FCE070E995C9B243FC3807F /* Delayed-macOS-dummy.m in Sources */,
-				A7E9A87B65B3537746F80FEE38E8D20D /* Kron.swift in Sources */,
-				7DFF12DAB3CCCAECDFE886D3F4B0F673 /* KronAPI.swift in Sources */,
+				22BEC901A2FE78C53FAA8E89E1EF8B4D /* Pods-Reaktor-tvOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		78EC2405DC7280701CB1BDA30E67B6E6 /* Sources */ = {
+		71B6AE6039D4EB004C7C8018F3BA66F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03E88A018945B826612820FE78274B30 /* Pods-Reaktor-macOS-dummy.m in Sources */,
+				89FC861E133F441E1F6F10F92DCEB700 /* Pods-Reaktor-macOSTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F427CB1A52C4CCE3EE471CF085ECB46 /* Sources */ = {
+		9D73A7411BEBC08E984F4273963E6DF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C4BD6415A9AAA16F9DD665F0D23356F /* Pods-Reaktor-tvOS-dummy.m in Sources */,
+				F7ACAFBAC9E191D2019E8DCF1D22F7D3 /* Pods-Reaktor-iOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F26FF09B6ABEF8D89C24AF137AFBBFE /* Sources */ = {
+		A0A722148A50983126DBC774635EA5E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9E50CAA2B6041B15D6B4BCEBC7AAC7E /* Delayed-tvOS-dummy.m in Sources */,
-				F1CAB170DABE0235AE01EE1AEB637CA4 /* Kron.swift in Sources */,
-				EA4C998189125A0082AB123589632C4A /* KronAPI.swift in Sources */,
+				856D4011D2555ECF13D77A4BF9AC3F42 /* Delayed-iOS-dummy.m in Sources */,
+				2B36C3F351131A764CA3A7F788B33957 /* Kron.swift in Sources */,
+				211BA0C1ED05DB5A00D16586DDAFDB20 /* KronAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E3D58513AE65BC331412BA5013D8D6B0 /* Sources */ = {
+		DBCDBECB7CA1E52C2090182C474EF227 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043E2DAF77570E1F1B1FDFE1E0665F70 /* Pods-Reaktor-macOS-Reaktor-macOSTests-dummy.m in Sources */,
+				FD9D79D4748752F6E2AC4E8D85192B9D /* Pods-Reaktor-tvOSTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		00003E637CA4D9906EDB2F5A20843290 /* PBXTargetDependency */ = {
+		11E988C279908C974DD2D8B13EDA0B37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Delayed-macOS";
-			target = 807714CCC3A46665EE73CD747737A456 /* Delayed-macOS */;
-			targetProxy = 61062F85F42292F903C67C90509F0A13 /* PBXContainerItemProxy */;
+			target = 48ACE0ADF48C4C8E1ED511AF5A71454D /* Delayed-macOS */;
+			targetProxy = 6BB48AD805E5BF99850A0631195FC7D0 /* PBXContainerItemProxy */;
 		};
-		2A7EF4C4ECC753BF8C19190D785A81DA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Delayed-tvOS";
-			target = E780087AFF2E163DCBE31753754DE7A0 /* Delayed-tvOS */;
-			targetProxy = D17D427DE630C0EBD0F544A9B4738671 /* PBXContainerItemProxy */;
-		};
-		4D34805E72FF77F367189E13F14526CF /* PBXTargetDependency */ = {
+		52599A5861DFBC26E5A6EA2BA4B380EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Delayed-macOS";
-			target = 807714CCC3A46665EE73CD747737A456 /* Delayed-macOS */;
-			targetProxy = A063F65F06AB6B20ED910038C89EF8C9 /* PBXContainerItemProxy */;
+			target = 48ACE0ADF48C4C8E1ED511AF5A71454D /* Delayed-macOS */;
+			targetProxy = 3725C07517B123313558F79AFD1DE124 /* PBXContainerItemProxy */;
 		};
-		A359EF85CD0714D917D5A935569831B5 /* PBXTargetDependency */ = {
+		7D1248CB2ADFDC731C4A8E00B27251A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Delayed-iOS";
-			target = F58DCA11D9FA390A97B6F1D88D705530 /* Delayed-iOS */;
-			targetProxy = 51F742F8F0D87B25C545AD1CA94776B1 /* PBXContainerItemProxy */;
+			target = C8474222CC14100747B4CD9E15BEAC6C /* Delayed-iOS */;
+			targetProxy = C54923BA89F041E64C7F4EB27F66B029 /* PBXContainerItemProxy */;
 		};
-		AAF6D2DEC93CFA9A31D1CCD9992A10E8 /* PBXTargetDependency */ = {
+		90368891E9B3AB796E9BF2F4EC82D0E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Delayed-tvOS";
-			target = E780087AFF2E163DCBE31753754DE7A0 /* Delayed-tvOS */;
-			targetProxy = 824624BFC4A6AEA8CED7B8C50EB02061 /* PBXContainerItemProxy */;
+			target = 3A32B454E82CEBF4B58BF538FB811F37 /* Delayed-tvOS */;
+			targetProxy = DF7391F68BC954C9A1C6BA114A23114A /* PBXContainerItemProxy */;
 		};
-		DA08869A45C198A084235EA6C92DD0D3 /* PBXTargetDependency */ = {
+		A2D3575E5F6C629CEFD8B04139EAFFE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Reaktor-iOS";
+			target = 51EA2D0959D5797CE78A1FB9C688595C /* Pods-Reaktor-iOS */;
+			targetProxy = 4F363B5DD1F7B7019809974B962E8F5A /* PBXContainerItemProxy */;
+		};
+		C60BFB7781C29B4626FB5966C80E0E94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Reaktor-tvOS";
+			target = ED834CF7A55F29ACF218A3F09DBDD38E /* Pods-Reaktor-tvOS */;
+			targetProxy = 3C690A6A90407A55176D6AB8C8648037 /* PBXContainerItemProxy */;
+		};
+		E69A64186C61476453FCFAEC8B2A801B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Delayed-tvOS";
+			target = 3A32B454E82CEBF4B58BF538FB811F37 /* Delayed-tvOS */;
+			targetProxy = 124CFF147B9F7E2ECC7E38CCB6577246 /* PBXContainerItemProxy */;
+		};
+		F21B317DD52EF286B544B19A29AF2614 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Reaktor-macOS";
+			target = 8547A5029CF7DEDC7706CAA30DB2A82A /* Pods-Reaktor-macOS */;
+			targetProxy = B1BA1557235E9F4D77D9CDEF8EF9721D /* PBXContainerItemProxy */;
+		};
+		F3F1C5569710B478EEB44515E9B0E088 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Delayed-iOS";
-			target = F58DCA11D9FA390A97B6F1D88D705530 /* Delayed-iOS */;
-			targetProxy = E0B4AF5655C3728D89B448B3FEF7A8C4 /* PBXContainerItemProxy */;
+			target = C8474222CC14100747B4CD9E15BEAC6C /* Delayed-iOS */;
+			targetProxy = 7F8AE8EB79480871725EF407013A8C8B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		052FF837A26930606657DFFB69A91F30 /* Release */ = {
+		0567424DB9ED02EF9156A564BDF76574 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93FC9D9FE33D2D1D6531CD8F5FA0BB95 /* Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig */;
+			baseConfigurationReference = 10E76354C0A012BB224155EB217DF2B7 /* Pods-Reaktor-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Reaktor-iOSTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests/Pods-Reaktor-iOS-Reaktor-iOSTests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		145B050BA65D5487AA6649DC2C41CCBD /* Release */ = {
+		0B4B175A5F5490FA88452FBEDFB5779F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 133DC00C2ABC720C2C148B52932DEBEA /* Delayed-macOS.xcconfig */;
+			baseConfigurationReference = 3455F88A680510B4531DD3996020874A /* Pods-Reaktor-tvOS.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				EXECUTABLE_PREFIX = lib;
-				GCC_PREFIX_HEADER = "Target Support Files/Delayed-macOS/Delayed-macOS-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Headers/Public/Delayed/Delayed-macOS.modulemap";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Reaktor-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-tvOS/Pods-Reaktor-tvOS.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = Delayed;
-				PRODUCT_NAME = "Delayed-macOS";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		12D5F6FC24AC31DC91A3EFA551B3EA8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECDA0DC5195B390881D789DF3902872B /* Pods-Reaktor-macOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Reaktor-macOSTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1006,153 +1175,124 @@
 			};
 			name = Debug;
 		};
-		29EDDE9CDE36B32CA27C75C4317201BF /* Debug */ = {
+		328DDFCE593BBE679661BB7EA975C5E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C48C68D95CDA42C5B0F1A4A10E080DE /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-tvOS-Reaktor-tvOSTests/Pods-Reaktor-tvOS-Reaktor-tvOSTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.4;
-			};
-			name = Debug;
-		};
-		2B2BB2A6267CBC38FC7058E6C3DD7A2F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50EEC0AC842037A5265A4F84043542C1 /* Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig */;
+			baseConfigurationReference = 8B2009FFB282317D94F71ADEA68793A5 /* Pods-Reaktor-macOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				EXECUTABLE_PREFIX = lib;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Reaktor-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-macOS-Reaktor-macOSTests/Pods-Reaktor-macOS-Reaktor-macOSTests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		30DAE3E8C05A51F4B5879E8F3CA21EAB /* Debug */ = {
+		39AB959AB7A3EBD66859FA5DB442DB52 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 170F2FCB716FAB1A44E821D42D6261BB /* Delayed-tvOS.xcconfig */;
+			baseConfigurationReference = 2BCB0DB5A8BFB42A0B5920D64ED15A4F /* Pods-Reaktor-iOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/Delayed-tvOS/Delayed-tvOS-prefix.pch";
-				MODULEMAP_FILE = "Headers/Public/Delayed/Delayed-tvOS.modulemap";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Reaktor-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-iOS/Pods-Reaktor-iOS.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3B4195FA5C84478C85861E7235F361BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69912B54C76760B59795CCE7090D5A74 /* Delayed-tvOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Delayed-tvOS/Delayed-tvOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Delayed-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Delayed-tvOS/Delayed-tvOS.modulemap";
 				PRODUCT_MODULE_NAME = Delayed;
-				PRODUCT_NAME = "Delayed-tvOS";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = Delayed;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
-			};
-			name = Debug;
-		};
-		350E9219F70364296522F794DB0E3370 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B91E481A5110958B1B90DF6717A41D5A /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-tvOS-Reaktor-tvOSTests/Pods-Reaktor-tvOS-Reaktor-tvOSTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.4;
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		358B1DD3469FF6E1AC2F3713D8E66F28 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2201FFE25CB8A26517B26FFB6AB4109F /* Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				EXECUTABLE_PREFIX = lib;
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-macOS-Reaktor-macOSTests/Pods-Reaktor-macOS-Reaktor-macOSTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		36D7C2C61F1B67092D66F5ADB5BA5EE8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 133DC00C2ABC720C2C148B52932DEBEA /* Delayed-macOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				EXECUTABLE_PREFIX = lib;
-				GCC_PREFIX_HEADER = "Target Support Files/Delayed-macOS/Delayed-macOS-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Headers/Public/Delayed/Delayed-macOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = Delayed;
-				PRODUCT_NAME = "Delayed-macOS";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.1;
-			};
-			name = Debug;
 		};
 		3C52EA85A1496CFBE2E51FAE278D0DF3 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1215,277 +1355,482 @@
 			};
 			name = Release;
 		};
-		429DD822B096B3F69D13A767284D1BB5 /* Debug */ = {
+		3CB7343A4DB8BDCAD3458188F30F3D36 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4CA096868E68DFA5CA27001F775900 /* Pods-Reaktor-iOS.debug.xcconfig */;
+			baseConfigurationReference = 705B17D6E65E55B3D860BD7F43385767 /* Delayed-macOS.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Delayed-macOS/Delayed-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Delayed-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Target Support Files/Delayed-macOS/Delayed-macOS.modulemap";
+				PRODUCT_MODULE_NAME = Delayed;
+				PRODUCT_NAME = Delayed;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5179741C3437D2DF259B1B798F60F6F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53FB4FC1535844A600F990F3E8202B99 /* Pods-Reaktor-macOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Reaktor-macOSTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		78C6B770CBFAE7636B0228D9DCDC035B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFE29443BDE79B938F950EB197CD0C50 /* Pods-Reaktor-tvOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Reaktor-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-tvOS/Pods-Reaktor-tvOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8309FE3483AF419661DA89B03BB0BAD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE97940870746EFB761E8AB7297A37DF /* Delayed-iOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Delayed-iOS/Delayed-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Delayed-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Delayed-iOS/Delayed-iOS.modulemap";
+				PRODUCT_MODULE_NAME = Delayed;
+				PRODUCT_NAME = Delayed;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		889BE75B5B04ECF86CAF3D316CCA7E35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 296167318051D931D232676AF6E82827 /* Pods-Reaktor-iOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Reaktor-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-iOS/Pods-Reaktor-iOS.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		720DF344F0400C25260842878F2ABC35 /* Release */ = {
+		92323BC73C533A4F0C5428F0C729B9F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 170F2FCB716FAB1A44E821D42D6261BB /* Delayed-tvOS.xcconfig */;
+			baseConfigurationReference = AE97940870746EFB761E8AB7297A37DF /* Delayed-iOS.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/Delayed-tvOS/Delayed-tvOS-prefix.pch";
-				MODULEMAP_FILE = "Headers/Public/Delayed/Delayed-tvOS.modulemap";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Delayed-iOS/Delayed-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Delayed-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Delayed-iOS/Delayed-iOS.modulemap";
+				PRODUCT_MODULE_NAME = Delayed;
+				PRODUCT_NAME = Delayed;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A7AA059B710BE0FCDDD5B1F3DCD84B75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9D970B01990C38F961D0356AF137CFB /* Pods-Reaktor-tvOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Reaktor-tvOSTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-tvOSTests/Pods-Reaktor-tvOSTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = Delayed;
-				PRODUCT_NAME = "Delayed-tvOS";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B26F1E11DC716658646432A7E0B1CFF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5A9B71D093F0C861061A7E8B693E0E6 /* Pods-Reaktor-iOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Reaktor-iOSTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B27FBB21B57AF9CD66E0BA192B8D103A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F07B52FEC2EAAAE3A15D7C2B01D11B6 /* Pods-Reaktor-macOS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Reaktor-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C941249BDE7F54428616DF97C882EB3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 705B17D6E65E55B3D860BD7F43385767 /* Delayed-macOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Delayed-macOS/Delayed-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Delayed-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Target Support Files/Delayed-macOS/Delayed-macOS.modulemap";
+				PRODUCT_MODULE_NAME = Delayed;
+				PRODUCT_NAME = Delayed;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D49A82C5CDE0838415C2E5AD7FA089FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B480B580D547280EDC419EFE69E4C4DB /* Pods-Reaktor-tvOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Reaktor-tvOSTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-tvOSTests/Pods-Reaktor-tvOSTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D8EA330710DC7FEE7AAE4934E244A926 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69912B54C76760B59795CCE7090D5A74 /* Delayed-tvOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Delayed-tvOS/Delayed-tvOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Delayed-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Delayed-tvOS/Delayed-tvOS.modulemap";
+				PRODUCT_MODULE_NAME = Delayed;
+				PRODUCT_NAME = Delayed;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		787DC39A6E6BE1F689E76FB0710B7906 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C65D1E808BFD8D12F221B4F8625DF5E /* Pods-Reaktor-iOS.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-iOS/Pods-Reaktor-iOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		82416693EC835AAA9AFFC5EAAB593E80 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BC0F1F5F4B4AD52AB2906E3A8417A73 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests/Pods-Reaktor-iOS-Reaktor-iOSTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		9E71982DDABC0D7718A3B1A24725D6F5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 497F3DFCA1BBA02A69CB8081BE589BF7 /* Delayed-iOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/Delayed-iOS/Delayed-iOS-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MODULEMAP_FILE = "Headers/Public/Delayed/Delayed-iOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = Delayed;
-				PRODUCT_NAME = "Delayed-iOS";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		B0AF7871792B666E3FDA69228BE23C03 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFF5FE4D11E3E71B9B035F5CB3A14DE4 /* Pods-Reaktor-macOS.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				EXECUTABLE_PREFIX = lib;
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-			};
-			name = Release;
-		};
-		B47789F5A784A69A1084792B6CDBAEC5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7761AE234564BD74FA82F93C7D513676 /* Pods-Reaktor-tvOS.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-tvOS/Pods-Reaktor-tvOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.4;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		D34896E05C5E5EA3B998BBD695524E6C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A09BC5F520C8C5C1BE9C0F9640D33AF /* Pods-Reaktor-macOS.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				EXECUTABLE_PREFIX = lib;
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		E051B0854FE3163B47498BC4D8F6AA35 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 497F3DFCA1BBA02A69CB8081BE589BF7 /* Delayed-iOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/Delayed-iOS/Delayed-iOS-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MODULEMAP_FILE = "Headers/Public/Delayed/Delayed-iOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = Delayed;
-				PRODUCT_NAME = "Delayed-iOS";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		F0004B86BD3BC41152C1300BBE79B55C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0DBE81E8B8C4A8EAC449C237F71D4802 /* Pods-Reaktor-tvOS.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Reaktor-tvOS/Pods-Reaktor-tvOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00B46C2312841C6953D7BA69FBD95E6B /* Build configuration list for PBXNativeTarget "Delayed-tvOS" */ = {
+		156473D41F6B8D7F87BFC3CAD7374E0A /* Build configuration list for PBXNativeTarget "Delayed-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				30DAE3E8C05A51F4B5879E8F3CA21EAB /* Debug */,
-				720DF344F0400C25260842878F2ABC35 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		25A800AEFE7C9DBD2E870920875BA61E /* Build configuration list for PBXNativeTarget "Pods-Reaktor-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				429DD822B096B3F69D13A767284D1BB5 /* Debug */,
-				787DC39A6E6BE1F689E76FB0710B7906 /* Release */,
+				92323BC73C533A4F0C5428F0C729B9F2 /* Debug */,
+				8309FE3483AF419661DA89B03BB0BAD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1499,65 +1844,74 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B5F7B6B133F0B8241F6B13F96A890BD /* Build configuration list for PBXNativeTarget "Pods-Reaktor-tvOS" */ = {
+		40FD54E091F83DA8AEF6B00029C8CDF4 /* Build configuration list for PBXNativeTarget "Pods-Reaktor-macOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F0004B86BD3BC41152C1300BBE79B55C /* Debug */,
-				B47789F5A784A69A1084792B6CDBAEC5 /* Release */,
+				5179741C3437D2DF259B1B798F60F6F1 /* Debug */,
+				12D5F6FC24AC31DC91A3EFA551B3EA8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C66A8CD1FCB26D58C7D530B899B3A7E /* Build configuration list for PBXNativeTarget "Pods-Reaktor-macOS" */ = {
+		49DC167CDAEF0C9193C8C121B536358E /* Build configuration list for PBXNativeTarget "Pods-Reaktor-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D34896E05C5E5EA3B998BBD695524E6C /* Debug */,
-				B0AF7871792B666E3FDA69228BE23C03 /* Release */,
+				0567424DB9ED02EF9156A564BDF76574 /* Debug */,
+				B26F1E11DC716658646432A7E0B1CFF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A4227CC4DE8D62A58622F6ED689AC3F5 /* Build configuration list for PBXNativeTarget "Pods-Reaktor-macOS-Reaktor-macOSTests" */ = {
+		5EB46A4C780421987DB7AB0E6D74A8AF /* Build configuration list for PBXNativeTarget "Delayed-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				358B1DD3469FF6E1AC2F3713D8E66F28 /* Debug */,
-				2B2BB2A6267CBC38FC7058E6C3DD7A2F /* Release */,
+				3CB7343A4DB8BDCAD3458188F30F3D36 /* Debug */,
+				C941249BDE7F54428616DF97C882EB3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C95829820BE2CCB97948731A7F72A8D7 /* Build configuration list for PBXNativeTarget "Delayed-macOS" */ = {
+		75D63178E3B0391F3CC9EBDE31494378 /* Build configuration list for PBXNativeTarget "Pods-Reaktor-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				36D7C2C61F1B67092D66F5ADB5BA5EE8 /* Debug */,
-				145B050BA65D5487AA6649DC2C41CCBD /* Release */,
+				39AB959AB7A3EBD66859FA5DB442DB52 /* Debug */,
+				889BE75B5B04ECF86CAF3D316CCA7E35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD408434262C3609BB870BE3736749CA /* Build configuration list for PBXNativeTarget "Delayed-iOS" */ = {
+		A347B87368E341507AA12FEEA78F4343 /* Build configuration list for PBXNativeTarget "Pods-Reaktor-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9E71982DDABC0D7718A3B1A24725D6F5 /* Debug */,
-				E051B0854FE3163B47498BC4D8F6AA35 /* Release */,
+				B27FBB21B57AF9CD66E0BA192B8D103A /* Debug */,
+				328DDFCE593BBE679661BB7EA975C5E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2585DB16E290C90B168D0FAD3BDDDED /* Build configuration list for PBXNativeTarget "Pods-Reaktor-tvOS-Reaktor-tvOSTests" */ = {
+		A4E607F2A5C6BE4D20905E5E26F2256A /* Build configuration list for PBXNativeTarget "Pods-Reaktor-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29EDDE9CDE36B32CA27C75C4317201BF /* Debug */,
-				350E9219F70364296522F794DB0E3370 /* Release */,
+				0B4B175A5F5490FA88452FBEDFB5779F /* Debug */,
+				78C6B770CBFAE7636B0228D9DCDC035B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E676149E65569493F9444214335BECD2 /* Build configuration list for PBXNativeTarget "Pods-Reaktor-iOS-Reaktor-iOSTests" */ = {
+		D8D33E67C6E107995D1339BA36B2FE14 /* Build configuration list for PBXNativeTarget "Delayed-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				82416693EC835AAA9AFFC5EAAB593E80 /* Debug */,
-				052FF837A26930606657DFFB69A91F30 /* Release */,
+				D8EA330710DC7FEE7AAE4934E244A926 /* Debug */,
+				3B4195FA5C84478C85861E7235F361BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8F9F09436A9BF68B346E075A9DB1783 /* Build configuration list for PBXNativeTarget "Pods-Reaktor-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7AA059B710BE0FCDDD5B1F3DCD84B75 /* Debug */,
+				D49A82C5CDE0838415C2E5AD7FA089FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
