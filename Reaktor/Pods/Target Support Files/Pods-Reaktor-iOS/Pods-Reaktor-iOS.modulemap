@@ -1,4 +1,4 @@
-framework module Pods_Reaktor_iOS {
+module Pods_Reaktor_iOS {
   umbrella header "Pods-Reaktor-iOS-umbrella.h"
 
   export *

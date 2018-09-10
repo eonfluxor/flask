@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EA60F7A1957A20894902ADB /* libPods-Reaktor-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F3AF60CF5D5C9B9FFC2DA2 /* libPods-Reaktor-iOS.a */; };
+		0EFF46569D24DB9D22334EEF /* libPods-Reaktor-iOS-Reaktor-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6529348FC7980F8A5E989DF0 /* libPods-Reaktor-iOS-Reaktor-iOSTests.a */; };
 		26A82A662146D783008C8009 /* Reaktor_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A82A5D2146D783008C8009 /* Reaktor_iOS.framework */; };
 		26A82A6B2146D783008C8009 /* Reaktor_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82A6A2146D783008C8009 /* Reaktor_iOSTests.swift */; };
 		26A82A6D2146D783008C8009 /* Reaktor_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A82A5F2146D783008C8009 /* Reaktor_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,21 +18,142 @@
 		26A82ABA2146D7B2008C8009 /* Reaktor_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A82AB12146D7B2008C8009 /* Reaktor_tvOS.framework */; };
 		26A82ABF2146D7B2008C8009 /* Reaktor_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ABE2146D7B2008C8009 /* Reaktor_tvOSTests.swift */; };
 		26A82AC12146D7B2008C8009 /* Reaktor_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A82AB32146D7B2008C8009 /* Reaktor_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		26A82ACB2146D819008C8009 /* Reaktor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACA2146D819008C8009 /* Reaktor.swift */; };
-		26A82ACD2146D822008C8009 /* ReaktorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACC2146D822008C8009 /* ReaktorTests.swift */; };
-		26A82ACE2146D825008C8009 /* Reaktor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACA2146D819008C8009 /* Reaktor.swift */; };
-		26A82ACF2146D826008C8009 /* Reaktor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACA2146D819008C8009 /* Reaktor.swift */; };
-		26A82AD02146D826008C8009 /* Reaktor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACA2146D819008C8009 /* Reaktor.swift */; };
-		26A82AD12146D827008C8009 /* Reaktor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACA2146D819008C8009 /* Reaktor.swift */; };
-		26A82AD22146D828008C8009 /* Reaktor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACA2146D819008C8009 /* Reaktor.swift */; };
-		26A82AD32146D82B008C8009 /* ReaktorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACC2146D822008C8009 /* ReaktorTests.swift */; };
-		26A82AD42146D82C008C8009 /* ReaktorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82ACC2146D822008C8009 /* ReaktorTests.swift */; };
+		26D8F7BF21473A92002F7B4F /* FluxChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AC21473A91002F7B4F /* FluxChange.swift */; };
+		26D8F7C021473A92002F7B4F /* FluxChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AC21473A91002F7B4F /* FluxChange.swift */; };
+		26D8F7C121473A92002F7B4F /* FluxChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AC21473A91002F7B4F /* FluxChange.swift */; };
+		26D8F7C221473A92002F7B4F /* FluxChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AC21473A91002F7B4F /* FluxChange.swift */; };
+		26D8F7C321473A92002F7B4F /* FluxChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AC21473A91002F7B4F /* FluxChange.swift */; };
+		26D8F7C421473A92002F7B4F /* FluxChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AC21473A91002F7B4F /* FluxChange.swift */; };
+		26D8F7C521473A92002F7B4F /* FluxReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AD21473A91002F7B4F /* FluxReaction.swift */; };
+		26D8F7C621473A92002F7B4F /* FluxReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AD21473A91002F7B4F /* FluxReaction.swift */; };
+		26D8F7C721473A92002F7B4F /* FluxReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AD21473A91002F7B4F /* FluxReaction.swift */; };
+		26D8F7C821473A92002F7B4F /* FluxReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AD21473A91002F7B4F /* FluxReaction.swift */; };
+		26D8F7C921473A92002F7B4F /* FluxReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AD21473A91002F7B4F /* FluxReaction.swift */; };
+		26D8F7CA21473A92002F7B4F /* FluxReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AD21473A91002F7B4F /* FluxReaction.swift */; };
+		26D8F7CB21473A92002F7B4F /* FluxChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AF21473A91002F7B4F /* FluxChain.swift */; };
+		26D8F7CC21473A92002F7B4F /* FluxChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AF21473A91002F7B4F /* FluxChain.swift */; };
+		26D8F7CD21473A92002F7B4F /* FluxChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AF21473A91002F7B4F /* FluxChain.swift */; };
+		26D8F7CE21473A92002F7B4F /* FluxChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AF21473A91002F7B4F /* FluxChain.swift */; };
+		26D8F7CF21473A92002F7B4F /* FluxChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AF21473A91002F7B4F /* FluxChain.swift */; };
+		26D8F7D021473A92002F7B4F /* FluxChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7AF21473A91002F7B4F /* FluxChain.swift */; };
+		26D8F7D121473A92002F7B4F /* FluxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B021473A91002F7B4F /* FluxManager.swift */; };
+		26D8F7D221473A92002F7B4F /* FluxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B021473A91002F7B4F /* FluxManager.swift */; };
+		26D8F7D321473A92002F7B4F /* FluxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B021473A91002F7B4F /* FluxManager.swift */; };
+		26D8F7D421473A92002F7B4F /* FluxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B021473A91002F7B4F /* FluxManager.swift */; };
+		26D8F7D521473A92002F7B4F /* FluxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B021473A91002F7B4F /* FluxManager.swift */; };
+		26D8F7D621473A92002F7B4F /* FluxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B021473A91002F7B4F /* FluxManager.swift */; };
+		26D8F7D721473A92002F7B4F /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B121473A91002F7B4F /* Flux.swift */; };
+		26D8F7D821473A92002F7B4F /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B121473A91002F7B4F /* Flux.swift */; };
+		26D8F7D921473A92002F7B4F /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B121473A91002F7B4F /* Flux.swift */; };
+		26D8F7DA21473A92002F7B4F /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B121473A91002F7B4F /* Flux.swift */; };
+		26D8F7DB21473A92002F7B4F /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B121473A91002F7B4F /* Flux.swift */; };
+		26D8F7DC21473A92002F7B4F /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B121473A91002F7B4F /* Flux.swift */; };
+		26D8F7DD21473A92002F7B4F /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B321473A91002F7B4F /* FluxState.swift */; };
+		26D8F7DE21473A92002F7B4F /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B321473A91002F7B4F /* FluxState.swift */; };
+		26D8F7DF21473A92002F7B4F /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B321473A91002F7B4F /* FluxState.swift */; };
+		26D8F7E021473A92002F7B4F /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B321473A91002F7B4F /* FluxState.swift */; };
+		26D8F7E121473A92002F7B4F /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B321473A91002F7B4F /* FluxState.swift */; };
+		26D8F7E221473A92002F7B4F /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B321473A91002F7B4F /* FluxState.swift */; };
+		26D8F7E321473A92002F7B4F /* FluxPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxPersistance.swift */; };
+		26D8F7E421473A92002F7B4F /* FluxPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxPersistance.swift */; };
+		26D8F7E521473A92002F7B4F /* FluxPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxPersistance.swift */; };
+		26D8F7E621473A92002F7B4F /* FluxPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxPersistance.swift */; };
+		26D8F7E721473A92002F7B4F /* FluxPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxPersistance.swift */; };
+		26D8F7E821473A92002F7B4F /* FluxPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxPersistance.swift */; };
+		26D8F7E921473A92002F7B4F /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B521473A91002F7B4F /* FluxStore.swift */; };
+		26D8F7EA21473A92002F7B4F /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B521473A91002F7B4F /* FluxStore.swift */; };
+		26D8F7EB21473A92002F7B4F /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B521473A91002F7B4F /* FluxStore.swift */; };
+		26D8F7EC21473A92002F7B4F /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B521473A91002F7B4F /* FluxStore.swift */; };
+		26D8F7ED21473A92002F7B4F /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B521473A91002F7B4F /* FluxStore.swift */; };
+		26D8F7EE21473A92002F7B4F /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B521473A91002F7B4F /* FluxStore.swift */; };
+		26D8F7EF21473A92002F7B4F /* FluxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B721473A91002F7B4F /* FluxDispatcher.swift */; };
+		26D8F7F021473A92002F7B4F /* FluxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B721473A91002F7B4F /* FluxDispatcher.swift */; };
+		26D8F7F121473A92002F7B4F /* FluxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B721473A91002F7B4F /* FluxDispatcher.swift */; };
+		26D8F7F221473A92002F7B4F /* FluxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B721473A91002F7B4F /* FluxDispatcher.swift */; };
+		26D8F7F321473A92002F7B4F /* FluxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B721473A91002F7B4F /* FluxDispatcher.swift */; };
+		26D8F7F421473A92002F7B4F /* FluxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B721473A91002F7B4F /* FluxDispatcher.swift */; };
+		26D8F7F521473A92002F7B4F /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B821473A91002F7B4F /* FluxLock.swift */; };
+		26D8F7F621473A92002F7B4F /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B821473A91002F7B4F /* FluxLock.swift */; };
+		26D8F7F721473A92002F7B4F /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B821473A91002F7B4F /* FluxLock.swift */; };
+		26D8F7F821473A92002F7B4F /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B821473A91002F7B4F /* FluxLock.swift */; };
+		26D8F7F921473A92002F7B4F /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B821473A91002F7B4F /* FluxLock.swift */; };
+		26D8F7FA21473A92002F7B4F /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B821473A91002F7B4F /* FluxLock.swift */; };
+		26D8F7FB21473A92002F7B4F /* FluxPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B921473A92002F7B4F /* FluxPublic.swift */; };
+		26D8F7FC21473A92002F7B4F /* FluxPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B921473A92002F7B4F /* FluxPublic.swift */; };
+		26D8F7FD21473A92002F7B4F /* FluxPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B921473A92002F7B4F /* FluxPublic.swift */; };
+		26D8F7FE21473A92002F7B4F /* FluxPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B921473A92002F7B4F /* FluxPublic.swift */; };
+		26D8F7FF21473A92002F7B4F /* FluxPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B921473A92002F7B4F /* FluxPublic.swift */; };
+		26D8F80021473A92002F7B4F /* FluxPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B921473A92002F7B4F /* FluxPublic.swift */; };
+		26D8F80121473A92002F7B4F /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BA21473A92002F7B4F /* FluxHelpers.swift */; };
+		26D8F80221473A92002F7B4F /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BA21473A92002F7B4F /* FluxHelpers.swift */; };
+		26D8F80321473A92002F7B4F /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BA21473A92002F7B4F /* FluxHelpers.swift */; };
+		26D8F80421473A92002F7B4F /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BA21473A92002F7B4F /* FluxHelpers.swift */; };
+		26D8F80521473A92002F7B4F /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BA21473A92002F7B4F /* FluxHelpers.swift */; };
+		26D8F80621473A92002F7B4F /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BA21473A92002F7B4F /* FluxHelpers.swift */; };
+		26D8F80721473A92002F7B4F /* FluxDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BC21473A92002F7B4F /* FluxDictionary.swift */; };
+		26D8F80821473A92002F7B4F /* FluxDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BC21473A92002F7B4F /* FluxDictionary.swift */; };
+		26D8F80921473A92002F7B4F /* FluxDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BC21473A92002F7B4F /* FluxDictionary.swift */; };
+		26D8F80A21473A92002F7B4F /* FluxDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BC21473A92002F7B4F /* FluxDictionary.swift */; };
+		26D8F80B21473A92002F7B4F /* FluxDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BC21473A92002F7B4F /* FluxDictionary.swift */; };
+		26D8F80C21473A92002F7B4F /* FluxDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BC21473A92002F7B4F /* FluxDictionary.swift */; };
+		26D8F80D21473A92002F7B4F /* FluxNSObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BD21473A92002F7B4F /* FluxNSObjects.swift */; };
+		26D8F80E21473A92002F7B4F /* FluxNSObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BD21473A92002F7B4F /* FluxNSObjects.swift */; };
+		26D8F80F21473A92002F7B4F /* FluxNSObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BD21473A92002F7B4F /* FluxNSObjects.swift */; };
+		26D8F81021473A92002F7B4F /* FluxNSObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BD21473A92002F7B4F /* FluxNSObjects.swift */; };
+		26D8F81121473A92002F7B4F /* FluxNSObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BD21473A92002F7B4F /* FluxNSObjects.swift */; };
+		26D8F81221473A92002F7B4F /* FluxNSObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BD21473A92002F7B4F /* FluxNSObjects.swift */; };
+		26D8F81321473A92002F7B4F /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BE21473A92002F7B4F /* FluxRef.swift */; };
+		26D8F81421473A92002F7B4F /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BE21473A92002F7B4F /* FluxRef.swift */; };
+		26D8F81521473A92002F7B4F /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BE21473A92002F7B4F /* FluxRef.swift */; };
+		26D8F81621473A92002F7B4F /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BE21473A92002F7B4F /* FluxRef.swift */; };
+		26D8F81721473A92002F7B4F /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BE21473A92002F7B4F /* FluxRef.swift */; };
+		26D8F81821473A92002F7B4F /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7BE21473A92002F7B4F /* FluxRef.swift */; };
+		26D8F82A21473A9D002F7B4F /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81A21473A9D002F7B4F /* ReducerTests.swift */; };
+		26D8F82B21473A9D002F7B4F /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81A21473A9D002F7B4F /* ReducerTests.swift */; };
+		26D8F82C21473A9D002F7B4F /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81A21473A9D002F7B4F /* ReducerTests.swift */; };
+		26D8F82D21473A9D002F7B4F /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81B21473A9D002F7B4F /* SerializationTests.swift */; };
+		26D8F82E21473A9D002F7B4F /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81B21473A9D002F7B4F /* SerializationTests.swift */; };
+		26D8F82F21473A9D002F7B4F /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81B21473A9D002F7B4F /* SerializationTests.swift */; };
+		26D8F83021473A9D002F7B4F /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81C21473A9D002F7B4F /* DictionaryTests.swift */; };
+		26D8F83121473A9D002F7B4F /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81C21473A9D002F7B4F /* DictionaryTests.swift */; };
+		26D8F83221473A9D002F7B4F /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81C21473A9D002F7B4F /* DictionaryTests.swift */; };
+		26D8F83321473A9D002F7B4F /* KronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81D21473A9D002F7B4F /* KronTests.swift */; };
+		26D8F83421473A9D002F7B4F /* KronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81D21473A9D002F7B4F /* KronTests.swift */; };
+		26D8F83521473A9D002F7B4F /* KronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81D21473A9D002F7B4F /* KronTests.swift */; };
+		26D8F83621473A9D002F7B4F /* PersistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81F21473A9D002F7B4F /* PersistTests.swift */; };
+		26D8F83721473A9D002F7B4F /* PersistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81F21473A9D002F7B4F /* PersistTests.swift */; };
+		26D8F83821473A9D002F7B4F /* PersistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81F21473A9D002F7B4F /* PersistTests.swift */; };
+		26D8F83921473A9D002F7B4F /* FluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82021473A9D002F7B4F /* FluxTests.swift */; };
+		26D8F83A21473A9D002F7B4F /* FluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82021473A9D002F7B4F /* FluxTests.swift */; };
+		26D8F83B21473A9D002F7B4F /* FluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82021473A9D002F7B4F /* FluxTests.swift */; };
+		26D8F83C21473A9D002F7B4F /* ChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82121473A9D002F7B4F /* ChainTests.swift */; };
+		26D8F83D21473A9D002F7B4F /* ChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82121473A9D002F7B4F /* ChainTests.swift */; };
+		26D8F83E21473A9D002F7B4F /* ChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82121473A9D002F7B4F /* ChainTests.swift */; };
+		26D8F83F21473A9D002F7B4F /* NestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82221473A9D002F7B4F /* NestingTests.swift */; };
+		26D8F84021473A9D002F7B4F /* NestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82221473A9D002F7B4F /* NestingTests.swift */; };
+		26D8F84121473A9D002F7B4F /* NestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82221473A9D002F7B4F /* NestingTests.swift */; };
+		26D8F84221473A9D002F7B4F /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82421473A9D002F7B4F /* LockTests.swift */; };
+		26D8F84321473A9D002F7B4F /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82421473A9D002F7B4F /* LockTests.swift */; };
+		26D8F84421473A9D002F7B4F /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82421473A9D002F7B4F /* LockTests.swift */; };
+		26D8F84521473A9D002F7B4F /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82621473A9D002F7B4F /* TestStore.swift */; };
+		26D8F84621473A9D002F7B4F /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82621473A9D002F7B4F /* TestStore.swift */; };
+		26D8F84721473A9D002F7B4F /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82621473A9D002F7B4F /* TestStore.swift */; };
+		26D8F84821473A9D002F7B4F /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82721473A9D002F7B4F /* Stores.swift */; };
+		26D8F84921473A9D002F7B4F /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82721473A9D002F7B4F /* Stores.swift */; };
+		26D8F84A21473A9D002F7B4F /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82721473A9D002F7B4F /* Stores.swift */; };
+		26D8F84B21473A9D002F7B4F /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82821473A9D002F7B4F /* TestOwner.swift */; };
+		26D8F84C21473A9D002F7B4F /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82821473A9D002F7B4F /* TestOwner.swift */; };
+		26D8F84D21473A9D002F7B4F /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82821473A9D002F7B4F /* TestOwner.swift */; };
+		26D8F84E21473A9D002F7B4F /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82921473A9D002F7B4F /* SetupTests.swift */; };
+		26D8F84F21473A9D002F7B4F /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82921473A9D002F7B4F /* SetupTests.swift */; };
+		26D8F85021473A9D002F7B4F /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82921473A9D002F7B4F /* SetupTests.swift */; };
+		2EC700FB7EE31D3BC962E5A3 /* libPods-Reaktor-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7805FA053EEE6DA9A10C25 /* libPods-Reaktor-tvOS.a */; };
 		3595CABE7D286B72BFA3840E /* Pods_Reaktor_macOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */; };
 		49B01758B32A87D4F2F7098C /* Pods_Reaktor_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54000D406E19649E8976133 /* Pods_Reaktor_tvOSTests.framework */; };
 		553D1E7B592EB9628035CAD6 /* Pods_Reaktor_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */; };
-		C75370AA2AC9B20719A5C549 /* Pods_Reaktor_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B8C3C2B20B3308E30782D9 /* Pods_Reaktor_tvOS.framework */; };
-		D173EDFF3CE3DE1FAC3B5796 /* Pods_Reaktor_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E7B0CA31788152E6B2DA6F /* Pods_Reaktor_iOS.framework */; };
-		DBC4D59F32B23900BF67A38D /* Pods_Reaktor_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD786C9DEE062572D24B76D /* Pods_Reaktor_macOS.framework */; };
+		7E6BCA9EEE5744DEB170CAFC /* libPods-Reaktor-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E11996B60E0A13A014C25511 /* libPods-Reaktor-macOS.a */; };
+		AA2D1327DF75E3DBD1E3D61C /* libPods-Reaktor-macOS-Reaktor-macOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90ED7E2C99449BF00BF8C4B8 /* libPods-Reaktor-macOS-Reaktor-macOSTests.a */; };
+		FA015FA9018B6DCF7A083994 /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,10 +181,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		075CD6D047CF6A418EAF8396 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS-Reaktor-tvOSTests/Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0A3CB9BE7C8696AC195D5C19 /* Pods-Reaktor-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		0C274EFCF73179B943CD3EA2 /* Pods-Reaktor-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		0DD786C9DEE062572D24B76D /* Pods_Reaktor_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_macOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-tvOS-Reaktor-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A82A5D2146D783008C8009 /* Reaktor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reaktor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A82A5F2146D783008C8009 /* Reaktor_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reaktor_iOS.h; sourceTree = "<group>"; };
 		26A82A602146D783008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,20 +204,54 @@
 		26A82AB92146D7B2008C8009 /* Reaktor-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reaktor-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A82ABE2146D7B2008C8009 /* Reaktor_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor_tvOSTests.swift; sourceTree = "<group>"; };
 		26A82AC02146D7B2008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26A82ACA2146D819008C8009 /* Reaktor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor.swift; sourceTree = "<group>"; };
-		26A82ACC2146D822008C8009 /* ReaktorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaktorTests.swift; sourceTree = "<group>"; };
-		37B8C3C2B20B3308E30782D9 /* Pods_Reaktor_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26D8F7AC21473A91002F7B4F /* FluxChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxChange.swift; sourceTree = "<group>"; };
+		26D8F7AD21473A91002F7B4F /* FluxReaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxReaction.swift; sourceTree = "<group>"; };
+		26D8F7AF21473A91002F7B4F /* FluxChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxChain.swift; sourceTree = "<group>"; };
+		26D8F7B021473A91002F7B4F /* FluxManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxManager.swift; sourceTree = "<group>"; };
+		26D8F7B121473A91002F7B4F /* Flux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flux.swift; sourceTree = "<group>"; };
+		26D8F7B321473A91002F7B4F /* FluxState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxState.swift; sourceTree = "<group>"; };
+		26D8F7B421473A91002F7B4F /* FluxPersistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxPersistance.swift; sourceTree = "<group>"; };
+		26D8F7B521473A91002F7B4F /* FluxStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxStore.swift; sourceTree = "<group>"; };
+		26D8F7B721473A91002F7B4F /* FluxDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxDispatcher.swift; sourceTree = "<group>"; };
+		26D8F7B821473A91002F7B4F /* FluxLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxLock.swift; sourceTree = "<group>"; };
+		26D8F7B921473A92002F7B4F /* FluxPublic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxPublic.swift; sourceTree = "<group>"; };
+		26D8F7BA21473A92002F7B4F /* FluxHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxHelpers.swift; sourceTree = "<group>"; };
+		26D8F7BC21473A92002F7B4F /* FluxDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxDictionary.swift; sourceTree = "<group>"; };
+		26D8F7BD21473A92002F7B4F /* FluxNSObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxNSObjects.swift; sourceTree = "<group>"; };
+		26D8F7BE21473A92002F7B4F /* FluxRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxRef.swift; sourceTree = "<group>"; };
+		26D8F81A21473A9D002F7B4F /* ReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReducerTests.swift; sourceTree = "<group>"; };
+		26D8F81B21473A9D002F7B4F /* SerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationTests.swift; sourceTree = "<group>"; };
+		26D8F81C21473A9D002F7B4F /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		26D8F81D21473A9D002F7B4F /* KronTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KronTests.swift; sourceTree = "<group>"; };
+		26D8F81F21473A9D002F7B4F /* PersistTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistTests.swift; sourceTree = "<group>"; };
+		26D8F82021473A9D002F7B4F /* FluxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxTests.swift; sourceTree = "<group>"; };
+		26D8F82121473A9D002F7B4F /* ChainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainTests.swift; sourceTree = "<group>"; };
+		26D8F82221473A9D002F7B4F /* NestingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestingTests.swift; sourceTree = "<group>"; };
+		26D8F82421473A9D002F7B4F /* LockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockTests.swift; sourceTree = "<group>"; };
+		26D8F82621473A9D002F7B4F /* TestStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStore.swift; sourceTree = "<group>"; };
+		26D8F82721473A9D002F7B4F /* Stores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
+		26D8F82821473A9D002F7B4F /* TestOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestOwner.swift; sourceTree = "<group>"; };
+		26D8F82921473A9D002F7B4F /* SetupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupTests.swift; sourceTree = "<group>"; };
+		381DEAC3DCFB39BEACA03807 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests/Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		38BFFFCD6F072157809E78A0 /* Pods-Reaktor-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		452C9C4E09CB62E21C4E5240 /* Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests/Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		4B7805FA053EEE6DA9A10C25 /* libPods-Reaktor-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD0926C55169B753178E95C /* Pods-Reaktor-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS/Pods-Reaktor-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		54551A57CBC323C9D2D85A59 /* Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS-Reaktor-macOSTests/Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		598EF4CC90CDF51D436D038E /* Pods-Reaktor-macOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6529348FC7980F8A5E989DF0 /* libPods-Reaktor-iOS-Reaktor-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-iOS-Reaktor-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6800B2CB5843D3C26DF4FF9B /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS-Reaktor-tvOSTests/Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86F3AF60CF5D5C9B9FFC2DA2 /* libPods-Reaktor-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90ED7E2C99449BF00BF8C4B8 /* libPods-Reaktor-macOS-Reaktor-macOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-macOS-Reaktor-macOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9297C3098704CEE0C27B1C9D /* Pods-Reaktor-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS/Pods-Reaktor-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		92E7B0CA31788152E6B2DA6F /* Pods_Reaktor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99B8E75D79521F500CA851D4 /* Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS-Reaktor-macOSTests/Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF87E8EAD968BFA031274355 /* Pods-Reaktor-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOSTests/Pods-Reaktor-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BAE25DF2041FE9D584D9F979 /* Pods-Reaktor-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOSTests/Pods-Reaktor-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		C54000D406E19649E8976133 /* Pods_Reaktor_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B76A4269F0ECBB16EBD1E6 /* Pods-Reaktor-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		DDC2E24140CF7BF6DB0B0D18 /* Pods-Reaktor-macOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		E11996B60E0A13A014C25511 /* libPods-Reaktor-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C6A21D39F67D37934C6EA8 /* Pods-Reaktor-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS/Pods-Reaktor-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		FCF9744D8DBAC7DD369275C1 /* Pods-Reaktor-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS/Pods-Reaktor-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D173EDFF3CE3DE1FAC3B5796 /* Pods_Reaktor_iOS.framework in Frameworks */,
+				0EA60F7A1957A20894902ADB /* libPods-Reaktor-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +271,7 @@
 			files = (
 				26A82A662146D783008C8009 /* Reaktor_iOS.framework in Frameworks */,
 				553D1E7B592EB9628035CAD6 /* Pods_Reaktor_iOSTests.framework in Frameworks */,
+				0EFF46569D24DB9D22334EEF /* libPods-Reaktor-iOS-Reaktor-iOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBC4D59F32B23900BF67A38D /* Pods_Reaktor_macOS.framework in Frameworks */,
+				7E6BCA9EEE5744DEB170CAFC /* libPods-Reaktor-macOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +289,7 @@
 			files = (
 				26A82A9E2146D7A8008C8009 /* Reaktor_macOS.framework in Frameworks */,
 				3595CABE7D286B72BFA3840E /* Pods_Reaktor_macOSTests.framework in Frameworks */,
+				AA2D1327DF75E3DBD1E3D61C /* libPods-Reaktor-macOS-Reaktor-macOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +297,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C75370AA2AC9B20719A5C549 /* Pods_Reaktor_tvOS.framework in Frameworks */,
+				2EC700FB7EE31D3BC962E5A3 /* libPods-Reaktor-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +307,7 @@
 			files = (
 				26A82ABA2146D7B2008C8009 /* Reaktor_tvOS.framework in Frameworks */,
 				49B01758B32A87D4F2F7098C /* Pods_Reaktor_tvOSTests.framework in Frameworks */,
+				FA015FA9018B6DCF7A083994 /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +401,13 @@
 		26A82AC82146D80E008C8009 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				26A82ACA2146D819008C8009 /* Reaktor.swift */,
+				26D8F7BA21473A92002F7B4F /* FluxHelpers.swift */,
+				26D8F7B921473A92002F7B4F /* FluxPublic.swift */,
+				26D8F7BB21473A92002F7B4F /* Boxes */,
+				26D8F7B621473A91002F7B4F /* Dispatcher */,
+				26D8F7AE21473A91002F7B4F /* Fluxor */,
+				26D8F7AB21473A91002F7B4F /* Reaction */,
+				26D8F7B221473A91002F7B4F /* Store */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -248,9 +415,101 @@
 		26A82AC92146D80E008C8009 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				26A82ACC2146D822008C8009 /* ReaktorTests.swift */,
+				26D8F81921473A9D002F7B4F /* DataFlowTests */,
+				26D8F81E21473A9D002F7B4F /* FluxTests */,
+				26D8F82321473A9D002F7B4F /* LocksTests */,
+				26D8F82521473A9D002F7B4F /* SampleClasses */,
+				26D8F82921473A9D002F7B4F /* SetupTests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		26D8F7AB21473A91002F7B4F /* Reaction */ = {
+			isa = PBXGroup;
+			children = (
+				26D8F7AC21473A91002F7B4F /* FluxChange.swift */,
+				26D8F7AD21473A91002F7B4F /* FluxReaction.swift */,
+			);
+			path = Reaction;
+			sourceTree = "<group>";
+		};
+		26D8F7AE21473A91002F7B4F /* Fluxor */ = {
+			isa = PBXGroup;
+			children = (
+				26D8F7AF21473A91002F7B4F /* FluxChain.swift */,
+				26D8F7B021473A91002F7B4F /* FluxManager.swift */,
+				26D8F7B121473A91002F7B4F /* Flux.swift */,
+			);
+			path = Fluxor;
+			sourceTree = "<group>";
+		};
+		26D8F7B221473A91002F7B4F /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				26D8F7B321473A91002F7B4F /* FluxState.swift */,
+				26D8F7B421473A91002F7B4F /* FluxPersistance.swift */,
+				26D8F7B521473A91002F7B4F /* FluxStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		26D8F7B621473A91002F7B4F /* Dispatcher */ = {
+			isa = PBXGroup;
+			children = (
+				26D8F7B721473A91002F7B4F /* FluxDispatcher.swift */,
+				26D8F7B821473A91002F7B4F /* FluxLock.swift */,
+			);
+			path = Dispatcher;
+			sourceTree = "<group>";
+		};
+		26D8F7BB21473A92002F7B4F /* Boxes */ = {
+			isa = PBXGroup;
+			children = (
+				26D8F7BC21473A92002F7B4F /* FluxDictionary.swift */,
+				26D8F7BD21473A92002F7B4F /* FluxNSObjects.swift */,
+				26D8F7BE21473A92002F7B4F /* FluxRef.swift */,
+			);
+			path = Boxes;
+			sourceTree = "<group>";
+		};
+		26D8F81921473A9D002F7B4F /* DataFlowTests */ = {
+			isa = PBXGroup;
+			children = (
+				26D8F81A21473A9D002F7B4F /* ReducerTests.swift */,
+				26D8F81B21473A9D002F7B4F /* SerializationTests.swift */,
+				26D8F81C21473A9D002F7B4F /* DictionaryTests.swift */,
+				26D8F81D21473A9D002F7B4F /* KronTests.swift */,
+			);
+			path = DataFlowTests;
+			sourceTree = "<group>";
+		};
+		26D8F81E21473A9D002F7B4F /* FluxTests */ = {
+			isa = PBXGroup;
+			children = (
+				26D8F81F21473A9D002F7B4F /* PersistTests.swift */,
+				26D8F82021473A9D002F7B4F /* FluxTests.swift */,
+				26D8F82121473A9D002F7B4F /* ChainTests.swift */,
+				26D8F82221473A9D002F7B4F /* NestingTests.swift */,
+			);
+			path = FluxTests;
+			sourceTree = "<group>";
+		};
+		26D8F82321473A9D002F7B4F /* LocksTests */ = {
+			isa = PBXGroup;
+			children = (
+				26D8F82421473A9D002F7B4F /* LockTests.swift */,
+			);
+			path = LocksTests;
+			sourceTree = "<group>";
+		};
+		26D8F82521473A9D002F7B4F /* SampleClasses */ = {
+			isa = PBXGroup;
+			children = (
+				26D8F82621473A9D002F7B4F /* TestStore.swift */,
+				26D8F82721473A9D002F7B4F /* Stores.swift */,
+				26D8F82821473A9D002F7B4F /* TestOwner.swift */,
+			);
+			path = SampleClasses;
 			sourceTree = "<group>";
 		};
 		AD3032DB8725C62F5A3F6997 /* Pods */ = {
@@ -268,6 +527,12 @@
 				4DD0926C55169B753178E95C /* Pods-Reaktor-tvOS.release.xcconfig */,
 				AF87E8EAD968BFA031274355 /* Pods-Reaktor-tvOSTests.debug.xcconfig */,
 				BAE25DF2041FE9D584D9F979 /* Pods-Reaktor-tvOSTests.release.xcconfig */,
+				381DEAC3DCFB39BEACA03807 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */,
+				452C9C4E09CB62E21C4E5240 /* Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig */,
+				54551A57CBC323C9D2D85A59 /* Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig */,
+				99B8E75D79521F500CA851D4 /* Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig */,
+				075CD6D047CF6A418EAF8396 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig */,
+				6800B2CB5843D3C26DF4FF9B /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -275,12 +540,15 @@
 		E6A24196288E8AE550246B64 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				92E7B0CA31788152E6B2DA6F /* Pods_Reaktor_iOS.framework */,
 				695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */,
-				0DD786C9DEE062572D24B76D /* Pods_Reaktor_macOS.framework */,
 				1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */,
-				37B8C3C2B20B3308E30782D9 /* Pods_Reaktor_tvOS.framework */,
 				C54000D406E19649E8976133 /* Pods_Reaktor_tvOSTests.framework */,
+				86F3AF60CF5D5C9B9FFC2DA2 /* libPods-Reaktor-iOS.a */,
+				6529348FC7980F8A5E989DF0 /* libPods-Reaktor-iOS-Reaktor-iOSTests.a */,
+				E11996B60E0A13A014C25511 /* libPods-Reaktor-macOS.a */,
+				90ED7E2C99449BF00BF8C4B8 /* libPods-Reaktor-macOS-Reaktor-macOSTests.a */,
+				4B7805FA053EEE6DA9A10C25 /* libPods-Reaktor-tvOS.a */,
+				22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -448,12 +716,14 @@
 					};
 					26A82A942146D7A7008C8009 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					26A82A9C2146D7A8008C8009 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 					26A82AB02146D7B2008C8009 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					26A82AB82146D7B2008C8009 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -539,7 +809,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Reaktor-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Reaktor-tvOS-Reaktor-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -575,7 +845,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Reaktor-iOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Reaktor-iOS-Reaktor-iOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -593,7 +863,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Reaktor-macOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Reaktor-macOS-Reaktor-macOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -643,7 +913,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A82ACB2146D819008C8009 /* Reaktor.swift in Sources */,
+				26D8F80D21473A92002F7B4F /* FluxNSObjects.swift in Sources */,
+				26D8F7CB21473A92002F7B4F /* FluxChain.swift in Sources */,
+				26D8F7D721473A92002F7B4F /* Flux.swift in Sources */,
+				26D8F7BF21473A92002F7B4F /* FluxChange.swift in Sources */,
+				26D8F81321473A92002F7B4F /* FluxRef.swift in Sources */,
+				26D8F7F521473A92002F7B4F /* FluxLock.swift in Sources */,
+				26D8F7D121473A92002F7B4F /* FluxManager.swift in Sources */,
+				26D8F7DD21473A92002F7B4F /* FluxState.swift in Sources */,
+				26D8F7FB21473A92002F7B4F /* FluxPublic.swift in Sources */,
+				26D8F7EF21473A92002F7B4F /* FluxDispatcher.swift in Sources */,
+				26D8F7E321473A92002F7B4F /* FluxPersistance.swift in Sources */,
+				26D8F7E921473A92002F7B4F /* FluxStore.swift in Sources */,
+				26D8F80121473A92002F7B4F /* FluxHelpers.swift in Sources */,
+				26D8F80721473A92002F7B4F /* FluxDictionary.swift in Sources */,
+				26D8F7C521473A92002F7B4F /* FluxReaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,9 +935,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A82ACE2146D825008C8009 /* Reaktor.swift in Sources */,
+				26D8F7E421473A92002F7B4F /* FluxPersistance.swift in Sources */,
+				26D8F80221473A92002F7B4F /* FluxHelpers.swift in Sources */,
+				26D8F7F021473A92002F7B4F /* FluxDispatcher.swift in Sources */,
+				26D8F7D821473A92002F7B4F /* Flux.swift in Sources */,
+				26D8F83021473A9D002F7B4F /* DictionaryTests.swift in Sources */,
+				26D8F84B21473A9D002F7B4F /* TestOwner.swift in Sources */,
+				26D8F81421473A92002F7B4F /* FluxRef.swift in Sources */,
+				26D8F7DE21473A92002F7B4F /* FluxState.swift in Sources */,
+				26D8F7CC21473A92002F7B4F /* FluxChain.swift in Sources */,
+				26D8F83921473A9D002F7B4F /* FluxTests.swift in Sources */,
+				26D8F84521473A9D002F7B4F /* TestStore.swift in Sources */,
+				26D8F80821473A92002F7B4F /* FluxDictionary.swift in Sources */,
+				26D8F7F621473A92002F7B4F /* FluxLock.swift in Sources */,
+				26D8F83C21473A9D002F7B4F /* ChainTests.swift in Sources */,
+				26D8F80E21473A92002F7B4F /* FluxNSObjects.swift in Sources */,
+				26D8F82D21473A9D002F7B4F /* SerializationTests.swift in Sources */,
+				26D8F7EA21473A92002F7B4F /* FluxStore.swift in Sources */,
+				26D8F84221473A9D002F7B4F /* LockTests.swift in Sources */,
+				26D8F84E21473A9D002F7B4F /* SetupTests.swift in Sources */,
+				26D8F7D221473A92002F7B4F /* FluxManager.swift in Sources */,
+				26D8F83F21473A9D002F7B4F /* NestingTests.swift in Sources */,
+				26D8F7C021473A92002F7B4F /* FluxChange.swift in Sources */,
+				26D8F83321473A9D002F7B4F /* KronTests.swift in Sources */,
+				26D8F83621473A9D002F7B4F /* PersistTests.swift in Sources */,
+				26D8F7FC21473A92002F7B4F /* FluxPublic.swift in Sources */,
+				26D8F84821473A9D002F7B4F /* Stores.swift in Sources */,
+				26D8F7C621473A92002F7B4F /* FluxReaction.swift in Sources */,
 				26A82A6B2146D783008C8009 /* Reaktor_iOSTests.swift in Sources */,
-				26A82ACD2146D822008C8009 /* ReaktorTests.swift in Sources */,
+				26D8F82A21473A9D002F7B4F /* ReducerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,7 +971,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A82ACF2146D826008C8009 /* Reaktor.swift in Sources */,
+				26D8F80F21473A92002F7B4F /* FluxNSObjects.swift in Sources */,
+				26D8F7CD21473A92002F7B4F /* FluxChain.swift in Sources */,
+				26D8F7D921473A92002F7B4F /* Flux.swift in Sources */,
+				26D8F7C121473A92002F7B4F /* FluxChange.swift in Sources */,
+				26D8F81521473A92002F7B4F /* FluxRef.swift in Sources */,
+				26D8F7F721473A92002F7B4F /* FluxLock.swift in Sources */,
+				26D8F7D321473A92002F7B4F /* FluxManager.swift in Sources */,
+				26D8F7DF21473A92002F7B4F /* FluxState.swift in Sources */,
+				26D8F7FD21473A92002F7B4F /* FluxPublic.swift in Sources */,
+				26D8F7F121473A92002F7B4F /* FluxDispatcher.swift in Sources */,
+				26D8F7E521473A92002F7B4F /* FluxPersistance.swift in Sources */,
+				26D8F7EB21473A92002F7B4F /* FluxStore.swift in Sources */,
+				26D8F80321473A92002F7B4F /* FluxHelpers.swift in Sources */,
+				26D8F80921473A92002F7B4F /* FluxDictionary.swift in Sources */,
+				26D8F7C721473A92002F7B4F /* FluxReaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,9 +993,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A82AD32146D82B008C8009 /* ReaktorTests.swift in Sources */,
+				26D8F7E621473A92002F7B4F /* FluxPersistance.swift in Sources */,
+				26D8F80421473A92002F7B4F /* FluxHelpers.swift in Sources */,
+				26D8F7F221473A92002F7B4F /* FluxDispatcher.swift in Sources */,
+				26D8F7DA21473A92002F7B4F /* Flux.swift in Sources */,
+				26D8F83121473A9D002F7B4F /* DictionaryTests.swift in Sources */,
+				26D8F84C21473A9D002F7B4F /* TestOwner.swift in Sources */,
+				26D8F81621473A92002F7B4F /* FluxRef.swift in Sources */,
+				26D8F7E021473A92002F7B4F /* FluxState.swift in Sources */,
+				26D8F7CE21473A92002F7B4F /* FluxChain.swift in Sources */,
+				26D8F83A21473A9D002F7B4F /* FluxTests.swift in Sources */,
+				26D8F84621473A9D002F7B4F /* TestStore.swift in Sources */,
+				26D8F80A21473A92002F7B4F /* FluxDictionary.swift in Sources */,
+				26D8F7F821473A92002F7B4F /* FluxLock.swift in Sources */,
+				26D8F83D21473A9D002F7B4F /* ChainTests.swift in Sources */,
+				26D8F81021473A92002F7B4F /* FluxNSObjects.swift in Sources */,
+				26D8F82E21473A9D002F7B4F /* SerializationTests.swift in Sources */,
+				26D8F7EC21473A92002F7B4F /* FluxStore.swift in Sources */,
+				26D8F84321473A9D002F7B4F /* LockTests.swift in Sources */,
+				26D8F84F21473A9D002F7B4F /* SetupTests.swift in Sources */,
+				26D8F7D421473A92002F7B4F /* FluxManager.swift in Sources */,
+				26D8F84021473A9D002F7B4F /* NestingTests.swift in Sources */,
+				26D8F7C221473A92002F7B4F /* FluxChange.swift in Sources */,
+				26D8F83421473A9D002F7B4F /* KronTests.swift in Sources */,
+				26D8F83721473A9D002F7B4F /* PersistTests.swift in Sources */,
+				26D8F7FE21473A92002F7B4F /* FluxPublic.swift in Sources */,
+				26D8F84921473A9D002F7B4F /* Stores.swift in Sources */,
+				26D8F7C821473A92002F7B4F /* FluxReaction.swift in Sources */,
 				26A82AA32146D7A8008C8009 /* Reaktor_macOSTests.swift in Sources */,
-				26A82AD02146D826008C8009 /* Reaktor.swift in Sources */,
+				26D8F82B21473A9D002F7B4F /* ReducerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,7 +1029,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A82AD12146D827008C8009 /* Reaktor.swift in Sources */,
+				26D8F81121473A92002F7B4F /* FluxNSObjects.swift in Sources */,
+				26D8F7CF21473A92002F7B4F /* FluxChain.swift in Sources */,
+				26D8F7DB21473A92002F7B4F /* Flux.swift in Sources */,
+				26D8F7C321473A92002F7B4F /* FluxChange.swift in Sources */,
+				26D8F81721473A92002F7B4F /* FluxRef.swift in Sources */,
+				26D8F7F921473A92002F7B4F /* FluxLock.swift in Sources */,
+				26D8F7D521473A92002F7B4F /* FluxManager.swift in Sources */,
+				26D8F7E121473A92002F7B4F /* FluxState.swift in Sources */,
+				26D8F7FF21473A92002F7B4F /* FluxPublic.swift in Sources */,
+				26D8F7F321473A92002F7B4F /* FluxDispatcher.swift in Sources */,
+				26D8F7E721473A92002F7B4F /* FluxPersistance.swift in Sources */,
+				26D8F7ED21473A92002F7B4F /* FluxStore.swift in Sources */,
+				26D8F80521473A92002F7B4F /* FluxHelpers.swift in Sources */,
+				26D8F80B21473A92002F7B4F /* FluxDictionary.swift in Sources */,
+				26D8F7C921473A92002F7B4F /* FluxReaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,9 +1051,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A82AD42146D82C008C8009 /* ReaktorTests.swift in Sources */,
+				26D8F7E821473A92002F7B4F /* FluxPersistance.swift in Sources */,
+				26D8F80621473A92002F7B4F /* FluxHelpers.swift in Sources */,
+				26D8F7F421473A92002F7B4F /* FluxDispatcher.swift in Sources */,
+				26D8F7DC21473A92002F7B4F /* Flux.swift in Sources */,
+				26D8F83221473A9D002F7B4F /* DictionaryTests.swift in Sources */,
+				26D8F84D21473A9D002F7B4F /* TestOwner.swift in Sources */,
+				26D8F81821473A92002F7B4F /* FluxRef.swift in Sources */,
+				26D8F7E221473A92002F7B4F /* FluxState.swift in Sources */,
+				26D8F7D021473A92002F7B4F /* FluxChain.swift in Sources */,
+				26D8F83B21473A9D002F7B4F /* FluxTests.swift in Sources */,
+				26D8F84721473A9D002F7B4F /* TestStore.swift in Sources */,
+				26D8F80C21473A92002F7B4F /* FluxDictionary.swift in Sources */,
+				26D8F7FA21473A92002F7B4F /* FluxLock.swift in Sources */,
+				26D8F83E21473A9D002F7B4F /* ChainTests.swift in Sources */,
+				26D8F81221473A92002F7B4F /* FluxNSObjects.swift in Sources */,
+				26D8F82F21473A9D002F7B4F /* SerializationTests.swift in Sources */,
+				26D8F7EE21473A92002F7B4F /* FluxStore.swift in Sources */,
+				26D8F84421473A9D002F7B4F /* LockTests.swift in Sources */,
+				26D8F85021473A9D002F7B4F /* SetupTests.swift in Sources */,
+				26D8F7D621473A92002F7B4F /* FluxManager.swift in Sources */,
+				26D8F84121473A9D002F7B4F /* NestingTests.swift in Sources */,
+				26D8F7C421473A92002F7B4F /* FluxChange.swift in Sources */,
+				26D8F83521473A9D002F7B4F /* KronTests.swift in Sources */,
+				26D8F83821473A9D002F7B4F /* PersistTests.swift in Sources */,
+				26D8F80021473A92002F7B4F /* FluxPublic.swift in Sources */,
+				26D8F84A21473A9D002F7B4F /* Stores.swift in Sources */,
+				26D8F7CA21473A92002F7B4F /* FluxReaction.swift in Sources */,
 				26A82ABF2146D7B2008C8009 /* Reaktor_tvOSTests.swift in Sources */,
-				26A82AD22146D828008C8009 /* Reaktor.swift in Sources */,
+				26D8F82C21473A9D002F7B4F /* ReducerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,7 +1281,7 @@
 		};
 		26A82A722146D783008C8009 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C274EFCF73179B943CD3EA2 /* Pods-Reaktor-iOSTests.debug.xcconfig */;
+			baseConfigurationReference = 381DEAC3DCFB39BEACA03807 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -910,7 +1300,7 @@
 		};
 		26A82A732146D783008C8009 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A3CB9BE7C8696AC195D5C19 /* Pods-Reaktor-iOSTests.release.xcconfig */;
+			baseConfigurationReference = 452C9C4E09CB62E21C4E5240 /* Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -931,6 +1321,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38BFFFCD6F072157809E78A0 /* Pods-Reaktor-macOS.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -951,6 +1342,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -959,6 +1351,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D2B76A4269F0ECBB16EBD1E6 /* Pods-Reaktor-macOS.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -985,7 +1378,7 @@
 		};
 		26A82AAA2146D7A8008C8009 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 598EF4CC90CDF51D436D038E /* Pods-Reaktor-macOSTests.debug.xcconfig */;
+			baseConfigurationReference = 54551A57CBC323C9D2D85A59 /* Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -1007,7 +1400,7 @@
 		};
 		26A82AAB2146D7A8008C8009 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDC2E24140CF7BF6DB0B0D18 /* Pods-Reaktor-macOSTests.release.xcconfig */;
+			baseConfigurationReference = 99B8E75D79521F500CA851D4 /* Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -1031,6 +1424,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FCF9744D8DBAC7DD369275C1 /* Pods-Reaktor-tvOS.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -1048,6 +1442,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 11.4;
@@ -1058,6 +1453,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4DD0926C55169B753178E95C /* Pods-Reaktor-tvOS.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -1083,7 +1479,7 @@
 		};
 		26A82AC62146D7B2008C8009 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF87E8EAD968BFA031274355 /* Pods-Reaktor-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 075CD6D047CF6A418EAF8396 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1104,7 +1500,7 @@
 		};
 		26A82AC72146D7B2008C8009 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BAE25DF2041FE9D584D9F979 /* Pods-Reaktor-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 6800B2CB5843D3C26DF4FF9B /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

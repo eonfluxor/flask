@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 55d05f573bea525131f362a2d643a470a1cd6406
+PODS:
+  - Delayed (2.2.8)
+
+DEPENDENCIES:
+  - Delayed (~> 2.2.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Delayed
+
+SPEC CHECKSUMS:
+  Delayed: 931100bdf164e26dba9e16bccd31130a2c90e56d
+
+PODFILE CHECKSUM: e6bdea86a4d29bc14560205180cc2cf4db0da658
 
 COCOAPODS: 1.5.3

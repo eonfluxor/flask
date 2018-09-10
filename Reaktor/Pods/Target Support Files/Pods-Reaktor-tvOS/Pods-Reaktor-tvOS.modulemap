@@ -1,4 +1,4 @@
-framework module Pods_Reaktor_tvOS {
+module Pods_Reaktor_tvOS {
   umbrella header "Pods-Reaktor-tvOS-umbrella.h"
 
   export *
