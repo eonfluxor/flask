@@ -1,0 +1,6 @@
+framework module Delayed {
+  umbrella header "Delayed-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

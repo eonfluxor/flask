@@ -1,0 +1,6 @@
+framework module Delayed {
+  umbrella header "Delayed-macOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
