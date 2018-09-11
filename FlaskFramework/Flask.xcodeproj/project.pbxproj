@@ -84,12 +84,12 @@
 		26C53EA9214790A90090AA0C /* FlaskReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5E214790A90090AA0C /* FlaskReaction.swift */; };
 		26C53EAA214790A90090AA0C /* FlaskReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5E214790A90090AA0C /* FlaskReaction.swift */; };
 		26C53EAB214790A90090AA0C /* FlaskReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5E214790A90090AA0C /* FlaskReaction.swift */; };
-		26C53EAC214790A90090AA0C /* Atoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* Atoms.swift */; };
-		26C53EAD214790A90090AA0C /* Atoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* Atoms.swift */; };
-		26C53EAE214790A90090AA0C /* Atoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* Atoms.swift */; };
-		26C53EAF214790A90090AA0C /* Atoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* Atoms.swift */; };
-		26C53EB0214790A90090AA0C /* Atoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* Atoms.swift */; };
-		26C53EB1214790A90090AA0C /* Atoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* Atoms.swift */; };
+		26C53EAC214790A90090AA0C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* State.swift */; };
+		26C53EAD214790A90090AA0C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* State.swift */; };
+		26C53EAE214790A90090AA0C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* State.swift */; };
+		26C53EAF214790A90090AA0C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* State.swift */; };
+		26C53EB0214790A90090AA0C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* State.swift */; };
+		26C53EB1214790A90090AA0C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* State.swift */; };
 		26C53EB2214790A90090AA0C /* SubstanceSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* SubstanceSerializer.swift */; };
 		26C53EB3214790A90090AA0C /* SubstanceSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* SubstanceSerializer.swift */; };
 		26C53EB4214790A90090AA0C /* SubstanceSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* SubstanceSerializer.swift */; };
@@ -226,7 +226,7 @@
 		26C53E5B214790A90090AA0C /* MixerPause.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixerPause.swift; sourceTree = "<group>"; };
 		26C53E5D214790A90090AA0C /* SubstanceChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstanceChange.swift; sourceTree = "<group>"; };
 		26C53E5E214790A90090AA0C /* FlaskReaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskReaction.swift; sourceTree = "<group>"; };
-		26C53E60214790A90090AA0C /* Atoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atoms.swift; sourceTree = "<group>"; };
+		26C53E60214790A90090AA0C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		26C53E61214790A90090AA0C /* SubstanceSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SubstanceSerializer\U001b.swift"; sourceTree = "<group>"; };
 		26C53E62214790A90090AA0C /* SubstanceArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstanceArchiver.swift; sourceTree = "<group>"; };
 		26C53E63214790A90090AA0C /* Substance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Substance.swift; sourceTree = "<group>"; };
@@ -548,7 +548,7 @@
 		26C53E5F214790A90090AA0C /* Molecule */ = {
 			isa = PBXGroup;
 			children = (
-				26C53E60214790A90090AA0C /* Atoms.swift */,
+				26C53E60214790A90090AA0C /* State.swift */,
 				26C53E61214790A90090AA0C /* SubstanceSerializer.swift */,
 				26C53E62214790A90090AA0C /* SubstanceArchiver.swift */,
 				26C53E63214790A90090AA0C /* Substance.swift */,
@@ -1083,7 +1083,7 @@
 				26C53E64214790A90090AA0C /* Lab.swift in Sources */,
 				26C53E94214790A90090AA0C /* Mixer.swift in Sources */,
 				26C53E70214790A90090AA0C /* LabDictionary.swift in Sources */,
-				26C53EAC214790A90090AA0C /* Atoms.swift in Sources */,
+				26C53EAC214790A90090AA0C /* State.swift in Sources */,
 				26C53E7C214790A90090AA0C /* LabRef.swift in Sources */,
 				26C53E8E214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EA0214790A90090AA0C /* SubstanceChange.swift in Sources */,
@@ -1112,7 +1112,7 @@
 				26C53EDE214790C00090AA0C /* KronTests.swift in Sources */,
 				26C53EF3214790C00090AA0C /* AppMolecule.swift in Sources */,
 				26C53E83214790A90090AA0C /* ChainReaction.swift in Sources */,
-				26C53EAD214790A90090AA0C /* Atoms.swift in Sources */,
+				26C53EAD214790A90090AA0C /* State.swift in Sources */,
 				26C53EF0214790C00090AA0C /* PauseTests.swift in Sources */,
 				26C53EE1214790C00090AA0C /* ArchivingTests.swift in Sources */,
 				26C53E7D214790A90090AA0C /* LabRef.swift in Sources */,
@@ -1141,7 +1141,7 @@
 				26C53E66214790A90090AA0C /* Lab.swift in Sources */,
 				26C53E96214790A90090AA0C /* Mixer.swift in Sources */,
 				26C53E72214790A90090AA0C /* LabDictionary.swift in Sources */,
-				26C53EAE214790A90090AA0C /* Atoms.swift in Sources */,
+				26C53EAE214790A90090AA0C /* State.swift in Sources */,
 				26C53E7E214790A90090AA0C /* LabRef.swift in Sources */,
 				26C53E90214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EA2214790A90090AA0C /* SubstanceChange.swift in Sources */,
@@ -1170,7 +1170,7 @@
 				26C53EDF214790C00090AA0C /* KronTests.swift in Sources */,
 				26C53EF4214790C00090AA0C /* AppMolecule.swift in Sources */,
 				26C53E85214790A90090AA0C /* ChainReaction.swift in Sources */,
-				26C53EAF214790A90090AA0C /* Atoms.swift in Sources */,
+				26C53EAF214790A90090AA0C /* State.swift in Sources */,
 				26C53EF1214790C00090AA0C /* PauseTests.swift in Sources */,
 				26C53EE2214790C00090AA0C /* ArchivingTests.swift in Sources */,
 				26C53E7F214790A90090AA0C /* LabRef.swift in Sources */,
@@ -1199,7 +1199,7 @@
 				26C53E68214790A90090AA0C /* Lab.swift in Sources */,
 				26C53E98214790A90090AA0C /* Mixer.swift in Sources */,
 				26C53E74214790A90090AA0C /* LabDictionary.swift in Sources */,
-				26C53EB0214790A90090AA0C /* Atoms.swift in Sources */,
+				26C53EB0214790A90090AA0C /* State.swift in Sources */,
 				26C53E80214790A90090AA0C /* LabRef.swift in Sources */,
 				26C53E92214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EA4214790A90090AA0C /* SubstanceChange.swift in Sources */,
@@ -1228,7 +1228,7 @@
 				26C53EE0214790C00090AA0C /* KronTests.swift in Sources */,
 				26C53EF5214790C00090AA0C /* AppMolecule.swift in Sources */,
 				26C53E87214790A90090AA0C /* ChainReaction.swift in Sources */,
-				26C53EB1214790A90090AA0C /* Atoms.swift in Sources */,
+				26C53EB1214790A90090AA0C /* State.swift in Sources */,
 				26C53EF2214790C00090AA0C /* PauseTests.swift in Sources */,
 				26C53EE3214790C00090AA0C /* ArchivingTests.swift in Sources */,
 				26C53E81214790A90090AA0C /* LabRef.swift in Sources */,
