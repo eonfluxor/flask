@@ -31,8 +31,8 @@ public class Flask<D:AnyObject>:FlaskConcrete {
         super.fill()
     }
     
-    override public func empty(){
-        super.empty()
+    override public func empty(_ explicit:Bool = true){
+        super.empty(explicit)
     }
     
     override func handleMix(_ reaction:FlaskReaction){
