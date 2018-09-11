@@ -703,7 +703,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
       "line": 20,
-      "symbol": "FlaskReaction.labPause",
+      "symbol": "FlaskReaction.onPause",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },

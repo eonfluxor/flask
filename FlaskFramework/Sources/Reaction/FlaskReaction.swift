@@ -17,7 +17,7 @@ import Cocoa
 public class FlaskReaction {
 
     
-    weak public var labPause:MixerPause?
+    weak public var onPause:MixerPause?
     private(set) var substance:SubstanceConcrete
     private(set) var changes:LabDictType
     
