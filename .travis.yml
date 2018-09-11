@@ -18,6 +18,7 @@ env:
 before_script:
 - cd Reaktor
 - gem install cocoapods
+- pod repo update
 - pod install
 script:
 - set -o pipefail
