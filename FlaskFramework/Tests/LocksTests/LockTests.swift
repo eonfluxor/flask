@@ -13,8 +13,8 @@ class LockTests: SetupFlaskTests {
     
     func testLock(){
         
-        let expectation = self.expectation(description: "testLock Mutation")
-        let expectation2 = self.expectation(description: "testLock Mutation Ignored")
+        let expectation = self.expectation(description: "testLock Mix")
+        let expectation2 = self.expectation(description: "testLock Mix Ignored")
         expectation2.isInverted=true
         
         let molecule = self.molecule!
@@ -52,7 +52,7 @@ class LockTests: SetupFlaskTests {
     
     func testLockRelease(){
         
-        let expectation = self.expectation(description: "testLockRelease Mutation")
+        let expectation = self.expectation(description: "testLockRelease Mix")
         
         let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
@@ -83,8 +83,8 @@ class LockTests: SetupFlaskTests {
     
     func testLockAction(){
         
-        let expectation = self.expectation(description: "testLockRelease Mutation")
-        let expectation2 = self.expectation(description: "testLockRelease Mutation Ignored")
+        let expectation = self.expectation(description: "testLockRelease Mix")
+        let expectation2 = self.expectation(description: "testLockRelease Mix Ignored")
      
         let molecule = self.molecule!
         let owner:TestOwner = TestOwner()

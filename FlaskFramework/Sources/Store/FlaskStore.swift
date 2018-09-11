@@ -160,7 +160,7 @@ public extension MoleculeConcrete {
                 
                 let commit = {
                     resolved=true
-                    self?.handleMutation()
+                    self?.handleMix()
                 }
                 
                 let abort = {
@@ -188,7 +188,7 @@ public extension MoleculeConcrete {
         
         let commit = {
             resolved = true
-            self.handleMutation()
+            self.handleMix()
         }
         
         let abort = {
@@ -207,7 +207,7 @@ public extension MoleculeConcrete {
 
 extension MoleculeConcrete {
     
-    func handleMutation(){
+    func handleMix(){
         Lab.Dispatcher.reactionQueue.addOperation { [weak self] in
             
             if self == nil { return }

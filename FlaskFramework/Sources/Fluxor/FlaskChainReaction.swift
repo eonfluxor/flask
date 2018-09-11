@@ -48,7 +48,7 @@ public extension FlaskConcrete{
 //        let  commit = { [weak self] in
 //            if let molecules = self?.molecules {
 //                for molecule in molecules{
-//                    molecule.handleMutation()
+//                    molecule.handleMix()
 //                }
 //            }
 //        }
@@ -71,7 +71,7 @@ public extension FlaskConcrete{
         let  commit = { [weak self] in
             if let molecules = self?.molecules {
                 for molecule in molecules{
-                    molecule.handleMutation()
+                    molecule.handleMix()
                 }
             }
         }

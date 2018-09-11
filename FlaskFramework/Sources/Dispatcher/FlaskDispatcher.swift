@@ -175,7 +175,7 @@ extension FlaskDispatcher {
         
         for moleculeFlaskReactorRef in moleculeFlaskReactorRefs {
             if let flask = moleculeFlaskReactorRef.value{
-                flask.handleMutation( reaction)
+                flask.handleMix( reaction)
             }
         }
         

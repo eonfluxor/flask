@@ -14,7 +14,7 @@ class FlaskReactorTests: SetupFlaskTests {
 
     func testCallback(){
         
-        let expectation = self.expectation(description: "testCallback Mutation counter")
+        let expectation = self.expectation(description: "testCallback Mix counter")
         
         let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
@@ -140,7 +140,7 @@ class FlaskReactorTests: SetupFlaskTests {
     
     func testChange(){
         
-        let expectation = self.expectation(description: "testChange Mutation")
+        let expectation = self.expectation(description: "testChange Mix")
         
         let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
@@ -171,7 +171,7 @@ class FlaskReactorTests: SetupFlaskTests {
     
     func testGlobalApp(){
         
-        let expectation = self.expectation(description: "testGlobalMolecule testInlineMutation")
+        let expectation = self.expectation(description: "testGlobalMolecule testInlineMix")
         
         let owner:TestOwner = TestOwner()
         let flask = Lab.flask(ownedBy:owner, mixin:Molecules.app)

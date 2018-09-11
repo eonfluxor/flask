@@ -1,5 +1,5 @@
 //
-//  MutationTests.swift
+//  MixTests.swift
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/4/18.
