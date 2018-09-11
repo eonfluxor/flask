@@ -13,10 +13,10 @@ class NestedAtomTests: SetupFlaskTests {
     
     func testNestedAtom(){
         
-        let expectation = self.expectation(description: "testLabDictionaryRef")
-        let expectation2 = self.expectation(description: "testLabDictionaryRef")
-        let expectation3 = self.expectation(description: "testLabDictionaryRef optional(some)")
-        let expectation4 = self.expectation(description: "testLabDictionaryRef optional(nil)")
+        let expectation = self.expectation(description: "testLabDictRef")
+        let expectation2 = self.expectation(description: "testLabDictRef")
+        let expectation3 = self.expectation(description: "testLabDictRef optional(some)")
+        let expectation4 = self.expectation(description: "testLabDictRef optional(nil)")
         
         let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
@@ -33,8 +33,8 @@ class NestedAtomTests: SetupFlaskTests {
         
         let data2:NSDictionary = [:]
         
-        let dictRef = LabDictionaryRef(data)
-        let dictRef2 = LabDictionaryRef(data2)
+        let dictRef = LabDictRef(data)
+        let dictRef2 = LabDictRef(data2)
         
         let firstTest:(@escaping ()->Void)->Void = { next in
             flask.reactor = { owner, reaction in

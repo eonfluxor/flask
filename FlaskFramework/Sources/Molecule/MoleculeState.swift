@@ -50,8 +50,8 @@ public extension MoleculeAtoms{
             
             if(MoleculeSerializer.isDictionaryRef(value)){
                 let nestedRef = MoleculeSerializer.nestDictionaries(namespace: label,
-                                                                root: LabDictionaryRef(result as NSDictionary),
-                                                                children: value as! LabDictionaryRef)
+                                                                root: LabDictRef(result as NSDictionary),
+                                                                children: value as! LabDictRef)
                 result = nestedRef.dictionary as! LabDictionaryType
             }
         }
@@ -82,7 +82,7 @@ public extension MoleculeAtoms{
             }
             
             if(MoleculeSerializer.isDictionaryRef(value)){
-                let nest =  MoleculeSerializer.flattenDictionary(value as! LabDictionaryRef)
+                let nest =  MoleculeSerializer.flattenDictionary(value as! LabDictRef)
                  result[label] = nest
             } else{
                  result[label] = value

@@ -138,12 +138,12 @@
 		26C53EF0214790C00090AA0C /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* LockTests.swift */; };
 		26C53EF1214790C00090AA0C /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* LockTests.swift */; };
 		26C53EF2214790C00090AA0C /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* LockTests.swift */; };
-		26C53EF3214790C00090AA0C /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* TestStore.swift */; };
-		26C53EF4214790C00090AA0C /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* TestStore.swift */; };
-		26C53EF5214790C00090AA0C /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* TestStore.swift */; };
-		26C53EF6214790C00090AA0C /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Stores.swift */; };
-		26C53EF7214790C00090AA0C /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Stores.swift */; };
-		26C53EF8214790C00090AA0C /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Stores.swift */; };
+		26C53EF3214790C00090AA0C /* AppMolecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* AppMolecule.swift */; };
+		26C53EF4214790C00090AA0C /* AppMolecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* AppMolecule.swift */; };
+		26C53EF5214790C00090AA0C /* AppMolecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* AppMolecule.swift */; };
+		26C53EF6214790C00090AA0C /* Molecules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Molecules.swift */; };
+		26C53EF7214790C00090AA0C /* Molecules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Molecules.swift */; };
+		26C53EF8214790C00090AA0C /* Molecules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Molecules.swift */; };
 		26C53EF9214790C00090AA0C /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED4214790C00090AA0C /* TestOwner.swift */; };
 		26C53EFA214790C00090AA0C /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED4214790C00090AA0C /* TestOwner.swift */; };
 		26C53EFB214790C00090AA0C /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED4214790C00090AA0C /* TestOwner.swift */; };
@@ -240,8 +240,8 @@
 		26C53ECD214790C00090AA0C /* NestingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestingTests.swift; sourceTree = "<group>"; };
 		26C53ECE214790C00090AA0C /* SetupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupTests.swift; sourceTree = "<group>"; };
 		26C53ED0214790C00090AA0C /* LockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockTests.swift; sourceTree = "<group>"; };
-		26C53ED2214790C00090AA0C /* TestStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStore.swift; sourceTree = "<group>"; };
-		26C53ED3214790C00090AA0C /* Stores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
+		26C53ED2214790C00090AA0C /* AppMolecule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMolecule.swift; sourceTree = "<group>"; };
+		26C53ED3214790C00090AA0C /* Molecules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Molecules.swift; sourceTree = "<group>"; };
 		26C53ED4214790C00090AA0C /* TestOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestOwner.swift; sourceTree = "<group>"; };
 		37BA23FC2296D5E31DACBA2A /* Pods_Flask_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flask_macOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		381DEAC3DCFB39BEACA03807 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests/Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -589,8 +589,8 @@
 		26C53ED1214790C00090AA0C /* SampleClasses */ = {
 			isa = PBXGroup;
 			children = (
-				26C53ED2214790C00090AA0C /* TestStore.swift */,
-				26C53ED3214790C00090AA0C /* Stores.swift */,
+				26C53ED2214790C00090AA0C /* AppMolecule.swift */,
+				26C53ED3214790C00090AA0C /* Molecules.swift */,
 				26C53ED4214790C00090AA0C /* TestOwner.swift */,
 			);
 			path = SampleClasses;
@@ -1106,11 +1106,11 @@
 				26C53EF9214790C00090AA0C /* TestOwner.swift in Sources */,
 				26C53E0E214790730090AA0C /* Flask_iOSTests.swift in Sources */,
 				26C53E6B214790A90090AA0C /* LabHelpers.swift in Sources */,
-				26C53EF6214790C00090AA0C /* Stores.swift in Sources */,
+				26C53EF6214790C00090AA0C /* Molecules.swift in Sources */,
 				26C53EE7214790C00090AA0C /* ChainTests.swift in Sources */,
 				26C53E9B214790A90090AA0C /* LabLock.swift in Sources */,
 				26C53EDE214790C00090AA0C /* KronTests.swift in Sources */,
-				26C53EF3214790C00090AA0C /* TestStore.swift in Sources */,
+				26C53EF3214790C00090AA0C /* AppMolecule.swift in Sources */,
 				26C53E83214790A90090AA0C /* FlaskChainReaction.swift in Sources */,
 				26C53EAD214790A90090AA0C /* MoleculeState.swift in Sources */,
 				26C53EF0214790C00090AA0C /* LockTests.swift in Sources */,
@@ -1164,11 +1164,11 @@
 				26C53EFA214790C00090AA0C /* TestOwner.swift in Sources */,
 				26C53E2A214790800090AA0C /* Flask_macOSTests.swift in Sources */,
 				26C53E6D214790A90090AA0C /* LabHelpers.swift in Sources */,
-				26C53EF7214790C00090AA0C /* Stores.swift in Sources */,
+				26C53EF7214790C00090AA0C /* Molecules.swift in Sources */,
 				26C53EE8214790C00090AA0C /* ChainTests.swift in Sources */,
 				26C53E9D214790A90090AA0C /* LabLock.swift in Sources */,
 				26C53EDF214790C00090AA0C /* KronTests.swift in Sources */,
-				26C53EF4214790C00090AA0C /* TestStore.swift in Sources */,
+				26C53EF4214790C00090AA0C /* AppMolecule.swift in Sources */,
 				26C53E85214790A90090AA0C /* FlaskChainReaction.swift in Sources */,
 				26C53EAF214790A90090AA0C /* MoleculeState.swift in Sources */,
 				26C53EF1214790C00090AA0C /* LockTests.swift in Sources */,
@@ -1222,11 +1222,11 @@
 				26C53EFB214790C00090AA0C /* TestOwner.swift in Sources */,
 				26C53E462147908E0090AA0C /* Flask_tvOSTests.swift in Sources */,
 				26C53E6F214790A90090AA0C /* LabHelpers.swift in Sources */,
-				26C53EF8214790C00090AA0C /* Stores.swift in Sources */,
+				26C53EF8214790C00090AA0C /* Molecules.swift in Sources */,
 				26C53EE9214790C00090AA0C /* ChainTests.swift in Sources */,
 				26C53E9F214790A90090AA0C /* LabLock.swift in Sources */,
 				26C53EE0214790C00090AA0C /* KronTests.swift in Sources */,
-				26C53EF5214790C00090AA0C /* TestStore.swift in Sources */,
+				26C53EF5214790C00090AA0C /* AppMolecule.swift in Sources */,
 				26C53E87214790A90090AA0C /* FlaskChainReaction.swift in Sources */,
 				26C53EB1214790A90090AA0C /* MoleculeState.swift in Sources */,
 				26C53EF2214790C00090AA0C /* LockTests.swift in Sources */,

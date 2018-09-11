@@ -23,8 +23,8 @@ class DictionaryTests: XCTestCase {
             "array":[1,2,3]
         ]
         
-        let dictRef = LabDictionaryRef(data)
-        let nest:LabDictionaryRef? = dictRef["nest"] as! LabDictionaryRef?
+        let dictRef = LabDictRef(data)
+        let nest:LabDictRef? = dictRef["nest"] as! LabDictRef?
         
         //structure
         XCTAssert((nest != nil))

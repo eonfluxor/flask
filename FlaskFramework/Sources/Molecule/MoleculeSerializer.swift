@@ -41,7 +41,7 @@ public struct MoleculeSerializer{
         return atoms
     }
     
-    static public func flattenDictionary(_ dict:LabDictionaryRef) -> [String:Any]{
+    static public func flattenDictionary(_ dict:LabDictRef) -> [String:Any]{
         
         var result:[String:Any] = [:]
         
@@ -53,7 +53,7 @@ public struct MoleculeSerializer{
             
             if(isDictionaryRef(value)){
                 //recursion
-                let nest = flattenDictionary(value as! LabDictionaryRef)
+                let nest = flattenDictionary(value as! LabDictRef)
                 result[key] = nest
             } else{
                 result[key] = value
@@ -65,9 +65,9 @@ public struct MoleculeSerializer{
         
     }
     
-    static public func nestDictionaries( namespace:String,  root:LabDictionaryRef,  children:LabDictionaryRef) -> LabDictionaryRef{
+    static public func nestDictionaries( namespace:String,  root:LabDictRef,  children:LabDictRef) -> LabDictRef{
         
-        var result = LabDictionaryRef(root.dictionary)
+        var result = LabDictRef(root.dictionary)
         
         let keys = children.keys()
         
@@ -83,7 +83,7 @@ public struct MoleculeSerializer{
                 //recursion
                 result = MoleculeSerializer.nestDictionaries(namespace: childKey,
                                                          root: result,
-                                                         children: value as! LabDictionaryRef)
+                                                         children: value as! LabDictRef)
             }
             
         }
@@ -94,7 +94,7 @@ public struct MoleculeSerializer{
     
     
     static public func isDictionaryRef(_ value:Any?)->Bool{
-        return ((value as? LabDictionaryRef) != nil)
+        return ((value as? LabDictRef) != nil)
     }
     
 }

@@ -40,7 +40,6 @@ class archiveTests: SetupFlaskTests {
             
             let anotherMolecule = App()
             XCTAssert(anotherMolecule.atoms.counter == expectedValue)
-            anotherMolecule.purgeArchive()
             
             expectationUnarchive.fulfill()
         }

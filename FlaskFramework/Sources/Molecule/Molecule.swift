@@ -52,7 +52,7 @@ open class Molecule<T:MoleculeAtoms,A:RawRepresentable> : MoleculeConcrete{
         return val.rawValue as! String
     }
     
-    public func mixer(_ enumVal:A, _ reaction: @escaping MoleculeMixer){
+    public func mix(_ enumVal:A, _ reaction: @escaping MoleculeMixer){
         action(actionName(enumVal), reaction)
     }
     

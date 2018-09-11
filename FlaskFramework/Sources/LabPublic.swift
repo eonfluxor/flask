@@ -21,7 +21,7 @@ public class Lab {
     static public let Dispatcher = LabDispatcher()
     /// Use this to preserve `nil` entries in swift dictionaries
     static public let Nil = nil as AnyHashable?
-    /// Use this to preseve `nul` in LabDictionaryRef instances
+    /// Use this to preseve `nul` in LabDictRef instances
     static public let Null = NSNull()
     
     

@@ -1,5 +1,5 @@
 //
-//  LabDictionaryRef.swift
+//  LabDictRef.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/5/18.
@@ -13,10 +13,10 @@ import Cocoa
 #endif
 
 public protocol MoleculeAtomsObservable{
-    func toLabDictionaryRef()->NSDictionary
+    func toLabDictRef()->NSDictionary
 }
 
-public class LabDictionaryRef: NSObject, Codable, MoleculeAtomsObservable {
+public class LabDictRef: NSObject, Codable, MoleculeAtomsObservable {
    
    
     
@@ -42,7 +42,7 @@ public class LabDictionaryRef: NSObject, Codable, MoleculeAtomsObservable {
             
             if ((value as? NSDictionary) != nil) {
                 
-                let ref = LabDictionaryRef(normalize( value as! NSDictionary ))
+                let ref = LabDictRef(normalize( value as! NSDictionary ))
                 result[key] = ref
             
             } else {
@@ -58,7 +58,7 @@ public class LabDictionaryRef: NSObject, Codable, MoleculeAtomsObservable {
     
    
     
-    public  func toLabDictionaryRef() -> NSDictionary {
+    public  func toLabDictRef() -> NSDictionary {
         return dictionary
     }
     
@@ -87,7 +87,7 @@ public class LabDictionaryRef: NSObject, Codable, MoleculeAtomsObservable {
         case dictionary
     }
     
-    static public func == (lhs: LabDictionaryRef, rhs: LabDictionaryRef) -> Bool {
+    static public func == (lhs: LabDictRef, rhs: LabDictRef) -> Bool {
         return lhs == rhs
     }
     
@@ -98,7 +98,7 @@ public class LabDictionaryRef: NSObject, Codable, MoleculeAtomsObservable {
         let data = jsonString.data(using: .utf8)
         let normalDictionary:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
     
-        let ref = LabDictionaryRef(normalDictionary)
+        let ref = LabDictRef(normalDictionary)
         dictionary = ref.dictionary
     }
     

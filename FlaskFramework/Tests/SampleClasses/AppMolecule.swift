@@ -28,7 +28,7 @@ struct Atoms : MoleculeAtoms {
     var counter = 0
     var text = ""
     var object:LabRef?
-    var map:LabDictionaryRef?
+    var map:LabDictRef?
     
     var _internal = "`_` use this prefix for internal vars "
     
@@ -38,12 +38,12 @@ class App : Molecule<Atoms,Mixers> {
     
     override func bindMixers(){
         
-        mixer(.Count) {[weak self] (payload, commit, abort)  in
+        mix(.Count) {[weak self] (payload, commit, abort)  in
             self?.atoms.counter = (self?.atoms.counter)! + 1
             commit()
         }
         
-        mixer(.Text) {[weak self] (payload, commit, abort)  in
+        mix(.Text) {[weak self] (payload, commit, abort)  in
             self?.atoms.text = "mixd"
             commit()
         }
