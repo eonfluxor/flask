@@ -1,5 +1,5 @@
 //
-//  FlaskDictionaryRef.swift
+//  LabDictionaryRef.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/5/18.
@@ -13,10 +13,10 @@ import Cocoa
 #endif
 
 public protocol MoleculeAtomObservable{
-    func toFlaskDictionaryRef()->NSDictionary
+    func toLabDictionaryRef()->NSDictionary
 }
 
-public class FlaskDictionaryRef: NSObject, Codable, MoleculeAtomObservable {
+public class LabDictionaryRef: NSObject, Codable, MoleculeAtomObservable {
    
    
     
@@ -42,7 +42,7 @@ public class FlaskDictionaryRef: NSObject, Codable, MoleculeAtomObservable {
             
             if ((value as? NSDictionary) != nil) {
                 
-                let ref = FlaskDictionaryRef(normalize( value as! NSDictionary ))
+                let ref = LabDictionaryRef(normalize( value as! NSDictionary ))
                 result[key] = ref
             
             } else {
@@ -58,7 +58,7 @@ public class FlaskDictionaryRef: NSObject, Codable, MoleculeAtomObservable {
     
    
     
-    public  func toFlaskDictionaryRef() -> NSDictionary {
+    public  func toLabDictionaryRef() -> NSDictionary {
         return dictionary
     }
     
@@ -87,7 +87,7 @@ public class FlaskDictionaryRef: NSObject, Codable, MoleculeAtomObservable {
         case dictionary
     }
     
-    static public func == (lhs: FlaskDictionaryRef, rhs: FlaskDictionaryRef) -> Bool {
+    static public func == (lhs: LabDictionaryRef, rhs: LabDictionaryRef) -> Bool {
         return lhs == rhs
     }
     
@@ -98,14 +98,14 @@ public class FlaskDictionaryRef: NSObject, Codable, MoleculeAtomObservable {
         let data = jsonString.data(using: .utf8)
         let normalDictionary:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
     
-        let ref = FlaskDictionaryRef(normalDictionary)
+        let ref = LabDictionaryRef(normalDictionary)
         dictionary = ref.dictionary
     }
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        let normalDict = FlaskSerializer.flattenDictionary(self)
+        let normalDict = LabSerializer.flattenDictionary(self)
         
         let jsonData:Data = try JSONSerialization.data(withJSONObject: normalDict, options: [])
         let string:String = String(data: jsonData, encoding: .utf8)!

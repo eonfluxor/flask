@@ -59,7 +59,7 @@ extension Molecule {
                     guard self != nil else {return}
                     
                     let key = self!.archiveKey()
-                    let data = try FlaskSerializer.dataFromAtom(atoms)
+                    let data = try LabSerializer.dataFromAtom(atoms)
                     
                     if let data = data {
                         
@@ -94,7 +94,7 @@ extension Molecule {
             let data = UserDefaults.standard.value(forKey: key)
             
             if ((data as? Data) != nil) {
-                atoms = try FlaskSerializer.atomsFromData(data as! Data)
+                atoms = try LabSerializer.atomsFromData(data as! Data)
                 setCurrentAtom(atoms)
             }
             

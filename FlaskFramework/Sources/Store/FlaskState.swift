@@ -48,10 +48,10 @@ public extension MoleculeAtom{
             result[label] = Lab.Nil
             result[label] = value as? AnyHashable
             
-            if(FlaskSerializer.isDictionaryRef(value)){
-                let nestedRef = FlaskSerializer.nestDictionaries(namespace: label,
-                                                                root: FlaskDictionaryRef(result as NSDictionary),
-                                                                children: value as! FlaskDictionaryRef)
+            if(LabSerializer.isDictionaryRef(value)){
+                let nestedRef = LabSerializer.nestDictionaries(namespace: label,
+                                                                root: LabDictionaryRef(result as NSDictionary),
+                                                                children: value as! LabDictionaryRef)
                 result = nestedRef.dictionary as! LabDictionaryType
             }
         }
@@ -79,8 +79,8 @@ public extension MoleculeAtom{
                 continue
             }
             
-            if(FlaskSerializer.isDictionaryRef(value)){
-                let nest =  FlaskSerializer.flattenDictionary(value as! FlaskDictionaryRef)
+            if(LabSerializer.isDictionaryRef(value)){
+                let nest =  LabSerializer.flattenDictionary(value as! LabDictionaryRef)
                  result[label] = nest
             } else{
                  result[label] = value

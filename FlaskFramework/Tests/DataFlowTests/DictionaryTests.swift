@@ -23,8 +23,8 @@ class DictionaryTests: XCTestCase {
             "array":[1,2,3]
         ]
         
-        let dictRef = FlaskDictionaryRef(data)
-        let nest:FlaskDictionaryRef? = dictRef["nest"] as! FlaskDictionaryRef?
+        let dictRef = LabDictionaryRef(data)
+        let nest:LabDictionaryRef? = dictRef["nest"] as! LabDictionaryRef?
         
         //structure
         XCTAssert((nest != nil))

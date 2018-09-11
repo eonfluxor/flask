@@ -1,5 +1,5 @@
 //
-//  FlaskSerializer.swift
+//  LabSerializer.swift
 //  Reaktor
 //
 //  Created by hassan uriostegui on 9/10/18.
@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-public struct FlaskSerializer{
+public struct LabSerializer{
     
     static public func jsonFromAtom<K:MoleculeAtom>(_ atoms:K) throws ->String {
         
@@ -41,7 +41,7 @@ public struct FlaskSerializer{
         return atoms
     }
     
-    static public func flattenDictionary(_ dict:FlaskDictionaryRef) -> [String:Any]{
+    static public func flattenDictionary(_ dict:LabDictionaryRef) -> [String:Any]{
         
         var result:[String:Any] = [:]
         
@@ -53,7 +53,7 @@ public struct FlaskSerializer{
             
             if(isDictionaryRef(value)){
                 //recursion
-                let nest = flattenDictionary(value as! FlaskDictionaryRef)
+                let nest = flattenDictionary(value as! LabDictionaryRef)
                 result[key] = nest
             } else{
                 result[key] = value
@@ -65,9 +65,9 @@ public struct FlaskSerializer{
         
     }
     
-    static public func nestDictionaries( namespace:String,  root:FlaskDictionaryRef,  children:FlaskDictionaryRef) -> FlaskDictionaryRef{
+    static public func nestDictionaries( namespace:String,  root:LabDictionaryRef,  children:LabDictionaryRef) -> LabDictionaryRef{
         
-        var result = FlaskDictionaryRef(root.dictionary)
+        var result = LabDictionaryRef(root.dictionary)
         
         let keys = children.keys()
         
@@ -79,11 +79,11 @@ public struct FlaskSerializer{
             
             result[childKey] = value
             
-            if(FlaskSerializer.isDictionaryRef(value)){
+            if(LabSerializer.isDictionaryRef(value)){
                 //recursion
-                result = FlaskSerializer.nestDictionaries(namespace: childKey,
+                result = LabSerializer.nestDictionaries(namespace: childKey,
                                                          root: result,
-                                                         children: value as! FlaskDictionaryRef)
+                                                         children: value as! LabDictionaryRef)
             }
             
         }
@@ -94,7 +94,7 @@ public struct FlaskSerializer{
     
     
     static public func isDictionaryRef(_ value:Any?)->Bool{
-        return ((value as? FlaskDictionaryRef) != nil)
+        return ((value as? LabDictionaryRef) != nil)
     }
     
 }

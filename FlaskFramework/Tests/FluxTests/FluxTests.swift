@@ -211,7 +211,7 @@ class FlaskReactorTests: SetupFlaskTests {
         }
         
         flask.mix(molecule,{ (molecule, commit, abort) in
-            molecule.atoms._internal="shouldn't cause mutation"
+            molecule.atoms._internal="shouldn't cause mix"
             commit()
         })
         
