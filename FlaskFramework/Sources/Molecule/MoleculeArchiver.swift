@@ -14,7 +14,7 @@ import Cocoa
 
 import Delayed
 
-extension Molecule {
+extension Substance {
     
     public func archiveKeySpace()->String{
         return "1"
@@ -33,7 +33,7 @@ extension Molecule {
     }
 }
 
-extension Molecule {
+extension Substance {
     
     func archiveIntent<T:Atoms>(_ atoms:T){
         
@@ -59,7 +59,7 @@ extension Molecule {
                     guard self != nil else {return}
                     
                     let key = self!.archiveKey()
-                    let data = try MoleculeSerializer.dataFromAtom(atoms)
+                    let data = try SubstanceSerializer.dataFromAtom(atoms)
                     
                     if let data = data {
                         
@@ -79,7 +79,7 @@ extension Molecule {
         
     }
 }
-extension Molecule {
+extension Substance {
     
     @discardableResult
     func unarchiveIntent()->Bool{
@@ -94,7 +94,7 @@ extension Molecule {
             let data = UserDefaults.standard.value(forKey: key)
             
             if ((data as? Data) != nil) {
-                atoms = try MoleculeSerializer.atomsFromData(data as! Data)
+                atoms = try SubstanceSerializer.atomsFromData(data as! Data)
                 setCurrentAtom(atoms)
             }
             
@@ -106,7 +106,7 @@ extension Molecule {
     }
 }
 
-extension Molecule {
+extension Substance {
     public func purgeArchive(){
         let key = archiveKey()
         UserDefaults.standard.removeObject(forKey: key)

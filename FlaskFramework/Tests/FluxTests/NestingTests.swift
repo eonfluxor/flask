@@ -18,9 +18,9 @@ class NestedAtomTests: SetupFlaskTests {
         let expectation3 = self.expectation(description: "testLabDictRef optional(some)")
         let expectation4 = self.expectation(description: "testLabDictRef optional(nil)")
         
-        let molecule = self.molecule!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, mixin:molecule)
+        let flask = Lab.flask(ownedBy:owner, mixin:substance)
         
         let data:NSDictionary = [
             "foo":"bar",
@@ -59,8 +59,8 @@ class NestedAtomTests: SetupFlaskTests {
             }
             
             
-            flask.mix(molecule){ (molecule) in
-                molecule.atoms.map = dictRef
+            flask.mix(substance){ (substance) in
+                substance.atoms.map = dictRef
             }.react()
         }
         
@@ -76,8 +76,8 @@ class NestedAtomTests: SetupFlaskTests {
                 })
             }
             
-            flask.mix(molecule) { (molecule) in
-                molecule.atoms.map = dictRef2
+            flask.mix(substance) { (substance) in
+                substance.atoms.map = dictRef2
             }.react()
         }
         

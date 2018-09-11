@@ -1,5 +1,5 @@
 //
-//  MoleculeConcrete.swift
+//  SubstanceConcrete.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 8/28/18.
@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-open class Molecule<T:Atoms,A:RawRepresentable> : MoleculeConcrete{
+open class Substance<T:Atoms,A:RawRepresentable> : SubstanceConcrete{
     
     typealias AtomsType = T
     
@@ -51,7 +51,7 @@ open class Molecule<T:Atoms,A:RawRepresentable> : MoleculeConcrete{
         return val.rawValue as! String
     }
     
-    public func mixer(_ enumVal:A, _ reaction: @escaping MoleculeMixer){
+    public func mixer(_ enumVal:A, _ reaction: @escaping SubstanceMixer){
         mixer(mixerName(enumVal), reaction)
     }
     
@@ -107,7 +107,7 @@ open class Molecule<T:Atoms,A:RawRepresentable> : MoleculeConcrete{
 
 
 
-open class MoleculeConcrete {
+open class SubstanceConcrete {
     
     public static func isInternalProp(_ atom:String)->Bool{
         return atom.starts(with: "_")
@@ -129,7 +129,7 @@ open class MoleculeConcrete {
         return [:]
     }
     func name() -> String {
-        return "Molecule\(self.self)"
+        return "Substance\(self.self)"
     }
     
     open func defineMixers(){}
@@ -146,9 +146,9 @@ open class MoleculeConcrete {
 
 
 
-public extension MoleculeConcrete {
+public extension SubstanceConcrete {
   
-    @discardableResult public func mixer(_ mixer:String, _ reaction: @escaping MoleculeMixer)->NSObjectProtocol{
+    @discardableResult public func mixer(_ mixer:String, _ reaction: @escaping SubstanceMixer)->NSObjectProtocol{
         let weakRegistration={ [weak self] in
             
             NotificationCenter.default.addObserver(forName: NSNotification.Name(mixer), object: nil, queue: OperationQueue.main) { (notification) in
@@ -185,14 +185,14 @@ public extension MoleculeConcrete {
     
 }
 
-extension MoleculeConcrete {
+extension SubstanceConcrete {
     
     func handleMix(_ mixerPause: MixerPause? = nil){
         Lab.mixer.reactionQueue.addOperation { [weak self] in
             
             if self == nil { return }
             
-            let reaction = FlaskReaction(self! as MoleculeConcrete)
+            let reaction = FlaskReaction(self! as SubstanceConcrete)
             reaction.labPause = mixerPause
             
             if( reaction.changed()){
@@ -207,7 +207,7 @@ extension MoleculeConcrete {
     
 }
 
-public extension MoleculeConcrete {
+public extension SubstanceConcrete {
     
 
     public func get(_ key:String) -> String{

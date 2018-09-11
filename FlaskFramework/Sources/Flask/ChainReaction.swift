@@ -18,12 +18,12 @@ public struct ChainReaction{
     public let react:()->Void
     public let abort:()->Void
     
-    public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping (_ molecule:T) -> Void)->ChainReaction{
+    public func mix<T:SubstanceConcrete>(_ aSubstance:T, _ mixer:@escaping (_ substance:T) -> Void)->ChainReaction{
         
-        let molecule = flask.molecule(aMolecule)
+        let substance = flask.substance(aSubstance)
         
-        molecule.atomsTransaction({
-            mixer(molecule)
+        substance.atomsTransaction({
+            mixer(substance)
             return true
         })
         
@@ -35,29 +35,29 @@ public struct ChainReaction{
 
 public extension FlaskConcrete{
   
-    public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping(_ molecule:T) -> Void)->ChainReaction{
+    public func mix<T:SubstanceConcrete>(_ aSubstance:T, _ mixer:@escaping(_ substance:T) -> Void)->ChainReaction{
         
         let  react = { [weak self] in
-            if let molecules = self?.molecules {
-                for molecule in molecules{
-                    molecule.handleMix()
+            if let substances = self?.substances {
+                for substance in substances{
+                    substance.handleMix()
                 }
             }
         }
         
         let abort = {
             [weak self] in
-            if let molecules = self?.molecules {
-                for molecule in molecules{
-                    molecule.abortAtomsTransaction();
+            if let substances = self?.substances {
+                for substance in substances{
+                    substance.abortAtomsTransaction();
                 }
             }
         }
         
-        let molecule = self.molecule(aMolecule)
+        let substance = self.substance(aSubstance)
         
-        molecule.atomsTransaction({
-            mixer(molecule)
+        substance.atomsTransaction({
+            mixer(substance)
             return true
         })
         

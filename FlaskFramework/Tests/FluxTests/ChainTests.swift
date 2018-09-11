@@ -15,9 +15,9 @@ class ChainingTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testInlineMix")
         
-        let molecule = self.molecule!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, mixin:molecule)
+        let flask = Lab.flask(ownedBy:owner, mixin:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppAtoms.named.counter, { (change) in
@@ -28,11 +28,11 @@ class ChainingTests: SetupFlaskTests {
         
       
         
-        flask.mix(molecule){ (molecule) in
-            molecule.atoms.counter=1
+        flask.mix(substance){ (substance) in
+            substance.atoms.counter=1
             
-        }.mix(molecule) { (molecule) in
-            molecule.atoms.counter=2
+        }.mix(substance) { (substance) in
+            substance.atoms.counter=2
         }.react()
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -46,9 +46,9 @@ class ChainingTests: SetupFlaskTests {
         let expectation2 = self.expectation(description: "testChangeInLine text")
         let expectation3 = self.expectation(description: "testChangeInLine object")
         
-        let molecule = self.molecule!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
+        let flask = Lab.flask(ownedBy:owner,mixin:substance)
         
         let object = NSObject()
         let aObject = LabRef( object )
@@ -63,7 +63,7 @@ class ChainingTests: SetupFlaskTests {
                 XCTAssert(oldValue == 0)
                 XCTAssert(newValue == 1)
                 XCTAssert(change.key() == AppAtoms.named.counter.rawValue)
-                XCTAssert(change.molecule() === molecule)
+                XCTAssert(change.substance() === substance)
                 
                 expectation.fulfill()
             })
@@ -73,7 +73,7 @@ class ChainingTests: SetupFlaskTests {
                 XCTAssert(change.oldValue() == "")
                 XCTAssert(change.newValue() == "reaction")
                 XCTAssert(change.key() == AppAtoms.named.text.rawValue)
-                XCTAssert(change.molecule() === molecule)
+                XCTAssert(change.substance() === substance)
                 
                 expectation2.fulfill()
             })
@@ -83,17 +83,17 @@ class ChainingTests: SetupFlaskTests {
                 XCTAssert( isLabNil(change.oldValue()) )
                 XCTAssert(change.newValue() == aObject)
                 XCTAssert(change.key() == AppAtoms.named.object.rawValue)
-                XCTAssert(change.molecule() === molecule)
+                XCTAssert(change.substance() === substance)
                 
                 expectation3.fulfill()
             })
             
         }
         
-        flask.mix(molecule) { (molecule) in
-            molecule.atoms.counter = 1
-            molecule.atoms.text = "reaction"
-            molecule.atoms.object = aObject
+        flask.mix(substance) { (substance) in
+            substance.atoms.counter = 1
+            substance.atoms.text = "reaction"
+            substance.atoms.object = aObject
         }.react()
         
         
@@ -105,9 +105,9 @@ class ChainingTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testChain")
         
-        let molecule = self.molecule!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, mixin:molecule)
+        let flask = Lab.flask(ownedBy:owner, mixin:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppAtoms.named.counter, { (change) in
@@ -116,10 +116,10 @@ class ChainingTests: SetupFlaskTests {
             })
         }
         
-        flask.mix(molecule){ (molecule) in
-            molecule.atoms.counter=1
-        }.mix(molecule) { (molecule) in
-            molecule.atoms.counter=2
+        flask.mix(substance){ (substance) in
+            substance.atoms.counter=1
+        }.mix(substance) { (substance) in
+            substance.atoms.counter=2
         }.react()
         
         

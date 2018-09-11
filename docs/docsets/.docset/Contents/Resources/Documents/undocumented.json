@@ -30,7 +30,7 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/ChainReaction.swift",
-      "line": 69,
+      "line": 38,
       "symbol": "FlaskConcrete.mix(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -639,14 +639,14 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 235,
+      "line": 213,
       "symbol": "MoleculeConcrete.get(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 243,
+      "line": 221,
       "symbol": "MoleculeConcrete.assertAtomKey(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

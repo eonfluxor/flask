@@ -1,5 +1,5 @@
 //
-//  MoleculeSerializer.swift
+//  SubstanceSerializer.swift
 //  Reaktor
 //
 //  Created by hassan uriostegui on 9/10/18.
@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-public struct MoleculeSerializer{
+public struct SubstanceSerializer{
     
     static public func jsonFromAtoms<K:Atoms>(_ atoms:K) throws ->String {
         
@@ -79,9 +79,9 @@ public struct MoleculeSerializer{
             
             result[childKey] = value
             
-            if(MoleculeSerializer.isDictionaryRef(value)){
+            if(SubstanceSerializer.isDictionaryRef(value)){
                 //recursion
-                result = MoleculeSerializer.nestDictionaries(namespace: childKey,
+                result = SubstanceSerializer.nestDictionaries(namespace: childKey,
                                                          root: result,
                                                          children: value as! LabDictRef)
             }

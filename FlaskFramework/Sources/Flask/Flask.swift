@@ -55,16 +55,16 @@ public class Flask<D:AnyObject>:FlaskConcrete {
 
 public class FlaskConcrete:LabAnyEquatable{
     
-    var molecules:[MoleculeConcrete]=[]
+    var substances:[SubstanceConcrete]=[]
     var filled = false
     
     
-    func defineMolecule(_ molecule:MoleculeConcrete){
-        defineMolecules([molecule])
+    func defineSubstance(_ substance:SubstanceConcrete){
+        defineSubstances([substance])
     }
     
-    func defineMolecules(_ mixinMolecules:[MoleculeConcrete]){
-        molecules = mixinMolecules
+    func defineSubstances(_ mixinSubstances:[SubstanceConcrete]){
+        substances = mixinSubstances
         
     }
     
@@ -75,19 +75,19 @@ public class FlaskConcrete:LabAnyEquatable{
     public func fill(){
         
         assert(!filled,"Already bounded. It's required  to balance bind/unbind calls")
-        assert(!molecules.isEmpty,"At least one molecule is required")
+        assert(!substances.isEmpty,"At least one substance is required")
         
         filled = true
         
-        for molecule in molecules {
+        for substance in substances {
            
             { [weak self] in
                 if let wself = self {
-                    Lab.mixer.fillFlask(molecule, flask: wself)
+                    Lab.mixer.fillFlask(substance, flask: wself)
                 }
             }()
             
-            molecule.defineMixers()
+            substance.defineMixers()
         }
         
         
@@ -102,24 +102,24 @@ public class FlaskConcrete:LabAnyEquatable{
         if(!filled){return}
         filled = false
         
-        for molecule in molecules {
+        for substance in substances {
             { [weak self] in
                 if let wself = self {
-                    Lab.mixer.emptyFlask(molecule, flask: wself)
+                    Lab.mixer.emptyFlask(substance, flask: wself)
                 }
             }()
             
-            molecule.undefineMixers()
+            substance.undefineMixers()
         }
     }
     
     ///
     func handleReaction(_ reaction:FlaskReaction){}
     
-//    @discardableResult public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping MixParams<T>)->FlaskConcrete{
+//    @discardableResult public func mix<T:SubstanceConcrete>(_ aSubstance:T, _ mixer:@escaping MixParams<T>)->FlaskConcrete{
 //        
-//        let molecule = self.molecule(aMolecule)
-//        molecule.mix(mixer)
+//        let substance = self.substance(aSubstance)
+//        substance.mix(mixer)
 //        
 //        return self
 //    }
@@ -128,13 +128,13 @@ public class FlaskConcrete:LabAnyEquatable{
     //////////////////
     // MARK: - PUBLIC METHODS
     
-    public func molecule<T:MoleculeConcrete>(_ molecule:T)->T{
+    public func substance<T:SubstanceConcrete>(_ substance:T)->T{
         
-        let registered = molecules.contains { (aMolecule) -> Bool in
-            aMolecule === molecule
+        let registered = substances.contains { (aSubstance) -> Bool in
+            aSubstance === substance
         }
-        assert(registered,"Molecule instance is not mixin to this flask")
-        return molecule
+        assert(registered,"Substance instance is not mixin to this flask")
+        return substance
     }
 
 }

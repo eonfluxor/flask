@@ -17,15 +17,15 @@ class PauseTests: SetupFlaskTests {
         let expectation2 = self.expectation(description: "testPause Mix Ignored")
         expectation2.isInverted=true
         
-        let molecule = self.molecule!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
+        let flask = Lab.flask(ownedBy:owner,mixin:substance)
         
         var calls = 0
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(molecule)?.on(AppAtoms.named.counter, { (change) in
+            reaction.at(substance)?.on(AppAtoms.named.counter, { (change) in
                 
                 if calls == 0 {
                     expectation.fulfill()
@@ -54,12 +54,12 @@ class PauseTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testPauseRelease Mix")
         
-        let molecule = self.molecule!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
+        let flask = Lab.flask(ownedBy:owner,mixin:substance)
         
         flask.reactor = { owner, reaction in
-            reaction.at(molecule)?.on(AppAtoms.named.counter, { (change) in
+            reaction.at(substance)?.on(AppAtoms.named.counter, { (change) in
                 expectation.fulfill()
             })
         }
@@ -86,18 +86,18 @@ class PauseTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testPauseRelease Mix")
         let expectation2 = self.expectation(description: "testPauseRelease Mix Ignored")
      
-        let molecule = self.molecule!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
+        let flask = Lab.flask(ownedBy:owner,mixin:substance)
         
         flask.reactor = { owner, reaction in
-            reaction.at(molecule)?.on(AppAtoms.named.counter, { (change) in
+            reaction.at(substance)?.on(AppAtoms.named.counter, { (change) in
                 
                 reaction.labPause?.release()
                 expectation.fulfill()
            
             })
-            reaction.at(molecule)?.on(AppAtoms.named.text, { (change) in
+            reaction.at(substance)?.on(AppAtoms.named.text, { (change) in
                 expectation2.fulfill()
             })
         }

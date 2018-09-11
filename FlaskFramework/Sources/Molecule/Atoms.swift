@@ -41,15 +41,15 @@ public extension Atoms{
                 continue
             }
             
-            if MoleculeConcrete.isInternalProp(label) {
+            if SubstanceConcrete.isInternalProp(label) {
                 continue
             }
             
             result[label] = Lab.Nil
             result[label] = value as? AnyHashable
             
-            if(MoleculeSerializer.isDictionaryRef(value)){
-                let nestedRef = MoleculeSerializer.nestDictionaries(namespace: label,
+            if(SubstanceSerializer.isDictionaryRef(value)){
+                let nestedRef = SubstanceSerializer.nestDictionaries(namespace: label,
                                                                 root: LabDictRef(result as NSDictionary),
                                                                 children: value as! LabDictRef)
                 result = nestedRef.dictionary as! LabDictType
@@ -73,16 +73,16 @@ public extension Atoms{
                 continue
             }
             
-            if MoleculeConcrete.isInternalProp(label) {
+            if SubstanceConcrete.isInternalProp(label) {
                 continue
             }
             
-            if MoleculeConcrete.isObjectRef(value) {
+            if SubstanceConcrete.isObjectRef(value) {
                 continue
             }
             
-            if(MoleculeSerializer.isDictionaryRef(value)){
-                let nest =  MoleculeSerializer.flattenDictionary(value as! LabDictRef)
+            if(SubstanceSerializer.isDictionaryRef(value)){
+                let nest =  SubstanceSerializer.flattenDictionary(value as! LabDictRef)
                  result[label] = nest
             } else{
                  result[label] = value

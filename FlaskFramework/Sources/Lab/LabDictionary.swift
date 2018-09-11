@@ -105,7 +105,7 @@ public class LabDictRef: NSObject, Codable, AtomsObservable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        let normalDict = MoleculeSerializer.flattenDictionary(self)
+        let normalDict = SubstanceSerializer.flattenDictionary(self)
         
         let jsonData:Data = try JSONSerialization.data(withJSONObject: normalDict, options: [])
         let string:String = String(data: jsonData, encoding: .utf8)!

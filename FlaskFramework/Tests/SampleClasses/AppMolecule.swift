@@ -1,5 +1,5 @@
 //
-//  Molecule.swift
+//  Substance.swift
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 8/31/18.
@@ -34,7 +34,7 @@ struct AppAtoms : Atoms {
     
 }
 
-class App : Molecule<AppAtoms,AppMixers> {
+class App : Substance<AppAtoms,AppMixers> {
     
     override func defineMixers(){
         

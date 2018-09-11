@@ -18,12 +18,12 @@ public class FlaskReaction {
 
     
     weak public var labPause:MixerPause?
-    private(set) var molecule:MoleculeConcrete
+    private(set) var substance:SubstanceConcrete
     private(set) var changes:LabDictType
     
-    required public init(_ molecule:MoleculeConcrete){
-        self.molecule = molecule
-        self.changes = FlaskReaction.reduceChanges(molecule: self.molecule)
+    required public init(_ substance:SubstanceConcrete){
+        self.substance = substance
+        self.changes = FlaskReaction.reduceChanges(substance: self.substance)
     }
     
     public func changed()->Bool{
@@ -43,15 +43,15 @@ public class FlaskReaction {
             return
         }
         
-        var change = FlaskReaction.change(molecule, key)
-        change._molecule = molecule
+        var change = FlaskReaction.change(substance, key)
+        change._substance = substance
         closure(change)
     }
     
     
-    public func at(_ aMolecule:MoleculeConcrete)->FlaskReaction?{
+    public func at(_ aSubstance:SubstanceConcrete)->FlaskReaction?{
        
-        if molecule !== aMolecule{
+        if substance !== aSubstance{
             return .none
         }
         return self
@@ -63,7 +63,7 @@ public class FlaskReaction {
             fatalError("the key `\(key)` is not defined in atoms")
             
         }
-        let atoms = molecule.atomsSnapshotDictionary()
+        let atoms = substance.atomsSnapshotDictionary()
         let rootKey = key.split(separator: ".").first
         
         guard (rootKey != nil) else{
@@ -80,10 +80,10 @@ public class FlaskReaction {
 
 public extension FlaskReaction {
     
-    static public func reduceChanges(molecule:MoleculeConcrete)->LabDictType{
+    static public func reduceChanges(substance:SubstanceConcrete)->LabDictType{
     
-        let oldAtom = molecule.atomsSnapshotDictionary()
-        let newAtom = molecule.atomsDictionary()
+        let oldAtom = substance.atomsSnapshotDictionary()
+        let newAtom = substance.atomsDictionary()
         
         return reduceChanges(oldAtom,newAtom)
     }
@@ -108,16 +108,16 @@ public extension FlaskReaction {
         
     }
     
-    static public func change(_ molecule:MoleculeConcrete, _ key: String) -> MoleculeChange {
+    static public func change(_ substance:SubstanceConcrete, _ key: String) -> SubstanceChange {
         
-        let oldAtom = molecule.atomsSnapshotDictionary()
-        let newAtom = molecule.atomsDictionary()
+        let oldAtom = substance.atomsSnapshotDictionary()
+        let newAtom = substance.atomsDictionary()
         
         return change(oldAtom,newAtom,key)
     }
     
 
-    static public func change(_ oldAtom:LabDictType,_ newAtom:LabDictType, _ key: String) -> MoleculeChange {
+    static public func change(_ oldAtom:LabDictType,_ newAtom:LabDictType, _ key: String) -> SubstanceChange {
         
         var oldValue:AnyHashable? = Lab.Nil
         var newValue:AnyHashable? = Lab.Nil
@@ -131,7 +131,7 @@ public extension FlaskReaction {
         }
         
     
-        var change = MoleculeChange()
+        var change = SubstanceChange()
         change.setOldValue(oldValue)
         change.setNewValue(newValue)
         change._key = key

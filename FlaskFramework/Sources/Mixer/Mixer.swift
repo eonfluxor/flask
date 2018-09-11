@@ -126,31 +126,31 @@ extension Mixer {
 
 extension Mixer {
    
-    func fillFlask(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
+    func fillFlask(_ substance:SubstanceConcrete, flask:FlaskConcrete) {
         
-        let moleculeName = molecule.name()
-        var moleculeFlaskRefs = getMoleculeFlaskRefs(moleculeName)
+        let substanceName = substance.name()
+        var substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
         
         let ref = LabWeakRef(value:flask)
-        moleculeFlaskRefs.append(ref)
-        setMoleculeFlaskRefs(moleculeName,moleculeFlaskRefs)
+        substanceFlaskRefs.append(ref)
+        setSubstanceFlaskRefs(substanceName,substanceFlaskRefs)
         
     }
     
-    func emptyFlask(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
+    func emptyFlask(_ substance:SubstanceConcrete, flask:FlaskConcrete) {
         
-        let moleculeName = molecule.name()
-        let moleculeFlaskRefs = getMoleculeFlaskRefs(moleculeName)
+        let substanceName = substance.name()
+        let substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
         
-        let moleculeFlaskRefsFiltered = moleculeFlaskRefs.filter { $0.value != flask }
+        let substanceFlaskRefsFiltered = substanceFlaskRefs.filter { $0.value != flask }
         
-        setMoleculeFlaskRefs(moleculeName,moleculeFlaskRefsFiltered)
+        setSubstanceFlaskRefs(substanceName,substanceFlaskRefsFiltered)
        
     }
     
-    func getMoleculeFlaskRefs(_ moleculeName:String) -> Array<LabWeakRef<FlaskConcrete>>{
+    func getSubstanceFlaskRefs(_ substanceName:String) -> Array<LabWeakRef<FlaskConcrete>>{
         
-        if let flasks = self.flaskRefs[moleculeName] {
+        if let flasks = self.flaskRefs[substanceName] {
             return flasks
         }
         
@@ -158,9 +158,9 @@ extension Mixer {
         
     }
     
-    func setMoleculeFlaskRefs(_ moleculeName:String,_ refs:Array<LabWeakRef<FlaskConcrete>>){
+    func setSubstanceFlaskRefs(_ substanceName:String,_ refs:Array<LabWeakRef<FlaskConcrete>>){
         
-        self.flaskRefs[moleculeName] = refs
+        self.flaskRefs[substanceName] = refs
     }
 }
 
@@ -171,11 +171,11 @@ extension Mixer {
    
     func reactChange(_ reaction:FlaskReaction){
         
-        let moleculeName = reaction.molecule.name()
-        let moleculeFlaskRefs = getMoleculeFlaskRefs(moleculeName)
+        let substanceName = reaction.substance.name()
+        let substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
         
-        for moleculeFlaskRef in moleculeFlaskRefs {
-            if let flask = moleculeFlaskRef.value{
+        for substanceFlaskRef in substanceFlaskRefs {
+            if let flask = substanceFlaskRef.value{
                 flask.handleReaction( reaction)
             }
         }

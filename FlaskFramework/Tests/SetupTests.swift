@@ -11,12 +11,12 @@ import XCTest
 
 class SetupFlaskTests: XCTestCase {
     
-    var molecule:App?
+    var substance:App?
     
     override func setUp() {
         super.setUp()
         
-        self.molecule = App()
+        self.substance = App()
         
         
       
@@ -30,8 +30,8 @@ class SetupFlaskTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        self.molecule?.purgeArchive()
-        self.molecule = .none
+        self.substance?.purgeArchive()
+        self.substance = .none
         Lab.removePauses()
         LabFlaskManager.purge()
 //        sleep(2)

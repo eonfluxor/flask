@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>LabDictRef Class Reference</title>
+    <title>SubstanceSerializer Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/LabDictRef" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/SubstanceSerializer" class="dashAnchor"></a>
 
-    <a title="LabDictRef Class Reference"></a>
+    <a title="SubstanceSerializer Structure Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html"> Reference</a>
       <img class="carat" src="../img/carat.png" />
-      LabDictRef Class Reference
+      SubstanceSerializer Structure Reference
     </p>
 
     <div class="content-wrapper">
@@ -167,10 +167,10 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>LabDictRef</h1>
+            <h1>SubstanceSerializer</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">LabDictRef</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt"><a href="../Protocols/AtomsObservable.html">AtomsObservable</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SubstanceSerializer</span></code></pre>
 
                 </div>
               </div>
@@ -186,9 +186,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Flask_iOS@objc(cs)LabDictRef(im)init"></a>
-                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Flask_iOS@objc(cs)LabDictRef(im)init">init()</a>
+                    <a name="/s:9Flask_iOS19SubstanceSerializerV13jsonFromAtomsSSxKAA0G0RzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/jsonFromAtoms(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS19SubstanceSerializerV13jsonFromAtomsSSxKAA0G0RzlFZ">jsonFromAtoms(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -203,7 +203,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">jsonFromAtoms</span><span class="o">&lt;</span><span class="kt">K</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">atoms</span><span class="p">:</span> <span class="kt">K</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="k">where</span> <span class="kt">K</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Atoms.html">Atoms</a></span></code></pre>
 
                         </div>
                       </div>
@@ -213,9 +213,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS10LabDictRefCACSo12NSDictionaryCcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS10LabDictRefCACSo12NSDictionaryCcfc">init(_:)</a>
+                    <a name="/s:9Flask_iOS19SubstanceSerializerV13atomsFromJsonxSSKAA5AtomsRzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/atomsFromJson(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS19SubstanceSerializerV13atomsFromJsonxSSKAA5AtomsRzlFZ">atomsFromJson(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -230,7 +230,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">dict</span><span class="p">:</span> <span class="kt">NSDictionary</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">atomsFromJson</span><span class="o">&lt;</span><span class="kt">K</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">json</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">K</span> <span class="k">where</span> <span class="kt">K</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Atoms.html">Atoms</a></span></code></pre>
 
                         </div>
                       </div>
@@ -240,9 +240,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS10LabDictRefC02tocdE0So12NSDictionaryCyF"></a>
-                    <a name="//apple_ref/swift/Method/toLabDictRef()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS10LabDictRefC02tocdE0So12NSDictionaryCyF">toLabDictRef()</a>
+                    <a name="/s:9Flask_iOS19SubstanceSerializerV12dataFromAtom10Foundation4DataVSgxKAA5AtomsRzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/dataFromAtom(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS19SubstanceSerializerV12dataFromAtom10Foundation4DataVSgxKAA5AtomsRzlFZ">dataFromAtom(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -257,7 +257,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">toLabDictRef</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSDictionary</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">dataFromAtom</span><span class="o">&lt;</span><span class="kt">K</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">atoms</span><span class="p">:</span> <span class="kt">K</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span><span class="p">?</span> <span class="k">where</span> <span class="kt">K</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Atoms.html">Atoms</a></span></code></pre>
 
                         </div>
                       </div>
@@ -267,9 +267,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS10LabDictRefCs11AnyHashableVSgSScip"></a>
-                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS10LabDictRefCs11AnyHashableVSgSScip">subscript(_:)</a>
+                    <a name="/s:9Flask_iOS19SubstanceSerializerV13atomsFromDatax10Foundation0G0VKAA5AtomsRzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/atomsFromData(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS19SubstanceSerializerV13atomsFromDatax10Foundation0G0VKAA5AtomsRzlFZ">atomsFromData(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -284,7 +284,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyHashable</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">atomsFromData</span><span class="o">&lt;</span><span class="kt">K</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">jsonData</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">K</span> <span class="k">where</span> <span class="kt">K</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Atoms.html">Atoms</a></span></code></pre>
 
                         </div>
                       </div>
@@ -294,9 +294,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS10LabDictRefC4keysSaySSGyF"></a>
-                    <a name="//apple_ref/swift/Method/keys()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS10LabDictRefC4keysSaySSGyF">keys()</a>
+                    <a name="/s:9Flask_iOS19SubstanceSerializerV17flattenDictionarys0F0VySSypGAA10LabDictRefCFZ"></a>
+                    <a name="//apple_ref/swift/Method/flattenDictionary(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS19SubstanceSerializerV17flattenDictionarys0F0VySSypGAA10LabDictRefCFZ">flattenDictionary(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -311,7 +311,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">keys</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">flattenDictionary</span><span class="p">(</span><span class="n">_</span> <span class="nv">dict</span><span class="p">:</span> <span class="kt"><a href="../Classes/LabDictRef.html">LabDictRef</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -321,9 +321,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS10LabDictRefC5countSiyF"></a>
-                    <a name="//apple_ref/swift/Method/count()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS10LabDictRefC5countSiyF">count()</a>
+                    <a name="/s:9Flask_iOS19SubstanceSerializerV16nestDictionariesAA10LabDictRefCSS9namespace_AF4rootAF8childrentFZ"></a>
+                    <a name="//apple_ref/swift/Method/nestDictionaries(namespace:root:children:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS19SubstanceSerializerV16nestDictionariesAA10LabDictRefCSS9namespace_AF4rootAF8childrentFZ">nestDictionaries(namespace:root:children:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -338,7 +338,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">count</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">nestDictionaries</span><span class="p">(</span><span class="nv">namespace</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">root</span><span class="p">:</span> <span class="kt"><a href="../Classes/LabDictRef.html">LabDictRef</a></span><span class="p">,</span> <span class="nv">children</span><span class="p">:</span> <span class="kt"><a href="../Classes/LabDictRef.html">LabDictRef</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/LabDictRef.html">LabDictRef</a></span></code></pre>
 
                         </div>
                       </div>
@@ -348,9 +348,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS10LabDictRefC2eeoiSbAC_ACtFZ"></a>
-                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS10LabDictRefC2eeoiSbAC_ACtFZ">==(_:_:)</a>
+                    <a name="/s:9Flask_iOS19SubstanceSerializerV15isDictionaryRefSbypSgFZ"></a>
+                    <a name="//apple_ref/swift/Method/isDictionaryRef(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS19SubstanceSerializerV15isDictionaryRefSbypSgFZ">isDictionaryRef(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -365,59 +365,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">LabDictRef</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">LabDictRef</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:s9DecodablePxs7Decoder_p4from_tKcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:s9DecodablePxs7Decoder_p4from_tKcfc">init(from:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:s9EncodableP6encodeys7Encoder_p2to_tKF"></a>
-                    <a name="//apple_ref/swift/Method/encode(to:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:s9EncodableP6encodeys7Encoder_p2to_tKF">encode(to:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">to</span> <span class="nv">encoder</span><span class="p">:</span> <span class="kt">Encoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">isDictionaryRef</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
