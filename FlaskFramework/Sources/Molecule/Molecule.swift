@@ -183,28 +183,6 @@ public extension MoleculeConcrete {
         return weakRegistration()
     }
     
-//    public func mixer<T:MoleculeConcrete>(_ mixer:@escaping MixParams<T>){
-//
-//        var resolved = false
-//        var completed = true
-//
-//        let react = {
-//            resolved = true
-//            self.handleMix()
-//        }
-//        
-//        let abort = {
-//            resolved = true
-//            completed = false
-//        }
-//
-//        atomsTransaction({
-//            mixer(self as! T, react, abort)
-//            assert(resolved, "mixer closure must call `react` or `abort`")
-//            return completed
-//        })
-//    }
-    
 }
 
 extension MoleculeConcrete {

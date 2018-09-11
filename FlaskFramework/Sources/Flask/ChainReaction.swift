@@ -34,38 +34,7 @@ public struct ChainReaction{
 }
 
 public extension FlaskConcrete{
-    
-//    func mix()->ChainReaction{
-//        
-//        if let molecule = molecules.first {
-//            return mix(molecule)
-//        }
-//        assert(false, "error: there are not molecules mixin")
-//    }
-    
-//    func mix<T:MoleculeConcrete>(_ aMolecule:T)->ChainReaction{
-//
-//        let  react = { [weak self] in
-//            if let molecules = self?.molecules {
-//                for molecule in molecules{
-//                    molecule.handleMix()
-//                }
-//            }
-//        }
-//
-//        let abort = {
-//            [weak self] in
-//            if let molecules = self?.molecules {
-//                for molecule in molecules{
-//                    molecule.abortAtomsTransaction();
-//                }
-//            }
-//        }
-//        let chain = ChainReaction(flask:self, react:react, abort:abort)
-//        return chain
-//    }
-//
-    
+  
     public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping(_ molecule:T) -> Void)->ChainReaction{
         
         let  react = { [weak self] in

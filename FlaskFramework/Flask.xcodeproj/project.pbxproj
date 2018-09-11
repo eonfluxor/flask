@@ -135,9 +135,9 @@
 		26C53EED214790C00090AA0C /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECE214790C00090AA0C /* SetupTests.swift */; };
 		26C53EEE214790C00090AA0C /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECE214790C00090AA0C /* SetupTests.swift */; };
 		26C53EEF214790C00090AA0C /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECE214790C00090AA0C /* SetupTests.swift */; };
-		26C53EF0214790C00090AA0C /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* LockTests.swift */; };
-		26C53EF1214790C00090AA0C /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* LockTests.swift */; };
-		26C53EF2214790C00090AA0C /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* LockTests.swift */; };
+		26C53EF0214790C00090AA0C /* PauseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* PauseTests.swift */; };
+		26C53EF1214790C00090AA0C /* PauseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* PauseTests.swift */; };
+		26C53EF2214790C00090AA0C /* PauseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* PauseTests.swift */; };
 		26C53EF3214790C00090AA0C /* AppMolecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* AppMolecule.swift */; };
 		26C53EF4214790C00090AA0C /* AppMolecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* AppMolecule.swift */; };
 		26C53EF5214790C00090AA0C /* AppMolecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* AppMolecule.swift */; };
@@ -239,7 +239,7 @@
 		26C53ECC214790C00090AA0C /* ChainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainTests.swift; sourceTree = "<group>"; };
 		26C53ECD214790C00090AA0C /* NestingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestingTests.swift; sourceTree = "<group>"; };
 		26C53ECE214790C00090AA0C /* SetupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupTests.swift; sourceTree = "<group>"; };
-		26C53ED0214790C00090AA0C /* LockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockTests.swift; sourceTree = "<group>"; };
+		26C53ED0214790C00090AA0C /* PauseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseTests.swift; sourceTree = "<group>"; };
 		26C53ED2214790C00090AA0C /* AppMolecule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMolecule.swift; sourceTree = "<group>"; };
 		26C53ED3214790C00090AA0C /* Molecules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Molecules.swift; sourceTree = "<group>"; };
 		26C53ED4214790C00090AA0C /* TestOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestOwner.swift; sourceTree = "<group>"; };
@@ -581,7 +581,7 @@
 		26C53ECF214790C00090AA0C /* PauseTests */ = {
 			isa = PBXGroup;
 			children = (
-				26C53ED0214790C00090AA0C /* LockTests.swift */,
+				26C53ED0214790C00090AA0C /* PauseTests.swift */,
 			);
 			path = PauseTests;
 			sourceTree = "<group>";
@@ -1113,7 +1113,7 @@
 				26C53EF3214790C00090AA0C /* AppMolecule.swift in Sources */,
 				26C53E83214790A90090AA0C /* ChainReaction.swift in Sources */,
 				26C53EAD214790A90090AA0C /* Atoms.swift in Sources */,
-				26C53EF0214790C00090AA0C /* LockTests.swift in Sources */,
+				26C53EF0214790C00090AA0C /* PauseTests.swift in Sources */,
 				26C53EE1214790C00090AA0C /* ArchivingTests.swift in Sources */,
 				26C53E7D214790A90090AA0C /* LabRef.swift in Sources */,
 				26C53ED5214790C00090AA0C /* ReducerTests.swift in Sources */,
@@ -1171,7 +1171,7 @@
 				26C53EF4214790C00090AA0C /* AppMolecule.swift in Sources */,
 				26C53E85214790A90090AA0C /* ChainReaction.swift in Sources */,
 				26C53EAF214790A90090AA0C /* Atoms.swift in Sources */,
-				26C53EF1214790C00090AA0C /* LockTests.swift in Sources */,
+				26C53EF1214790C00090AA0C /* PauseTests.swift in Sources */,
 				26C53EE2214790C00090AA0C /* ArchivingTests.swift in Sources */,
 				26C53E7F214790A90090AA0C /* LabRef.swift in Sources */,
 				26C53ED6214790C00090AA0C /* ReducerTests.swift in Sources */,
@@ -1229,7 +1229,7 @@
 				26C53EF5214790C00090AA0C /* AppMolecule.swift in Sources */,
 				26C53E87214790A90090AA0C /* ChainReaction.swift in Sources */,
 				26C53EB1214790A90090AA0C /* Atoms.swift in Sources */,
-				26C53EF2214790C00090AA0C /* LockTests.swift in Sources */,
+				26C53EF2214790C00090AA0C /* PauseTests.swift in Sources */,
 				26C53EE3214790C00090AA0C /* ArchivingTests.swift in Sources */,
 				26C53E81214790A90090AA0C /* LabRef.swift in Sources */,
 				26C53ED7214790C00090AA0C /* ReducerTests.swift in Sources */,
