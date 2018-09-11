@@ -20,7 +20,7 @@ public typealias MoleculeStateDictionaryType = Dictionary<String,AnyHashable?>
 public typealias FlaskNil = (AnyHashable?)
 public typealias FlaskMutatorParams<T> = (_ molecule:T,_ commit:()-> Void,_ abort:()-> Void) -> Void
 public typealias MoleculeMixers = String
-public typealias Atoms = String
+public typealias MoleculeAtoms = String
 
 
 let FLUX_ACTION_SKIP_LOCKS="FLUX_ACTION_SKIP_LOCKS"
@@ -45,7 +45,7 @@ func FlaskAddressHeap<T: AnyObject>(_ o: T) -> Int {
 
 
 protocol FlaskAnyWithInit{
-    init() //construct at initial state
+    init() //construct at initial atoms
 }
 
 public class FlaskAnyEquatable: Equatable{

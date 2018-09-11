@@ -59,17 +59,17 @@ public class FlaskReaction {
     func assertKey(_ key:String){
         
         let error = {
-            fatalError("the key `\(key)` is not defined in state")
+            fatalError("the key `\(key)` is not defined in atoms")
             
         }
-        let state = molecule.lastStateDictionary()
+        let atoms = molecule.lastStateDictionary()
         let rootKey = key.split(separator: ".").first
         
         guard (rootKey != nil) else{
             error()
         }
         
-        guard state.keys.contains(String(rootKey!)) else{
+        guard atoms.keys.contains(String(rootKey!)) else{
             error()
         }
         
@@ -82,7 +82,7 @@ public extension FlaskReaction {
     static public func reduceChanges(molecule:MoleculeConcrete)->MoleculeStateDictionaryType{
     
         let oldState = molecule.lastStateDictionary()
-        let newState = molecule.stateDictionary()
+        let newState = molecule.atomsDictionary()
         
         return reduceChanges(oldState,newState)
     }
@@ -110,7 +110,7 @@ public extension FlaskReaction {
     static public func change(_ molecule:MoleculeConcrete, _ key: String) -> FlaskChangeTemplate {
         
         let oldState = molecule.lastStateDictionary()
-        let newState = molecule.stateDictionary()
+        let newState = molecule.atomsDictionary()
         
         return change(oldState,newState,key)
     }

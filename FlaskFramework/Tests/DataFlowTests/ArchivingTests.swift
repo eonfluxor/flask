@@ -29,7 +29,7 @@ class archiveTests: SetupFlaskTests {
         }
         
         flask.mix(molecule){ (molecule) in
-            molecule.state.counter=expectedValue
+            molecule.atoms.counter=expectedValue
         }.commit()
         
         wait(for: [expectation], timeout: 1)
@@ -39,7 +39,7 @@ class archiveTests: SetupFlaskTests {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             
             let anotherMolecule = App()
-            XCTAssert(anotherMolecule.state.counter == expectedValue)
+            XCTAssert(anotherMolecule.atoms.counter == expectedValue)
             anotherMolecule.purgeArchive()
             
             expectationUnarchive.fulfill()

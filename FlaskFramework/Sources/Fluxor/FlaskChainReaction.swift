@@ -22,7 +22,7 @@ public struct FlaskChainReaction{
         
         let molecule = flask.molecule(aMolecule)
         
-        molecule.stateTransaction({
+        molecule.atomsTransaction({
             mixer(molecule)
             return true
         })
@@ -87,7 +87,7 @@ public extension FlaskConcrete{
         
         let molecule = self.molecule(aMolecule)
         
-        molecule.stateTransaction({
+        molecule.atomsTransaction({
             mixer(molecule)
             return true
         })

@@ -21,7 +21,7 @@ enum Mixers : MoleculeMixers {
 
 struct State : MoleculeState {
    
-    enum atom : Atoms{
+    enum atom : MoleculeAtoms{
         case counter, text, map, object
     }
     
@@ -39,12 +39,12 @@ class App : Molecule<State,Mixers> {
     override func bindMixers(){
         
         mixer(.Count) {[weak self] (payload, commit, abort)  in
-            self?.state.counter = (self?.state.counter)! + 1
+            self?.atoms.counter = (self?.atoms.counter)! + 1
             commit()
         }
         
         mixer(.Text) {[weak self] (payload, commit, abort)  in
-            self?.state.text = "mixd"
+            self?.atoms.text = "mixd"
             commit()
         }
     }

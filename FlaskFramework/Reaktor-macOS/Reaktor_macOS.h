@@ -14,6 +14,6 @@ FOUNDATION_EXPORT double Reaktor_macOSVersionNumber;
 //! Project version string for Reaktor_macOS.
 FOUNDATION_EXPORT const unsigned char Reaktor_macOSVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <Reaktor_macOS/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using atomsments like #import <Reaktor_macOS/PublicHeader.h>
 
 

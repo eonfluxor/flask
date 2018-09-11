@@ -16,9 +16,9 @@ open class Molecule<T:MoleculeState,A:RawRepresentable> : MoleculeConcrete{
     
     typealias MoleculeStateType = T
     
-    var stateSnapshot: MoleculeStateDictionaryType = [:]
-    private var _state: T = T()
-    public var state:T = T()
+    var atomsSnapshot: MoleculeStateDictionaryType = [:]
+    private var _atoms: T = T()
+    public var atoms:T = T()
    
     //////////////////
     // MARK: - TRANSACTIONS QUEUE
@@ -57,39 +57,39 @@ open class Molecule<T:MoleculeState,A:RawRepresentable> : MoleculeConcrete{
     }
     
     public override func lastStateDictionary() -> MoleculeStateDictionaryType{
-        return stateSnapshot
+        return atomsSnapshot
     }
-    public override func stateDictionary() -> MoleculeStateDictionaryType{
-        return _state.toDictionary()
+    public override func atomsDictionary() -> MoleculeStateDictionaryType{
+        return _atoms.toDictionary()
     }
     
     public func currentState()->T{
-        return _state
+        return _atoms
     }
     
-    func setCurrentState(_ state:T){
-        _state = state
+    func setCurrentState(_ atoms:T){
+        _atoms = atoms
     }
     
     /// PRIVATE
     
     override func snapshotState(){
-        self.stateSnapshot = self.stateDictionary()
-        archiveIntent(_state)
+        self.atomsSnapshot = self.atomsDictionary()
+        archiveIntent(_atoms)
     }
     
 
-    override func stateTransaction(_ transaction:@escaping ()-> Bool){
+    override func atomsTransaction(_ transaction:@escaping ()-> Bool){
         transactonsQueue.addOperation { [weak self] in
             
             if self == nil {return}
             
-            self!.state = self!._state
+            self!.atoms = self!._atoms
             
             if transaction() {
-                self!._state = self!.state
+                self!._atoms = self!.atoms
             }else{
-                self!.state = self!._state
+                self!.atoms = self!._atoms
             }
         }
         
@@ -100,7 +100,7 @@ open class Molecule<T:MoleculeState,A:RawRepresentable> : MoleculeConcrete{
             
             if self == nil {return}
             
-            self!.state = self!._state
+            self!.atoms = self!._atoms
         }
     }
 }
@@ -126,7 +126,7 @@ open class MoleculeConcrete {
     func lastStateDictionary() -> MoleculeStateDictionaryType{
         return [:]
     }
-    func stateDictionary() -> MoleculeStateDictionaryType{
+    func atomsDictionary() -> MoleculeStateDictionaryType{
         return [:]
     }
     func name() -> String {
@@ -139,7 +139,7 @@ open class MoleculeConcrete {
     func snapshotState(){}
     
     func initializeMetaClass(){}
-    func stateTransaction(_ transaction:@escaping ()-> Bool){}
+    func atomsTransaction(_ transaction:@escaping ()-> Bool){}
     func abortStateTransaction(){}
     
     
@@ -168,7 +168,7 @@ public extension MoleculeConcrete {
                     completed = false
                 }
                 
-                self?.stateTransaction({
+                self?.atomsTransaction({
                     reaction(payload,commit,abort)
                     assert(resolved, "reaction closure must call `commit` or `abort`")
                     return completed
@@ -196,7 +196,7 @@ public extension MoleculeConcrete {
             completed = false
         }
         
-        stateTransaction({
+        atomsTransaction({
             mixer(self as! T, commit, abort)
             assert(resolved, "mixer closure must call `commit` or `abort`")
             return completed
@@ -233,13 +233,13 @@ public extension MoleculeConcrete {
         
         assertStateKey(key)
         
-        let state = self.stateDictionary()
-        return state[key] as! String
+        let atoms = self.atomsDictionary()
+        return atoms[key] as! String
     }
     
     func assertStateKey(_ key:String) {
-        let state = self.stateDictionary()
-        assert(state.keys.contains(key),"Prop must be defined in state")
+        let atoms = self.atomsDictionary()
+        assert(atoms.keys.contains(key),"Prop must be defined in atoms")
         
     }
     

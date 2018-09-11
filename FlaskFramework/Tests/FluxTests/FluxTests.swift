@@ -179,14 +179,14 @@ class FlaskReactorTests: SetupFlaskTests {
         flask.reactor = { owner, reaction in
             reaction.on(State.atom.counter, { (change) in
                 expectation.fulfill()
-                XCTAssert(Molecules.app.state.counter == 2)
+                XCTAssert(Molecules.app.atoms.counter == 2)
             })
         }
         
         flask.mix(Molecules.app,{ (molecule) in
-            molecule.state.counter=1
+            molecule.atoms.counter=1
         }).mix(Molecules.app) { (molecule) in
-            molecule.state.counter=2
+            molecule.atoms.counter=2
             }.commit()
         
         
@@ -211,7 +211,7 @@ class FlaskReactorTests: SetupFlaskTests {
         }
         
         flask.mix(molecule,{ (molecule, commit, abort) in
-            molecule.state._internal="shouldn't cause mutation"
+            molecule.atoms._internal="shouldn't cause mutation"
             commit()
         })
         

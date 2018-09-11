@@ -14,31 +14,31 @@ import Cocoa
 
 public struct FlaskSerializer{
     
-    static public func jsonFromState<K:MoleculeState>(_ state:K) throws ->String {
+    static public func jsonFromState<K:MoleculeState>(_ atoms:K) throws ->String {
         
-        let jsonData = try JSONEncoder().encode(state)
+        let jsonData = try JSONEncoder().encode(atoms)
         
         return String(data: jsonData, encoding: .utf8)!
         
     }
     
-    static public func stateFromJson<K:MoleculeState>(_ json:String) throws ->K {
+    static public func atomsFromJson<K:MoleculeState>(_ json:String) throws ->K {
         
         let jsonData = json.data(using: .utf8)!
-        return try stateFromData(jsonData)
+        return try atomsFromData(jsonData)
     }
     
     
-    static public func dataFromState<K:MoleculeState>(_ state:K) throws ->Data? {
+    static public func dataFromState<K:MoleculeState>(_ atoms:K) throws ->Data? {
         
-        let json = try jsonFromState(state)
+        let json = try jsonFromState(atoms)
         return json.data(using: .utf16)
     }
     
-    static public func stateFromData<K:MoleculeState>(_ jsonData:Data) throws ->K {
+    static public func atomsFromData<K:MoleculeState>(_ jsonData:Data) throws ->K {
         
-        let state:K = try! JSONDecoder().decode(K.self, from: jsonData)
-        return state
+        let atoms:K = try! JSONDecoder().decode(K.self, from: jsonData)
+        return atoms
     }
     
     static public func flattenDictionary(_ dict:FlaskDictionaryRef) -> [String:Any]{

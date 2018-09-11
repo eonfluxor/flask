@@ -14,6 +14,6 @@ FOUNDATION_EXPORT double Flask_iOSVersionNumber;
 //! Project version string for Flask_iOS.
 FOUNDATION_EXPORT const unsigned char Flask_iOSVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <Flask_iOS/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using atomsments like #import <Flask_iOS/PublicHeader.h>
 
 

@@ -17,7 +17,7 @@ struct AnyMoleculeState:MoleculeState {
 }
 
 public protocol MoleculeState : Codable {
-    init() //construct at initial state
+    init() //construct at initial atoms
     func toDictionary()->MoleculeStateDictionaryType
     func toJsonDictionary()->[String:Any]
 }
