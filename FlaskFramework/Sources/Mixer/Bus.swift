@@ -106,6 +106,7 @@ extension Bus {
                 object: payload,
                 userInfo: .none)
             self?.currentEvent = .none
+            
         }
     }
  
