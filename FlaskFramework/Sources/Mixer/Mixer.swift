@@ -18,7 +18,7 @@ public class Mixer {
     //////////////////
     // MARK: - LOCKS
     
-    var locks:[MixerLock]=[]
+    var pauses:[MixerPause]=[]
     
     //////////////////
     // MARK: - OPERATION QUEUE
@@ -29,7 +29,7 @@ public class Mixer {
         return queue
     }()
     
-    let formulateLockedQueue:OperationQueue = {
+    let formulatePauseedQueue:OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount=1
         return queue
@@ -53,8 +53,8 @@ public class Mixer {
         return Dictionary<String, Array<LabWeakRef<FlaskConcrete>>>()
     }();
     
-    func lock()->MixerLock{
-        return MixerLock(mixer:self)
+    func pause()->MixerPause{
+        return MixerPause(mixer:self)
     }
     
 }
@@ -94,11 +94,11 @@ extension Mixer {
         
         var queue = mixQueue
         if  ((payload?[FLUX_ACTION_SKIP_LOCKS]) != nil) {
-            queue = formulateLockedQueue
+            queue = formulatePauseedQueue
         }
         
         //TODO: log same mixer warning
-        //TODO: log queue locked warning
+        //TODO: log queue pauseed warning
 //        assert( self.currentAction != mixer, "cannot call recursive mixer in infinite loop")
         
         queue.addOperation { [weak self, weak queue] in

@@ -290,28 +290,28 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 63,
-      "symbol": "Lab.lock()",
+      "symbol": "Lab.pause()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 68,
-      "symbol": "Lab.lock(mixer:)",
+      "symbol": "Lab.pause(mixing:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 72,
-      "symbol": "Lab.lock(mixer:payload:)",
+      "symbol": "Lab.pause(mixing:payload:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 84,
-      "symbol": "Lab.detachAllLocks()",
+      "symbol": "Lab.detachAllPauses()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
@@ -344,51 +344,51 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
       "line": 15,
-      "symbol": "MixerLock",
+      "symbol": "MixerPause",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
       "line": 19,
-      "symbol": "MixerLock.init(mixer:)",
+      "symbol": "MixerPause.init(mixer:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
       "line": 27,
-      "symbol": "MixerLock.release()",
+      "symbol": "MixerPause.release()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
       "line": 34,
-      "symbol": "Mixer.detachAllLocks()",
+      "symbol": "Mixer.detachAllPauses()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
       "line": 39,
-      "symbol": "Mixer.attachLock(_:)",
+      "symbol": "Mixer.attachPause(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
       "line": 44,
-      "symbol": "Mixer.detachLock(_:)",
+      "symbol": "Mixer.detachPause(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
       "line": 49,
-      "symbol": "Mixer.applyLocks()",
+      "symbol": "Mixer.applyPauses()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

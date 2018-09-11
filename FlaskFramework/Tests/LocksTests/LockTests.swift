@@ -1,5 +1,5 @@
 //
-//  LockTests.swift
+//  PauseTests.swift
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
@@ -9,12 +9,12 @@
 import XCTest
 
 
-class LockTests: SetupFlaskTests {
+class PauseTests: SetupFlaskTests {
     
-    func testLock(){
+    func testPause(){
         
-        let expectation = self.expectation(description: "testLock Mix")
-        let expectation2 = self.expectation(description: "testLock Mix Ignored")
+        let expectation = self.expectation(description: "testPause Mix")
+        let expectation2 = self.expectation(description: "testPause Mix Ignored")
         expectation2.isInverted=true
         
         let molecule = self.molecule!
@@ -35,14 +35,14 @@ class LockTests: SetupFlaskTests {
                 
                 calls += 1
                 
-                _ = Lab.lock()
-                Lab.mix(AppMixers.Count, payload:  ["test":"testLock"])
+                _ = Lab.pause()
+                Lab.mix(AppMixers.Count, payload:  ["test":"testPause"])
                 
             })
         }
         
         DispatchQueue.main.async {
-            Lab.mix(AppMixers.Count, payload: ["test":"testLock"])
+            Lab.mix(AppMixers.Count, payload: ["test":"testPause"])
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
@@ -50,9 +50,9 @@ class LockTests: SetupFlaskTests {
     }
     
     
-    func testLockRelease(){
+    func testPauseRelease(){
         
-        let expectation = self.expectation(description: "testLockRelease Mix")
+        let expectation = self.expectation(description: "testPauseRelease Mix")
         
         let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
@@ -64,16 +64,16 @@ class LockTests: SetupFlaskTests {
             })
         }
         
-        // the mixer won't be formulateed until both locks are released
+        // the mixer won't be formulateed until both pauses are released
         
-        let lock  = Lab.lock()
-        let lock2  = Lab.lock()
-        Lab.mix(AppMixers.Count, payload:  ["test":"testLockRelease"])
+        let pause  = Lab.pause()
+        let pause2  = Lab.pause()
+        Lab.mix(AppMixers.Count, payload:  ["test":"testPauseRelease"])
         
         DispatchQueue.main.async {
-            lock.release()
+            pause.release()
             DispatchQueue.main.async {
-                lock2.release()
+                pause2.release()
             }
             
         }
@@ -81,10 +81,10 @@ class LockTests: SetupFlaskTests {
         
     }
     
-    func testLockAction(){
+    func testPauseAction(){
         
-        let expectation = self.expectation(description: "testLockRelease Mix")
-        let expectation2 = self.expectation(description: "testLockRelease Mix Ignored")
+        let expectation = self.expectation(description: "testPauseRelease Mix")
+        let expectation2 = self.expectation(description: "testPauseRelease Mix Ignored")
      
         let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
@@ -99,14 +99,14 @@ class LockTests: SetupFlaskTests {
             })
         }
         
-        let lock  = Lab.lock(mixer:AppMixers.Count, payload:  ["test":"testLockActon count"])
+        let pause = Lab.pause(mixing:AppMixers.Count, payload:  ["test":"testPauseActon count"])
        
-        //this should be performed after the lock releases
-        Lab.mix(AppMixers.Text, payload:  ["test":"testLockAction text"])
+        //this should be performed after the pause releases
+        Lab.mix(AppMixers.Text, payload:  ["test":"testPauseAction text"])
         
         wait(for: [expectation], timeout: 2)
         
-        lock.release()
+        pause.release()
         wait(for: [expectation2], timeout: 2)
         
         

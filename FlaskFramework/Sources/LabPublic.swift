@@ -60,29 +60,29 @@ public extension Lab {
 
 public extension Lab {
     
-    static public func lock()->MixerLock{
-        return MixerLock(mixer:Lab.mixer)
+    static public func pause()->MixerPause{
+        return MixerPause(mixer:Lab.mixer)
     }
     
     
-    static public func lock<T:RawRepresentable>(mixer enumVal:T)->MixerLock{
-        return Lab.lock(mixer:enumVal,payload:nil)
+    static public func pause<T:RawRepresentable>(mixing enumVal:T)->MixerPause{
+        return Lab.pause(mixing:enumVal,payload:nil)
     }
     
-    static public func lock<T:RawRepresentable>(mixer enumVal:T, payload:[String:Any]?)->MixerLock{
+    static public func pause<T:RawRepresentable>(mixing enumVal:T, payload:[String:Any]?)->MixerPause{
         let mixer = enumVal.rawValue as! String
         var info = payload ?? [:]
         info[FLUX_ACTION_SKIP_LOCKS] = true
         
-        let lock = MixerLock(mixer:Lab.mixer)
+        let pause = MixerPause(mixer:Lab.mixer)
         Lab.mixer.formulate(mixer,payload:info)
         
-        return lock
+        return pause
     }
     
     
-    static public func detachAllLocks(){
-        Lab.mixer.detachAllLocks()
+    static public func detachAllPauses(){
+        Lab.mixer.detachAllPauses()
     }
 }
 
