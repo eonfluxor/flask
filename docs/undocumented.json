@@ -3,14 +3,14 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabDictionary.swift",
       "line": 15,
-      "symbol": "MoleculeAtomsObservable",
+      "symbol": "AtomsObservable",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabDictionary.swift",
       "line": 16,
-      "symbol": "MoleculeAtomsObservable.toLabDictRef()",
+      "symbol": "AtomsObservable.toLabDictRef()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -647,49 +647,49 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/MoleculeState.swift",
       "line": null,
-      "symbol": "MoleculeAtoms",
+      "symbol": "Atoms",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/MoleculeState.swift",
       "line": 19,
-      "symbol": "MoleculeAtoms",
+      "symbol": "Atoms",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/MoleculeState.swift",
       "line": 20,
-      "symbol": "MoleculeAtoms.init()",
+      "symbol": "Atoms.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/MoleculeState.swift",
       "line": 21,
-      "symbol": "MoleculeAtoms.toDictionary()",
+      "symbol": "Atoms.toDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/MoleculeState.swift",
       "line": 22,
-      "symbol": "MoleculeAtoms.toJsonDictionary()",
+      "symbol": "Atoms.toJsonDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/MoleculeState.swift",
       "line": 33,
-      "symbol": "MoleculeAtoms.toDictionary()",
+      "symbol": "Atoms.toDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/MoleculeState.swift",
       "line": 65,
-      "symbol": "MoleculeAtoms.toJsonDictionary()",
+      "symbol": "Atoms.toJsonDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

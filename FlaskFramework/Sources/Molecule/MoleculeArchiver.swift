@@ -35,7 +35,7 @@ extension Molecule {
 
 extension Molecule {
     
-    func archiveIntent<T:MoleculeAtoms>(_ atoms:T){
+    func archiveIntent<T:Atoms>(_ atoms:T){
         
         guard !archiveDisabled() else{
             return
@@ -49,7 +49,7 @@ extension Molecule {
         
     }
     
-    func archiveNow<T:MoleculeAtoms>(_ atoms:T){
+    func archiveNow<T:Atoms>(_ atoms:T){
         
         archiveQueue.addOperation { [weak self] in
             

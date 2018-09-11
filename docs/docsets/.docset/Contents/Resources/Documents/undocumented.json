@@ -220,28 +220,28 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/FlaskChainReaction.swift",
       "line": 15,
-      "symbol": "FlaskChainReaction",
+      "symbol": "ChainReaction",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/FlaskChainReaction.swift",
       "line": 18,
-      "symbol": "FlaskChainReaction.react",
+      "symbol": "ChainReaction.react",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/FlaskChainReaction.swift",
       "line": 19,
-      "symbol": "FlaskChainReaction.abort",
+      "symbol": "ChainReaction.abort",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/FlaskChainReaction.swift",
       "line": 21,
-      "symbol": "FlaskChainReaction.mix(_:_:)",
+      "symbol": "ChainReaction.mix(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

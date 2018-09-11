@@ -14,7 +14,7 @@ import Cocoa
 
 public struct MoleculeSerializer{
     
-    static public func jsonFromAtoms<K:MoleculeAtoms>(_ atoms:K) throws ->String {
+    static public func jsonFromAtoms<K:Atoms>(_ atoms:K) throws ->String {
         
         let jsonData = try JSONEncoder().encode(atoms)
         
@@ -22,20 +22,20 @@ public struct MoleculeSerializer{
         
     }
     
-    static public func atomsFromJson<K:MoleculeAtoms>(_ json:String) throws ->K {
+    static public func atomsFromJson<K:Atoms>(_ json:String) throws ->K {
         
         let jsonData = json.data(using: .utf8)!
         return try atomsFromData(jsonData)
     }
     
     
-    static public func dataFromAtom<K:MoleculeAtoms>(_ atoms:K) throws ->Data? {
+    static public func dataFromAtom<K:Atoms>(_ atoms:K) throws ->Data? {
         
         let json = try jsonFromAtoms(atoms)
         return json.data(using: .utf16)
     }
     
-    static public func atomsFromData<K:MoleculeAtoms>(_ jsonData:Data) throws ->K {
+    static public func atomsFromData<K:Atoms>(_ jsonData:Data) throws ->K {
         
         let atoms:K = try! JSONDecoder().decode(K.self, from: jsonData)
         return atoms

@@ -19,7 +19,7 @@ enum AppMixers : MoleculeMixers {
     case Object
 }
 
-struct AppAtoms : MoleculeAtoms {
+struct AppAtoms : Atoms {
    
     enum named : AtomName{
         case counter, text, map, object
