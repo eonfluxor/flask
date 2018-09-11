@@ -17,10 +17,10 @@ import Cocoa
 public class FlaskReaction {
 
     
-    var store:FlaskStoreConcrete
+    var store:MoleculeConcrete
     var changes:FlaskStateDictionaryType
     
-    required public init(_ store:FlaskStoreConcrete){
+    required public init(_ store:MoleculeConcrete){
         self.store = store
         self.changes = FlaskReaction.reduceChanges(store: self.store)
     }
@@ -48,9 +48,9 @@ public class FlaskReaction {
     }
     
     
-    public func at(_ aStore:FlaskStoreConcrete)->FlaskReaction?{
+    public func at(_ aMolecule:MoleculeConcrete)->FlaskReaction?{
        
-        if store !== aStore{
+        if store !== aMolecule{
             return .none
         }
         return self
@@ -79,7 +79,7 @@ public class FlaskReaction {
 
 public extension FlaskReaction {
     
-    static public func reduceChanges(store:FlaskStoreConcrete)->FlaskStateDictionaryType{
+    static public func reduceChanges(store:MoleculeConcrete)->FlaskStateDictionaryType{
     
         let oldState = store.lastStateDictionary()
         let newState = store.stateDictionary()
@@ -107,7 +107,7 @@ public extension FlaskReaction {
         
     }
     
-    static public func change(_ store:FlaskStoreConcrete, _ key: String) -> FlaskChangeTemplate {
+    static public func change(_ store:MoleculeConcrete, _ key: String) -> FlaskChangeTemplate {
         
         let oldState = store.lastStateDictionary()
         let newState = store.stateDictionary()
@@ -118,8 +118,8 @@ public extension FlaskReaction {
 
     static public func change(_ oldState:FlaskStateDictionaryType,_ newState:FlaskStateDictionaryType, _ key: String) -> FlaskChangeTemplate {
         
-        var oldValue:AnyHashable? = Flask.Nil
-        var newValue:AnyHashable? = Flask.Nil
+        var oldValue:AnyHashable? = Lab.Nil
+        var newValue:AnyHashable? = Lab.Nil
         
         if let val = oldState[key] {
             oldValue = val

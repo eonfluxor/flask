@@ -20,7 +20,7 @@ class archiveTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flask.instance(ownedBy:owner, binding:store)
+        let flux = Lab.flask(ownedBy:owner, binding:store)
         
         flux.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in
@@ -38,9 +38,9 @@ class archiveTests: SetupFlaskTests {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             
-            let anotherStore = Store()
-            XCTAssert(anotherStore.state.counter == expectedValue)
-            anotherStore.purgeArchive()
+            let anotherMolecule = App()
+            XCTAssert(anotherMolecule.state.counter == expectedValue)
+            anotherMolecule.purgeArchive()
             
             expectationUnarchive.fulfill()
         }

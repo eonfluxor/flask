@@ -17,7 +17,7 @@ class ChainingTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(ownedBy:owner, binding:store)
+        let flask = Lab.flask(ownedBy:owner, binding:store)
         
         flask.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in
@@ -47,7 +47,7 @@ class ChainingTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flask.instance(ownedBy:owner,binding:store)
+        let flux = Lab.flask(ownedBy:owner,binding:store)
         
         let object = NSObject()
         let aObject = FlaskRef( object )
@@ -107,7 +107,7 @@ class ChainingTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flask.instance(ownedBy:owner, binding:store)
+        let flux = Lab.flask(ownedBy:owner, binding:store)
         
         flux.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in

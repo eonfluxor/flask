@@ -1,5 +1,5 @@
 //
-//  FlaskStoreConcrete.swift
+//  MoleculeConcrete.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 8/28/18.
@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-open class FlaskStore<A:RawRepresentable,T:FlaskState > : FlaskStoreConcrete{
+open class Molecule<A:RawRepresentable,T:FlaskState > : MoleculeConcrete{
     
     typealias FlaskStateType = T
     
@@ -52,7 +52,7 @@ open class FlaskStore<A:RawRepresentable,T:FlaskState > : FlaskStoreConcrete{
         return val.rawValue as! String
     }
     
-    public func mutator(_ enumVal:A, _ reaction: @escaping FlaskStoreMutator){
+    public func mutator(_ enumVal:A, _ reaction: @escaping MoleculeMutator){
         action(actionName(enumVal), reaction)
     }
     
@@ -108,7 +108,7 @@ open class FlaskStore<A:RawRepresentable,T:FlaskState > : FlaskStoreConcrete{
 
 
 
-open class FlaskStoreConcrete {
+open class MoleculeConcrete {
     
     public static func isInternalProp(_ prop:String)->Bool{
         return prop.starts(with: "_")
@@ -130,7 +130,7 @@ open class FlaskStoreConcrete {
         return [:]
     }
     func name() -> String {
-        return "Store\(self.self)"
+        return "Molecule\(self.self)"
     }
     
     open func bindActions(){}
@@ -147,9 +147,9 @@ open class FlaskStoreConcrete {
 
 
 
-public extension FlaskStoreConcrete {
+public extension MoleculeConcrete {
   
-    @discardableResult public func action(_ action:String, _ reaction: @escaping FlaskStoreMutator)->NSObjectProtocol{
+    @discardableResult public func action(_ action:String, _ reaction: @escaping MoleculeMutator)->NSObjectProtocol{
         let weakRegistration={ [weak self] in
             
             NotificationCenter.default.addObserver(forName: NSNotification.Name(action), object: nil, queue: OperationQueue.main) { (notification) in
@@ -181,7 +181,7 @@ public extension FlaskStoreConcrete {
         return weakRegistration()
     }
     
-    public func mutate<T:FlaskStoreConcrete>(_ mutator:@escaping FlaskMutatorParams<T>){
+    public func mutate<T:MoleculeConcrete>(_ mutator:@escaping FlaskMutatorParams<T>){
         
         var resolved = false
         var completed = true
@@ -205,17 +205,17 @@ public extension FlaskStoreConcrete {
     
 }
 
-extension FlaskStoreConcrete {
+extension MoleculeConcrete {
     
     func handleMutation(){
-        Flask.Dispatcher.reactionQueue.addOperation { [weak self] in
+        Lab.Dispatcher.reactionQueue.addOperation { [weak self] in
             
             if self == nil { return }
             
-            let reaction = FlaskReaction(self! as FlaskStoreConcrete)
+            let reaction = FlaskReaction(self! as MoleculeConcrete)
             
             if( reaction.changed()){
-                Flask.Dispatcher.commitChange(reaction)
+                Lab.Dispatcher.commitChange(reaction)
             }else{
                 //log
             }
@@ -226,7 +226,7 @@ extension FlaskStoreConcrete {
     
 }
 
-public extension FlaskStoreConcrete {
+public extension MoleculeConcrete {
     
 
     public func get(_ key:String) -> String{

@@ -60,12 +60,12 @@
 		26C53E8B214790A90090AA0C /* FlaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FlaskManager.swift */; };
 		26C53E8C214790A90090AA0C /* FlaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FlaskManager.swift */; };
 		26C53E8D214790A90090AA0C /* FlaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FlaskManager.swift */; };
-		26C53E8E214790A90090AA0C /* FlaskReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskReactor.swift */; };
-		26C53E8F214790A90090AA0C /* FlaskReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskReactor.swift */; };
-		26C53E90214790A90090AA0C /* FlaskReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskReactor.swift */; };
-		26C53E91214790A90090AA0C /* FlaskReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskReactor.swift */; };
-		26C53E92214790A90090AA0C /* FlaskReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskReactor.swift */; };
-		26C53E93214790A90090AA0C /* FlaskReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskReactor.swift */; };
+		26C53E8E214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
+		26C53E8F214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
+		26C53E90214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
+		26C53E91214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
+		26C53E92214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
+		26C53E93214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
 		26C53E94214790A90090AA0C /* FlaskDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* FlaskDispatcher.swift */; };
 		26C53E95214790A90090AA0C /* FlaskDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* FlaskDispatcher.swift */; };
 		26C53E96214790A90090AA0C /* FlaskDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* FlaskDispatcher.swift */; };
@@ -228,7 +228,7 @@
 		26C53E54214790A90090AA0C /* FlaskRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskRef.swift; sourceTree = "<group>"; };
 		26C53E56214790A90090AA0C /* FlaskChainReaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskChainReaction.swift; sourceTree = "<group>"; };
 		26C53E57214790A90090AA0C /* FlaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskManager.swift; sourceTree = "<group>"; };
-		26C53E58214790A90090AA0C /* FlaskReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskReactor.swift; sourceTree = "<group>"; };
+		26C53E58214790A90090AA0C /* Flask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flask.swift; sourceTree = "<group>"; };
 		26C53E5A214790A90090AA0C /* FlaskDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskDispatcher.swift; sourceTree = "<group>"; };
 		26C53E5B214790A90090AA0C /* FlaskLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskLock.swift; sourceTree = "<group>"; };
 		26C53E5D214790A90090AA0C /* FlaskChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskChange.swift; sourceTree = "<group>"; };
@@ -530,7 +530,7 @@
 			children = (
 				26C53E56214790A90090AA0C /* FlaskChainReaction.swift */,
 				26C53E57214790A90090AA0C /* FlaskManager.swift */,
-				26C53E58214790A90090AA0C /* FlaskReactor.swift */,
+				26C53E58214790A90090AA0C /* Flask.swift */,
 			);
 			path = Fluxor;
 			sourceTree = "<group>";
@@ -1094,7 +1094,7 @@
 				26C53E70214790A90090AA0C /* FlaskDictionary.swift in Sources */,
 				26C53EAC214790A90090AA0C /* FlaskState.swift in Sources */,
 				26C53E7C214790A90090AA0C /* FlaskRef.swift in Sources */,
-				26C53E8E214790A90090AA0C /* FlaskReactor.swift in Sources */,
+				26C53E8E214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EA0214790A90090AA0C /* FlaskChange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1129,7 +1129,7 @@
 				26C53ED5214790C00090AA0C /* ReducerTests.swift in Sources */,
 				26C53E89214790A90090AA0C /* FlaskManager.swift in Sources */,
 				26C53ED8214790C00090AA0C /* SerializationTests.swift in Sources */,
-				26C53E8F214790A90090AA0C /* FlaskReactor.swift in Sources */,
+				26C53E8F214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EA7214790A90090AA0C /* FlaskReaction.swift in Sources */,
 				26C53E65214790A90090AA0C /* FlaskPublic.swift in Sources */,
 				26C53EB3214790A90090AA0C /* FlaskSerializer.swift in Sources */,
@@ -1154,7 +1154,7 @@
 				26C53E72214790A90090AA0C /* FlaskDictionary.swift in Sources */,
 				26C53EAE214790A90090AA0C /* FlaskState.swift in Sources */,
 				26C53E7E214790A90090AA0C /* FlaskRef.swift in Sources */,
-				26C53E90214790A90090AA0C /* FlaskReactor.swift in Sources */,
+				26C53E90214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EA2214790A90090AA0C /* FlaskChange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1189,7 +1189,7 @@
 				26C53ED6214790C00090AA0C /* ReducerTests.swift in Sources */,
 				26C53E8B214790A90090AA0C /* FlaskManager.swift in Sources */,
 				26C53ED9214790C00090AA0C /* SerializationTests.swift in Sources */,
-				26C53E91214790A90090AA0C /* FlaskReactor.swift in Sources */,
+				26C53E91214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EA9214790A90090AA0C /* FlaskReaction.swift in Sources */,
 				26C53E67214790A90090AA0C /* FlaskPublic.swift in Sources */,
 				26C53EB5214790A90090AA0C /* FlaskSerializer.swift in Sources */,
@@ -1214,7 +1214,7 @@
 				26C53E74214790A90090AA0C /* FlaskDictionary.swift in Sources */,
 				26C53EB0214790A90090AA0C /* FlaskState.swift in Sources */,
 				26C53E80214790A90090AA0C /* FlaskRef.swift in Sources */,
-				26C53E92214790A90090AA0C /* FlaskReactor.swift in Sources */,
+				26C53E92214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EA4214790A90090AA0C /* FlaskChange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1249,7 +1249,7 @@
 				26C53ED7214790C00090AA0C /* ReducerTests.swift in Sources */,
 				26C53E8D214790A90090AA0C /* FlaskManager.swift in Sources */,
 				26C53EDA214790C00090AA0C /* SerializationTests.swift in Sources */,
-				26C53E93214790A90090AA0C /* FlaskReactor.swift in Sources */,
+				26C53E93214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EAB214790A90090AA0C /* FlaskReaction.swift in Sources */,
 				26C53E69214790A90090AA0C /* FlaskPublic.swift in Sources */,
 				26C53EB7214790A90090AA0C /* FlaskSerializer.swift in Sources */,

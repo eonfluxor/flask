@@ -11,14 +11,14 @@ import XCTest
 
 class SetupFlaskTests: XCTestCase {
     
-    var store:Store?
+    var store:App?
     
     override func setUp() {
         super.setUp()
         
-        self.store = Store()
+        self.store = App()
         
-        Flask.releaseAllLocks()
+        Lab.releaseAllLocks()
         FlaskReactorManager.purgeOrphans()
         
         XCTAssert(FlaskReactorManager.fluxors.count == 0, "all fluxors should dispose before this test")

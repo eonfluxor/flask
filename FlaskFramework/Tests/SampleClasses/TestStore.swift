@@ -1,5 +1,5 @@
 //
-//  Store.swift
+//  Molecule.swift
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 8/31/18.
@@ -34,7 +34,7 @@ struct State : FlaskState {
     
 }
 
-class Store : FlaskStore<Actions,State> {
+class App : Molecule<Actions,State> {
     
     override func bindActions(){
         

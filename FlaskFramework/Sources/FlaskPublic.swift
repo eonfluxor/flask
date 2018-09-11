@@ -14,7 +14,7 @@ import Cocoa
 
 
 /// Main entry point
-public class Flask {
+public class Lab {
     
     
     /// This is the single dispatcher
@@ -28,10 +28,10 @@ public class Flask {
 }
 
 
-public extension Flask {
+public extension Lab {
     
     static public func disposeDispatchQueue(){
-        Flask.Dispatcher.dispatchQueue.cancelAllOperations()
+        Lab.Dispatcher.dispatchQueue.cancelAllOperations()
     }
     
     static public func purgeOrphans(){
@@ -39,34 +39,34 @@ public extension Flask {
     }
 }
 
-public extension Flask {
+public extension Lab {
     
-    static public func instance<T:AnyObject>(ownedBy owner:T, binding store:FlaskStoreConcrete) -> FlaskReactor<T>{
-        return Flask.instance(ownedBy:owner,binding:[store])
+    static public func flask<T:AnyObject>(ownedBy owner:T, binding store:MoleculeConcrete) -> Flask<T>{
+        return Lab.flask(ownedBy:owner,binding:[store])
     }
     
-    static public func instance<T:AnyObject>(ownedBy owner:T, binding stores:[FlaskStoreConcrete]) -> FlaskReactor<T>{
-        let flux = Flask.instance(ownedBy:owner)
-        flux.bindStores(stores)
+    static public func flask<T:AnyObject>(ownedBy owner:T, binding stores:[MoleculeConcrete]) -> Flask<T>{
+        let flux = Lab.flask(ownedBy:owner)
+        flux.bindMolecules(stores)
         return flux
     }
     
     
-    static public func instance<T:AnyObject>(ownedBy owner:T) -> FlaskReactor<T>{
+    static public func flask<T:AnyObject>(ownedBy owner:T) -> Flask<T>{
         return FlaskReactorManager.instance(ownedBy:owner)
     }
 }
 
 
-public extension Flask {
+public extension Lab {
     
     static public func lock()->FlaskLock{
-        return FlaskLock(dispatcher:Flask.Dispatcher)
+        return FlaskLock(dispatcher:Lab.Dispatcher)
     }
     
     
     static public func lock<T:RawRepresentable>(action enumVal:T)->FlaskLock{
-        return Flask.lock(action:enumVal,payload:nil)
+        return Lab.lock(action:enumVal,payload:nil)
     }
     
     static public func lock<T:RawRepresentable>(action enumVal:T, payload:[String:Any]?)->FlaskLock{
@@ -74,23 +74,23 @@ public extension Flask {
         var info = payload ?? [:]
         info[FLUX_ACTION_SKIP_LOCKS] = true
         
-        let lock = FlaskLock(dispatcher:Flask.Dispatcher)
-        Flask.Dispatcher.dispatch(action,payload:info)
+        let lock = FlaskLock(dispatcher:Lab.Dispatcher)
+        Lab.Dispatcher.dispatch(action,payload:info)
         
         return lock
     }
     
     
     static public func releaseAllLocks(){
-        Flask.Dispatcher.releaseAllLocks()
+        Lab.Dispatcher.releaseAllLocks()
     }
 }
 
 
-public extension Flask {
+public extension Lab {
     
     static public func action<T:RawRepresentable>(_ enumVal:T){
-        Flask.action(enumVal,payload:nil)
+        Lab.action(enumVal,payload:nil)
     }
     
     static public func action<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
@@ -98,7 +98,7 @@ public extension Flask {
         var info = payload ?? [:]
         info[FLUX_ACTION_NAME] = action
         
-        Flask.Dispatcher.dispatch(action,payload:info)
+        Lab.Dispatcher.dispatch(action,payload:info)
     }
 }
 

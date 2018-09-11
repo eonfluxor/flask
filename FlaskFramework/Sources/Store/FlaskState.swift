@@ -41,11 +41,11 @@ public extension FlaskState{
                 continue
             }
             
-            if FlaskStoreConcrete.isInternalProp(label) {
+            if MoleculeConcrete.isInternalProp(label) {
                 continue
             }
             
-            result[label] = Flask.Nil
+            result[label] = Lab.Nil
             result[label] = value as? AnyHashable
             
             if(FlaskSerializer.isDictionaryRef(value)){
@@ -71,11 +71,11 @@ public extension FlaskState{
                 continue
             }
             
-            if FlaskStoreConcrete.isInternalProp(label) {
+            if MoleculeConcrete.isInternalProp(label) {
                 continue
             }
             
-            if FlaskStoreConcrete.isObjectRef(value) {
+            if MoleculeConcrete.isObjectRef(value) {
                 continue
             }
             

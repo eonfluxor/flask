@@ -14,13 +14,13 @@ import Cocoa
 
 public struct FlaskChainReaction{
     
-    let flux:FlaskReactorConcrete
+    let flux:FlaskConcrete
     public let commit:()->Void
     public let abort:()->Void
     
-    public func mutate<T:FlaskStoreConcrete>(_ aStore:T, _ mutator:@escaping (_ store:T) -> Void)->FlaskChainReaction{
+    public func mutate<T:MoleculeConcrete>(_ aMolecule:T, _ mutator:@escaping (_ store:T) -> Void)->FlaskChainReaction{
         
-        let store = flux.store(aStore)
+        let store = flux.store(aMolecule)
         
         store.stateTransaction({
             mutator(store)
@@ -33,7 +33,7 @@ public struct FlaskChainReaction{
     
 }
 
-public extension FlaskReactorConcrete{
+public extension FlaskConcrete{
     
 //    func mutate()->FlaskChainReaction{
 //        
@@ -43,7 +43,7 @@ public extension FlaskReactorConcrete{
 //        assert(false, "error: there are not stores binded")
 //    }
     
-//    func mutate<T:FlaskStoreConcrete>(_ aStore:T)->FlaskChainReaction{
+//    func mutate<T:MoleculeConcrete>(_ aMolecule:T)->FlaskChainReaction{
 //
 //        let  commit = { [weak self] in
 //            if let stores = self?.stores {
@@ -66,7 +66,7 @@ public extension FlaskReactorConcrete{
 //    }
 //
     
-    public func mutate<T:FlaskStoreConcrete>(_ aStore:T, _ mutator:@escaping(_ store:T) -> Void)->FlaskChainReaction{
+    public func mutate<T:MoleculeConcrete>(_ aMolecule:T, _ mutator:@escaping(_ store:T) -> Void)->FlaskChainReaction{
         
         let  commit = { [weak self] in
             if let stores = self?.stores {
@@ -85,7 +85,7 @@ public extension FlaskReactorConcrete{
             }
         }
         
-        let store = self.store(aStore)
+        let store = self.store(aMolecule)
         
         store.stateTransaction({
             mutator(store)

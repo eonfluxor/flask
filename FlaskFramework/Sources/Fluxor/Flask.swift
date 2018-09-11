@@ -12,7 +12,7 @@ import Cocoa
 #endif
 
 
-public class FlaskReactor<D:AnyObject>:FlaskReactorConcrete {
+public class Flask<D:AnyObject>:FlaskConcrete {
     
     weak var owner:D?
     
@@ -49,18 +49,18 @@ public class FlaskReactor<D:AnyObject>:FlaskReactorConcrete {
 }
 
 
-public class FlaskReactorConcrete:FlaskAnyEquatable{
+public class FlaskConcrete:FlaskAnyEquatable{
     
-    var stores:[FlaskStoreConcrete]=[]
+    var stores:[MoleculeConcrete]=[]
     var binded = false
     
     
-    func bindStore(_ store:FlaskStoreConcrete){
-        bindStores([store])
+    func bindMolecule(_ store:MoleculeConcrete){
+        bindMolecules([store])
     }
     
-    func bindStores(_ bindedStores:[FlaskStoreConcrete]){
-        stores = bindedStores
+    func bindMolecules(_ bindedMolecules:[MoleculeConcrete]){
+        stores = bindedMolecules
         bind()
     }
     
@@ -79,7 +79,7 @@ public class FlaskReactorConcrete:FlaskAnyEquatable{
            
             { [weak self] in
                 if let wself = self {
-                    Flask.Dispatcher.bindFlaskReactor(store, flux: wself)
+                    Lab.Dispatcher.bindFlaskReactor(store, flux: wself)
                 }
             }()
             
@@ -101,7 +101,7 @@ public class FlaskReactorConcrete:FlaskAnyEquatable{
         for store in stores {
             { [weak self] in
                 if let wself = self {
-                    Flask.Dispatcher.unbindFlaskReactor(store, flux: wself)
+                    Lab.Dispatcher.unbindFlaskReactor(store, flux: wself)
                 }
             }()
             
@@ -112,9 +112,9 @@ public class FlaskReactorConcrete:FlaskAnyEquatable{
     ///
     func handleMutation(_ reaction:FlaskReaction){}
     
-    @discardableResult public func mutate<T:FlaskStoreConcrete>(_ aStore:T, _ mutator:@escaping FlaskMutatorParams<T>)->FlaskReactorConcrete{
+    @discardableResult public func mutate<T:MoleculeConcrete>(_ aMolecule:T, _ mutator:@escaping FlaskMutatorParams<T>)->FlaskConcrete{
         
-        let store = self.store(aStore)
+        let store = self.store(aMolecule)
         store.mutate(mutator)
         
         return self
@@ -124,12 +124,12 @@ public class FlaskReactorConcrete:FlaskAnyEquatable{
     //////////////////
     // MARK: - PUBLIC METHODS
     
-    public func store<T:FlaskStoreConcrete>(_ store:T)->T{
+    public func store<T:MoleculeConcrete>(_ store:T)->T{
         
-        let registered = stores.contains { (aStore) -> Bool in
-            aStore === store
+        let registered = stores.contains { (aMolecule) -> Bool in
+            aMolecule === store
         }
-        assert(registered,"Store instance is not binded to this flux")
+        assert(registered,"Molecule instance is not binded to this flux")
         return store
     }
 

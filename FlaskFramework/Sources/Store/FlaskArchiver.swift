@@ -14,7 +14,7 @@ import Cocoa
 
 import Delayed
 
-extension FlaskStore {
+extension Molecule {
     
     public func archiveKeySpace()->String{
         return "1"
@@ -33,7 +33,7 @@ extension FlaskStore {
     }
 }
 
-extension FlaskStore {
+extension Molecule {
     
     func archiveIntent<T:FlaskState>(_ state:T){
         
@@ -79,7 +79,7 @@ extension FlaskStore {
         
     }
 }
-extension FlaskStore {
+extension Molecule {
     
     @discardableResult
     func unarchiveIntent()->Bool{
@@ -106,7 +106,7 @@ extension FlaskStore {
     }
 }
 
-extension FlaskStore {
+extension Molecule {
     public func purgeArchive(){
         let key = archiveKey()
         UserDefaults.standard.removeObject(forKey: key)

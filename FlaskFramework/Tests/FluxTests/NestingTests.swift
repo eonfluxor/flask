@@ -20,7 +20,7 @@ class NestedStateTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flask.instance(ownedBy:owner, binding:store)
+        let flux = Lab.flask(ownedBy:owner, binding:store)
         
         let data:NSDictionary = [
             "foo":"bar",

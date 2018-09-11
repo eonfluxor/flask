@@ -13,7 +13,7 @@ import Cocoa
 #endif
 
 
-public typealias FlaskStoreMutator = (_ payload: Any?,_ commit:()->Void, _ abort:()->Void ) -> Void
+public typealias MoleculeMutator = (_ payload: Any?,_ commit:()->Void, _ abort:()->Void ) -> Void
 public typealias FlaskReactionClosure = (_ change:FlaskChangeTemplate)->Void
 public typealias FlaskReactorClosure<T> = (_ ownedBy:T, _ reaction: FlaskReaction) -> Void
 public typealias FlaskStateDictionaryType = Dictionary<String,AnyHashable?>

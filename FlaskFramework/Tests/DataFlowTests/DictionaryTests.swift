@@ -18,7 +18,7 @@ class DictionaryTests: XCTestCase {
             "nest":[
                 "nest":["foo2":"bar2"],
                 "optional":"some",
-                "none":Flask.Null
+                "none":Lab.Null
             ],
             "array":[1,2,3]
         ]
@@ -37,7 +37,7 @@ class DictionaryTests: XCTestCase {
         
         // keep nil keys
         XCTAssert((nest?.keys().contains("none"))!)
-        XCTAssert((nest!["none"] as? NSNull) == Flask.Null)
+        XCTAssert((nest!["none"] as? NSNull) == Lab.Null)
     }
     
 }

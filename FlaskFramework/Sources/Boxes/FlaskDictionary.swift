@@ -38,7 +38,7 @@ public class FlaskDictionaryRef: NSObject, Codable, FlaskStateObservable {
         for key in dict.allKeys {
             let value = dict[key]
             
-             result[key]  = Flask.Nil
+             result[key]  = Lab.Nil
             
             if ((value as? NSDictionary) != nil) {
                 

@@ -49,8 +49,8 @@ public class FlaskDispatcher {
     //////////////////
     // MARK: - LAZY
     
-    lazy var fluxRefs: Dictionary<String, Array<FlaskWeakRef<FlaskReactorConcrete>>> = {
-        return Dictionary<String, Array<FlaskWeakRef<FlaskReactorConcrete>>>()
+    lazy var fluxRefs: Dictionary<String, Array<FlaskWeakRef<FlaskConcrete>>> = {
+        return Dictionary<String, Array<FlaskWeakRef<FlaskConcrete>>>()
     }();
     
     func lock()->FlaskLock{
@@ -125,39 +125,39 @@ extension FlaskDispatcher {
 
 extension FlaskDispatcher {
    
-    func bindFlaskReactor(_ store:FlaskStoreConcrete, flux:FlaskReactorConcrete) {
+    func bindFlaskReactor(_ store:MoleculeConcrete, flux:FlaskConcrete) {
         
         let storeName = store.name()
-        var storeFlaskReactorRefs = getStoreFlaskReactorRefs(storeName)
+        var storeFlaskReactorRefs = getMoleculeFlaskReactorRefs(storeName)
         
         let ref = FlaskWeakRef(value:flux)
         storeFlaskReactorRefs.append(ref)
-        setStoreFlaskReactorRefs(storeName,storeFlaskReactorRefs)
+        setMoleculeFlaskReactorRefs(storeName,storeFlaskReactorRefs)
         
     }
     
-    func unbindFlaskReactor(_ store:FlaskStoreConcrete, flux:FlaskReactorConcrete) {
+    func unbindFlaskReactor(_ store:MoleculeConcrete, flux:FlaskConcrete) {
         
         let storeName = store.name()
-        let storeFlaskReactorRefs = getStoreFlaskReactorRefs(storeName)
+        let storeFlaskReactorRefs = getMoleculeFlaskReactorRefs(storeName)
         
         let storeFlaskReactorRefsFiltered = storeFlaskReactorRefs.filter { $0.value != flux }
         
-        setStoreFlaskReactorRefs(storeName,storeFlaskReactorRefsFiltered)
+        setMoleculeFlaskReactorRefs(storeName,storeFlaskReactorRefsFiltered)
        
     }
     
-    func getStoreFlaskReactorRefs(_ storeName:String) -> Array<FlaskWeakRef<FlaskReactorConcrete>>{
+    func getMoleculeFlaskReactorRefs(_ storeName:String) -> Array<FlaskWeakRef<FlaskConcrete>>{
         
         if let fluxors = self.fluxRefs[storeName] {
             return fluxors
         }
         
-        return Array<FlaskWeakRef<FlaskReactorConcrete>>()
+        return Array<FlaskWeakRef<FlaskConcrete>>()
         
     }
     
-    func setStoreFlaskReactorRefs(_ storeName:String,_ refs:Array<FlaskWeakRef<FlaskReactorConcrete>>){
+    func setMoleculeFlaskReactorRefs(_ storeName:String,_ refs:Array<FlaskWeakRef<FlaskConcrete>>){
         
         self.fluxRefs[storeName] = refs
     }
@@ -171,7 +171,7 @@ extension FlaskDispatcher {
     func commitChange(_ reaction:FlaskReaction){
         
         let storeName = reaction.store.name()
-        let storeFlaskReactorRefs = getStoreFlaskReactorRefs(storeName)
+        let storeFlaskReactorRefs = getMoleculeFlaskReactorRefs(storeName)
         
         for storeFlaskReactorRef in storeFlaskReactorRefs {
             if let flux = storeFlaskReactorRef.value{
