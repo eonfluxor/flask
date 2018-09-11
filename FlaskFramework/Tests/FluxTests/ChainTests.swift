@@ -13,7 +13,7 @@ class ChainingTests: SetupFlaskTests {
 
     func testInlineMutation(){
         
-        let expectation = self.expectation(description: "testInlineMutation")
+        var expectation = self.expectation(description: "testInlineMutation")
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
@@ -22,6 +22,7 @@ class ChainingTests: SetupFlaskTests {
         flux.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in
                 expectation.fulfill()
+                expectation = nil
             })
         }
         
