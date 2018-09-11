@@ -14,7 +14,7 @@ import Cocoa
 
 
 public typealias BusPayload = [String:Any?]
-public typealias StoreBus = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
+public typealias BusMutation = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
 public typealias ChangeClosure = (_ change:StoreChange)->Void
 public typealias ReactionClosure<T> = (_ ownedBy:T, _ reaction: FlaskReaction) -> Void
 public typealias FluxDictType = Dictionary<String,AnyHashable?>

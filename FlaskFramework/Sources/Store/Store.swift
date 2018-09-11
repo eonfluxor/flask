@@ -51,8 +51,8 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
         return val.rawValue as! String
     }
     
-    public func on(_ enumVal:A, _ reaction: @escaping StoreBus){
-        bus(actionName(enumVal), reaction)
+    public func on(_ enumVal:A, _ reaction: @escaping BusMutation){
+        on(actionName(enumVal), reaction)
     }
     
     public override func stateSnapshotDictionary() -> FluxDictType{
@@ -148,12 +148,14 @@ open class StoreConcrete {
 
 public extension StoreConcrete {
   
-    @discardableResult public func bus(_ bus:String, _ reaction: @escaping StoreBus)->NSObjectProtocol{
+    public func on(_ event:String, _ reaction: @escaping BusMutation){
         let weakRegistration={ [weak self] in
             
-            NotificationCenter.default.addObserver(forName: NSNotification.Name(bus), object: nil, queue: OperationQueue.main) { (notification) in
+            BusNotifier.addCallback(forEvent: event, object: self) { (notification) in
                 
-                let payload = notification.object as? [String:Any]
+                //            NotificationCenter.default.addObserver(forName: NSNotification.Name(bus), object: nil, queue: OperationQueue.main) { (notification) in
+                
+                let payload = notification.payload as? [String:Any]
                 
                 let lock = payload?[BUS_LOCKED_BY] as? BusLock
                 
@@ -180,7 +182,7 @@ public extension StoreConcrete {
             }
             
         }
-        return weakRegistration()
+        weakRegistration()
     }
     
 }

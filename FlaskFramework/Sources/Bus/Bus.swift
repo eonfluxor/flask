@@ -80,7 +80,7 @@ extension Bus {
 
 extension Bus {
  
-    func enqueue(_ bus:String, payload:BusPayload?){
+    func enqueue(_ event:String, payload:BusPayload?){
         
 
         var queue = busQueue
@@ -100,11 +100,11 @@ extension Bus {
             
             assert( self?.currentEvent == .none, "cannot call during mix")
             
-            self?.currentEvent = bus
-            NotificationCenter.default.post(
-                name: NSNotification.Name(bus),
-                object: payload,
-                userInfo: .none)
+            self?.currentEvent = event
+            BusNotifier.postNotification(forEvent: event,
+                                         payload: payload)
+            
+
             self?.currentEvent = .none
             
         }

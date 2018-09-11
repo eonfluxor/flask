@@ -19,6 +19,7 @@ public struct BusNotification{
     let event:BusEvent
     let object:AnyObject?
     let payload:BusBusPayload?
+//    let react:()->
 }
 
 public class BusObserver:FluxEquatable{
@@ -39,7 +40,7 @@ public class BusNotifier {
 extension BusNotifier {
     
     static public func addCallback(forEvent event:BusEvent,
-                                   object: AnyObject,
+                                   object: AnyObject?,
                                    _ callback:@escaping BusCallback){
         
         let ref = FluxWeakRef(value: object)
