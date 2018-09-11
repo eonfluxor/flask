@@ -28,9 +28,10 @@ class FlaskTests: SetupFlaskTests {
             
         }
         
-        DispatchQueue.main.async {
-            Flux.dispatch(AppEvents.Count, payload: ["test":"callback"])
-        }
+//        DispatchQueue.main.async {
+        Flux.dispatch(AppEvents.Count, payload: ["test":"callback"])
+        Flux.dispatch(AppEvents.Text, payload: ["test":"callback"])
+//        }
         
         waitForExpectations(timeout: 2, handler: nil)
         
