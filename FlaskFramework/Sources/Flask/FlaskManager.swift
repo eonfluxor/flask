@@ -32,7 +32,7 @@ class LabFlaskManager{
     static func removeFlask(_ flask:FlaskConcrete){
         if let index = flasks.index(of: flask) {
             _ = autoreleasepool{
-                flask.empty(false)
+                flask.empty()
                 flasks.remove(at: index)
             }
         }
