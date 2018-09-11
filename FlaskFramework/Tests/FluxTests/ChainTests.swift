@@ -29,10 +29,10 @@ class ChainingTests: SetupFlaskTests {
       
         
         flask.mix(substance){ (substance) in
-            substance.states.counter=1
+            substance.state.counter=1
             
         }.mix(substance) { (substance) in
-            substance.states.counter=2
+            substance.state.counter=2
         }.react()
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -91,9 +91,9 @@ class ChainingTests: SetupFlaskTests {
         }
         
         flask.mix(substance) { (substance) in
-            substance.states.counter = 1
-            substance.states.text = "reaction"
-            substance.states.object = aObject
+            substance.state.counter = 1
+            substance.state.text = "reaction"
+            substance.state.object = aObject
         }.react()
         
         
@@ -117,9 +117,9 @@ class ChainingTests: SetupFlaskTests {
         }
         
         flask.mix(substance){ (substance) in
-            substance.states.counter=1
+            substance.state.counter=1
         }.mix(substance) { (substance) in
-            substance.states.counter=2
+            substance.state.counter=2
         }.react()
         
         

@@ -12,13 +12,13 @@ import UIKit
 import Cocoa
 #endif
 
-open class Substance<T:States,A:RawRepresentable> : SubstanceConcrete{
+open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
     
-    typealias StatesType = T
+    typealias StateType = T
     
-    var statesSnapshot: LabDictType = [:]
-    private var _states: T = T()
-    public var states:T = T()
+    var stateSnapshot: LabDictType = [:]
+    private var _state: T = T()
+    public var state:T = T()
     //////////////////
     // MARK: - TRANSACTIONS QUEUE
     
@@ -39,7 +39,7 @@ open class Substance<T:States,A:RawRepresentable> : SubstanceConcrete{
     
     override public func initializeMetaClass() {
         unarchiveIntent()
-        snapshotStates()
+        snapshotState()
     }
     
     //////////////////
@@ -55,51 +55,51 @@ open class Substance<T:States,A:RawRepresentable> : SubstanceConcrete{
         mixer(mixerName(enumVal), reaction)
     }
     
-    public override func statesSnapshotDictionary() -> LabDictType{
-        return statesSnapshot
+    public override func stateSnapshotDictionary() -> LabDictType{
+        return stateSnapshot
     }
-    public override func statesDictionary() -> LabDictType{
-        return _states.toDictionary()
-    }
-    
-    public func currentStates()->T{
-        return _states
+    public override func stateDictionary() -> LabDictType{
+        return _state.toDictionary()
     }
     
-    func setCurrentState(_ states:T){
-        _states = states
+    public func currentState()->T{
+        return _state
+    }
+    
+    func setCurrentState(_ state:T){
+        _state = state
     }
     
     /// PRIVATE
     
-    override func snapshotStates(){
-        self.statesSnapshot = self.statesDictionary()
-        archiveIntent(_states)
+    override func snapshotState(){
+        self.stateSnapshot = self.stateDictionary()
+        archiveIntent(_state)
     }
     
 
-    override func statesTransaction(_ transaction:@escaping ()-> Bool){
+    override func stateTransaction(_ transaction:@escaping ()-> Bool){
         transactonsQueue.addOperation { [weak self] in
             
             if self == nil {return}
             
-            self!.states = self!._states
+            self!.state = self!._state
             
             if transaction() {
-                self!._states = self!.states
+                self!._state = self!.state
             }else{
-                self!.states = self!._states
+                self!.state = self!._state
             }
         }
         
     }
     
-    override func abortStatesTransaction(){
+    override func abortStateTransaction(){
         transactonsQueue.addOperation { [weak self] in
             
             if self == nil {return}
             
-            self!.states = self!._states
+            self!.state = self!._state
         }
     }
 }
@@ -122,10 +122,10 @@ open class SubstanceConcrete {
         initializeMetaClass()
     }
     
-    func statesSnapshotDictionary() -> LabDictType{
+    func stateSnapshotDictionary() -> LabDictType{
         return [:]
     }
-    func statesDictionary() -> LabDictType{
+    func stateDictionary() -> LabDictType{
         return [:]
     }
     func name() -> String {
@@ -135,11 +135,11 @@ open class SubstanceConcrete {
     open func defineMixers(){}
     open func undefineMixers(){}
     
-    func snapshotStates(){}
+    func snapshotState(){}
     
     func initializeMetaClass(){}
-    func statesTransaction(_ transaction:@escaping ()-> Bool){}
-    func abortStatesTransaction(){}
+    func stateTransaction(_ transaction:@escaping ()-> Bool){}
+    func abortStateTransaction(){}
     
     
 }
@@ -170,7 +170,7 @@ public extension SubstanceConcrete {
                     completed = false
                 }
                 
-                self?.statesTransaction({
+                self?.stateTransaction({
                     reaction(payload,react,abort)
                     assert(resolved, "reaction closure must call `react` or `abort`")
                     return completed
@@ -200,7 +200,7 @@ extension SubstanceConcrete {
             }else{
                 //log
             }
-            self?.snapshotStates()
+            self?.snapshotState()
         }
        
     }
@@ -214,13 +214,13 @@ public extension SubstanceConcrete {
         
         assertStateKey(key)
         
-        let states = self.statesDictionary()
-        return states[key] as! String
+        let state = self.stateDictionary()
+        return state[key] as! String
     }
     
     func assertStateKey(_ key:String) {
-        let states = self.statesDictionary()
-        assert(states.keys.contains(key),"Prop must be defined in states")
+        let state = self.stateDictionary()
+        assert(state.keys.contains(key),"Prop must be defined in state")
         
     }
     

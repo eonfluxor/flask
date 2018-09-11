@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-public protocol StatesObservable{
+public protocol StateObservable{
     func toLabDictRef()->NSDictionary
 }
 
-public class LabDictRef: NSObject, Codable, StatesObservable {
+public class LabDictRef: NSObject, Codable, StateObservable {
    
    
     

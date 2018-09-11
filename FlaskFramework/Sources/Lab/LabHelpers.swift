@@ -37,7 +37,7 @@ public func isLabNil(_ value:Any?)->Bool{
 
 
 protocol LabAnyWithInit{
-    init() //construct at initial states
+    init() //construct at initial state
 }
 
 public class LabEquatable: Equatable{

@@ -60,17 +60,17 @@ public class FlaskReaction {
     func assertKey(_ key:String){
         
         let error = {
-            fatalError("the key `\(key)` is not defined in states")
+            fatalError("the key `\(key)` is not defined in state")
             
         }
-        let states = substance.statesSnapshotDictionary()
+        let state = substance.stateSnapshotDictionary()
         let rootKey = key.split(separator: ".").first
         
         guard (rootKey != nil) else{
             error()
         }
         
-        guard states.keys.contains(String(rootKey!)) else{
+        guard state.keys.contains(String(rootKey!)) else{
             error()
         }
         
@@ -82,8 +82,8 @@ public extension FlaskReaction {
     
     static public func reduceChanges(substance:SubstanceConcrete)->LabDictType{
     
-        let oldState = substance.statesSnapshotDictionary()
-        let newState = substance.statesDictionary()
+        let oldState = substance.stateSnapshotDictionary()
+        let newState = substance.stateDictionary()
         
         return reduceChanges(oldState,newState)
     }
@@ -110,8 +110,8 @@ public extension FlaskReaction {
     
     static public func change(_ substance:SubstanceConcrete, _ key: String) -> SubstanceChange {
         
-        let oldState = substance.statesSnapshotDictionary()
-        let newState = substance.statesDictionary()
+        let oldState = substance.stateSnapshotDictionary()
+        let newState = substance.stateDictionary()
         
         return change(oldState,newState,key)
     }
