@@ -1,12 +1,12 @@
  <p align="center"> 
-    <img src="Flask-logo.png" alt="alternate text">
+    <img src="http://res.cloudinary.com/dmje5xfzh/image/upload/c_scale,r_60,w_280/v1536646955/static/Flask-logo.png" alt="alternate text">
  </p>
 
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Flask.svg)](#cocoapods) 
 [![GitHub release](https://img.shields.io/github/release/eonfluxor/Flask.svg)](https://github.com/eonfluxor/delay/releases) 
 ![Swift 4.0](https://img.shields.io/badge/Swift-4.1-orange.svg) 
 ![platforms](https://img.shields.io/cocoapods/p/Flask.svg)
-[![Build Status](https://travis-ci.org/eonfluxor/Flask.svg?branch=master)](https://travis-ci.org/eonfluxor/kron)
+[![Build Status](https://travis-ci.org/eonfluxor/flask.svg?branch=master)](https://travis-ci.org/eonfluxor/flask)
 
 
 
