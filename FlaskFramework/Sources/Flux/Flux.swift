@@ -71,7 +71,7 @@ public extension Flux {
     }
     
     @discardableResult
-    static public func lock<T:RawRepresentable>(withEvent enumVal:T, payload:[String:Any]?)->BusLock{
+    static public func lock<T:RawRepresentable>(withEvent enumVal:T, payload:BusPayload?)->BusLock{
         
         let bus = enumVal.rawValue as! String
         let lock = BusLock(bus:Flux.bus)
@@ -93,7 +93,7 @@ public extension Flux {
 
 public extension Flux {
     
-    static public func dispatch<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]? = nil){
+    static public func dispatch<T:RawRepresentable>(_ enumVal:T, payload:BusPayload? = nil){
         let bus = enumVal.rawValue as! String
         var info = payload ?? [:]
         info[FLUX_BUS_NAME] = bus

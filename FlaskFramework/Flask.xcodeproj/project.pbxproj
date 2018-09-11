@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06CD357D3571E8D74FA9EF3D /* Pods_Flask_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E2614725FA0A1B2AD443CD /* Pods_Flask_iOS.framework */; };
 		0DEFB0BEFD9FB7B668AF908B /* Pods_Flask_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E158D5A8457C05541B83919 /* Pods_Flask_macOS.framework */; };
+		2622A5312148781F003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
 		26C53E09214790730090AA0C /* Flask_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C53E00214790730090AA0C /* Flask_iOS.framework */; };
 		26C53E0E214790730090AA0C /* Flask_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E0D214790730090AA0C /* Flask_iOSTests.swift */; };
 		26C53E10214790730090AA0C /* Flask_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C53E02214790730090AA0C /* Flask_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -185,6 +186,7 @@
 		1BC09794A7DC750FA3E76238 /* Pods_Flask_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flask_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_macOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-tvOS-Reaktor-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2622A5302148781F003F4C38 /* BusNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusNotifier.swift; sourceTree = "<group>"; };
 		26A82A5F2146D783008C8009 /* Reaktor_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reaktor_iOS.h; sourceTree = "<group>"; };
 		26A82A602146D783008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26A82A6A2146D783008C8009 /* Reaktor_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor_iOSTests.swift; sourceTree = "<group>"; };
@@ -443,7 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				26A0F925214834DC00555C8D /* Flux */,
-				26C53E59214790A90090AA0C /* Mixer */,
+				26C53E59214790A90090AA0C /* Bus */,
 				26C53E55214790A90090AA0C /* Flask */,
 				26C53E5C214790A90090AA0C /* Reaction */,
 				26C53E5F214790A90090AA0C /* Store */,
@@ -527,13 +529,14 @@
 			path = Flask;
 			sourceTree = "<group>";
 		};
-		26C53E59214790A90090AA0C /* Mixer */ = {
+		26C53E59214790A90090AA0C /* Bus */ = {
 			isa = PBXGroup;
 			children = (
 				26C53E5A214790A90090AA0C /* Bus.swift */,
 				26C53E5B214790A90090AA0C /* BusLock.swift */,
+				2622A5302148781F003F4C38 /* BusNotifier.swift */,
 			);
-			path = Mixer;
+			path = Bus;
 			sourceTree = "<group>";
 		};
 		26C53E5C214790A90090AA0C /* Reaction */ = {
@@ -1078,6 +1081,7 @@
 				26C53EB2214790A90090AA0C /* StoreSerializer.swift in Sources */,
 				26C53E88214790A90090AA0C /* FlaskManager.swift in Sources */,
 				26C53EBE214790A90090AA0C /* Store.swift in Sources */,
+				2622A5312148781F003F4C38 /* BusNotifier.swift in Sources */,
 				26C53E9A214790A90090AA0C /* BusLock.swift in Sources */,
 				26C53E6A214790A90090AA0C /* FluxHelpers.swift in Sources */,
 				26C53E64214790A90090AA0C /* Flux.swift in Sources */,

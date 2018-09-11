@@ -13,6 +13,7 @@ import Cocoa
 #endif
 
 
+public typealias BusPayload = [String:Any?]
 public typealias StoreBus = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
 public typealias ChangeClosure = (_ change:StoreChange)->Void
 public typealias ReactionClosure<T> = (_ ownedBy:T, _ reaction: FlaskReaction) -> Void
@@ -47,7 +48,7 @@ public class FluxEquatable: Equatable{
 }
 
 
-class FluxWeakRef<T> where T: AnyObject {
+public class FluxWeakRef<T> where T: AnyObject {
     
     private(set) weak var value: T?
     

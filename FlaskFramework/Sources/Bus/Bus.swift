@@ -64,12 +64,12 @@ public class Bus {
 
 extension Bus {
     
-    func dispatch<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]? = nil){
+    func dispatch<T:RawRepresentable>(_ enumVal:T, payload:BusPayload? = nil){
         let bus = enumVal.rawValue as! String
         dispatch(bus,payload:payload)
     }
     
-    func dispatch(_ bus:String, payload:[String:Any]? = nil ){
+    func dispatch(_ bus:String, payload:BusPayload? = nil ){
         enqueue(bus,payload: payload)
     }
     
@@ -80,7 +80,7 @@ extension Bus {
 
 extension Bus {
  
-    func enqueue(_ bus:String, payload:[String:Any]?){
+    func enqueue(_ bus:String, payload:BusPayload?){
         
 
         var queue = busQueue
