@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/eonfluxor"
 
   s.ios.deployment_target = '9.0'
-  s.osx.deployment_target = '10.9'
+  s.osx.deployment_target = '10.10'
   s.tvos.deployment_target = '9.0'
    
   s.source       = { :git => "https://github.com/eonfluxor/Reaktor.git", :tag => "v#{s.version}" }
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Reaktor/Sources/**/*.swift'
   s.swift_version = '4.1'
  
-  s.dependency 'Delay', '> 2.2.2'
+  s.dependency 'Delayed', '> 2.2.2'
 
   # s.resources = "Resources/*.png"
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
