@@ -11,9 +11,9 @@ import XCTest
 
 class ChainingTests: SetupFlaskTests {
 
-    func testInlineMix(){
+    func testInlineTransmute(){
         
-        let expectation = self.expectation(description: "testInlineMix")
+        let expectation = self.expectation(description: "testInlineTransmute")
         
         let store = self.store!
         let owner:TestOwner = TestOwner()

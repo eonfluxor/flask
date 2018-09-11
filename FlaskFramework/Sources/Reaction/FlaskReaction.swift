@@ -17,7 +17,7 @@ import Cocoa
 public class FlaskReaction {
 
     
-    weak public var onPause:BusPause?
+    weak public var onLock:BusLock?
     private(set) var store:StoreConcrete
     private(set) var changes:FluxDictType
     

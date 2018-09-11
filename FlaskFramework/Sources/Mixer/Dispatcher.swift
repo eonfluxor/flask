@@ -18,7 +18,7 @@ public class Bus {
     //////////////////
     // MARK: - LOCKS
     
-    var pauses:[BusPause]=[]
+    var pauses:[BusLock]=[]
     
     //////////////////
     // MARK: - OPERATION QUEUE
@@ -29,7 +29,7 @@ public class Bus {
         return queue
     }()
     
-    let busOnPauseQueue:OperationQueue = {
+    let busOnLockQueue:OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount=1
         return queue
@@ -53,8 +53,8 @@ public class Bus {
         return Dictionary<String, Array<FluxWeakRef<FlaskConcrete>>>()
     }();
     
-    func pause()->BusPause{
-        return BusPause(bus:self)
+    func pause()->BusLock{
+        return BusLock(bus:self)
     }
     
 }
@@ -95,7 +95,7 @@ extension Bus {
 
         var queue = busQueue
         if (payload?[BUS_PAUSED_BY]) != nil {
-            queue = busOnPauseQueue
+            queue = busOnLockQueue
         }
         
         //TODO: log same bus warning

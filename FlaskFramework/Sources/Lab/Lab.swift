@@ -61,20 +61,20 @@ public extension Flux {
 
 public extension Flux {
     
-    static public func pause()->BusPause{
-        return BusPause(bus:Flux.bus)
+    static public func pause()->BusLock{
+        return BusLock(bus:Flux.bus)
     }
     
     @discardableResult
-    static public func pause<T:RawRepresentable>(fillingg enumVal:T)->BusPause{
+    static public func pause<T:RawRepresentable>(fillingg enumVal:T)->BusLock{
         return Flux.pause(fillingg:enumVal,payload:nil)
     }
     
     @discardableResult
-    static public func pause<T:RawRepresentable>(fillingg enumVal:T, payload:[String:Any]?)->BusPause{
+    static public func pause<T:RawRepresentable>(fillingg enumVal:T, payload:[String:Any]?)->BusLock{
         
         let bus = enumVal.rawValue as! String
-        let pause = BusPause(bus:Flux.bus)
+        let pause = BusLock(bus:Flux.bus)
         
         var info = payload ?? [:]
         info[BUS_PAUSED_BY] = pause
@@ -85,8 +85,8 @@ public extension Flux {
     }
     
     
-    static public func removePauses(){
-        Flux.bus.removePauses()
+    static public func removeLocks(){
+        Flux.bus.removeLocks()
     }
 }
 

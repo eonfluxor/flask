@@ -155,14 +155,14 @@ public extension StoreConcrete {
                 
                 let payload = notification.object as? [String:Any]
                 
-                let pause = payload?[BUS_PAUSED_BY] as? BusPause
+                let pause = payload?[BUS_PAUSED_BY] as? BusLock
                 
                 var resolved = false
                 var completed = true
                 
                 let react = {
                     resolved=true
-                    self?.handleMix(pause)
+                    self?.handleTransmute(pause)
                 }
                 
                 let abort = {
@@ -187,13 +187,13 @@ public extension StoreConcrete {
 
 extension StoreConcrete {
     
-    func handleMix(_ busPause: BusPause? = nil){
+    func handleTransmute(_ busLock: BusLock? = nil){
         Flux.bus.reactionQueue.addOperation { [weak self] in
             
             if self == nil { return }
             
             let reaction = FlaskReaction(self! as StoreConcrete)
-            reaction.onPause = busPause
+            reaction.onLock = busLock
             
             if( reaction.changed()){
                 Flux.bus.reactChange(reaction)

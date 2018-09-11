@@ -116,7 +116,7 @@ public class FlaskConcrete:FluxEquatable{
     ///
     func handleReaction(_ reaction:FlaskReaction){}
     
-//    @discardableResult public transmute<T:StoreConcrete>(_ aStore:T, _ bus:@escaping MixParams<T>)->FlaskConcrete{
+//    @discardableResult public transmute<T:StoreConcrete>(_ aStore:T, _ bus:@escaping TransmuteParams<T>)->FlaskConcrete{
 //        
 //        let store = self.store(aStore)
 //        store.transmute(bus)

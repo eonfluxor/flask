@@ -1,5 +1,5 @@
 //
-//  BusPause.swift
+//  BusLock.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/3/18.
@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-public class BusPause: FluxEquatable {
+public class BusLock: FluxEquatable {
 
     var bus:Bus
     
@@ -21,32 +21,32 @@ public class BusPause: FluxEquatable {
         self.bus = bus
         super.init()
         
-        self.bus.addPause(self)
+        self.bus.addLock(self)
     }
     
     public func release(){
-        bus.removePause(self)
+        bus.removeLock(self)
     }
 }
 
 public extension Bus{
     
-    public func removePauses(){
+    public func removeLocks(){
         pauses=[]
-        applyPauses()
+        applyLocks()
     }
     
-    func addPause(_ pause:BusPause){
+    func addLock(_ pause:BusLock){
         pauses.append(pause)
-        applyPauses()
+        applyLocks()
     }
     
-    func removePause(_ pause:BusPause){
+    func removeLock(_ pause:BusLock){
         pauses=pauses.filter {$0 != pause}
-        applyPauses()
+        applyLocks()
     }
 
-    func applyPauses(){
+    func applyLocks(){
         busQueue.isSuspended = pauses.count > 0
     }
     

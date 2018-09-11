@@ -32,7 +32,7 @@ class SetupFlaskTests: XCTestCase {
         super.tearDown()
         self.store?.purgeArchive()
         self.store = .none
-        Flux.removePauses()
+        Flux.removeLocks()
         FluxFlaskManager.purge()
 //        sleep(2)
     }

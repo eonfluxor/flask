@@ -14,7 +14,7 @@ class FlaskTests: SetupFlaskTests {
 
     func testCallback(){
         
-        let expectation = self.expectation(description: "testCallback Mix counter")
+        let expectation = self.expectation(description: "testCallback Transmute counter")
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
@@ -140,7 +140,7 @@ class FlaskTests: SetupFlaskTests {
     
     func testChange(){
         
-        let expectation = self.expectation(description: "testChange Mix")
+        let expectation = self.expectation(description: "testChange Transmute")
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
@@ -171,7 +171,7 @@ class FlaskTests: SetupFlaskTests {
     
     func testGlobalApp(){
         
-        let expectation = self.expectation(description: "testGlobalStore testInlineMix")
+        let expectation = self.expectation(description: "testGlobalStore testInlineTransmute")
         
         let owner:TestOwner = TestOwner()
         let flask = Flux.flask(ownedBy:owner, filling:Stores.app)

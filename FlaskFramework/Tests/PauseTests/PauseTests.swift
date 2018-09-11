@@ -1,5 +1,5 @@
 //
-//  PauseTests.swift
+//  LockTests.swift
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
@@ -9,12 +9,12 @@
 import XCTest
 
 
-class PauseTests: SetupFlaskTests {
+class LockTests: SetupFlaskTests {
     
-    func testPause(){
+    func testLock(){
         
-        let expectation = self.expectation(description: "testPause Mix")
-        let expectation2 = self.expectation(description: "testPause Mix Ignored")
+        let expectation = self.expectation(description: "testLock Transmute")
+        let expectation2 = self.expectation(description: "testLock Transmute Ignored")
         expectation2.isInverted=true
         
         let store = self.store!
@@ -36,13 +36,13 @@ class PauseTests: SetupFlaskTests {
                 calls += 1
                 
                 _ = Flux.pause()
-                Flux.transmute(AppActions.Count, payload:  ["test":"testPause"])
+                Flux.transmute(AppActions.Count, payload:  ["test":"testLock"])
                 
             })
         }
         
         DispatchQueue.main.async {
-            Flux.transmute(AppActions.Count, payload: ["test":"testPause"])
+            Flux.transmute(AppActions.Count, payload: ["test":"testLock"])
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
@@ -50,9 +50,9 @@ class PauseTests: SetupFlaskTests {
     }
     
     
-    func testPauseRelease(){
+    func testLockRelease(){
         
-        let expectation = self.expectation(description: "testPauseRelease Mix")
+        let expectation = self.expectation(description: "testLockRelease Transmute")
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
@@ -68,7 +68,7 @@ class PauseTests: SetupFlaskTests {
         
         let pause  = Flux.pause()
         let pause2  = Flux.pause()
-        Flux.transmute(AppActions.Count, payload:  ["test":"testPauseRelease"])
+        Flux.transmute(AppActions.Count, payload:  ["test":"testLockRelease"])
         
         DispatchQueue.main.async {
             pause.release()
@@ -81,10 +81,10 @@ class PauseTests: SetupFlaskTests {
         
     }
     
-    func testPauseAction(){
+    func testLockAction(){
         
-        let expectation = self.expectation(description: "testPauseRelease Mix")
-        let expectation2 = self.expectation(description: "testPauseRelease Mix Ignored")
+        let expectation = self.expectation(description: "testLockRelease Transmute")
+        let expectation2 = self.expectation(description: "testLockRelease Transmute Ignored")
      
         let store = self.store!
         let owner:TestOwner = TestOwner()
@@ -93,7 +93,7 @@ class PauseTests: SetupFlaskTests {
         flask.reactor = { owner, reaction in
             reaction.at(store)?.on(AppState.named.counter, { (change) in
                 
-                reaction.onPause?.release()
+                reaction.onLock?.release()
                 expectation.fulfill()
            
             })
@@ -102,10 +102,10 @@ class PauseTests: SetupFlaskTests {
             })
         }
         
-        Flux.pause(fillingg:AppActions.Count, payload:  ["test":"testPauseActon count"])
+        Flux.pause(fillingg:AppActions.Count, payload:  ["test":"testLockActon count"])
        
         //this should be performed after the pause releases
-        Flux.transmute(AppActions.Text, payload:  ["test":"testPauseAction text"])
+        Flux.transmute(AppActions.Text, payload:  ["test":"testLockAction text"])
         
         wait(for: [expectation], timeout: 2)
         
