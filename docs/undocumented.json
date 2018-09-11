@@ -352,13 +352,6 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 55,
-      "symbol": "Lab.flask(ownedBy:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 63,
       "symbol": "Lab.lock()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
