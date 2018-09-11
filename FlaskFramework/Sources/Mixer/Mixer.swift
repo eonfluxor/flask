@@ -94,7 +94,7 @@ extension Mixer {
         
 
         var queue = formulationQueue
-        if (payload?[FORMULATE_PAUSED_BY]) != nil {
+        if (payload?[MIXER_PAUSED_BY]) != nil {
             queue = formulationOnPauseQueue
         }
         

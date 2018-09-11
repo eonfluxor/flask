@@ -77,7 +77,7 @@ public extension Lab {
         let pause = MixerPause(mixer:Lab.mixer)
         
         var info = payload ?? [:]
-        info[FORMULATE_PAUSED_BY] = pause
+        info[MIXER_PAUSED_BY] = pause
         
         Lab.mixer.formulate(mixer,payload:info)
         

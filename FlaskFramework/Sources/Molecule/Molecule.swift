@@ -155,7 +155,7 @@ public extension MoleculeConcrete {
                 
                 let payload = notification.object as? [String:Any]
                 
-                let pause = payload?[FORMULATE_PAUSED_BY] as? MixerPause
+                let pause = payload?[MIXER_PAUSED_BY] as? MixerPause
                 
                 var resolved = false
                 var completed = true
