@@ -24,11 +24,11 @@ public class Flask<D:AnyObject>:FlaskConcrete {
     
     /// MARK: -
     
-    override public func bind(){
+    override public func fill(){
         guard (self.owner) != nil else {
             return assertionFailure("a owner is required")
         }
-        super.bind()
+        super.fill()
     }
     
     override func handleMix(_ reaction:FlaskReaction){
@@ -52,60 +52,60 @@ public class Flask<D:AnyObject>:FlaskConcrete {
 public class FlaskConcrete:LabAnyEquatable{
     
     var molecules:[MoleculeConcrete]=[]
-    var binded = false
+    var filled = false
     
     
-    func bindMolecule(_ molecule:MoleculeConcrete){
-        bindMolecules([molecule])
+    func defineMolecule(_ molecule:MoleculeConcrete){
+        defineMolecules([molecule])
     }
     
-    func bindMolecules(_ mixinMolecules:[MoleculeConcrete]){
+    func defineMolecules(_ mixinMolecules:[MoleculeConcrete]){
         molecules = mixinMolecules
-        bind()
+        
     }
     
     public func getOwner()->AnyObject?{
         return nil
     }
     
-    public func bind(){
+    public func fill(){
         
-        assert(!binded,"Already bounded. It's required  to balance bind/unbind calls")
+        assert(!filled,"Already bounded. It's required  to balance bind/unbind calls")
         assert(!molecules.isEmpty,"At least one molecule is required")
         
-        binded = true
+        filled = true
         
         for molecule in molecules {
            
             { [weak self] in
                 if let wself = self {
-                    Lab.mixer.bindFlask(molecule, flask: wself)
+                    Lab.mixer.fillFlask(molecule, flask: wself)
                 }
             }()
             
-            molecule.bindMixers()
+            molecule.defineMixers()
         }
         
         
     }
     
-    public func unbind(_ explicit:Bool = true){
+    public func empty(_ explicit:Bool = true){
         
-        if(explicit && !binded){
-            assert(binded,"Not binded. It's required  to balance bind/unbind calls")
+        if(explicit && !filled){
+            assert(false,"Not binded. It's required  to balance bind/unbind calls")
         }
         
-        if(!binded){return}
-        binded = false
+        if(!filled){return}
+        filled = false
         
         for molecule in molecules {
             { [weak self] in
                 if let wself = self {
-                    Lab.mixer.unbindFlask(molecule, flask: wself)
+                    Lab.mixer.emptyFlask(molecule, flask: wself)
                 }
             }()
             
-            molecule.unbindMixers()
+            molecule.undefineMixers()
         }
     }
     

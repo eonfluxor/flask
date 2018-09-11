@@ -76,7 +76,7 @@ class FlaskTests: SetupFlaskTests {
             })
         }
         
-        flask.unbind()
+        flask.empty()
         Lab.mix(AppMixers.Count, payload: ["test":"unmixin"])
         
         waitForExpectations(timeout: 2, handler: nil)

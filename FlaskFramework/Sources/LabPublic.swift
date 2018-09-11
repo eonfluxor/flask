@@ -31,7 +31,7 @@ public class Lab {
 public extension Lab {
     
     static public func disposeDispatchQueue(){
-        Lab.mixer.mixQueue.cancelAllOperations()
+        Lab.mixer.formulationQueue.cancelAllOperations()
     }
     
     static public func purge(){
@@ -47,7 +47,8 @@ public extension Lab {
     
     static public func flask<T:AnyObject>(ownedBy owner:T, mixin molecules:[MoleculeConcrete]) -> Flask<T>{
         let flask = Lab.flask(ownedBy:owner)
-        flask.bindMolecules(molecules)
+        flask.defineMolecules(molecules)
+        flask.fill()
         return flask
     }
     
@@ -96,7 +97,7 @@ public extension Lab {
     static public func mix<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
         let mixer = enumVal.rawValue as! String
         var info = payload ?? [:]
-        info[FLUX_ACTION_NAME] = mixer
+        info[FLUX_MIXER_NAME] = mixer
         
         Lab.mixer.formulate(mixer,payload:info)
     }

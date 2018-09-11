@@ -47,7 +47,7 @@ public extension Mixer{
     }
 
     func applyPauses(){
-        mixQueue.isSuspended = pauses.count > 0
+        formulationQueue.isSuspended = pauses.count > 0
     }
     
 }

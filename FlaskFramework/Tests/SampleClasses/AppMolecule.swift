@@ -36,7 +36,7 @@ struct AppAtoms : Atoms {
 
 class App : Molecule<AppAtoms,AppMixers> {
     
-    override func bindMixers(){
+    override func defineMixers(){
         
         mix(.Count) {[weak self] (payload, react, abort)  in
             self?.atoms.counter = (self?.atoms.counter)! + 1

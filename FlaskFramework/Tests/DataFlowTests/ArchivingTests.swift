@@ -34,7 +34,7 @@ class archiveTests: SetupFlaskTests {
         
         wait(for: [expectation], timeout: 2)
         
-        flask.unbind()
+        flask.empty()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             

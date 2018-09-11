@@ -24,7 +24,7 @@ public typealias AtomName = String
 
 
 let FLUX_ACTION_SKIP_LOCKS="FLUX_ACTION_SKIP_LOCKS"
-let FLUX_ACTION_NAME="FLUX_ACTION_NAME"
+let FLUX_MIXER_NAME="FLUX_MIXER_NAME"
 
 public func isLabNil(_ value:Any?)->Bool{
     if value == nil || ((value as? NSNull) != nil){

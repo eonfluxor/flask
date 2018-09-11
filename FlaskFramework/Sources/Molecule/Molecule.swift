@@ -132,8 +132,8 @@ open class MoleculeConcrete {
         return "Molecule\(self.self)"
     }
     
-    open func bindMixers(){}
-    open func unbindMixers(){}
+    open func defineMixers(){}
+    open func undefineMixers(){}
     
     func snapshotAtom(){}
     

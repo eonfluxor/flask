@@ -23,13 +23,13 @@ public class Mixer {
     //////////////////
     // MARK: - OPERATION QUEUE
     
-    let mixQueue:OperationQueue = {
+    let formulationQueue:OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount=1
         return queue
     }()
     
-    let formulatePauseedQueue:OperationQueue = {
+    let formulationOnPauseQueue:OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount=1
         return queue
@@ -78,7 +78,7 @@ extension Mixer {
     }
     
     func formulate(_ mixer:String, payload:[String:Any]?){
-        queue(mixer,payload: payload)
+        enqueue(mixer,payload: payload)
     }
     
     
@@ -90,11 +90,11 @@ extension Mixer {
 
 extension Mixer {
  
-    func queue(_ mixer:String, payload:[String:Any]?){
+    func enqueue(_ mixer:String, payload:[String:Any]?){
         
-        var queue = mixQueue
+        var queue = formulationQueue
         if  ((payload?[FLUX_ACTION_SKIP_LOCKS]) != nil) {
-            queue = formulatePauseedQueue
+            queue = formulationOnPauseQueue
         }
         
         //TODO: log same mixer warning
@@ -125,7 +125,7 @@ extension Mixer {
 
 extension Mixer {
    
-    func bindFlask(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
+    func fillFlask(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
         
         let moleculeName = molecule.name()
         var moleculeFlaskRefs = getMoleculeFlaskRefs(moleculeName)
@@ -136,7 +136,7 @@ extension Mixer {
         
     }
     
-    func unbindFlask(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
+    func emptyFlask(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
         
         let moleculeName = molecule.name()
         let moleculeFlaskRefs = getMoleculeFlaskRefs(moleculeName)
