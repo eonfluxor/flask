@@ -125,29 +125,29 @@ extension LabDispatcher {
 
 extension LabDispatcher {
    
-    func bindFlaskReactor(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
+    func bindFlask(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
         
         let moleculeName = molecule.name()
-        var moleculeFlaskReactorRefs = getMoleculeFlaskReactorRefs(moleculeName)
+        var moleculeFlaskRefs = getMoleculeFlaskRefs(moleculeName)
         
         let ref = LabWeakRef(value:flask)
-        moleculeFlaskReactorRefs.append(ref)
-        setMoleculeFlaskReactorRefs(moleculeName,moleculeFlaskReactorRefs)
+        moleculeFlaskRefs.append(ref)
+        setMoleculeFlaskRefs(moleculeName,moleculeFlaskRefs)
         
     }
     
-    func unbindFlaskReactor(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
+    func unbindFlask(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
         
         let moleculeName = molecule.name()
-        let moleculeFlaskReactorRefs = getMoleculeFlaskReactorRefs(moleculeName)
+        let moleculeFlaskRefs = getMoleculeFlaskRefs(moleculeName)
         
-        let moleculeFlaskReactorRefsFiltered = moleculeFlaskReactorRefs.filter { $0.value != flask }
+        let moleculeFlaskRefsFiltered = moleculeFlaskRefs.filter { $0.value != flask }
         
-        setMoleculeFlaskReactorRefs(moleculeName,moleculeFlaskReactorRefsFiltered)
+        setMoleculeFlaskRefs(moleculeName,moleculeFlaskRefsFiltered)
        
     }
     
-    func getMoleculeFlaskReactorRefs(_ moleculeName:String) -> Array<LabWeakRef<FlaskConcrete>>{
+    func getMoleculeFlaskRefs(_ moleculeName:String) -> Array<LabWeakRef<FlaskConcrete>>{
         
         if let flasks = self.flaskRefs[moleculeName] {
             return flasks
@@ -157,7 +157,7 @@ extension LabDispatcher {
         
     }
     
-    func setMoleculeFlaskReactorRefs(_ moleculeName:String,_ refs:Array<LabWeakRef<FlaskConcrete>>){
+    func setMoleculeFlaskRefs(_ moleculeName:String,_ refs:Array<LabWeakRef<FlaskConcrete>>){
         
         self.flaskRefs[moleculeName] = refs
     }
@@ -171,10 +171,10 @@ extension LabDispatcher {
     func commitChange(_ reaction:FlaskReaction){
         
         let moleculeName = reaction.molecule.name()
-        let moleculeFlaskReactorRefs = getMoleculeFlaskReactorRefs(moleculeName)
+        let moleculeFlaskRefs = getMoleculeFlaskRefs(moleculeName)
         
-        for moleculeFlaskReactorRef in moleculeFlaskReactorRefs {
-            if let flask = moleculeFlaskReactorRef.value{
+        for moleculeFlaskRef in moleculeFlaskRefs {
+            if let flask = moleculeFlaskRef.value{
                 flask.handleMix( reaction)
             }
         }

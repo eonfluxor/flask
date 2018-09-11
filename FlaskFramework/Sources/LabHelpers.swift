@@ -15,7 +15,7 @@ import Cocoa
 
 public typealias MoleculeMixer = (_ payload: Any?,_ commit:()->Void, _ abort:()->Void ) -> Void
 public typealias FlaskClosure = (_ change:FlaskChangeTemplate)->Void
-public typealias FlaskReactorClosure<T> = (_ ownedBy:T, _ reaction: FlaskReaction) -> Void
+public typealias FlaskReactionClosure<T> = (_ ownedBy:T, _ reaction: FlaskReaction) -> Void
 public typealias LabDictionaryType = Dictionary<String,AnyHashable?>
 public typealias LabNil = (AnyHashable?)
 public typealias FlaskMixParams<T> = (_ molecule:T,_ commit:()-> Void,_ abort:()-> Void) -> Void

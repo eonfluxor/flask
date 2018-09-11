@@ -19,17 +19,17 @@ class LabFlaskManager{
     static func instance<T:AnyObject>(ownedBy owner:T) -> Flask<T>{
         
         let flask = Flask<T>(owner)
-        appendFlaskReactor(flask)
+        appendFlask(flask)
         return flask
     }
     
-    static func appendFlaskReactor(_ flask:FlaskConcrete){
-        removeFlaskReactor(flask)
+    static func appendFlask(_ flask:FlaskConcrete){
+        removeFlask(flask)
         flasks.append(flask)
         LabFlaskManager.purgeOrphans()
     }
     
-    static func removeFlaskReactor(_ flask:FlaskConcrete){
+    static func removeFlask(_ flask:FlaskConcrete){
         if let index = flasks.index(of: flask) {
             _ = autoreleasepool{
                 flask.unbind(false)
@@ -42,7 +42,7 @@ class LabFlaskManager{
         let orphans = flasks.filter {$0.getOwner() == nil}
         
         for flask in orphans {
-            removeFlaskReactor(flask)
+            removeFlask(flask)
         }
     }
 }

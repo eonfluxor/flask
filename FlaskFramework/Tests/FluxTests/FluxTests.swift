@@ -9,7 +9,7 @@
 import XCTest
 
 
-class FlaskReactorTests: SetupFlaskTests {
+class FlaskTests: SetupFlaskTests {
     
 
     func testCallback(){

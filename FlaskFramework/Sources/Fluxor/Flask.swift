@@ -16,7 +16,7 @@ public class Flask<D:AnyObject>:FlaskConcrete {
     
     weak var owner:D?
     
-    public var reactor:FlaskReactorClosure<D>  = { owner,reaction in }
+    public var reactor:FlaskReactionClosure<D>  = { owner,reaction in }
     
     required public init(_ owner:D){
         self.owner=owner
@@ -38,7 +38,7 @@ public class Flask<D:AnyObject>:FlaskConcrete {
             reactor(owner,reaction)
         }else{
             //dispose flask when the owner is no longer present
-            LabFlaskManager.removeFlaskReactor(self)
+            LabFlaskManager.removeFlask(self)
         }
     }
     
@@ -79,7 +79,7 @@ public class FlaskConcrete:LabAnyEquatable{
            
             { [weak self] in
                 if let wself = self {
-                    Lab.Dispatcher.bindFlaskReactor(molecule, flask: wself)
+                    Lab.Dispatcher.bindFlask(molecule, flask: wself)
                 }
             }()
             
@@ -101,7 +101,7 @@ public class FlaskConcrete:LabAnyEquatable{
         for molecule in molecules {
             { [weak self] in
                 if let wself = self {
-                    Lab.Dispatcher.unbindFlaskReactor(molecule, flask: wself)
+                    Lab.Dispatcher.unbindFlask(molecule, flask: wself)
                 }
             }()
             
