@@ -26,9 +26,9 @@ class SerializationTests: XCTestCase {
             state.map = LabDictRef(dict)
             state.object = LabRef(NSObject())
             
-            let jsonString:String = try SubstanceSerializer.jsonFromState(state)
+            let jsonString:String = try StoreSerializer.jsonFromState(state)
             
-            let stateDecoded:AppState = try SubstanceSerializer.stateFromJson(jsonString)
+            let stateDecoded:AppState = try StoreSerializer.stateFromJson(jsonString)
             
             XCTAssert(state.counter == stateDecoded.counter )
             XCTAssert(state.text == stateDecoded.text )

@@ -15,9 +15,9 @@ class ChainingTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testInlineMix")
         
-        let substance = self.substance!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, filling:substance)
+        let flask = Lab.flask(ownedBy:owner, filling:store)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -28,11 +28,11 @@ class ChainingTests: SetupFlaskTests {
         
       
         
-        flask.mix(substance){ (substance) in
-            substance.state.counter=1
+        flask.mix(store){ (store) in
+            store.state.counter=1
             
-        }.mix(substance) { (substance) in
-            substance.state.counter=2
+        }.mix(store) { (store) in
+            store.state.counter=2
         }.react()
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -46,9 +46,9 @@ class ChainingTests: SetupFlaskTests {
         let expectation2 = self.expectation(description: "testChangeInLine text")
         let expectation3 = self.expectation(description: "testChangeInLine object")
         
-        let substance = self.substance!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,filling:substance)
+        let flask = Lab.flask(ownedBy:owner,filling:store)
         
         let object = NSObject()
         let aObject = LabRef( object )
@@ -63,7 +63,7 @@ class ChainingTests: SetupFlaskTests {
                 XCTAssert(oldValue == 0)
                 XCTAssert(newValue == 1)
                 XCTAssert(change.key() == AppState.named.counter.rawValue)
-                XCTAssert(change.substance() === substance)
+                XCTAssert(change.store() === store)
                 
                 expectation.fulfill()
             })
@@ -73,7 +73,7 @@ class ChainingTests: SetupFlaskTests {
                 XCTAssert(change.oldValue() == "")
                 XCTAssert(change.newValue() == "reaction")
                 XCTAssert(change.key() == AppState.named.text.rawValue)
-                XCTAssert(change.substance() === substance)
+                XCTAssert(change.store() === store)
                 
                 expectation2.fulfill()
             })
@@ -83,17 +83,17 @@ class ChainingTests: SetupFlaskTests {
                 XCTAssert( isLabNil(change.oldValue()) )
                 XCTAssert(change.newValue() == aObject)
                 XCTAssert(change.key() == AppState.named.object.rawValue)
-                XCTAssert(change.substance() === substance)
+                XCTAssert(change.store() === store)
                 
                 expectation3.fulfill()
             })
             
         }
         
-        flask.mix(substance) { (substance) in
-            substance.state.counter = 1
-            substance.state.text = "reaction"
-            substance.state.object = aObject
+        flask.mix(store) { (store) in
+            store.state.counter = 1
+            store.state.text = "reaction"
+            store.state.object = aObject
         }.react()
         
         
@@ -105,9 +105,9 @@ class ChainingTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testChain")
         
-        let substance = self.substance!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, filling:substance)
+        let flask = Lab.flask(ownedBy:owner, filling:store)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -116,10 +116,10 @@ class ChainingTests: SetupFlaskTests {
             })
         }
         
-        flask.mix(substance){ (substance) in
-            substance.state.counter=1
-        }.mix(substance) { (substance) in
-            substance.state.counter=2
+        flask.mix(store){ (store) in
+            store.state.counter=1
+        }.mix(store) { (store) in
+            store.state.counter=2
         }.react()
         
         

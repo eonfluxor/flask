@@ -126,31 +126,31 @@ extension Mixer {
 
 extension Mixer {
    
-    func fillFlask(_ substance:SubstanceConcrete, flask:FlaskConcrete) {
+    func fillFlask(_ store:StoreConcrete, flask:FlaskConcrete) {
         
-        let substanceName = substance.name()
-        var substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
+        let storeName = store.name()
+        var storeFlaskRefs = getStoreFlaskRefs(storeName)
         
         let ref = LabWeakRef(value:flask)
-        substanceFlaskRefs.append(ref)
-        setSubstanceFlaskRefs(substanceName,substanceFlaskRefs)
+        storeFlaskRefs.append(ref)
+        setStoreFlaskRefs(storeName,storeFlaskRefs)
         
     }
     
-    func emptyFlask(_ substance:SubstanceConcrete, flask:FlaskConcrete) {
+    func emptyFlask(_ store:StoreConcrete, flask:FlaskConcrete) {
         
-        let substanceName = substance.name()
-        let substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
+        let storeName = store.name()
+        let storeFlaskRefs = getStoreFlaskRefs(storeName)
         
-        let substanceFlaskRefsFiltered = substanceFlaskRefs.filter { $0.value != flask }
+        let storeFlaskRefsFiltered = storeFlaskRefs.filter { $0.value != flask }
         
-        setSubstanceFlaskRefs(substanceName,substanceFlaskRefsFiltered)
+        setStoreFlaskRefs(storeName,storeFlaskRefsFiltered)
        
     }
     
-    func getSubstanceFlaskRefs(_ substanceName:String) -> Array<LabWeakRef<FlaskConcrete>>{
+    func getStoreFlaskRefs(_ storeName:String) -> Array<LabWeakRef<FlaskConcrete>>{
         
-        if let flasks = self.flaskRefs[substanceName] {
+        if let flasks = self.flaskRefs[storeName] {
             return flasks
         }
         
@@ -158,9 +158,9 @@ extension Mixer {
         
     }
     
-    func setSubstanceFlaskRefs(_ substanceName:String,_ refs:Array<LabWeakRef<FlaskConcrete>>){
+    func setStoreFlaskRefs(_ storeName:String,_ refs:Array<LabWeakRef<FlaskConcrete>>){
         
-        self.flaskRefs[substanceName] = refs
+        self.flaskRefs[storeName] = refs
     }
 }
 
@@ -171,11 +171,11 @@ extension Mixer {
    
     func reactChange(_ reaction:FlaskReaction){
         
-        let substanceName = reaction.substance.name()
-        let substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
+        let storeName = reaction.store.name()
+        let storeFlaskRefs = getStoreFlaskRefs(storeName)
         
-        for substanceFlaskRef in substanceFlaskRefs {
-            if let flask = substanceFlaskRef.value{
+        for storeFlaskRef in storeFlaskRefs {
+            if let flask = storeFlaskRef.value{
                 flask.handleReaction( reaction)
             }
         }

@@ -18,9 +18,9 @@ class NestedStateTests: SetupFlaskTests {
         let expectation3 = self.expectation(description: "testLabDictRef optional(some)")
         let expectation4 = self.expectation(description: "testLabDictRef optional(nil)")
         
-        let substance = self.substance!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, filling:substance)
+        let flask = Lab.flask(ownedBy:owner, filling:store)
         
         let data:NSDictionary = [
             "foo":"bar",
@@ -59,8 +59,8 @@ class NestedStateTests: SetupFlaskTests {
             }
             
             
-            flask.mix(substance){ (substance) in
-                substance.state.map = dictRef
+            flask.mix(store){ (store) in
+                store.state.map = dictRef
             }.react()
         }
         
@@ -76,8 +76,8 @@ class NestedStateTests: SetupFlaskTests {
                 })
             }
             
-            flask.mix(substance) { (substance) in
-                substance.state.map = dictRef2
+            flask.mix(store) { (store) in
+                store.state.map = dictRef2
             }.react()
         }
         

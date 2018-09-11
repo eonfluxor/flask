@@ -17,15 +17,15 @@ class PauseTests: SetupFlaskTests {
         let expectation2 = self.expectation(description: "testPause Mix Ignored")
         expectation2.isInverted=true
         
-        let substance = self.substance!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,filling:substance)
+        let flask = Lab.flask(ownedBy:owner,filling:store)
         
         var calls = 0
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(substance)?.on(AppState.named.counter, { (change) in
+            reaction.at(store)?.on(AppState.named.counter, { (change) in
                 
                 if calls == 0 {
                     expectation.fulfill()
@@ -54,12 +54,12 @@ class PauseTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testPauseRelease Mix")
         
-        let substance = self.substance!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,filling:substance)
+        let flask = Lab.flask(ownedBy:owner,filling:store)
         
         flask.reactor = { owner, reaction in
-            reaction.at(substance)?.on(AppState.named.counter, { (change) in
+            reaction.at(store)?.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
             })
         }
@@ -86,18 +86,18 @@ class PauseTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testPauseRelease Mix")
         let expectation2 = self.expectation(description: "testPauseRelease Mix Ignored")
      
-        let substance = self.substance!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,filling:substance)
+        let flask = Lab.flask(ownedBy:owner,filling:store)
         
         flask.reactor = { owner, reaction in
-            reaction.at(substance)?.on(AppState.named.counter, { (change) in
+            reaction.at(store)?.on(AppState.named.counter, { (change) in
                 
                 reaction.onPause?.release()
                 expectation.fulfill()
            
             })
-            reaction.at(substance)?.on(AppState.named.text, { (change) in
+            reaction.at(store)?.on(AppState.named.text, { (change) in
                 expectation2.fulfill()
             })
         }

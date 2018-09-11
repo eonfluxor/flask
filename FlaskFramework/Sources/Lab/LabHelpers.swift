@@ -13,12 +13,12 @@ import Cocoa
 #endif
 
 
-public typealias SubstanceMixer = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
-public typealias ChangeClosure = (_ change:SubstanceChange)->Void
+public typealias StoreMixer = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
+public typealias ChangeClosure = (_ change:StoreChange)->Void
 public typealias ReactionClosure<T> = (_ ownedBy:T, _ reaction: FlaskReaction) -> Void
 public typealias LabDictType = Dictionary<String,AnyHashable?>
 public typealias LabNil = (AnyHashable?)
-public typealias MixParams<T> = (_ substance:T,_ react:()-> Void,_ abort:()-> Void) -> Void
+public typealias MixParams<T> = (_ store:T,_ react:()-> Void,_ abort:()-> Void) -> Void
 public typealias MixerName = String
 public typealias StateName = String
 

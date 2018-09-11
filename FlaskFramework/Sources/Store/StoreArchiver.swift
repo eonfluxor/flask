@@ -14,7 +14,7 @@ import Cocoa
 
 import Delayed
 
-extension Substance {
+extension Store {
     
     public func archiveKeySpace()->String{
         return "1"
@@ -33,7 +33,7 @@ extension Substance {
     }
 }
 
-extension Substance {
+extension Store {
     
     func archiveIntent<T:State>(_ state:T){
         
@@ -59,7 +59,7 @@ extension Substance {
                     guard self != nil else {return}
                     
                     let key = self!.archiveKey()
-                    let data = try SubstanceSerializer.dataFromState(state)
+                    let data = try StoreSerializer.dataFromState(state)
                     
                     if let data = data {
                         
@@ -79,7 +79,7 @@ extension Substance {
         
     }
 }
-extension Substance {
+extension Store {
     
     @discardableResult
     func unarchiveIntent()->Bool{
@@ -94,7 +94,7 @@ extension Substance {
             let data = UserDefaults.standard.value(forKey: key)
             
             if ((data as? Data) != nil) {
-                state = try SubstanceSerializer.stateFromData(data as! Data)
+                state = try StoreSerializer.stateFromData(data as! Data)
                 setCurrentState(state)
             }
             
@@ -106,7 +106,7 @@ extension Substance {
     }
 }
 
-extension Substance {
+extension Store {
     public func purgeArchive(){
         let key = archiveKey()
         UserDefaults.standard.removeObject(forKey: key)

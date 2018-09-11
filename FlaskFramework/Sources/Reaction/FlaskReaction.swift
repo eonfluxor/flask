@@ -18,12 +18,12 @@ public class FlaskReaction {
 
     
     weak public var onPause:MixerPause?
-    private(set) var substance:SubstanceConcrete
+    private(set) var store:StoreConcrete
     private(set) var changes:LabDictType
     
-    required public init(_ substance:SubstanceConcrete){
-        self.substance = substance
-        self.changes = FlaskReaction.reduceChanges(substance: self.substance)
+    required public init(_ store:StoreConcrete){
+        self.store = store
+        self.changes = FlaskReaction.reduceChanges(store: self.store)
     }
     
     public func changed()->Bool{
@@ -43,15 +43,15 @@ public class FlaskReaction {
             return
         }
         
-        var change = FlaskReaction.change(substance, key)
-        change._substance = substance
+        var change = FlaskReaction.change(store, key)
+        change._store = store
         closure(change)
     }
     
     
-    public func at(_ aSubstance:SubstanceConcrete)->FlaskReaction?{
+    public func at(_ aStore:StoreConcrete)->FlaskReaction?{
        
-        if substance !== aSubstance{
+        if store !== aStore{
             return .none
         }
         return self
@@ -63,7 +63,7 @@ public class FlaskReaction {
             fatalError("the key `\(key)` is not defined in state")
             
         }
-        let state = substance.stateSnapshotDictionary()
+        let state = store.stateSnapshotDictionary()
         let rootKey = key.split(separator: ".").first
         
         guard (rootKey != nil) else{
@@ -80,10 +80,10 @@ public class FlaskReaction {
 
 public extension FlaskReaction {
     
-    static public func reduceChanges(substance:SubstanceConcrete)->LabDictType{
+    static public func reduceChanges(store:StoreConcrete)->LabDictType{
     
-        let oldState = substance.stateSnapshotDictionary()
-        let newState = substance.stateDictionary()
+        let oldState = store.stateSnapshotDictionary()
+        let newState = store.stateDictionary()
         
         return reduceChanges(oldState,newState)
     }
@@ -108,16 +108,16 @@ public extension FlaskReaction {
         
     }
     
-    static public func change(_ substance:SubstanceConcrete, _ key: String) -> SubstanceChange {
+    static public func change(_ store:StoreConcrete, _ key: String) -> StoreChange {
         
-        let oldState = substance.stateSnapshotDictionary()
-        let newState = substance.stateDictionary()
+        let oldState = store.stateSnapshotDictionary()
+        let newState = store.stateDictionary()
         
         return change(oldState,newState,key)
     }
     
 
-    static public func change(_ oldState:LabDictType,_ newState:LabDictType, _ key: String) -> SubstanceChange {
+    static public func change(_ oldState:LabDictType,_ newState:LabDictType, _ key: String) -> StoreChange {
         
         var oldValue:AnyHashable? = Lab.Nil
         var newValue:AnyHashable? = Lab.Nil
@@ -131,7 +131,7 @@ public extension FlaskReaction {
         }
         
     
-        var change = SubstanceChange()
+        var change = StoreChange()
         change.setOldValue(oldValue)
         change.setNewValue(newValue)
         change._key = key

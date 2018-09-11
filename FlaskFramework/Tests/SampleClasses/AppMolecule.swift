@@ -1,5 +1,5 @@
 //
-//  Substance.swift
+//  Store.swift
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 8/31/18.
@@ -34,7 +34,7 @@ struct AppState : State {
     
 }
 
-class App : Substance<AppState,AppMixers> {
+class App : Store<AppState,AppMixers> {
     
     override func defineMixers(){
         

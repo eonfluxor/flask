@@ -18,9 +18,9 @@ class archiveTests: SetupFlaskTests {
         
         let expectedValue = Int(Date().timeIntervalSince1970)
         
-        let substance = self.substance!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, filling:substance)
+        let flask = Lab.flask(ownedBy:owner, filling:store)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -28,8 +28,8 @@ class archiveTests: SetupFlaskTests {
             })
         }
         
-        flask.mix(substance){ (substance) in
-            substance.state.counter=expectedValue
+        flask.mix(store){ (store) in
+            store.state.counter=expectedValue
         }.react()
         
         wait(for: [expectation], timeout: 2)
@@ -38,8 +38,8 @@ class archiveTests: SetupFlaskTests {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             
-            let anotherSubstance = App()
-            XCTAssert(anotherSubstance.state.counter == expectedValue)
+            let anotherStore = App()
+            XCTAssert(anotherStore.state.counter == expectedValue)
             
             expectationUnarchive.fulfill()
         }

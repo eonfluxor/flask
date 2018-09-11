@@ -1,5 +1,5 @@
 //
-//  SubstanceConcrete.swift
+//  StoreConcrete.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 8/28/18.
@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
+open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     
     typealias StateType = T
     
@@ -51,7 +51,7 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
         return val.rawValue as! String
     }
     
-    public func mixer(_ enumVal:A, _ reaction: @escaping SubstanceMixer){
+    public func mixer(_ enumVal:A, _ reaction: @escaping StoreMixer){
         mixer(mixerName(enumVal), reaction)
     }
     
@@ -107,7 +107,7 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
 
 
 
-open class SubstanceConcrete {
+open class StoreConcrete {
     
     public static func isInternalProp(_ state:String)->Bool{
         return state.starts(with: "_")
@@ -129,7 +129,7 @@ open class SubstanceConcrete {
         return [:]
     }
     func name() -> String {
-        return "Substance\(self.self)"
+        return "Store\(self.self)"
     }
     
     open func defineMixers(){}
@@ -146,9 +146,9 @@ open class SubstanceConcrete {
 
 
 
-public extension SubstanceConcrete {
+public extension StoreConcrete {
   
-    @discardableResult public func mixer(_ mixer:String, _ reaction: @escaping SubstanceMixer)->NSObjectProtocol{
+    @discardableResult public func mixer(_ mixer:String, _ reaction: @escaping StoreMixer)->NSObjectProtocol{
         let weakRegistration={ [weak self] in
             
             NotificationCenter.default.addObserver(forName: NSNotification.Name(mixer), object: nil, queue: OperationQueue.main) { (notification) in
@@ -185,14 +185,14 @@ public extension SubstanceConcrete {
     
 }
 
-extension SubstanceConcrete {
+extension StoreConcrete {
     
     func handleMix(_ mixerPause: MixerPause? = nil){
         Lab.mixer.reactionQueue.addOperation { [weak self] in
             
             if self == nil { return }
             
-            let reaction = FlaskReaction(self! as SubstanceConcrete)
+            let reaction = FlaskReaction(self! as StoreConcrete)
             reaction.onPause = mixerPause
             
             if( reaction.changed()){
@@ -207,7 +207,7 @@ extension SubstanceConcrete {
     
 }
 
-public extension SubstanceConcrete {
+public extension StoreConcrete {
     
 
     public func get(_ key:String) -> String{

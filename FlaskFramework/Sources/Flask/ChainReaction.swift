@@ -18,12 +18,12 @@ public struct ChainReaction{
     public let react:()->Void
     public let abort:()->Void
     
-    public func mix<T:SubstanceConcrete>(_ aSubstance:T, _ mixer:@escaping (_ substance:T) -> Void)->ChainReaction{
+    public func mix<T:StoreConcrete>(_ aStore:T, _ mixer:@escaping (_ store:T) -> Void)->ChainReaction{
         
-        let substance = flask.substance(aSubstance)
+        let store = flask.store(aStore)
         
-        substance.stateTransaction({
-            mixer(substance)
+        store.stateTransaction({
+            mixer(store)
             return true
         })
         
@@ -35,29 +35,29 @@ public struct ChainReaction{
 
 public extension FlaskConcrete{
   
-    public func mix<T:SubstanceConcrete>(_ aSubstance:T, _ mixer:@escaping(_ substance:T) -> Void)->ChainReaction{
+    public func mix<T:StoreConcrete>(_ aStore:T, _ mixer:@escaping(_ store:T) -> Void)->ChainReaction{
         
         let  react = { [weak self] in
-            if let substances = self?.substances {
-                for substance in substances{
-                    substance.handleMix()
+            if let stores = self?.stores {
+                for store in stores{
+                    store.handleMix()
                 }
             }
         }
         
         let abort = {
             [weak self] in
-            if let substances = self?.substances {
-                for substance in substances{
-                    substance.abortStateTransaction();
+            if let stores = self?.stores {
+                for store in stores{
+                    store.abortStateTransaction();
                 }
             }
         }
         
-        let substance = self.substance(aSubstance)
+        let store = self.store(aStore)
         
-        substance.stateTransaction({
-            mixer(substance)
+        store.stateTransaction({
+            mixer(store)
             return true
         })
         

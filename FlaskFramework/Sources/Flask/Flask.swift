@@ -55,16 +55,16 @@ public class Flask<D:AnyObject>:FlaskConcrete {
 
 public class FlaskConcrete:LabEquatable{
     
-    var substances:[SubstanceConcrete]=[]
+    var stores:[StoreConcrete]=[]
     var filled = false
     
     
-    func defineSubstance(_ substance:SubstanceConcrete){
-        defineSubstances([substance])
+    func defineStore(_ store:StoreConcrete){
+        defineStores([store])
     }
     
-    func defineSubstances(_ fillingSubstances:[SubstanceConcrete]){
-        substances = fillingSubstances
+    func defineStores(_ fillingStores:[StoreConcrete]){
+        stores = fillingStores
         
     }
     
@@ -75,19 +75,19 @@ public class FlaskConcrete:LabEquatable{
     public func fill(){
         
         assert(!filled,"Already bounded. It's required  to balance bind/unbind calls")
-        assert(!substances.isEmpty,"At least one substance is required")
+        assert(!stores.isEmpty,"At least one store is required")
         
         filled = true
         
-        for substance in substances {
+        for store in stores {
            
             { [weak self] in
                 if let wself = self {
-                    Lab.mixer.fillFlask(substance, flask: wself)
+                    Lab.mixer.fillFlask(store, flask: wself)
                 }
             }()
             
-            substance.defineMixers()
+            store.defineMixers()
         }
         
         
@@ -102,24 +102,24 @@ public class FlaskConcrete:LabEquatable{
         if(!filled){return}
         filled = false
         
-        for substance in substances {
+        for store in stores {
             { [weak self] in
                 if let wself = self {
-                    Lab.mixer.emptyFlask(substance, flask: wself)
+                    Lab.mixer.emptyFlask(store, flask: wself)
                 }
             }()
             
-            substance.undefineMixers()
+            store.undefineMixers()
         }
     }
     
     ///
     func handleReaction(_ reaction:FlaskReaction){}
     
-//    @discardableResult public func mix<T:SubstanceConcrete>(_ aSubstance:T, _ mixer:@escaping MixParams<T>)->FlaskConcrete{
+//    @discardableResult public func mix<T:StoreConcrete>(_ aStore:T, _ mixer:@escaping MixParams<T>)->FlaskConcrete{
 //        
-//        let substance = self.substance(aSubstance)
-//        substance.mix(mixer)
+//        let store = self.store(aStore)
+//        store.mix(mixer)
 //        
 //        return self
 //    }
@@ -128,13 +128,13 @@ public class FlaskConcrete:LabEquatable{
     //////////////////
     // MARK: - PUBLIC METHODS
     
-    public func substance<T:SubstanceConcrete>(_ substance:T)->T{
+    public func store<T:StoreConcrete>(_ store:T)->T{
         
-        let registered = substances.contains { (aSubstance) -> Bool in
-            aSubstance === substance
+        let registered = stores.contains { (aStore) -> Bool in
+            aStore === store
         }
-        assert(registered,"Substance instance is not filling to this flask")
-        return substance
+        assert(registered,"Store instance is not filling to this flask")
+        return store
     }
 
 }

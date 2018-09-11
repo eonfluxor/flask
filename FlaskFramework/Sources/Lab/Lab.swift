@@ -41,13 +41,13 @@ public extension Lab {
 
 public extension Lab {
     
-    static public func flask<T:AnyObject>(ownedBy owner:T, filling substance:SubstanceConcrete) -> Flask<T>{
-        return Lab.flask(ownedBy:owner,filling:[substance])
+    static public func flask<T:AnyObject>(ownedBy owner:T, filling store:StoreConcrete) -> Flask<T>{
+        return Lab.flask(ownedBy:owner,filling:[store])
     }
     
-    static public func flask<T:AnyObject>(ownedBy owner:T, filling substances:[SubstanceConcrete]) -> Flask<T>{
+    static public func flask<T:AnyObject>(ownedBy owner:T, filling stores:[StoreConcrete]) -> Flask<T>{
         let flask = Lab.flask(ownedBy:owner)
-        flask.defineSubstances(substances)
+        flask.defineStores(stores)
         flask.fill()
         return flask
     }
