@@ -13,12 +13,12 @@ import UIKit
 import Cocoa
 #endif
 
-public class FlaskDispatcher {
+public class LabDispatcher {
     
     //////////////////
     // MARK: - LOCKS
     
-    var locks:[FlaskLock]=[]
+    var locks:[LabLock]=[]
     
     //////////////////
     // MARK: - OPERATION QUEUE
@@ -49,12 +49,12 @@ public class FlaskDispatcher {
     //////////////////
     // MARK: - LAZY
     
-    lazy var flaskRefs: Dictionary<String, Array<FlaskWeakRef<FlaskConcrete>>> = {
-        return Dictionary<String, Array<FlaskWeakRef<FlaskConcrete>>>()
+    lazy var flaskRefs: Dictionary<String, Array<LabWeakRef<FlaskConcrete>>> = {
+        return Dictionary<String, Array<LabWeakRef<FlaskConcrete>>>()
     }();
     
-    func lock()->FlaskLock{
-        return FlaskLock(dispatcher:self)
+    func lock()->LabLock{
+        return LabLock(dispatcher:self)
     }
     
 }
@@ -62,7 +62,7 @@ public class FlaskDispatcher {
 //////////////////
 // MARK: - PUBLIC METHODS
 
-extension FlaskDispatcher {
+extension LabDispatcher {
     
     func dispatch(_ action:String){
         dispatch(action,payload:nil)
@@ -88,7 +88,7 @@ extension FlaskDispatcher {
 //////////////////
 // MARK: - QUEUE
 
-extension FlaskDispatcher {
+extension LabDispatcher {
  
     func queue(_ action:String, payload:[String:Any]?){
         
@@ -123,14 +123,14 @@ extension FlaskDispatcher {
 //////////////////
 // MARK: - BINDINGS
 
-extension FlaskDispatcher {
+extension LabDispatcher {
    
     func bindFlaskReactor(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
         
         let moleculeName = molecule.name()
         var moleculeFlaskReactorRefs = getMoleculeFlaskReactorRefs(moleculeName)
         
-        let ref = FlaskWeakRef(value:flask)
+        let ref = LabWeakRef(value:flask)
         moleculeFlaskReactorRefs.append(ref)
         setMoleculeFlaskReactorRefs(moleculeName,moleculeFlaskReactorRefs)
         
@@ -147,17 +147,17 @@ extension FlaskDispatcher {
        
     }
     
-    func getMoleculeFlaskReactorRefs(_ moleculeName:String) -> Array<FlaskWeakRef<FlaskConcrete>>{
+    func getMoleculeFlaskReactorRefs(_ moleculeName:String) -> Array<LabWeakRef<FlaskConcrete>>{
         
         if let flasks = self.flaskRefs[moleculeName] {
             return flasks
         }
         
-        return Array<FlaskWeakRef<FlaskConcrete>>()
+        return Array<LabWeakRef<FlaskConcrete>>()
         
     }
     
-    func setMoleculeFlaskReactorRefs(_ moleculeName:String,_ refs:Array<FlaskWeakRef<FlaskConcrete>>){
+    func setMoleculeFlaskReactorRefs(_ moleculeName:String,_ refs:Array<LabWeakRef<FlaskConcrete>>){
         
         self.flaskRefs[moleculeName] = refs
     }
@@ -166,7 +166,7 @@ extension FlaskDispatcher {
 //////////////////
 // MARK: - MUTATIONS
 
-extension FlaskDispatcher {
+extension LabDispatcher {
    
     func commitChange(_ reaction:FlaskReaction){
         

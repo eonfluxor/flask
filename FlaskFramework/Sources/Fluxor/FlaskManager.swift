@@ -1,5 +1,5 @@
 //
-//  FlaskReactorManager.swift
+//  LabFlaskManager.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/5/18.
@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-class FlaskReactorManager{
+class LabFlaskManager{
     
     static var flasks:Array<FlaskConcrete>=[]
     
@@ -26,7 +26,7 @@ class FlaskReactorManager{
     static func appendFlaskReactor(_ flask:FlaskConcrete){
         removeFlaskReactor(flask)
         flasks.append(flask)
-        FlaskReactorManager.purgeOrphans()
+        LabFlaskManager.purgeOrphans()
     }
     
     static func removeFlaskReactor(_ flask:FlaskConcrete){

@@ -115,7 +115,7 @@ open class MoleculeConcrete {
     }
     
     public static func isObjectRef(_ atom:Any)->Bool{
-        return ((atom as? FlaskRef) != nil)
+        return ((atom as? LabRef) != nil)
     }
     
     

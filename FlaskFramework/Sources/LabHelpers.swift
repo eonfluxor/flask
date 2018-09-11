@@ -31,31 +31,23 @@ public func isLabNil(_ value:Any?)->Bool{
         return true
     }
   
-//    Kron.de
     return false
 }
 
-func FlaskAddress(_ o: UnsafeRawPointer) -> Int {
-    return Int(bitPattern: o)
-}
-
-func FlaskAddressHeap<T: AnyObject>(_ o: T) -> Int {
-    return unsafeBitCast(o, to: Int.self)
-}
 
 
-protocol FlaskAnyWithInit{
+protocol LabAnyWithInit{
     init() //construct at initial atoms
 }
 
-public class FlaskAnyEquatable: Equatable{
-    public static func == (lhs: FlaskAnyEquatable, rhs: FlaskAnyEquatable) -> Bool {
+public class LabAnyEquatable: Equatable{
+    public static func == (lhs: LabAnyEquatable, rhs: LabAnyEquatable) -> Bool {
         return lhs === rhs
     }
 }
 
 
-class FlaskWeakRef<T> where T: AnyObject {
+class LabWeakRef<T> where T: AnyObject {
     
     private(set) weak var value: T?
     

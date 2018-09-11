@@ -24,7 +24,7 @@ class SerializationTests: XCTestCase {
             atoms.counter = 666
             atoms.text = "hello world"
             atoms.map = LabDictionaryRef(dict)
-            atoms.object = FlaskRef(NSObject())
+            atoms.object = LabRef(NSObject())
             
             let jsonString:String = try LabSerializer.jsonFromAtom(atoms)
             

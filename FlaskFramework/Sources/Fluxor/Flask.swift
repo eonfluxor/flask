@@ -38,7 +38,7 @@ public class Flask<D:AnyObject>:FlaskConcrete {
             reactor(owner,reaction)
         }else{
             //dispose flask when the owner is no longer present
-            FlaskReactorManager.removeFlaskReactor(self)
+            LabFlaskManager.removeFlaskReactor(self)
         }
     }
     
@@ -49,7 +49,7 @@ public class Flask<D:AnyObject>:FlaskConcrete {
 }
 
 
-public class FlaskConcrete:FlaskAnyEquatable{
+public class FlaskConcrete:LabAnyEquatable{
     
     var molecules:[MoleculeConcrete]=[]
     var binded = false

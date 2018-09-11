@@ -18,7 +18,7 @@ public class Lab {
     
     
     /// This is the single dispatcher
-    static public let Dispatcher = FlaskDispatcher()
+    static public let Dispatcher = LabDispatcher()
     /// Use this to preserve `nil` entries in swift dictionaries
     static public let Nil = nil as AnyHashable?
     /// Use this to preseve `nul` in LabDictionaryRef instances
@@ -35,7 +35,7 @@ public extension Lab {
     }
     
     static public func purgeOrphans(){
-        FlaskReactorManager.purgeOrphans()
+        LabFlaskManager.purgeOrphans()
     }
 }
 
@@ -53,28 +53,28 @@ public extension Lab {
     
     
     static public func flask<T:AnyObject>(ownedBy owner:T) -> Flask<T>{
-        return FlaskReactorManager.instance(ownedBy:owner)
+        return LabFlaskManager.instance(ownedBy:owner)
     }
 }
 
 
 public extension Lab {
     
-    static public func lock()->FlaskLock{
-        return FlaskLock(dispatcher:Lab.Dispatcher)
+    static public func lock()->LabLock{
+        return LabLock(dispatcher:Lab.Dispatcher)
     }
     
     
-    static public func lock<T:RawRepresentable>(action enumVal:T)->FlaskLock{
+    static public func lock<T:RawRepresentable>(action enumVal:T)->LabLock{
         return Lab.lock(action:enumVal,payload:nil)
     }
     
-    static public func lock<T:RawRepresentable>(action enumVal:T, payload:[String:Any]?)->FlaskLock{
+    static public func lock<T:RawRepresentable>(action enumVal:T, payload:[String:Any]?)->LabLock{
         let action = enumVal.rawValue as! String
         var info = payload ?? [:]
         info[FLUX_ACTION_SKIP_LOCKS] = true
         
-        let lock = FlaskLock(dispatcher:Lab.Dispatcher)
+        let lock = LabLock(dispatcher:Lab.Dispatcher)
         Lab.Dispatcher.dispatch(action,payload:info)
         
         return lock
