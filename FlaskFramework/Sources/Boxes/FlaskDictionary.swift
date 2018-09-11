@@ -1,5 +1,5 @@
 //
-//  FluxDictionaryRef.swift
+//  FlaskDictionaryRef.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/5/18.
@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-public protocol FluxStateObservable{
-    func toFluxDictionaryRef()->NSDictionary
+public protocol FlaskStateObservable{
+    func toFlaskDictionaryRef()->NSDictionary
 }
 
-public class FluxDictionaryRef: NSObject, Codable, FluxStateObservable {
+public class FlaskDictionaryRef: NSObject, Codable, FlaskStateObservable {
    
    
     
@@ -38,11 +38,11 @@ public class FluxDictionaryRef: NSObject, Codable, FluxStateObservable {
         for key in dict.allKeys {
             let value = dict[key]
             
-             result[key]  = Flux.Nil
+             result[key]  = Flask.Nil
             
             if ((value as? NSDictionary) != nil) {
                 
-                let ref = FluxDictionaryRef(normalize( value as! NSDictionary ))
+                let ref = FlaskDictionaryRef(normalize( value as! NSDictionary ))
                 result[key] = ref
             
             } else {
@@ -58,7 +58,7 @@ public class FluxDictionaryRef: NSObject, Codable, FluxStateObservable {
     
    
     
-    public  func toFluxDictionaryRef() -> NSDictionary {
+    public  func toFlaskDictionaryRef() -> NSDictionary {
         return dictionary
     }
     
@@ -87,7 +87,7 @@ public class FluxDictionaryRef: NSObject, Codable, FluxStateObservable {
         case dictionary
     }
     
-    static public func == (lhs: FluxDictionaryRef, rhs: FluxDictionaryRef) -> Bool {
+    static public func == (lhs: FlaskDictionaryRef, rhs: FlaskDictionaryRef) -> Bool {
         return lhs == rhs
     }
     
@@ -98,14 +98,14 @@ public class FluxDictionaryRef: NSObject, Codable, FluxStateObservable {
         let data = jsonString.data(using: .utf8)
         let normalDictionary:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
     
-        let ref = FluxDictionaryRef(normalDictionary)
+        let ref = FlaskDictionaryRef(normalDictionary)
         dictionary = ref.dictionary
     }
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        let normalDict = FluxSerializer.flattenDictionary(self)
+        let normalDict = FlaskSerializer.flattenDictionary(self)
         
         let jsonData:Data = try JSONSerialization.data(withJSONObject: normalDict, options: [])
         let string:String = String(data: jsonData, encoding: .utf8)!

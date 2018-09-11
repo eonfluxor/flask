@@ -9,7 +9,7 @@
 import XCTest
 
 
-class ChainingTests: SetupFluxTests {
+class ChainingTests: SetupFlaskTests {
 
     func testInlineMutation(){
         
@@ -17,7 +17,7 @@ class ChainingTests: SetupFluxTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flux.instance(ownedBy:owner, binding:store)
+        let flux = Flask.instance(ownedBy:owner, binding:store)
         
         flux.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in
@@ -46,10 +46,10 @@ class ChainingTests: SetupFluxTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flux.instance(ownedBy:owner,binding:store)
+        let flux = Flask.instance(ownedBy:owner,binding:store)
         
         let object = NSObject()
-        let aObject = FluxRef( object )
+        let aObject = FlaskRef( object )
         
         
         flux.reactor = { owner, reaction in
@@ -78,7 +78,7 @@ class ChainingTests: SetupFluxTests {
             
             reaction.on(State.prop.object, { (change) in
                 
-                XCTAssert( isFluxNil(change.oldValue()) )
+                XCTAssert( isFlaskNil(change.oldValue()) )
                 XCTAssert(change.newValue() == aObject)
                 XCTAssert(change.key() == State.prop.object.rawValue)
                 XCTAssert(change.store() === store)
@@ -106,7 +106,7 @@ class ChainingTests: SetupFluxTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flux.instance(ownedBy:owner, binding:store)
+        let flux = Flask.instance(ownedBy:owner, binding:store)
         
         flux.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in

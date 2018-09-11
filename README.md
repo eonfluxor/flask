@@ -1,22 +1,22 @@
  <p align="center"> 
-    <img src="Reaktor-logo.png" alt="alternate text">
+    <img src="Flask-logo.png" alt="alternate text">
  </p>
 
-[![CocoaPods compatible](https://img.shields.io/cocoapods/v/Reaktor.svg)](#cocoapods) 
-[![GitHub release](https://img.shields.io/github/release/eonfluxor/Reaktor.svg)](https://github.com/eonfluxor/delay/releases) 
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/Flask.svg)](#cocoapods) 
+[![GitHub release](https://img.shields.io/github/release/eonfluxor/Flask.svg)](https://github.com/eonfluxor/delay/releases) 
 ![Swift 4.0](https://img.shields.io/badge/Swift-4.1-orange.svg) 
-![platforms](https://img.shields.io/cocoapods/p/Reaktor.svg)
-[![Build Status](https://travis-ci.org/eonfluxor/Reaktor.svg?branch=master)](https://travis-ci.org/eonfluxor/kron)
+![platforms](https://img.shields.io/cocoapods/p/Flask.svg)
+[![Build Status](https://travis-ci.org/eonfluxor/Flask.svg?branch=master)](https://travis-ci.org/eonfluxor/kron)
 
 
 
-# What is Reaktor?
+# What is Flask?
 Summary
 
 1. feature
 
 
-### Why Reaktor?
+### Why Flask?
 
 * reason
 
@@ -32,21 +32,21 @@ Summary
 
 Self-generated documentation using jazzy and hosted in github available here:
 
-[Documentation](https://eonfluxor.github.io/Reaktor/)
+[Documentation](https://eonfluxor.github.io/Flask/)
 
 ## CocoaPods
 
-If you use [CocoaPods](https://cocoapods.org/pods/Reaktor) to manage your dependencies, simply add
+If you use [CocoaPods](https://cocoapods.org/pods/Flask) to manage your dependencies, simply add
 Kron to your `Podfile`:
 
 ```
-pod 'Reaktor'
+pod 'Flask'
 ```
 
 And then import the module
 
 ```
-import Reaktor
+import Flask
 ```
    
    
@@ -68,4 +68,4 @@ You can also reach us at:
 
 ## About
 
-**Reaktor** created by [Hassan Uriostegui](http://linkedin.com/in/hassanvfx) 
+**Flask** created by [Hassan Uriostegui](http://linkedin.com/in/hassanvfx) 

@@ -1,5 +1,5 @@
 //
-//  FluxStoreConcrete.swift
+//  FlaskStoreConcrete.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 8/28/18.
@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-open class FluxStore<A:RawRepresentable,T:FluxState > : FluxStoreConcrete{
+open class FlaskStore<A:RawRepresentable,T:FlaskState > : FlaskStoreConcrete{
     
-    typealias FluxStateType = T
+    typealias FlaskStateType = T
     
-    var stateSnapshot: FluxStateDictionaryType = [:]
+    var stateSnapshot: FlaskStateDictionaryType = [:]
     private var _state: T = T()
     public var state:T = T()
    
@@ -52,14 +52,14 @@ open class FluxStore<A:RawRepresentable,T:FluxState > : FluxStoreConcrete{
         return val.rawValue as! String
     }
     
-    public func action(_ enumVal:A, _ reaction: @escaping FluxStoreMutator){
+    public func action(_ enumVal:A, _ reaction: @escaping FlaskStoreMutator){
         action(actionName(enumVal), reaction)
     }
     
-    public override func lastStateDictionary() -> FluxStateDictionaryType{
+    public override func lastStateDictionary() -> FlaskStateDictionaryType{
         return stateSnapshot
     }
-    public override func stateDictionary() -> FluxStateDictionaryType{
+    public override func stateDictionary() -> FlaskStateDictionaryType{
         return _state.toDictionary()
     }
     
@@ -108,14 +108,14 @@ open class FluxStore<A:RawRepresentable,T:FluxState > : FluxStoreConcrete{
 
 
 
-open class FluxStoreConcrete {
+open class FlaskStoreConcrete {
     
     public static func isInternalProp(_ prop:String)->Bool{
         return prop.starts(with: "_")
     }
     
     public static func isObjectRef(_ prop:Any)->Bool{
-        return ((prop as? FluxRef) != nil)
+        return ((prop as? FlaskRef) != nil)
     }
     
     
@@ -123,10 +123,10 @@ open class FluxStoreConcrete {
         initializeMetaClass()
     }
     
-    func lastStateDictionary() -> FluxStateDictionaryType{
+    func lastStateDictionary() -> FlaskStateDictionaryType{
         return [:]
     }
-    func stateDictionary() -> FluxStateDictionaryType{
+    func stateDictionary() -> FlaskStateDictionaryType{
         return [:]
     }
     func name() -> String {
@@ -147,9 +147,9 @@ open class FluxStoreConcrete {
 
 
 
-public extension FluxStoreConcrete {
+public extension FlaskStoreConcrete {
   
-    @discardableResult public func action(_ action:String, _ reaction: @escaping FluxStoreMutator)->NSObjectProtocol{
+    @discardableResult public func action(_ action:String, _ reaction: @escaping FlaskStoreMutator)->NSObjectProtocol{
         let weakRegistration={ [weak self] in
             
             NotificationCenter.default.addObserver(forName: NSNotification.Name(action), object: nil, queue: OperationQueue.main) { (notification) in
@@ -181,7 +181,7 @@ public extension FluxStoreConcrete {
         return weakRegistration()
     }
     
-    public func mutate<T:FluxStoreConcrete>(_ mutator:@escaping FluxMutatorParams<T>){
+    public func mutate<T:FlaskStoreConcrete>(_ mutator:@escaping FlaskMutatorParams<T>){
         
         var resolved = false
         var completed = true
@@ -205,17 +205,17 @@ public extension FluxStoreConcrete {
     
 }
 
-extension FluxStoreConcrete {
+extension FlaskStoreConcrete {
     
     func handleMutation(){
-        Flux.Dispatcher.reactionQueue.addOperation { [weak self] in
+        Flask.Dispatcher.reactionQueue.addOperation { [weak self] in
             
             if self == nil { return }
             
-            let reaction = FluxReaction(self! as FluxStoreConcrete)
+            let reaction = FlaskReaction(self! as FlaskStoreConcrete)
             
             if( reaction.changed()){
-                Flux.Dispatcher.commitChange(reaction)
+                Flask.Dispatcher.commitChange(reaction)
             }else{
                 //log
             }
@@ -226,7 +226,7 @@ extension FluxStoreConcrete {
     
 }
 
-public extension FluxStoreConcrete {
+public extension FlaskStoreConcrete {
     
 
     public func get(_ key:String) -> String{

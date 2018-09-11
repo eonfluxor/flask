@@ -1,5 +1,5 @@
 //
-//  FluxorManager.swift
+//  FlaskReactorManager.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/5/18.
@@ -12,24 +12,24 @@ import UIKit
 import Cocoa
 #endif
 
-class FluxorManager{
+class FlaskReactorManager{
     
-    static var fluxors:Array<FluxorConcrete>=[]
+    static var fluxors:Array<FlaskReactorConcrete>=[]
     
-    static func instance<T:AnyObject>(ownedBy owner:T) -> Fluxor<T>{
+    static func instance<T:AnyObject>(ownedBy owner:T) -> FlaskReactor<T>{
         
-        let flux = Fluxor<T>(owner)
-        appendFluxor(flux)
+        let flux = FlaskReactor<T>(owner)
+        appendFlaskReactor(flux)
         return flux
     }
     
-    static func appendFluxor(_ flux:FluxorConcrete){
-        removeFluxor(flux)
+    static func appendFlaskReactor(_ flux:FlaskReactorConcrete){
+        removeFlaskReactor(flux)
         fluxors.append(flux)
-        FluxorManager.purgeOrphans()
+        FlaskReactorManager.purgeOrphans()
     }
     
-    static func removeFluxor(_ flux:FluxorConcrete){
+    static func removeFlaskReactor(_ flux:FlaskReactorConcrete){
         if let index = fluxors.index(of: flux) {
             _ = autoreleasepool{
                 flux.unbind(false)
@@ -42,7 +42,7 @@ class FluxorManager{
         let orphans = fluxors.filter {$0.getOwner() == nil}
         
         for flux in orphans {
-            removeFluxor(flux)
+            removeFlaskReactor(flux)
         }
     }
 }

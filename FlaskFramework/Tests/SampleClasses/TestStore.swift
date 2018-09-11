@@ -13,28 +13,28 @@ import Cocoa
 #endif
 
 
-enum Actions : FluxActions {
+enum Actions : FlaskActions {
     case Count
     case Text
     case Object
 }
 
-struct State : FluxState {
+struct State : FlaskState {
    
-    enum prop : FluxProps{
+    enum prop : FlaskProps{
         case counter, text, map, object
     }
     
     var counter = 0
     var text = ""
-    var object:FluxRef?
-    var map:FluxDictionaryRef?
+    var object:FlaskRef?
+    var map:FlaskDictionaryRef?
     
     var _internal = "`_` use this prefix for internal vars "
     
 }
 
-class Store : FluxStore<Actions,State> {
+class Store : FlaskStore<Actions,State> {
     
     override func bindActions(){
         

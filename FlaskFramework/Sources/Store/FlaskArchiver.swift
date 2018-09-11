@@ -1,5 +1,5 @@
 //
-//  FluxArchiver.swift
+//  FlaskArchiver.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/4/18.
@@ -14,7 +14,7 @@ import Cocoa
 
 import Delayed
 
-extension FluxStore {
+extension FlaskStore {
     
     public func archiveKeySpace()->String{
         return "1"
@@ -33,9 +33,9 @@ extension FluxStore {
     }
 }
 
-extension FluxStore {
+extension FlaskStore {
     
-    func archiveIntent<T:FluxState>(_ state:T){
+    func archiveIntent<T:FlaskState>(_ state:T){
         
         guard !archiveDisabled() else{
             return
@@ -49,7 +49,7 @@ extension FluxStore {
         
     }
     
-    func archiveNow<T:FluxState>(_ state:T){
+    func archiveNow<T:FlaskState>(_ state:T){
         
         archiveQueue.addOperation { [weak self] in
             
@@ -59,7 +59,7 @@ extension FluxStore {
                     guard self != nil else {return}
                     
                     let key = self!.archiveKey()
-                    let data = try FluxSerializer.dataFromState(state)
+                    let data = try FlaskSerializer.dataFromState(state)
                     
                     if let data = data {
                         
@@ -79,7 +79,7 @@ extension FluxStore {
         
     }
 }
-extension FluxStore {
+extension FlaskStore {
     
     @discardableResult
     func unarchiveIntent()->Bool{
@@ -94,7 +94,7 @@ extension FluxStore {
             let data = UserDefaults.standard.value(forKey: key)
             
             if ((data as? Data) != nil) {
-                state = try FluxSerializer.stateFromData(data as! Data)
+                state = try FlaskSerializer.stateFromData(data as! Data)
                 setCurrentState(state)
             }
             
@@ -106,7 +106,7 @@ extension FluxStore {
     }
 }
 
-extension FluxStore {
+extension FlaskStore {
     public func purgeArchive(){
         let key = archiveKey()
         UserDefaults.standard.removeObject(forKey: key)

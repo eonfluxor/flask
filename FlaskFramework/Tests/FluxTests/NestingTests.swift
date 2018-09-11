@@ -9,18 +9,18 @@
 import XCTest
 
 
-class NestedStateTests: SetupFluxTests {
+class NestedStateTests: SetupFlaskTests {
     
     func testNestedState(){
         
-        let expectation = self.expectation(description: "testFluxDictionaryRef")
-        let expectation2 = self.expectation(description: "testFluxDictionaryRef")
-        let expectation3 = self.expectation(description: "testFluxDictionaryRef optional(some)")
-        let expectation4 = self.expectation(description: "testFluxDictionaryRef optional(nil)")
+        let expectation = self.expectation(description: "testFlaskDictionaryRef")
+        let expectation2 = self.expectation(description: "testFlaskDictionaryRef")
+        let expectation3 = self.expectation(description: "testFlaskDictionaryRef optional(some)")
+        let expectation4 = self.expectation(description: "testFlaskDictionaryRef optional(nil)")
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flux.instance(ownedBy:owner, binding:store)
+        let flux = Flask.instance(ownedBy:owner, binding:store)
         
         let data:NSDictionary = [
             "foo":"bar",
@@ -33,8 +33,8 @@ class NestedStateTests: SetupFluxTests {
         
         let data2:NSDictionary = [:]
         
-        let dictRef = FluxDictionaryRef(data)
-        let dictRef2 = FluxDictionaryRef(data2)
+        let dictRef = FlaskDictionaryRef(data)
+        let dictRef2 = FlaskDictionaryRef(data2)
         
         let firstTest:(@escaping ()->Void)->Void = { next in
             flux.reactor = { owner, reaction in
@@ -72,7 +72,7 @@ class NestedStateTests: SetupFluxTests {
             
             flux.reactor = { owner, reaction in
                 reaction.on("map.nest.optional", { (change) in
-                    XCTAssert(isFluxNil(change.newValue()))
+                    XCTAssert(isFlaskNil(change.newValue()))
                     expectation4.fulfill()
                 })
             }

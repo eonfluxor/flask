@@ -1,5 +1,5 @@
 //
-//  FluxLock.swift
+//  FlaskLock.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/3/18.
@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-public class FluxLock: FluxAnyEquatable {
+public class FlaskLock: FlaskAnyEquatable {
 
-    var dispatcher:FluxDispatcher
+    var dispatcher:FlaskDispatcher
     
-    required public init(dispatcher:FluxDispatcher) {
+    required public init(dispatcher:FlaskDispatcher) {
 
         self.dispatcher = dispatcher
         super.init()
@@ -29,19 +29,19 @@ public class FluxLock: FluxAnyEquatable {
     }
 }
 
-public extension FluxDispatcher{
+public extension FlaskDispatcher{
     
     public func releaseAllLocks(){
         locks=[]
         applyLocks()
     }
     
-    func addLock(_ lock:FluxLock){
+    func addLock(_ lock:FlaskLock){
         locks.append(lock)
         applyLocks()
     }
     
-    func removeLock(_ lock:FluxLock){
+    func removeLock(_ lock:FlaskLock){
         locks=locks.filter {$0 != lock}
         applyLocks()
     }

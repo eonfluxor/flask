@@ -9,7 +9,7 @@
 import XCTest
 
 
-class archiveTests: SetupFluxTests {
+class archiveTests: SetupFlaskTests {
     
     func testarchive(){
         
@@ -20,7 +20,7 @@ class archiveTests: SetupFluxTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flux.instance(ownedBy:owner, binding:store)
+        let flux = Flask.instance(ownedBy:owner, binding:store)
         
         flux.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in

@@ -9,7 +9,7 @@
 import XCTest
 
 
-class LockTests: SetupFluxTests {
+class LockTests: SetupFlaskTests {
     
     func testLock(){
         
@@ -19,7 +19,7 @@ class LockTests: SetupFluxTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flux.instance(ownedBy:owner,binding:store)
+        let flux = Flask.instance(ownedBy:owner,binding:store)
         
         var calls = 0
         
@@ -35,18 +35,18 @@ class LockTests: SetupFluxTests {
                 
                 calls += 1
                 
-                _ = Flux.lock()
-                Flux.action(Actions.Count, payload:  ["test":"testLock"])
+                _ = Flask.lock()
+                Flask.action(Actions.Count, payload:  ["test":"testLock"])
                 
             })
         }
         
         DispatchQueue.main.async {
-            Flux.action(Actions.Count, payload: ["test":"testLock"])
+            Flask.action(Actions.Count, payload: ["test":"testLock"])
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
-        Flux.disposeDispatchQueue()
+        Flask.disposeDispatchQueue()
     }
     
     
@@ -56,7 +56,7 @@ class LockTests: SetupFluxTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flux.instance(ownedBy:owner,binding:store)
+        let flux = Flask.instance(ownedBy:owner,binding:store)
         
         flux.reactor = { owner, reaction in
             reaction.at(store)?.on(State.prop.counter, { (change) in
@@ -66,9 +66,9 @@ class LockTests: SetupFluxTests {
         
         // the action won't be dispatched until both locks are released
         
-        let lock  = Flux.lock()
-        let lock2  = Flux.lock()
-        Flux.action(Actions.Count, payload:  ["test":"testLockRelease"])
+        let lock  = Flask.lock()
+        let lock2  = Flask.lock()
+        Flask.action(Actions.Count, payload:  ["test":"testLockRelease"])
         
         DispatchQueue.main.async {
             lock.release()
@@ -88,7 +88,7 @@ class LockTests: SetupFluxTests {
      
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flux.instance(ownedBy:owner,binding:store)
+        let flux = Flask.instance(ownedBy:owner,binding:store)
         
         flux.reactor = { owner, reaction in
             reaction.at(store)?.on(State.prop.counter, { (change) in
@@ -99,10 +99,10 @@ class LockTests: SetupFluxTests {
             })
         }
         
-        let lock  = Flux.lock(action:Actions.Count, payload:  ["test":"testLockActon count"])
+        let lock  = Flask.lock(action:Actions.Count, payload:  ["test":"testLockActon count"])
        
         //this should be performed after the lock releases
-        Flux.action(Actions.Text, payload:  ["test":"testLockAction text"])
+        Flask.action(Actions.Text, payload:  ["test":"testLockAction text"])
         
         wait(for: [expectation], timeout: 2)
         

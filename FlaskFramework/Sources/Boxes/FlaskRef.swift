@@ -1,5 +1,5 @@
 //
-//  FluxRef.swift
+//  FlaskRef.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/4/18.
@@ -13,7 +13,7 @@ import UIKit
 import Cocoa
 #endif
 
-public class FluxRef: NSObject, Codable{
+public class FlaskRef: NSObject, Codable{
     
     private(set) weak var object:NSObject? 
     
@@ -22,7 +22,7 @@ public class FluxRef: NSObject, Codable{
     }
     ///// required
     
-    static public func == (lhs: FluxRef, rhs: FluxRef) -> Bool {
+    static public func == (lhs: FlaskRef, rhs: FlaskRef) -> Bool {
         return lhs.object == rhs.object
     }
     

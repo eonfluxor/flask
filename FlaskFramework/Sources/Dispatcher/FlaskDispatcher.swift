@@ -1,7 +1,7 @@
 
 //
 //  dispatcher.swift
-//  SwiftyFlux
+//  SwiftyFlask
 //
 //  Created by hassan uriostegui on 8/28/18.
 //  Copyright © 2018 hassanvfx. All rights reserved.
@@ -13,12 +13,12 @@ import UIKit
 import Cocoa
 #endif
 
-public class FluxDispatcher {
+public class FlaskDispatcher {
     
     //////////////////
     // MARK: - LOCKS
     
-    var locks:[FluxLock]=[]
+    var locks:[FlaskLock]=[]
     
     //////////////////
     // MARK: - OPERATION QUEUE
@@ -49,12 +49,12 @@ public class FluxDispatcher {
     //////////////////
     // MARK: - LAZY
     
-    lazy var fluxRefs: Dictionary<String, Array<FluxWeakRef<FluxorConcrete>>> = {
-        return Dictionary<String, Array<FluxWeakRef<FluxorConcrete>>>()
+    lazy var fluxRefs: Dictionary<String, Array<FlaskWeakRef<FlaskReactorConcrete>>> = {
+        return Dictionary<String, Array<FlaskWeakRef<FlaskReactorConcrete>>>()
     }();
     
-    func lock()->FluxLock{
-        return FluxLock(dispatcher:self)
+    func lock()->FlaskLock{
+        return FlaskLock(dispatcher:self)
     }
     
 }
@@ -62,7 +62,7 @@ public class FluxDispatcher {
 //////////////////
 // MARK: - PUBLIC METHODS
 
-extension FluxDispatcher {
+extension FlaskDispatcher {
     
     func dispatch(_ action:String){
         dispatch(action,payload:nil)
@@ -88,7 +88,7 @@ extension FluxDispatcher {
 //////////////////
 // MARK: - QUEUE
 
-extension FluxDispatcher {
+extension FlaskDispatcher {
  
     func queue(_ action:String, payload:[String:Any]?){
         
@@ -123,41 +123,41 @@ extension FluxDispatcher {
 //////////////////
 // MARK: - BINDINGS
 
-extension FluxDispatcher {
+extension FlaskDispatcher {
    
-    func bindFluxor(_ store:FluxStoreConcrete, flux:FluxorConcrete) {
+    func bindFlaskReactor(_ store:FlaskStoreConcrete, flux:FlaskReactorConcrete) {
         
         let storeName = store.name()
-        var storeFluxorRefs = getStoreFluxorRefs(storeName)
+        var storeFlaskReactorRefs = getStoreFlaskReactorRefs(storeName)
         
-        let ref = FluxWeakRef(value:flux)
-        storeFluxorRefs.append(ref)
-        setStoreFluxorRefs(storeName,storeFluxorRefs)
+        let ref = FlaskWeakRef(value:flux)
+        storeFlaskReactorRefs.append(ref)
+        setStoreFlaskReactorRefs(storeName,storeFlaskReactorRefs)
         
     }
     
-    func unbindFluxor(_ store:FluxStoreConcrete, flux:FluxorConcrete) {
+    func unbindFlaskReactor(_ store:FlaskStoreConcrete, flux:FlaskReactorConcrete) {
         
         let storeName = store.name()
-        let storeFluxorRefs = getStoreFluxorRefs(storeName)
+        let storeFlaskReactorRefs = getStoreFlaskReactorRefs(storeName)
         
-        let storeFluxorRefsFiltered = storeFluxorRefs.filter { $0.value != flux }
+        let storeFlaskReactorRefsFiltered = storeFlaskReactorRefs.filter { $0.value != flux }
         
-        setStoreFluxorRefs(storeName,storeFluxorRefsFiltered)
+        setStoreFlaskReactorRefs(storeName,storeFlaskReactorRefsFiltered)
        
     }
     
-    func getStoreFluxorRefs(_ storeName:String) -> Array<FluxWeakRef<FluxorConcrete>>{
+    func getStoreFlaskReactorRefs(_ storeName:String) -> Array<FlaskWeakRef<FlaskReactorConcrete>>{
         
         if let fluxors = self.fluxRefs[storeName] {
             return fluxors
         }
         
-        return Array<FluxWeakRef<FluxorConcrete>>()
+        return Array<FlaskWeakRef<FlaskReactorConcrete>>()
         
     }
     
-    func setStoreFluxorRefs(_ storeName:String,_ refs:Array<FluxWeakRef<FluxorConcrete>>){
+    func setStoreFlaskReactorRefs(_ storeName:String,_ refs:Array<FlaskWeakRef<FlaskReactorConcrete>>){
         
         self.fluxRefs[storeName] = refs
     }
@@ -166,15 +166,15 @@ extension FluxDispatcher {
 //////////////////
 // MARK: - MUTATIONS
 
-extension FluxDispatcher {
+extension FlaskDispatcher {
    
-    func commitChange(_ reaction:FluxReaction){
+    func commitChange(_ reaction:FlaskReaction){
         
         let storeName = reaction.store.name()
-        let storeFluxorRefs = getStoreFluxorRefs(storeName)
+        let storeFlaskReactorRefs = getStoreFlaskReactorRefs(storeName)
         
-        for storeFluxorRef in storeFluxorRefs {
-            if let flux = storeFluxorRef.value{
+        for storeFlaskReactorRef in storeFlaskReactorRefs {
+            if let flux = storeFlaskReactorRef.value{
                 flux.handleMutation( reaction)
             }
         }

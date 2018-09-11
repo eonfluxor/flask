@@ -1,5 +1,5 @@
 //
-//  FluxChange.swift
+//  FlaskChange.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/4/18.
@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-public extension FluxChangeTemplate{
+public extension FlaskChangeTemplate{
     
     
     public func unwrapValue<A>(_ val:A?) ->A?{
-//        if let object = val as? FluxRef {
+//        if let object = val as? FlaskRef {
 //            return object.object as? A
 //        }
         return val
@@ -33,21 +33,21 @@ public extension FluxChangeTemplate{
         return _key
     }
     
-    public func store()->FluxStoreConcrete?{
+    public func store()->FlaskStoreConcrete?{
         return _store
     }
 }
 
-public struct FluxChangeTemplate  {
+public struct FlaskChangeTemplate  {
     
-    weak var _store:FluxStoreConcrete?
+    weak var _store:FlaskStoreConcrete?
     var _key:String?
     var oldVal:AnyHashable?
     var newVal:AnyHashable?
     
     func mutated()->Bool{
         
-        if isFluxNil(oldVal) && isFluxNil(newVal) {
+        if isFlaskNil(oldVal) && isFlaskNil(newVal) {
             return false
         }
         

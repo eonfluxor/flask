@@ -9,7 +9,7 @@
 import XCTest
 
 
-class SetupFluxTests: XCTestCase {
+class SetupFlaskTests: XCTestCase {
     
     var store:Store?
     
@@ -18,10 +18,10 @@ class SetupFluxTests: XCTestCase {
         
         self.store = Store()
         
-        Flux.releaseAllLocks()
-        FluxorManager.purgeOrphans()
+        Flask.releaseAllLocks()
+        FlaskReactorManager.purgeOrphans()
         
-        XCTAssert(FluxorManager.fluxors.count == 0, "all fluxors should dispose before this test")
+        XCTAssert(FlaskReactorManager.fluxors.count == 0, "all fluxors should dispose before this test")
         
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }

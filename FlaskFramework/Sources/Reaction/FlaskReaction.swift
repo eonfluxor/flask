@@ -14,26 +14,26 @@ import Cocoa
 
 
 
-public class FluxReaction {
+public class FlaskReaction {
 
     
-    var store:FluxStoreConcrete
-    var changes:FluxStateDictionaryType
+    var store:FlaskStoreConcrete
+    var changes:FlaskStateDictionaryType
     
-    required public init(_ store:FluxStoreConcrete){
+    required public init(_ store:FlaskStoreConcrete){
         self.store = store
-        self.changes = FluxReaction.reduceChanges(store: self.store)
+        self.changes = FlaskReaction.reduceChanges(store: self.store)
     }
     
     public func changed()->Bool{
         return changes.count > 0
     }
     
-    public func on<T:RawRepresentable>(_ key:T,_ closure:FluxReactionClosure){
+    public func on<T:RawRepresentable>(_ key:T,_ closure:FlaskReactionClosure){
         on(key.rawValue as! String, closure)
     }
     
-    public func on(_ key:String,_ closure:FluxReactionClosure){
+    public func on(_ key:String,_ closure:FlaskReactionClosure){
         
         
         assertKey(key)
@@ -42,13 +42,13 @@ public class FluxReaction {
             return
         }
         
-        var change = FluxReaction.change(store, key)
+        var change = FlaskReaction.change(store, key)
         change._store = store
         closure(change)
     }
     
     
-    public func at(_ aStore:FluxStoreConcrete)->FluxReaction?{
+    public func at(_ aStore:FlaskStoreConcrete)->FlaskReaction?{
        
         if store !== aStore{
             return .none
@@ -77,9 +77,9 @@ public class FluxReaction {
     
 }
 
-public extension FluxReaction {
+public extension FlaskReaction {
     
-    static public func reduceChanges(store:FluxStoreConcrete)->FluxStateDictionaryType{
+    static public func reduceChanges(store:FlaskStoreConcrete)->FlaskStateDictionaryType{
     
         let oldState = store.lastStateDictionary()
         let newState = store.stateDictionary()
@@ -87,15 +87,15 @@ public extension FluxReaction {
         return reduceChanges(oldState,newState)
     }
     
-    static public func reduceChanges(_ oldState:FluxStateDictionaryType, _ newState:FluxStateDictionaryType)->FluxStateDictionaryType{
+    static public func reduceChanges(_ oldState:FlaskStateDictionaryType, _ newState:FlaskStateDictionaryType)->FlaskStateDictionaryType{
         
-        var changes:FluxStateDictionaryType=[:]
+        var changes:FlaskStateDictionaryType=[:]
         
         let uniqueKeys = Set(Array(oldState.keys) + Array(newState.keys))
         
         for key in uniqueKeys {
             
-            let change = FluxReaction.change(oldState, newState, key)
+            let change = FlaskReaction.change(oldState, newState, key)
             
             if change.mutated()  {
                 //use casting to ensure nil is passed
@@ -107,7 +107,7 @@ public extension FluxReaction {
         
     }
     
-    static public func change(_ store:FluxStoreConcrete, _ key: String) -> FluxChangeTemplate {
+    static public func change(_ store:FlaskStoreConcrete, _ key: String) -> FlaskChangeTemplate {
         
         let oldState = store.lastStateDictionary()
         let newState = store.stateDictionary()
@@ -116,10 +116,10 @@ public extension FluxReaction {
     }
     
 
-    static public func change(_ oldState:FluxStateDictionaryType,_ newState:FluxStateDictionaryType, _ key: String) -> FluxChangeTemplate {
+    static public func change(_ oldState:FlaskStateDictionaryType,_ newState:FlaskStateDictionaryType, _ key: String) -> FlaskChangeTemplate {
         
-        var oldValue:AnyHashable? = Flux.Nil
-        var newValue:AnyHashable? = Flux.Nil
+        var oldValue:AnyHashable? = Flask.Nil
+        var newValue:AnyHashable? = Flask.Nil
         
         if let val = oldState[key] {
             oldValue = val
@@ -130,7 +130,7 @@ public extension FluxReaction {
         }
         
     
-        var change = FluxChangeTemplate()
+        var change = FlaskChangeTemplate()
         change.setOldValue(oldValue)
         change.setNewValue(newValue)
         change._key = key

@@ -1,5 +1,5 @@
 //
-//  FluxUtils.swift
+//  FlaskUtils.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 8/31/18.
@@ -12,11 +12,11 @@ import Cocoa
 #endif
 
 
-public class Fluxor<D:AnyObject>:FluxorConcrete {
+public class FlaskReactor<D:AnyObject>:FlaskReactorConcrete {
     
     weak var owner:D?
     
-    public var reactor:FluxorClosure<D>  = { owner,reaction in }
+    public var reactor:FlaskReactorClosure<D>  = { owner,reaction in }
     
     required public init(_ owner:D){
         self.owner=owner
@@ -31,14 +31,14 @@ public class Fluxor<D:AnyObject>:FluxorConcrete {
         super.bind()
     }
     
-    override func handleMutation(_ reaction:FluxReaction){
+    override func handleMutation(_ reaction:FlaskReaction){
         
         
         if let owner = self.owner {
             reactor(owner,reaction)
         }else{
             //dispose flux when the owner is no longer present
-            FluxorManager.removeFluxor(self)
+            FlaskReactorManager.removeFlaskReactor(self)
         }
     }
     
@@ -49,17 +49,17 @@ public class Fluxor<D:AnyObject>:FluxorConcrete {
 }
 
 
-public class FluxorConcrete:FluxAnyEquatable{
+public class FlaskReactorConcrete:FlaskAnyEquatable{
     
-    var stores:[FluxStoreConcrete]=[]
+    var stores:[FlaskStoreConcrete]=[]
     var binded = false
     
     
-    func bindStore(_ store:FluxStoreConcrete){
+    func bindStore(_ store:FlaskStoreConcrete){
         bindStores([store])
     }
     
-    func bindStores(_ bindedStores:[FluxStoreConcrete]){
+    func bindStores(_ bindedStores:[FlaskStoreConcrete]){
         stores = bindedStores
         bind()
     }
@@ -79,7 +79,7 @@ public class FluxorConcrete:FluxAnyEquatable{
            
             { [weak self] in
                 if let wself = self {
-                    Flux.Dispatcher.bindFluxor(store, flux: wself)
+                    Flask.Dispatcher.bindFlaskReactor(store, flux: wself)
                 }
             }()
             
@@ -101,7 +101,7 @@ public class FluxorConcrete:FluxAnyEquatable{
         for store in stores {
             { [weak self] in
                 if let wself = self {
-                    Flux.Dispatcher.unbindFluxor(store, flux: wself)
+                    Flask.Dispatcher.unbindFlaskReactor(store, flux: wself)
                 }
             }()
             
@@ -110,9 +110,9 @@ public class FluxorConcrete:FluxAnyEquatable{
     }
     
     ///
-    func handleMutation(_ reaction:FluxReaction){}
+    func handleMutation(_ reaction:FlaskReaction){}
     
-    @discardableResult public func mutate<T:FluxStoreConcrete>(_ aStore:T, _ mutator:@escaping FluxMutatorParams<T>)->FluxorConcrete{
+    @discardableResult public func mutate<T:FlaskStoreConcrete>(_ aStore:T, _ mutator:@escaping FlaskMutatorParams<T>)->FlaskReactorConcrete{
         
         let store = self.store(aStore)
         store.mutate(mutator)
@@ -124,7 +124,7 @@ public class FluxorConcrete:FluxAnyEquatable{
     //////////////////
     // MARK: - PUBLIC METHODS
     
-    public func store<T:FluxStoreConcrete>(_ store:T)->T{
+    public func store<T:FlaskStoreConcrete>(_ store:T)->T{
         
         let registered = stores.contains { (aStore) -> Bool in
             aStore === store

@@ -1,5 +1,5 @@
 //
-//  FluxNSObjects.swift
+//  FlaskNSObjects.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/5/18.

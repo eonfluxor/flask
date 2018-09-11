@@ -1,5 +1,5 @@
 //
-//  FluxState.swift
+//  FlaskState.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/4/18.
@@ -12,27 +12,27 @@ import UIKit
 import Cocoa
 #endif
 
-struct AnyFluxState:FluxState {
+struct AnyFlaskState:FlaskState {
     
 }
 
-public protocol FluxState : Codable {
+public protocol FlaskState : Codable {
     init() //construct at initial state
-    func toDictionary()->FluxStateDictionaryType
+    func toDictionary()->FlaskStateDictionaryType
     func toJsonDictionary()->[String:Any]
 }
 
 
-public extension FluxState{
+public extension FlaskState{
     
 //    var dictionary: [String: Any] {
 //        return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]
 //    }
     
     
-    func toDictionary()->FluxStateDictionaryType{
+    func toDictionary()->FlaskStateDictionaryType{
 //        let dict = self.dictionary
-        var result:FluxStateDictionaryType = [:]
+        var result:FlaskStateDictionaryType = [:]
         
         let mirror = Mirror(reflecting: self)
         
@@ -41,18 +41,18 @@ public extension FluxState{
                 continue
             }
             
-            if FluxStoreConcrete.isInternalProp(label) {
+            if FlaskStoreConcrete.isInternalProp(label) {
                 continue
             }
             
-            result[label] = Flux.Nil
+            result[label] = Flask.Nil
             result[label] = value as? AnyHashable
             
-            if(FluxSerializer.isDictionaryRef(value)){
-                let nestedRef = FluxSerializer.nestDictionaries(namespace: label,
-                                                                root: FluxDictionaryRef(result as NSDictionary),
-                                                                children: value as! FluxDictionaryRef)
-                result = nestedRef.dictionary as! FluxStateDictionaryType
+            if(FlaskSerializer.isDictionaryRef(value)){
+                let nestedRef = FlaskSerializer.nestDictionaries(namespace: label,
+                                                                root: FlaskDictionaryRef(result as NSDictionary),
+                                                                children: value as! FlaskDictionaryRef)
+                result = nestedRef.dictionary as! FlaskStateDictionaryType
             }
         }
         
@@ -71,16 +71,16 @@ public extension FluxState{
                 continue
             }
             
-            if FluxStoreConcrete.isInternalProp(label) {
+            if FlaskStoreConcrete.isInternalProp(label) {
                 continue
             }
             
-            if FluxStoreConcrete.isObjectRef(value) {
+            if FlaskStoreConcrete.isObjectRef(value) {
                 continue
             }
             
-            if(FluxSerializer.isDictionaryRef(value)){
-                let nest =  FluxSerializer.flattenDictionary(value as! FluxDictionaryRef)
+            if(FlaskSerializer.isDictionaryRef(value)){
+                let nest =  FlaskSerializer.flattenDictionary(value as! FlaskDictionaryRef)
                  result[label] = nest
             } else{
                  result[label] = value
