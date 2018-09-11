@@ -23,7 +23,7 @@ class archiveTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner, filling:substance)
         
         flask.reactor = { owner, reaction in
-            reaction.on(AppStates.named.counter, { (change) in
+            reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
             })
         }

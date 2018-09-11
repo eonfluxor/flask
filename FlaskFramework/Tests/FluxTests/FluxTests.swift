@@ -22,7 +22,7 @@ class FlaskTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on( AppStates.named.counter, { (change) in
+            reaction.on( AppState.named.counter, { (change) in
                 expectation.fulfill()
             })
             
@@ -47,7 +47,7 @@ class FlaskTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(substance)?.on(AppStates.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.named.counter, { (change) in
                 owner.reactionMethod(expectation)
             })
             
@@ -71,7 +71,7 @@ class FlaskTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner,filling:substance)
         
         flask.reactor={owner, reaction in
-            reaction.on(AppStates.named.counter, { (change) in
+            reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
             })
         }
@@ -148,11 +148,11 @@ class FlaskTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on(AppStates.named.counter, { (change) in
+            reaction.on(AppState.named.counter, { (change) in
                 
                 XCTAssert(change.oldValue() == 0)
                 XCTAssert(change.newValue() == 1)
-                XCTAssert(change.key() == AppStates.named.counter.rawValue)
+                XCTAssert(change.key() == AppState.named.counter.rawValue)
                 XCTAssert(change.substance() === substance)
                 
                 expectation.fulfill()
@@ -177,7 +177,7 @@ class FlaskTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner, filling:Substances.app)
         
         flask.reactor = { owner, reaction in
-            reaction.on(AppStates.named.counter, { (change) in
+            reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
                 XCTAssert(Substances.app.states.counter == 2)
             })

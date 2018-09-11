@@ -110,10 +110,10 @@
             <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/Atoms.html">Atoms</a>
+                <a class="nav-group-task-link" href="Protocols/States.html">States</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/AtomsObservable.html">AtomsObservable</a>
+                <a class="nav-group-task-link" href="Protocols/StatesObservable.html">StatesObservable</a>
               </li>
             </ul>
           </li>
@@ -135,9 +135,6 @@
             <a class="nav-group-name-link" href="Typealiases.html">Type Aliases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Typealiases.html#/s:9Flask_iOS8AtomNamea">AtomName</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Typealiases.html#/s:9Flask_iOS13ChangeClosurea">ChangeClosure</a>
               </li>
               <li class="nav-group-task">
@@ -154,6 +151,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Typealiases.html#/s:9Flask_iOS15ReactionClosurea">ReactionClosure</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:9Flask_iOS9StateNamea">StateName</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a>
@@ -178,7 +178,18 @@
 <a href="https://travis-ci.org/eonfluxor/flask"><img src="https://travis-ci.org/eonfluxor/flask.svg?branch=master" alt="Build Status"></a></p>
 <h1 id='what-is-flask' class='heading'>What is Flask?</h1>
 
-<p>Summary</p>
+<p>Flask is a framework implementing the Single-Flux- Reactive pattern using lab naming semantics.</p>
+<h2 id='motivation' class='heading'>Motivation</h2>
+
+<p>Flask is designed with the following goals:</p>
+
+<ul>
+<li>Guarantee full atomicity during the state transformations</li>
+<li>Support both: Fluxxor and Redux patterns</li>
+<li>Create a DSL easy and fun to use requiring minimum boilerplate.</li>
+</ul>
+
+<p>The naming semantics in Flask are built around four commonly used Laboratory concepts: Lab, Flask, Substance and State.</p>
 
 <ol>
 <li>feature</li>

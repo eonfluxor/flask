@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Flask Class Reference</title>
+    <title>States Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/Flask" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Protocol/States" class="dashAnchor"></a>
 
-    <a title="Flask Class Reference"></a>
+    <a title="States Protocol Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html"> Reference</a>
       <img class="carat" src="../img/carat.png" />
-      Flask Class Reference
+      States Protocol Reference
     </p>
 
     <div class="content-wrapper">
@@ -167,10 +167,10 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>Flask</h1>
+            <h1>States</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Flask</span><span class="o">&lt;</span><span class="kt">D</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Classes/FlaskConcrete.html">FlaskConcrete</a></span> <span class="k">where</span> <span class="kt">D</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">States</span> <span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt">Encodable</span></code></pre>
 
                 </div>
               </div>
@@ -186,9 +186,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS0A0C7reactoryx_AA0A8ReactionCtcvp"></a>
-                    <a name="//apple_ref/swift/Property/reactor" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS0A0C7reactoryx_AA0A8ReactionCtcvp">reactor</a>
+                    <a name="/s:9Flask_iOS6StatesPxycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS6StatesPxycfc">init()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -203,7 +203,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">reactor</span><span class="p">:</span> <span class="p">(</span><span class="kt">D</span><span class="p">,</span> <span class="kt"><a href="../Classes/FlaskReaction.html">FlaskReaction</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -213,10 +213,13 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS0A0CACyxGxcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS0A0CACyxGxcfc">init(_:)</a>
+                    <a name="/s:9Flask_iOS6StatesP12toDictionarys0E0VySSs11AnyHashableVSgGyF"></a>
+                    <a name="//apple_ref/swift/Method/toDictionary()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS6StatesP12toDictionarys0E0VySSs11AnyHashableVSgGyF">toDictionary()</a>
                     </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
@@ -226,11 +229,16 @@
                         <p>Undocumented</p>
 
                       </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Undocumented</p>
+
+                      </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">owner</span><span class="p">:</span> <span class="kt">D</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">toDictionary</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:9Flask_iOS11LabDictTypea">LabDictType</a></span></code></pre>
 
                         </div>
                       </div>
@@ -240,37 +248,13 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS0A0C4fillyyF"></a>
-                    <a name="//apple_ref/swift/Method/fill()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS0A0C4fillyyF">fill()</a>
+                    <a name="/s:9Flask_iOS6StatesP16toJsonDictionarys0F0VySSypGyF"></a>
+                    <a name="//apple_ref/swift/Method/toJsonDictionary()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS6StatesP16toJsonDictionarys0F0VySSypGyF">toJsonDictionary()</a>
                     </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>MARK: -</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">fill</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:9Flask_iOS0A0C5emptyySbF"></a>
-                    <a name="//apple_ref/swift/Method/empty(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS0A0C5emptyySbF">empty(_:)</a>
-                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
@@ -280,30 +264,8 @@
                         <p>Undocumented</p>
 
                       </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">empty</span><span class="p">(</span><span class="n">_</span> <span class="nv">explicit</span><span class="p">:</span><span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:9Flask_iOS0A0C8getOwneryXlSgyF"></a>
-                    <a name="//apple_ref/swift/Method/getOwner()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS0A0C8getOwneryXlSgyF">getOwner()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
                         <p>Undocumented</p>
 
                       </div>
@@ -311,7 +273,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getOwner</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyObject</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">toJsonDictionary</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>

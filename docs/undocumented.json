@@ -129,14 +129,14 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Lab/Lab.swift",
       "line": 44,
-      "symbol": "Lab.flask(ownedBy:mixin:)",
+      "symbol": "Lab.flask(ownedBy:filling:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Lab/Lab.swift",
       "line": 48,
-      "symbol": "Lab.flask(ownedBy:mixin:)",
+      "symbol": "Lab.flask(ownedBy:filling:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
@@ -150,14 +150,14 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Lab/Lab.swift",
       "line": 69,
-      "symbol": "Lab.pause(mixing:)",
+      "symbol": "Lab.pause(fillingg:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Lab/Lab.swift",
       "line": 74,
-      "symbol": "Lab.pause(mixing:payload:)",
+      "symbol": "Lab.pause(fillingg:payload:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
@@ -185,14 +185,14 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Lab/LabDictionary.swift",
       "line": 15,
-      "symbol": "AtomsObservable",
+      "symbol": "StatesObservable",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Lab/LabDictionary.swift",
       "line": 16,
-      "symbol": "AtomsObservable.toLabDictRef()",
+      "symbol": "StatesObservable.toLabDictRef()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -304,7 +304,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Lab/LabHelpers.swift",
       "line": 23,
-      "symbol": "AtomName",
+      "symbol": "StateName",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
@@ -402,49 +402,49 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
       "line": null,
-      "symbol": "Atoms",
+      "symbol": "States",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
       "line": 19,
-      "symbol": "Atoms",
+      "symbol": "States",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
       "line": 20,
-      "symbol": "Atoms.init()",
+      "symbol": "States.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
       "line": 21,
-      "symbol": "Atoms.toDictionary()",
+      "symbol": "States.toDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
       "line": 22,
-      "symbol": "Atoms.toJsonDictionary()",
+      "symbol": "States.toJsonDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
       "line": 33,
-      "symbol": "Atoms.toDictionary()",
+      "symbol": "States.toDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
       "line": 65,
-      "symbol": "Atoms.toJsonDictionary()",
+      "symbol": "States.toJsonDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -486,7 +486,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Substance.swift",
       "line": 21,
-      "symbol": "Substance.atoms",
+      "symbol": "Substance.states",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
@@ -514,21 +514,21 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Substance.swift",
       "line": 58,
-      "symbol": "Substance.atomsSnapshotDictionary()",
+      "symbol": "Substance.statesSnapshotDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Substance.swift",
       "line": 61,
-      "symbol": "Substance.atomsDictionary()",
+      "symbol": "Substance.statesDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Substance.swift",
       "line": 65,
-      "symbol": "Substance.currentAtoms()",
+      "symbol": "Substance.currentStates()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -591,7 +591,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Substance.swift",
       "line": 221,
-      "symbol": "SubstanceConcrete.assertAtomKey(_:)",
+      "symbol": "SubstanceConcrete.assertStateKey(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -640,28 +640,28 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/SubstanceSerializer\u001b.swift",
       "line": 17,
-      "symbol": "SubstanceSerializer.jsonFromAtoms(_:)",
+      "symbol": "SubstanceSerializer.jsonFromStates(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/SubstanceSerializer\u001b.swift",
       "line": 25,
-      "symbol": "SubstanceSerializer.atomsFromJson(_:)",
+      "symbol": "SubstanceSerializer.statesFromJson(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/SubstanceSerializer\u001b.swift",
       "line": 32,
-      "symbol": "SubstanceSerializer.dataFromAtom(_:)",
+      "symbol": "SubstanceSerializer.dataFromState(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/SubstanceSerializer\u001b.swift",
       "line": 38,
-      "symbol": "SubstanceSerializer.atomsFromData(_:)",
+      "symbol": "SubstanceSerializer.statesFromData(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },

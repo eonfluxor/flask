@@ -25,7 +25,7 @@ class PauseTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(substance)?.on(AppStates.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.named.counter, { (change) in
                 
                 if calls == 0 {
                     expectation.fulfill()
@@ -59,7 +59,7 @@ class PauseTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner,filling:substance)
         
         flask.reactor = { owner, reaction in
-            reaction.at(substance)?.on(AppStates.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
             })
         }
@@ -91,13 +91,13 @@ class PauseTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner,filling:substance)
         
         flask.reactor = { owner, reaction in
-            reaction.at(substance)?.on(AppStates.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.named.counter, { (change) in
                 
                 reaction.onPause?.release()
                 expectation.fulfill()
            
             })
-            reaction.at(substance)?.on(AppStates.named.text, { (change) in
+            reaction.at(substance)?.on(AppState.named.text, { (change) in
                 expectation2.fulfill()
             })
         }

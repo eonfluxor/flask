@@ -20,7 +20,7 @@ class SerializationTests: XCTestCase {
                 "nest":["foo":"bar"]
             ]
             
-            var states:AppStates = AppStates()
+            var states:AppState = AppState()
             states.counter = 666
             states.text = "hello world"
             states.map = LabDictRef(dict)
@@ -28,7 +28,7 @@ class SerializationTests: XCTestCase {
             
             let jsonString:String = try SubstanceSerializer.jsonFromStates(states)
             
-            let statesDecoded:AppStates = try SubstanceSerializer.statesFromJson(jsonString)
+            let statesDecoded:AppState = try SubstanceSerializer.statesFromJson(jsonString)
             
             XCTAssert(states.counter == statesDecoded.counter )
             XCTAssert(states.text == statesDecoded.text )

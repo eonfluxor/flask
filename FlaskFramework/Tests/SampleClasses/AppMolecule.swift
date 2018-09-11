@@ -19,7 +19,7 @@ enum AppMixers : MixerName {
     case Object
 }
 
-struct AppStates : States {
+struct AppState : States {
    
     enum named : StateName{
         case counter, text, map, object
@@ -34,7 +34,7 @@ struct AppStates : States {
     
 }
 
-class App : Substance<AppStates,AppMixers> {
+class App : Substance<AppState,AppMixers> {
     
     override func defineMixers(){
         
