@@ -311,7 +311,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 84,
-      "symbol": "Lab.detachAllPauses()",
+      "symbol": "Lab.removePauses()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
@@ -367,21 +367,21 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
       "line": 34,
-      "symbol": "Mixer.detachAllPauses()",
+      "symbol": "Mixer.removePauses()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
       "line": 39,
-      "symbol": "Mixer.attachPause(_:)",
+      "symbol": "Mixer.addPause(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
       "line": 44,
-      "symbol": "Mixer.detachPause(_:)",
+      "symbol": "Mixer.removePause(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
