@@ -1,0 +1,1798 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06CD357D3571E8D74FA9EF3D /* Pods_Flask_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E2614725FA0A1B2AD443CD /* Pods_Flask_iOS.framework */; };
+		0DEFB0BEFD9FB7B668AF908B /* Pods_Flask_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E158D5A8457C05541B83919 /* Pods_Flask_macOS.framework */; };
+		26C53E09214790730090AA0C /* Flask_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C53E00214790730090AA0C /* Flask_iOS.framework */; };
+		26C53E0E214790730090AA0C /* Flask_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E0D214790730090AA0C /* Flask_iOSTests.swift */; };
+		26C53E10214790730090AA0C /* Flask_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C53E02214790730090AA0C /* Flask_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26C53E25214790800090AA0C /* Flask_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C53E1C214790800090AA0C /* Flask_macOS.framework */; };
+		26C53E2A214790800090AA0C /* Flask_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E29214790800090AA0C /* Flask_macOSTests.swift */; };
+		26C53E2C214790800090AA0C /* Flask_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C53E1E214790800090AA0C /* Flask_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26C53E412147908E0090AA0C /* Flask_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C53E382147908D0090AA0C /* Flask_tvOS.framework */; };
+		26C53E462147908E0090AA0C /* Flask_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E452147908E0090AA0C /* Flask_tvOSTests.swift */; };
+		26C53E482147908E0090AA0C /* Flask_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C53E3A2147908D0090AA0C /* Flask_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26C53E64214790A90090AA0C /* FluxPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* FluxPublic.swift */; };
+		26C53E65214790A90090AA0C /* FluxPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* FluxPublic.swift */; };
+		26C53E66214790A90090AA0C /* FluxPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* FluxPublic.swift */; };
+		26C53E67214790A90090AA0C /* FluxPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* FluxPublic.swift */; };
+		26C53E68214790A90090AA0C /* FluxPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* FluxPublic.swift */; };
+		26C53E69214790A90090AA0C /* FluxPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* FluxPublic.swift */; };
+		26C53E6A214790A90090AA0C /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FluxHelpers.swift */; };
+		26C53E6B214790A90090AA0C /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FluxHelpers.swift */; };
+		26C53E6C214790A90090AA0C /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FluxHelpers.swift */; };
+		26C53E6D214790A90090AA0C /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FluxHelpers.swift */; };
+		26C53E6E214790A90090AA0C /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FluxHelpers.swift */; };
+		26C53E6F214790A90090AA0C /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FluxHelpers.swift */; };
+		26C53E70214790A90090AA0C /* FluxDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FluxDictionary.swift */; };
+		26C53E71214790A90090AA0C /* FluxDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FluxDictionary.swift */; };
+		26C53E72214790A90090AA0C /* FluxDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FluxDictionary.swift */; };
+		26C53E73214790A90090AA0C /* FluxDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FluxDictionary.swift */; };
+		26C53E74214790A90090AA0C /* FluxDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FluxDictionary.swift */; };
+		26C53E75214790A90090AA0C /* FluxDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FluxDictionary.swift */; };
+		26C53E76214790A90090AA0C /* FluxNSObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E53214790A90090AA0C /* FluxNSObjects.swift */; };
+		26C53E77214790A90090AA0C /* FluxNSObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E53214790A90090AA0C /* FluxNSObjects.swift */; };
+		26C53E78214790A90090AA0C /* FluxNSObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E53214790A90090AA0C /* FluxNSObjects.swift */; };
+		26C53E79214790A90090AA0C /* FluxNSObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E53214790A90090AA0C /* FluxNSObjects.swift */; };
+		26C53E7A214790A90090AA0C /* FluxNSObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E53214790A90090AA0C /* FluxNSObjects.swift */; };
+		26C53E7B214790A90090AA0C /* FluxNSObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E53214790A90090AA0C /* FluxNSObjects.swift */; };
+		26C53E7C214790A90090AA0C /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FluxRef.swift */; };
+		26C53E7D214790A90090AA0C /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FluxRef.swift */; };
+		26C53E7E214790A90090AA0C /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FluxRef.swift */; };
+		26C53E7F214790A90090AA0C /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FluxRef.swift */; };
+		26C53E80214790A90090AA0C /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FluxRef.swift */; };
+		26C53E81214790A90090AA0C /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FluxRef.swift */; };
+		26C53E82214790A90090AA0C /* FluxChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FluxChain.swift */; };
+		26C53E83214790A90090AA0C /* FluxChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FluxChain.swift */; };
+		26C53E84214790A90090AA0C /* FluxChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FluxChain.swift */; };
+		26C53E85214790A90090AA0C /* FluxChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FluxChain.swift */; };
+		26C53E86214790A90090AA0C /* FluxChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FluxChain.swift */; };
+		26C53E87214790A90090AA0C /* FluxChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FluxChain.swift */; };
+		26C53E88214790A90090AA0C /* FluxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FluxManager.swift */; };
+		26C53E89214790A90090AA0C /* FluxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FluxManager.swift */; };
+		26C53E8A214790A90090AA0C /* FluxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FluxManager.swift */; };
+		26C53E8B214790A90090AA0C /* FluxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FluxManager.swift */; };
+		26C53E8C214790A90090AA0C /* FluxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FluxManager.swift */; };
+		26C53E8D214790A90090AA0C /* FluxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FluxManager.swift */; };
+		26C53E8E214790A90090AA0C /* Fluxor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Fluxor.swift */; };
+		26C53E8F214790A90090AA0C /* Fluxor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Fluxor.swift */; };
+		26C53E90214790A90090AA0C /* Fluxor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Fluxor.swift */; };
+		26C53E91214790A90090AA0C /* Fluxor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Fluxor.swift */; };
+		26C53E92214790A90090AA0C /* Fluxor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Fluxor.swift */; };
+		26C53E93214790A90090AA0C /* Fluxor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Fluxor.swift */; };
+		26C53E94214790A90090AA0C /* FluxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* FluxDispatcher.swift */; };
+		26C53E95214790A90090AA0C /* FluxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* FluxDispatcher.swift */; };
+		26C53E96214790A90090AA0C /* FluxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* FluxDispatcher.swift */; };
+		26C53E97214790A90090AA0C /* FluxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* FluxDispatcher.swift */; };
+		26C53E98214790A90090AA0C /* FluxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* FluxDispatcher.swift */; };
+		26C53E99214790A90090AA0C /* FluxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* FluxDispatcher.swift */; };
+		26C53E9A214790A90090AA0C /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* FluxLock.swift */; };
+		26C53E9B214790A90090AA0C /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* FluxLock.swift */; };
+		26C53E9C214790A90090AA0C /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* FluxLock.swift */; };
+		26C53E9D214790A90090AA0C /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* FluxLock.swift */; };
+		26C53E9E214790A90090AA0C /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* FluxLock.swift */; };
+		26C53E9F214790A90090AA0C /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* FluxLock.swift */; };
+		26C53EA0214790A90090AA0C /* FluxChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5D214790A90090AA0C /* FluxChange.swift */; };
+		26C53EA1214790A90090AA0C /* FluxChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5D214790A90090AA0C /* FluxChange.swift */; };
+		26C53EA2214790A90090AA0C /* FluxChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5D214790A90090AA0C /* FluxChange.swift */; };
+		26C53EA3214790A90090AA0C /* FluxChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5D214790A90090AA0C /* FluxChange.swift */; };
+		26C53EA4214790A90090AA0C /* FluxChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5D214790A90090AA0C /* FluxChange.swift */; };
+		26C53EA5214790A90090AA0C /* FluxChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5D214790A90090AA0C /* FluxChange.swift */; };
+		26C53EA6214790A90090AA0C /* FluxReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5E214790A90090AA0C /* FluxReaction.swift */; };
+		26C53EA7214790A90090AA0C /* FluxReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5E214790A90090AA0C /* FluxReaction.swift */; };
+		26C53EA8214790A90090AA0C /* FluxReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5E214790A90090AA0C /* FluxReaction.swift */; };
+		26C53EA9214790A90090AA0C /* FluxReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5E214790A90090AA0C /* FluxReaction.swift */; };
+		26C53EAA214790A90090AA0C /* FluxReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5E214790A90090AA0C /* FluxReaction.swift */; };
+		26C53EAB214790A90090AA0C /* FluxReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5E214790A90090AA0C /* FluxReaction.swift */; };
+		26C53EAC214790A90090AA0C /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* FluxState.swift */; };
+		26C53EAD214790A90090AA0C /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* FluxState.swift */; };
+		26C53EAE214790A90090AA0C /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* FluxState.swift */; };
+		26C53EAF214790A90090AA0C /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* FluxState.swift */; };
+		26C53EB0214790A90090AA0C /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* FluxState.swift */; };
+		26C53EB1214790A90090AA0C /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* FluxState.swift */; };
+		26C53EB2214790A90090AA0C /* FluxSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* FluxSerializer.swift */; };
+		26C53EB3214790A90090AA0C /* FluxSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* FluxSerializer.swift */; };
+		26C53EB4214790A90090AA0C /* FluxSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* FluxSerializer.swift */; };
+		26C53EB5214790A90090AA0C /* FluxSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* FluxSerializer.swift */; };
+		26C53EB6214790A90090AA0C /* FluxSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* FluxSerializer.swift */; };
+		26C53EB7214790A90090AA0C /* FluxSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* FluxSerializer.swift */; };
+		26C53EB8214790A90090AA0C /* FluxArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* FluxArchiver.swift */; };
+		26C53EB9214790A90090AA0C /* FluxArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* FluxArchiver.swift */; };
+		26C53EBA214790A90090AA0C /* FluxArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* FluxArchiver.swift */; };
+		26C53EBB214790A90090AA0C /* FluxArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* FluxArchiver.swift */; };
+		26C53EBC214790A90090AA0C /* FluxArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* FluxArchiver.swift */; };
+		26C53EBD214790A90090AA0C /* FluxArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* FluxArchiver.swift */; };
+		26C53EBE214790A90090AA0C /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* FluxStore.swift */; };
+		26C53EBF214790A90090AA0C /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* FluxStore.swift */; };
+		26C53EC0214790A90090AA0C /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* FluxStore.swift */; };
+		26C53EC1214790A90090AA0C /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* FluxStore.swift */; };
+		26C53EC2214790A90090AA0C /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* FluxStore.swift */; };
+		26C53EC3214790A90090AA0C /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* FluxStore.swift */; };
+		26C53ED5214790C00090AA0C /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC5214790C00090AA0C /* ReducerTests.swift */; };
+		26C53ED6214790C00090AA0C /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC5214790C00090AA0C /* ReducerTests.swift */; };
+		26C53ED7214790C00090AA0C /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC5214790C00090AA0C /* ReducerTests.swift */; };
+		26C53ED8214790C00090AA0C /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC6214790C00090AA0C /* SerializationTests.swift */; };
+		26C53ED9214790C00090AA0C /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC6214790C00090AA0C /* SerializationTests.swift */; };
+		26C53EDA214790C00090AA0C /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC6214790C00090AA0C /* SerializationTests.swift */; };
+		26C53EDB214790C00090AA0C /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC7214790C00090AA0C /* DictionaryTests.swift */; };
+		26C53EDC214790C00090AA0C /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC7214790C00090AA0C /* DictionaryTests.swift */; };
+		26C53EDD214790C00090AA0C /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC7214790C00090AA0C /* DictionaryTests.swift */; };
+		26C53EDE214790C00090AA0C /* KronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC8214790C00090AA0C /* KronTests.swift */; };
+		26C53EDF214790C00090AA0C /* KronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC8214790C00090AA0C /* KronTests.swift */; };
+		26C53EE0214790C00090AA0C /* KronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC8214790C00090AA0C /* KronTests.swift */; };
+		26C53EE1214790C00090AA0C /* ArchivingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC9214790C00090AA0C /* ArchivingTests.swift */; };
+		26C53EE2214790C00090AA0C /* ArchivingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC9214790C00090AA0C /* ArchivingTests.swift */; };
+		26C53EE3214790C00090AA0C /* ArchivingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC9214790C00090AA0C /* ArchivingTests.swift */; };
+		26C53EE4214790C00090AA0C /* FluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECB214790C00090AA0C /* FluxTests.swift */; };
+		26C53EE5214790C00090AA0C /* FluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECB214790C00090AA0C /* FluxTests.swift */; };
+		26C53EE6214790C00090AA0C /* FluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECB214790C00090AA0C /* FluxTests.swift */; };
+		26C53EE7214790C00090AA0C /* ChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECC214790C00090AA0C /* ChainTests.swift */; };
+		26C53EE8214790C00090AA0C /* ChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECC214790C00090AA0C /* ChainTests.swift */; };
+		26C53EE9214790C00090AA0C /* ChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECC214790C00090AA0C /* ChainTests.swift */; };
+		26C53EEA214790C00090AA0C /* NestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECD214790C00090AA0C /* NestingTests.swift */; };
+		26C53EEB214790C00090AA0C /* NestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECD214790C00090AA0C /* NestingTests.swift */; };
+		26C53EEC214790C00090AA0C /* NestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECD214790C00090AA0C /* NestingTests.swift */; };
+		26C53EED214790C00090AA0C /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECE214790C00090AA0C /* SetupTests.swift */; };
+		26C53EEE214790C00090AA0C /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECE214790C00090AA0C /* SetupTests.swift */; };
+		26C53EEF214790C00090AA0C /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ECE214790C00090AA0C /* SetupTests.swift */; };
+		26C53EF0214790C00090AA0C /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* LockTests.swift */; };
+		26C53EF1214790C00090AA0C /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* LockTests.swift */; };
+		26C53EF2214790C00090AA0C /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* LockTests.swift */; };
+		26C53EF3214790C00090AA0C /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* TestStore.swift */; };
+		26C53EF4214790C00090AA0C /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* TestStore.swift */; };
+		26C53EF5214790C00090AA0C /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* TestStore.swift */; };
+		26C53EF6214790C00090AA0C /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Stores.swift */; };
+		26C53EF7214790C00090AA0C /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Stores.swift */; };
+		26C53EF8214790C00090AA0C /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Stores.swift */; };
+		26C53EF9214790C00090AA0C /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED4214790C00090AA0C /* TestOwner.swift */; };
+		26C53EFA214790C00090AA0C /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED4214790C00090AA0C /* TestOwner.swift */; };
+		26C53EFB214790C00090AA0C /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED4214790C00090AA0C /* TestOwner.swift */; };
+		4961C169878BBBCEFBC81107 /* Pods_Flask_macOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BA23FC2296D5E31DACBA2A /* Pods_Flask_macOSTests.framework */; };
+		9B65C017FE6B98FB0FC13053 /* Pods_Flask_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC09794A7DC750FA3E76238 /* Pods_Flask_tvOS.framework */; };
+		BA30FBA29273356CE7DB3D86 /* Pods_Flask_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEFF7AF4934A2F0B14897B9 /* Pods_Flask_iOSTests.framework */; };
+		CCA971AE752AC657A95699C4 /* Pods_Flask_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8753316831ADF7C155E43D8B /* Pods_Flask_tvOSTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26C53E0A214790730090AA0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26A82A352146D769008C8009 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26C53DFF214790730090AA0C;
+			remoteInfo = "Flask-iOS";
+		};
+		26C53E26214790800090AA0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26A82A352146D769008C8009 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26C53E1B214790800090AA0C;
+			remoteInfo = "Flask-macOS";
+		};
+		26C53E422147908E0090AA0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26A82A352146D769008C8009 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26C53E372147908D0090AA0C;
+			remoteInfo = "Flask-tvOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		075CD6D047CF6A418EAF8396 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS-Reaktor-tvOSTests/Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0A3CB9BE7C8696AC195D5C19 /* Pods-Reaktor-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		0C274EFCF73179B943CD3EA2 /* Pods-Reaktor-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1853B0440831D5B76080A717 /* Pods_Reaktor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BC09794A7DC750FA3E76238 /* Pods_Flask_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flask_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_macOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-tvOS-Reaktor-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A82A5F2146D783008C8009 /* Reaktor_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reaktor_iOS.h; sourceTree = "<group>"; };
+		26A82A602146D783008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A82A6A2146D783008C8009 /* Reaktor_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor_iOSTests.swift; sourceTree = "<group>"; };
+		26A82A6C2146D783008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A82A972146D7A8008C8009 /* Reaktor_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reaktor_macOS.h; sourceTree = "<group>"; };
+		26A82A982146D7A8008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A82AA22146D7A8008C8009 /* Reaktor_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor_macOSTests.swift; sourceTree = "<group>"; };
+		26A82AA42146D7A8008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A82AB32146D7B2008C8009 /* Reaktor_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reaktor_tvOS.h; sourceTree = "<group>"; };
+		26A82AB42146D7B2008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A82ABE2146D7B2008C8009 /* Reaktor_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor_tvOSTests.swift; sourceTree = "<group>"; };
+		26A82AC02146D7B2008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26C53E00214790730090AA0C /* Flask_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flask_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26C53E02214790730090AA0C /* Flask_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flask_iOS.h; sourceTree = "<group>"; };
+		26C53E03214790730090AA0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26C53E08214790730090AA0C /* Flask-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flask-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26C53E0D214790730090AA0C /* Flask_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flask_iOSTests.swift; sourceTree = "<group>"; };
+		26C53E0F214790730090AA0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26C53E1C214790800090AA0C /* Flask_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flask_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26C53E1E214790800090AA0C /* Flask_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flask_macOS.h; sourceTree = "<group>"; };
+		26C53E1F214790800090AA0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26C53E24214790800090AA0C /* Flask-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flask-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26C53E29214790800090AA0C /* Flask_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flask_macOSTests.swift; sourceTree = "<group>"; };
+		26C53E2B214790800090AA0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26C53E382147908D0090AA0C /* Flask_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flask_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26C53E3A2147908D0090AA0C /* Flask_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flask_tvOS.h; sourceTree = "<group>"; };
+		26C53E3B2147908D0090AA0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26C53E402147908E0090AA0C /* Flask-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flask-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26C53E452147908E0090AA0C /* Flask_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flask_tvOSTests.swift; sourceTree = "<group>"; };
+		26C53E472147908E0090AA0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26C53E4F214790A90090AA0C /* FluxPublic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxPublic.swift; sourceTree = "<group>"; };
+		26C53E50214790A90090AA0C /* FluxHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxHelpers.swift; sourceTree = "<group>"; };
+		26C53E52214790A90090AA0C /* FluxDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxDictionary.swift; sourceTree = "<group>"; };
+		26C53E53214790A90090AA0C /* FluxNSObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxNSObjects.swift; sourceTree = "<group>"; };
+		26C53E54214790A90090AA0C /* FluxRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxRef.swift; sourceTree = "<group>"; };
+		26C53E56214790A90090AA0C /* FluxChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxChain.swift; sourceTree = "<group>"; };
+		26C53E57214790A90090AA0C /* FluxManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxManager.swift; sourceTree = "<group>"; };
+		26C53E58214790A90090AA0C /* Fluxor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fluxor.swift; sourceTree = "<group>"; };
+		26C53E5A214790A90090AA0C /* FluxDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxDispatcher.swift; sourceTree = "<group>"; };
+		26C53E5B214790A90090AA0C /* FluxLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxLock.swift; sourceTree = "<group>"; };
+		26C53E5D214790A90090AA0C /* FluxChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxChange.swift; sourceTree = "<group>"; };
+		26C53E5E214790A90090AA0C /* FluxReaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxReaction.swift; sourceTree = "<group>"; };
+		26C53E60214790A90090AA0C /* FluxState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxState.swift; sourceTree = "<group>"; };
+		26C53E61214790A90090AA0C /* FluxSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxSerializer.swift; sourceTree = "<group>"; };
+		26C53E62214790A90090AA0C /* FluxArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxArchiver.swift; sourceTree = "<group>"; };
+		26C53E63214790A90090AA0C /* FluxStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxStore.swift; sourceTree = "<group>"; };
+		26C53EC5214790C00090AA0C /* ReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReducerTests.swift; sourceTree = "<group>"; };
+		26C53EC6214790C00090AA0C /* SerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationTests.swift; sourceTree = "<group>"; };
+		26C53EC7214790C00090AA0C /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		26C53EC8214790C00090AA0C /* KronTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KronTests.swift; sourceTree = "<group>"; };
+		26C53EC9214790C00090AA0C /* ArchivingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchivingTests.swift; sourceTree = "<group>"; };
+		26C53ECB214790C00090AA0C /* FluxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxTests.swift; sourceTree = "<group>"; };
+		26C53ECC214790C00090AA0C /* ChainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainTests.swift; sourceTree = "<group>"; };
+		26C53ECD214790C00090AA0C /* NestingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestingTests.swift; sourceTree = "<group>"; };
+		26C53ECE214790C00090AA0C /* SetupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupTests.swift; sourceTree = "<group>"; };
+		26C53ED0214790C00090AA0C /* LockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockTests.swift; sourceTree = "<group>"; };
+		26C53ED2214790C00090AA0C /* TestStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStore.swift; sourceTree = "<group>"; };
+		26C53ED3214790C00090AA0C /* Stores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
+		26C53ED4214790C00090AA0C /* TestOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestOwner.swift; sourceTree = "<group>"; };
+		37BA23FC2296D5E31DACBA2A /* Pods_Flask_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flask_macOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		381DEAC3DCFB39BEACA03807 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests/Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		38BFFFCD6F072157809E78A0 /* Pods-Reaktor-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		39BD126D20886B6542A943CE /* Pods-Flask-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flask-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flask-tvOS/Pods-Flask-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		3BC6DCEA91A07911B9224987 /* Pods-Flask-macOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flask-macOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flask-macOSTests/Pods-Flask-macOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		452C9C4E09CB62E21C4E5240 /* Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests/Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		4DD0926C55169B753178E95C /* Pods-Reaktor-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS/Pods-Reaktor-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		53515E61CAAC9CADB2859B64 /* Pods-Flask-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flask-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flask-tvOSTests/Pods-Flask-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		54551A57CBC323C9D2D85A59 /* Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS-Reaktor-macOSTests/Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		56B9FA86C8DFEE750F1FDD67 /* Pods_Reaktor_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		598EF4CC90CDF51D436D038E /* Pods-Reaktor-macOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5AEE8057DC84A8C8143CDE1C /* Pods-Flask-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flask-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flask-tvOSTests/Pods-Flask-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5FDD61F205F7DD5ACD32526F /* Pods-Flask-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flask-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flask-macOS/Pods-Flask-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		63CBBD24ACE3B98A53EB7AAD /* Pods-Flask-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flask-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flask-macOS/Pods-Flask-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		6529348FC7980F8A5E989DF0 /* libPods-Reaktor-iOS-Reaktor-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-iOS-Reaktor-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6800B2CB5843D3C26DF4FF9B /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS-Reaktor-tvOSTests/Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E158D5A8457C05541B83919 /* Pods_Flask_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flask_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8753316831ADF7C155E43D8B /* Pods_Flask_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flask_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88917E1F608AFE1E56480E6F /* Pods_Reaktor_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88E2614725FA0A1B2AD443CD /* Pods_Flask_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flask_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90ED7E2C99449BF00BF8C4B8 /* libPods-Reaktor-macOS-Reaktor-macOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-macOS-Reaktor-macOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9297C3098704CEE0C27B1C9D /* Pods-Reaktor-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS/Pods-Reaktor-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		99B8E75D79521F500CA851D4 /* Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS-Reaktor-macOSTests/Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		9AEFF7AF4934A2F0B14897B9 /* Pods_Flask_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flask_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5148CCA286230267555C28D /* Pods-Flask-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flask-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flask-tvOS/Pods-Flask-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		AF87E8EAD968BFA031274355 /* Pods-Reaktor-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOSTests/Pods-Reaktor-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BAE25DF2041FE9D584D9F979 /* Pods-Reaktor-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOSTests/Pods-Reaktor-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		BAEEDB7D9290E129BB957B22 /* Pods-Flask-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flask-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flask-iOSTests/Pods-Flask-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB0F8B42F267D1A3216073B8 /* Pods-Flask-macOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flask-macOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flask-macOSTests/Pods-Flask-macOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		C54000D406E19649E8976133 /* Pods_Reaktor_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF9E0783B0078AD7B54DE4F /* Pods-Flask-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flask-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flask-iOSTests/Pods-Flask-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		D2B76A4269F0ECBB16EBD1E6 /* Pods-Reaktor-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		DB83DC670FBA7380BCF44DC2 /* Pods-Flask-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flask-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flask-iOS/Pods-Flask-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		DDC2E24140CF7BF6DB0B0D18 /* Pods-Reaktor-macOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED4780D1557DF06CFE5BC50F /* Pods-Flask-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flask-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flask-iOS/Pods-Flask-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		F7C6A21D39F67D37934C6EA8 /* Pods-Reaktor-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS/Pods-Reaktor-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		FCF9744D8DBAC7DD369275C1 /* Pods-Reaktor-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-tvOS/Pods-Reaktor-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26C53DFC214790730090AA0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06CD357D3571E8D74FA9EF3D /* Pods_Flask_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E05214790730090AA0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C53E09214790730090AA0C /* Flask_iOS.framework in Frameworks */,
+				BA30FBA29273356CE7DB3D86 /* Pods_Flask_iOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E18214790800090AA0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DEFB0BEFD9FB7B668AF908B /* Pods_Flask_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E21214790800090AA0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C53E25214790800090AA0C /* Flask_macOS.framework in Frameworks */,
+				4961C169878BBBCEFBC81107 /* Pods_Flask_macOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E342147908D0090AA0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B65C017FE6B98FB0FC13053 /* Pods_Flask_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E3D2147908E0090AA0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C53E412147908E0090AA0C /* Flask_tvOS.framework in Frameworks */,
+				CCA971AE752AC657A95699C4 /* Pods_Flask_tvOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26A82A342146D769008C8009 = {
+			isa = PBXGroup;
+			children = (
+				26A82AC82146D80E008C8009 /* Sources */,
+				26A82AC92146D80E008C8009 /* Tests */,
+				26A82A5E2146D783008C8009 /* Reaktor-iOS */,
+				26A82A692146D783008C8009 /* Reaktor-iOSTests */,
+				26A82A962146D7A8008C8009 /* Reaktor-macOS */,
+				26A82AA12146D7A8008C8009 /* Reaktor-macOSTests */,
+				26A82AB22146D7B2008C8009 /* Reaktor-tvOS */,
+				26A82ABD2146D7B2008C8009 /* Reaktor-tvOSTests */,
+				26C53E01214790730090AA0C /* Flask-iOS */,
+				26C53E0C214790730090AA0C /* Flask-iOSTests */,
+				26C53E1D214790800090AA0C /* Flask-macOS */,
+				26C53E28214790800090AA0C /* Flask-macOSTests */,
+				26C53E392147908D0090AA0C /* Flask-tvOS */,
+				26C53E442147908E0090AA0C /* Flask-tvOSTests */,
+				26A82A3F2146D769008C8009 /* Products */,
+				AD3032DB8725C62F5A3F6997 /* Pods */,
+				E6A24196288E8AE550246B64 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		26A82A3F2146D769008C8009 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E00214790730090AA0C /* Flask_iOS.framework */,
+				26C53E08214790730090AA0C /* Flask-iOSTests.xctest */,
+				26C53E1C214790800090AA0C /* Flask_macOS.framework */,
+				26C53E24214790800090AA0C /* Flask-macOSTests.xctest */,
+				26C53E382147908D0090AA0C /* Flask_tvOS.framework */,
+				26C53E402147908E0090AA0C /* Flask-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26A82A5E2146D783008C8009 /* Reaktor-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				26A82A5F2146D783008C8009 /* Reaktor_iOS.h */,
+				26A82A602146D783008C8009 /* Info.plist */,
+			);
+			path = "Reaktor-iOS";
+			sourceTree = "<group>";
+		};
+		26A82A692146D783008C8009 /* Reaktor-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				26A82A6A2146D783008C8009 /* Reaktor_iOSTests.swift */,
+				26A82A6C2146D783008C8009 /* Info.plist */,
+			);
+			path = "Reaktor-iOSTests";
+			sourceTree = "<group>";
+		};
+		26A82A962146D7A8008C8009 /* Reaktor-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				26A82A972146D7A8008C8009 /* Reaktor_macOS.h */,
+				26A82A982146D7A8008C8009 /* Info.plist */,
+			);
+			path = "Reaktor-macOS";
+			sourceTree = "<group>";
+		};
+		26A82AA12146D7A8008C8009 /* Reaktor-macOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				26A82AA22146D7A8008C8009 /* Reaktor_macOSTests.swift */,
+				26A82AA42146D7A8008C8009 /* Info.plist */,
+			);
+			path = "Reaktor-macOSTests";
+			sourceTree = "<group>";
+		};
+		26A82AB22146D7B2008C8009 /* Reaktor-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				26A82AB32146D7B2008C8009 /* Reaktor_tvOS.h */,
+				26A82AB42146D7B2008C8009 /* Info.plist */,
+			);
+			path = "Reaktor-tvOS";
+			sourceTree = "<group>";
+		};
+		26A82ABD2146D7B2008C8009 /* Reaktor-tvOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				26A82ABE2146D7B2008C8009 /* Reaktor_tvOSTests.swift */,
+				26A82AC02146D7B2008C8009 /* Info.plist */,
+			);
+			path = "Reaktor-tvOSTests";
+			sourceTree = "<group>";
+		};
+		26A82AC82146D80E008C8009 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E50214790A90090AA0C /* FluxHelpers.swift */,
+				26C53E4F214790A90090AA0C /* FluxPublic.swift */,
+				26C53E51214790A90090AA0C /* Boxes */,
+				26C53E59214790A90090AA0C /* Dispatcher */,
+				26C53E55214790A90090AA0C /* Fluxor */,
+				26C53E5C214790A90090AA0C /* Reaction */,
+				26C53E5F214790A90090AA0C /* Store */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		26A82AC92146D80E008C8009 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				26C53EC4214790C00090AA0C /* DataFlowTests */,
+				26C53ECA214790C00090AA0C /* FluxTests */,
+				26C53ECF214790C00090AA0C /* LocksTests */,
+				26C53ED1214790C00090AA0C /* SampleClasses */,
+				26C53ECE214790C00090AA0C /* SetupTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		26C53E01214790730090AA0C /* Flask-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E02214790730090AA0C /* Flask_iOS.h */,
+				26C53E03214790730090AA0C /* Info.plist */,
+			);
+			path = "Flask-iOS";
+			sourceTree = "<group>";
+		};
+		26C53E0C214790730090AA0C /* Flask-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E0D214790730090AA0C /* Flask_iOSTests.swift */,
+				26C53E0F214790730090AA0C /* Info.plist */,
+			);
+			path = "Flask-iOSTests";
+			sourceTree = "<group>";
+		};
+		26C53E1D214790800090AA0C /* Flask-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E1E214790800090AA0C /* Flask_macOS.h */,
+				26C53E1F214790800090AA0C /* Info.plist */,
+			);
+			path = "Flask-macOS";
+			sourceTree = "<group>";
+		};
+		26C53E28214790800090AA0C /* Flask-macOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E29214790800090AA0C /* Flask_macOSTests.swift */,
+				26C53E2B214790800090AA0C /* Info.plist */,
+			);
+			path = "Flask-macOSTests";
+			sourceTree = "<group>";
+		};
+		26C53E392147908D0090AA0C /* Flask-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E3A2147908D0090AA0C /* Flask_tvOS.h */,
+				26C53E3B2147908D0090AA0C /* Info.plist */,
+			);
+			path = "Flask-tvOS";
+			sourceTree = "<group>";
+		};
+		26C53E442147908E0090AA0C /* Flask-tvOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E452147908E0090AA0C /* Flask_tvOSTests.swift */,
+				26C53E472147908E0090AA0C /* Info.plist */,
+			);
+			path = "Flask-tvOSTests";
+			sourceTree = "<group>";
+		};
+		26C53E51214790A90090AA0C /* Boxes */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E52214790A90090AA0C /* FluxDictionary.swift */,
+				26C53E53214790A90090AA0C /* FluxNSObjects.swift */,
+				26C53E54214790A90090AA0C /* FluxRef.swift */,
+			);
+			path = Boxes;
+			sourceTree = "<group>";
+		};
+		26C53E55214790A90090AA0C /* Fluxor */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E56214790A90090AA0C /* FluxChain.swift */,
+				26C53E57214790A90090AA0C /* FluxManager.swift */,
+				26C53E58214790A90090AA0C /* Fluxor.swift */,
+			);
+			path = Fluxor;
+			sourceTree = "<group>";
+		};
+		26C53E59214790A90090AA0C /* Dispatcher */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E5A214790A90090AA0C /* FluxDispatcher.swift */,
+				26C53E5B214790A90090AA0C /* FluxLock.swift */,
+			);
+			path = Dispatcher;
+			sourceTree = "<group>";
+		};
+		26C53E5C214790A90090AA0C /* Reaction */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E5D214790A90090AA0C /* FluxChange.swift */,
+				26C53E5E214790A90090AA0C /* FluxReaction.swift */,
+			);
+			path = Reaction;
+			sourceTree = "<group>";
+		};
+		26C53E5F214790A90090AA0C /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E60214790A90090AA0C /* FluxState.swift */,
+				26C53E61214790A90090AA0C /* FluxSerializer.swift */,
+				26C53E62214790A90090AA0C /* FluxArchiver.swift */,
+				26C53E63214790A90090AA0C /* FluxStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		26C53EC4214790C00090AA0C /* DataFlowTests */ = {
+			isa = PBXGroup;
+			children = (
+				26C53EC5214790C00090AA0C /* ReducerTests.swift */,
+				26C53EC6214790C00090AA0C /* SerializationTests.swift */,
+				26C53EC7214790C00090AA0C /* DictionaryTests.swift */,
+				26C53EC8214790C00090AA0C /* KronTests.swift */,
+				26C53EC9214790C00090AA0C /* ArchivingTests.swift */,
+			);
+			path = DataFlowTests;
+			sourceTree = "<group>";
+		};
+		26C53ECA214790C00090AA0C /* FluxTests */ = {
+			isa = PBXGroup;
+			children = (
+				26C53ECB214790C00090AA0C /* FluxTests.swift */,
+				26C53ECC214790C00090AA0C /* ChainTests.swift */,
+				26C53ECD214790C00090AA0C /* NestingTests.swift */,
+			);
+			path = FluxTests;
+			sourceTree = "<group>";
+		};
+		26C53ECF214790C00090AA0C /* LocksTests */ = {
+			isa = PBXGroup;
+			children = (
+				26C53ED0214790C00090AA0C /* LockTests.swift */,
+			);
+			path = LocksTests;
+			sourceTree = "<group>";
+		};
+		26C53ED1214790C00090AA0C /* SampleClasses */ = {
+			isa = PBXGroup;
+			children = (
+				26C53ED2214790C00090AA0C /* TestStore.swift */,
+				26C53ED3214790C00090AA0C /* Stores.swift */,
+				26C53ED4214790C00090AA0C /* TestOwner.swift */,
+			);
+			path = SampleClasses;
+			sourceTree = "<group>";
+		};
+		AD3032DB8725C62F5A3F6997 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9297C3098704CEE0C27B1C9D /* Pods-Reaktor-iOS.debug.xcconfig */,
+				F7C6A21D39F67D37934C6EA8 /* Pods-Reaktor-iOS.release.xcconfig */,
+				0C274EFCF73179B943CD3EA2 /* Pods-Reaktor-iOSTests.debug.xcconfig */,
+				0A3CB9BE7C8696AC195D5C19 /* Pods-Reaktor-iOSTests.release.xcconfig */,
+				38BFFFCD6F072157809E78A0 /* Pods-Reaktor-macOS.debug.xcconfig */,
+				D2B76A4269F0ECBB16EBD1E6 /* Pods-Reaktor-macOS.release.xcconfig */,
+				598EF4CC90CDF51D436D038E /* Pods-Reaktor-macOSTests.debug.xcconfig */,
+				DDC2E24140CF7BF6DB0B0D18 /* Pods-Reaktor-macOSTests.release.xcconfig */,
+				FCF9744D8DBAC7DD369275C1 /* Pods-Reaktor-tvOS.debug.xcconfig */,
+				4DD0926C55169B753178E95C /* Pods-Reaktor-tvOS.release.xcconfig */,
+				AF87E8EAD968BFA031274355 /* Pods-Reaktor-tvOSTests.debug.xcconfig */,
+				BAE25DF2041FE9D584D9F979 /* Pods-Reaktor-tvOSTests.release.xcconfig */,
+				381DEAC3DCFB39BEACA03807 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */,
+				452C9C4E09CB62E21C4E5240 /* Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig */,
+				54551A57CBC323C9D2D85A59 /* Pods-Reaktor-macOS-Reaktor-macOSTests.debug.xcconfig */,
+				99B8E75D79521F500CA851D4 /* Pods-Reaktor-macOS-Reaktor-macOSTests.release.xcconfig */,
+				075CD6D047CF6A418EAF8396 /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.debug.xcconfig */,
+				6800B2CB5843D3C26DF4FF9B /* Pods-Reaktor-tvOS-Reaktor-tvOSTests.release.xcconfig */,
+				ED4780D1557DF06CFE5BC50F /* Pods-Flask-iOS.debug.xcconfig */,
+				DB83DC670FBA7380BCF44DC2 /* Pods-Flask-iOS.release.xcconfig */,
+				BAEEDB7D9290E129BB957B22 /* Pods-Flask-iOSTests.debug.xcconfig */,
+				CAF9E0783B0078AD7B54DE4F /* Pods-Flask-iOSTests.release.xcconfig */,
+				63CBBD24ACE3B98A53EB7AAD /* Pods-Flask-macOS.debug.xcconfig */,
+				5FDD61F205F7DD5ACD32526F /* Pods-Flask-macOS.release.xcconfig */,
+				3BC6DCEA91A07911B9224987 /* Pods-Flask-macOSTests.debug.xcconfig */,
+				BB0F8B42F267D1A3216073B8 /* Pods-Flask-macOSTests.release.xcconfig */,
+				39BD126D20886B6542A943CE /* Pods-Flask-tvOS.debug.xcconfig */,
+				A5148CCA286230267555C28D /* Pods-Flask-tvOS.release.xcconfig */,
+				5AEE8057DC84A8C8143CDE1C /* Pods-Flask-tvOSTests.debug.xcconfig */,
+				53515E61CAAC9CADB2859B64 /* Pods-Flask-tvOSTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E6A24196288E8AE550246B64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */,
+				1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */,
+				C54000D406E19649E8976133 /* Pods_Reaktor_tvOSTests.framework */,
+				6529348FC7980F8A5E989DF0 /* libPods-Reaktor-iOS-Reaktor-iOSTests.a */,
+				90ED7E2C99449BF00BF8C4B8 /* libPods-Reaktor-macOS-Reaktor-macOSTests.a */,
+				22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */,
+				1853B0440831D5B76080A717 /* Pods_Reaktor_iOS.framework */,
+				88917E1F608AFE1E56480E6F /* Pods_Reaktor_macOS.framework */,
+				56B9FA86C8DFEE750F1FDD67 /* Pods_Reaktor_tvOS.framework */,
+				88E2614725FA0A1B2AD443CD /* Pods_Flask_iOS.framework */,
+				9AEFF7AF4934A2F0B14897B9 /* Pods_Flask_iOSTests.framework */,
+				7E158D5A8457C05541B83919 /* Pods_Flask_macOS.framework */,
+				37BA23FC2296D5E31DACBA2A /* Pods_Flask_macOSTests.framework */,
+				1BC09794A7DC750FA3E76238 /* Pods_Flask_tvOS.framework */,
+				8753316831ADF7C155E43D8B /* Pods_Flask_tvOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		26C53DFD214790730090AA0C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C53E10214790730090AA0C /* Flask_iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E19214790800090AA0C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C53E2C214790800090AA0C /* Flask_macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E352147908D0090AA0C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C53E482147908E0090AA0C /* Flask_tvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		26C53DFF214790730090AA0C /* Flask-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26C53E11214790730090AA0C /* Build configuration list for PBXNativeTarget "Flask-iOS" */;
+			buildPhases = (
+				13F985F52C1B294B8DE46ACE /* [CP] Check Pods Manifest.lock */,
+				26C53DFB214790730090AA0C /* Sources */,
+				26C53DFC214790730090AA0C /* Frameworks */,
+				26C53DFD214790730090AA0C /* Headers */,
+				26C53DFE214790730090AA0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Flask-iOS";
+			productName = "Flask-iOS";
+			productReference = 26C53E00214790730090AA0C /* Flask_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		26C53E07214790730090AA0C /* Flask-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26C53E14214790730090AA0C /* Build configuration list for PBXNativeTarget "Flask-iOSTests" */;
+			buildPhases = (
+				31F9F1F81B38A1AE0F45F828 /* [CP] Check Pods Manifest.lock */,
+				26C53E04214790730090AA0C /* Sources */,
+				26C53E05214790730090AA0C /* Frameworks */,
+				26C53E06214790730090AA0C /* Resources */,
+				C80B7CB4BDF646062EF2EB88 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26C53E0B214790730090AA0C /* PBXTargetDependency */,
+			);
+			name = "Flask-iOSTests";
+			productName = "Flask-iOSTests";
+			productReference = 26C53E08214790730090AA0C /* Flask-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		26C53E1B214790800090AA0C /* Flask-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26C53E2D214790800090AA0C /* Build configuration list for PBXNativeTarget "Flask-macOS" */;
+			buildPhases = (
+				B7150FCE0421D10209DDEDFA /* [CP] Check Pods Manifest.lock */,
+				26C53E17214790800090AA0C /* Sources */,
+				26C53E18214790800090AA0C /* Frameworks */,
+				26C53E19214790800090AA0C /* Headers */,
+				26C53E1A214790800090AA0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Flask-macOS";
+			productName = "Flask-macOS";
+			productReference = 26C53E1C214790800090AA0C /* Flask_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		26C53E23214790800090AA0C /* Flask-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26C53E30214790800090AA0C /* Build configuration list for PBXNativeTarget "Flask-macOSTests" */;
+			buildPhases = (
+				22F501E60EF1E8D1D45FA4E8 /* [CP] Check Pods Manifest.lock */,
+				26C53E20214790800090AA0C /* Sources */,
+				26C53E21214790800090AA0C /* Frameworks */,
+				26C53E22214790800090AA0C /* Resources */,
+				30586178188FC84DF3C63E84 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26C53E27214790800090AA0C /* PBXTargetDependency */,
+			);
+			name = "Flask-macOSTests";
+			productName = "Flask-macOSTests";
+			productReference = 26C53E24214790800090AA0C /* Flask-macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		26C53E372147908D0090AA0C /* Flask-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26C53E492147908E0090AA0C /* Build configuration list for PBXNativeTarget "Flask-tvOS" */;
+			buildPhases = (
+				8870029B8ADE4A5DD3FAFA5D /* [CP] Check Pods Manifest.lock */,
+				26C53E332147908D0090AA0C /* Sources */,
+				26C53E342147908D0090AA0C /* Frameworks */,
+				26C53E352147908D0090AA0C /* Headers */,
+				26C53E362147908D0090AA0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Flask-tvOS";
+			productName = "Flask-tvOS";
+			productReference = 26C53E382147908D0090AA0C /* Flask_tvOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		26C53E3F2147908E0090AA0C /* Flask-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26C53E4C2147908E0090AA0C /* Build configuration list for PBXNativeTarget "Flask-tvOSTests" */;
+			buildPhases = (
+				44ABF3B02D0E70E272D9EF39 /* [CP] Check Pods Manifest.lock */,
+				26C53E3C2147908E0090AA0C /* Sources */,
+				26C53E3D2147908E0090AA0C /* Frameworks */,
+				26C53E3E2147908E0090AA0C /* Resources */,
+				DBCC61933C89CA38D12B2B1F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26C53E432147908E0090AA0C /* PBXTargetDependency */,
+			);
+			name = "Flask-tvOSTests";
+			productName = "Flask-tvOSTests";
+			productReference = 26C53E402147908E0090AA0C /* Flask-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26A82A352146D769008C8009 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = eonflux;
+				TargetAttributes = {
+					26C53DFF214790730090AA0C = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					26C53E07214790730090AA0C = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					26C53E1B214790800090AA0C = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					26C53E23214790800090AA0C = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					26C53E372147908D0090AA0C = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					26C53E3F2147908E0090AA0C = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 26A82A382146D769008C8009 /* Build configuration list for PBXProject "Flask" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 26A82A342146D769008C8009;
+			productRefGroup = 26A82A3F2146D769008C8009 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26C53DFF214790730090AA0C /* Flask-iOS */,
+				26C53E07214790730090AA0C /* Flask-iOSTests */,
+				26C53E1B214790800090AA0C /* Flask-macOS */,
+				26C53E23214790800090AA0C /* Flask-macOSTests */,
+				26C53E372147908D0090AA0C /* Flask-tvOS */,
+				26C53E3F2147908E0090AA0C /* Flask-tvOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26C53DFE214790730090AA0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E06214790730090AA0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E1A214790800090AA0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E22214790800090AA0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E362147908D0090AA0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E3E2147908E0090AA0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13F985F52C1B294B8DE46ACE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flask-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22F501E60EF1E8D1D45FA4E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flask-macOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30586178188FC84DF3C63E84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Flask-macOSTests/Pods-Flask-macOSTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Delayed-macOS/Delayed.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Delayed.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flask-macOSTests/Pods-Flask-macOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31F9F1F81B38A1AE0F45F828 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flask-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44ABF3B02D0E70E272D9EF39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flask-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8870029B8ADE4A5DD3FAFA5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flask-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7150FCE0421D10209DDEDFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flask-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C80B7CB4BDF646062EF2EB88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Flask-iOSTests/Pods-Flask-iOSTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Delayed-iOS/Delayed.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Delayed.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flask-iOSTests/Pods-Flask-iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBCC61933C89CA38D12B2B1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Flask-tvOSTests/Pods-Flask-tvOSTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Delayed-tvOS/Delayed.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Delayed.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flask-tvOSTests/Pods-Flask-tvOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26C53DFB214790730090AA0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C53E82214790A90090AA0C /* FluxChain.swift in Sources */,
+				26C53EA6214790A90090AA0C /* FluxReaction.swift in Sources */,
+				26C53EB8214790A90090AA0C /* FluxArchiver.swift in Sources */,
+				26C53EB2214790A90090AA0C /* FluxSerializer.swift in Sources */,
+				26C53E76214790A90090AA0C /* FluxNSObjects.swift in Sources */,
+				26C53E88214790A90090AA0C /* FluxManager.swift in Sources */,
+				26C53EBE214790A90090AA0C /* FluxStore.swift in Sources */,
+				26C53E9A214790A90090AA0C /* FluxLock.swift in Sources */,
+				26C53E6A214790A90090AA0C /* FluxHelpers.swift in Sources */,
+				26C53E64214790A90090AA0C /* FluxPublic.swift in Sources */,
+				26C53E94214790A90090AA0C /* FluxDispatcher.swift in Sources */,
+				26C53E70214790A90090AA0C /* FluxDictionary.swift in Sources */,
+				26C53EAC214790A90090AA0C /* FluxState.swift in Sources */,
+				26C53E7C214790A90090AA0C /* FluxRef.swift in Sources */,
+				26C53E8E214790A90090AA0C /* Fluxor.swift in Sources */,
+				26C53EA0214790A90090AA0C /* FluxChange.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E04214790730090AA0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C53EE4214790C00090AA0C /* FluxTests.swift in Sources */,
+				26C53EB9214790A90090AA0C /* FluxArchiver.swift in Sources */,
+				26C53EA1214790A90090AA0C /* FluxChange.swift in Sources */,
+				26C53EBF214790A90090AA0C /* FluxStore.swift in Sources */,
+				26C53EEA214790C00090AA0C /* NestingTests.swift in Sources */,
+				26C53EED214790C00090AA0C /* SetupTests.swift in Sources */,
+				26C53E71214790A90090AA0C /* FluxDictionary.swift in Sources */,
+				26C53E95214790A90090AA0C /* FluxDispatcher.swift in Sources */,
+				26C53EDB214790C00090AA0C /* DictionaryTests.swift in Sources */,
+				26C53EF9214790C00090AA0C /* TestOwner.swift in Sources */,
+				26C53E0E214790730090AA0C /* Flask_iOSTests.swift in Sources */,
+				26C53E6B214790A90090AA0C /* FluxHelpers.swift in Sources */,
+				26C53EF6214790C00090AA0C /* Stores.swift in Sources */,
+				26C53EE7214790C00090AA0C /* ChainTests.swift in Sources */,
+				26C53E77214790A90090AA0C /* FluxNSObjects.swift in Sources */,
+				26C53E9B214790A90090AA0C /* FluxLock.swift in Sources */,
+				26C53EDE214790C00090AA0C /* KronTests.swift in Sources */,
+				26C53EF3214790C00090AA0C /* TestStore.swift in Sources */,
+				26C53E83214790A90090AA0C /* FluxChain.swift in Sources */,
+				26C53EAD214790A90090AA0C /* FluxState.swift in Sources */,
+				26C53EF0214790C00090AA0C /* LockTests.swift in Sources */,
+				26C53EE1214790C00090AA0C /* ArchivingTests.swift in Sources */,
+				26C53E7D214790A90090AA0C /* FluxRef.swift in Sources */,
+				26C53ED5214790C00090AA0C /* ReducerTests.swift in Sources */,
+				26C53E89214790A90090AA0C /* FluxManager.swift in Sources */,
+				26C53ED8214790C00090AA0C /* SerializationTests.swift in Sources */,
+				26C53E8F214790A90090AA0C /* Fluxor.swift in Sources */,
+				26C53EA7214790A90090AA0C /* FluxReaction.swift in Sources */,
+				26C53E65214790A90090AA0C /* FluxPublic.swift in Sources */,
+				26C53EB3214790A90090AA0C /* FluxSerializer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E17214790800090AA0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C53E84214790A90090AA0C /* FluxChain.swift in Sources */,
+				26C53EA8214790A90090AA0C /* FluxReaction.swift in Sources */,
+				26C53EBA214790A90090AA0C /* FluxArchiver.swift in Sources */,
+				26C53EB4214790A90090AA0C /* FluxSerializer.swift in Sources */,
+				26C53E78214790A90090AA0C /* FluxNSObjects.swift in Sources */,
+				26C53E8A214790A90090AA0C /* FluxManager.swift in Sources */,
+				26C53EC0214790A90090AA0C /* FluxStore.swift in Sources */,
+				26C53E9C214790A90090AA0C /* FluxLock.swift in Sources */,
+				26C53E6C214790A90090AA0C /* FluxHelpers.swift in Sources */,
+				26C53E66214790A90090AA0C /* FluxPublic.swift in Sources */,
+				26C53E96214790A90090AA0C /* FluxDispatcher.swift in Sources */,
+				26C53E72214790A90090AA0C /* FluxDictionary.swift in Sources */,
+				26C53EAE214790A90090AA0C /* FluxState.swift in Sources */,
+				26C53E7E214790A90090AA0C /* FluxRef.swift in Sources */,
+				26C53E90214790A90090AA0C /* Fluxor.swift in Sources */,
+				26C53EA2214790A90090AA0C /* FluxChange.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E20214790800090AA0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C53EE5214790C00090AA0C /* FluxTests.swift in Sources */,
+				26C53EBB214790A90090AA0C /* FluxArchiver.swift in Sources */,
+				26C53EA3214790A90090AA0C /* FluxChange.swift in Sources */,
+				26C53EC1214790A90090AA0C /* FluxStore.swift in Sources */,
+				26C53EEB214790C00090AA0C /* NestingTests.swift in Sources */,
+				26C53EEE214790C00090AA0C /* SetupTests.swift in Sources */,
+				26C53E73214790A90090AA0C /* FluxDictionary.swift in Sources */,
+				26C53E97214790A90090AA0C /* FluxDispatcher.swift in Sources */,
+				26C53EDC214790C00090AA0C /* DictionaryTests.swift in Sources */,
+				26C53EFA214790C00090AA0C /* TestOwner.swift in Sources */,
+				26C53E2A214790800090AA0C /* Flask_macOSTests.swift in Sources */,
+				26C53E6D214790A90090AA0C /* FluxHelpers.swift in Sources */,
+				26C53EF7214790C00090AA0C /* Stores.swift in Sources */,
+				26C53EE8214790C00090AA0C /* ChainTests.swift in Sources */,
+				26C53E79214790A90090AA0C /* FluxNSObjects.swift in Sources */,
+				26C53E9D214790A90090AA0C /* FluxLock.swift in Sources */,
+				26C53EDF214790C00090AA0C /* KronTests.swift in Sources */,
+				26C53EF4214790C00090AA0C /* TestStore.swift in Sources */,
+				26C53E85214790A90090AA0C /* FluxChain.swift in Sources */,
+				26C53EAF214790A90090AA0C /* FluxState.swift in Sources */,
+				26C53EF1214790C00090AA0C /* LockTests.swift in Sources */,
+				26C53EE2214790C00090AA0C /* ArchivingTests.swift in Sources */,
+				26C53E7F214790A90090AA0C /* FluxRef.swift in Sources */,
+				26C53ED6214790C00090AA0C /* ReducerTests.swift in Sources */,
+				26C53E8B214790A90090AA0C /* FluxManager.swift in Sources */,
+				26C53ED9214790C00090AA0C /* SerializationTests.swift in Sources */,
+				26C53E91214790A90090AA0C /* Fluxor.swift in Sources */,
+				26C53EA9214790A90090AA0C /* FluxReaction.swift in Sources */,
+				26C53E67214790A90090AA0C /* FluxPublic.swift in Sources */,
+				26C53EB5214790A90090AA0C /* FluxSerializer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E332147908D0090AA0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C53E86214790A90090AA0C /* FluxChain.swift in Sources */,
+				26C53EAA214790A90090AA0C /* FluxReaction.swift in Sources */,
+				26C53EBC214790A90090AA0C /* FluxArchiver.swift in Sources */,
+				26C53EB6214790A90090AA0C /* FluxSerializer.swift in Sources */,
+				26C53E7A214790A90090AA0C /* FluxNSObjects.swift in Sources */,
+				26C53E8C214790A90090AA0C /* FluxManager.swift in Sources */,
+				26C53EC2214790A90090AA0C /* FluxStore.swift in Sources */,
+				26C53E9E214790A90090AA0C /* FluxLock.swift in Sources */,
+				26C53E6E214790A90090AA0C /* FluxHelpers.swift in Sources */,
+				26C53E68214790A90090AA0C /* FluxPublic.swift in Sources */,
+				26C53E98214790A90090AA0C /* FluxDispatcher.swift in Sources */,
+				26C53E74214790A90090AA0C /* FluxDictionary.swift in Sources */,
+				26C53EB0214790A90090AA0C /* FluxState.swift in Sources */,
+				26C53E80214790A90090AA0C /* FluxRef.swift in Sources */,
+				26C53E92214790A90090AA0C /* Fluxor.swift in Sources */,
+				26C53EA4214790A90090AA0C /* FluxChange.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C53E3C2147908E0090AA0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C53EE6214790C00090AA0C /* FluxTests.swift in Sources */,
+				26C53EBD214790A90090AA0C /* FluxArchiver.swift in Sources */,
+				26C53EA5214790A90090AA0C /* FluxChange.swift in Sources */,
+				26C53EC3214790A90090AA0C /* FluxStore.swift in Sources */,
+				26C53EEC214790C00090AA0C /* NestingTests.swift in Sources */,
+				26C53EEF214790C00090AA0C /* SetupTests.swift in Sources */,
+				26C53E75214790A90090AA0C /* FluxDictionary.swift in Sources */,
+				26C53E99214790A90090AA0C /* FluxDispatcher.swift in Sources */,
+				26C53EDD214790C00090AA0C /* DictionaryTests.swift in Sources */,
+				26C53EFB214790C00090AA0C /* TestOwner.swift in Sources */,
+				26C53E462147908E0090AA0C /* Flask_tvOSTests.swift in Sources */,
+				26C53E6F214790A90090AA0C /* FluxHelpers.swift in Sources */,
+				26C53EF8214790C00090AA0C /* Stores.swift in Sources */,
+				26C53EE9214790C00090AA0C /* ChainTests.swift in Sources */,
+				26C53E7B214790A90090AA0C /* FluxNSObjects.swift in Sources */,
+				26C53E9F214790A90090AA0C /* FluxLock.swift in Sources */,
+				26C53EE0214790C00090AA0C /* KronTests.swift in Sources */,
+				26C53EF5214790C00090AA0C /* TestStore.swift in Sources */,
+				26C53E87214790A90090AA0C /* FluxChain.swift in Sources */,
+				26C53EB1214790A90090AA0C /* FluxState.swift in Sources */,
+				26C53EF2214790C00090AA0C /* LockTests.swift in Sources */,
+				26C53EE3214790C00090AA0C /* ArchivingTests.swift in Sources */,
+				26C53E81214790A90090AA0C /* FluxRef.swift in Sources */,
+				26C53ED7214790C00090AA0C /* ReducerTests.swift in Sources */,
+				26C53E8D214790A90090AA0C /* FluxManager.swift in Sources */,
+				26C53EDA214790C00090AA0C /* SerializationTests.swift in Sources */,
+				26C53E93214790A90090AA0C /* Fluxor.swift in Sources */,
+				26C53EAB214790A90090AA0C /* FluxReaction.swift in Sources */,
+				26C53E69214790A90090AA0C /* FluxPublic.swift in Sources */,
+				26C53EB7214790A90090AA0C /* FluxSerializer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26C53E0B214790730090AA0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26C53DFF214790730090AA0C /* Flask-iOS */;
+			targetProxy = 26C53E0A214790730090AA0C /* PBXContainerItemProxy */;
+		};
+		26C53E27214790800090AA0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26C53E1B214790800090AA0C /* Flask-macOS */;
+			targetProxy = 26C53E26214790800090AA0C /* PBXContainerItemProxy */;
+		};
+		26C53E432147908E0090AA0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26C53E372147908D0090AA0C /* Flask-tvOS */;
+			targetProxy = 26C53E422147908E0090AA0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		26A82A502146D769008C8009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		26A82A512146D769008C8009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		26C53E12214790730090AA0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED4780D1557DF06CFE5BC50F /* Pods-Flask-iOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Flask-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Flask-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26C53E13214790730090AA0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB83DC670FBA7380BCF44DC2 /* Pods-Flask-iOS.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Flask-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Flask-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		26C53E15214790730090AA0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAEEDB7D9290E129BB957B22 /* Pods-Flask-iOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Flask-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Flask-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26C53E16214790730090AA0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAF9E0783B0078AD7B54DE4F /* Pods-Flask-iOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Flask-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Flask-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		26C53E2E214790800090AA0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63CBBD24ACE3B98A53EB7AAD /* Pods-Flask-macOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Flask-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Flask-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		26C53E2F214790800090AA0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FDD61F205F7DD5ACD32526F /* Pods-Flask-macOS.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Flask-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Flask-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		26C53E31214790800090AA0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BC6DCEA91A07911B9224987 /* Pods-Flask-macOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Flask-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Flask-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		26C53E32214790800090AA0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB0F8B42F267D1A3216073B8 /* Pods-Flask-macOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Flask-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Flask-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		26C53E4A2147908E0090AA0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39BD126D20886B6542A943CE /* Pods-Flask-tvOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Flask-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Flask-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Debug;
+		};
+		26C53E4B2147908E0090AA0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5148CCA286230267555C28D /* Pods-Flask-tvOS.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Flask-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Flask-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Release;
+		};
+		26C53E4D2147908E0090AA0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AEE8057DC84A8C8143CDE1C /* Pods-Flask-tvOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Flask-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Flask-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Debug;
+		};
+		26C53E4E2147908E0090AA0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53515E61CAAC9CADB2859B64 /* Pods-Flask-tvOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Flask-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eonflux.Flask-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26A82A382146D769008C8009 /* Build configuration list for PBXProject "Flask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A82A502146D769008C8009 /* Debug */,
+				26A82A512146D769008C8009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26C53E11214790730090AA0C /* Build configuration list for PBXNativeTarget "Flask-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26C53E12214790730090AA0C /* Debug */,
+				26C53E13214790730090AA0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26C53E14214790730090AA0C /* Build configuration list for PBXNativeTarget "Flask-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26C53E15214790730090AA0C /* Debug */,
+				26C53E16214790730090AA0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26C53E2D214790800090AA0C /* Build configuration list for PBXNativeTarget "Flask-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26C53E2E214790800090AA0C /* Debug */,
+				26C53E2F214790800090AA0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26C53E30214790800090AA0C /* Build configuration list for PBXNativeTarget "Flask-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26C53E31214790800090AA0C /* Debug */,
+				26C53E32214790800090AA0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26C53E492147908E0090AA0C /* Build configuration list for PBXNativeTarget "Flask-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26C53E4A2147908E0090AA0C /* Debug */,
+				26C53E4B2147908E0090AA0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26C53E4C2147908E0090AA0C /* Build configuration list for PBXNativeTarget "Flask-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26C53E4D2147908E0090AA0C /* Debug */,
+				26C53E4E2147908E0090AA0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26A82A352146D769008C8009 /* Project object */;
+}

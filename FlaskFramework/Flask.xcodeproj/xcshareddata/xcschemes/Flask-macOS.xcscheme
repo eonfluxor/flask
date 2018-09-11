@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "26A82A942146D7A7008C8009"
-               BuildableName = "Reaktor_macOS.framework"
-               BlueprintName = "Reaktor-macOS"
-               ReferencedContainer = "container:Reaktor.xcodeproj">
+               BlueprintIdentifier = "26C53E1B214790800090AA0C"
+               BuildableName = "Flask_macOS.framework"
+               BlueprintName = "Flask-macOS"
+               ReferencedContainer = "container:Flask.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,27 +26,26 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "26A82A9C2146D7A8008C8009"
-               BuildableName = "Reaktor-macOSTests.xctest"
-               BlueprintName = "Reaktor-macOSTests"
-               ReferencedContainer = "container:Reaktor.xcodeproj">
+               BlueprintIdentifier = "26C53E23214790800090AA0C"
+               BuildableName = "Flask-macOSTests.xctest"
+               BlueprintName = "Flask-macOSTests"
+               ReferencedContainer = "container:Flask.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "26A82A942146D7A7008C8009"
-            BuildableName = "Reaktor_macOS.framework"
-            BlueprintName = "Reaktor-macOS"
-            ReferencedContainer = "container:Reaktor.xcodeproj">
+            BlueprintIdentifier = "26C53E1B214790800090AA0C"
+            BuildableName = "Flask_macOS.framework"
+            BlueprintName = "Flask-macOS"
+            ReferencedContainer = "container:Flask.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,10 +64,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "26A82A942146D7A7008C8009"
-            BuildableName = "Reaktor_macOS.framework"
-            BlueprintName = "Reaktor-macOS"
-            ReferencedContainer = "container:Reaktor.xcodeproj">
+            BlueprintIdentifier = "26C53E1B214790800090AA0C"
+            BuildableName = "Flask_macOS.framework"
+            BlueprintName = "Flask-macOS"
+            ReferencedContainer = "container:Flask.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,10 +82,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "26A82A942146D7A7008C8009"
-            BuildableName = "Reaktor_macOS.framework"
-            BlueprintName = "Reaktor-macOS"
-            ReferencedContainer = "container:Reaktor.xcodeproj">
+            BlueprintIdentifier = "26C53E1B214790800090AA0C"
+            BuildableName = "Flask_macOS.framework"
+            BlueprintName = "Flask-macOS"
+            ReferencedContainer = "container:Flask.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

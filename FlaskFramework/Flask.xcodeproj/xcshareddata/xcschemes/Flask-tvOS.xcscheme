@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "26A82AB02146D7B2008C8009"
-               BuildableName = "Reaktor_tvOS.framework"
-               BlueprintName = "Reaktor-tvOS"
-               ReferencedContainer = "container:Reaktor.xcodeproj">
+               BlueprintIdentifier = "26C53E372147908D0090AA0C"
+               BuildableName = "Flask_tvOS.framework"
+               BlueprintName = "Flask-tvOS"
+               ReferencedContainer = "container:Flask.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,27 +26,26 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "26A82AB82146D7B2008C8009"
-               BuildableName = "Reaktor-tvOSTests.xctest"
-               BlueprintName = "Reaktor-tvOSTests"
-               ReferencedContainer = "container:Reaktor.xcodeproj">
+               BlueprintIdentifier = "26C53E3F2147908E0090AA0C"
+               BuildableName = "Flask-tvOSTests.xctest"
+               BlueprintName = "Flask-tvOSTests"
+               ReferencedContainer = "container:Flask.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "26A82AB02146D7B2008C8009"
-            BuildableName = "Reaktor_tvOS.framework"
-            BlueprintName = "Reaktor-tvOS"
-            ReferencedContainer = "container:Reaktor.xcodeproj">
+            BlueprintIdentifier = "26C53E372147908D0090AA0C"
+            BuildableName = "Flask_tvOS.framework"
+            BlueprintName = "Flask-tvOS"
+            ReferencedContainer = "container:Flask.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,10 +64,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "26A82AB02146D7B2008C8009"
-            BuildableName = "Reaktor_tvOS.framework"
-            BlueprintName = "Reaktor-tvOS"
-            ReferencedContainer = "container:Reaktor.xcodeproj">
+            BlueprintIdentifier = "26C53E372147908D0090AA0C"
+            BuildableName = "Flask_tvOS.framework"
+            BlueprintName = "Flask-tvOS"
+            ReferencedContainer = "container:Flask.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,10 +82,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "26A82AB02146D7B2008C8009"
-            BuildableName = "Reaktor_tvOS.framework"
-            BlueprintName = "Reaktor-tvOS"
-            ReferencedContainer = "container:Reaktor.xcodeproj">
+            BlueprintIdentifier = "26C53E372147908D0090AA0C"
+            BuildableName = "Flask_tvOS.framework"
+            BlueprintName = "Flask-tvOS"
+            ReferencedContainer = "container:Flask.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

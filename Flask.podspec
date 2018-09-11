@@ -1,10 +1,10 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = "Reaktor"
+  s.name         = "Flask"
   s.version      = '0.0.9'
-  s.summary      = "Reaktor is awesome!"
-  s.homepage     = "https://github.com/eonfluxor/Reaktor"
+  s.summary      = "Flask Reactor"
+  s.homepage     = "https://github.com/eonfluxor/flask"
   s.license      = "MIT"
   s.author             = { "Eonflux" => "eonflux@gmail.com" }
   s.social_media_url   = "http://twitter.com/eonfluxor"
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.10'
   s.tvos.deployment_target = '9.0'
    
-  s.source       = { :git => "https://github.com/eonfluxor/Reaktor.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/eonfluxor/flask.git", :tag => "v#{s.version}" }
 
   s.source_files = 'Reaktor/Sources/**/*.swift'
   s.swift_version = '4.1'

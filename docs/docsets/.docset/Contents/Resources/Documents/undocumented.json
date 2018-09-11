@@ -1,10 +1,339 @@
 {
   "warnings": [
     {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Boxes/FluxDictionary.swift",
+      "line": 15,
+      "symbol": "FluxStateObservable",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Boxes/FluxDictionary.swift",
+      "line": 16,
+      "symbol": "FluxStateObservable.toFluxDictionaryRef()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Boxes/FluxDictionary.swift",
+      "line": 19,
+      "symbol": "FluxDictionaryRef",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Boxes/FluxDictionary.swift",
+      "line": 25,
+      "symbol": "FluxDictionaryRef.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Boxes/FluxDictionary.swift",
+      "line": 29,
+      "symbol": "FluxDictionaryRef.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Boxes/FluxDictionary.swift",
+      "line": 61,
+      "symbol": "FluxDictionaryRef.toFluxDictionaryRef()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Boxes/FluxDictionary.swift",
+      "line": 65,
+      "symbol": "FluxDictionaryRef.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Boxes/FluxDictionary.swift",
+      "line": 76,
+      "symbol": "FluxDictionaryRef.keys()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Boxes/FluxDictionary.swift",
+      "line": 80,
+      "symbol": "FluxDictionaryRef.count()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Boxes/FluxDictionary.swift",
+      "line": 90,
+      "symbol": "FluxDictionaryRef.==(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Boxes/FluxRef.swift",
+      "line": 16,
+      "symbol": "FluxRef",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Boxes/FluxRef.swift",
+      "line": 20,
+      "symbol": "FluxRef.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Dispatcher/FluxDispatcher.swift",
+      "line": null,
+      "symbol": "FluxDispatcher",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Dispatcher/FluxDispatcher.swift",
+      "line": 16,
+      "symbol": "FluxDispatcher",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Dispatcher/FluxLock.swift",
+      "line": 15,
+      "symbol": "FluxLock",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Dispatcher/FluxLock.swift",
+      "line": 19,
+      "symbol": "FluxLock.init(dispatcher:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Dispatcher/FluxLock.swift",
+      "line": 27,
+      "symbol": "FluxLock.release()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Dispatcher/FluxLock.swift",
+      "line": 34,
+      "symbol": "FluxDispatcher.releaseAllLocks()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Dispatcher/FluxLock.swift",
+      "line": 39,
+      "symbol": "FluxDispatcher.addLock(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Dispatcher/FluxLock.swift",
+      "line": 44,
+      "symbol": "FluxDispatcher.removeLock(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Dispatcher/FluxLock.swift",
+      "line": 49,
+      "symbol": "FluxDispatcher.applyLocks()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxHelpers.swift",
+      "line": 16,
+      "symbol": "FluxStoreMutator",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxHelpers.swift",
+      "line": 17,
+      "symbol": "FluxReactionClosure",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxHelpers.swift",
+      "line": 18,
+      "symbol": "FluxorClosure",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxHelpers.swift",
+      "line": 19,
+      "symbol": "FluxStateDictionaryType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxHelpers.swift",
+      "line": 20,
+      "symbol": "FluxNil",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxHelpers.swift",
+      "line": 21,
+      "symbol": "FluxMutatorParams",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxHelpers.swift",
+      "line": 22,
+      "symbol": "FluxActions",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxHelpers.swift",
+      "line": 23,
+      "symbol": "FluxProps",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxHelpers.swift",
+      "line": 29,
+      "symbol": "isFluxNil(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxHelpers.swift",
       "line": 51,
       "symbol": "FluxAnyEquatable",
       "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxPublic.swift",
+      "line": 33,
+      "symbol": "Flux.disposeDispatchQueue()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxPublic.swift",
+      "line": 37,
+      "symbol": "Flux.purgeOrphans()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxPublic.swift",
+      "line": 44,
+      "symbol": "Flux.instance(ownedBy:binding:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxPublic.swift",
+      "line": 48,
+      "symbol": "Flux.instance(ownedBy:binding:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxPublic.swift",
+      "line": 55,
+      "symbol": "Flux.instance(ownedBy:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxPublic.swift",
+      "line": 63,
+      "symbol": "Flux.lock()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxPublic.swift",
+      "line": 68,
+      "symbol": "Flux.lock(action:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxPublic.swift",
+      "line": 72,
+      "symbol": "Flux.lock(action:payload:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxPublic.swift",
+      "line": 84,
+      "symbol": "Flux.releaseAllLocks()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxPublic.swift",
+      "line": 92,
+      "symbol": "Flux.action(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/FluxPublic.swift",
+      "line": 96,
+      "symbol": "Flux.action(_:payload:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/FluxChain.swift",
+      "line": 15,
+      "symbol": "FluxMutationChain",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/FluxChain.swift",
+      "line": 18,
+      "symbol": "FluxMutationChain.commit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/FluxChain.swift",
+      "line": 19,
+      "symbol": "FluxMutationChain.abort",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/FluxChain.swift",
+      "line": 21,
+      "symbol": "FluxMutationChain.mutate(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/FluxChain.swift",
+      "line": 69,
+      "symbol": "FluxorConcrete.mutate(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/Fluxor.swift",
+      "line": null,
+      "symbol": "FluxorConcrete",
+      "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
@@ -16,8 +345,22 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/Fluxor.swift",
+      "line": 19,
+      "symbol": "Fluxor.reactor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/Fluxor.swift",
       "line": 21,
       "symbol": "Fluxor.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/Fluxor.swift",
+      "line": 45,
+      "symbol": "Fluxor.getOwner()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -29,10 +372,52 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/Fluxor.swift",
+      "line": 67,
+      "symbol": "FluxorConcrete.getOwner()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/Fluxor.swift",
+      "line": 71,
+      "symbol": "FluxorConcrete.bind()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/Fluxor.swift",
+      "line": 92,
+      "symbol": "FluxorConcrete.unbind(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/Fluxor.swift",
+      "line": 115,
+      "symbol": "FluxorConcrete.mutate(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Fluxor/Fluxor.swift",
+      "line": 127,
+      "symbol": "FluxorConcrete.store(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxChange.swift",
       "line": null,
       "symbol": "FluxChangeTemplate",
       "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxChange.swift",
+      "line": 18,
+      "symbol": "FluxChangeTemplate.unwrapValue(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -64,6 +449,90 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxChange.swift",
+      "line": 41,
+      "symbol": "FluxChangeTemplate",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxReaction.swift",
+      "line": null,
+      "symbol": "FluxReaction",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxReaction.swift",
+      "line": 17,
+      "symbol": "FluxReaction",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxReaction.swift",
+      "line": 23,
+      "symbol": "FluxReaction.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxReaction.swift",
+      "line": 28,
+      "symbol": "FluxReaction.changed()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxReaction.swift",
+      "line": 32,
+      "symbol": "FluxReaction.on(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxReaction.swift",
+      "line": 36,
+      "symbol": "FluxReaction.on(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxReaction.swift",
+      "line": 51,
+      "symbol": "FluxReaction.at(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxReaction.swift",
+      "line": 82,
+      "symbol": "FluxReaction.reduceChanges(store:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxReaction.swift",
+      "line": 90,
+      "symbol": "FluxReaction.reduceChanges(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxReaction.swift",
+      "line": 110,
+      "symbol": "FluxReaction.change(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxReaction.swift",
+      "line": 119,
+      "symbol": "FluxReaction.change(_:_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxArchiver.swift",
       "line": 19,
       "symbol": "FluxStore.archiveKeySpace()",
@@ -92,10 +561,269 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxArchiver.swift",
+      "line": 110,
+      "symbol": "FluxStore.purgeArchive()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxSerializer.swift",
+      "line": 15,
+      "symbol": "FluxSerializer",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxSerializer.swift",
+      "line": 17,
+      "symbol": "FluxSerializer.jsonFromState(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxSerializer.swift",
+      "line": 25,
+      "symbol": "FluxSerializer.stateFromJson(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxSerializer.swift",
+      "line": 32,
+      "symbol": "FluxSerializer.dataFromState(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxSerializer.swift",
+      "line": 38,
+      "symbol": "FluxSerializer.stateFromData(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxSerializer.swift",
+      "line": 44,
+      "symbol": "FluxSerializer.flattenDictionary(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxSerializer.swift",
+      "line": 68,
+      "symbol": "FluxSerializer.nestDictionaries(namespace:root:children:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxSerializer.swift",
+      "line": 96,
+      "symbol": "FluxSerializer.isDictionaryRef(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxState.swift",
+      "line": null,
+      "symbol": "FluxState",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxState.swift",
+      "line": 19,
+      "symbol": "FluxState",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxState.swift",
+      "line": 20,
+      "symbol": "FluxState.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxState.swift",
+      "line": 21,
+      "symbol": "FluxState.toDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxState.swift",
+      "line": 22,
+      "symbol": "FluxState.toJsonDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxState.swift",
+      "line": 33,
+      "symbol": "FluxState.toDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxState.swift",
+      "line": 63,
+      "symbol": "FluxState.toJsonDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
       "line": null,
       "symbol": "FluxStore",
       "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": null,
+      "symbol": "FluxStore",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": null,
+      "symbol": "FluxStoreConcrete",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": null,
+      "symbol": "FluxStoreConcrete",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 15,
+      "symbol": "FluxStore",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 21,
+      "symbol": "FluxStore.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 41,
+      "symbol": "FluxStore.initializeMetaClass()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 51,
+      "symbol": "FluxStore.actionName(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 55,
+      "symbol": "FluxStore.action(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 59,
+      "symbol": "FluxStore.lastStateDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 62,
+      "symbol": "FluxStore.stateDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 66,
+      "symbol": "FluxStore.currentState()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 111,
+      "symbol": "FluxStoreConcrete",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 113,
+      "symbol": "FluxStoreConcrete.isInternalProp(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 117,
+      "symbol": "FluxStoreConcrete.isObjectRef(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 122,
+      "symbol": "FluxStoreConcrete.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 136,
+      "symbol": "FluxStoreConcrete.bindActions()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 137,
+      "symbol": "FluxStoreConcrete.unbindActions()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 152,
+      "symbol": "FluxStoreConcrete.action(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 184,
+      "symbol": "FluxStoreConcrete.mutate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 232,
+      "symbol": "FluxStoreConcrete.get(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": 240,
+      "symbol": "FluxStoreConcrete.assertStateKey(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],

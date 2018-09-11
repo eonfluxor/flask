@@ -1,6 +1,6 @@
 # !usr/bin/bash
 
-cd Reaktor
+cd FlaskFramework
 jazzy
 cd ..
 git add .
