@@ -19,7 +19,7 @@ public typealias ReactionClosure<T> = (_ ownedBy:T, _ reaction: FlaskReaction) -
 public typealias LabDictType = Dictionary<String,AnyHashable?>
 public typealias LabNil = (AnyHashable?)
 public typealias MixParams<T> = (_ molecule:T,_ react:()-> Void,_ abort:()-> Void) -> Void
-public typealias MoleculeMixers = String
+public typealias MixerNames = String
 public typealias AtomName = String
 
 
