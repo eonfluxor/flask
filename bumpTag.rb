@@ -84,6 +84,11 @@ spec =  content_of_file spec_file
 new_spec, new_version = increase_version! spec,type
 
 File.open(spec_file, "w") {|file| file.puts new_spec }
+
+command = "git commit -am 'bumpTag v#{new_version}'"
+puts "executing `#{command}"
+system command
+
 command = "git tag v#{new_version}"
 puts "executing `#{command}"
 system command

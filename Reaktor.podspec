@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Reaktor"
-  s.version      = '0.0.8'
+  s.version      = '0.0.9'
   s.summary      = "Reaktor is awesome!"
   s.homepage     = "https://github.com/eonfluxor/Reaktor"
   s.license      = "MIT"
