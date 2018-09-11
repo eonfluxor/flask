@@ -14,6 +14,6 @@ FOUNDATION_EXPORT double Flask_macOSVersionNumber;
 //! Project version string for Flask_macOS.
 FOUNDATION_EXPORT const unsigned char Flask_macOSVersionString[];
 
-// In this header, you should import all the public headers of your framework using atomsments like #import <Flask_macOS/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <Flask_macOS/PublicHeader.h>
 
 

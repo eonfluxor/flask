@@ -14,6 +14,6 @@ FOUNDATION_EXPORT double Flask_tvOSVersionNumber;
 //! Project version string for Flask_tvOS.
 FOUNDATION_EXPORT const unsigned char Flask_tvOSVersionString[];
 
-// In this header, you should import all the public headers of your framework using atomsments like #import <Flask_tvOS/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <Flask_tvOS/PublicHeader.h>
 
 
