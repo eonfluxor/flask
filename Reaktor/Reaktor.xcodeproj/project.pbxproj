@@ -146,6 +146,12 @@
 		26D8F84E21473A9D002F7B4F /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82921473A9D002F7B4F /* SetupTests.swift */; };
 		26D8F84F21473A9D002F7B4F /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82921473A9D002F7B4F /* SetupTests.swift */; };
 		26D8F85021473A9D002F7B4F /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82921473A9D002F7B4F /* SetupTests.swift */; };
+		26D8F85221474454002F7B4F /* FluxSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F85121474454002F7B4F /* FluxSerializer.swift */; };
+		26D8F85321474454002F7B4F /* FluxSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F85121474454002F7B4F /* FluxSerializer.swift */; };
+		26D8F85421474454002F7B4F /* FluxSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F85121474454002F7B4F /* FluxSerializer.swift */; };
+		26D8F85521474454002F7B4F /* FluxSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F85121474454002F7B4F /* FluxSerializer.swift */; };
+		26D8F85621474454002F7B4F /* FluxSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F85121474454002F7B4F /* FluxSerializer.swift */; };
+		26D8F85721474454002F7B4F /* FluxSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F85121474454002F7B4F /* FluxSerializer.swift */; };
 		3595CABE7D286B72BFA3840E /* Pods_Reaktor_macOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */; };
 		49B01758B32A87D4F2F7098C /* Pods_Reaktor_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54000D406E19649E8976133 /* Pods_Reaktor_tvOSTests.framework */; };
 		553D1E7B592EB9628035CAD6 /* Pods_Reaktor_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */; };
@@ -233,6 +239,7 @@
 		26D8F82721473A9D002F7B4F /* Stores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
 		26D8F82821473A9D002F7B4F /* TestOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestOwner.swift; sourceTree = "<group>"; };
 		26D8F82921473A9D002F7B4F /* SetupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupTests.swift; sourceTree = "<group>"; };
+		26D8F85121474454002F7B4F /* FluxSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxSerializer.swift; sourceTree = "<group>"; };
 		381DEAC3DCFB39BEACA03807 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests/Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		38BFFFCD6F072157809E78A0 /* Pods-Reaktor-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-macOS/Pods-Reaktor-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		452C9C4E09CB62E21C4E5240 /* Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests/Pods-Reaktor-iOS-Reaktor-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -449,6 +456,7 @@
 				26D8F7B321473A91002F7B4F /* FluxState.swift */,
 				26D8F7B421473A91002F7B4F /* FluxPersistance.swift */,
 				26D8F7B521473A91002F7B4F /* FluxStore.swift */,
+				26D8F85121474454002F7B4F /* FluxSerializer.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -824,15 +832,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Reaktor-macOSTests/Pods-Reaktor-macOSTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Delayed-macOS/Delayed.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Delayed.framework",
 			);
@@ -882,15 +886,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Reaktor-iOSTests/Pods-Reaktor-iOSTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Delayed-iOS/Delayed.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Delayed.framework",
 			);
@@ -904,15 +904,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Reaktor-tvOSTests/Pods-Reaktor-tvOSTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Delayed-tvOS/Delayed.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Delayed.framework",
 			);
@@ -990,6 +986,7 @@
 				26D8F7F521473A92002F7B4F /* FluxLock.swift in Sources */,
 				26D8F7D121473A92002F7B4F /* FluxManager.swift in Sources */,
 				26D8F7DD21473A92002F7B4F /* FluxState.swift in Sources */,
+				26D8F85221474454002F7B4F /* FluxSerializer.swift in Sources */,
 				26D8F7FB21473A92002F7B4F /* FluxPublic.swift in Sources */,
 				26D8F7EF21473A92002F7B4F /* FluxDispatcher.swift in Sources */,
 				26D8F7E321473A92002F7B4F /* FluxPersistance.swift in Sources */,
@@ -1018,6 +1015,7 @@
 				26D8F80821473A92002F7B4F /* FluxDictionary.swift in Sources */,
 				26D8F7F621473A92002F7B4F /* FluxLock.swift in Sources */,
 				26D8F83C21473A9D002F7B4F /* ChainTests.swift in Sources */,
+				26D8F85321474454002F7B4F /* FluxSerializer.swift in Sources */,
 				26D8F80E21473A92002F7B4F /* FluxNSObjects.swift in Sources */,
 				26D8F82D21473A9D002F7B4F /* SerializationTests.swift in Sources */,
 				26D8F7EA21473A92002F7B4F /* FluxStore.swift in Sources */,
@@ -1048,6 +1046,7 @@
 				26D8F7F721473A92002F7B4F /* FluxLock.swift in Sources */,
 				26D8F7D321473A92002F7B4F /* FluxManager.swift in Sources */,
 				26D8F7DF21473A92002F7B4F /* FluxState.swift in Sources */,
+				26D8F85421474454002F7B4F /* FluxSerializer.swift in Sources */,
 				26D8F7FD21473A92002F7B4F /* FluxPublic.swift in Sources */,
 				26D8F7F121473A92002F7B4F /* FluxDispatcher.swift in Sources */,
 				26D8F7E521473A92002F7B4F /* FluxPersistance.swift in Sources */,
@@ -1076,6 +1075,7 @@
 				26D8F80A21473A92002F7B4F /* FluxDictionary.swift in Sources */,
 				26D8F7F821473A92002F7B4F /* FluxLock.swift in Sources */,
 				26D8F83D21473A9D002F7B4F /* ChainTests.swift in Sources */,
+				26D8F85521474454002F7B4F /* FluxSerializer.swift in Sources */,
 				26D8F81021473A92002F7B4F /* FluxNSObjects.swift in Sources */,
 				26D8F82E21473A9D002F7B4F /* SerializationTests.swift in Sources */,
 				26D8F7EC21473A92002F7B4F /* FluxStore.swift in Sources */,
@@ -1106,6 +1106,7 @@
 				26D8F7F921473A92002F7B4F /* FluxLock.swift in Sources */,
 				26D8F7D521473A92002F7B4F /* FluxManager.swift in Sources */,
 				26D8F7E121473A92002F7B4F /* FluxState.swift in Sources */,
+				26D8F85621474454002F7B4F /* FluxSerializer.swift in Sources */,
 				26D8F7FF21473A92002F7B4F /* FluxPublic.swift in Sources */,
 				26D8F7F321473A92002F7B4F /* FluxDispatcher.swift in Sources */,
 				26D8F7E721473A92002F7B4F /* FluxPersistance.swift in Sources */,
@@ -1134,6 +1135,7 @@
 				26D8F80C21473A92002F7B4F /* FluxDictionary.swift in Sources */,
 				26D8F7FA21473A92002F7B4F /* FluxLock.swift in Sources */,
 				26D8F83E21473A9D002F7B4F /* ChainTests.swift in Sources */,
+				26D8F85721474454002F7B4F /* FluxSerializer.swift in Sources */,
 				26D8F81221473A92002F7B4F /* FluxNSObjects.swift in Sources */,
 				26D8F82F21473A9D002F7B4F /* SerializationTests.swift in Sources */,
 				26D8F7EE21473A92002F7B4F /* FluxStore.swift in Sources */,
