@@ -119,9 +119,9 @@
 		26D8F83321473A9D002F7B4F /* KronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81D21473A9D002F7B4F /* KronTests.swift */; };
 		26D8F83421473A9D002F7B4F /* KronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81D21473A9D002F7B4F /* KronTests.swift */; };
 		26D8F83521473A9D002F7B4F /* KronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81D21473A9D002F7B4F /* KronTests.swift */; };
-		26D8F83621473A9D002F7B4F /* PersistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81F21473A9D002F7B4F /* PersistTests.swift */; };
-		26D8F83721473A9D002F7B4F /* PersistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81F21473A9D002F7B4F /* PersistTests.swift */; };
-		26D8F83821473A9D002F7B4F /* PersistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81F21473A9D002F7B4F /* PersistTests.swift */; };
+		26D8F83621473A9D002F7B4F /* ArchivingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81F21473A9D002F7B4F /* ArchivingTests.swift */; };
+		26D8F83721473A9D002F7B4F /* ArchivingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81F21473A9D002F7B4F /* ArchivingTests.swift */; };
+		26D8F83821473A9D002F7B4F /* ArchivingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F81F21473A9D002F7B4F /* ArchivingTests.swift */; };
 		26D8F83921473A9D002F7B4F /* FluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82021473A9D002F7B4F /* FluxTests.swift */; };
 		26D8F83A21473A9D002F7B4F /* FluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82021473A9D002F7B4F /* FluxTests.swift */; };
 		26D8F83B21473A9D002F7B4F /* FluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F82021473A9D002F7B4F /* FluxTests.swift */; };
@@ -230,7 +230,7 @@
 		26D8F81B21473A9D002F7B4F /* SerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationTests.swift; sourceTree = "<group>"; };
 		26D8F81C21473A9D002F7B4F /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		26D8F81D21473A9D002F7B4F /* KronTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KronTests.swift; sourceTree = "<group>"; };
-		26D8F81F21473A9D002F7B4F /* PersistTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistTests.swift; sourceTree = "<group>"; };
+		26D8F81F21473A9D002F7B4F /* ArchivingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchivingTests.swift; sourceTree = "<group>"; };
 		26D8F82021473A9D002F7B4F /* FluxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxTests.swift; sourceTree = "<group>"; };
 		26D8F82121473A9D002F7B4F /* ChainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainTests.swift; sourceTree = "<group>"; };
 		26D8F82221473A9D002F7B4F /* NestingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestingTests.swift; sourceTree = "<group>"; };
@@ -487,6 +487,7 @@
 				26D8F81B21473A9D002F7B4F /* SerializationTests.swift */,
 				26D8F81C21473A9D002F7B4F /* DictionaryTests.swift */,
 				26D8F81D21473A9D002F7B4F /* KronTests.swift */,
+				26D8F81F21473A9D002F7B4F /* ArchivingTests.swift */,
 			);
 			path = DataFlowTests;
 			sourceTree = "<group>";
@@ -494,7 +495,6 @@
 		26D8F81E21473A9D002F7B4F /* FluxTests */ = {
 			isa = PBXGroup;
 			children = (
-				26D8F81F21473A9D002F7B4F /* PersistTests.swift */,
 				26D8F82021473A9D002F7B4F /* FluxTests.swift */,
 				26D8F82121473A9D002F7B4F /* ChainTests.swift */,
 				26D8F82221473A9D002F7B4F /* NestingTests.swift */,
@@ -1025,7 +1025,7 @@
 				26D8F83F21473A9D002F7B4F /* NestingTests.swift in Sources */,
 				26D8F7C021473A92002F7B4F /* FluxChange.swift in Sources */,
 				26D8F83321473A9D002F7B4F /* KronTests.swift in Sources */,
-				26D8F83621473A9D002F7B4F /* PersistTests.swift in Sources */,
+				26D8F83621473A9D002F7B4F /* ArchivingTests.swift in Sources */,
 				26D8F7FC21473A92002F7B4F /* FluxPublic.swift in Sources */,
 				26D8F84821473A9D002F7B4F /* Stores.swift in Sources */,
 				26D8F7C621473A92002F7B4F /* FluxReaction.swift in Sources */,
@@ -1085,7 +1085,7 @@
 				26D8F84021473A9D002F7B4F /* NestingTests.swift in Sources */,
 				26D8F7C221473A92002F7B4F /* FluxChange.swift in Sources */,
 				26D8F83421473A9D002F7B4F /* KronTests.swift in Sources */,
-				26D8F83721473A9D002F7B4F /* PersistTests.swift in Sources */,
+				26D8F83721473A9D002F7B4F /* ArchivingTests.swift in Sources */,
 				26D8F7FE21473A92002F7B4F /* FluxPublic.swift in Sources */,
 				26D8F84921473A9D002F7B4F /* Stores.swift in Sources */,
 				26D8F7C821473A92002F7B4F /* FluxReaction.swift in Sources */,
@@ -1145,7 +1145,7 @@
 				26D8F84121473A9D002F7B4F /* NestingTests.swift in Sources */,
 				26D8F7C421473A92002F7B4F /* FluxChange.swift in Sources */,
 				26D8F83521473A9D002F7B4F /* KronTests.swift in Sources */,
-				26D8F83821473A9D002F7B4F /* PersistTests.swift in Sources */,
+				26D8F83821473A9D002F7B4F /* ArchivingTests.swift in Sources */,
 				26D8F80021473A92002F7B4F /* FluxPublic.swift in Sources */,
 				26D8F84A21473A9D002F7B4F /* Stores.swift in Sources */,
 				26D8F7CA21473A92002F7B4F /* FluxReaction.swift in Sources */,

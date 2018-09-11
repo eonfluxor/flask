@@ -39,9 +39,8 @@ class FluxStore<A:RawRepresentable,T:FluxState > : FluxStoreConcrete{
     // MARK: - INITIALIZE
     
     override func initializeMetaClass() {
-        if archiveDisabled() == false {
-            snapshotState()
-        }
+        unarchiveIntent()
+        snapshotState()
     }
     
     //////////////////
@@ -66,6 +65,10 @@ class FluxStore<A:RawRepresentable,T:FluxState > : FluxStoreConcrete{
     
     public func currentState()->T{
         return _state
+    }
+    
+    func setCurrentState(_ state:T){
+        _state = state
     }
     
     /// PRIVATE

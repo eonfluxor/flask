@@ -81,6 +81,7 @@ extension FluxStore {
 }
 extension FluxStore {
     
+    @discardableResult
     func unarchiveIntent()->Bool{
         
         guard !archiveDisabled() else{
@@ -91,7 +92,9 @@ extension FluxStore {
             
             let key = archiveKey()
             let data = UserDefaults.standard.value(forKey: key)
-            self.state = try FluxSerializer.stateFromData(data as! Data)
+            
+            state = try FluxSerializer.stateFromData(data as! Data)
+            setCurrentState(state)
             
         } catch {
             fatalError("Deserialization error")
