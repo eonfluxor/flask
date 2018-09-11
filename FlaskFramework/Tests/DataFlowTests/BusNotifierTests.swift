@@ -29,4 +29,8 @@ class notifierTests: SetupFlaskTests {
         
         waitForExpectations(timeout: 2, handler: nil)
     }
+    
+//    func testRemoveNotifier(){
+        //TODO
+//    }
 }
