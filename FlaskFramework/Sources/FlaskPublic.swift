@@ -46,9 +46,9 @@ public extension Lab {
     }
     
     static public func flask<T:AnyObject>(ownedBy owner:T, binding stores:[MoleculeConcrete]) -> Flask<T>{
-        let flux = Lab.flask(ownedBy:owner)
-        flux.bindMolecules(stores)
-        return flux
+        let flask = Lab.flask(ownedBy:owner)
+        flask.bindMolecules(stores)
+        return flask
     }
     
     

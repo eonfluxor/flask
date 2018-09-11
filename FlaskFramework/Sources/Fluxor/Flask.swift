@@ -37,7 +37,7 @@ public class Flask<D:AnyObject>:FlaskConcrete {
         if let owner = self.owner {
             reactor(owner,reaction)
         }else{
-            //dispose flux when the owner is no longer present
+            //dispose flask when the owner is no longer present
             FlaskReactorManager.removeFlaskReactor(self)
         }
     }
@@ -79,7 +79,7 @@ public class FlaskConcrete:FlaskAnyEquatable{
            
             { [weak self] in
                 if let wself = self {
-                    Lab.Dispatcher.bindFlaskReactor(store, flux: wself)
+                    Lab.Dispatcher.bindFlaskReactor(store, flask: wself)
                 }
             }()
             
@@ -101,7 +101,7 @@ public class FlaskConcrete:FlaskAnyEquatable{
         for store in stores {
             { [weak self] in
                 if let wself = self {
-                    Lab.Dispatcher.unbindFlaskReactor(store, flux: wself)
+                    Lab.Dispatcher.unbindFlaskReactor(store, flask: wself)
                 }
             }()
             
@@ -129,7 +129,7 @@ public class FlaskConcrete:FlaskAnyEquatable{
         let registered = stores.contains { (aMolecule) -> Bool in
             aMolecule === store
         }
-        assert(registered,"Molecule instance is not binded to this flux")
+        assert(registered,"Molecule instance is not binded to this flask")
         return store
     }
 

@@ -14,20 +14,20 @@ import Cocoa
 
 public struct FlaskChainReaction{
     
-    let flux:FlaskConcrete
+    let flask:FlaskConcrete
     public let commit:()->Void
     public let abort:()->Void
     
     public func mutate<T:MoleculeConcrete>(_ aMolecule:T, _ mutator:@escaping (_ store:T) -> Void)->FlaskChainReaction{
         
-        let store = flux.store(aMolecule)
+        let store = flask.store(aMolecule)
         
         store.stateTransaction({
             mutator(store)
             return true
         })
         
-        let chain = FlaskChainReaction(flux:flux, commit:commit, abort:abort)
+        let chain = FlaskChainReaction(flask:flask, commit:commit, abort:abort)
         return chain
     }
     
@@ -61,7 +61,7 @@ public extension FlaskConcrete{
 //                }
 //            }
 //        }
-//        let chain = FlaskChainReaction(flux:self, commit:commit, abort:abort)
+//        let chain = FlaskChainReaction(flask:self, commit:commit, abort:abort)
 //        return chain
 //    }
 //
@@ -92,7 +92,7 @@ public extension FlaskConcrete{
             return true
         })
         
-        let chain = FlaskChainReaction(flux:self, commit:commit, abort:abort)
+        let chain = FlaskChainReaction(flask:self, commit:commit, abort:abort)
         return chain
     }
     

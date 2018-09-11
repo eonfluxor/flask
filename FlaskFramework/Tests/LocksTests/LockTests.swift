@@ -3,7 +3,7 @@
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
-//  Copyright © 2018 hassanvflux. All rights reserved.
+//  Copyright © 2018 hassanvflask. All rights reserved.
 //
 
 import XCTest
@@ -19,11 +19,11 @@ class LockTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Lab.flask(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,binding:store)
         
         var calls = 0
         
-        flux.reactor = { owner, reaction in
+        flask.reactor = { owner, reaction in
             
             reaction.at(store)?.on(State.prop.counter, { (change) in
                 
@@ -56,9 +56,9 @@ class LockTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Lab.flask(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,binding:store)
         
-        flux.reactor = { owner, reaction in
+        flask.reactor = { owner, reaction in
             reaction.at(store)?.on(State.prop.counter, { (change) in
                 expectation.fulfill()
             })
@@ -88,9 +88,9 @@ class LockTests: SetupFlaskTests {
      
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Lab.flask(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,binding:store)
         
-        flux.reactor = { owner, reaction in
+        flask.reactor = { owner, reaction in
             reaction.at(store)?.on(State.prop.counter, { (change) in
                 expectation.fulfill()
             })

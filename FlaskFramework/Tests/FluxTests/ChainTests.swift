@@ -3,7 +3,7 @@
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
-//  Copyright © 2018 hassanvflux. All rights reserved.
+//  Copyright © 2018 hassanvflask. All rights reserved.
 //
 
 import XCTest
@@ -47,13 +47,13 @@ class ChainingTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Lab.flask(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,binding:store)
         
         let object = NSObject()
         let aObject = FlaskRef( object )
         
         
-        flux.reactor = { owner, reaction in
+        flask.reactor = { owner, reaction in
             
             reaction.on(State.prop.counter, { (change) in
                 
@@ -89,7 +89,7 @@ class ChainingTests: SetupFlaskTests {
             
         }
         
-        flux.mutate(store,{ (store, commit, abort) in
+        flask.mutate(store,{ (store, commit, abort) in
             store.state.counter = 1
             store.state.text = "reaction"
             store.state.object = aObject
@@ -107,16 +107,16 @@ class ChainingTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Lab.flask(ownedBy:owner, binding:store)
+        let flask = Lab.flask(ownedBy:owner, binding:store)
         
-        flux.reactor = { owner, reaction in
+        flask.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in
                 expectation.fulfill()
                 XCTAssert(change.newValue() == 2)
             })
         }
         
-        flux.mutate(store){ (store) in
+        flask.mutate(store){ (store) in
             store.state.counter=1
         }.mutate(store) { (store) in
             store.state.counter=2

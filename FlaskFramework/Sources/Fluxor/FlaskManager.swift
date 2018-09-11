@@ -14,35 +14,35 @@ import Cocoa
 
 class FlaskReactorManager{
     
-    static var fluxors:Array<FlaskConcrete>=[]
+    static var flasks:Array<FlaskConcrete>=[]
     
     static func instance<T:AnyObject>(ownedBy owner:T) -> Flask<T>{
         
-        let flux = Flask<T>(owner)
-        appendFlaskReactor(flux)
-        return flux
+        let flask = Flask<T>(owner)
+        appendFlaskReactor(flask)
+        return flask
     }
     
-    static func appendFlaskReactor(_ flux:FlaskConcrete){
-        removeFlaskReactor(flux)
-        fluxors.append(flux)
+    static func appendFlaskReactor(_ flask:FlaskConcrete){
+        removeFlaskReactor(flask)
+        flasks.append(flask)
         FlaskReactorManager.purgeOrphans()
     }
     
-    static func removeFlaskReactor(_ flux:FlaskConcrete){
-        if let index = fluxors.index(of: flux) {
+    static func removeFlaskReactor(_ flask:FlaskConcrete){
+        if let index = flasks.index(of: flask) {
             _ = autoreleasepool{
-                flux.unbind(false)
-                fluxors.remove(at: index)
+                flask.unbind(false)
+                flasks.remove(at: index)
             }
         }
     }
     
     static func purgeOrphans(){
-        let orphans = fluxors.filter {$0.getOwner() == nil}
+        let orphans = flasks.filter {$0.getOwner() == nil}
         
-        for flux in orphans {
-            removeFlaskReactor(flux)
+        for flask in orphans {
+            removeFlaskReactor(flask)
         }
     }
 }

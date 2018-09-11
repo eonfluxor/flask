@@ -1,9 +1,9 @@
 //
 //  kronTests.swift
-//  fluxReactor-iOSTests
+//  flaskReactor-iOSTests
 //
 //  Created by hassan uriostegui on 9/9/18.
-//  Copyright © 2018 eonflux. All rights reserved.
+//  Copyright © 2018 eonflask. All rights reserved.
 //
 
 import XCTest

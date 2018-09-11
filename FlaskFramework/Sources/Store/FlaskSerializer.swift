@@ -3,7 +3,7 @@
 //  Reaktor
 //
 //  Created by hassan uriostegui on 9/10/18.
-//  Copyright © 2018 eonflux. All rights reserved.
+//  Copyright © 2018 eonflask. All rights reserved.
 //
 
 #if os(iOS) || os(tvOS) || os(watchOS)

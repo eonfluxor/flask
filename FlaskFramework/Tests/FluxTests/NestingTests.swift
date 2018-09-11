@@ -3,7 +3,7 @@
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
-//  Copyright © 2018 hassanvflux. All rights reserved.
+//  Copyright © 2018 hassanvflask. All rights reserved.
 //
 
 import XCTest
@@ -20,7 +20,7 @@ class NestedStateTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Lab.flask(ownedBy:owner, binding:store)
+        let flask = Lab.flask(ownedBy:owner, binding:store)
         
         let data:NSDictionary = [
             "foo":"bar",
@@ -37,7 +37,7 @@ class NestedStateTests: SetupFlaskTests {
         let dictRef2 = FlaskDictionaryRef(data2)
         
         let firstTest:(@escaping ()->Void)->Void = { next in
-            flux.reactor = { owner, reaction in
+            flask.reactor = { owner, reaction in
                 reaction.on("map.foo", { (change) in
                     print(change.newValue()!)
                     XCTAssert(change.newValue()=="bar")
@@ -59,7 +59,7 @@ class NestedStateTests: SetupFlaskTests {
             }
             
             
-            flux.mutate(store,{ (store, commit, abort) in
+            flask.mutate(store,{ (store, commit, abort) in
                 store.state.map = dictRef
                 commit()
             })
@@ -70,14 +70,14 @@ class NestedStateTests: SetupFlaskTests {
             
             // now empty all keys
             
-            flux.reactor = { owner, reaction in
+            flask.reactor = { owner, reaction in
                 reaction.on("map.nest.optional", { (change) in
                     XCTAssert(isFlaskNil(change.newValue()))
                     expectation4.fulfill()
                 })
             }
             
-            flux.mutate(store,{ (store, commit, abort) in
+            flask.mutate(store,{ (store, commit, abort) in
                 store.state.map = dictRef2
                 commit()
             })

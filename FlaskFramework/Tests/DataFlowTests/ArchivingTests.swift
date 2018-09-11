@@ -20,21 +20,21 @@ class archiveTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Lab.flask(ownedBy:owner, binding:store)
+        let flask = Lab.flask(ownedBy:owner, binding:store)
         
-        flux.reactor = { owner, reaction in
+        flask.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in
                 expectation.fulfill()
             })
         }
         
-        flux.mutate(store){ (store) in
+        flask.mutate(store){ (store) in
             store.state.counter=expectedValue
         }.commit()
         
         wait(for: [expectation], timeout: 1)
         
-        flux.unbind()
+        flask.unbind()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             
