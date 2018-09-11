@@ -40,8 +40,8 @@ protocol LabAnyWithInit{
     init() //construct at initial atoms
 }
 
-public class LabAnyEquatable: Equatable{
-    public static func == (lhs: LabAnyEquatable, rhs: LabAnyEquatable) -> Bool {
+public class LabEquatable: Equatable{
+    public static func == (lhs: LabEquatable, rhs: LabEquatable) -> Bool {
         return lhs === rhs
     }
 }

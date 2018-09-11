@@ -318,7 +318,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Lab/LabHelpers.swift",
       "line": 43,
-      "symbol": "LabAnyEquatable",
+      "symbol": "LabEquatable",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },

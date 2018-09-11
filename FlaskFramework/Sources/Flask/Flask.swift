@@ -53,7 +53,7 @@ public class Flask<D:AnyObject>:FlaskConcrete {
 }
 
 
-public class FlaskConcrete:LabAnyEquatable{
+public class FlaskConcrete:LabEquatable{
     
     var substances:[SubstanceConcrete]=[]
     var filled = false

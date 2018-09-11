@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-public class MixerPause: LabAnyEquatable {
+public class MixerPause: LabEquatable {
 
     var mixer:Mixer
     
