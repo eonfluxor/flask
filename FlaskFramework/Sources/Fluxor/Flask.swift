@@ -112,7 +112,7 @@ public class FlaskConcrete:FlaskAnyEquatable{
     ///
     func handleMutation(_ reaction:FlaskReaction){}
     
-    @discardableResult public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping FlaskMutatorParams<T>)->FlaskConcrete{
+    @discardableResult public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping FlaskMixParams<T>)->FlaskConcrete{
         
         let molecule = self.molecule(aMolecule)
         molecule.mix(mixer)

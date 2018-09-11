@@ -14,7 +14,7 @@ import Cocoa
 
 public struct FlaskSerializer{
     
-    static public func jsonFromState<K:MoleculeState>(_ atoms:K) throws ->String {
+    static public func jsonFromAtom<K:MoleculeAtom>(_ atoms:K) throws ->String {
         
         let jsonData = try JSONEncoder().encode(atoms)
         
@@ -22,20 +22,20 @@ public struct FlaskSerializer{
         
     }
     
-    static public func atomsFromJson<K:MoleculeState>(_ json:String) throws ->K {
+    static public func atomsFromJson<K:MoleculeAtom>(_ json:String) throws ->K {
         
         let jsonData = json.data(using: .utf8)!
         return try atomsFromData(jsonData)
     }
     
     
-    static public func dataFromState<K:MoleculeState>(_ atoms:K) throws ->Data? {
+    static public func dataFromAtom<K:MoleculeAtom>(_ atoms:K) throws ->Data? {
         
-        let json = try jsonFromState(atoms)
+        let json = try jsonFromAtom(atoms)
         return json.data(using: .utf16)
     }
     
-    static public func atomsFromData<K:MoleculeState>(_ jsonData:Data) throws ->K {
+    static public func atomsFromData<K:MoleculeAtom>(_ jsonData:Data) throws ->K {
         
         let atoms:K = try! JSONDecoder().decode(K.self, from: jsonData)
         return atoms
@@ -75,7 +75,7 @@ public struct FlaskSerializer{
             
             let value = children[key]
             let childKey = "\(namespace).\(key)"
-            assert( isFlaskNil(result[childKey]) , "namespace collision!" )
+            assert( isLabNil(result[childKey]) , "namespace collision!" )
             
             result[childKey] = value
             

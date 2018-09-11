@@ -47,7 +47,7 @@ public struct FlaskChangeTemplate  {
     
     func mixd()->Bool{
         
-        if isFlaskNil(oldVal) && isFlaskNil(newVal) {
+        if isLabNil(oldVal) && isLabNil(newVal) {
             return false
         }
         

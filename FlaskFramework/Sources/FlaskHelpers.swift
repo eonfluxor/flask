@@ -13,20 +13,20 @@ import Cocoa
 #endif
 
 
-public typealias MoleculeMutator = (_ payload: Any?,_ commit:()->Void, _ abort:()->Void ) -> Void
-public typealias FlaskReactionClosure = (_ change:FlaskChangeTemplate)->Void
+public typealias MoleculeMixer = (_ payload: Any?,_ commit:()->Void, _ abort:()->Void ) -> Void
+public typealias FlaskClosure = (_ change:FlaskChangeTemplate)->Void
 public typealias FlaskReactorClosure<T> = (_ ownedBy:T, _ reaction: FlaskReaction) -> Void
-public typealias MoleculeStateDictionaryType = Dictionary<String,AnyHashable?>
-public typealias FlaskNil = (AnyHashable?)
-public typealias FlaskMutatorParams<T> = (_ molecule:T,_ commit:()-> Void,_ abort:()-> Void) -> Void
+public typealias LabDictionaryType = Dictionary<String,AnyHashable?>
+public typealias LabNil = (AnyHashable?)
+public typealias FlaskMixParams<T> = (_ molecule:T,_ commit:()-> Void,_ abort:()-> Void) -> Void
 public typealias MoleculeMixers = String
-public typealias MoleculeAtoms = String
+public typealias AtomName = String
 
 
 let FLUX_ACTION_SKIP_LOCKS="FLUX_ACTION_SKIP_LOCKS"
 let FLUX_ACTION_NAME="FLUX_ACTION_NAME"
 
-public func isFlaskNil(_ value:Any?)->Bool{
+public func isLabNil(_ value:Any?)->Bool{
     if value == nil || ((value as? NSNull) != nil){
         return true
     }

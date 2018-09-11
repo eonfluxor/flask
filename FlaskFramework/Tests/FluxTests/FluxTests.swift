@@ -22,7 +22,7 @@ class FlaskReactorTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on(State.atom.counter, { (change) in
+            reaction.on(Atom.atom.counter, { (change) in
                 expectation.fulfill()
             })
             
@@ -47,7 +47,7 @@ class FlaskReactorTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(molecule)?.on(State.atom.counter, { (change) in
+            reaction.at(molecule)?.on(Atom.atom.counter, { (change) in
                 owner.reactionMethod(expectation)
             })
             
@@ -71,7 +71,7 @@ class FlaskReactorTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor={owner, reaction in
-            reaction.on(State.atom.counter, { (change) in
+            reaction.on(Atom.atom.counter, { (change) in
                 expectation.fulfill()
             })
         }
@@ -148,11 +148,11 @@ class FlaskReactorTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on(State.atom.counter, { (change) in
+            reaction.on(Atom.atom.counter, { (change) in
                 
                 XCTAssert(change.oldValue() == 0)
                 XCTAssert(change.newValue() == 1)
-                XCTAssert(change.key() == State.atom.counter.rawValue)
+                XCTAssert(change.key() == Atom.atom.counter.rawValue)
                 XCTAssert(change.molecule() === molecule)
                 
                 expectation.fulfill()
@@ -177,7 +177,7 @@ class FlaskReactorTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner, mixin:Molecules.app)
         
         flask.reactor = { owner, reaction in
-            reaction.on(State.atom.counter, { (change) in
+            reaction.on(Atom.atom.counter, { (change) in
                 expectation.fulfill()
                 XCTAssert(Molecules.app.atoms.counter == 2)
             })
@@ -195,9 +195,9 @@ class FlaskReactorTests: SetupFlaskTests {
         
     }
     
-    func testStateInternal(){
+    func testAtomInternal(){
         
-        let expectation = self.expectation(description: "testStateInternal")
+        let expectation = self.expectation(description: "testAtomInternal")
         expectation.isInverted = true
         
         let molecule = self.molecule!

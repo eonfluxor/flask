@@ -25,7 +25,7 @@ class LockTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(molecule)?.on(State.atom.counter, { (change) in
+            reaction.at(molecule)?.on(Atom.atom.counter, { (change) in
                 
                 if calls == 0 {
                     expectation.fulfill()
@@ -59,7 +59,7 @@ class LockTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor = { owner, reaction in
-            reaction.at(molecule)?.on(State.atom.counter, { (change) in
+            reaction.at(molecule)?.on(Atom.atom.counter, { (change) in
                 expectation.fulfill()
             })
         }
@@ -91,10 +91,10 @@ class LockTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor = { owner, reaction in
-            reaction.at(molecule)?.on(State.atom.counter, { (change) in
+            reaction.at(molecule)?.on(Atom.atom.counter, { (change) in
                 expectation.fulfill()
             })
-            reaction.at(molecule)?.on(State.atom.text, { (change) in
+            reaction.at(molecule)?.on(Atom.atom.text, { (change) in
                 expectation2.fulfill()
             })
         }

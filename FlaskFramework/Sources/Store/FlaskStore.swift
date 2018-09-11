@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-open class Molecule<T:MoleculeState,A:RawRepresentable> : MoleculeConcrete{
+open class Molecule<T:MoleculeAtom,A:RawRepresentable> : MoleculeConcrete{
     
-    typealias MoleculeStateType = T
+    typealias MoleculeAtomType = T
     
-    var atomsSnapshot: MoleculeStateDictionaryType = [:]
+    var atomsSnapshot: LabDictionaryType = [:]
     private var _atoms: T = T()
     public var atoms:T = T()
    
@@ -40,7 +40,7 @@ open class Molecule<T:MoleculeState,A:RawRepresentable> : MoleculeConcrete{
     
     override public func initializeMetaClass() {
         unarchiveIntent()
-        snapshotState()
+        snapshotAtom()
     }
     
     //////////////////
@@ -52,28 +52,28 @@ open class Molecule<T:MoleculeState,A:RawRepresentable> : MoleculeConcrete{
         return val.rawValue as! String
     }
     
-    public func mixer(_ enumVal:A, _ reaction: @escaping MoleculeMutator){
+    public func mixer(_ enumVal:A, _ reaction: @escaping MoleculeMixer){
         action(actionName(enumVal), reaction)
     }
     
-    public override func lastStateDictionary() -> MoleculeStateDictionaryType{
+    public override func lastAtomDictionary() -> LabDictionaryType{
         return atomsSnapshot
     }
-    public override func atomsDictionary() -> MoleculeStateDictionaryType{
+    public override func atomsDictionary() -> LabDictionaryType{
         return _atoms.toDictionary()
     }
     
-    public func currentState()->T{
+    public func currentAtom()->T{
         return _atoms
     }
     
-    func setCurrentState(_ atoms:T){
+    func setCurrentAtom(_ atoms:T){
         _atoms = atoms
     }
     
     /// PRIVATE
     
-    override func snapshotState(){
+    override func snapshotAtom(){
         self.atomsSnapshot = self.atomsDictionary()
         archiveIntent(_atoms)
     }
@@ -95,7 +95,7 @@ open class Molecule<T:MoleculeState,A:RawRepresentable> : MoleculeConcrete{
         
     }
     
-    override func abortStateTransaction(){
+    override func abortAtomTransaction(){
         transactonsQueue.addOperation { [weak self] in
             
             if self == nil {return}
@@ -123,10 +123,10 @@ open class MoleculeConcrete {
         initializeMetaClass()
     }
     
-    func lastStateDictionary() -> MoleculeStateDictionaryType{
+    func lastAtomDictionary() -> LabDictionaryType{
         return [:]
     }
-    func atomsDictionary() -> MoleculeStateDictionaryType{
+    func atomsDictionary() -> LabDictionaryType{
         return [:]
     }
     func name() -> String {
@@ -136,11 +136,11 @@ open class MoleculeConcrete {
     open func bindMixers(){}
     open func unbindMixers(){}
     
-    func snapshotState(){}
+    func snapshotAtom(){}
     
     func initializeMetaClass(){}
     func atomsTransaction(_ transaction:@escaping ()-> Bool){}
-    func abortStateTransaction(){}
+    func abortAtomTransaction(){}
     
     
 }
@@ -149,7 +149,7 @@ open class MoleculeConcrete {
 
 public extension MoleculeConcrete {
   
-    @discardableResult public func action(_ action:String, _ reaction: @escaping MoleculeMutator)->NSObjectProtocol{
+    @discardableResult public func action(_ action:String, _ reaction: @escaping MoleculeMixer)->NSObjectProtocol{
         let weakRegistration={ [weak self] in
             
             NotificationCenter.default.addObserver(forName: NSNotification.Name(action), object: nil, queue: OperationQueue.main) { (notification) in
@@ -181,7 +181,7 @@ public extension MoleculeConcrete {
         return weakRegistration()
     }
     
-    public func mix<T:MoleculeConcrete>(_ mixer:@escaping FlaskMutatorParams<T>){
+    public func mix<T:MoleculeConcrete>(_ mixer:@escaping FlaskMixParams<T>){
         
         var resolved = false
         var completed = true
@@ -219,7 +219,7 @@ extension MoleculeConcrete {
             }else{
                 //log
             }
-            self?.snapshotState()
+            self?.snapshotAtom()
         }
        
     }
@@ -231,13 +231,13 @@ public extension MoleculeConcrete {
 
     public func get(_ key:String) -> String{
         
-        assertStateKey(key)
+        assertAtomKey(key)
         
         let atoms = self.atomsDictionary()
         return atoms[key] as! String
     }
     
-    func assertStateKey(_ key:String) {
+    func assertAtomKey(_ key:String) {
         let atoms = self.atomsDictionary()
         assert(atoms.keys.contains(key),"Prop must be defined in atoms")
         

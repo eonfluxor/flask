@@ -57,7 +57,7 @@ public extension FlaskConcrete{
 //            [weak self] in
 //            if let molecules = self?.molecules {
 //                for molecule in molecules{
-//                    molecule.abortStateTransaction();
+//                    molecule.abortAtomTransaction();
 //                }
 //            }
 //        }
@@ -80,7 +80,7 @@ public extension FlaskConcrete{
             [weak self] in
             if let molecules = self?.molecules {
                 for molecule in molecules{
-                    molecule.abortStateTransaction();
+                    molecule.abortAtomTransaction();
                 }
             }
         }

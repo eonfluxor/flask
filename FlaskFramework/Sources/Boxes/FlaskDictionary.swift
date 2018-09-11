@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-public protocol MoleculeStateObservable{
+public protocol MoleculeAtomObservable{
     func toFlaskDictionaryRef()->NSDictionary
 }
 
-public class FlaskDictionaryRef: NSObject, Codable, MoleculeStateObservable {
+public class FlaskDictionaryRef: NSObject, Codable, MoleculeAtomObservable {
    
    
     

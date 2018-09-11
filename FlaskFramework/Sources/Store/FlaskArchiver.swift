@@ -35,7 +35,7 @@ extension Molecule {
 
 extension Molecule {
     
-    func archiveIntent<T:MoleculeState>(_ atoms:T){
+    func archiveIntent<T:MoleculeAtom>(_ atoms:T){
         
         guard !archiveDisabled() else{
             return
@@ -49,7 +49,7 @@ extension Molecule {
         
     }
     
-    func archiveNow<T:MoleculeState>(_ atoms:T){
+    func archiveNow<T:MoleculeAtom>(_ atoms:T){
         
         archiveQueue.addOperation { [weak self] in
             
@@ -59,7 +59,7 @@ extension Molecule {
                     guard self != nil else {return}
                     
                     let key = self!.archiveKey()
-                    let data = try FlaskSerializer.dataFromState(atoms)
+                    let data = try FlaskSerializer.dataFromAtom(atoms)
                     
                     if let data = data {
                         
@@ -95,7 +95,7 @@ extension Molecule {
             
             if ((data as? Data) != nil) {
                 atoms = try FlaskSerializer.atomsFromData(data as! Data)
-                setCurrentState(atoms)
+                setCurrentAtom(atoms)
             }
             
         } catch {

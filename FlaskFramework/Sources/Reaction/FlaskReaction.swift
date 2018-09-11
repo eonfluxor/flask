@@ -18,7 +18,7 @@ public class FlaskReaction {
 
     
     var molecule:MoleculeConcrete
-    var changes:MoleculeStateDictionaryType
+    var changes:LabDictionaryType
     
     required public init(_ molecule:MoleculeConcrete){
         self.molecule = molecule
@@ -29,11 +29,11 @@ public class FlaskReaction {
         return changes.count > 0
     }
     
-    public func on<T:RawRepresentable>(_ key:T,_ closure:FlaskReactionClosure){
+    public func on<T:RawRepresentable>(_ key:T,_ closure:FlaskClosure){
         on(key.rawValue as! String, closure)
     }
     
-    public func on(_ key:String,_ closure:FlaskReactionClosure){
+    public func on(_ key:String,_ closure:FlaskClosure){
         
         
         assertKey(key)
@@ -62,7 +62,7 @@ public class FlaskReaction {
             fatalError("the key `\(key)` is not defined in atoms")
             
         }
-        let atoms = molecule.lastStateDictionary()
+        let atoms = molecule.lastAtomDictionary()
         let rootKey = key.split(separator: ".").first
         
         guard (rootKey != nil) else{
@@ -79,23 +79,23 @@ public class FlaskReaction {
 
 public extension FlaskReaction {
     
-    static public func reduceChanges(molecule:MoleculeConcrete)->MoleculeStateDictionaryType{
+    static public func reduceChanges(molecule:MoleculeConcrete)->LabDictionaryType{
     
-        let oldState = molecule.lastStateDictionary()
-        let newState = molecule.atomsDictionary()
+        let oldAtom = molecule.lastAtomDictionary()
+        let newAtom = molecule.atomsDictionary()
         
-        return reduceChanges(oldState,newState)
+        return reduceChanges(oldAtom,newAtom)
     }
     
-    static public func reduceChanges(_ oldState:MoleculeStateDictionaryType, _ newState:MoleculeStateDictionaryType)->MoleculeStateDictionaryType{
+    static public func reduceChanges(_ oldAtom:LabDictionaryType, _ newAtom:LabDictionaryType)->LabDictionaryType{
         
-        var changes:MoleculeStateDictionaryType=[:]
+        var changes:LabDictionaryType=[:]
         
-        let uniqueKeys = Set(Array(oldState.keys) + Array(newState.keys))
+        let uniqueKeys = Set(Array(oldAtom.keys) + Array(newAtom.keys))
         
         for key in uniqueKeys {
             
-            let change = FlaskReaction.change(oldState, newState, key)
+            let change = FlaskReaction.change(oldAtom, newAtom, key)
             
             if change.mixd()  {
                 //use casting to ensure nil is passed
@@ -109,23 +109,23 @@ public extension FlaskReaction {
     
     static public func change(_ molecule:MoleculeConcrete, _ key: String) -> FlaskChangeTemplate {
         
-        let oldState = molecule.lastStateDictionary()
-        let newState = molecule.atomsDictionary()
+        let oldAtom = molecule.lastAtomDictionary()
+        let newAtom = molecule.atomsDictionary()
         
-        return change(oldState,newState,key)
+        return change(oldAtom,newAtom,key)
     }
     
 
-    static public func change(_ oldState:MoleculeStateDictionaryType,_ newState:MoleculeStateDictionaryType, _ key: String) -> FlaskChangeTemplate {
+    static public func change(_ oldAtom:LabDictionaryType,_ newAtom:LabDictionaryType, _ key: String) -> FlaskChangeTemplate {
         
         var oldValue:AnyHashable? = Lab.Nil
         var newValue:AnyHashable? = Lab.Nil
         
-        if let val = oldState[key] {
+        if let val = oldAtom[key] {
             oldValue = val
         }
         
-        if let val = newState[key] {
+        if let val = newAtom[key] {
             newValue = val
         }
         

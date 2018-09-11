@@ -12,7 +12,7 @@ import XCTest
 class SerializationTests: XCTestCase {
 
     
-    func testStateSerialization(){
+    func testAtomSerialization(){
         
         do {
             let dict:NSDictionary = [
@@ -20,15 +20,15 @@ class SerializationTests: XCTestCase {
                 "nest":["foo":"bar"]
             ]
             
-            var atoms:State = State()
+            var atoms:Atom = Atom()
             atoms.counter = 666
             atoms.text = "hello world"
             atoms.map = FlaskDictionaryRef(dict)
             atoms.object = FlaskRef(NSObject())
             
-            let jsonString:String = try FlaskSerializer.jsonFromState(atoms)
+            let jsonString:String = try FlaskSerializer.jsonFromAtom(atoms)
             
-            let atomsDecoded:State = try FlaskSerializer.atomsFromJson(jsonString)
+            let atomsDecoded:Atom = try FlaskSerializer.atomsFromJson(jsonString)
             
             XCTAssert(atoms.counter == atomsDecoded.counter )
             XCTAssert(atoms.text == atomsDecoded.text )

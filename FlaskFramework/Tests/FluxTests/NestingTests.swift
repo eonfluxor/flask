@@ -9,9 +9,9 @@
 import XCTest
 
 
-class NestedStateTests: SetupFlaskTests {
+class NestedAtomTests: SetupFlaskTests {
     
-    func testNestedState(){
+    func testNestedAtom(){
         
         let expectation = self.expectation(description: "testFlaskDictionaryRef")
         let expectation2 = self.expectation(description: "testFlaskDictionaryRef")
@@ -72,7 +72,7 @@ class NestedStateTests: SetupFlaskTests {
             
             flask.reactor = { owner, reaction in
                 reaction.on("map.nest.optional", { (change) in
-                    XCTAssert(isFlaskNil(change.newValue()))
+                    XCTAssert(isLabNil(change.newValue()))
                     expectation4.fulfill()
                 })
             }

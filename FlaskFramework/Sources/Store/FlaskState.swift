@@ -1,5 +1,5 @@
 //
-//  MoleculeState.swift
+//  MoleculeAtom.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/4/18.
@@ -12,27 +12,27 @@ import UIKit
 import Cocoa
 #endif
 
-struct AnyMoleculeState:MoleculeState {
+struct AnyMoleculeAtom:MoleculeAtom {
     
 }
 
-public protocol MoleculeState : Codable {
+public protocol MoleculeAtom : Codable {
     init() //construct at initial atoms
-    func toDictionary()->MoleculeStateDictionaryType
+    func toDictionary()->LabDictionaryType
     func toJsonDictionary()->[String:Any]
 }
 
 
-public extension MoleculeState{
+public extension MoleculeAtom{
     
 //    var dictionary: [String: Any] {
 //        return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]
 //    }
     
     
-    func toDictionary()->MoleculeStateDictionaryType{
+    func toDictionary()->LabDictionaryType{
 //        let dict = self.dictionary
-        var result:MoleculeStateDictionaryType = [:]
+        var result:LabDictionaryType = [:]
         
         let mirror = Mirror(reflecting: self)
         
@@ -52,7 +52,7 @@ public extension MoleculeState{
                 let nestedRef = FlaskSerializer.nestDictionaries(namespace: label,
                                                                 root: FlaskDictionaryRef(result as NSDictionary),
                                                                 children: value as! FlaskDictionaryRef)
-                result = nestedRef.dictionary as! MoleculeStateDictionaryType
+                result = nestedRef.dictionary as! LabDictionaryType
             }
         }
         
