@@ -11,13 +11,13 @@ import XCTest
 
 class ChainingTests: SetupFlaskTests {
 
-    func testInlineTransmute(){
+    func testInlineMutation(){
         
-        let expectation = self.expectation(description: "testInlineTransmute")
+        let expectation = self.expectation(description: "testInlineMutation")
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner, filling:store)
+        let flask = Flux.flask(ownedBy:owner, binding:store)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -28,10 +28,10 @@ class ChainingTests: SetupFlaskTests {
         
       
         
-        flask.transmute(store){ (store) in
+        flask.mutate(store){ (store) in
             store.state.counter=1
             
-        }.transmute(store) { (store) in
+        }.mutate(store) { (store) in
             store.state.counter=2
         }.react()
         
@@ -48,7 +48,7 @@ class ChainingTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner,filling:store)
+        let flask = Flux.flask(ownedBy:owner,binding:store)
         
         let object = NSObject()
         let aObject = FluxRef( object )
@@ -90,7 +90,7 @@ class ChainingTests: SetupFlaskTests {
             
         }
         
-        flask.transmute(store) { (store) in
+        flask.mutate(store) { (store) in
             store.state.counter = 1
             store.state.text = "reaction"
             store.state.object = aObject
@@ -107,7 +107,7 @@ class ChainingTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner, filling:store)
+        let flask = Flux.flask(ownedBy:owner, binding:store)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -116,9 +116,9 @@ class ChainingTests: SetupFlaskTests {
             })
         }
         
-        flask.transmute(store){ (store) in
+        flask.mutate(store){ (store) in
             store.state.counter=1
-        }.transmute(store) { (store) in
+        }.mutate(store) { (store) in
             store.state.counter=2
         }.react()
         

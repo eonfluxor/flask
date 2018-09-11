@@ -36,7 +36,7 @@ struct AppState : State {
 
 class App : Store<AppState,AppEvents> {
     
-    override func defineBus(){
+    override func defineBusEvents(){
         
         on(.Count) {[weak self] (payload, react, abort)  in
             self?.state.counter = (self?.state.counter)! + 1
@@ -44,7 +44,7 @@ class App : Store<AppState,AppEvents> {
         }
         
         on(.Text) {[weak self] (payload, react, abort)  in
-            self?.state.text = "mixd"
+            self?.state.text = "mutated"
             react()
         }
     }

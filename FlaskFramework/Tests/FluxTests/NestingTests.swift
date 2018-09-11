@@ -20,7 +20,7 @@ class NestedStateTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner, filling:store)
+        let flask = Flux.flask(ownedBy:owner, binding:store)
         
         let data:NSDictionary = [
             "foo":"bar",
@@ -59,7 +59,7 @@ class NestedStateTests: SetupFlaskTests {
             }
             
             
-            flask.transmute(store){ (store) in
+            flask.mutate(store){ (store) in
                 store.state.map = dictRef
             }.react()
         }
@@ -76,7 +76,7 @@ class NestedStateTests: SetupFlaskTests {
                 })
             }
             
-            flask.transmute(store) { (store) in
+            flask.mutate(store) { (store) in
                 store.state.map = dictRef2
             }.react()
         }

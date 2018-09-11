@@ -64,24 +64,14 @@ public class Bus {
 
 extension Bus {
     
-    func transmute(_ bus:String){
-        transmute(bus,payload:nil)
-    }
-    
-    func transmute<T:RawRepresentable>(_ enumVal:T){
-        transmute(enumVal,payload:nil)
-    }
-    
-    func transmute<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
+    func dispatch<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]? = nil){
         let bus = enumVal.rawValue as! String
-        transmute(bus,payload:payload)
+        dispatch(bus,payload:payload)
     }
     
-    func transmute(_ bus:String, payload:[String:Any]?){
+    func dispatch(_ bus:String, payload:[String:Any]? = nil ){
         enqueue(bus,payload: payload)
     }
-    
-    
     
 }
 
@@ -94,7 +84,7 @@ extension Bus {
         
 
         var queue = busQueue
-        if (payload?[BUS_PAUSED_BY]) != nil {
+        if (payload?[BUS_LOCKED_BY]) != nil {
             queue = busOnLockQueue
         }
         
@@ -126,7 +116,7 @@ extension Bus {
 
 extension Bus {
    
-    func fillFlask(_ store:StoreConcrete, flask:FlaskConcrete) {
+    func bindFlask(_ store:StoreConcrete, flask:FlaskConcrete) {
         
         let storeName = store.name()
         var storeFlaskRefs = getStoreFlaskRefs(storeName)
@@ -137,7 +127,7 @@ extension Bus {
         
     }
     
-    func emptyFlask(_ store:StoreConcrete, flask:FlaskConcrete) {
+    func unbindFlask(_ store:StoreConcrete, flask:FlaskConcrete) {
         
         let storeName = store.name()
         let storeFlaskRefs = getStoreFlaskRefs(storeName)

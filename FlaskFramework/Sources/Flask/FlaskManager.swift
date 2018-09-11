@@ -32,7 +32,7 @@ class FluxFlaskManager{
     static func removeFlask(_ flask:FlaskConcrete){
         if let index = flasks.index(of: flask) {
             _ = autoreleasepool{
-                flask.empty(false)
+                flask.unbind(false)
                 flasks.remove(at: index)
             }
         }

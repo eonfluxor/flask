@@ -13,13 +13,13 @@ class LockTests: SetupFlaskTests {
     
     func testLock(){
         
-        let expectation = self.expectation(description: "testLock Transmute")
-        let expectation2 = self.expectation(description: "testLock Transmute Ignored")
+        let expectation = self.expectation(description: "testLock Mutation")
+        let expectation2 = self.expectation(description: "testLock Mutation Ignored")
         expectation2.isInverted=true
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner,filling:store)
+        let flask = Flux.flask(ownedBy:owner,binding:store)
         
         var calls = 0
         
@@ -36,13 +36,13 @@ class LockTests: SetupFlaskTests {
                 calls += 1
                 
                 _ = Flux.lock()
-                Flux.transmute(AppEvents.Count, payload:  ["test":"testLock"])
+                Flux.dispatch(AppEvents.Count, payload:  ["test":"testLock"])
                 
             })
         }
         
         DispatchQueue.main.async {
-            Flux.transmute(AppEvents.Count, payload: ["test":"testLock"])
+            Flux.dispatch(AppEvents.Count, payload: ["test":"testLock"])
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
@@ -52,11 +52,11 @@ class LockTests: SetupFlaskTests {
     
     func testLockRelease(){
         
-        let expectation = self.expectation(description: "testLockRelease Transmute")
+        let expectation = self.expectation(description: "testLockRelease Mutation")
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner,filling:store)
+        let flask = Flux.flask(ownedBy:owner,binding:store)
         
         flask.reactor = { owner, reaction in
             reaction.at(store)?.on(AppState.named.counter, { (change) in
@@ -68,7 +68,7 @@ class LockTests: SetupFlaskTests {
         
         let lock  = Flux.lock()
         let lock2  = Flux.lock()
-        Flux.transmute(AppEvents.Count, payload:  ["test":"testLockRelease"])
+        Flux.dispatch(AppEvents.Count, payload:  ["test":"testLockRelease"])
         
         DispatchQueue.main.async {
             lock.release()
@@ -83,12 +83,12 @@ class LockTests: SetupFlaskTests {
     
     func testLockAction(){
         
-        let expectation = self.expectation(description: "testLockRelease Transmute")
-        let expectation2 = self.expectation(description: "testLockRelease Transmute Ignored")
+        let expectation = self.expectation(description: "testLockRelease Mutation")
+        let expectation2 = self.expectation(description: "testLockRelease Mutation Ignored")
      
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner,filling:store)
+        let flask = Flux.flask(ownedBy:owner,binding:store)
         
         flask.reactor = { owner, reaction in
             reaction.at(store)?.on(AppState.named.counter, { (change) in
@@ -105,7 +105,7 @@ class LockTests: SetupFlaskTests {
         Flux.lock(withEvent:AppEvents.Count, payload:  ["test":"testLockActon count"])
        
         //this should be performed after the lock releases
-        Flux.transmute(AppEvents.Text, payload:  ["test":"testLockAction text"])
+        Flux.dispatch(AppEvents.Text, payload:  ["test":"testLockAction text"])
         
         wait(for: [expectation], timeout: 2)
         

@@ -18,7 +18,7 @@ public struct ChainReaction{
     public let react:()->Void
     public let abort:()->Void
     
-    public func transmute<T:StoreConcrete>(_ aStore:T, _ bus:@escaping (_ store:T) -> Void)->ChainReaction{
+    public func mutate<T:StoreConcrete>(_ aStore:T, _ bus:@escaping (_ store:T) -> Void)->ChainReaction{
         
         let store = flask.store(aStore)
         
@@ -35,12 +35,12 @@ public struct ChainReaction{
 
 public extension FlaskConcrete{
   
-    public func transmute<T:StoreConcrete>(_ aStore:T, _ bus:@escaping(_ store:T) -> Void)->ChainReaction{
+    public func mutate<T:StoreConcrete>(_ aStore:T, _ bus:@escaping(_ store:T) -> Void)->ChainReaction{
         
         let  react = { [weak self] in
             if let stores = self?.stores {
                 for store in stores{
-                    store.handleTransmute()
+                    store.handleMutation()
                 }
             }
         }

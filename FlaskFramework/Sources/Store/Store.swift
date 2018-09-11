@@ -132,8 +132,8 @@ open class StoreConcrete {
         return "Store\(self.self)"
     }
     
-    open func defineBus(){}
-    open func undefineBus(){}
+    open func defineBusEvents(){}
+    open func undefineBusEvents(){}
     
     func snapshotState(){}
     
@@ -155,14 +155,14 @@ public extension StoreConcrete {
                 
                 let payload = notification.object as? [String:Any]
                 
-                let lock = payload?[BUS_PAUSED_BY] as? BusLock
+                let lock = payload?[BUS_LOCKED_BY] as? BusLock
                 
                 var resolved = false
                 var completed = true
                 
                 let react = {
                     resolved=true
-                    self?.handleTransmute(lock)
+                    self?.handleMutation(lock)
                 }
                 
                 let abort = {
@@ -187,7 +187,7 @@ public extension StoreConcrete {
 
 extension StoreConcrete {
     
-    func handleTransmute(_ busLock: BusLock? = nil){
+    func handleMutation(_ busLock: BusLock? = nil){
         Flux.bus.reactionQueue.addOperation { [weak self] in
             
             if self == nil { return }

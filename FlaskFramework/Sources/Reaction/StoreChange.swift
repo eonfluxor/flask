@@ -45,7 +45,7 @@ public struct StoreChange  {
     var oldVal:AnyHashable?
     var newVal:AnyHashable?
     
-    func transmuted()->Bool{
+    func mutationd()->Bool{
         
         if isFluxNil(oldVal) && isFluxNil(newVal) {
             return false

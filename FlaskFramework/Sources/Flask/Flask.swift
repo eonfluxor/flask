@@ -24,15 +24,15 @@ public class Flask<D:AnyObject>:FlaskConcrete {
     
     /// MARK: -
     
-    override public func fill(){
+    override public func bind(){
         guard (self.owner) != nil else {
             return assertionFailure("a owner is required")
         }
-        super.fill()
+        super.bind()
     }
     
-    override public func empty(_ explicit:Bool = true){
-        super.empty(explicit)
+    override public func unbind(_ explicit:Bool = true){
+        super.unbind(explicit)
     }
     
     override func handleReaction(_ reaction:FlaskReaction){
@@ -56,15 +56,15 @@ public class Flask<D:AnyObject>:FlaskConcrete {
 public class FlaskConcrete:FluxEquatable{
     
     var stores:[StoreConcrete]=[]
-    var filled = false
+    var binded = false
     
     
     func defineStore(_ store:StoreConcrete){
         defineStores([store])
     }
     
-    func defineStores(_ fillingStores:[StoreConcrete]){
-        stores = fillingStores
+    func defineStores(_ bindingStores:[StoreConcrete]){
+        stores = bindingStores
         
     }
     
@@ -72,54 +72,54 @@ public class FlaskConcrete:FluxEquatable{
         return nil
     }
     
-    public func fill(){
+    public func bind(){
         
-        assert(!filled,"Already bounded. It's required  to balance bind/unbind calls")
+        assert(!binded,"Already bounded. It's required  to balance bind/unbind calls")
         assert(!stores.isEmpty,"At least one store is required")
         
-        filled = true
+        binded = true
         
         for store in stores {
            
             { [weak self] in
                 if let wself = self {
-                    Flux.bus.fillFlask(store, flask: wself)
+                    Flux.bus.bindFlask(store, flask: wself)
                 }
             }()
             
-            store.defineBus()
+            store.defineBusEvents()
         }
         
         
     }
     
-    public func empty(_ explicit:Bool = true){
+    public func unbind(_ explicit:Bool = true){
         
-        if(explicit && !filled){
-            assert(filled,"Not binded. It's required  to balance bind/unbind calls")
+        if(explicit && !binded){
+            assert(binded,"Not binded. It's required  to balance bind/unbind calls")
         }
         
-        if(!filled){return}
-        filled = false
+        if(!binded){return}
+        binded = false
         
         for store in stores {
             { [weak self] in
                 if let wself = self {
-                    Flux.bus.emptyFlask(store, flask: wself)
+                    Flux.bus.unbindFlask(store, flask: wself)
                 }
             }()
             
-            store.undefineBus()
+            store.undefineBusEvents()
         }
     }
     
     ///
     func handleReaction(_ reaction:FlaskReaction){}
     
-//    @discardableResult public transmute<T:StoreConcrete>(_ aStore:T, _ bus:@escaping TransmuteParams<T>)->FlaskConcrete{
+//    @discardableResult public mutation<T:StoreConcrete>(_ aStore:T, _ bus:@escaping MutationParams<T>)->FlaskConcrete{
 //        
 //        let store = self.store(aStore)
-//        store.transmute(bus)
+//        store.mutation(bus)
 //        
 //        return self
 //    }
@@ -133,7 +133,7 @@ public class FlaskConcrete:FluxEquatable{
         let registered = stores.contains { (aStore) -> Bool in
             aStore === store
         }
-        assert(registered,"Store instance is not filling to this flask")
+        assert(registered,"Store instance is not binding to this flask")
         return store
     }
 

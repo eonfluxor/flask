@@ -20,7 +20,7 @@ class archiveTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner, filling:store)
+        let flask = Flux.flask(ownedBy:owner, binding:store)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -28,13 +28,13 @@ class archiveTests: SetupFlaskTests {
             })
         }
         
-        flask.transmute(store){ (store) in
+        flask.mutate(store){ (store) in
             store.state.counter=expectedValue
         }.react()
         
         wait(for: [expectation], timeout: 2)
         
-        flask.empty()
+        flask.unbind()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             

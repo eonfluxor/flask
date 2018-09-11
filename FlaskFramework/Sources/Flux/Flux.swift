@@ -41,14 +41,14 @@ public extension Flux {
 
 public extension Flux {
     
-    static public func flask<T:AnyObject>(ownedBy owner:T, filling store:StoreConcrete) -> Flask<T>{
-        return Flux.flask(ownedBy:owner,filling:[store])
+    static public func flask<T:AnyObject>(ownedBy owner:T, binding store:StoreConcrete) -> Flask<T>{
+        return Flux.flask(ownedBy:owner,binding:[store])
     }
     
-    static public func flask<T:AnyObject>(ownedBy owner:T, filling stores:[StoreConcrete]) -> Flask<T>{
+    static public func flask<T:AnyObject>(ownedBy owner:T, binding stores:[StoreConcrete]) -> Flask<T>{
         let flask = Flux.flask(ownedBy:owner)
         flask.defineStores(stores)
-        flask.fill()
+        flask.bind()
         return flask
     }
     
@@ -77,9 +77,9 @@ public extension Flux {
         let lock = BusLock(bus:Flux.bus)
         
         var info = payload ?? [:]
-        info[BUS_PAUSED_BY] = lock
+        info[BUS_LOCKED_BY] = lock
         
-        Flux.bus.transmute(bus,payload:info)
+        Flux.bus.dispatch(bus,payload:info)
         
         return lock
     }
@@ -93,16 +93,12 @@ public extension Flux {
 
 public extension Flux {
     
-    static public func transmute<T:RawRepresentable>(_ enumVal:T){
-        Flux.transmute(enumVal,payload:nil)
-    }
-    
-    static public func transmute<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
+    static public func dispatch<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]? = nil){
         let bus = enumVal.rawValue as! String
         var info = payload ?? [:]
         info[FLUX_BUS_NAME] = bus
         
-        Flux.bus.transmute(bus,payload:info)
+        Flux.bus.dispatch(bus,payload:info)
     }
 }
 

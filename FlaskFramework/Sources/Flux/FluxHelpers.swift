@@ -18,12 +18,12 @@ public typealias ChangeClosure = (_ change:StoreChange)->Void
 public typealias ReactionClosure<T> = (_ ownedBy:T, _ reaction: FlaskReaction) -> Void
 public typealias FluxDictType = Dictionary<String,AnyHashable?>
 public typealias FluxNil = (AnyHashable?)
-public typealias TransmuteParams<T> = (_ store:T,_ react:()-> Void,_ abort:()-> Void) -> Void
+public typealias MutationParams<T> = (_ store:T,_ react:()-> Void,_ abort:()-> Void) -> Void
 public typealias BusEvent = String
 public typealias StateName = String
 
 
-let BUS_PAUSED_BY="BUS_PAUSED_BY"
+let BUS_LOCKED_BY="BUS_LOCKED_BY"
 let FLUX_BUS_NAME="FLUX_BUS_NAME"
 
 public func isFluxNil(_ value:Any?)->Bool{
