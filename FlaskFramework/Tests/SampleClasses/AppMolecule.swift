@@ -13,7 +13,7 @@ import Cocoa
 #endif
 
 
-enum AppMixers : MixerNames {
+enum AppMixers : MixerName {
     case Count
     case Text
     case Object
