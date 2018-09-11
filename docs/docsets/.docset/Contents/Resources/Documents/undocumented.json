@@ -164,7 +164,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Lab/Lab.swift",
       "line": 88,
-      "symbol": "Flux.removePauses()",
+      "symbol": "Flux.removeLocks()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
@@ -290,7 +290,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Lab/LabHelpers.swift",
       "line": 21,
-      "symbol": "MixParams",
+      "symbol": "TransmuteParams",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
@@ -353,49 +353,49 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/DispatcherPause.swift",
       "line": 15,
-      "symbol": "BusPause",
+      "symbol": "BusLock",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/DispatcherPause.swift",
       "line": 19,
-      "symbol": "BusPause.init(bus:)",
+      "symbol": "BusLock.init(bus:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/DispatcherPause.swift",
       "line": 27,
-      "symbol": "BusPause.release()",
+      "symbol": "BusLock.release()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/DispatcherPause.swift",
       "line": 34,
-      "symbol": "Bus.removePauses()",
+      "symbol": "Bus.removeLocks()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/DispatcherPause.swift",
       "line": 39,
-      "symbol": "Bus.addPause(_:)",
+      "symbol": "Bus.addLock(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/DispatcherPause.swift",
       "line": 44,
-      "symbol": "Bus.removePause(_:)",
+      "symbol": "Bus.removeLock(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/DispatcherPause.swift",
       "line": 49,
-      "symbol": "Bus.applyPauses()",
+      "symbol": "Bus.applyLocks()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -416,7 +416,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
       "line": 20,
-      "symbol": "FlaskReaction.onPause",
+      "symbol": "FlaskReaction.onLock",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
