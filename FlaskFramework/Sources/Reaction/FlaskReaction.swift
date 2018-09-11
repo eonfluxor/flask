@@ -17,9 +17,9 @@ import Cocoa
 public class FlaskReaction {
 
     
-    weak var labPause:MixerPause?
-    var molecule:MoleculeConcrete
-    var changes:LabDictType
+    weak public var labPause:MixerPause?
+    private(set) var molecule:MoleculeConcrete
+    private(set) var changes:LabDictType
     
     required public init(_ molecule:MoleculeConcrete){
         self.molecule = molecule
