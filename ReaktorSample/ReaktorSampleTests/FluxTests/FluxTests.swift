@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Reaktor_iOS
+import Reaktor
 
 class FluxorTests: SetupFluxTests {
     
@@ -95,7 +95,7 @@ class FluxorTests: SetupFluxTests {
         weak var flux = Flux.instance(ownedBy:owner!,binding: store)
         
         flux?.reactor = { owner, reaction in}
-        flux?.bind()
+   
         
         DispatchQueue.main.async {
             
@@ -118,7 +118,7 @@ class FluxorTests: SetupFluxTests {
         weak var flux = Flux.instance(ownedBy:weakOwner!, binding:store)
         
         flux?.reactor = { owner, reaction in}
-        flux?.bind()
+        
         
         // Calling dispatch after disposing the owner
         // should cause the factory to release this flux

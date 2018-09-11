@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Reaktor_iOS
+import Reaktor
 
 class SerializationTests: XCTestCase {
 

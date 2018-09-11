@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-import Reaktor_iOS
+import Reaktor
 
 enum Actions : FluxActions {
     case Count
