@@ -35,7 +35,7 @@ public class Flask<D:AnyObject>:FlaskConcrete {
         super.empty(explicit)
     }
     
-    override func handleMix(_ reaction:FlaskReaction){
+    override func handleReaction(_ reaction:FlaskReaction){
         
         
         if let owner = self.owner {
@@ -114,7 +114,7 @@ public class FlaskConcrete:LabAnyEquatable{
     }
     
     ///
-    func handleMix(_ reaction:FlaskReaction){}
+    func handleReaction(_ reaction:FlaskReaction){}
     
 //    @discardableResult public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping MixParams<T>)->FlaskConcrete{
 //        

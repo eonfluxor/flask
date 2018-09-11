@@ -36,17 +36,17 @@ class PauseTests: SetupFlaskTests {
                 calls += 1
                 
                 _ = Lab.pause()
-                Lab.mix(AppMixers.Count, payload:  ["test":"testPause"])
+                Lab.applyMixer(AppMixers.Count, payload:  ["test":"testPause"])
                 
             })
         }
         
         DispatchQueue.main.async {
-            Lab.mix(AppMixers.Count, payload: ["test":"testPause"])
+            Lab.applyMixer(AppMixers.Count, payload: ["test":"testPause"])
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
-        Lab.disposeDispatchQueue()
+        Lab.purgeMixersQueue()
     }
     
     
@@ -68,7 +68,7 @@ class PauseTests: SetupFlaskTests {
         
         let pause  = Lab.pause()
         let pause2  = Lab.pause()
-        Lab.mix(AppMixers.Count, payload:  ["test":"testPauseRelease"])
+        Lab.applyMixer(AppMixers.Count, payload:  ["test":"testPauseRelease"])
         
         DispatchQueue.main.async {
             pause.release()
@@ -92,21 +92,24 @@ class PauseTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             reaction.at(molecule)?.on(AppAtoms.named.counter, { (change) in
+                
+                reaction.labPause?.release()
                 expectation.fulfill()
+           
             })
             reaction.at(molecule)?.on(AppAtoms.named.text, { (change) in
                 expectation2.fulfill()
             })
         }
         
-        let pause = Lab.pause(mixing:AppMixers.Count, payload:  ["test":"testPauseActon count"])
+        Lab.pause(mixing:AppMixers.Count, payload:  ["test":"testPauseActon count"])
        
         //this should be performed after the pause releases
-        Lab.mix(AppMixers.Text, payload:  ["test":"testPauseAction text"])
+        Lab.applyMixer(AppMixers.Text, payload:  ["test":"testPauseAction text"])
         
         wait(for: [expectation], timeout: 2)
         
-        pause.release()
+       
         wait(for: [expectation2], timeout: 2)
         
         

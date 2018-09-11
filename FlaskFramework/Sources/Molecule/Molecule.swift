@@ -51,7 +51,7 @@ open class Molecule<T:Atoms,A:RawRepresentable> : MoleculeConcrete{
         return val.rawValue as! String
     }
     
-    public func mix(_ enumVal:A, _ reaction: @escaping MoleculeMixer){
+    public func mixer(_ enumVal:A, _ reaction: @escaping MoleculeMixer){
         mixer(mixerName(enumVal), reaction)
     }
     
@@ -153,13 +153,16 @@ public extension MoleculeConcrete {
             
             NotificationCenter.default.addObserver(forName: NSNotification.Name(mixer), object: nil, queue: OperationQueue.main) { (notification) in
                 
-                let payload = notification.object
+                let payload = notification.object as? [String:Any]
+                
+                let pause = payload?[FORMULATE_PAUSED_BY] as? MixerPause
+                
                 var resolved = false
                 var completed = true
                 
                 let react = {
                     resolved=true
-                    self?.handleMix()
+                    self?.handleMix(pause)
                 }
                 
                 let abort = {
@@ -180,38 +183,39 @@ public extension MoleculeConcrete {
         return weakRegistration()
     }
     
-    public func mix<T:MoleculeConcrete>(_ mixer:@escaping MixParams<T>){
-        
-        var resolved = false
-        var completed = true
-        
-        let react = {
-            resolved = true
-            self.handleMix()
-        }
-        
-        let abort = {
-            resolved = true
-            completed = false
-        }
-        
-        atomsTransaction({
-            mixer(self as! T, react, abort)
-            assert(resolved, "mixer closure must call `react` or `abort`")
-            return completed
-        })
-    }
+//    public func mixer<T:MoleculeConcrete>(_ mixer:@escaping MixParams<T>){
+//
+//        var resolved = false
+//        var completed = true
+//
+//        let react = {
+//            resolved = true
+//            self.handleMix()
+//        }
+//        
+//        let abort = {
+//            resolved = true
+//            completed = false
+//        }
+//
+//        atomsTransaction({
+//            mixer(self as! T, react, abort)
+//            assert(resolved, "mixer closure must call `react` or `abort`")
+//            return completed
+//        })
+//    }
     
 }
 
 extension MoleculeConcrete {
     
-    func handleMix(){
+    func handleMix(_ mixerPause: MixerPause? = nil){
         Lab.mixer.reactionQueue.addOperation { [weak self] in
             
             if self == nil { return }
             
             let reaction = FlaskReaction(self! as MoleculeConcrete)
+            reaction.labPause = mixerPause
             
             if( reaction.changed()){
                 Lab.mixer.reactChange(reaction)
