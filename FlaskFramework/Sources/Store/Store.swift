@@ -155,7 +155,7 @@ public extension StoreConcrete {
                 
                 //            NotificationCenter.default.addObserver(forName: NSNotification.Name(bus), object: nil, queue: OperationQueue.main) { (notification) in
                 
-                let payload = notification.payload as? [String:Any]
+                let payload = notification.payload
                 
                 let lock = payload?[BUS_LOCKED_BY] as? BusLock
                 
