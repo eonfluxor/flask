@@ -92,21 +92,24 @@ class PauseTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             reaction.at(molecule)?.on(AppAtoms.named.counter, { (change) in
+                
+                reaction.labPause?.release()
                 expectation.fulfill()
+           
             })
             reaction.at(molecule)?.on(AppAtoms.named.text, { (change) in
                 expectation2.fulfill()
             })
         }
         
-        let pause = Lab.pause(mixing:AppMixers.Count, payload:  ["test":"testPauseActon count"])
+        Lab.pause(mixing:AppMixers.Count, payload:  ["test":"testPauseActon count"])
        
         //this should be performed after the pause releases
         Lab.applyMixer(AppMixers.Text, payload:  ["test":"testPauseAction text"])
         
         wait(for: [expectation], timeout: 2)
         
-        pause.release()
+       
         wait(for: [expectation2], timeout: 2)
         
         

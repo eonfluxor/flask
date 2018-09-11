@@ -65,17 +65,20 @@ public extension Lab {
         return MixerPause(mixer:Lab.mixer)
     }
     
-    
+    @discardableResult
     static public func pause<T:RawRepresentable>(mixing enumVal:T)->MixerPause{
         return Lab.pause(mixing:enumVal,payload:nil)
     }
     
+    @discardableResult
     static public func pause<T:RawRepresentable>(mixing enumVal:T, payload:[String:Any]?)->MixerPause{
-        let mixer = enumVal.rawValue as! String
-        var info = payload ?? [:]
-        info[FLUX_ACTION_SKIP_LOCKS] = true
         
+        let mixer = enumVal.rawValue as! String
         let pause = MixerPause(mixer:Lab.mixer)
+        
+        var info = payload ?? [:]
+        info[FORMULATE_PAUSED_BY] = pause
+        
         Lab.mixer.formulate(mixer,payload:info)
         
         return pause

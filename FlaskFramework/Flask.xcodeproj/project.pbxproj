@@ -18,12 +18,12 @@
 		26C53E412147908E0090AA0C /* Flask_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C53E382147908D0090AA0C /* Flask_tvOS.framework */; };
 		26C53E462147908E0090AA0C /* Flask_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E452147908E0090AA0C /* Flask_tvOSTests.swift */; };
 		26C53E482147908E0090AA0C /* Flask_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C53E3A2147908D0090AA0C /* Flask_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		26C53E64214790A90090AA0C /* LabPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* LabPublic.swift */; };
-		26C53E65214790A90090AA0C /* LabPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* LabPublic.swift */; };
-		26C53E66214790A90090AA0C /* LabPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* LabPublic.swift */; };
-		26C53E67214790A90090AA0C /* LabPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* LabPublic.swift */; };
-		26C53E68214790A90090AA0C /* LabPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* LabPublic.swift */; };
-		26C53E69214790A90090AA0C /* LabPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* LabPublic.swift */; };
+		26C53E64214790A90090AA0C /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Lab.swift */; };
+		26C53E65214790A90090AA0C /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Lab.swift */; };
+		26C53E66214790A90090AA0C /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Lab.swift */; };
+		26C53E67214790A90090AA0C /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Lab.swift */; };
+		26C53E68214790A90090AA0C /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Lab.swift */; };
+		26C53E69214790A90090AA0C /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Lab.swift */; };
 		26C53E6A214790A90090AA0C /* LabHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* LabHelpers.swift */; };
 		26C53E6B214790A90090AA0C /* LabHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* LabHelpers.swift */; };
 		26C53E6C214790A90090AA0C /* LabHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* LabHelpers.swift */; };
@@ -215,7 +215,7 @@
 		26C53E402147908E0090AA0C /* Flask-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flask-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C53E452147908E0090AA0C /* Flask_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flask_tvOSTests.swift; sourceTree = "<group>"; };
 		26C53E472147908E0090AA0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26C53E4F214790A90090AA0C /* LabPublic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabPublic.swift; sourceTree = "<group>"; };
+		26C53E4F214790A90090AA0C /* Lab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lab.swift; sourceTree = "<group>"; };
 		26C53E50214790A90090AA0C /* LabHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabHelpers.swift; sourceTree = "<group>"; };
 		26C53E52214790A90090AA0C /* LabDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabDictionary.swift; sourceTree = "<group>"; };
 		26C53E54214790A90090AA0C /* LabRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabRef.swift; sourceTree = "<group>"; };
@@ -338,6 +338,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26A0F925214834DC00555C8D /* Lab */ = {
+			isa = PBXGroup;
+			children = (
+				26C53E4F214790A90090AA0C /* Lab.swift */,
+				26C53E50214790A90090AA0C /* LabHelpers.swift */,
+				26C53E52214790A90090AA0C /* LabDictionary.swift */,
+				26C53E54214790A90090AA0C /* LabRef.swift */,
+			);
+			path = Lab;
+			sourceTree = "<group>";
+		};
 		26A82A342146D769008C8009 = {
 			isa = PBXGroup;
 			children = (
@@ -431,9 +442,7 @@
 		26A82AC82146D80E008C8009 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				26C53E50214790A90090AA0C /* LabHelpers.swift */,
-				26C53E4F214790A90090AA0C /* LabPublic.swift */,
-				26C53E51214790A90090AA0C /* Boxes */,
+				26A0F925214834DC00555C8D /* Lab */,
 				26C53E59214790A90090AA0C /* Mixer */,
 				26C53E55214790A90090AA0C /* Flask */,
 				26C53E5C214790A90090AA0C /* Reaction */,
@@ -447,7 +456,7 @@
 			children = (
 				26C53EC4214790C00090AA0C /* DataFlowTests */,
 				26C53ECA214790C00090AA0C /* FluxTests */,
-				26C53ECF214790C00090AA0C /* LocksTests */,
+				26C53ECF214790C00090AA0C /* PauseTests */,
 				26C53ED1214790C00090AA0C /* SampleClasses */,
 				26C53ECE214790C00090AA0C /* SetupTests.swift */,
 			);
@@ -506,15 +515,6 @@
 				26C53E472147908E0090AA0C /* Info.plist */,
 			);
 			path = "Flask-tvOSTests";
-			sourceTree = "<group>";
-		};
-		26C53E51214790A90090AA0C /* Boxes */ = {
-			isa = PBXGroup;
-			children = (
-				26C53E52214790A90090AA0C /* LabDictionary.swift */,
-				26C53E54214790A90090AA0C /* LabRef.swift */,
-			);
-			path = Boxes;
 			sourceTree = "<group>";
 		};
 		26C53E55214790A90090AA0C /* Flask */ = {
@@ -578,12 +578,12 @@
 			path = FluxTests;
 			sourceTree = "<group>";
 		};
-		26C53ECF214790C00090AA0C /* LocksTests */ = {
+		26C53ECF214790C00090AA0C /* PauseTests */ = {
 			isa = PBXGroup;
 			children = (
 				26C53ED0214790C00090AA0C /* LockTests.swift */,
 			);
-			path = LocksTests;
+			path = PauseTests;
 			sourceTree = "<group>";
 		};
 		26C53ED1214790C00090AA0C /* SampleClasses */ = {
@@ -1080,7 +1080,7 @@
 				26C53EBE214790A90090AA0C /* Molecule.swift in Sources */,
 				26C53E9A214790A90090AA0C /* MixerPause.swift in Sources */,
 				26C53E6A214790A90090AA0C /* LabHelpers.swift in Sources */,
-				26C53E64214790A90090AA0C /* LabPublic.swift in Sources */,
+				26C53E64214790A90090AA0C /* Lab.swift in Sources */,
 				26C53E94214790A90090AA0C /* Mixer.swift in Sources */,
 				26C53E70214790A90090AA0C /* LabDictionary.swift in Sources */,
 				26C53EAC214790A90090AA0C /* Atoms.swift in Sources */,
@@ -1121,7 +1121,7 @@
 				26C53ED8214790C00090AA0C /* SerializationTests.swift in Sources */,
 				26C53E8F214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EA7214790A90090AA0C /* FlaskReaction.swift in Sources */,
-				26C53E65214790A90090AA0C /* LabPublic.swift in Sources */,
+				26C53E65214790A90090AA0C /* Lab.swift in Sources */,
 				26C53EB3214790A90090AA0C /* MoleculeSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1138,7 +1138,7 @@
 				26C53EC0214790A90090AA0C /* Molecule.swift in Sources */,
 				26C53E9C214790A90090AA0C /* MixerPause.swift in Sources */,
 				26C53E6C214790A90090AA0C /* LabHelpers.swift in Sources */,
-				26C53E66214790A90090AA0C /* LabPublic.swift in Sources */,
+				26C53E66214790A90090AA0C /* Lab.swift in Sources */,
 				26C53E96214790A90090AA0C /* Mixer.swift in Sources */,
 				26C53E72214790A90090AA0C /* LabDictionary.swift in Sources */,
 				26C53EAE214790A90090AA0C /* Atoms.swift in Sources */,
@@ -1179,7 +1179,7 @@
 				26C53ED9214790C00090AA0C /* SerializationTests.swift in Sources */,
 				26C53E91214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EA9214790A90090AA0C /* FlaskReaction.swift in Sources */,
-				26C53E67214790A90090AA0C /* LabPublic.swift in Sources */,
+				26C53E67214790A90090AA0C /* Lab.swift in Sources */,
 				26C53EB5214790A90090AA0C /* MoleculeSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1196,7 +1196,7 @@
 				26C53EC2214790A90090AA0C /* Molecule.swift in Sources */,
 				26C53E9E214790A90090AA0C /* MixerPause.swift in Sources */,
 				26C53E6E214790A90090AA0C /* LabHelpers.swift in Sources */,
-				26C53E68214790A90090AA0C /* LabPublic.swift in Sources */,
+				26C53E68214790A90090AA0C /* Lab.swift in Sources */,
 				26C53E98214790A90090AA0C /* Mixer.swift in Sources */,
 				26C53E74214790A90090AA0C /* LabDictionary.swift in Sources */,
 				26C53EB0214790A90090AA0C /* Atoms.swift in Sources */,
@@ -1237,7 +1237,7 @@
 				26C53EDA214790C00090AA0C /* SerializationTests.swift in Sources */,
 				26C53E93214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EAB214790A90090AA0C /* FlaskReaction.swift in Sources */,
-				26C53E69214790A90090AA0C /* LabPublic.swift in Sources */,
+				26C53E69214790A90090AA0C /* Lab.swift in Sources */,
 				26C53EB7214790A90090AA0C /* MoleculeSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

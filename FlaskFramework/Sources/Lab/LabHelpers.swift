@@ -23,7 +23,7 @@ public typealias MixerName = String
 public typealias AtomName = String
 
 
-let FLUX_ACTION_SKIP_LOCKS="FLUX_ACTION_SKIP_LOCKS"
+let FORMULATE_PAUSED_BY="FORMULATE_PAUSED_BY"
 let FLUX_MIXER_NAME="FLUX_MIXER_NAME"
 
 public func isLabNil(_ value:Any?)->Bool{

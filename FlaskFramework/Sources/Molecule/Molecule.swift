@@ -153,13 +153,16 @@ public extension MoleculeConcrete {
             
             NotificationCenter.default.addObserver(forName: NSNotification.Name(mixer), object: nil, queue: OperationQueue.main) { (notification) in
                 
-                let payload = notification.object
+                let payload = notification.object as? [String:Any]
+                
+                let pause = payload?[FORMULATE_PAUSED_BY] as? MixerPause
+                
                 var resolved = false
                 var completed = true
                 
                 let react = {
                     resolved=true
-                    self?.handleMix()
+                    self?.handleMix(pause)
                 }
                 
                 let abort = {
@@ -181,10 +184,10 @@ public extension MoleculeConcrete {
     }
     
 //    public func mixer<T:MoleculeConcrete>(_ mixer:@escaping MixParams<T>){
-//        
+//
 //        var resolved = false
 //        var completed = true
-//        
+//
 //        let react = {
 //            resolved = true
 //            self.handleMix()
@@ -194,7 +197,7 @@ public extension MoleculeConcrete {
 //            resolved = true
 //            completed = false
 //        }
-//        
+//
 //        atomsTransaction({
 //            mixer(self as! T, react, abort)
 //            assert(resolved, "mixer closure must call `react` or `abort`")
@@ -206,12 +209,13 @@ public extension MoleculeConcrete {
 
 extension MoleculeConcrete {
     
-    func handleMix(){
+    func handleMix(_ mixerPause: MixerPause? = nil){
         Lab.mixer.reactionQueue.addOperation { [weak self] in
             
             if self == nil { return }
             
             let reaction = FlaskReaction(self! as MoleculeConcrete)
+            reaction.labPause = mixerPause
             
             if( reaction.changed()){
                 Lab.mixer.reactChange(reaction)

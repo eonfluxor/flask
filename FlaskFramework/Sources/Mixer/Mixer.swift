@@ -92,8 +92,9 @@ extension Mixer {
  
     func enqueue(_ mixer:String, payload:[String:Any]?){
         
+
         var queue = formulationQueue
-        if  ((payload?[FLUX_ACTION_SKIP_LOCKS]) != nil) {
+        if (payload?[FORMULATE_PAUSED_BY]) != nil {
             queue = formulationOnPauseQueue
         }
         
@@ -175,7 +176,7 @@ extension Mixer {
         
         for moleculeFlaskRef in moleculeFlaskRefs {
             if let flask = moleculeFlaskRef.value{
-                flask.handleMix( reaction)
+                flask.handleReaction( reaction)
             }
         }
         

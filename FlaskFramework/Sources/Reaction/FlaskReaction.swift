@@ -17,6 +17,7 @@ import Cocoa
 public class FlaskReaction {
 
     
+    weak var labPause:MixerPause?
     var molecule:MoleculeConcrete
     var changes:LabDictType
     
