@@ -42,7 +42,7 @@ public class Flask<D:AnyObject>:FlaskConcrete {
             reactor(owner,reaction)
         }else{
             //dispose flask when the owner is no longer present
-            LabFlaskManager.removeFlask(self)
+            FluxFlaskManager.removeFlask(self)
         }
     }
     
@@ -53,7 +53,7 @@ public class Flask<D:AnyObject>:FlaskConcrete {
 }
 
 
-public class FlaskConcrete:LabEquatable{
+public class FlaskConcrete:FluxEquatable{
     
     var stores:[StoreConcrete]=[]
     var filled = false
@@ -83,11 +83,11 @@ public class FlaskConcrete:LabEquatable{
            
             { [weak self] in
                 if let wself = self {
-                    Lab.mixer.fillFlask(store, flask: wself)
+                    Flux.bus.fillFlask(store, flask: wself)
                 }
             }()
             
-            store.defineMixers()
+            store.defineBus()
         }
         
         
@@ -105,21 +105,21 @@ public class FlaskConcrete:LabEquatable{
         for store in stores {
             { [weak self] in
                 if let wself = self {
-                    Lab.mixer.emptyFlask(store, flask: wself)
+                    Flux.bus.emptyFlask(store, flask: wself)
                 }
             }()
             
-            store.undefineMixers()
+            store.undefineBus()
         }
     }
     
     ///
     func handleReaction(_ reaction:FlaskReaction){}
     
-//    @discardableResult public func mix<T:StoreConcrete>(_ aStore:T, _ mixer:@escaping MixParams<T>)->FlaskConcrete{
+//    @discardableResult public transmute<T:StoreConcrete>(_ aStore:T, _ bus:@escaping MixParams<T>)->FlaskConcrete{
 //        
 //        let store = self.store(aStore)
-//        store.mix(mixer)
+//        store.transmute(bus)
 //        
 //        return self
 //    }

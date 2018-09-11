@@ -21,7 +21,7 @@ class SetupFlaskTests: XCTestCase {
         
       
         
-        XCTAssert(LabFlaskManager.flasks.count == 0, "all flasks should dispose before this test")
+        XCTAssert(FluxFlaskManager.flasks.count == 0, "all flasks should dispose before this test")
         
         
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -32,8 +32,8 @@ class SetupFlaskTests: XCTestCase {
         super.tearDown()
         self.store?.purgeArchive()
         self.store = .none
-        Lab.removePauses()
-        LabFlaskManager.purge()
+        Flux.removePauses()
+        FluxFlaskManager.purge()
 //        sleep(2)
     }
     

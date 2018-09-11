@@ -13,7 +13,7 @@ import Cocoa
 #endif
 
 
-enum AppMixers : MixerName {
+enum AppActions : BusAction {
     case Count
     case Text
     case Object
@@ -27,23 +27,23 @@ struct AppState : State {
     
     var counter = 0
     var text = ""
-    var object:LabRef?
-    var map:LabDictRef?
+    var object:FluxRef?
+    var map:FluxDictRef?
     
     var _internal = "`_` use this prefix for internal vars "
     
 }
 
-class App : Store<AppState,AppMixers> {
+class App : Store<AppState,AppActions> {
     
-    override func defineMixers(){
+    override func defineBus(){
         
-        mixer(.Count) {[weak self] (payload, react, abort)  in
+        on(.Count) {[weak self] (payload, react, abort)  in
             self?.state.counter = (self?.state.counter)! + 1
             react()
         }
         
-        mixer(.Text) {[weak self] (payload, react, abort)  in
+        on(.Text) {[weak self] (payload, react, abort)  in
             self?.state.text = "mixd"
             react()
         }

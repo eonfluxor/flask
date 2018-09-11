@@ -18,7 +18,7 @@ class FlaskTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,filling:store)
+        let flask = Flux.flask(ownedBy:owner,filling:store)
         
         flask.reactor = { owner, reaction in
             
@@ -29,7 +29,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         DispatchQueue.main.async {
-            Lab.applyMixer(AppMixers.Count, payload: ["test":"callback"])
+            Flux.transmute(AppActions.Count, payload: ["test":"callback"])
         }
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -43,7 +43,7 @@ class FlaskTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,filling:store)
+        let flask = Flux.flask(ownedBy:owner,filling:store)
         
         flask.reactor = { owner, reaction in
             
@@ -54,7 +54,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         DispatchQueue.main.async {
-            Lab.applyMixer(AppMixers.Count, payload: ["test":"testOwner"])
+            Flux.transmute(AppActions.Count, payload: ["test":"testOwner"])
         }
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -68,7 +68,7 @@ class FlaskTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,filling:store)
+        let flask = Flux.flask(ownedBy:owner,filling:store)
         
         flask.reactor={owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -77,7 +77,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         flask.empty()
-        Lab.applyMixer(AppMixers.Count, payload: ["test":"empty"])
+        Flux.transmute(AppActions.Count, payload: ["test":"empty"])
         
         waitForExpectations(timeout: 2, handler: nil)
         
@@ -92,7 +92,7 @@ class FlaskTests: SetupFlaskTests {
         let store = self.store!
         let owner:TestOwner? = TestOwner()
         
-        weak var flask = Lab.flask(ownedBy:owner!, filling:store)
+        weak var flask = Flux.flask(ownedBy:owner!, filling:store)
         
         flask?.reactor = { owner, reaction in}
    
@@ -115,16 +115,16 @@ class FlaskTests: SetupFlaskTests {
         let store = self.store!
         var weakOwner:TestOwner? = TestOwner()
         
-        weak var flask = Lab.flask(ownedBy:weakOwner!, filling:store)
+        weak var flask = Flux.flask(ownedBy:weakOwner!, filling:store)
         
         flask?.reactor = { owner, reaction in}
         
         
-        // Calling formulate after disposing the owner
+        // Calling mix after disposing the owner
         // should cause the factory to release this flask
         weakOwner = nil
         
-        Lab.applyMixer(AppMixers.Count, payload:  ["test":"ownerDispose"])
+        Flux.transmute(AppActions.Count, payload:  ["test":"ownerDispose"])
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:  {
             if flask == nil {
@@ -144,7 +144,7 @@ class FlaskTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,filling:store)
+        let flask = Flux.flask(ownedBy:owner,filling:store)
         
         flask.reactor = { owner, reaction in
             
@@ -160,7 +160,7 @@ class FlaskTests: SetupFlaskTests {
             
         }
         
-        Lab.applyMixer(AppMixers.Count, payload: ["test":"change"])
+        Flux.transmute(AppActions.Count, payload: ["test":"change"])
         
         waitForExpectations(timeout: 2, handler: nil)
         
@@ -174,7 +174,7 @@ class FlaskTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testGlobalStore testInlineMix")
         
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, filling:Stores.app)
+        let flask = Flux.flask(ownedBy:owner, filling:Stores.app)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -183,9 +183,9 @@ class FlaskTests: SetupFlaskTests {
             })
         }
         
-        flask.mix(Stores.app,{ (store) in
+        flask.transmute(Stores.app,{ (store) in
             store.state.counter=1
-        }).mix(Stores.app) { (store) in
+        }).transmute(Stores.app) { (store) in
             store.state.counter=2
             }.react()
         
@@ -202,7 +202,7 @@ class FlaskTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, filling:store)
+        let flask = Flux.flask(ownedBy:owner, filling:store)
         
         flask.reactor = { owner, reaction in
             reaction.on("_internal", { (change) in
@@ -210,7 +210,7 @@ class FlaskTests: SetupFlaskTests {
             })
         }
         
-        flask.mix(store){ (store) in
+        flask.transmute(store){ (store) in
             store.state._internal="shouldn't cause mix"
         }.react()
         

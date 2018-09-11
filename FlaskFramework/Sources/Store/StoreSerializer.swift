@@ -41,7 +41,7 @@ public struct StoreSerializer{
         return state
     }
     
-    static public func flattenDictionary(_ dict:LabDictRef) -> [String:Any]{
+    static public func flattenDictionary(_ dict:FluxDictRef) -> [String:Any]{
         
         var result:[String:Any] = [:]
         
@@ -53,7 +53,7 @@ public struct StoreSerializer{
             
             if(isDictionaryRef(value)){
                 //recursion
-                let nest = flattenDictionary(value as! LabDictRef)
+                let nest = flattenDictionary(value as! FluxDictRef)
                 result[key] = nest
             } else{
                 result[key] = value
@@ -65,9 +65,9 @@ public struct StoreSerializer{
         
     }
     
-    static public func nestDictionaries( namespace:String,  root:LabDictRef,  children:LabDictRef) -> LabDictRef{
+    static public func nestDictionaries( namespace:String,  root:FluxDictRef,  children:FluxDictRef) -> FluxDictRef{
         
-        var result = LabDictRef(root.dictionary)
+        var result = FluxDictRef(root.dictionary)
         
         let keys = children.keys()
         
@@ -75,7 +75,7 @@ public struct StoreSerializer{
             
             let value = children[key]
             let childKey = "\(namespace).\(key)"
-            assert( isLabNil(result[childKey]) , "namespace collision!" )
+            assert( isFluxNil(result[childKey]) , "namespace collision!" )
             
             result[childKey] = value
             
@@ -83,7 +83,7 @@ public struct StoreSerializer{
                 //recursion
                 result = StoreSerializer.nestDictionaries(namespace: childKey,
                                                          root: result,
-                                                         children: value as! LabDictRef)
+                                                         children: value as! FluxDictRef)
             }
             
         }
@@ -94,7 +94,7 @@ public struct StoreSerializer{
     
     
     static public func isDictionaryRef(_ value:Any?)->Bool{
-        return ((value as? LabDictRef) != nil)
+        return ((value as? FluxDictRef) != nil)
     }
     
 }

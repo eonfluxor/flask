@@ -14,39 +14,39 @@ import Cocoa
 
 
 /// Main entry point
-public class Lab {
+public class Flux {
     
     
-    /// This is the single mixer
-    static public let mixer = Mixer()
+    /// This is the single bus
+    static public let bus = Bus()
     /// Use this to preserve `nil` entries in swift dictionaries
     static public let Nil = nil as AnyHashable?
-    /// Use this to preseve `nul` in LabDictRef instances
+    /// Use this to preseve `nul` in FluxDictRef instances
     static public let Null = NSNull()
     
     
 }
 
 
-public extension Lab {
+public extension Flux {
     
-    static public func purgeMixersQueue(){
-        Lab.mixer.formulationQueue.cancelAllOperations()
+    static public func purgeBusQueue(){
+        Flux.bus.busQueue.cancelAllOperations()
     }
     
     static public func purgeFlasks(){
-        LabFlaskManager.purge()
+        FluxFlaskManager.purge()
     }
 }
 
-public extension Lab {
+public extension Flux {
     
     static public func flask<T:AnyObject>(ownedBy owner:T, filling store:StoreConcrete) -> Flask<T>{
-        return Lab.flask(ownedBy:owner,filling:[store])
+        return Flux.flask(ownedBy:owner,filling:[store])
     }
     
     static public func flask<T:AnyObject>(ownedBy owner:T, filling stores:[StoreConcrete]) -> Flask<T>{
-        let flask = Lab.flask(ownedBy:owner)
+        let flask = Flux.flask(ownedBy:owner)
         flask.defineStores(stores)
         flask.fill()
         return flask
@@ -54,55 +54,55 @@ public extension Lab {
     
     
     static private func flask<T:AnyObject>(ownedBy owner:T) -> Flask<T>{
-        return LabFlaskManager.instance(ownedBy:owner)
+        return FluxFlaskManager.instance(ownedBy:owner)
     }
 }
 
 
-public extension Lab {
+public extension Flux {
     
-    static public func pause()->MixerPause{
-        return MixerPause(mixer:Lab.mixer)
+    static public func pause()->BusPause{
+        return BusPause(bus:Flux.bus)
     }
     
     @discardableResult
-    static public func pause<T:RawRepresentable>(fillingg enumVal:T)->MixerPause{
-        return Lab.pause(fillingg:enumVal,payload:nil)
+    static public func pause<T:RawRepresentable>(fillingg enumVal:T)->BusPause{
+        return Flux.pause(fillingg:enumVal,payload:nil)
     }
     
     @discardableResult
-    static public func pause<T:RawRepresentable>(fillingg enumVal:T, payload:[String:Any]?)->MixerPause{
+    static public func pause<T:RawRepresentable>(fillingg enumVal:T, payload:[String:Any]?)->BusPause{
         
-        let mixer = enumVal.rawValue as! String
-        let pause = MixerPause(mixer:Lab.mixer)
+        let bus = enumVal.rawValue as! String
+        let pause = BusPause(bus:Flux.bus)
         
         var info = payload ?? [:]
-        info[MIXER_PAUSED_BY] = pause
+        info[BUS_PAUSED_BY] = pause
         
-        Lab.mixer.formulate(mixer,payload:info)
+        Flux.bus.transmute(bus,payload:info)
         
         return pause
     }
     
     
     static public func removePauses(){
-        Lab.mixer.removePauses()
+        Flux.bus.removePauses()
     }
 }
 
 
-public extension Lab {
+public extension Flux {
     
-    static public func applyMixer<T:RawRepresentable>(_ enumVal:T){
-        Lab.applyMixer(enumVal,payload:nil)
+    static public func transmute<T:RawRepresentable>(_ enumVal:T){
+        Flux.transmute(enumVal,payload:nil)
     }
     
-    static public func applyMixer<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
-        let mixer = enumVal.rawValue as! String
+    static public func transmute<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
+        let bus = enumVal.rawValue as! String
         var info = payload ?? [:]
-        info[FLUX_MIXER_NAME] = mixer
+        info[FLUX_BUS_NAME] = bus
         
-        Lab.mixer.formulate(mixer,payload:info)
+        Flux.bus.transmute(bus,payload:info)
     }
 }
 

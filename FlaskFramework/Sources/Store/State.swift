@@ -18,7 +18,7 @@ struct AnyState:State {
 
 public protocol State : Codable {
     init() //construct at initial state
-    func toDictionary()->LabDictType
+    func toDictionary()->FluxDictType
     func toJsonDictionary()->[String:Any]
 }
 
@@ -30,9 +30,9 @@ public extension State{
 //    }
     
     
-    func toDictionary()->LabDictType{
+    func toDictionary()->FluxDictType{
 //        let dict = self.dictionary
-        var result:LabDictType = [:]
+        var result:FluxDictType = [:]
         
         let mirror = Mirror(reflecting: self)
         
@@ -45,14 +45,14 @@ public extension State{
                 continue
             }
             
-            result[label] = Lab.Nil
+            result[label] = Flux.Nil
             result[label] = value as? AnyHashable
             
             if(StoreSerializer.isDictionaryRef(value)){
                 let nestedRef = StoreSerializer.nestDictionaries(namespace: label,
-                                                                root: LabDictRef(result as NSDictionary),
-                                                                children: value as! LabDictRef)
-                result = nestedRef.dictionary as! LabDictType
+                                                                root: FluxDictRef(result as NSDictionary),
+                                                                children: value as! FluxDictRef)
+                result = nestedRef.dictionary as! FluxDictType
             }
         }
         
@@ -82,7 +82,7 @@ public extension State{
             }
             
             if(StoreSerializer.isDictionaryRef(value)){
-                let nest =  StoreSerializer.flattenDictionary(value as! LabDictRef)
+                let nest =  StoreSerializer.flattenDictionary(value as! FluxDictRef)
                  result[label] = nest
             } else{
                  result[label] = value

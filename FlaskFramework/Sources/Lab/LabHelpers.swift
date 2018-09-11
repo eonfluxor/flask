@@ -13,20 +13,20 @@ import Cocoa
 #endif
 
 
-public typealias StoreMixer = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
+public typealias StoreBus = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
 public typealias ChangeClosure = (_ change:StoreChange)->Void
 public typealias ReactionClosure<T> = (_ ownedBy:T, _ reaction: FlaskReaction) -> Void
-public typealias LabDictType = Dictionary<String,AnyHashable?>
-public typealias LabNil = (AnyHashable?)
+public typealias FluxDictType = Dictionary<String,AnyHashable?>
+public typealias FluxNil = (AnyHashable?)
 public typealias MixParams<T> = (_ store:T,_ react:()-> Void,_ abort:()-> Void) -> Void
-public typealias MixerName = String
+public typealias BusAction = String
 public typealias StateName = String
 
 
-let MIXER_PAUSED_BY="MIXER_PAUSED_BY"
-let FLUX_MIXER_NAME="FLUX_MIXER_NAME"
+let BUS_PAUSED_BY="BUS_PAUSED_BY"
+let FLUX_BUS_NAME="FLUX_BUS_NAME"
 
-public func isLabNil(_ value:Any?)->Bool{
+public func isFluxNil(_ value:Any?)->Bool{
     if value == nil || ((value as? NSNull) != nil){
         return true
     }
@@ -36,18 +36,18 @@ public func isLabNil(_ value:Any?)->Bool{
 
 
 
-protocol LabAnyWithInit{
+protocol FluxAnyWithInit{
     init() //construct at initial state
 }
 
-public class LabEquatable: Equatable{
-    public static func == (lhs: LabEquatable, rhs: LabEquatable) -> Bool {
+public class FluxEquatable: Equatable{
+    public static func == (lhs: FluxEquatable, rhs: FluxEquatable) -> Bool {
         return lhs === rhs
     }
 }
 
 
-class LabWeakRef<T> where T: AnyObject {
+class FluxWeakRef<T> where T: AnyObject {
     
     private(set) weak var value: T?
     

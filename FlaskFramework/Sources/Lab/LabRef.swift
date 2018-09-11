@@ -1,5 +1,5 @@
 //
-//  LabRef.swift
+//  FluxRef.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/4/18.
@@ -13,7 +13,7 @@ import UIKit
 import Cocoa
 #endif
 
-public class LabRef: NSObject, Codable{
+public class FluxRef: NSObject, Codable{
     
     private(set) weak var object:NSObject? 
     
@@ -22,7 +22,7 @@ public class LabRef: NSObject, Codable{
     }
     ///// required
     
-    static public func == (lhs: LabRef, rhs: LabRef) -> Bool {
+    static public func == (lhs: FluxRef, rhs: FluxRef) -> Bool {
         return lhs.object == rhs.object
     }
     

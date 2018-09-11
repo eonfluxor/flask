@@ -16,7 +16,7 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     
     typealias StateType = T
     
-    var stateSnapshot: LabDictType = [:]
+    var stateSnapshot: FluxDictType = [:]
     private var _state: T = T()
     public var state:T = T()
     //////////////////
@@ -47,18 +47,18 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
 
    
     
-    public func mixerName(_ val:A)->String{
+    public func actionName(_ val:A)->String{
         return val.rawValue as! String
     }
     
-    public func mixer(_ enumVal:A, _ reaction: @escaping StoreMixer){
-        mixer(mixerName(enumVal), reaction)
+    public func on(_ enumVal:A, _ reaction: @escaping StoreBus){
+        bus(actionName(enumVal), reaction)
     }
     
-    public override func stateSnapshotDictionary() -> LabDictType{
+    public override func stateSnapshotDictionary() -> FluxDictType{
         return stateSnapshot
     }
-    public override func stateDictionary() -> LabDictType{
+    public override func stateDictionary() -> FluxDictType{
         return _state.toDictionary()
     }
     
@@ -114,7 +114,7 @@ open class StoreConcrete {
     }
     
     public static func isObjectRef(_ state:Any)->Bool{
-        return ((state as? LabRef) != nil)
+        return ((state as? FluxRef) != nil)
     }
     
     
@@ -122,18 +122,18 @@ open class StoreConcrete {
         initializeMetaClass()
     }
     
-    func stateSnapshotDictionary() -> LabDictType{
+    func stateSnapshotDictionary() -> FluxDictType{
         return [:]
     }
-    func stateDictionary() -> LabDictType{
+    func stateDictionary() -> FluxDictType{
         return [:]
     }
     func name() -> String {
         return "Store\(self.self)"
     }
     
-    open func defineMixers(){}
-    open func undefineMixers(){}
+    open func defineBus(){}
+    open func undefineBus(){}
     
     func snapshotState(){}
     
@@ -148,14 +148,14 @@ open class StoreConcrete {
 
 public extension StoreConcrete {
   
-    @discardableResult public func mixer(_ mixer:String, _ reaction: @escaping StoreMixer)->NSObjectProtocol{
+    @discardableResult public func bus(_ bus:String, _ reaction: @escaping StoreBus)->NSObjectProtocol{
         let weakRegistration={ [weak self] in
             
-            NotificationCenter.default.addObserver(forName: NSNotification.Name(mixer), object: nil, queue: OperationQueue.main) { (notification) in
+            NotificationCenter.default.addObserver(forName: NSNotification.Name(bus), object: nil, queue: OperationQueue.main) { (notification) in
                 
                 let payload = notification.object as? [String:Any]
                 
-                let pause = payload?[MIXER_PAUSED_BY] as? MixerPause
+                let pause = payload?[BUS_PAUSED_BY] as? BusPause
                 
                 var resolved = false
                 var completed = true
@@ -187,16 +187,16 @@ public extension StoreConcrete {
 
 extension StoreConcrete {
     
-    func handleMix(_ mixerPause: MixerPause? = nil){
-        Lab.mixer.reactionQueue.addOperation { [weak self] in
+    func handleMix(_ busPause: BusPause? = nil){
+        Flux.bus.reactionQueue.addOperation { [weak self] in
             
             if self == nil { return }
             
             let reaction = FlaskReaction(self! as StoreConcrete)
-            reaction.onPause = mixerPause
+            reaction.onPause = busPause
             
             if( reaction.changed()){
-                Lab.mixer.reactChange(reaction)
+                Flux.bus.reactChange(reaction)
             }else{
                 //log
             }

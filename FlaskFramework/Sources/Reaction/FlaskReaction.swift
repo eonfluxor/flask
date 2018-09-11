@@ -17,9 +17,9 @@ import Cocoa
 public class FlaskReaction {
 
     
-    weak public var onPause:MixerPause?
+    weak public var onPause:BusPause?
     private(set) var store:StoreConcrete
-    private(set) var changes:LabDictType
+    private(set) var changes:FluxDictType
     
     required public init(_ store:StoreConcrete){
         self.store = store
@@ -80,7 +80,7 @@ public class FlaskReaction {
 
 public extension FlaskReaction {
     
-    static public func reduceChanges(store:StoreConcrete)->LabDictType{
+    static public func reduceChanges(store:StoreConcrete)->FluxDictType{
     
         let oldState = store.stateSnapshotDictionary()
         let newState = store.stateDictionary()
@@ -88,9 +88,9 @@ public extension FlaskReaction {
         return reduceChanges(oldState,newState)
     }
     
-    static public func reduceChanges(_ oldState:LabDictType, _ newState:LabDictType)->LabDictType{
+    static public func reduceChanges(_ oldState:FluxDictType, _ newState:FluxDictType)->FluxDictType{
         
-        var changes:LabDictType=[:]
+        var changes:FluxDictType=[:]
         
         let uniqueKeys = Set(Array(oldState.keys) + Array(newState.keys))
         
@@ -98,7 +98,7 @@ public extension FlaskReaction {
             
             let change = FlaskReaction.change(oldState, newState, key)
             
-            if change.mixd()  {
+            if change.transmuted()  {
                 //use casting to ensure nil is passed
                 changes[key] = change.newValue() as AnyHashable?
             }
@@ -117,10 +117,10 @@ public extension FlaskReaction {
     }
     
 
-    static public func change(_ oldState:LabDictType,_ newState:LabDictType, _ key: String) -> StoreChange {
+    static public func change(_ oldState:FluxDictType,_ newState:FluxDictType, _ key: String) -> StoreChange {
         
-        var oldValue:AnyHashable? = Lab.Nil
-        var newValue:AnyHashable? = Lab.Nil
+        var oldValue:AnyHashable? = Flux.Nil
+        var newValue:AnyHashable? = Flux.Nil
         
         if let val = oldState[key] {
             oldValue = val

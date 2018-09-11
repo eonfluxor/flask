@@ -13,14 +13,14 @@ class NestedStateTests: SetupFlaskTests {
     
     func testNestedState(){
         
-        let expectation = self.expectation(description: "testLabDictRef")
-        let expectation2 = self.expectation(description: "testLabDictRef")
-        let expectation3 = self.expectation(description: "testLabDictRef optional(some)")
-        let expectation4 = self.expectation(description: "testLabDictRef optional(nil)")
+        let expectation = self.expectation(description: "testFluxDictRef")
+        let expectation2 = self.expectation(description: "testFluxDictRef")
+        let expectation3 = self.expectation(description: "testFluxDictRef optional(some)")
+        let expectation4 = self.expectation(description: "testFluxDictRef optional(nil)")
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, filling:store)
+        let flask = Flux.flask(ownedBy:owner, filling:store)
         
         let data:NSDictionary = [
             "foo":"bar",
@@ -33,8 +33,8 @@ class NestedStateTests: SetupFlaskTests {
         
         let data2:NSDictionary = [:]
         
-        let dictRef = LabDictRef(data)
-        let dictRef2 = LabDictRef(data2)
+        let dictRef = FluxDictRef(data)
+        let dictRef2 = FluxDictRef(data2)
         
         let firstTest:(@escaping ()->Void)->Void = { next in
             flask.reactor = { owner, reaction in
@@ -59,7 +59,7 @@ class NestedStateTests: SetupFlaskTests {
             }
             
             
-            flask.mix(store){ (store) in
+            flask.transmute(store){ (store) in
                 store.state.map = dictRef
             }.react()
         }
@@ -71,12 +71,12 @@ class NestedStateTests: SetupFlaskTests {
             
             flask.reactor = { owner, reaction in
                 reaction.on("map.nest.optional", { (change) in
-                    XCTAssert(isLabNil(change.newValue()))
+                    XCTAssert(isFluxNil(change.newValue()))
                     expectation4.fulfill()
                 })
             }
             
-            flask.mix(store) { (store) in
+            flask.transmute(store) { (store) in
                 store.state.map = dictRef2
             }.react()
         }

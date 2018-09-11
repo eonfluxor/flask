@@ -1,6 +1,6 @@
 
 //
-//  mixer.swift
+//  bus.swift
 //  SwiftyFlask
 //
 //  Created by hassan uriostegui on 8/28/18.
@@ -13,23 +13,23 @@ import UIKit
 import Cocoa
 #endif
 
-public class Mixer {
+public class Bus {
     
     //////////////////
     // MARK: - LOCKS
     
-    var pauses:[MixerPause]=[]
+    var pauses:[BusPause]=[]
     
     //////////////////
     // MARK: - OPERATION QUEUE
     
-    let formulationQueue:OperationQueue = {
+    let busQueue:OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount=1
         return queue
     }()
     
-    let formulationOnPauseQueue:OperationQueue = {
+    let busOnPauseQueue:OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount=1
         return queue
@@ -49,12 +49,12 @@ public class Mixer {
     //////////////////
     // MARK: - LAZY
     
-    lazy var flaskRefs: Dictionary<String, Array<LabWeakRef<FlaskConcrete>>> = {
-        return Dictionary<String, Array<LabWeakRef<FlaskConcrete>>>()
+    lazy var flaskRefs: Dictionary<String, Array<FluxWeakRef<FlaskConcrete>>> = {
+        return Dictionary<String, Array<FluxWeakRef<FlaskConcrete>>>()
     }();
     
-    func pause()->MixerPause{
-        return MixerPause(mixer:self)
+    func pause()->BusPause{
+        return BusPause(bus:self)
     }
     
 }
@@ -62,23 +62,23 @@ public class Mixer {
 //////////////////
 // MARK: - PUBLIC METHODS
 
-extension Mixer {
+extension Bus {
     
-    func formulate(_ mixer:String){
-        formulate(mixer,payload:nil)
+    func transmute(_ bus:String){
+        transmute(bus,payload:nil)
     }
     
-    func formulate<T:RawRepresentable>(_ enumVal:T){
-        formulate(enumVal,payload:nil)
+    func transmute<T:RawRepresentable>(_ enumVal:T){
+        transmute(enumVal,payload:nil)
     }
     
-    func formulate<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
-        let mixer = enumVal.rawValue as! String
-        formulate(mixer,payload:payload)
+    func transmute<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
+        let bus = enumVal.rawValue as! String
+        transmute(bus,payload:payload)
     }
     
-    func formulate(_ mixer:String, payload:[String:Any]?){
-        enqueue(mixer,payload: payload)
+    func transmute(_ bus:String, payload:[String:Any]?){
+        enqueue(bus,payload: payload)
     }
     
     
@@ -88,19 +88,19 @@ extension Mixer {
 //////////////////
 // MARK: - QUEUE
 
-extension Mixer {
+extension Bus {
  
-    func enqueue(_ mixer:String, payload:[String:Any]?){
+    func enqueue(_ bus:String, payload:[String:Any]?){
         
 
-        var queue = formulationQueue
-        if (payload?[MIXER_PAUSED_BY]) != nil {
-            queue = formulationOnPauseQueue
+        var queue = busQueue
+        if (payload?[BUS_PAUSED_BY]) != nil {
+            queue = busOnPauseQueue
         }
         
-        //TODO: log same mixer warning
+        //TODO: log same bus warning
         //TODO: log queue pauseed warning
-//        assert( self.currentAction != mixer, "cannot call recursive mixer in infinite loop")
+//        assert( self.currentAction != bus, "cannot call recursive bus in infinite loop")
         
         queue.addOperation { [weak self, weak queue] in
             
@@ -108,11 +108,11 @@ extension Mixer {
                 assert( !q.isSuspended, "queue should not perform when suspended")
             }
             
-            assert( self?.currentAction == .none, "cannot call during formulate")
+            assert( self?.currentAction == .none, "cannot call during mix")
             
-            self?.currentAction = mixer
+            self?.currentAction = bus
             NotificationCenter.default.post(
-                name: NSNotification.Name(mixer),
+                name: NSNotification.Name(bus),
                 object: payload,
                 userInfo: .none)
             self?.currentAction = .none
@@ -124,14 +124,14 @@ extension Mixer {
 //////////////////
 // MARK: - BINDINGS
 
-extension Mixer {
+extension Bus {
    
     func fillFlask(_ store:StoreConcrete, flask:FlaskConcrete) {
         
         let storeName = store.name()
         var storeFlaskRefs = getStoreFlaskRefs(storeName)
         
-        let ref = LabWeakRef(value:flask)
+        let ref = FluxWeakRef(value:flask)
         storeFlaskRefs.append(ref)
         setStoreFlaskRefs(storeName,storeFlaskRefs)
         
@@ -148,17 +148,17 @@ extension Mixer {
        
     }
     
-    func getStoreFlaskRefs(_ storeName:String) -> Array<LabWeakRef<FlaskConcrete>>{
+    func getStoreFlaskRefs(_ storeName:String) -> Array<FluxWeakRef<FlaskConcrete>>{
         
         if let flasks = self.flaskRefs[storeName] {
             return flasks
         }
         
-        return Array<LabWeakRef<FlaskConcrete>>()
+        return Array<FluxWeakRef<FlaskConcrete>>()
         
     }
     
-    func setStoreFlaskRefs(_ storeName:String,_ refs:Array<LabWeakRef<FlaskConcrete>>){
+    func setStoreFlaskRefs(_ storeName:String,_ refs:Array<FluxWeakRef<FlaskConcrete>>){
         
         self.flaskRefs[storeName] = refs
     }
@@ -167,7 +167,7 @@ extension Mixer {
 //////////////////
 // MARK: - MUTATIONS
 
-extension Mixer {
+extension Bus {
    
     func reactChange(_ reaction:FlaskReaction){
         

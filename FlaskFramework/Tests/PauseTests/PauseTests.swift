@@ -19,7 +19,7 @@ class PauseTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,filling:store)
+        let flask = Flux.flask(ownedBy:owner,filling:store)
         
         var calls = 0
         
@@ -35,18 +35,18 @@ class PauseTests: SetupFlaskTests {
                 
                 calls += 1
                 
-                _ = Lab.pause()
-                Lab.applyMixer(AppMixers.Count, payload:  ["test":"testPause"])
+                _ = Flux.pause()
+                Flux.transmute(AppActions.Count, payload:  ["test":"testPause"])
                 
             })
         }
         
         DispatchQueue.main.async {
-            Lab.applyMixer(AppMixers.Count, payload: ["test":"testPause"])
+            Flux.transmute(AppActions.Count, payload: ["test":"testPause"])
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
-        Lab.purgeMixersQueue()
+        Flux.purgeBusQueue()
     }
     
     
@@ -56,7 +56,7 @@ class PauseTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,filling:store)
+        let flask = Flux.flask(ownedBy:owner,filling:store)
         
         flask.reactor = { owner, reaction in
             reaction.at(store)?.on(AppState.named.counter, { (change) in
@@ -64,11 +64,11 @@ class PauseTests: SetupFlaskTests {
             })
         }
         
-        // the mixer won't be formulateed until both pauses are released
+        // the bus won't be mixed until both pauses are released
         
-        let pause  = Lab.pause()
-        let pause2  = Lab.pause()
-        Lab.applyMixer(AppMixers.Count, payload:  ["test":"testPauseRelease"])
+        let pause  = Flux.pause()
+        let pause2  = Flux.pause()
+        Flux.transmute(AppActions.Count, payload:  ["test":"testPauseRelease"])
         
         DispatchQueue.main.async {
             pause.release()
@@ -88,7 +88,7 @@ class PauseTests: SetupFlaskTests {
      
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,filling:store)
+        let flask = Flux.flask(ownedBy:owner,filling:store)
         
         flask.reactor = { owner, reaction in
             reaction.at(store)?.on(AppState.named.counter, { (change) in
@@ -102,10 +102,10 @@ class PauseTests: SetupFlaskTests {
             })
         }
         
-        Lab.pause(fillingg:AppMixers.Count, payload:  ["test":"testPauseActon count"])
+        Flux.pause(fillingg:AppActions.Count, payload:  ["test":"testPauseActon count"])
        
         //this should be performed after the pause releases
-        Lab.applyMixer(AppMixers.Text, payload:  ["test":"testPauseAction text"])
+        Flux.transmute(AppActions.Text, payload:  ["test":"testPauseAction text"])
         
         wait(for: [expectation], timeout: 2)
         

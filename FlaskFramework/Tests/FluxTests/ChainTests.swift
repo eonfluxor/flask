@@ -17,7 +17,7 @@ class ChainingTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, filling:store)
+        let flask = Flux.flask(ownedBy:owner, filling:store)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -28,10 +28,10 @@ class ChainingTests: SetupFlaskTests {
         
       
         
-        flask.mix(store){ (store) in
+        flask.transmute(store){ (store) in
             store.state.counter=1
             
-        }.mix(store) { (store) in
+        }.transmute(store) { (store) in
             store.state.counter=2
         }.react()
         
@@ -48,10 +48,10 @@ class ChainingTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,filling:store)
+        let flask = Flux.flask(ownedBy:owner,filling:store)
         
         let object = NSObject()
-        let aObject = LabRef( object )
+        let aObject = FluxRef( object )
         
         
         flask.reactor = { owner, reaction in
@@ -80,7 +80,7 @@ class ChainingTests: SetupFlaskTests {
             
             reaction.on(AppState.named.object, { (change) in
                 
-                XCTAssert( isLabNil(change.oldValue()) )
+                XCTAssert( isFluxNil(change.oldValue()) )
                 XCTAssert(change.newValue() == aObject)
                 XCTAssert(change.key() == AppState.named.object.rawValue)
                 XCTAssert(change.store() === store)
@@ -90,7 +90,7 @@ class ChainingTests: SetupFlaskTests {
             
         }
         
-        flask.mix(store) { (store) in
+        flask.transmute(store) { (store) in
             store.state.counter = 1
             store.state.text = "reaction"
             store.state.object = aObject
@@ -107,7 +107,7 @@ class ChainingTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, filling:store)
+        let flask = Flux.flask(ownedBy:owner, filling:store)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -116,9 +116,9 @@ class ChainingTests: SetupFlaskTests {
             })
         }
         
-        flask.mix(store){ (store) in
+        flask.transmute(store){ (store) in
             store.state.counter=1
-        }.mix(store) { (store) in
+        }.transmute(store) { (store) in
             store.state.counter=2
         }.react()
         

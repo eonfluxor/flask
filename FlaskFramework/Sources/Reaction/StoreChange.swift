@@ -16,7 +16,7 @@ public extension StoreChange{
     
     
     public func unwrapValue<A>(_ val:A?) ->A?{
-//        if let object = val as? LabRef {
+//        if let object = val as? FluxRef {
 //            return object.object as? A
 //        }
         return val
@@ -45,9 +45,9 @@ public struct StoreChange  {
     var oldVal:AnyHashable?
     var newVal:AnyHashable?
     
-    func mixd()->Bool{
+    func transmuted()->Bool{
         
-        if isLabNil(oldVal) && isLabNil(newVal) {
+        if isFluxNil(oldVal) && isFluxNil(newVal) {
             return false
         }
         

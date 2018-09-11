@@ -60,18 +60,18 @@
 		26C53E91214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
 		26C53E92214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
 		26C53E93214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
-		26C53E94214790A90090AA0C /* Mixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Mixer.swift */; };
-		26C53E95214790A90090AA0C /* Mixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Mixer.swift */; };
-		26C53E96214790A90090AA0C /* Mixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Mixer.swift */; };
-		26C53E97214790A90090AA0C /* Mixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Mixer.swift */; };
-		26C53E98214790A90090AA0C /* Mixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Mixer.swift */; };
-		26C53E99214790A90090AA0C /* Mixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Mixer.swift */; };
-		26C53E9A214790A90090AA0C /* MixerPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* MixerPause.swift */; };
-		26C53E9B214790A90090AA0C /* MixerPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* MixerPause.swift */; };
-		26C53E9C214790A90090AA0C /* MixerPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* MixerPause.swift */; };
-		26C53E9D214790A90090AA0C /* MixerPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* MixerPause.swift */; };
-		26C53E9E214790A90090AA0C /* MixerPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* MixerPause.swift */; };
-		26C53E9F214790A90090AA0C /* MixerPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* MixerPause.swift */; };
+		26C53E94214790A90090AA0C /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Dispatcher.swift */; };
+		26C53E95214790A90090AA0C /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Dispatcher.swift */; };
+		26C53E96214790A90090AA0C /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Dispatcher.swift */; };
+		26C53E97214790A90090AA0C /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Dispatcher.swift */; };
+		26C53E98214790A90090AA0C /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Dispatcher.swift */; };
+		26C53E99214790A90090AA0C /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Dispatcher.swift */; };
+		26C53E9A214790A90090AA0C /* DispatcherPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* DispatcherPause.swift */; };
+		26C53E9B214790A90090AA0C /* DispatcherPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* DispatcherPause.swift */; };
+		26C53E9C214790A90090AA0C /* DispatcherPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* DispatcherPause.swift */; };
+		26C53E9D214790A90090AA0C /* DispatcherPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* DispatcherPause.swift */; };
+		26C53E9E214790A90090AA0C /* DispatcherPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* DispatcherPause.swift */; };
+		26C53E9F214790A90090AA0C /* DispatcherPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* DispatcherPause.swift */; };
 		26C53EA0214790A90090AA0C /* StoreChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5D214790A90090AA0C /* StoreChange.swift */; };
 		26C53EA1214790A90090AA0C /* StoreChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5D214790A90090AA0C /* StoreChange.swift */; };
 		26C53EA2214790A90090AA0C /* StoreChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5D214790A90090AA0C /* StoreChange.swift */; };
@@ -222,8 +222,8 @@
 		26C53E56214790A90090AA0C /* ChainReaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainReaction.swift; sourceTree = "<group>"; };
 		26C53E57214790A90090AA0C /* FlaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskManager.swift; sourceTree = "<group>"; };
 		26C53E58214790A90090AA0C /* Flask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flask.swift; sourceTree = "<group>"; };
-		26C53E5A214790A90090AA0C /* Mixer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mixer.swift; sourceTree = "<group>"; };
-		26C53E5B214790A90090AA0C /* MixerPause.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixerPause.swift; sourceTree = "<group>"; };
+		26C53E5A214790A90090AA0C /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
+		26C53E5B214790A90090AA0C /* DispatcherPause.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatcherPause.swift; sourceTree = "<group>"; };
 		26C53E5D214790A90090AA0C /* StoreChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreChange.swift; sourceTree = "<group>"; };
 		26C53E5E214790A90090AA0C /* FlaskReaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskReaction.swift; sourceTree = "<group>"; };
 		26C53E60214790A90090AA0C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -530,8 +530,8 @@
 		26C53E59214790A90090AA0C /* Mixer */ = {
 			isa = PBXGroup;
 			children = (
-				26C53E5A214790A90090AA0C /* Mixer.swift */,
-				26C53E5B214790A90090AA0C /* MixerPause.swift */,
+				26C53E5A214790A90090AA0C /* Dispatcher.swift */,
+				26C53E5B214790A90090AA0C /* DispatcherPause.swift */,
 			);
 			path = Mixer;
 			sourceTree = "<group>";
@@ -1078,10 +1078,10 @@
 				26C53EB2214790A90090AA0C /* StoreSerializer.swift in Sources */,
 				26C53E88214790A90090AA0C /* FlaskManager.swift in Sources */,
 				26C53EBE214790A90090AA0C /* Store.swift in Sources */,
-				26C53E9A214790A90090AA0C /* MixerPause.swift in Sources */,
+				26C53E9A214790A90090AA0C /* DispatcherPause.swift in Sources */,
 				26C53E6A214790A90090AA0C /* LabHelpers.swift in Sources */,
 				26C53E64214790A90090AA0C /* Lab.swift in Sources */,
-				26C53E94214790A90090AA0C /* Mixer.swift in Sources */,
+				26C53E94214790A90090AA0C /* Dispatcher.swift in Sources */,
 				26C53E70214790A90090AA0C /* LabDictionary.swift in Sources */,
 				26C53EAC214790A90090AA0C /* State.swift in Sources */,
 				26C53E7C214790A90090AA0C /* LabRef.swift in Sources */,
@@ -1101,14 +1101,14 @@
 				26C53EEA214790C00090AA0C /* NestingTests.swift in Sources */,
 				26C53EED214790C00090AA0C /* SetupTests.swift in Sources */,
 				26C53E71214790A90090AA0C /* LabDictionary.swift in Sources */,
-				26C53E95214790A90090AA0C /* Mixer.swift in Sources */,
+				26C53E95214790A90090AA0C /* Dispatcher.swift in Sources */,
 				26C53EDB214790C00090AA0C /* DictionaryTests.swift in Sources */,
 				26C53EF9214790C00090AA0C /* TestOwner.swift in Sources */,
 				26C53E0E214790730090AA0C /* Flask_iOSTests.swift in Sources */,
 				26C53E6B214790A90090AA0C /* LabHelpers.swift in Sources */,
 				26C53EF6214790C00090AA0C /* Molecules.swift in Sources */,
 				26C53EE7214790C00090AA0C /* ChainTests.swift in Sources */,
-				26C53E9B214790A90090AA0C /* MixerPause.swift in Sources */,
+				26C53E9B214790A90090AA0C /* DispatcherPause.swift in Sources */,
 				26C53EDE214790C00090AA0C /* KronTests.swift in Sources */,
 				26C53EF3214790C00090AA0C /* AppMolecule.swift in Sources */,
 				26C53E83214790A90090AA0C /* ChainReaction.swift in Sources */,
@@ -1136,10 +1136,10 @@
 				26C53EB4214790A90090AA0C /* StoreSerializer.swift in Sources */,
 				26C53E8A214790A90090AA0C /* FlaskManager.swift in Sources */,
 				26C53EC0214790A90090AA0C /* Store.swift in Sources */,
-				26C53E9C214790A90090AA0C /* MixerPause.swift in Sources */,
+				26C53E9C214790A90090AA0C /* DispatcherPause.swift in Sources */,
 				26C53E6C214790A90090AA0C /* LabHelpers.swift in Sources */,
 				26C53E66214790A90090AA0C /* Lab.swift in Sources */,
-				26C53E96214790A90090AA0C /* Mixer.swift in Sources */,
+				26C53E96214790A90090AA0C /* Dispatcher.swift in Sources */,
 				26C53E72214790A90090AA0C /* LabDictionary.swift in Sources */,
 				26C53EAE214790A90090AA0C /* State.swift in Sources */,
 				26C53E7E214790A90090AA0C /* LabRef.swift in Sources */,
@@ -1159,14 +1159,14 @@
 				26C53EEB214790C00090AA0C /* NestingTests.swift in Sources */,
 				26C53EEE214790C00090AA0C /* SetupTests.swift in Sources */,
 				26C53E73214790A90090AA0C /* LabDictionary.swift in Sources */,
-				26C53E97214790A90090AA0C /* Mixer.swift in Sources */,
+				26C53E97214790A90090AA0C /* Dispatcher.swift in Sources */,
 				26C53EDC214790C00090AA0C /* DictionaryTests.swift in Sources */,
 				26C53EFA214790C00090AA0C /* TestOwner.swift in Sources */,
 				26C53E2A214790800090AA0C /* Flask_macOSTests.swift in Sources */,
 				26C53E6D214790A90090AA0C /* LabHelpers.swift in Sources */,
 				26C53EF7214790C00090AA0C /* Molecules.swift in Sources */,
 				26C53EE8214790C00090AA0C /* ChainTests.swift in Sources */,
-				26C53E9D214790A90090AA0C /* MixerPause.swift in Sources */,
+				26C53E9D214790A90090AA0C /* DispatcherPause.swift in Sources */,
 				26C53EDF214790C00090AA0C /* KronTests.swift in Sources */,
 				26C53EF4214790C00090AA0C /* AppMolecule.swift in Sources */,
 				26C53E85214790A90090AA0C /* ChainReaction.swift in Sources */,
@@ -1194,10 +1194,10 @@
 				26C53EB6214790A90090AA0C /* StoreSerializer.swift in Sources */,
 				26C53E8C214790A90090AA0C /* FlaskManager.swift in Sources */,
 				26C53EC2214790A90090AA0C /* Store.swift in Sources */,
-				26C53E9E214790A90090AA0C /* MixerPause.swift in Sources */,
+				26C53E9E214790A90090AA0C /* DispatcherPause.swift in Sources */,
 				26C53E6E214790A90090AA0C /* LabHelpers.swift in Sources */,
 				26C53E68214790A90090AA0C /* Lab.swift in Sources */,
-				26C53E98214790A90090AA0C /* Mixer.swift in Sources */,
+				26C53E98214790A90090AA0C /* Dispatcher.swift in Sources */,
 				26C53E74214790A90090AA0C /* LabDictionary.swift in Sources */,
 				26C53EB0214790A90090AA0C /* State.swift in Sources */,
 				26C53E80214790A90090AA0C /* LabRef.swift in Sources */,
@@ -1217,14 +1217,14 @@
 				26C53EEC214790C00090AA0C /* NestingTests.swift in Sources */,
 				26C53EEF214790C00090AA0C /* SetupTests.swift in Sources */,
 				26C53E75214790A90090AA0C /* LabDictionary.swift in Sources */,
-				26C53E99214790A90090AA0C /* Mixer.swift in Sources */,
+				26C53E99214790A90090AA0C /* Dispatcher.swift in Sources */,
 				26C53EDD214790C00090AA0C /* DictionaryTests.swift in Sources */,
 				26C53EFB214790C00090AA0C /* TestOwner.swift in Sources */,
 				26C53E462147908E0090AA0C /* Flask_tvOSTests.swift in Sources */,
 				26C53E6F214790A90090AA0C /* LabHelpers.swift in Sources */,
 				26C53EF8214790C00090AA0C /* Molecules.swift in Sources */,
 				26C53EE9214790C00090AA0C /* ChainTests.swift in Sources */,
-				26C53E9F214790A90090AA0C /* MixerPause.swift in Sources */,
+				26C53E9F214790A90090AA0C /* DispatcherPause.swift in Sources */,
 				26C53EE0214790C00090AA0C /* KronTests.swift in Sources */,
 				26C53EF5214790C00090AA0C /* AppMolecule.swift in Sources */,
 				26C53E87214790A90090AA0C /* ChainReaction.swift in Sources */,

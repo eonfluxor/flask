@@ -18,12 +18,12 @@ public struct ChainReaction{
     public let react:()->Void
     public let abort:()->Void
     
-    public func mix<T:StoreConcrete>(_ aStore:T, _ mixer:@escaping (_ store:T) -> Void)->ChainReaction{
+    public func transmute<T:StoreConcrete>(_ aStore:T, _ bus:@escaping (_ store:T) -> Void)->ChainReaction{
         
         let store = flask.store(aStore)
         
         store.stateTransaction({
-            mixer(store)
+            bus(store)
             return true
         })
         
@@ -35,7 +35,7 @@ public struct ChainReaction{
 
 public extension FlaskConcrete{
   
-    public func mix<T:StoreConcrete>(_ aStore:T, _ mixer:@escaping(_ store:T) -> Void)->ChainReaction{
+    public func transmute<T:StoreConcrete>(_ aStore:T, _ bus:@escaping(_ store:T) -> Void)->ChainReaction{
         
         let  react = { [weak self] in
             if let stores = self?.stores {
@@ -57,7 +57,7 @@ public extension FlaskConcrete{
         let store = self.store(aStore)
         
         store.stateTransaction({
-            mixer(store)
+            bus(store)
             return true
         })
         

@@ -1,5 +1,5 @@
 //
-//  LabDictRef.swift
+//  FluxDictRef.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/5/18.
@@ -13,10 +13,10 @@ import Cocoa
 #endif
 
 public protocol StateObservable{
-    func toLabDictRef()->NSDictionary
+    func toFluxDictRef()->NSDictionary
 }
 
-public class LabDictRef: NSObject, Codable, StateObservable {
+public class FluxDictRef: NSObject, Codable, StateObservable {
    
    
     
@@ -38,11 +38,11 @@ public class LabDictRef: NSObject, Codable, StateObservable {
         for key in dict.allKeys {
             let value = dict[key]
             
-             result[key]  = Lab.Nil
+             result[key]  = Flux.Nil
             
             if ((value as? NSDictionary) != nil) {
                 
-                let ref = LabDictRef(normalize( value as! NSDictionary ))
+                let ref = FluxDictRef(normalize( value as! NSDictionary ))
                 result[key] = ref
             
             } else {
@@ -58,7 +58,7 @@ public class LabDictRef: NSObject, Codable, StateObservable {
     
    
     
-    public  func toLabDictRef() -> NSDictionary {
+    public  func toFluxDictRef() -> NSDictionary {
         return dictionary
     }
     
@@ -87,7 +87,7 @@ public class LabDictRef: NSObject, Codable, StateObservable {
         case dictionary
     }
     
-    static public func == (lhs: LabDictRef, rhs: LabDictRef) -> Bool {
+    static public func == (lhs: FluxDictRef, rhs: FluxDictRef) -> Bool {
         return lhs == rhs
     }
     
@@ -98,7 +98,7 @@ public class LabDictRef: NSObject, Codable, StateObservable {
         let data = jsonString.data(using: .utf8)
         let normalDictionary:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
     
-        let ref = LabDictRef(normalDictionary)
+        let ref = FluxDictRef(normalDictionary)
         dictionary = ref.dictionary
     }
     

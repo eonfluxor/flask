@@ -20,7 +20,7 @@ class archiveTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, filling:store)
+        let flask = Flux.flask(ownedBy:owner, filling:store)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -28,7 +28,7 @@ class archiveTests: SetupFlaskTests {
             })
         }
         
-        flask.mix(store){ (store) in
+        flask.transmute(store){ (store) in
             store.state.counter=expectedValue
         }.react()
         
