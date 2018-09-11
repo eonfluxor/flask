@@ -17,7 +17,7 @@ import Cocoa
 public class Lab {
     
     
-    /// This is the single dispatcher
+    /// This is the single mixer
     static public let mixer = Mixer()
     /// Use this to preserve `nil` entries in swift dictionaries
     static public let Nil = nil as AnyHashable?
@@ -61,7 +61,7 @@ public extension Lab {
 public extension Lab {
     
     static public func lock()->MixerLock{
-        return MixerLock(dispatcher:Lab.mixer)
+        return MixerLock(mixer:Lab.mixer)
     }
     
     
@@ -74,8 +74,8 @@ public extension Lab {
         var info = payload ?? [:]
         info[FLUX_ACTION_SKIP_LOCKS] = true
         
-        let lock = MixerLock(dispatcher:Lab.mixer)
-        Lab.mixer.dispatch(action,payload:info)
+        let lock = MixerLock(mixer:Lab.mixer)
+        Lab.mixer.formulate(action,payload:info)
         
         return lock
     }
@@ -98,7 +98,7 @@ public extension Lab {
         var info = payload ?? [:]
         info[FLUX_ACTION_NAME] = action
         
-        Lab.mixer.dispatch(action,payload:info)
+        Lab.mixer.formulate(action,payload:info)
     }
 }
 

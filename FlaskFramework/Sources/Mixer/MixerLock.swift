@@ -14,18 +14,18 @@ import Cocoa
 
 public class MixerLock: LabAnyEquatable {
 
-    var dispatcher:Mixer
+    var mixer:Mixer
     
-    required public init(dispatcher:Mixer) {
+    required public init(mixer:Mixer) {
 
-        self.dispatcher = dispatcher
+        self.mixer = mixer
         super.init()
         
-        self.dispatcher.addLock(self)
+        self.mixer.addLock(self)
     }
     
     public func release(){
-        dispatcher.removeLock(self)
+        mixer.removeLock(self)
     }
 }
 

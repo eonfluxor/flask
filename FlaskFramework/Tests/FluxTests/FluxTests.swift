@@ -120,7 +120,7 @@ class FlaskTests: SetupFlaskTests {
         flask?.reactor = { owner, reaction in}
         
         
-        // Calling dispatch after disposing the owner
+        // Calling formulate after disposing the owner
         // should cause the factory to release this flask
         weakOwner = nil
         

@@ -1,6 +1,6 @@
 
 //
-//  dispatcher.swift
+//  mixer.swift
 //  SwiftyFlask
 //
 //  Created by hassan uriostegui on 8/28/18.
@@ -29,7 +29,7 @@ public class Mixer {
         return queue
     }()
     
-    let dispatchLockedQueue:OperationQueue = {
+    let formulateLockedQueue:OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount=1
         return queue
@@ -54,7 +54,7 @@ public class Mixer {
     }();
     
     func lock()->MixerLock{
-        return MixerLock(dispatcher:self)
+        return MixerLock(mixer:self)
     }
     
 }
@@ -64,20 +64,20 @@ public class Mixer {
 
 extension Mixer {
     
-    func dispatch(_ action:String){
-        dispatch(action,payload:nil)
+    func formulate(_ action:String){
+        formulate(action,payload:nil)
     }
     
-    func dispatch<T:RawRepresentable>(_ enumVal:T){
-        dispatch(enumVal,payload:nil)
+    func formulate<T:RawRepresentable>(_ enumVal:T){
+        formulate(enumVal,payload:nil)
     }
     
-    func dispatch<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
+    func formulate<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
         let action = enumVal.rawValue as! String
-        dispatch(action,payload:payload)
+        formulate(action,payload:payload)
     }
     
-    func dispatch(_ action:String, payload:[String:Any]?){
+    func formulate(_ action:String, payload:[String:Any]?){
         queue(action,payload: payload)
     }
     
@@ -94,7 +94,7 @@ extension Mixer {
         
         var queue = mixQueue
         if  ((payload?[FLUX_ACTION_SKIP_LOCKS]) != nil) {
-            queue = dispatchLockedQueue
+            queue = formulateLockedQueue
         }
         
         //TODO: log same action warning
@@ -107,7 +107,7 @@ extension Mixer {
                 assert( !q.isSuspended, "queue should not perform when suspended")
             }
             
-            assert( self?.currentAction == .none, "cannot call during dispatch")
+            assert( self?.currentAction == .none, "cannot call during formulate")
             
             self?.currentAction = action
             NotificationCenter.default.post(

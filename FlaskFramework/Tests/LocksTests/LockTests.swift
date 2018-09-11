@@ -64,7 +64,7 @@ class LockTests: SetupFlaskTests {
             })
         }
         
-        // the action won't be dispatched until both locks are released
+        // the action won't be formulateed until both locks are released
         
         let lock  = Lab.lock()
         let lock2  = Lab.lock()
