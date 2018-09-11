@@ -155,14 +155,14 @@ public extension StoreConcrete {
                 
                 let payload = notification.object as? [String:Any]
                 
-                let pause = payload?[BUS_PAUSED_BY] as? BusLock
+                let lock = payload?[BUS_PAUSED_BY] as? BusLock
                 
                 var resolved = false
                 var completed = true
                 
                 let react = {
                     resolved=true
-                    self?.handleTransmute(pause)
+                    self?.handleTransmute(lock)
                 }
                 
                 let abort = {

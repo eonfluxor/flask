@@ -13,7 +13,7 @@ import Cocoa
 #endif
 
 
-enum AppActions : BusAction {
+enum AppEvents : BusEvent {
     case Count
     case Text
     case Object
@@ -34,7 +34,7 @@ struct AppState : State {
     
 }
 
-class App : Store<AppState,AppActions> {
+class App : Store<AppState,AppEvents> {
     
     override func defineBus(){
         

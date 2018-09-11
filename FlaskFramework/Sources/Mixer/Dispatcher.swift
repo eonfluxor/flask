@@ -18,7 +18,7 @@ public class Bus {
     //////////////////
     // MARK: - LOCKS
     
-    var pauses:[BusLock]=[]
+    var locks:[BusLock]=[]
     
     //////////////////
     // MARK: - OPERATION QUEUE
@@ -44,7 +44,7 @@ public class Bus {
     //////////////////
     // MARK: - OPTIONALS
     
-    var currentAction: String?
+    var currentEvent: String?
     
     //////////////////
     // MARK: - LAZY
@@ -53,7 +53,7 @@ public class Bus {
         return Dictionary<String, Array<FluxWeakRef<FlaskConcrete>>>()
     }();
     
-    func pause()->BusLock{
+    func lock()->BusLock{
         return BusLock(bus:self)
     }
     
@@ -99,8 +99,8 @@ extension Bus {
         }
         
         //TODO: log same bus warning
-        //TODO: log queue pauseed warning
-//        assert( self.currentAction != bus, "cannot call recursive bus in infinite loop")
+        //TODO: log queue locked warning
+//        assert( self.currentEvent != bus, "cannot call recursive bus in infinite loop")
         
         queue.addOperation { [weak self, weak queue] in
             
@@ -108,14 +108,14 @@ extension Bus {
                 assert( !q.isSuspended, "queue should not perform when suspended")
             }
             
-            assert( self?.currentAction == .none, "cannot call during mix")
+            assert( self?.currentEvent == .none, "cannot call during mix")
             
-            self?.currentAction = bus
+            self?.currentEvent = bus
             NotificationCenter.default.post(
                 name: NSNotification.Name(bus),
                 object: payload,
                 userInfo: .none)
-            self?.currentAction = .none
+            self?.currentEvent = .none
         }
     }
  

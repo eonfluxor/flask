@@ -35,14 +35,14 @@ class LockTests: SetupFlaskTests {
                 
                 calls += 1
                 
-                _ = Flux.pause()
-                Flux.transmute(AppActions.Count, payload:  ["test":"testLock"])
+                _ = Flux.lock()
+                Flux.transmute(AppEvents.Count, payload:  ["test":"testLock"])
                 
             })
         }
         
         DispatchQueue.main.async {
-            Flux.transmute(AppActions.Count, payload: ["test":"testLock"])
+            Flux.transmute(AppEvents.Count, payload: ["test":"testLock"])
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
@@ -64,16 +64,16 @@ class LockTests: SetupFlaskTests {
             })
         }
         
-        // the bus won't be mixed until both pauses are released
+        // the bus won't be mixed until both locks are released
         
-        let pause  = Flux.pause()
-        let pause2  = Flux.pause()
-        Flux.transmute(AppActions.Count, payload:  ["test":"testLockRelease"])
+        let lock  = Flux.lock()
+        let lock2  = Flux.lock()
+        Flux.transmute(AppEvents.Count, payload:  ["test":"testLockRelease"])
         
         DispatchQueue.main.async {
-            pause.release()
+            lock.release()
             DispatchQueue.main.async {
-                pause2.release()
+                lock2.release()
             }
             
         }
@@ -102,10 +102,10 @@ class LockTests: SetupFlaskTests {
             })
         }
         
-        Flux.pause(fillingg:AppActions.Count, payload:  ["test":"testLockActon count"])
+        Flux.lock(withEvent:AppEvents.Count, payload:  ["test":"testLockActon count"])
        
-        //this should be performed after the pause releases
-        Flux.transmute(AppActions.Text, payload:  ["test":"testLockAction text"])
+        //this should be performed after the lock releases
+        Flux.transmute(AppEvents.Text, payload:  ["test":"testLockAction text"])
         
         wait(for: [expectation], timeout: 2)
         

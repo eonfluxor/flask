@@ -29,7 +29,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         DispatchQueue.main.async {
-            Flux.transmute(AppActions.Count, payload: ["test":"callback"])
+            Flux.transmute(AppEvents.Count, payload: ["test":"callback"])
         }
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -54,7 +54,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         DispatchQueue.main.async {
-            Flux.transmute(AppActions.Count, payload: ["test":"testOwner"])
+            Flux.transmute(AppEvents.Count, payload: ["test":"testOwner"])
         }
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -77,7 +77,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         flask.empty()
-        Flux.transmute(AppActions.Count, payload: ["test":"empty"])
+        Flux.transmute(AppEvents.Count, payload: ["test":"empty"])
         
         waitForExpectations(timeout: 2, handler: nil)
         
@@ -124,7 +124,7 @@ class FlaskTests: SetupFlaskTests {
         // should cause the factory to release this flask
         weakOwner = nil
         
-        Flux.transmute(AppActions.Count, payload:  ["test":"ownerDispose"])
+        Flux.transmute(AppEvents.Count, payload:  ["test":"ownerDispose"])
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:  {
             if flask == nil {
@@ -160,7 +160,7 @@ class FlaskTests: SetupFlaskTests {
             
         }
         
-        Flux.transmute(AppActions.Count, payload: ["test":"change"])
+        Flux.transmute(AppEvents.Count, payload: ["test":"change"])
         
         waitForExpectations(timeout: 2, handler: nil)
         

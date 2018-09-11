@@ -19,7 +19,7 @@ public typealias ReactionClosure<T> = (_ ownedBy:T, _ reaction: FlaskReaction) -
 public typealias FluxDictType = Dictionary<String,AnyHashable?>
 public typealias FluxNil = (AnyHashable?)
 public typealias TransmuteParams<T> = (_ store:T,_ react:()-> Void,_ abort:()-> Void) -> Void
-public typealias BusAction = String
+public typealias BusEvent = String
 public typealias StateName = String
 
 

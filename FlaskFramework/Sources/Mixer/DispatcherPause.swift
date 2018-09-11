@@ -32,22 +32,22 @@ public class BusLock: FluxEquatable {
 public extension Bus{
     
     public func removeLocks(){
-        pauses=[]
+        locks=[]
         applyLocks()
     }
     
-    func addLock(_ pause:BusLock){
-        pauses.append(pause)
+    func addLock(_ lock:BusLock){
+        locks.append(lock)
         applyLocks()
     }
     
-    func removeLock(_ pause:BusLock){
-        pauses=pauses.filter {$0 != pause}
+    func removeLock(_ lock:BusLock){
+        locks=locks.filter {$0 != lock}
         applyLocks()
     }
 
     func applyLocks(){
-        busQueue.isSuspended = pauses.count > 0
+        busQueue.isSuspended = locks.count > 0
     }
     
 }
