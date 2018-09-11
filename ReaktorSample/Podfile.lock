@@ -1,0 +1,20 @@
+PODS:
+  - Delayed (2.2.8)
+  - Reaktor (0.0.9):
+    - Delayed (> 2.2.2)
+
+DEPENDENCIES:
+  - Reaktor
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Delayed
+    - Reaktor
+
+SPEC CHECKSUMS:
+  Delayed: 931100bdf164e26dba9e16bccd31130a2c90e56d
+  Reaktor: f1c0aa60d3cced0e62baaa37a1dabe7ac92e8f5c
+
+PODFILE CHECKSUM: 1eaab4a1890817ea4c13a581ba1fca8b8a999334
+
+COCOAPODS: 1.5.3
