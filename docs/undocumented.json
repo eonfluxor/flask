@@ -262,14 +262,14 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
       "line": 17,
-      "symbol": "FlaskClosure",
+      "symbol": "ChangeClosure",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
       "line": 18,
-      "symbol": "FlaskReactionClosure",
+      "symbol": "ReactionClosure",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
@@ -290,7 +290,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
       "line": 21,
-      "symbol": "FlaskMixParams",
+      "symbol": "MixParams",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },

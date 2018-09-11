@@ -16,7 +16,7 @@ public class Flask<D:AnyObject>:FlaskConcrete {
     
     weak var owner:D?
     
-    public var reactor:FlaskReactionClosure<D>  = { owner,reaction in }
+    public var reactor:ReactionClosure<D>  = { owner,reaction in }
     
     required public init(_ owner:D){
         self.owner=owner
@@ -112,7 +112,7 @@ public class FlaskConcrete:LabAnyEquatable{
     ///
     func handleMix(_ reaction:FlaskReaction){}
     
-//    @discardableResult public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping FlaskMixParams<T>)->FlaskConcrete{
+//    @discardableResult public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping MixParams<T>)->FlaskConcrete{
 //        
 //        let molecule = self.molecule(aMolecule)
 //        molecule.mix(mixer)

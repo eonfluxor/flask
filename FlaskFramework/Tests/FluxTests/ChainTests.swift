@@ -97,7 +97,7 @@ class ChainingTests: SetupFlaskTests {
         }.react()
         
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
     }
     

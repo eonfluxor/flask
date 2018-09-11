@@ -180,7 +180,7 @@ public extension MoleculeConcrete {
         return weakRegistration()
     }
     
-    public func mix<T:MoleculeConcrete>(_ mixer:@escaping FlaskMixParams<T>){
+    public func mix<T:MoleculeConcrete>(_ mixer:@escaping MixParams<T>){
         
         var resolved = false
         var completed = true

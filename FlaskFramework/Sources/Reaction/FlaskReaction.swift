@@ -29,11 +29,11 @@ public class FlaskReaction {
         return changes.count > 0
     }
     
-    public func on<T:RawRepresentable>(_ key:T,_ closure:FlaskClosure){
+    public func on<T:RawRepresentable>(_ key:T,_ closure:ChangeClosure){
         on(key.rawValue as! String, closure)
     }
     
-    public func on(_ key:String,_ closure:FlaskClosure){
+    public func on(_ key:String,_ closure:ChangeClosure){
         
         
         assertKey(key)
