@@ -12,13 +12,13 @@ import UIKit
 import Cocoa
 #endif
 
-public struct FlaskChainReaction{
+public struct ChainReaction{
     
     let flask:FlaskConcrete
     public let react:()->Void
     public let abort:()->Void
     
-    public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping (_ molecule:T) -> Void)->FlaskChainReaction{
+    public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping (_ molecule:T) -> Void)->ChainReaction{
         
         let molecule = flask.molecule(aMolecule)
         
@@ -27,7 +27,7 @@ public struct FlaskChainReaction{
             return true
         })
         
-        let chain = FlaskChainReaction(flask:flask, react:react, abort:abort)
+        let chain = ChainReaction(flask:flask, react:react, abort:abort)
         return chain
     }
     
@@ -35,7 +35,7 @@ public struct FlaskChainReaction{
 
 public extension FlaskConcrete{
     
-//    func mix()->FlaskChainReaction{
+//    func mix()->ChainReaction{
 //        
 //        if let molecule = molecules.first {
 //            return mix(molecule)
@@ -43,7 +43,7 @@ public extension FlaskConcrete{
 //        assert(false, "error: there are not molecules mixin")
 //    }
     
-//    func mix<T:MoleculeConcrete>(_ aMolecule:T)->FlaskChainReaction{
+//    func mix<T:MoleculeConcrete>(_ aMolecule:T)->ChainReaction{
 //
 //        let  react = { [weak self] in
 //            if let molecules = self?.molecules {
@@ -61,12 +61,12 @@ public extension FlaskConcrete{
 //                }
 //            }
 //        }
-//        let chain = FlaskChainReaction(flask:self, react:react, abort:abort)
+//        let chain = ChainReaction(flask:self, react:react, abort:abort)
 //        return chain
 //    }
 //
     
-    public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping(_ molecule:T) -> Void)->FlaskChainReaction{
+    public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping(_ molecule:T) -> Void)->ChainReaction{
         
         let  react = { [weak self] in
             if let molecules = self?.molecules {
@@ -92,7 +92,7 @@ public extension FlaskConcrete{
             return true
         })
         
-        let chain = FlaskChainReaction(flask:self, react:react, abort:abort)
+        let chain = ChainReaction(flask:self, react:react, abort:abort)
         return chain
     }
     
