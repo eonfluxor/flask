@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fluxor Class Reference</title>
+    <title>FluxSerializer Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/Fluxor" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/FluxSerializer" class="dashAnchor"></a>
 
-    <a title="Fluxor Class Reference"></a>
+    <a title="FluxSerializer Structure Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html"> Reference</a>
       <img class="carat" src="../img/carat.png" />
-      Fluxor Class Reference
+      FluxSerializer Structure Reference
     </p>
 
     <div class="content-wrapper">
@@ -167,10 +167,10 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>Fluxor</h1>
+            <h1>FluxSerializer</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Fluxor</span><span class="o">&lt;</span><span class="kt">D</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Classes/FluxorConcrete.html">FluxorConcrete</a></span> <span class="k">where</span> <span class="kt">D</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FluxSerializer</span></code></pre>
 
                 </div>
               </div>
@@ -186,9 +186,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11Reaktor_iOS6FluxorC7reactoryx_AA12FluxReactionCtcvp"></a>
-                    <a name="//apple_ref/swift/Property/reactor" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11Reaktor_iOS6FluxorC7reactoryx_AA12FluxReactionCtcvp">reactor</a>
+                    <a name="/s:11Reaktor_iOS14FluxSerializerV13jsonFromStateSSxKAA0cG0RzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/jsonFromState(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Reaktor_iOS14FluxSerializerV13jsonFromStateSSxKAA0cG0RzlFZ">jsonFromState(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -203,7 +203,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">reactor</span><span class="p">:</span> <span class="p">(</span><span class="kt">D</span><span class="p">,</span> <span class="kt"><a href="../Classes/FluxReaction.html">FluxReaction</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">jsonFromState</span><span class="o">&lt;</span><span class="kt">K</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">K</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="k">where</span> <span class="kt">K</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FluxState.html">FluxState</a></span></code></pre>
 
                         </div>
                       </div>
@@ -213,9 +213,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11Reaktor_iOS6FluxorCACyxGxcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11Reaktor_iOS6FluxorCACyxGxcfc">init(_:)</a>
+                    <a name="/s:11Reaktor_iOS14FluxSerializerV13stateFromJsonxSSKAA0C5StateRzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/stateFromJson(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Reaktor_iOS14FluxSerializerV13stateFromJsonxSSKAA0C5StateRzlFZ">stateFromJson(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -230,7 +230,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">owner</span><span class="p">:</span> <span class="kt">D</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">stateFromJson</span><span class="o">&lt;</span><span class="kt">K</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">json</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">K</span> <span class="k">where</span> <span class="kt">K</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FluxState.html">FluxState</a></span></code></pre>
 
                         </div>
                       </div>
@@ -240,36 +240,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11Reaktor_iOS6FluxorC4bindyyF"></a>
-                    <a name="//apple_ref/swift/Method/bind()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11Reaktor_iOS6FluxorC4bindyyF">bind()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>MARK: -</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">bind</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11Reaktor_iOS6FluxorC8getOwneryXlSgyF"></a>
-                    <a name="//apple_ref/swift/Method/getOwner()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11Reaktor_iOS6FluxorC8getOwneryXlSgyF">getOwner()</a>
+                    <a name="/s:11Reaktor_iOS14FluxSerializerV13dataFromState10Foundation4DataVSgxKAA0cG0RzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/dataFromState(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Reaktor_iOS14FluxSerializerV13dataFromState10Foundation4DataVSgxKAA0cG0RzlFZ">dataFromState(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -284,7 +257,115 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getOwner</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyObject</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">dataFromState</span><span class="o">&lt;</span><span class="kt">K</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">K</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span><span class="p">?</span> <span class="k">where</span> <span class="kt">K</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FluxState.html">FluxState</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11Reaktor_iOS14FluxSerializerV13stateFromDatax10Foundation0G0VKAA0C5StateRzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/stateFromData(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Reaktor_iOS14FluxSerializerV13stateFromDatax10Foundation0G0VKAA0C5StateRzlFZ">stateFromData(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">stateFromData</span><span class="o">&lt;</span><span class="kt">K</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">jsonData</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">K</span> <span class="k">where</span> <span class="kt">K</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FluxState.html">FluxState</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11Reaktor_iOS14FluxSerializerV17flattenDictionarys0F0VySSypGAA0cF3RefCFZ"></a>
+                    <a name="//apple_ref/swift/Method/flattenDictionary(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Reaktor_iOS14FluxSerializerV17flattenDictionarys0F0VySSypGAA0cF3RefCFZ">flattenDictionary(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">flattenDictionary</span><span class="p">(</span><span class="n">_</span> <span class="nv">dict</span><span class="p">:</span> <span class="kt"><a href="../Classes/FluxDictionaryRef.html">FluxDictionaryRef</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11Reaktor_iOS14FluxSerializerV16nestDictionariesAA0C13DictionaryRefCSS9namespace_AF4rootAF8childrentFZ"></a>
+                    <a name="//apple_ref/swift/Method/nestDictionaries(namespace:root:children:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Reaktor_iOS14FluxSerializerV16nestDictionariesAA0C13DictionaryRefCSS9namespace_AF4rootAF8childrentFZ">nestDictionaries(namespace:root:children:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">nestDictionaries</span><span class="p">(</span><span class="nv">namespace</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">root</span><span class="p">:</span> <span class="kt"><a href="../Classes/FluxDictionaryRef.html">FluxDictionaryRef</a></span><span class="p">,</span> <span class="nv">children</span><span class="p">:</span> <span class="kt"><a href="../Classes/FluxDictionaryRef.html">FluxDictionaryRef</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/FluxDictionaryRef.html">FluxDictionaryRef</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11Reaktor_iOS14FluxSerializerV15isDictionaryRefSbypSgFZ"></a>
+                    <a name="//apple_ref/swift/Method/isDictionaryRef(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Reaktor_iOS14FluxSerializerV15isDictionaryRefSbypSgFZ">isDictionaryRef(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">isDictionaryRef</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
