@@ -10,6 +10,14 @@
 		06CD357D3571E8D74FA9EF3D /* Pods_Flask_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E2614725FA0A1B2AD443CD /* Pods_Flask_iOS.framework */; };
 		0DEFB0BEFD9FB7B668AF908B /* Pods_Flask_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E158D5A8457C05541B83919 /* Pods_Flask_macOS.framework */; };
 		2622A5312148781F003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
+		2622A5332148828E003F4C38 /* BusNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5322148828E003F4C38 /* BusNotifierTests.swift */; };
+		2622A5342148828E003F4C38 /* BusNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5322148828E003F4C38 /* BusNotifierTests.swift */; };
+		2622A5352148828E003F4C38 /* BusNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5322148828E003F4C38 /* BusNotifierTests.swift */; };
+		2622A536214882BB003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
+		2622A537214882BC003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
+		2622A538214882BC003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
+		2622A539214882BD003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
+		2622A53B214882BF003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
 		26C53E09214790730090AA0C /* Flask_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C53E00214790730090AA0C /* Flask_iOS.framework */; };
 		26C53E0E214790730090AA0C /* Flask_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E0D214790730090AA0C /* Flask_iOSTests.swift */; };
 		26C53E10214790730090AA0C /* Flask_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C53E02214790730090AA0C /* Flask_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -187,6 +195,7 @@
 		1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_macOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-tvOS-Reaktor-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2622A5302148781F003F4C38 /* BusNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusNotifier.swift; sourceTree = "<group>"; };
+		2622A5322148828E003F4C38 /* BusNotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusNotifierTests.swift; sourceTree = "<group>"; };
 		26A82A5F2146D783008C8009 /* Reaktor_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reaktor_iOS.h; sourceTree = "<group>"; };
 		26A82A602146D783008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26A82A6A2146D783008C8009 /* Reaktor_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor_iOSTests.swift; sourceTree = "<group>"; };
@@ -567,6 +576,7 @@
 				26C53EC7214790C00090AA0C /* DictionaryTests.swift */,
 				26C53EC8214790C00090AA0C /* KronTests.swift */,
 				26C53EC9214790C00090AA0C /* ArchivingTests.swift */,
+				2622A5322148828E003F4C38 /* BusNotifierTests.swift */,
 			);
 			path = DataFlowTests;
 			sourceTree = "<group>";
@@ -1122,6 +1132,8 @@
 				26C53E7D214790A90090AA0C /* FluxRef.swift in Sources */,
 				26C53ED5214790C00090AA0C /* ReducerTests.swift in Sources */,
 				26C53E89214790A90090AA0C /* FlaskManager.swift in Sources */,
+				2622A5332148828E003F4C38 /* BusNotifierTests.swift in Sources */,
+				2622A536214882BB003F4C38 /* BusNotifier.swift in Sources */,
 				26C53ED8214790C00090AA0C /* SerializationTests.swift in Sources */,
 				26C53E8F214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EA7214790A90090AA0C /* FlaskReaction.swift in Sources */,
@@ -1140,6 +1152,7 @@
 				26C53EB4214790A90090AA0C /* StoreSerializer.swift in Sources */,
 				26C53E8A214790A90090AA0C /* FlaskManager.swift in Sources */,
 				26C53EC0214790A90090AA0C /* Store.swift in Sources */,
+				2622A537214882BC003F4C38 /* BusNotifier.swift in Sources */,
 				26C53E9C214790A90090AA0C /* BusLock.swift in Sources */,
 				26C53E6C214790A90090AA0C /* FluxHelpers.swift in Sources */,
 				26C53E66214790A90090AA0C /* Flux.swift in Sources */,
@@ -1180,6 +1193,8 @@
 				26C53E7F214790A90090AA0C /* FluxRef.swift in Sources */,
 				26C53ED6214790C00090AA0C /* ReducerTests.swift in Sources */,
 				26C53E8B214790A90090AA0C /* FlaskManager.swift in Sources */,
+				2622A5342148828E003F4C38 /* BusNotifierTests.swift in Sources */,
+				2622A538214882BC003F4C38 /* BusNotifier.swift in Sources */,
 				26C53ED9214790C00090AA0C /* SerializationTests.swift in Sources */,
 				26C53E91214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EA9214790A90090AA0C /* FlaskReaction.swift in Sources */,
@@ -1198,6 +1213,7 @@
 				26C53EB6214790A90090AA0C /* StoreSerializer.swift in Sources */,
 				26C53E8C214790A90090AA0C /* FlaskManager.swift in Sources */,
 				26C53EC2214790A90090AA0C /* Store.swift in Sources */,
+				2622A539214882BD003F4C38 /* BusNotifier.swift in Sources */,
 				26C53E9E214790A90090AA0C /* BusLock.swift in Sources */,
 				26C53E6E214790A90090AA0C /* FluxHelpers.swift in Sources */,
 				26C53E68214790A90090AA0C /* Flux.swift in Sources */,
@@ -1238,6 +1254,8 @@
 				26C53E81214790A90090AA0C /* FluxRef.swift in Sources */,
 				26C53ED7214790C00090AA0C /* ReducerTests.swift in Sources */,
 				26C53E8D214790A90090AA0C /* FlaskManager.swift in Sources */,
+				2622A5352148828E003F4C38 /* BusNotifierTests.swift in Sources */,
+				2622A53B214882BF003F4C38 /* BusNotifier.swift in Sources */,
 				26C53EDA214790C00090AA0C /* SerializationTests.swift in Sources */,
 				26C53E93214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EAB214790A90090AA0C /* FlaskReaction.swift in Sources */,
