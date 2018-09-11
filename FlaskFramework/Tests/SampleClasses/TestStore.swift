@@ -38,12 +38,12 @@ class Store : FlaskStore<Actions,State> {
     
     override func bindActions(){
         
-        action(.Count) {[weak self] (payload, commit, abort)  in
+        mutator(.Count) {[weak self] (payload, commit, abort)  in
             self?.state.counter = (self?.state.counter)! + 1
             commit()
         }
         
-        action(.Text) {[weak self] (payload, commit, abort)  in
+        mutator(.Text) {[weak self] (payload, commit, abort)  in
             self?.state.text = "mutated"
             commit()
         }

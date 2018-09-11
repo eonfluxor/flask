@@ -12,13 +12,13 @@ import UIKit
 import Cocoa
 #endif
 
-public struct FlaskMutationChain{
+public struct FlaskChainReaction{
     
     let flux:FlaskReactorConcrete
     public let commit:()->Void
     public let abort:()->Void
     
-    public func mutate<T:FlaskStoreConcrete>(_ aStore:T, _ mutator:@escaping (_ store:T) -> Void)->FlaskMutationChain{
+    public func mutate<T:FlaskStoreConcrete>(_ aStore:T, _ mutator:@escaping (_ store:T) -> Void)->FlaskChainReaction{
         
         let store = flux.store(aStore)
         
@@ -27,7 +27,7 @@ public struct FlaskMutationChain{
             return true
         })
         
-        let chain = FlaskMutationChain(flux:flux, commit:commit, abort:abort)
+        let chain = FlaskChainReaction(flux:flux, commit:commit, abort:abort)
         return chain
     }
     
@@ -35,7 +35,7 @@ public struct FlaskMutationChain{
 
 public extension FlaskReactorConcrete{
     
-//    func mutate()->FlaskMutationChain{
+//    func mutate()->FlaskChainReaction{
 //        
 //        if let store = stores.first {
 //            return mutate(store)
@@ -43,7 +43,7 @@ public extension FlaskReactorConcrete{
 //        assert(false, "error: there are not stores binded")
 //    }
     
-//    func mutate<T:FlaskStoreConcrete>(_ aStore:T)->FlaskMutationChain{
+//    func mutate<T:FlaskStoreConcrete>(_ aStore:T)->FlaskChainReaction{
 //
 //        let  commit = { [weak self] in
 //            if let stores = self?.stores {
@@ -61,12 +61,12 @@ public extension FlaskReactorConcrete{
 //                }
 //            }
 //        }
-//        let chain = FlaskMutationChain(flux:self, commit:commit, abort:abort)
+//        let chain = FlaskChainReaction(flux:self, commit:commit, abort:abort)
 //        return chain
 //    }
 //
     
-    public func mutate<T:FlaskStoreConcrete>(_ aStore:T, _ mutator:@escaping(_ store:T) -> Void)->FlaskMutationChain{
+    public func mutate<T:FlaskStoreConcrete>(_ aStore:T, _ mutator:@escaping(_ store:T) -> Void)->FlaskChainReaction{
         
         let  commit = { [weak self] in
             if let stores = self?.stores {
@@ -92,7 +92,7 @@ public extension FlaskReactorConcrete{
             return true
         })
         
-        let chain = FlaskMutationChain(flux:self, commit:commit, abort:abort)
+        let chain = FlaskChainReaction(flux:self, commit:commit, abort:abort)
         return chain
     }
     

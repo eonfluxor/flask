@@ -48,12 +48,12 @@
 		26C53E7F214790A90090AA0C /* FlaskRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FlaskRef.swift */; };
 		26C53E80214790A90090AA0C /* FlaskRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FlaskRef.swift */; };
 		26C53E81214790A90090AA0C /* FlaskRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FlaskRef.swift */; };
-		26C53E82214790A90090AA0C /* FlaskChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FlaskChain.swift */; };
-		26C53E83214790A90090AA0C /* FlaskChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FlaskChain.swift */; };
-		26C53E84214790A90090AA0C /* FlaskChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FlaskChain.swift */; };
-		26C53E85214790A90090AA0C /* FlaskChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FlaskChain.swift */; };
-		26C53E86214790A90090AA0C /* FlaskChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FlaskChain.swift */; };
-		26C53E87214790A90090AA0C /* FlaskChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FlaskChain.swift */; };
+		26C53E82214790A90090AA0C /* FlaskChainReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FlaskChainReaction.swift */; };
+		26C53E83214790A90090AA0C /* FlaskChainReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FlaskChainReaction.swift */; };
+		26C53E84214790A90090AA0C /* FlaskChainReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FlaskChainReaction.swift */; };
+		26C53E85214790A90090AA0C /* FlaskChainReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FlaskChainReaction.swift */; };
+		26C53E86214790A90090AA0C /* FlaskChainReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FlaskChainReaction.swift */; };
+		26C53E87214790A90090AA0C /* FlaskChainReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* FlaskChainReaction.swift */; };
 		26C53E88214790A90090AA0C /* FlaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FlaskManager.swift */; };
 		26C53E89214790A90090AA0C /* FlaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FlaskManager.swift */; };
 		26C53E8A214790A90090AA0C /* FlaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FlaskManager.swift */; };
@@ -226,7 +226,7 @@
 		26C53E52214790A90090AA0C /* FlaskDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskDictionary.swift; sourceTree = "<group>"; };
 		26C53E53214790A90090AA0C /* FlaskNSObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskNSObjects.swift; sourceTree = "<group>"; };
 		26C53E54214790A90090AA0C /* FlaskRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskRef.swift; sourceTree = "<group>"; };
-		26C53E56214790A90090AA0C /* FlaskChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskChain.swift; sourceTree = "<group>"; };
+		26C53E56214790A90090AA0C /* FlaskChainReaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskChainReaction.swift; sourceTree = "<group>"; };
 		26C53E57214790A90090AA0C /* FlaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskManager.swift; sourceTree = "<group>"; };
 		26C53E58214790A90090AA0C /* FlaskReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskReactor.swift; sourceTree = "<group>"; };
 		26C53E5A214790A90090AA0C /* FlaskDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskDispatcher.swift; sourceTree = "<group>"; };
@@ -528,7 +528,7 @@
 		26C53E55214790A90090AA0C /* Fluxor */ = {
 			isa = PBXGroup;
 			children = (
-				26C53E56214790A90090AA0C /* FlaskChain.swift */,
+				26C53E56214790A90090AA0C /* FlaskChainReaction.swift */,
 				26C53E57214790A90090AA0C /* FlaskManager.swift */,
 				26C53E58214790A90090AA0C /* FlaskReactor.swift */,
 			);
@@ -1080,7 +1080,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C53E82214790A90090AA0C /* FlaskChain.swift in Sources */,
+				26C53E82214790A90090AA0C /* FlaskChainReaction.swift in Sources */,
 				26C53EA6214790A90090AA0C /* FlaskReaction.swift in Sources */,
 				26C53EB8214790A90090AA0C /* FlaskArchiver.swift in Sources */,
 				26C53EB2214790A90090AA0C /* FlaskSerializer.swift in Sources */,
@@ -1121,7 +1121,7 @@
 				26C53E9B214790A90090AA0C /* FlaskLock.swift in Sources */,
 				26C53EDE214790C00090AA0C /* KronTests.swift in Sources */,
 				26C53EF3214790C00090AA0C /* TestStore.swift in Sources */,
-				26C53E83214790A90090AA0C /* FlaskChain.swift in Sources */,
+				26C53E83214790A90090AA0C /* FlaskChainReaction.swift in Sources */,
 				26C53EAD214790A90090AA0C /* FlaskState.swift in Sources */,
 				26C53EF0214790C00090AA0C /* LockTests.swift in Sources */,
 				26C53EE1214790C00090AA0C /* ArchivingTests.swift in Sources */,
@@ -1140,7 +1140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C53E84214790A90090AA0C /* FlaskChain.swift in Sources */,
+				26C53E84214790A90090AA0C /* FlaskChainReaction.swift in Sources */,
 				26C53EA8214790A90090AA0C /* FlaskReaction.swift in Sources */,
 				26C53EBA214790A90090AA0C /* FlaskArchiver.swift in Sources */,
 				26C53EB4214790A90090AA0C /* FlaskSerializer.swift in Sources */,
@@ -1181,7 +1181,7 @@
 				26C53E9D214790A90090AA0C /* FlaskLock.swift in Sources */,
 				26C53EDF214790C00090AA0C /* KronTests.swift in Sources */,
 				26C53EF4214790C00090AA0C /* TestStore.swift in Sources */,
-				26C53E85214790A90090AA0C /* FlaskChain.swift in Sources */,
+				26C53E85214790A90090AA0C /* FlaskChainReaction.swift in Sources */,
 				26C53EAF214790A90090AA0C /* FlaskState.swift in Sources */,
 				26C53EF1214790C00090AA0C /* LockTests.swift in Sources */,
 				26C53EE2214790C00090AA0C /* ArchivingTests.swift in Sources */,
@@ -1200,7 +1200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C53E86214790A90090AA0C /* FlaskChain.swift in Sources */,
+				26C53E86214790A90090AA0C /* FlaskChainReaction.swift in Sources */,
 				26C53EAA214790A90090AA0C /* FlaskReaction.swift in Sources */,
 				26C53EBC214790A90090AA0C /* FlaskArchiver.swift in Sources */,
 				26C53EB6214790A90090AA0C /* FlaskSerializer.swift in Sources */,
@@ -1241,7 +1241,7 @@
 				26C53E9F214790A90090AA0C /* FlaskLock.swift in Sources */,
 				26C53EE0214790C00090AA0C /* KronTests.swift in Sources */,
 				26C53EF5214790C00090AA0C /* TestStore.swift in Sources */,
-				26C53E87214790A90090AA0C /* FlaskChain.swift in Sources */,
+				26C53E87214790A90090AA0C /* FlaskChainReaction.swift in Sources */,
 				26C53EB1214790A90090AA0C /* FlaskState.swift in Sources */,
 				26C53EF2214790C00090AA0C /* LockTests.swift in Sources */,
 				26C53EE3214790C00090AA0C /* ArchivingTests.swift in Sources */,

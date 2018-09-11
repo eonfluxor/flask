@@ -17,16 +17,16 @@ class ChainingTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flux = Flask.instance(ownedBy:owner, binding:store)
+        let flask = Flask.instance(ownedBy:owner, binding:store)
         
-        flux.reactor = { owner, reaction in
+        flask.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in
                 expectation.fulfill()
                 
             })
         }
         
-        flux.mutate(store,{ (store, commit, abort) in
+        flask.mutate(store,{ (store, commit, abort) in
             store.state.counter=1
             commit()
         }).mutate(store) { (store, commit, abort) in

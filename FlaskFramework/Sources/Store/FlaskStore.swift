@@ -52,7 +52,7 @@ open class FlaskStore<A:RawRepresentable,T:FlaskState > : FlaskStoreConcrete{
         return val.rawValue as! String
     }
     
-    public func action(_ enumVal:A, _ reaction: @escaping FlaskStoreMutator){
+    public func mutator(_ enumVal:A, _ reaction: @escaping FlaskStoreMutator){
         action(actionName(enumVal), reaction)
     }
     
