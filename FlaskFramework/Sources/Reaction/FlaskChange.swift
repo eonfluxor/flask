@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-public extension FlaskChangeTemplate{
+public extension MoleculeChange{
     
     
     public func unwrapValue<A>(_ val:A?) ->A?{
@@ -38,7 +38,7 @@ public extension FlaskChangeTemplate{
     }
 }
 
-public struct FlaskChangeTemplate  {
+public struct MoleculeChange  {
     
     weak var _molecule:MoleculeConcrete?
     var _key:String?

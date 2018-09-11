@@ -11,9 +11,9 @@ import XCTest
 
 class ChangeTests: XCTestCase {
     
-    var oldAtom:LabDictionaryType = [:]
-    var newAtom:LabDictionaryType = [:]
-    var changes:LabDictionaryType = [:]
+    var oldAtom:LabDictType = [:]
+    var newAtom:LabDictType = [:]
+    var changes:LabDictType = [:]
    
     
     func testNilVsInt(){

@@ -18,7 +18,7 @@ public class FlaskReaction {
 
     
     var molecule:MoleculeConcrete
-    var changes:LabDictionaryType
+    var changes:LabDictType
     
     required public init(_ molecule:MoleculeConcrete){
         self.molecule = molecule
@@ -79,7 +79,7 @@ public class FlaskReaction {
 
 public extension FlaskReaction {
     
-    static public func reduceChanges(molecule:MoleculeConcrete)->LabDictionaryType{
+    static public func reduceChanges(molecule:MoleculeConcrete)->LabDictType{
     
         let oldAtom = molecule.lastAtomDictionary()
         let newAtom = molecule.atomsDictionary()
@@ -87,9 +87,9 @@ public extension FlaskReaction {
         return reduceChanges(oldAtom,newAtom)
     }
     
-    static public func reduceChanges(_ oldAtom:LabDictionaryType, _ newAtom:LabDictionaryType)->LabDictionaryType{
+    static public func reduceChanges(_ oldAtom:LabDictType, _ newAtom:LabDictType)->LabDictType{
         
-        var changes:LabDictionaryType=[:]
+        var changes:LabDictType=[:]
         
         let uniqueKeys = Set(Array(oldAtom.keys) + Array(newAtom.keys))
         
@@ -107,7 +107,7 @@ public extension FlaskReaction {
         
     }
     
-    static public func change(_ molecule:MoleculeConcrete, _ key: String) -> FlaskChangeTemplate {
+    static public func change(_ molecule:MoleculeConcrete, _ key: String) -> MoleculeChange {
         
         let oldAtom = molecule.lastAtomDictionary()
         let newAtom = molecule.atomsDictionary()
@@ -116,7 +116,7 @@ public extension FlaskReaction {
     }
     
 
-    static public func change(_ oldAtom:LabDictionaryType,_ newAtom:LabDictionaryType, _ key: String) -> FlaskChangeTemplate {
+    static public func change(_ oldAtom:LabDictType,_ newAtom:LabDictType, _ key: String) -> MoleculeChange {
         
         var oldValue:AnyHashable? = Lab.Nil
         var newValue:AnyHashable? = Lab.Nil
@@ -130,7 +130,7 @@ public extension FlaskReaction {
         }
         
     
-        var change = FlaskChangeTemplate()
+        var change = MoleculeChange()
         change.setOldValue(oldValue)
         change.setNewValue(newValue)
         change._key = key

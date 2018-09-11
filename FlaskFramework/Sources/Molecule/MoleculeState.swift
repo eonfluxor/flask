@@ -18,7 +18,7 @@ struct AnyMoleculeAtoms:MoleculeAtoms {
 
 public protocol MoleculeAtoms : Codable {
     init() //construct at initial atoms
-    func toDictionary()->LabDictionaryType
+    func toDictionary()->LabDictType
     func toJsonDictionary()->[String:Any]
 }
 
@@ -30,9 +30,9 @@ public extension MoleculeAtoms{
 //    }
     
     
-    func toDictionary()->LabDictionaryType{
+    func toDictionary()->LabDictType{
 //        let dict = self.dictionary
-        var result:LabDictionaryType = [:]
+        var result:LabDictType = [:]
         
         let mirror = Mirror(reflecting: self)
         
@@ -52,7 +52,7 @@ public extension MoleculeAtoms{
                 let nestedRef = MoleculeSerializer.nestDictionaries(namespace: label,
                                                                 root: LabDictRef(result as NSDictionary),
                                                                 children: value as! LabDictRef)
-                result = nestedRef.dictionary as! LabDictionaryType
+                result = nestedRef.dictionary as! LabDictType
             }
         }
         

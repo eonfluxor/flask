@@ -16,7 +16,7 @@ open class Molecule<T:MoleculeAtoms,A:RawRepresentable> : MoleculeConcrete{
     
     typealias MoleculeAtomsType = T
     
-    var atomsSnapshot: LabDictionaryType = [:]
+    var atomsSnapshot: LabDictType = [:]
     private var _atoms: T = T()
     public var atoms:T = T()
     //////////////////
@@ -55,10 +55,10 @@ open class Molecule<T:MoleculeAtoms,A:RawRepresentable> : MoleculeConcrete{
         action(actionName(enumVal), reaction)
     }
     
-    public override func lastAtomDictionary() -> LabDictionaryType{
+    public override func lastAtomDictionary() -> LabDictType{
         return atomsSnapshot
     }
-    public override func atomsDictionary() -> LabDictionaryType{
+    public override func atomsDictionary() -> LabDictType{
         return _atoms.toDictionary()
     }
     
@@ -122,10 +122,10 @@ open class MoleculeConcrete {
         initializeMetaClass()
     }
     
-    func lastAtomDictionary() -> LabDictionaryType{
+    func lastAtomDictionary() -> LabDictType{
         return [:]
     }
-    func atomsDictionary() -> LabDictionaryType{
+    func atomsDictionary() -> LabDictType{
         return [:]
     }
     func name() -> String {

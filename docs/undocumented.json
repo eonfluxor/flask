@@ -276,7 +276,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
       "line": 19,
-      "symbol": "LabDictionaryType",
+      "symbol": "LabDictType",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
@@ -696,49 +696,49 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskChange.swift",
       "line": null,
-      "symbol": "FlaskChangeTemplate",
+      "symbol": "MoleculeChange",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskChange.swift",
       "line": 18,
-      "symbol": "FlaskChangeTemplate.unwrapValue(_:)",
+      "symbol": "MoleculeChange.unwrapValue(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskChange.swift",
       "line": 25,
-      "symbol": "FlaskChangeTemplate.oldValue()",
+      "symbol": "MoleculeChange.oldValue()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskChange.swift",
       "line": 28,
-      "symbol": "FlaskChangeTemplate.newValue()",
+      "symbol": "MoleculeChange.newValue()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskChange.swift",
       "line": 32,
-      "symbol": "FlaskChangeTemplate.key()",
+      "symbol": "MoleculeChange.key()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskChange.swift",
       "line": 36,
-      "symbol": "FlaskChangeTemplate.molecule()",
+      "symbol": "MoleculeChange.molecule()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskChange.swift",
       "line": 41,
-      "symbol": "FlaskChangeTemplate",
+      "symbol": "MoleculeChange",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
