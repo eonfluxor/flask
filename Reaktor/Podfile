@@ -8,7 +8,7 @@ end
 target 'Reaktor-iOS' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-common_pods!
+  common_pods!
   # Pods for Reaktor-iOS
   pod 'Delayed','~>2.2.2'
   target 'Reaktor-iOSTests' do

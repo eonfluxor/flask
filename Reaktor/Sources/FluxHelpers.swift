@@ -13,20 +13,20 @@ import Cocoa
 #endif
 
 
-typealias FluxStoreMutator = (_ payload: Any?,_ commit:()->Void, _ abort:()->Void ) -> Void
-typealias FluxReactionClosure = (_ change:FluxChangeTemplate)->Void
-typealias FluxorClosure<T> = (_ ownedBy:T, _ reaction: FluxReaction) -> Void
-typealias FluxStateDictionaryType = Dictionary<String,AnyHashable?>
-typealias FluxNil = (AnyHashable?)
-typealias FluxMutatorParams<T> = (_ store:T,_ commit:()-> Void,_ abort:()-> Void) -> Void
-typealias FluxActions = String
-typealias FluxProps = String
+public typealias FluxStoreMutator = (_ payload: Any?,_ commit:()->Void, _ abort:()->Void ) -> Void
+public typealias FluxReactionClosure = (_ change:FluxChangeTemplate)->Void
+public typealias FluxorClosure<T> = (_ ownedBy:T, _ reaction: FluxReaction) -> Void
+public typealias FluxStateDictionaryType = Dictionary<String,AnyHashable?>
+public typealias FluxNil = (AnyHashable?)
+public typealias FluxMutatorParams<T> = (_ store:T,_ commit:()-> Void,_ abort:()-> Void) -> Void
+public typealias FluxActions = String
+public typealias FluxProps = String
 
 
 let FLUX_ACTION_SKIP_LOCKS="FLUX_ACTION_SKIP_LOCKS"
 let FLUX_ACTION_NAME="FLUX_ACTION_NAME"
 
-func isFluxNil(_ value:Any?)->Bool{
+public func isFluxNil(_ value:Any?)->Bool{
     if value == nil || ((value as? NSNull) != nil){
         return true
     }

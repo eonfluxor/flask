@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-class FluxLock: FluxAnyEquatable {
+public class FluxLock: FluxAnyEquatable {
 
     var dispatcher:FluxDispatcher
     
-    required init(dispatcher:FluxDispatcher) {
+    required public init(dispatcher:FluxDispatcher) {
 
         self.dispatcher = dispatcher
         super.init()
@@ -24,12 +24,17 @@ class FluxLock: FluxAnyEquatable {
         self.dispatcher.addLock(self)
     }
     
-    func release(){
+    public func release(){
         dispatcher.removeLock(self)
     }
 }
 
-extension FluxDispatcher{
+public extension FluxDispatcher{
+    
+    public func releaseAllLocks(){
+        locks=[]
+        applyLocks()
+    }
     
     func addLock(_ lock:FluxLock){
         locks.append(lock)
@@ -40,12 +45,7 @@ extension FluxDispatcher{
         locks=locks.filter {$0 != lock}
         applyLocks()
     }
-    
-    func releaseAllLocks(){
-        locks=[]
-        applyLocks()
-    }
-    
+
     func applyLocks(){
         dispatchQueue.isSuspended = locks.count > 0
     }

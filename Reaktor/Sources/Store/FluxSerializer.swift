@@ -12,9 +12,9 @@ import UIKit
 import Cocoa
 #endif
 
-struct FluxSerializer{
+public struct FluxSerializer{
     
-    static func jsonFromState<K:FluxState>(_ state:K) throws ->String {
+    static public func jsonFromState<K:FluxState>(_ state:K) throws ->String {
         
         let jsonData = try JSONEncoder().encode(state)
         
@@ -22,26 +22,26 @@ struct FluxSerializer{
         
     }
     
-    static func stateFromJson<K:FluxState>(_ json:String) throws ->K {
+    static public func stateFromJson<K:FluxState>(_ json:String) throws ->K {
         
         let jsonData = json.data(using: .utf8)!
         return try stateFromData(jsonData)
     }
     
     
-    static func dataFromState<K:FluxState>(_ state:K) throws ->Data? {
+    static public func dataFromState<K:FluxState>(_ state:K) throws ->Data? {
         
         let json = try jsonFromState(state)
         return json.data(using: .utf16)
     }
     
-    static func stateFromData<K:FluxState>(_ jsonData:Data) throws ->K {
+    static public func stateFromData<K:FluxState>(_ jsonData:Data) throws ->K {
         
         let state:K = try! JSONDecoder().decode(K.self, from: jsonData)
         return state
     }
     
-    static func flattenDictionary(_ dict:FluxDictionaryRef) -> [String:Any]{
+    static public func flattenDictionary(_ dict:FluxDictionaryRef) -> [String:Any]{
         
         var result:[String:Any] = [:]
         
@@ -65,7 +65,7 @@ struct FluxSerializer{
         
     }
     
-    static func nestDictionaries( namespace:String,  root:FluxDictionaryRef,  children:FluxDictionaryRef) -> FluxDictionaryRef{
+    static public func nestDictionaries( namespace:String,  root:FluxDictionaryRef,  children:FluxDictionaryRef) -> FluxDictionaryRef{
         
         var result = FluxDictionaryRef(root.dictionary)
         
@@ -93,7 +93,7 @@ struct FluxSerializer{
     }
     
     
-    static func isDictionaryRef(_ value:Any?)->Bool{
+    static public func isDictionaryRef(_ value:Any?)->Bool{
         return ((value as? FluxDictionaryRef) != nil)
     }
     

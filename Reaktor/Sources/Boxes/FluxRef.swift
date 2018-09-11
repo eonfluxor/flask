@@ -13,20 +13,20 @@ import UIKit
 import Cocoa
 #endif
 
-class FluxRef: NSObject, Codable{
+public class FluxRef: NSObject, Codable{
     
     private(set) weak var object:NSObject? 
     
-    init(_ object:NSObject){
+    public init(_ object:NSObject){
         self.object = object
     }
     ///// required
     
-    static func == (lhs: FluxRef, rhs: FluxRef) -> Bool {
+    static public func == (lhs: FluxRef, rhs: FluxRef) -> Bool {
         return lhs.object == rhs.object
     }
     
-    required init(from decoder: Decoder) throws {}
-    func encode(to encoder: Encoder) throws {}
+    required public init(from decoder: Decoder) throws {}
+    public func encode(to encoder: Encoder) throws {}
     
 }

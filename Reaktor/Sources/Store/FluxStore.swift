@@ -12,13 +12,13 @@ import UIKit
 import Cocoa
 #endif
 
-class FluxStore<A:RawRepresentable,T:FluxState > : FluxStoreConcrete{
+open class FluxStore<A:RawRepresentable,T:FluxState > : FluxStoreConcrete{
     
     typealias FluxStateType = T
     
     var stateSnapshot: FluxStateDictionaryType = [:]
     private var _state: T = T()
-    var state:T = T()
+    public var state:T = T()
    
     //////////////////
     // MARK: - TRANSACTIONS QUEUE
@@ -38,7 +38,7 @@ class FluxStore<A:RawRepresentable,T:FluxState > : FluxStoreConcrete{
     //////////////////
     // MARK: - INITIALIZE
     
-    override func initializeMetaClass() {
+    override public func initializeMetaClass() {
         unarchiveIntent()
         snapshotState()
     }
@@ -108,7 +108,7 @@ class FluxStore<A:RawRepresentable,T:FluxState > : FluxStoreConcrete{
 
 
 
-class FluxStoreConcrete {
+open class FluxStoreConcrete {
     
     public static func isInternalProp(_ prop:String)->Bool{
         return prop.starts(with: "_")
@@ -119,7 +119,7 @@ class FluxStoreConcrete {
     }
     
     
-    required init(){
+    required public init(){
         initializeMetaClass()
     }
     
@@ -133,8 +133,8 @@ class FluxStoreConcrete {
         return "Store\(self.self)"
     }
     
-    func bindActions(){}
-    func unbindActions(){}
+    open func bindActions(){}
+    open func unbindActions(){}
     
     func snapshotState(){}
     
@@ -147,9 +147,9 @@ class FluxStoreConcrete {
 
 
 
-extension FluxStoreConcrete {
+public extension FluxStoreConcrete {
   
-    @discardableResult func action(_ action:String, _ reaction: @escaping FluxStoreMutator)->NSObjectProtocol{
+    @discardableResult public func action(_ action:String, _ reaction: @escaping FluxStoreMutator)->NSObjectProtocol{
         let weakRegistration={ [weak self] in
             
             NotificationCenter.default.addObserver(forName: NSNotification.Name(action), object: nil, queue: OperationQueue.main) { (notification) in
@@ -181,7 +181,7 @@ extension FluxStoreConcrete {
         return weakRegistration()
     }
     
-    func mutate<T:FluxStoreConcrete>(_ mutator:@escaping FluxMutatorParams<T>){
+    public func mutate<T:FluxStoreConcrete>(_ mutator:@escaping FluxMutatorParams<T>){
         
         var resolved = false
         var completed = true
@@ -226,10 +226,10 @@ extension FluxStoreConcrete {
     
 }
 
-extension FluxStoreConcrete {
+public extension FluxStoreConcrete {
     
 
-    func get(_ key:String) -> String{
+    public func get(_ key:String) -> String{
         
         assertStateKey(key)
         

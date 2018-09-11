@@ -13,7 +13,7 @@ import UIKit
 import Cocoa
 #endif
 
-class FluxDispatcher {
+public class FluxDispatcher {
     
     //////////////////
     // MARK: - LOCKS

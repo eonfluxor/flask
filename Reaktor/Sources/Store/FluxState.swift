@@ -16,14 +16,14 @@ struct AnyFluxState:FluxState {
     
 }
 
-protocol FluxState : Codable {
+public protocol FluxState : Codable {
     init() //construct at initial state
     func toDictionary()->FluxStateDictionaryType
     func toJsonDictionary()->[String:Any]
 }
 
 
-extension FluxState{
+public extension FluxState{
     
 //    var dictionary: [String: Any] {
 //        return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]

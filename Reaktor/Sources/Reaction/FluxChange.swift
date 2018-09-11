@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-extension FluxChangeTemplate{
+public extension FluxChangeTemplate{
     
     
     func unwrapValue<A>(_ val:A?) ->A?{
@@ -38,7 +38,7 @@ extension FluxChangeTemplate{
     }
 }
 
-struct FluxChangeTemplate  {
+public struct FluxChangeTemplate  {
     
     weak var _store:FluxStoreConcrete?
     var _key:String?

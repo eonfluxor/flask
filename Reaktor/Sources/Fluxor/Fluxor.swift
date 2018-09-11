@@ -16,7 +16,7 @@ public class Fluxor<D:AnyObject>:FluxorConcrete {
     
     weak var owner:D?
     
-    var reactor:FluxorClosure<D>  = { owner,reaction in }
+    public var reactor:FluxorClosure<D>  = { owner,reaction in }
     
     required public init(_ owner:D){
         self.owner=owner
@@ -24,7 +24,7 @@ public class Fluxor<D:AnyObject>:FluxorConcrete {
     
     /// MARK: -
     
-    override func bind(){
+    override public func bind(){
         guard (self.owner) != nil else {
             return assertionFailure("a owner is required")
         }
@@ -42,7 +42,7 @@ public class Fluxor<D:AnyObject>:FluxorConcrete {
         }
     }
     
-    override func getOwner()->AnyObject?{
+    override public func getOwner()->AnyObject?{
         return owner as AnyObject?
     }
     
@@ -64,11 +64,11 @@ public class FluxorConcrete:FluxAnyEquatable{
         bind()
     }
     
-    func getOwner()->AnyObject?{
+    public func getOwner()->AnyObject?{
         return nil
     }
     
-    func bind(){
+    public func bind(){
         
         assert(!binded,"Already bounded. It's required  to balance bind/unbind calls")
         assert(!stores.isEmpty,"At least one store is required")
@@ -89,7 +89,7 @@ public class FluxorConcrete:FluxAnyEquatable{
         
     }
     
-    func unbind(_ explicit:Bool = true){
+    public func unbind(_ explicit:Bool = true){
         
         if(explicit && !binded){
             assert(binded,"Not bounded. It's required  to balance bind/unbind calls")
@@ -112,7 +112,7 @@ public class FluxorConcrete:FluxAnyEquatable{
     ///
     func handleMutation(_ reaction:FluxReaction){}
     
-    @discardableResult func mutate<T:FluxStoreConcrete>(_ aStore:T, _ mutator:@escaping FluxMutatorParams<T>)->FluxorConcrete{
+    @discardableResult public func mutate<T:FluxStoreConcrete>(_ aStore:T, _ mutator:@escaping FluxMutatorParams<T>)->FluxorConcrete{
         
         let store = self.store(aStore)
         store.mutate(mutator)
@@ -124,7 +124,7 @@ public class FluxorConcrete:FluxAnyEquatable{
     //////////////////
     // MARK: - PUBLIC METHODS
     
-    func store<T:FluxStoreConcrete>(_ store:T)->T{
+    public func store<T:FluxStoreConcrete>(_ store:T)->T{
         
         let registered = stores.contains { (aStore) -> Bool in
             aStore === store

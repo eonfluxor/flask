@@ -12,21 +12,21 @@ import UIKit
 import Cocoa
 #endif
 
-protocol FluxStateObservable{
+public protocol FluxStateObservable{
     func toFluxDictionaryRef()->NSDictionary
 }
 
-class FluxDictionaryRef: NSObject, Codable, FluxStateObservable {
+public class FluxDictionaryRef: NSObject, Codable, FluxStateObservable {
    
    
     
     var dictionary = NSDictionary()
     
-    override init(){
+    override public init(){
         dictionary = NSDictionary()
     }
     
-    init(_ dict:NSDictionary){
+    public init(_ dict:NSDictionary){
         super.init()
         dictionary = normalize( dict )
     }
@@ -58,11 +58,11 @@ class FluxDictionaryRef: NSObject, Codable, FluxStateObservable {
     
    
     
-    func toFluxDictionaryRef() -> NSDictionary {
+    public  func toFluxDictionaryRef() -> NSDictionary {
         return dictionary
     }
     
-    subscript(key: String) -> AnyHashable? {
+    public  subscript(key: String) -> AnyHashable? {
         get {
             return dictionary[key] as? AnyHashable
         }
@@ -73,11 +73,11 @@ class FluxDictionaryRef: NSObject, Codable, FluxStateObservable {
         }
     }
     
-    func keys()->Array<String>{
+    public  func keys()->Array<String>{
         return  Array(dictionary.allKeys) as! Array<String>
     }
     
-    func count()->Int{
+    public func count()->Int{
         return dictionary.count
     }
     
@@ -87,11 +87,11 @@ class FluxDictionaryRef: NSObject, Codable, FluxStateObservable {
         case dictionary
     }
     
-    static func == (lhs: FluxDictionaryRef, rhs: FluxDictionaryRef) -> Bool {
+    static public func == (lhs: FluxDictionaryRef, rhs: FluxDictionaryRef) -> Bool {
         return lhs == rhs
     }
     
-    required init(from decoder: Decoder) throws {
+    required public init(from decoder: Decoder) throws {
         
         let values = try decoder.container(keyedBy: CodingKeys.self)
         let jsonString:String = try values.decode(String.self, forKey: .dictionary)
@@ -102,7 +102,7 @@ class FluxDictionaryRef: NSObject, Codable, FluxStateObservable {
         dictionary = ref.dictionary
     }
     
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
         let normalDict = FluxSerializer.flattenDictionary(self)

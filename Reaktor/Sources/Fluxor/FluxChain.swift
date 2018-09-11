@@ -12,13 +12,13 @@ import UIKit
 import Cocoa
 #endif
 
-struct FluxMutationChain{
+public struct FluxMutationChain{
     
     let flux:FluxorConcrete
-    let commit:()->Void
-    let abort:()->Void
+    public let commit:()->Void
+    public let abort:()->Void
     
-    func mutate<T:FluxStoreConcrete>(_ aStore:T, _ mutator:@escaping (_ store:T) -> Void)->FluxMutationChain{
+    public func mutate<T:FluxStoreConcrete>(_ aStore:T, _ mutator:@escaping (_ store:T) -> Void)->FluxMutationChain{
         
         let store = flux.store(aStore)
         
@@ -33,7 +33,7 @@ struct FluxMutationChain{
     
 }
 
-extension FluxorConcrete{
+public extension FluxorConcrete{
     
 //    func mutate()->FluxMutationChain{
 //        
@@ -66,7 +66,7 @@ extension FluxorConcrete{
 //    }
 //
     
-    func mutate<T:FluxStoreConcrete>(_ aStore:T, _ mutator:@escaping(_ store:T) -> Void)->FluxMutationChain{
+    public func mutate<T:FluxStoreConcrete>(_ aStore:T, _ mutator:@escaping(_ store:T) -> Void)->FluxMutationChain{
         
         let  commit = { [weak self] in
             if let stores = self?.stores {

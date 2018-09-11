@@ -14,26 +14,26 @@ import Cocoa
 
 
 
-class FluxReaction {
+public class FluxReaction {
 
     
     var store:FluxStoreConcrete
     var changes:FluxStateDictionaryType
     
-    required init(_ store:FluxStoreConcrete){
+    required public init(_ store:FluxStoreConcrete){
         self.store = store
         self.changes = FluxReaction.reduceChanges(store: self.store)
     }
     
-    func changed()->Bool{
+    public func changed()->Bool{
         return changes.count > 0
     }
     
-    func on<T:RawRepresentable>(_ key:T,_ closure:FluxReactionClosure){
+    public func on<T:RawRepresentable>(_ key:T,_ closure:FluxReactionClosure){
         on(key.rawValue as! String, closure)
     }
     
-    func on(_ key:String,_ closure:FluxReactionClosure){
+    public func on(_ key:String,_ closure:FluxReactionClosure){
         
         
         assertKey(key)
@@ -48,7 +48,7 @@ class FluxReaction {
     }
     
     
-    func at(_ aStore:FluxStoreConcrete)->FluxReaction?{
+    public func at(_ aStore:FluxStoreConcrete)->FluxReaction?{
        
         if store !== aStore{
             return .none
@@ -77,9 +77,9 @@ class FluxReaction {
     
 }
 
-extension FluxReaction {
+public extension FluxReaction {
     
-    static func reduceChanges(store:FluxStoreConcrete)->FluxStateDictionaryType{
+    static public func reduceChanges(store:FluxStoreConcrete)->FluxStateDictionaryType{
     
         let oldState = store.lastStateDictionary()
         let newState = store.stateDictionary()
@@ -87,7 +87,7 @@ extension FluxReaction {
         return reduceChanges(oldState,newState)
     }
     
-    static func reduceChanges(_ oldState:FluxStateDictionaryType, _ newState:FluxStateDictionaryType)->FluxStateDictionaryType{
+    static public func reduceChanges(_ oldState:FluxStateDictionaryType, _ newState:FluxStateDictionaryType)->FluxStateDictionaryType{
         
         var changes:FluxStateDictionaryType=[:]
         
@@ -107,7 +107,7 @@ extension FluxReaction {
         
     }
     
-    static func change(_ store:FluxStoreConcrete, _ key: String) -> FluxChangeTemplate {
+    static public func change(_ store:FluxStoreConcrete, _ key: String) -> FluxChangeTemplate {
         
         let oldState = store.lastStateDictionary()
         let newState = store.stateDictionary()
@@ -116,7 +116,7 @@ extension FluxReaction {
     }
     
 
-    static func change(_ oldState:FluxStateDictionaryType,_ newState:FluxStateDictionaryType, _ key: String) -> FluxChangeTemplate {
+    static public func change(_ oldState:FluxStateDictionaryType,_ newState:FluxStateDictionaryType, _ key: String) -> FluxChangeTemplate {
         
         var oldValue:AnyHashable? = Flux.Nil
         var newValue:AnyHashable? = Flux.Nil
