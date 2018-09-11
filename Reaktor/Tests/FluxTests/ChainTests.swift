@@ -56,8 +56,10 @@ class ChainingTests: SetupFluxTests {
             
             reaction.on(State.prop.counter, { (change) in
                 
-                XCTAssert(change.oldValue() == 0)
-                XCTAssert(change.newValue() == 1)
+                let oldValue:Int? = change.oldValue()
+                let newValue:Int? = change.newValue()
+                XCTAssert(oldValue == 0)
+                XCTAssert(newValue == 1)
                 XCTAssert(change.key() == State.prop.counter.rawValue)
                 XCTAssert(change.store() === store)
                 
@@ -114,7 +116,7 @@ class ChainingTests: SetupFluxTests {
         }
         
         flux.mutate(store){ (store) in
-           store.state.counter=1
+            store.state.counter=1
         }.mutate(store) { (store) in
             store.state.counter=2
         }.commit()

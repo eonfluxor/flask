@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EFF46569D24DB9D22334EEF /* libPods-Reaktor-iOS-Reaktor-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6529348FC7980F8A5E989DF0 /* libPods-Reaktor-iOS-Reaktor-iOSTests.a */; };
 		26A82A662146D783008C8009 /* Reaktor_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A82A5D2146D783008C8009 /* Reaktor_iOS.framework */; };
 		26A82A6B2146D783008C8009 /* Reaktor_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82A6A2146D783008C8009 /* Reaktor_iOSTests.swift */; };
 		26A82A6D2146D783008C8009 /* Reaktor_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A82A5F2146D783008C8009 /* Reaktor_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -157,9 +156,7 @@
 		553D1E7B592EB9628035CAD6 /* Pods_Reaktor_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695BE95F3E3D5381B029DD22 /* Pods_Reaktor_iOSTests.framework */; };
 		64546CC0CE0279796BADBFF2 /* Pods_Reaktor_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9FA86C8DFEE750F1FDD67 /* Pods_Reaktor_tvOS.framework */; };
 		88DB8E24BE9025C14ED61449 /* Pods_Reaktor_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88917E1F608AFE1E56480E6F /* Pods_Reaktor_macOS.framework */; };
-		AA2D1327DF75E3DBD1E3D61C /* libPods-Reaktor-macOS-Reaktor-macOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90ED7E2C99449BF00BF8C4B8 /* libPods-Reaktor-macOS-Reaktor-macOSTests.a */; };
 		E4E6EB50E577F6DFD06E25BC /* Pods_Reaktor_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1853B0440831D5B76080A717 /* Pods_Reaktor_iOS.framework */; };
-		FA015FA9018B6DCF7A083994 /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -278,7 +275,6 @@
 			files = (
 				26A82A662146D783008C8009 /* Reaktor_iOS.framework in Frameworks */,
 				553D1E7B592EB9628035CAD6 /* Pods_Reaktor_iOSTests.framework in Frameworks */,
-				0EFF46569D24DB9D22334EEF /* libPods-Reaktor-iOS-Reaktor-iOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +292,6 @@
 			files = (
 				26A82A9E2146D7A8008C8009 /* Reaktor_macOS.framework in Frameworks */,
 				3595CABE7D286B72BFA3840E /* Pods_Reaktor_macOSTests.framework in Frameworks */,
-				AA2D1327DF75E3DBD1E3D61C /* libPods-Reaktor-macOS-Reaktor-macOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +309,6 @@
 			files = (
 				26A82ABA2146D7B2008C8009 /* Reaktor_tvOS.framework in Frameworks */,
 				49B01758B32A87D4F2F7098C /* Pods_Reaktor_tvOSTests.framework in Frameworks */,
-				FA015FA9018B6DCF7A083994 /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

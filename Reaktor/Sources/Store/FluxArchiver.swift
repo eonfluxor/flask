@@ -93,14 +93,24 @@ extension FluxStore {
             let key = archiveKey()
             let data = UserDefaults.standard.value(forKey: key)
             
-            state = try FluxSerializer.stateFromData(data as! Data)
-            setCurrentState(state)
+            if ((data as? Data) != nil) {
+                state = try FluxSerializer.stateFromData(data as! Data)
+                setCurrentState(state)
+            }
             
         } catch {
             fatalError("Deserialization error")
         }
         
         return true
+    }
+}
+
+extension FluxStore {
+    public func purgeArchive(){
+        let key = archiveKey()
+        UserDefaults.standard.removeObject(forKey: key)
+        
     }
 }
 

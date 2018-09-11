@@ -15,7 +15,7 @@ import Cocoa
 public extension FluxChangeTemplate{
     
     
-    func unwrapValue<A>(_ val:A?) ->A?{
+    public func unwrapValue<A>(_ val:A?) ->A?{
 //        if let object = val as? FluxRef {
 //            return object.object as? A
 //        }

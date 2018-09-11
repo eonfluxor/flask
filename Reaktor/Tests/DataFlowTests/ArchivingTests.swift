@@ -32,13 +32,16 @@ class archiveTests: SetupFluxTests {
             store.state.counter=expectedValue
         }.commit()
         
-        wait(for: [expectation], timeout: 2)
+        wait(for: [expectation], timeout: 1)
         
         flux.unbind()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            
             let anotherStore = Store()
             XCTAssert(anotherStore.state.counter == expectedValue)
+            anotherStore.purgeArchive()
+            
             expectationUnarchive.fulfill()
         }
         
