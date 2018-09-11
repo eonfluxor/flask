@@ -171,14 +171,14 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/Flask.swift",
       "line": 71,
-      "symbol": "FlaskConcrete.bind()",
+      "symbol": "FlaskConcrete.fill()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/Flask.swift",
       "line": 92,
-      "symbol": "FlaskConcrete.unbind(_:)",
+      "symbol": "FlaskConcrete.empty(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -289,42 +289,42 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 63,
+      "line": 64,
       "symbol": "Lab.pause()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 68,
+      "line": 69,
       "symbol": "Lab.pause(mixing:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 72,
+      "line": 73,
       "symbol": "Lab.pause(mixing:payload:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 84,
+      "line": 85,
       "symbol": "Lab.removePauses()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 92,
+      "line": 93,
       "symbol": "Lab.mix(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 96,
+      "line": 97,
       "symbol": "Lab.mix(_:payload:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
@@ -612,14 +612,14 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
       "line": 135,
-      "symbol": "MoleculeConcrete.bindMixers()",
+      "symbol": "MoleculeConcrete.defineMixers()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
       "line": 136,
-      "symbol": "MoleculeConcrete.unbindMixers()",
+      "symbol": "MoleculeConcrete.undefineMixers()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

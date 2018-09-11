@@ -31,6 +31,10 @@ public class Flask<D:AnyObject>:FlaskConcrete {
         super.fill()
     }
     
+    override public func empty(){
+        super.empty()
+    }
+    
     override func handleMix(_ reaction:FlaskReaction){
         
         
