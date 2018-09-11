@@ -193,7 +193,7 @@ extension SubstanceConcrete {
             if self == nil { return }
             
             let reaction = FlaskReaction(self! as SubstanceConcrete)
-            reaction.labPause = mixerPause
+            reaction.onPause = mixerPause
             
             if( reaction.changed()){
                 Lab.mixer.reactChange(reaction)

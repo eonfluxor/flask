@@ -93,7 +93,7 @@ class PauseTests: SetupFlaskTests {
         flask.reactor = { owner, reaction in
             reaction.at(substance)?.on(AppAtoms.named.counter, { (change) in
                 
-                reaction.labPause?.release()
+                reaction.onPause?.release()
                 expectation.fulfill()
            
             })
