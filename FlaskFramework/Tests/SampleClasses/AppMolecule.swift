@@ -13,15 +13,15 @@ import Cocoa
 #endif
 
 
-enum Mixers : MoleculeMixers {
+enum AppMixers : MoleculeMixers {
     case Count
     case Text
     case Object
 }
 
-struct Atoms : MoleculeAtoms {
+struct AppAtoms : MoleculeAtoms {
    
-    enum atom : AtomName{
+    enum named : AtomName{
         case counter, text, map, object
     }
     
@@ -34,7 +34,7 @@ struct Atoms : MoleculeAtoms {
     
 }
 
-class App : Molecule<Atoms,Mixers> {
+class App : Molecule<AppAtoms,AppMixers> {
     
     override func bindMixers(){
         

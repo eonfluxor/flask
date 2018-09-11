@@ -25,7 +25,7 @@ class LockTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(molecule)?.on(Atoms.atom.counter, { (change) in
+            reaction.at(molecule)?.on(AppAtoms.named.counter, { (change) in
                 
                 if calls == 0 {
                     expectation.fulfill()
@@ -36,13 +36,13 @@ class LockTests: SetupFlaskTests {
                 calls += 1
                 
                 _ = Lab.lock()
-                Lab.mix(Mixers.Count, payload:  ["test":"testLock"])
+                Lab.mix(AppMixers.Count, payload:  ["test":"testLock"])
                 
             })
         }
         
         DispatchQueue.main.async {
-            Lab.mix(Mixers.Count, payload: ["test":"testLock"])
+            Lab.mix(AppMixers.Count, payload: ["test":"testLock"])
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
@@ -59,7 +59,7 @@ class LockTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor = { owner, reaction in
-            reaction.at(molecule)?.on(Atoms.atom.counter, { (change) in
+            reaction.at(molecule)?.on(AppAtoms.named.counter, { (change) in
                 expectation.fulfill()
             })
         }
@@ -68,7 +68,7 @@ class LockTests: SetupFlaskTests {
         
         let lock  = Lab.lock()
         let lock2  = Lab.lock()
-        Lab.mix(Mixers.Count, payload:  ["test":"testLockRelease"])
+        Lab.mix(AppMixers.Count, payload:  ["test":"testLockRelease"])
         
         DispatchQueue.main.async {
             lock.release()
@@ -91,18 +91,18 @@ class LockTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor = { owner, reaction in
-            reaction.at(molecule)?.on(Atoms.atom.counter, { (change) in
+            reaction.at(molecule)?.on(AppAtoms.named.counter, { (change) in
                 expectation.fulfill()
             })
-            reaction.at(molecule)?.on(Atoms.atom.text, { (change) in
+            reaction.at(molecule)?.on(AppAtoms.named.text, { (change) in
                 expectation2.fulfill()
             })
         }
         
-        let lock  = Lab.lock(action:Mixers.Count, payload:  ["test":"testLockActon count"])
+        let lock  = Lab.lock(action:AppMixers.Count, payload:  ["test":"testLockActon count"])
        
         //this should be performed after the lock releases
-        Lab.mix(Mixers.Text, payload:  ["test":"testLockAction text"])
+        Lab.mix(AppMixers.Text, payload:  ["test":"testLockAction text"])
         
         wait(for: [expectation], timeout: 2)
         

@@ -19,7 +19,6 @@ open class Molecule<T:MoleculeAtoms,A:RawRepresentable> : MoleculeConcrete{
     var atomsSnapshot: LabDictionaryType = [:]
     private var _atoms: T = T()
     public var atoms:T = T()
-   
     //////////////////
     // MARK: - TRANSACTIONS QUEUE
     

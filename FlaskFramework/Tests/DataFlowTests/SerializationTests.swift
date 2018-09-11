@@ -20,7 +20,7 @@ class SerializationTests: XCTestCase {
                 "nest":["foo":"bar"]
             ]
             
-            var atoms:Atoms = Atoms()
+            var atoms:AppAtoms = AppAtoms()
             atoms.counter = 666
             atoms.text = "hello world"
             atoms.map = LabDictRef(dict)
@@ -28,7 +28,7 @@ class SerializationTests: XCTestCase {
             
             let jsonString:String = try MoleculeSerializer.jsonFromAtoms(atoms)
             
-            let atomsDecoded:Atoms = try MoleculeSerializer.atomsFromJson(jsonString)
+            let atomsDecoded:AppAtoms = try MoleculeSerializer.atomsFromJson(jsonString)
             
             XCTAssert(atoms.counter == atomsDecoded.counter )
             XCTAssert(atoms.text == atomsDecoded.text )

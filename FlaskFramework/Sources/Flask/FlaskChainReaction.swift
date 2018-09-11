@@ -40,7 +40,7 @@ public extension FlaskConcrete{
 //        if let molecule = molecules.first {
 //            return mix(molecule)
 //        }
-//        assert(false, "error: there are not molecules binded")
+//        assert(false, "error: there are not molecules mixin")
 //    }
     
 //    func mix<T:MoleculeConcrete>(_ aMolecule:T)->FlaskChainReaction{

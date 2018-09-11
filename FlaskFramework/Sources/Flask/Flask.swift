@@ -59,8 +59,8 @@ public class FlaskConcrete:LabAnyEquatable{
         bindMolecules([molecule])
     }
     
-    func bindMolecules(_ bindedMolecules:[MoleculeConcrete]){
-        molecules = bindedMolecules
+    func bindMolecules(_ mixinMolecules:[MoleculeConcrete]){
+        molecules = mixinMolecules
         bind()
     }
     
@@ -92,7 +92,7 @@ public class FlaskConcrete:LabAnyEquatable{
     public func unbind(_ explicit:Bool = true){
         
         if(explicit && !binded){
-            assert(binded,"Not bounded. It's required  to balance bind/unbind calls")
+            assert(binded,"Not binded. It's required  to balance bind/unbind calls")
         }
         
         if(!binded){return}
@@ -129,7 +129,7 @@ public class FlaskConcrete:LabAnyEquatable{
         let registered = molecules.contains { (aMolecule) -> Bool in
             aMolecule === molecule
         }
-        assert(registered,"Molecule instance is not binded to this flask")
+        assert(registered,"Molecule instance is not mixin to this flask")
         return molecule
     }
 

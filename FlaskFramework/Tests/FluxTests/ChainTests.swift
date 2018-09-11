@@ -20,7 +20,7 @@ class ChainingTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner, mixin:molecule)
         
         flask.reactor = { owner, reaction in
-            reaction.on(Atoms.atom.counter, { (change) in
+            reaction.on(AppAtoms.named.counter, { (change) in
                 expectation.fulfill()
                 
             })
@@ -56,33 +56,33 @@ class ChainingTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on(Atoms.atom.counter, { (change) in
+            reaction.on(AppAtoms.named.counter, { (change) in
                 
                 let oldValue:Int? = change.oldValue()
                 let newValue:Int? = change.newValue()
                 XCTAssert(oldValue == 0)
                 XCTAssert(newValue == 1)
-                XCTAssert(change.key() == Atoms.atom.counter.rawValue)
+                XCTAssert(change.key() == AppAtoms.named.counter.rawValue)
                 XCTAssert(change.molecule() === molecule)
                 
                 expectation.fulfill()
             })
             
-            reaction.on(Atoms.atom.text, { (change) in
+            reaction.on(AppAtoms.named.text, { (change) in
                 
                 XCTAssert(change.oldValue() == "")
                 XCTAssert(change.newValue() == "reaction")
-                XCTAssert(change.key() == Atoms.atom.text.rawValue)
+                XCTAssert(change.key() == AppAtoms.named.text.rawValue)
                 XCTAssert(change.molecule() === molecule)
                 
                 expectation2.fulfill()
             })
             
-            reaction.on(Atoms.atom.object, { (change) in
+            reaction.on(AppAtoms.named.object, { (change) in
                 
                 XCTAssert( isLabNil(change.oldValue()) )
                 XCTAssert(change.newValue() == aObject)
-                XCTAssert(change.key() == Atoms.atom.object.rawValue)
+                XCTAssert(change.key() == AppAtoms.named.object.rawValue)
                 XCTAssert(change.molecule() === molecule)
                 
                 expectation3.fulfill()
@@ -110,7 +110,7 @@ class ChainingTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner, mixin:molecule)
         
         flask.reactor = { owner, reaction in
-            reaction.on(Atoms.atom.counter, { (change) in
+            reaction.on(AppAtoms.named.counter, { (change) in
                 expectation.fulfill()
                 XCTAssert(change.newValue() == 2)
             })
