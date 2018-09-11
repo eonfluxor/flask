@@ -20,7 +20,7 @@ class NestedAtomTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, mixin:substance)
+        let flask = Lab.flask(ownedBy:owner, filling:substance)
         
         let data:NSDictionary = [
             "foo":"bar",

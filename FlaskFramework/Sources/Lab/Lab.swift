@@ -41,11 +41,11 @@ public extension Lab {
 
 public extension Lab {
     
-    static public func flask<T:AnyObject>(ownedBy owner:T, mixin substance:SubstanceConcrete) -> Flask<T>{
-        return Lab.flask(ownedBy:owner,mixin:[substance])
+    static public func flask<T:AnyObject>(ownedBy owner:T, filling substance:SubstanceConcrete) -> Flask<T>{
+        return Lab.flask(ownedBy:owner,filling:[substance])
     }
     
-    static public func flask<T:AnyObject>(ownedBy owner:T, mixin substances:[SubstanceConcrete]) -> Flask<T>{
+    static public func flask<T:AnyObject>(ownedBy owner:T, filling substances:[SubstanceConcrete]) -> Flask<T>{
         let flask = Lab.flask(ownedBy:owner)
         flask.defineSubstances(substances)
         flask.fill()
@@ -66,12 +66,12 @@ public extension Lab {
     }
     
     @discardableResult
-    static public func pause<T:RawRepresentable>(mixing enumVal:T)->MixerPause{
-        return Lab.pause(mixing:enumVal,payload:nil)
+    static public func pause<T:RawRepresentable>(fillingg enumVal:T)->MixerPause{
+        return Lab.pause(fillingg:enumVal,payload:nil)
     }
     
     @discardableResult
-    static public func pause<T:RawRepresentable>(mixing enumVal:T, payload:[String:Any]?)->MixerPause{
+    static public func pause<T:RawRepresentable>(fillingg enumVal:T, payload:[String:Any]?)->MixerPause{
         
         let mixer = enumVal.rawValue as! String
         let pause = MixerPause(mixer:Lab.mixer)

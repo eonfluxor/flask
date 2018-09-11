@@ -63,8 +63,8 @@ public class FlaskConcrete:LabEquatable{
         defineSubstances([substance])
     }
     
-    func defineSubstances(_ mixinSubstances:[SubstanceConcrete]){
-        substances = mixinSubstances
+    func defineSubstances(_ fillingSubstances:[SubstanceConcrete]){
+        substances = fillingSubstances
         
     }
     
@@ -133,7 +133,7 @@ public class FlaskConcrete:LabEquatable{
         let registered = substances.contains { (aSubstance) -> Bool in
             aSubstance === substance
         }
-        assert(registered,"Substance instance is not mixin to this flask")
+        assert(registered,"Substance instance is not filling to this flask")
         return substance
     }
 

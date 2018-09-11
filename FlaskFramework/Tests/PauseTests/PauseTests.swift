@@ -19,7 +19,7 @@ class PauseTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,mixin:substance)
+        let flask = Lab.flask(ownedBy:owner,filling:substance)
         
         var calls = 0
         
@@ -56,7 +56,7 @@ class PauseTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,mixin:substance)
+        let flask = Lab.flask(ownedBy:owner,filling:substance)
         
         flask.reactor = { owner, reaction in
             reaction.at(substance)?.on(AppAtoms.named.counter, { (change) in
@@ -88,7 +88,7 @@ class PauseTests: SetupFlaskTests {
      
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,mixin:substance)
+        let flask = Lab.flask(ownedBy:owner,filling:substance)
         
         flask.reactor = { owner, reaction in
             reaction.at(substance)?.on(AppAtoms.named.counter, { (change) in
@@ -102,7 +102,7 @@ class PauseTests: SetupFlaskTests {
             })
         }
         
-        Lab.pause(mixing:AppMixers.Count, payload:  ["test":"testPauseActon count"])
+        Lab.pause(fillingg:AppMixers.Count, payload:  ["test":"testPauseActon count"])
        
         //this should be performed after the pause releases
         Lab.applyMixer(AppMixers.Text, payload:  ["test":"testPauseAction text"])

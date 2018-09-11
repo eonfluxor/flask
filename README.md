@@ -12,7 +12,17 @@
 
 
 # What is Flask?
-Summary
+Flask is a framework implementing the Single-Flux- Reactive pattern using lab naming semantics.
+
+## Motivation
+Flask is designed with the following goals:
+
+* Guarantee full atomicity during the state transformations
+* Support both: Fluxxor and Redux patterns
+* Create a DSL easy and fun to use requiring minimum boilerplate.
+
+The naming semantics in Flask are built around four commonly used Laboratory concepts: Lab, Flask, Substance and State.
+
 
 1. feature
 
