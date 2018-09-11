@@ -34,7 +34,7 @@ public extension Lab {
         Lab.mixer.formulationQueue.cancelAllOperations()
     }
     
-    static public func purge(){
+    static public func purgeFlasks(){
         LabFlaskManager.purge()
     }
 }
