@@ -19,9 +19,9 @@ enum AppMixers : MixerName {
     case Object
 }
 
-struct AppAtoms : Atoms {
+struct AppStates : States {
    
-    enum named : AtomName{
+    enum named : StateName{
         case counter, text, map, object
     }
     
@@ -34,17 +34,17 @@ struct AppAtoms : Atoms {
     
 }
 
-class App : Substance<AppAtoms,AppMixers> {
+class App : Substance<AppStates,AppMixers> {
     
     override func defineMixers(){
         
         mixer(.Count) {[weak self] (payload, react, abort)  in
-            self?.atoms.counter = (self?.atoms.counter)! + 1
+            self?.states.counter = (self?.states.counter)! + 1
             react()
         }
         
         mixer(.Text) {[weak self] (payload, react, abort)  in
-            self?.atoms.text = "mixd"
+            self?.states.text = "mixd"
             react()
         }
     }

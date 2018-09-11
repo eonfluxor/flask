@@ -60,17 +60,17 @@ public class FlaskReaction {
     func assertKey(_ key:String){
         
         let error = {
-            fatalError("the key `\(key)` is not defined in atoms")
+            fatalError("the key `\(key)` is not defined in states")
             
         }
-        let atoms = substance.atomsSnapshotDictionary()
+        let states = substance.statesSnapshotDictionary()
         let rootKey = key.split(separator: ".").first
         
         guard (rootKey != nil) else{
             error()
         }
         
-        guard atoms.keys.contains(String(rootKey!)) else{
+        guard states.keys.contains(String(rootKey!)) else{
             error()
         }
         
@@ -82,21 +82,21 @@ public extension FlaskReaction {
     
     static public func reduceChanges(substance:SubstanceConcrete)->LabDictType{
     
-        let oldAtom = substance.atomsSnapshotDictionary()
-        let newAtom = substance.atomsDictionary()
+        let oldState = substance.statesSnapshotDictionary()
+        let newState = substance.statesDictionary()
         
-        return reduceChanges(oldAtom,newAtom)
+        return reduceChanges(oldState,newState)
     }
     
-    static public func reduceChanges(_ oldAtom:LabDictType, _ newAtom:LabDictType)->LabDictType{
+    static public func reduceChanges(_ oldState:LabDictType, _ newState:LabDictType)->LabDictType{
         
         var changes:LabDictType=[:]
         
-        let uniqueKeys = Set(Array(oldAtom.keys) + Array(newAtom.keys))
+        let uniqueKeys = Set(Array(oldState.keys) + Array(newState.keys))
         
         for key in uniqueKeys {
             
-            let change = FlaskReaction.change(oldAtom, newAtom, key)
+            let change = FlaskReaction.change(oldState, newState, key)
             
             if change.mixd()  {
                 //use casting to ensure nil is passed
@@ -110,23 +110,23 @@ public extension FlaskReaction {
     
     static public func change(_ substance:SubstanceConcrete, _ key: String) -> SubstanceChange {
         
-        let oldAtom = substance.atomsSnapshotDictionary()
-        let newAtom = substance.atomsDictionary()
+        let oldState = substance.statesSnapshotDictionary()
+        let newState = substance.statesDictionary()
         
-        return change(oldAtom,newAtom,key)
+        return change(oldState,newState,key)
     }
     
 
-    static public func change(_ oldAtom:LabDictType,_ newAtom:LabDictType, _ key: String) -> SubstanceChange {
+    static public func change(_ oldState:LabDictType,_ newState:LabDictType, _ key: String) -> SubstanceChange {
         
         var oldValue:AnyHashable? = Lab.Nil
         var newValue:AnyHashable? = Lab.Nil
         
-        if let val = oldAtom[key] {
+        if let val = oldState[key] {
             oldValue = val
         }
         
-        if let val = newAtom[key] {
+        if let val = newState[key] {
             newValue = val
         }
         

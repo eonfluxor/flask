@@ -22,7 +22,7 @@ public struct ChainReaction{
         
         let substance = flask.substance(aSubstance)
         
-        substance.atomsTransaction({
+        substance.statesTransaction({
             mixer(substance)
             return true
         })
@@ -49,14 +49,14 @@ public extension FlaskConcrete{
             [weak self] in
             if let substances = self?.substances {
                 for substance in substances{
-                    substance.abortAtomsTransaction();
+                    substance.abortStatesTransaction();
                 }
             }
         }
         
         let substance = self.substance(aSubstance)
         
-        substance.atomsTransaction({
+        substance.statesTransaction({
             mixer(substance)
             return true
         })

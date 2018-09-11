@@ -20,7 +20,7 @@ public typealias LabDictType = Dictionary<String,AnyHashable?>
 public typealias LabNil = (AnyHashable?)
 public typealias MixParams<T> = (_ substance:T,_ react:()-> Void,_ abort:()-> Void) -> Void
 public typealias MixerName = String
-public typealias AtomName = String
+public typealias StateName = String
 
 
 let MIXER_PAUSED_BY="MIXER_PAUSED_BY"
@@ -37,7 +37,7 @@ public func isLabNil(_ value:Any?)->Bool{
 
 
 protocol LabAnyWithInit{
-    init() //construct at initial atoms
+    init() //construct at initial states
 }
 
 public class LabEquatable: Equatable{

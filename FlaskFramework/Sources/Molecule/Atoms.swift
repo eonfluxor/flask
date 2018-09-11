@@ -1,5 +1,5 @@
 //
-//  Atoms.swift
+//  States.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/4/18.
@@ -12,18 +12,18 @@ import UIKit
 import Cocoa
 #endif
 
-struct AnyAtoms:Atoms {
+struct AnyStates:States {
     
 }
 
-public protocol Atoms : Codable {
-    init() //construct at initial atoms
+public protocol States : Codable {
+    init() //construct at initial states
     func toDictionary()->LabDictType
     func toJsonDictionary()->[String:Any]
 }
 
 
-public extension Atoms{
+public extension States{
     
 //    var dictionary: [String: Any] {
 //        return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]

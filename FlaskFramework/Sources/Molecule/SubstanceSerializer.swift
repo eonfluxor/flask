@@ -14,31 +14,31 @@ import Cocoa
 
 public struct SubstanceSerializer{
     
-    static public func jsonFromAtoms<K:Atoms>(_ atoms:K) throws ->String {
+    static public func jsonFromStates<K:States>(_ states:K) throws ->String {
         
-        let jsonData = try JSONEncoder().encode(atoms)
+        let jsonData = try JSONEncoder().encode(states)
         
         return String(data: jsonData, encoding: .utf8)!
         
     }
     
-    static public func atomsFromJson<K:Atoms>(_ json:String) throws ->K {
+    static public func statesFromJson<K:States>(_ json:String) throws ->K {
         
         let jsonData = json.data(using: .utf8)!
-        return try atomsFromData(jsonData)
+        return try statesFromData(jsonData)
     }
     
     
-    static public func dataFromAtom<K:Atoms>(_ atoms:K) throws ->Data? {
+    static public func dataFromState<K:States>(_ states:K) throws ->Data? {
         
-        let json = try jsonFromAtoms(atoms)
+        let json = try jsonFromStates(states)
         return json.data(using: .utf16)
     }
     
-    static public func atomsFromData<K:Atoms>(_ jsonData:Data) throws ->K {
+    static public func statesFromData<K:States>(_ jsonData:Data) throws ->K {
         
-        let atoms:K = try! JSONDecoder().decode(K.self, from: jsonData)
-        return atoms
+        let states:K = try! JSONDecoder().decode(K.self, from: jsonData)
+        return states
     }
     
     static public func flattenDictionary(_ dict:LabDictRef) -> [String:Any]{

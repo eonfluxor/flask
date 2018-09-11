@@ -35,7 +35,7 @@ extension Substance {
 
 extension Substance {
     
-    func archiveIntent<T:Atoms>(_ atoms:T){
+    func archiveIntent<T:States>(_ states:T){
         
         guard !archiveDisabled() else{
             return
@@ -44,12 +44,12 @@ extension Substance {
         let key = archiveKey()
         let delay = archiveDelay()
         Kron.idle( delay , key:key){ [weak self] key,ctx in
-            self?.archiveNow(atoms)
+            self?.archiveNow(states)
         }
         
     }
     
-    func archiveNow<T:Atoms>(_ atoms:T){
+    func archiveNow<T:States>(_ states:T){
         
         archiveQueue.addOperation { [weak self] in
             
@@ -59,7 +59,7 @@ extension Substance {
                     guard self != nil else {return}
                     
                     let key = self!.archiveKey()
-                    let data = try SubstanceSerializer.dataFromAtom(atoms)
+                    let data = try SubstanceSerializer.dataFromState(states)
                     
                     if let data = data {
                         
@@ -94,8 +94,8 @@ extension Substance {
             let data = UserDefaults.standard.value(forKey: key)
             
             if ((data as? Data) != nil) {
-                atoms = try SubstanceSerializer.atomsFromData(data as! Data)
-                setCurrentAtom(atoms)
+                states = try SubstanceSerializer.statesFromData(data as! Data)
+                setCurrentState(states)
             }
             
         } catch {

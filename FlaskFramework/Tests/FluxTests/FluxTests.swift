@@ -22,7 +22,7 @@ class FlaskTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on( AppAtoms.named.counter, { (change) in
+            reaction.on( AppStates.named.counter, { (change) in
                 expectation.fulfill()
             })
             
@@ -47,7 +47,7 @@ class FlaskTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(substance)?.on(AppAtoms.named.counter, { (change) in
+            reaction.at(substance)?.on(AppStates.named.counter, { (change) in
                 owner.reactionMethod(expectation)
             })
             
@@ -71,7 +71,7 @@ class FlaskTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner,filling:substance)
         
         flask.reactor={owner, reaction in
-            reaction.on(AppAtoms.named.counter, { (change) in
+            reaction.on(AppStates.named.counter, { (change) in
                 expectation.fulfill()
             })
         }
@@ -148,11 +148,11 @@ class FlaskTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on(AppAtoms.named.counter, { (change) in
+            reaction.on(AppStates.named.counter, { (change) in
                 
                 XCTAssert(change.oldValue() == 0)
                 XCTAssert(change.newValue() == 1)
-                XCTAssert(change.key() == AppAtoms.named.counter.rawValue)
+                XCTAssert(change.key() == AppStates.named.counter.rawValue)
                 XCTAssert(change.substance() === substance)
                 
                 expectation.fulfill()
@@ -177,16 +177,16 @@ class FlaskTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner, filling:Substances.app)
         
         flask.reactor = { owner, reaction in
-            reaction.on(AppAtoms.named.counter, { (change) in
+            reaction.on(AppStates.named.counter, { (change) in
                 expectation.fulfill()
-                XCTAssert(Substances.app.atoms.counter == 2)
+                XCTAssert(Substances.app.states.counter == 2)
             })
         }
         
         flask.mix(Substances.app,{ (substance) in
-            substance.atoms.counter=1
+            substance.states.counter=1
         }).mix(Substances.app) { (substance) in
-            substance.atoms.counter=2
+            substance.states.counter=2
             }.react()
         
         
@@ -195,9 +195,9 @@ class FlaskTests: SetupFlaskTests {
         
     }
     
-    func testAtomInternal(){
+    func testStateInternal(){
         
-        let expectation = self.expectation(description: "testAtomInternal")
+        let expectation = self.expectation(description: "testStateInternal")
         expectation.isInverted = true
         
         let substance = self.substance!
@@ -211,7 +211,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         flask.mix(substance){ (substance) in
-            substance.atoms._internal="shouldn't cause mix"
+            substance.states._internal="shouldn't cause mix"
         }.react()
         
         waitForExpectations(timeout: 2, handler: nil)

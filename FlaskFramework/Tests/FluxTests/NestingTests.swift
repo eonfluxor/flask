@@ -9,9 +9,9 @@
 import XCTest
 
 
-class NestedAtomTests: SetupFlaskTests {
+class NestedStateTests: SetupFlaskTests {
     
-    func testNestedAtom(){
+    func testNestedState(){
         
         let expectation = self.expectation(description: "testLabDictRef")
         let expectation2 = self.expectation(description: "testLabDictRef")
@@ -60,7 +60,7 @@ class NestedAtomTests: SetupFlaskTests {
             
             
             flask.mix(substance){ (substance) in
-                substance.atoms.map = dictRef
+                substance.states.map = dictRef
             }.react()
         }
         
@@ -77,7 +77,7 @@ class NestedAtomTests: SetupFlaskTests {
             }
             
             flask.mix(substance) { (substance) in
-                substance.atoms.map = dictRef2
+                substance.states.map = dictRef2
             }.react()
         }
         
