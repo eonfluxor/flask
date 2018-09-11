@@ -31,8 +31,8 @@ public class Flask<D:AnyObject>:FlaskConcrete {
         super.fill()
     }
     
-    override public func empty(){
-        super.empty()
+    override public func empty(_ explicit:Bool = true){
+        super.empty(explicit)
     }
     
     override func handleMix(_ reaction:FlaskReaction){
@@ -93,10 +93,10 @@ public class FlaskConcrete:LabAnyEquatable{
         
     }
     
-    public func empty(){
+    public func empty(_ explicit:Bool = true){
         
-        if(!filled){
-            assert(false,"Not binded. It's required  to balance bind/unbind calls")
+        if(explicit && !filled){
+            assert(filled,"Not binded. It's required  to balance bind/unbind calls")
         }
         
         if(!filled){return}
