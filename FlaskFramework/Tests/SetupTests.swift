@@ -11,12 +11,12 @@ import XCTest
 
 class SetupFlaskTests: XCTestCase {
     
-    var store:App?
+    var molecule:App?
     
     override func setUp() {
         super.setUp()
         
-        self.store = App()
+        self.molecule = App()
         
         Lab.releaseAllLocks()
         FlaskReactorManager.purgeOrphans()
@@ -29,7 +29,7 @@ class SetupFlaskTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        self.store = .none
+        self.molecule = .none
     }
     
     

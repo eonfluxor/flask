@@ -15,9 +15,9 @@ class ChainingTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testInlineMutation")
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, binding:store)
+        let flask = Lab.flask(ownedBy:owner, mixin:molecule)
         
         flask.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in
@@ -26,11 +26,11 @@ class ChainingTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(store,{ (store, commit, abort) in
-            store.state.counter=1
+        flask.mutate(molecule,{ (molecule, commit, abort) in
+            molecule.state.counter=1
             commit()
-        }).mutate(store) { (store, commit, abort) in
-            store.state.counter=2
+        }).mutate(molecule) { (molecule, commit, abort) in
+            molecule.state.counter=2
             commit()
         }
         
@@ -45,9 +45,9 @@ class ChainingTests: SetupFlaskTests {
         let expectation2 = self.expectation(description: "testChangeInLine text")
         let expectation3 = self.expectation(description: "testChangeInLine object")
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         let object = NSObject()
         let aObject = FlaskRef( object )
@@ -62,7 +62,7 @@ class ChainingTests: SetupFlaskTests {
                 XCTAssert(oldValue == 0)
                 XCTAssert(newValue == 1)
                 XCTAssert(change.key() == State.prop.counter.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.molecule() === molecule)
                 
                 expectation.fulfill()
             })
@@ -72,7 +72,7 @@ class ChainingTests: SetupFlaskTests {
                 XCTAssert(change.oldValue() == "")
                 XCTAssert(change.newValue() == "reaction")
                 XCTAssert(change.key() == State.prop.text.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.molecule() === molecule)
                 
                 expectation2.fulfill()
             })
@@ -82,17 +82,17 @@ class ChainingTests: SetupFlaskTests {
                 XCTAssert( isFlaskNil(change.oldValue()) )
                 XCTAssert(change.newValue() == aObject)
                 XCTAssert(change.key() == State.prop.object.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.molecule() === molecule)
                 
                 expectation3.fulfill()
             })
             
         }
         
-        flask.mutate(store,{ (store, commit, abort) in
-            store.state.counter = 1
-            store.state.text = "reaction"
-            store.state.object = aObject
+        flask.mutate(molecule,{ (molecule, commit, abort) in
+            molecule.state.counter = 1
+            molecule.state.text = "reaction"
+            molecule.state.object = aObject
             commit()
         })
         
@@ -105,9 +105,9 @@ class ChainingTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testChain")
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, binding:store)
+        let flask = Lab.flask(ownedBy:owner, mixin:molecule)
         
         flask.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in
@@ -116,10 +116,10 @@ class ChainingTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(store){ (store) in
-            store.state.counter=1
-        }.mutate(store) { (store) in
-            store.state.counter=2
+        flask.mutate(molecule){ (molecule) in
+            molecule.state.counter=1
+        }.mutate(molecule) { (molecule) in
+            molecule.state.counter=2
         }.commit()
         
         

@@ -41,13 +41,13 @@ public extension Lab {
 
 public extension Lab {
     
-    static public func flask<T:AnyObject>(ownedBy owner:T, binding store:MoleculeConcrete) -> Flask<T>{
-        return Lab.flask(ownedBy:owner,binding:[store])
+    static public func flask<T:AnyObject>(ownedBy owner:T, mixin molecule:MoleculeConcrete) -> Flask<T>{
+        return Lab.flask(ownedBy:owner,mixin:[molecule])
     }
     
-    static public func flask<T:AnyObject>(ownedBy owner:T, binding stores:[MoleculeConcrete]) -> Flask<T>{
+    static public func flask<T:AnyObject>(ownedBy owner:T, mixin molecules:[MoleculeConcrete]) -> Flask<T>{
         let flask = Lab.flask(ownedBy:owner)
-        flask.bindMolecules(stores)
+        flask.bindMolecules(molecules)
         return flask
     }
     
@@ -89,11 +89,11 @@ public extension Lab {
 
 public extension Lab {
     
-    static public func action<T:RawRepresentable>(_ enumVal:T){
-        Lab.action(enumVal,payload:nil)
+    static public func mix<T:RawRepresentable>(_ enumVal:T){
+        Lab.mix(enumVal,payload:nil)
     }
     
-    static public func action<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
+    static public func mix<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
         let action = enumVal.rawValue as! String
         var info = payload ?? [:]
         info[FLUX_ACTION_NAME] = action

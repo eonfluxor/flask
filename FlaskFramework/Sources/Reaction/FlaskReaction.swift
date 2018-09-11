@@ -17,12 +17,12 @@ import Cocoa
 public class FlaskReaction {
 
     
-    var store:MoleculeConcrete
+    var molecule:MoleculeConcrete
     var changes:FlaskStateDictionaryType
     
-    required public init(_ store:MoleculeConcrete){
-        self.store = store
-        self.changes = FlaskReaction.reduceChanges(store: self.store)
+    required public init(_ molecule:MoleculeConcrete){
+        self.molecule = molecule
+        self.changes = FlaskReaction.reduceChanges(molecule: self.molecule)
     }
     
     public func changed()->Bool{
@@ -42,15 +42,15 @@ public class FlaskReaction {
             return
         }
         
-        var change = FlaskReaction.change(store, key)
-        change._store = store
+        var change = FlaskReaction.change(molecule, key)
+        change._molecule = molecule
         closure(change)
     }
     
     
     public func at(_ aMolecule:MoleculeConcrete)->FlaskReaction?{
        
-        if store !== aMolecule{
+        if molecule !== aMolecule{
             return .none
         }
         return self
@@ -62,7 +62,7 @@ public class FlaskReaction {
             fatalError("the key `\(key)` is not defined in state")
             
         }
-        let state = store.lastStateDictionary()
+        let state = molecule.lastStateDictionary()
         let rootKey = key.split(separator: ".").first
         
         guard (rootKey != nil) else{
@@ -79,10 +79,10 @@ public class FlaskReaction {
 
 public extension FlaskReaction {
     
-    static public func reduceChanges(store:MoleculeConcrete)->FlaskStateDictionaryType{
+    static public func reduceChanges(molecule:MoleculeConcrete)->FlaskStateDictionaryType{
     
-        let oldState = store.lastStateDictionary()
-        let newState = store.stateDictionary()
+        let oldState = molecule.lastStateDictionary()
+        let newState = molecule.stateDictionary()
         
         return reduceChanges(oldState,newState)
     }
@@ -107,10 +107,10 @@ public extension FlaskReaction {
         
     }
     
-    static public func change(_ store:MoleculeConcrete, _ key: String) -> FlaskChangeTemplate {
+    static public func change(_ molecule:MoleculeConcrete, _ key: String) -> FlaskChangeTemplate {
         
-        let oldState = store.lastStateDictionary()
-        let newState = store.stateDictionary()
+        let oldState = molecule.lastStateDictionary()
+        let newState = molecule.stateDictionary()
         
         return change(oldState,newState,key)
     }

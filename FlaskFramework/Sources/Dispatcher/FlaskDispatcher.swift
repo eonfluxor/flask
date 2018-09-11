@@ -125,31 +125,31 @@ extension FlaskDispatcher {
 
 extension FlaskDispatcher {
    
-    func bindFlaskReactor(_ store:MoleculeConcrete, flask:FlaskConcrete) {
+    func bindFlaskReactor(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
         
-        let storeName = store.name()
-        var storeFlaskReactorRefs = getMoleculeFlaskReactorRefs(storeName)
+        let moleculeName = molecule.name()
+        var moleculeFlaskReactorRefs = getMoleculeFlaskReactorRefs(moleculeName)
         
         let ref = FlaskWeakRef(value:flask)
-        storeFlaskReactorRefs.append(ref)
-        setMoleculeFlaskReactorRefs(storeName,storeFlaskReactorRefs)
+        moleculeFlaskReactorRefs.append(ref)
+        setMoleculeFlaskReactorRefs(moleculeName,moleculeFlaskReactorRefs)
         
     }
     
-    func unbindFlaskReactor(_ store:MoleculeConcrete, flask:FlaskConcrete) {
+    func unbindFlaskReactor(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
         
-        let storeName = store.name()
-        let storeFlaskReactorRefs = getMoleculeFlaskReactorRefs(storeName)
+        let moleculeName = molecule.name()
+        let moleculeFlaskReactorRefs = getMoleculeFlaskReactorRefs(moleculeName)
         
-        let storeFlaskReactorRefsFiltered = storeFlaskReactorRefs.filter { $0.value != flask }
+        let moleculeFlaskReactorRefsFiltered = moleculeFlaskReactorRefs.filter { $0.value != flask }
         
-        setMoleculeFlaskReactorRefs(storeName,storeFlaskReactorRefsFiltered)
+        setMoleculeFlaskReactorRefs(moleculeName,moleculeFlaskReactorRefsFiltered)
        
     }
     
-    func getMoleculeFlaskReactorRefs(_ storeName:String) -> Array<FlaskWeakRef<FlaskConcrete>>{
+    func getMoleculeFlaskReactorRefs(_ moleculeName:String) -> Array<FlaskWeakRef<FlaskConcrete>>{
         
-        if let flasks = self.flaskRefs[storeName] {
+        if let flasks = self.flaskRefs[moleculeName] {
             return flasks
         }
         
@@ -157,9 +157,9 @@ extension FlaskDispatcher {
         
     }
     
-    func setMoleculeFlaskReactorRefs(_ storeName:String,_ refs:Array<FlaskWeakRef<FlaskConcrete>>){
+    func setMoleculeFlaskReactorRefs(_ moleculeName:String,_ refs:Array<FlaskWeakRef<FlaskConcrete>>){
         
-        self.flaskRefs[storeName] = refs
+        self.flaskRefs[moleculeName] = refs
     }
 }
 
@@ -170,11 +170,11 @@ extension FlaskDispatcher {
    
     func commitChange(_ reaction:FlaskReaction){
         
-        let storeName = reaction.store.name()
-        let storeFlaskReactorRefs = getMoleculeFlaskReactorRefs(storeName)
+        let moleculeName = reaction.molecule.name()
+        let moleculeFlaskReactorRefs = getMoleculeFlaskReactorRefs(moleculeName)
         
-        for storeFlaskReactorRef in storeFlaskReactorRefs {
-            if let flask = storeFlaskReactorRef.value{
+        for moleculeFlaskReactorRef in moleculeFlaskReactorRefs {
+            if let flask = moleculeFlaskReactorRef.value{
                 flask.handleMutation( reaction)
             }
         }

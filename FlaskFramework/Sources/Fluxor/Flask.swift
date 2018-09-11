@@ -51,16 +51,16 @@ public class Flask<D:AnyObject>:FlaskConcrete {
 
 public class FlaskConcrete:FlaskAnyEquatable{
     
-    var stores:[MoleculeConcrete]=[]
+    var molecules:[MoleculeConcrete]=[]
     var binded = false
     
     
-    func bindMolecule(_ store:MoleculeConcrete){
-        bindMolecules([store])
+    func bindMolecule(_ molecule:MoleculeConcrete){
+        bindMolecules([molecule])
     }
     
     func bindMolecules(_ bindedMolecules:[MoleculeConcrete]){
-        stores = bindedMolecules
+        molecules = bindedMolecules
         bind()
     }
     
@@ -71,19 +71,19 @@ public class FlaskConcrete:FlaskAnyEquatable{
     public func bind(){
         
         assert(!binded,"Already bounded. It's required  to balance bind/unbind calls")
-        assert(!stores.isEmpty,"At least one store is required")
+        assert(!molecules.isEmpty,"At least one molecule is required")
         
         binded = true
         
-        for store in stores {
+        for molecule in molecules {
            
             { [weak self] in
                 if let wself = self {
-                    Lab.Dispatcher.bindFlaskReactor(store, flask: wself)
+                    Lab.Dispatcher.bindFlaskReactor(molecule, flask: wself)
                 }
             }()
             
-            store.bindActions()
+            molecule.bindActions()
         }
         
         
@@ -98,14 +98,14 @@ public class FlaskConcrete:FlaskAnyEquatable{
         if(!binded){return}
         binded = false
         
-        for store in stores {
+        for molecule in molecules {
             { [weak self] in
                 if let wself = self {
-                    Lab.Dispatcher.unbindFlaskReactor(store, flask: wself)
+                    Lab.Dispatcher.unbindFlaskReactor(molecule, flask: wself)
                 }
             }()
             
-            store.unbindActions()
+            molecule.unbindActions()
         }
     }
     
@@ -114,8 +114,8 @@ public class FlaskConcrete:FlaskAnyEquatable{
     
     @discardableResult public func mutate<T:MoleculeConcrete>(_ aMolecule:T, _ mutator:@escaping FlaskMutatorParams<T>)->FlaskConcrete{
         
-        let store = self.store(aMolecule)
-        store.mutate(mutator)
+        let molecule = self.molecule(aMolecule)
+        molecule.mutate(mutator)
         
         return self
     }
@@ -124,13 +124,13 @@ public class FlaskConcrete:FlaskAnyEquatable{
     //////////////////
     // MARK: - PUBLIC METHODS
     
-    public func store<T:MoleculeConcrete>(_ store:T)->T{
+    public func molecule<T:MoleculeConcrete>(_ molecule:T)->T{
         
-        let registered = stores.contains { (aMolecule) -> Bool in
-            aMolecule === store
+        let registered = molecules.contains { (aMolecule) -> Bool in
+            aMolecule === molecule
         }
         assert(registered,"Molecule instance is not binded to this flask")
-        return store
+        return molecule
     }
 
 }

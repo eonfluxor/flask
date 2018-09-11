@@ -18,12 +18,12 @@ public struct FlaskChainReaction{
     public let commit:()->Void
     public let abort:()->Void
     
-    public func mutate<T:MoleculeConcrete>(_ aMolecule:T, _ mutator:@escaping (_ store:T) -> Void)->FlaskChainReaction{
+    public func mutate<T:MoleculeConcrete>(_ aMolecule:T, _ mutator:@escaping (_ molecule:T) -> Void)->FlaskChainReaction{
         
-        let store = flask.store(aMolecule)
+        let molecule = flask.molecule(aMolecule)
         
-        store.stateTransaction({
-            mutator(store)
+        molecule.stateTransaction({
+            mutator(molecule)
             return true
         })
         
@@ -37,27 +37,27 @@ public extension FlaskConcrete{
     
 //    func mutate()->FlaskChainReaction{
 //        
-//        if let store = stores.first {
-//            return mutate(store)
+//        if let molecule = molecules.first {
+//            return mutate(molecule)
 //        }
-//        assert(false, "error: there are not stores binded")
+//        assert(false, "error: there are not molecules binded")
 //    }
     
 //    func mutate<T:MoleculeConcrete>(_ aMolecule:T)->FlaskChainReaction{
 //
 //        let  commit = { [weak self] in
-//            if let stores = self?.stores {
-//                for store in stores{
-//                    store.handleMutation()
+//            if let molecules = self?.molecules {
+//                for molecule in molecules{
+//                    molecule.handleMutation()
 //                }
 //            }
 //        }
 //
 //        let abort = {
 //            [weak self] in
-//            if let stores = self?.stores {
-//                for store in stores{
-//                    store.abortStateTransaction();
+//            if let molecules = self?.molecules {
+//                for molecule in molecules{
+//                    molecule.abortStateTransaction();
 //                }
 //            }
 //        }
@@ -66,29 +66,29 @@ public extension FlaskConcrete{
 //    }
 //
     
-    public func mutate<T:MoleculeConcrete>(_ aMolecule:T, _ mutator:@escaping(_ store:T) -> Void)->FlaskChainReaction{
+    public func mutate<T:MoleculeConcrete>(_ aMolecule:T, _ mutator:@escaping(_ molecule:T) -> Void)->FlaskChainReaction{
         
         let  commit = { [weak self] in
-            if let stores = self?.stores {
-                for store in stores{
-                    store.handleMutation()
+            if let molecules = self?.molecules {
+                for molecule in molecules{
+                    molecule.handleMutation()
                 }
             }
         }
         
         let abort = {
             [weak self] in
-            if let stores = self?.stores {
-                for store in stores{
-                    store.abortStateTransaction();
+            if let molecules = self?.molecules {
+                for molecule in molecules{
+                    molecule.abortStateTransaction();
                 }
             }
         }
         
-        let store = self.store(aMolecule)
+        let molecule = self.molecule(aMolecule)
         
-        store.stateTransaction({
-            mutator(store)
+        molecule.stateTransaction({
+            mutator(molecule)
             return true
         })
         

@@ -16,9 +16,9 @@ class FlaskReactorTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testCallback Mutation counter")
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor = { owner, reaction in
             
@@ -29,7 +29,7 @@ class FlaskReactorTests: SetupFlaskTests {
         }
         
         DispatchQueue.main.async {
-            Lab.action(Actions.Count, payload: ["test":"callback"])
+            Lab.mix(Actions.Count, payload: ["test":"callback"])
         }
         
         waitForExpectations(timeout: 1, handler: nil)
@@ -41,34 +41,34 @@ class FlaskReactorTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testOwner Delegate")
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(store)?.on(State.prop.counter, { (change) in
+            reaction.at(molecule)?.on(State.prop.counter, { (change) in
                 owner.reactionMethod(expectation)
             })
             
         }
         
         DispatchQueue.main.async {
-            Lab.action(Actions.Count, payload: ["test":"testOwner"])
+            Lab.mix(Actions.Count, payload: ["test":"testOwner"])
         }
         
         waitForExpectations(timeout: 1, handler: nil)
         
     }
     
-    func testUnbinding(){
+    func testUnmixin(){
         
-        let expectation = self.expectation(description: "testUnbinding")
+        let expectation = self.expectation(description: "testUnmixin")
         expectation.isInverted=true
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor={owner, reaction in
             reaction.on(State.prop.counter, { (change) in
@@ -77,7 +77,7 @@ class FlaskReactorTests: SetupFlaskTests {
         }
         
         flask.unbind()
-        Lab.action(Actions.Count, payload: ["test":"unbinding"])
+        Lab.mix(Actions.Count, payload: ["test":"unmixin"])
         
         waitForExpectations(timeout: 1, handler: nil)
         
@@ -89,11 +89,11 @@ class FlaskReactorTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testStrongOwner")
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner? = TestOwner()
         
         weak var flask = Lab.flask(ownedBy:owner!)
-        flask?.stores = [store]
+        flask?.molecules = [molecule]
         flask?.reactor = { owner, reaction in}
         flask?.bind()
         
@@ -112,11 +112,11 @@ class FlaskReactorTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testOwnerDispose")
         
-        let store = self.store!
+        let molecule = self.molecule!
         var weakOwner:TestOwner? = TestOwner()
         
         weak var flask = Lab.flask(ownedBy:weakOwner!)
-        flask?.stores = [store]
+        flask?.molecules = [molecule]
         flask?.reactor = { owner, reaction in}
         flask?.bind()
         
@@ -124,7 +124,7 @@ class FlaskReactorTests: SetupFlaskTests {
         // should cause the factory to release this flask
         weakOwner = nil
         
-        Lab.action(Actions.Count, payload:  ["test":"ownerDispose"])
+        Lab.mix(Actions.Count, payload:  ["test":"ownerDispose"])
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:  {
             if flask == nil {
@@ -142,9 +142,9 @@ class FlaskReactorTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testChange Mutation")
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor = { owner, reaction in
             
@@ -153,14 +153,14 @@ class FlaskReactorTests: SetupFlaskTests {
                 XCTAssert(change.oldValue() == 0)
                 XCTAssert(change.newValue() == 1)
                 XCTAssert(change.key() == State.prop.counter.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.molecule() === molecule)
                 
                 expectation.fulfill()
             })
             
         }
         
-        Lab.action(Actions.Count, payload: ["test":"change"])
+        Lab.mix(Actions.Count, payload: ["test":"change"])
         
         waitForExpectations(timeout: 1, handler: nil)
         
@@ -174,7 +174,7 @@ class FlaskReactorTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testGlobalMolecule testInlineMutation")
         
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, binding:Molecules.test)
+        let flask = Lab.flask(ownedBy:owner, mixin:Molecules.test)
         
         flask.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in
@@ -183,10 +183,10 @@ class FlaskReactorTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(Molecules.test,{ (store) in
-            store.state.counter=1
-        }).mutate(Molecules.test) { (store) in
-            store.state.counter=2
+        flask.mutate(Molecules.test,{ (molecule) in
+            molecule.state.counter=1
+        }).mutate(Molecules.test) { (molecule) in
+            molecule.state.counter=2
             }.commit()
         
         
@@ -200,9 +200,9 @@ class FlaskReactorTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testStateInternal")
         expectation.isInverted = true
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, binding:store)
+        let flask = Lab.flask(ownedBy:owner, mixin:molecule)
         
         flask.reactor = { owner, reaction in
             reaction.on("_internal", { (change) in
@@ -210,8 +210,8 @@ class FlaskReactorTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(store,{ (store, commit, abort) in
-            store.state._internal="shouldn't cause mutation"
+        flask.mutate(molecule,{ (molecule, commit, abort) in
+            molecule.state._internal="shouldn't cause mutation"
             commit()
         })
         

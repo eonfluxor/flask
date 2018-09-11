@@ -33,14 +33,14 @@ public extension FlaskChangeTemplate{
         return _key
     }
     
-    public func store()->MoleculeConcrete?{
-        return _store
+    public func molecule()->MoleculeConcrete?{
+        return _molecule
     }
 }
 
 public struct FlaskChangeTemplate  {
     
-    weak var _store:MoleculeConcrete?
+    weak var _molecule:MoleculeConcrete?
     var _key:String?
     var oldVal:AnyHashable?
     var newVal:AnyHashable?

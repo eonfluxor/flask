@@ -17,15 +17,15 @@ class LockTests: SetupFlaskTests {
         let expectation2 = self.expectation(description: "testLock Mutation Ignored")
         expectation2.isInverted=true
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         var calls = 0
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(store)?.on(State.prop.counter, { (change) in
+            reaction.at(molecule)?.on(State.prop.counter, { (change) in
                 
                 if calls == 0 {
                     expectation.fulfill()
@@ -36,13 +36,13 @@ class LockTests: SetupFlaskTests {
                 calls += 1
                 
                 _ = Lab.lock()
-                Lab.action(Actions.Count, payload:  ["test":"testLock"])
+                Lab.mix(Actions.Count, payload:  ["test":"testLock"])
                 
             })
         }
         
         DispatchQueue.main.async {
-            Lab.action(Actions.Count, payload: ["test":"testLock"])
+            Lab.mix(Actions.Count, payload: ["test":"testLock"])
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
@@ -54,12 +54,12 @@ class LockTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testLockRelease Mutation")
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor = { owner, reaction in
-            reaction.at(store)?.on(State.prop.counter, { (change) in
+            reaction.at(molecule)?.on(State.prop.counter, { (change) in
                 expectation.fulfill()
             })
         }
@@ -68,7 +68,7 @@ class LockTests: SetupFlaskTests {
         
         let lock  = Lab.lock()
         let lock2  = Lab.lock()
-        Lab.action(Actions.Count, payload:  ["test":"testLockRelease"])
+        Lab.mix(Actions.Count, payload:  ["test":"testLockRelease"])
         
         DispatchQueue.main.async {
             lock.release()
@@ -86,15 +86,15 @@ class LockTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testLockRelease Mutation")
         let expectation2 = self.expectation(description: "testLockRelease Mutation Ignored")
      
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor = { owner, reaction in
-            reaction.at(store)?.on(State.prop.counter, { (change) in
+            reaction.at(molecule)?.on(State.prop.counter, { (change) in
                 expectation.fulfill()
             })
-            reaction.at(store)?.on(State.prop.text, { (change) in
+            reaction.at(molecule)?.on(State.prop.text, { (change) in
                 expectation2.fulfill()
             })
         }
@@ -102,7 +102,7 @@ class LockTests: SetupFlaskTests {
         let lock  = Lab.lock(action:Actions.Count, payload:  ["test":"testLockActon count"])
        
         //this should be performed after the lock releases
-        Lab.action(Actions.Text, payload:  ["test":"testLockAction text"])
+        Lab.mix(Actions.Text, payload:  ["test":"testLockAction text"])
         
         wait(for: [expectation], timeout: 2)
         

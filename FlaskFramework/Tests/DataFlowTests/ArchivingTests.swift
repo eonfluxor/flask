@@ -18,9 +18,9 @@ class archiveTests: SetupFlaskTests {
         
         let expectedValue = Int(Date().timeIntervalSince1970)
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, binding:store)
+        let flask = Lab.flask(ownedBy:owner, mixin:molecule)
         
         flask.reactor = { owner, reaction in
             reaction.on(State.prop.counter, { (change) in
@@ -28,8 +28,8 @@ class archiveTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(store){ (store) in
-            store.state.counter=expectedValue
+        flask.mutate(molecule){ (molecule) in
+            molecule.state.counter=expectedValue
         }.commit()
         
         wait(for: [expectation], timeout: 1)
