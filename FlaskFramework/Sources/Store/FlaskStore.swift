@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-open class Molecule<A:RawRepresentable,T:MoleculeState > : MoleculeConcrete{
+open class Molecule<T:MoleculeState,A:RawRepresentable> : MoleculeConcrete{
     
     typealias MoleculeStateType = T
     

@@ -34,7 +34,7 @@ struct State : MoleculeState {
     
 }
 
-class App : Molecule<Mixers,State> {
+class App : Molecule<State,Mixers> {
     
     override func bindMixers(){
         

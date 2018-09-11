@@ -13,5 +13,5 @@ import Cocoa
 #endif
 
 struct Molecules  {
-  static let test = App()
+  static let app = App()
 }

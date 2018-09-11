@@ -174,18 +174,18 @@ class FlaskReactorTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testGlobalMolecule testInlineMutation")
         
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, mixin:Molecules.test)
+        let flask = Lab.flask(ownedBy:owner, mixin:Molecules.app)
         
         flask.reactor = { owner, reaction in
             reaction.on(State.atom.counter, { (change) in
                 expectation.fulfill()
-                XCTAssert(Molecules.test.state.counter == 2)
+                XCTAssert(Molecules.app.state.counter == 2)
             })
         }
         
-        flask.mutate(Molecules.test,{ (molecule) in
+        flask.mutate(Molecules.app,{ (molecule) in
             molecule.state.counter=1
-        }).mutate(Molecules.test) { (molecule) in
+        }).mutate(Molecules.app) { (molecule) in
             molecule.state.counter=2
             }.commit()
         
