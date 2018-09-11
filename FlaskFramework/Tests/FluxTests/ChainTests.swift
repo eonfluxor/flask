@@ -35,7 +35,7 @@ class ChainingTests: SetupFlaskTests {
             molecule.atoms.counter=2
         }.react()
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
         
     }
@@ -123,7 +123,7 @@ class ChainingTests: SetupFlaskTests {
         }.react()
         
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
     }
     

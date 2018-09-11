@@ -52,7 +52,7 @@ public extension Lab {
     }
     
     
-    static public func flask<T:AnyObject>(ownedBy owner:T) -> Flask<T>{
+    static private func flask<T:AnyObject>(ownedBy owner:T) -> Flask<T>{
         return LabFlaskManager.instance(ownedBy:owner)
     }
 }

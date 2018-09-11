@@ -32,7 +32,7 @@ class FlaskTests: SetupFlaskTests {
             Lab.mix(AppMixers.Count, payload: ["test":"callback"])
         }
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
     }
     
@@ -57,7 +57,7 @@ class FlaskTests: SetupFlaskTests {
             Lab.mix(AppMixers.Count, payload: ["test":"testOwner"])
         }
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
     }
     
@@ -79,7 +79,7 @@ class FlaskTests: SetupFlaskTests {
         flask.unbind()
         Lab.mix(AppMixers.Count, payload: ["test":"unmixin"])
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
     }
     
@@ -92,10 +92,10 @@ class FlaskTests: SetupFlaskTests {
         let molecule = self.molecule!
         let owner:TestOwner? = TestOwner()
         
-        weak var flask = Lab.flask(ownedBy:owner!)
-        flask?.molecules = [molecule]
+        weak var flask = Lab.flask(ownedBy:owner!, mixin:molecule)
+        
         flask?.reactor = { owner, reaction in}
-        flask?.bind()
+   
         
         DispatchQueue.main.async {
             
@@ -104,7 +104,7 @@ class FlaskTests: SetupFlaskTests {
             }
         }
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
     }
     
@@ -115,10 +115,10 @@ class FlaskTests: SetupFlaskTests {
         let molecule = self.molecule!
         var weakOwner:TestOwner? = TestOwner()
         
-        weak var flask = Lab.flask(ownedBy:weakOwner!)
-        flask?.molecules = [molecule]
+        weak var flask = Lab.flask(ownedBy:weakOwner!, mixin:molecule)
+        
         flask?.reactor = { owner, reaction in}
-        flask?.bind()
+        
         
         // Calling dispatch after disposing the owner
         // should cause the factory to release this flask
@@ -132,7 +132,7 @@ class FlaskTests: SetupFlaskTests {
             }
         })
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
     }
     
@@ -162,7 +162,7 @@ class FlaskTests: SetupFlaskTests {
         
         Lab.mix(AppMixers.Count, payload: ["test":"change"])
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
     }
     
@@ -190,7 +190,7 @@ class FlaskTests: SetupFlaskTests {
             }.react()
         
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
         
     }
@@ -214,7 +214,7 @@ class FlaskTests: SetupFlaskTests {
             molecule.atoms._internal="shouldn't cause mix"
         }.react()
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
     }
     
     

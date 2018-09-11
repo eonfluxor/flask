@@ -32,7 +32,7 @@ class archiveTests: SetupFlaskTests {
             molecule.atoms.counter=expectedValue
         }.react()
         
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 2)
         
         flask.unbind()
         
