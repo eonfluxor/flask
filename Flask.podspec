@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
    
   s.source       = { :git => "https://github.com/eonfluxor/flask.git", :tag => "v#{s.version}" }
 
-  s.source_files = 'Reaktor/Sources/**/*.swift'
+  s.source_files = 'FlaskFramework/Sources/**/*.swift'
   s.swift_version = '4.1'
  
   s.dependency 'Delayed', '> 2.2.2'
