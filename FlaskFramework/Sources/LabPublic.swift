@@ -90,11 +90,11 @@ public extension Lab {
 
 public extension Lab {
     
-    static public func mix<T:RawRepresentable>(_ enumVal:T){
-        Lab.mix(enumVal,payload:nil)
+    static public func applyMixer<T:RawRepresentable>(_ enumVal:T){
+        Lab.applyMixer(enumVal,payload:nil)
     }
     
-    static public func mix<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
+    static public func applyMixer<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
         let mixer = enumVal.rawValue as! String
         var info = payload ?? [:]
         info[FLUX_MIXER_NAME] = mixer

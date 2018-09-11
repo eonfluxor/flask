@@ -150,7 +150,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/Flask.swift",
       "line": 34,
-      "symbol": "Flask.empty()",
+      "symbol": "Flask.empty(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -185,7 +185,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/Flask.swift",
       "line": 96,
-      "symbol": "FlaskConcrete.empty()",
+      "symbol": "FlaskConcrete.empty(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -570,7 +570,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
       "line": 58,
-      "symbol": "Molecule.pastAtomsDictionary()",
+      "symbol": "Molecule.atomsSnapshotDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

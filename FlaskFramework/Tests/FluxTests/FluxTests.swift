@@ -22,14 +22,14 @@ class FlaskTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on(AppAtoms.named.counter, { (change) in
+            reaction.on( AppAtoms.named.counter, { (change) in
                 expectation.fulfill()
             })
             
         }
         
         DispatchQueue.main.async {
-            Lab.mix(AppMixers.Count, payload: ["test":"callback"])
+            Lab.applyMixer(AppMixers.Count, payload: ["test":"callback"])
         }
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -54,7 +54,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         DispatchQueue.main.async {
-            Lab.mix(AppMixers.Count, payload: ["test":"testOwner"])
+            Lab.applyMixer(AppMixers.Count, payload: ["test":"testOwner"])
         }
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -77,7 +77,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         flask.empty()
-        Lab.mix(AppMixers.Count, payload: ["test":"unmixin"])
+        Lab.applyMixer(AppMixers.Count, payload: ["test":"unmixin"])
         
         waitForExpectations(timeout: 2, handler: nil)
         
@@ -124,7 +124,7 @@ class FlaskTests: SetupFlaskTests {
         // should cause the factory to release this flask
         weakOwner = nil
         
-        Lab.mix(AppMixers.Count, payload:  ["test":"ownerDispose"])
+        Lab.applyMixer(AppMixers.Count, payload:  ["test":"ownerDispose"])
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:  {
             if flask == nil {
@@ -160,7 +160,7 @@ class FlaskTests: SetupFlaskTests {
             
         }
         
-        Lab.mix(AppMixers.Count, payload: ["test":"change"])
+        Lab.applyMixer(AppMixers.Count, payload: ["test":"change"])
         
         waitForExpectations(timeout: 2, handler: nil)
         

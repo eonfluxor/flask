@@ -38,12 +38,12 @@ class App : Molecule<AppAtoms,AppMixers> {
     
     override func defineMixers(){
         
-        mix(.Count) {[weak self] (payload, react, abort)  in
+        mixer(.Count) {[weak self] (payload, react, abort)  in
             self?.atoms.counter = (self?.atoms.counter)! + 1
             react()
         }
         
-        mix(.Text) {[weak self] (payload, react, abort)  in
+        mixer(.Text) {[weak self] (payload, react, abort)  in
             self?.atoms.text = "mixd"
             react()
         }
