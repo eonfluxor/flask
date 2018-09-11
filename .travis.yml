@@ -17,6 +17,8 @@ env:
   - DESTINATION="OS=11.4,name=Apple TV 4K (at 1080p)"     SCHEME="$TVOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"
 before_script:
 - cd Reaktor
+- gem install cocoapods
+- pod install
 script:
 - set -o pipefail
 - xcodebuild -version
