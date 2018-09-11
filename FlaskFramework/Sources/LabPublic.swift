@@ -81,8 +81,8 @@ public extension Lab {
     }
     
     
-    static public func detachAllPauses(){
-        Lab.mixer.detachAllPauses()
+    static public func removePauses(){
+        Lab.mixer.removePauses()
     }
 }
 

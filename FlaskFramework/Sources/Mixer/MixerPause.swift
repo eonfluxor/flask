@@ -21,27 +21,27 @@ public class MixerPause: LabAnyEquatable {
         self.mixer = mixer
         super.init()
         
-        self.mixer.attachPause(self)
+        self.mixer.addPause(self)
     }
     
     public func release(){
-        mixer.detachPause(self)
+        mixer.removePause(self)
     }
 }
 
 public extension Mixer{
     
-    public func detachAllPauses(){
+    public func removePauses(){
         pauses=[]
         applyPauses()
     }
     
-    func attachPause(_ pause:MixerPause){
+    func addPause(_ pause:MixerPause){
         pauses.append(pause)
         applyPauses()
     }
     
-    func detachPause(_ pause:MixerPause){
+    func removePause(_ pause:MixerPause){
         pauses=pauses.filter {$0 != pause}
         applyPauses()
     }
