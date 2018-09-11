@@ -35,7 +35,7 @@ extension Molecule {
 
 extension Molecule {
     
-    func archiveIntent<T:MoleculeAtom>(_ atoms:T){
+    func archiveIntent<T:MoleculeAtoms>(_ atoms:T){
         
         guard !archiveDisabled() else{
             return
@@ -49,7 +49,7 @@ extension Molecule {
         
     }
     
-    func archiveNow<T:MoleculeAtom>(_ atoms:T){
+    func archiveNow<T:MoleculeAtoms>(_ atoms:T){
         
         archiveQueue.addOperation { [weak self] in
             
@@ -59,7 +59,7 @@ extension Molecule {
                     guard self != nil else {return}
                     
                     let key = self!.archiveKey()
-                    let data = try LabSerializer.dataFromAtom(atoms)
+                    let data = try MoleculeSerializer.dataFromAtom(atoms)
                     
                     if let data = data {
                         
@@ -94,7 +94,7 @@ extension Molecule {
             let data = UserDefaults.standard.value(forKey: key)
             
             if ((data as? Data) != nil) {
-                atoms = try LabSerializer.atomsFromData(data as! Data)
+                atoms = try MoleculeSerializer.atomsFromData(data as! Data)
                 setCurrentAtom(atoms)
             }
             

@@ -19,7 +19,7 @@ enum Mixers : MoleculeMixers {
     case Object
 }
 
-struct Atom : MoleculeAtom {
+struct Atoms : MoleculeAtoms {
    
     enum atom : AtomName{
         case counter, text, map, object
@@ -34,7 +34,7 @@ struct Atom : MoleculeAtom {
     
 }
 
-class App : Molecule<Atom,Mixers> {
+class App : Molecule<Atoms,Mixers> {
     
     override func bindMixers(){
         

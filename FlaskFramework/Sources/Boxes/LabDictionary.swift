@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-public protocol MoleculeAtomObservable{
+public protocol MoleculeAtomsObservable{
     func toLabDictionaryRef()->NSDictionary
 }
 
-public class LabDictionaryRef: NSObject, Codable, MoleculeAtomObservable {
+public class LabDictionaryRef: NSObject, Codable, MoleculeAtomsObservable {
    
    
     
@@ -105,7 +105,7 @@ public class LabDictionaryRef: NSObject, Codable, MoleculeAtomObservable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        let normalDict = LabSerializer.flattenDictionary(self)
+        let normalDict = MoleculeSerializer.flattenDictionary(self)
         
         let jsonData:Data = try JSONSerialization.data(withJSONObject: normalDict, options: [])
         let string:String = String(data: jsonData, encoding: .utf8)!

@@ -1,5 +1,5 @@
 //
-//  LabSerializer.swift
+//  MoleculeSerializer.swift
 //  Reaktor
 //
 //  Created by hassan uriostegui on 9/10/18.
@@ -12,9 +12,9 @@ import UIKit
 import Cocoa
 #endif
 
-public struct LabSerializer{
+public struct MoleculeSerializer{
     
-    static public func jsonFromAtom<K:MoleculeAtom>(_ atoms:K) throws ->String {
+    static public func jsonFromAtoms<K:MoleculeAtoms>(_ atoms:K) throws ->String {
         
         let jsonData = try JSONEncoder().encode(atoms)
         
@@ -22,20 +22,20 @@ public struct LabSerializer{
         
     }
     
-    static public func atomsFromJson<K:MoleculeAtom>(_ json:String) throws ->K {
+    static public func atomsFromJson<K:MoleculeAtoms>(_ json:String) throws ->K {
         
         let jsonData = json.data(using: .utf8)!
         return try atomsFromData(jsonData)
     }
     
     
-    static public func dataFromAtom<K:MoleculeAtom>(_ atoms:K) throws ->Data? {
+    static public func dataFromAtom<K:MoleculeAtoms>(_ atoms:K) throws ->Data? {
         
-        let json = try jsonFromAtom(atoms)
+        let json = try jsonFromAtoms(atoms)
         return json.data(using: .utf16)
     }
     
-    static public func atomsFromData<K:MoleculeAtom>(_ jsonData:Data) throws ->K {
+    static public func atomsFromData<K:MoleculeAtoms>(_ jsonData:Data) throws ->K {
         
         let atoms:K = try! JSONDecoder().decode(K.self, from: jsonData)
         return atoms
@@ -79,9 +79,9 @@ public struct LabSerializer{
             
             result[childKey] = value
             
-            if(LabSerializer.isDictionaryRef(value)){
+            if(MoleculeSerializer.isDictionaryRef(value)){
                 //recursion
-                result = LabSerializer.nestDictionaries(namespace: childKey,
+                result = MoleculeSerializer.nestDictionaries(namespace: childKey,
                                                          root: result,
                                                          children: value as! LabDictionaryRef)
             }

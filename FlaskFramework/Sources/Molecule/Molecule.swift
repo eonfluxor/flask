@@ -12,9 +12,9 @@ import UIKit
 import Cocoa
 #endif
 
-open class Molecule<T:MoleculeAtom,A:RawRepresentable> : MoleculeConcrete{
+open class Molecule<T:MoleculeAtoms,A:RawRepresentable> : MoleculeConcrete{
     
-    typealias MoleculeAtomType = T
+    typealias MoleculeAtomsType = T
     
     var atomsSnapshot: LabDictionaryType = [:]
     private var _atoms: T = T()

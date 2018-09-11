@@ -22,7 +22,7 @@ class FlaskTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on(Atom.atom.counter, { (change) in
+            reaction.on(Atoms.atom.counter, { (change) in
                 expectation.fulfill()
             })
             
@@ -47,7 +47,7 @@ class FlaskTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(molecule)?.on(Atom.atom.counter, { (change) in
+            reaction.at(molecule)?.on(Atoms.atom.counter, { (change) in
                 owner.reactionMethod(expectation)
             })
             
@@ -71,7 +71,7 @@ class FlaskTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor={owner, reaction in
-            reaction.on(Atom.atom.counter, { (change) in
+            reaction.on(Atoms.atom.counter, { (change) in
                 expectation.fulfill()
             })
         }
@@ -148,11 +148,11 @@ class FlaskTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on(Atom.atom.counter, { (change) in
+            reaction.on(Atoms.atom.counter, { (change) in
                 
                 XCTAssert(change.oldValue() == 0)
                 XCTAssert(change.newValue() == 1)
-                XCTAssert(change.key() == Atom.atom.counter.rawValue)
+                XCTAssert(change.key() == Atoms.atom.counter.rawValue)
                 XCTAssert(change.molecule() === molecule)
                 
                 expectation.fulfill()
@@ -177,7 +177,7 @@ class FlaskTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner, mixin:Molecules.app)
         
         flask.reactor = { owner, reaction in
-            reaction.on(Atom.atom.counter, { (change) in
+            reaction.on(Atoms.atom.counter, { (change) in
                 expectation.fulfill()
                 XCTAssert(Molecules.app.atoms.counter == 2)
             })
@@ -210,10 +210,9 @@ class FlaskTests: SetupFlaskTests {
             })
         }
         
-        flask.mix(molecule,{ (molecule, commit, abort) in
+        flask.mix(molecule){ (molecule) in
             molecule.atoms._internal="shouldn't cause mix"
-            commit()
-        })
+        }.commit()
         
         waitForExpectations(timeout: 1, handler: nil)
     }

@@ -1,5 +1,5 @@
 //
-//  MoleculeAtom.swift
+//  MoleculeAtoms.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/4/18.
@@ -12,18 +12,18 @@ import UIKit
 import Cocoa
 #endif
 
-struct AnyMoleculeAtom:MoleculeAtom {
+struct AnyMoleculeAtoms:MoleculeAtoms {
     
 }
 
-public protocol MoleculeAtom : Codable {
+public protocol MoleculeAtoms : Codable {
     init() //construct at initial atoms
     func toDictionary()->LabDictionaryType
     func toJsonDictionary()->[String:Any]
 }
 
 
-public extension MoleculeAtom{
+public extension MoleculeAtoms{
     
 //    var dictionary: [String: Any] {
 //        return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]
@@ -48,13 +48,15 @@ public extension MoleculeAtom{
             result[label] = Lab.Nil
             result[label] = value as? AnyHashable
             
-            if(LabSerializer.isDictionaryRef(value)){
-                let nestedRef = LabSerializer.nestDictionaries(namespace: label,
+            if(MoleculeSerializer.isDictionaryRef(value)){
+                let nestedRef = MoleculeSerializer.nestDictionaries(namespace: label,
                                                                 root: LabDictionaryRef(result as NSDictionary),
                                                                 children: value as! LabDictionaryRef)
                 result = nestedRef.dictionary as! LabDictionaryType
             }
         }
+        
+        
         
         return result
         
@@ -79,8 +81,8 @@ public extension MoleculeAtom{
                 continue
             }
             
-            if(LabSerializer.isDictionaryRef(value)){
-                let nest =  LabSerializer.flattenDictionary(value as! LabDictionaryRef)
+            if(MoleculeSerializer.isDictionaryRef(value)){
+                let nest =  MoleculeSerializer.flattenDictionary(value as! LabDictionaryRef)
                  result[label] = nest
             } else{
                  result[label] = value
