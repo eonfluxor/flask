@@ -53,12 +53,12 @@
 		26D8F7E021473A92002F7B4F /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B321473A91002F7B4F /* FluxState.swift */; };
 		26D8F7E121473A92002F7B4F /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B321473A91002F7B4F /* FluxState.swift */; };
 		26D8F7E221473A92002F7B4F /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B321473A91002F7B4F /* FluxState.swift */; };
-		26D8F7E321473A92002F7B4F /* FluxPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxPersistance.swift */; };
-		26D8F7E421473A92002F7B4F /* FluxPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxPersistance.swift */; };
-		26D8F7E521473A92002F7B4F /* FluxPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxPersistance.swift */; };
-		26D8F7E621473A92002F7B4F /* FluxPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxPersistance.swift */; };
-		26D8F7E721473A92002F7B4F /* FluxPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxPersistance.swift */; };
-		26D8F7E821473A92002F7B4F /* FluxPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxPersistance.swift */; };
+		26D8F7E321473A92002F7B4F /* FluxArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxArchiver.swift */; };
+		26D8F7E421473A92002F7B4F /* FluxArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxArchiver.swift */; };
+		26D8F7E521473A92002F7B4F /* FluxArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxArchiver.swift */; };
+		26D8F7E621473A92002F7B4F /* FluxArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxArchiver.swift */; };
+		26D8F7E721473A92002F7B4F /* FluxArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxArchiver.swift */; };
+		26D8F7E821473A92002F7B4F /* FluxArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B421473A91002F7B4F /* FluxArchiver.swift */; };
 		26D8F7E921473A92002F7B4F /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B521473A91002F7B4F /* FluxStore.swift */; };
 		26D8F7EA21473A92002F7B4F /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B521473A91002F7B4F /* FluxStore.swift */; };
 		26D8F7EB21473A92002F7B4F /* FluxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8F7B521473A91002F7B4F /* FluxStore.swift */; };
@@ -217,7 +217,7 @@
 		26D8F7B021473A91002F7B4F /* FluxManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxManager.swift; sourceTree = "<group>"; };
 		26D8F7B121473A91002F7B4F /* Flux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flux.swift; sourceTree = "<group>"; };
 		26D8F7B321473A91002F7B4F /* FluxState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxState.swift; sourceTree = "<group>"; };
-		26D8F7B421473A91002F7B4F /* FluxPersistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxPersistance.swift; sourceTree = "<group>"; };
+		26D8F7B421473A91002F7B4F /* FluxArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxArchiver.swift; sourceTree = "<group>"; };
 		26D8F7B521473A91002F7B4F /* FluxStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxStore.swift; sourceTree = "<group>"; };
 		26D8F7B721473A91002F7B4F /* FluxDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxDispatcher.swift; sourceTree = "<group>"; };
 		26D8F7B821473A91002F7B4F /* FluxLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxLock.swift; sourceTree = "<group>"; };
@@ -454,7 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				26D8F7B321473A91002F7B4F /* FluxState.swift */,
-				26D8F7B421473A91002F7B4F /* FluxPersistance.swift */,
+				26D8F7B421473A91002F7B4F /* FluxArchiver.swift */,
 				26D8F7B521473A91002F7B4F /* FluxStore.swift */,
 				26D8F85121474454002F7B4F /* FluxSerializer.swift */,
 			);
@@ -989,7 +989,7 @@
 				26D8F85221474454002F7B4F /* FluxSerializer.swift in Sources */,
 				26D8F7FB21473A92002F7B4F /* FluxPublic.swift in Sources */,
 				26D8F7EF21473A92002F7B4F /* FluxDispatcher.swift in Sources */,
-				26D8F7E321473A92002F7B4F /* FluxPersistance.swift in Sources */,
+				26D8F7E321473A92002F7B4F /* FluxArchiver.swift in Sources */,
 				26D8F7E921473A92002F7B4F /* FluxStore.swift in Sources */,
 				26D8F80121473A92002F7B4F /* FluxHelpers.swift in Sources */,
 				26D8F80721473A92002F7B4F /* FluxDictionary.swift in Sources */,
@@ -1001,7 +1001,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D8F7E421473A92002F7B4F /* FluxPersistance.swift in Sources */,
+				26D8F7E421473A92002F7B4F /* FluxArchiver.swift in Sources */,
 				26D8F80221473A92002F7B4F /* FluxHelpers.swift in Sources */,
 				26D8F7F021473A92002F7B4F /* FluxDispatcher.swift in Sources */,
 				26D8F7D821473A92002F7B4F /* Flux.swift in Sources */,
@@ -1049,7 +1049,7 @@
 				26D8F85421474454002F7B4F /* FluxSerializer.swift in Sources */,
 				26D8F7FD21473A92002F7B4F /* FluxPublic.swift in Sources */,
 				26D8F7F121473A92002F7B4F /* FluxDispatcher.swift in Sources */,
-				26D8F7E521473A92002F7B4F /* FluxPersistance.swift in Sources */,
+				26D8F7E521473A92002F7B4F /* FluxArchiver.swift in Sources */,
 				26D8F7EB21473A92002F7B4F /* FluxStore.swift in Sources */,
 				26D8F80321473A92002F7B4F /* FluxHelpers.swift in Sources */,
 				26D8F80921473A92002F7B4F /* FluxDictionary.swift in Sources */,
@@ -1061,7 +1061,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D8F7E621473A92002F7B4F /* FluxPersistance.swift in Sources */,
+				26D8F7E621473A92002F7B4F /* FluxArchiver.swift in Sources */,
 				26D8F80421473A92002F7B4F /* FluxHelpers.swift in Sources */,
 				26D8F7F221473A92002F7B4F /* FluxDispatcher.swift in Sources */,
 				26D8F7DA21473A92002F7B4F /* Flux.swift in Sources */,
@@ -1109,7 +1109,7 @@
 				26D8F85621474454002F7B4F /* FluxSerializer.swift in Sources */,
 				26D8F7FF21473A92002F7B4F /* FluxPublic.swift in Sources */,
 				26D8F7F321473A92002F7B4F /* FluxDispatcher.swift in Sources */,
-				26D8F7E721473A92002F7B4F /* FluxPersistance.swift in Sources */,
+				26D8F7E721473A92002F7B4F /* FluxArchiver.swift in Sources */,
 				26D8F7ED21473A92002F7B4F /* FluxStore.swift in Sources */,
 				26D8F80521473A92002F7B4F /* FluxHelpers.swift in Sources */,
 				26D8F80B21473A92002F7B4F /* FluxDictionary.swift in Sources */,
@@ -1121,7 +1121,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D8F7E821473A92002F7B4F /* FluxPersistance.swift in Sources */,
+				26D8F7E821473A92002F7B4F /* FluxArchiver.swift in Sources */,
 				26D8F80621473A92002F7B4F /* FluxHelpers.swift in Sources */,
 				26D8F7F421473A92002F7B4F /* FluxDispatcher.swift in Sources */,
 				26D8F7DC21473A92002F7B4F /* Flux.swift in Sources */,

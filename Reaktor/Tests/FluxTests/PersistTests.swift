@@ -1,5 +1,5 @@
 //
-//  PersistTests.swift
+//  archiveTests.swift
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
@@ -9,9 +9,9 @@
 import XCTest
 
 
-class PersistanceTests: SetupFluxTests {
+class archiveTests: SetupFluxTests {
     
-    func testPersistance(){
+    func testarchive(){
         
         let expectation = self.expectation(description: "testInlineMutation")
         

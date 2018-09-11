@@ -29,11 +29,20 @@ class FluxStore<A:RawRepresentable,T:FluxState > : FluxStoreConcrete{
         return queue
     }()
     
-    let persistanceQueue:OperationQueue = {
+    let archiveQueue:OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount=1
         return queue
     }()
+    
+    //////////////////
+    // MARK: - INITIALIZE
+    
+    override func initializeMetaClass() {
+        if archiveDisabled() == false {
+            snapshotState()
+        }
+    }
     
     //////////////////
     // MARK: - STATE ACTIONS
@@ -63,7 +72,7 @@ class FluxStore<A:RawRepresentable,T:FluxState > : FluxStoreConcrete{
     
     override func snapshotState(){
         self.stateSnapshot = self.stateDictionary()
-        persistIntent(_state)
+        archiveIntent(_state)
     }
     
 
@@ -108,7 +117,7 @@ class FluxStoreConcrete {
     
     
     required init(){
-        snapshotState()
+        initializeMetaClass()
     }
     
     func lastStateDictionary() -> FluxStateDictionaryType{
@@ -125,6 +134,8 @@ class FluxStoreConcrete {
     func unbindActions(){}
     
     func snapshotState(){}
+    
+    func initializeMetaClass(){}
     func stateTransaction(_ transaction:@escaping ()-> Bool){}
     func abortStateTransaction(){}
     

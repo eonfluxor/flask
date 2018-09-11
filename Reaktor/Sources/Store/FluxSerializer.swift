@@ -16,8 +16,6 @@ struct FluxSerializer{
     
     static func jsonFromState<K:FluxState>(_ state:K) throws ->String {
         
-        //        let dictionary:[String:Any] = state.toJsonDictionary()
-        //        let jsonData = try JSONSerialization.data(withJSONObject: dictionary, options: [])
         let jsonData = try JSONEncoder().encode(state)
         
         return String(data: jsonData, encoding: .utf8)!
@@ -27,6 +25,18 @@ struct FluxSerializer{
     static func stateFromJson<K:FluxState>(_ json:String) throws ->K {
         
         let jsonData = json.data(using: .utf8)!
+        return try stateFromData(jsonData)
+    }
+    
+    
+    static func dataFromState<K:FluxState>(_ state:K) throws ->Data? {
+        
+        let json = try jsonFromState(state)
+        return json.data(using: .utf16)
+    }
+    
+    static func stateFromData<K:FluxState>(_ jsonData:Data) throws ->K {
+        
         let state:K = try! JSONDecoder().decode(K.self, from: jsonData)
         return state
     }
