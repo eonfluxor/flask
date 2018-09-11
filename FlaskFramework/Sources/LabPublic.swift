@@ -34,8 +34,8 @@ public extension Lab {
         Lab.mixer.mixQueue.cancelAllOperations()
     }
     
-    static public func purgeOrphans(){
-        LabFlaskManager.purgeOrphans()
+    static public func purge(){
+        LabFlaskManager.purge()
     }
 }
 
@@ -65,24 +65,24 @@ public extension Lab {
     }
     
     
-    static public func lock<T:RawRepresentable>(action enumVal:T)->MixerLock{
-        return Lab.lock(action:enumVal,payload:nil)
+    static public func lock<T:RawRepresentable>(mixer enumVal:T)->MixerLock{
+        return Lab.lock(mixer:enumVal,payload:nil)
     }
     
-    static public func lock<T:RawRepresentable>(action enumVal:T, payload:[String:Any]?)->MixerLock{
-        let action = enumVal.rawValue as! String
+    static public func lock<T:RawRepresentable>(mixer enumVal:T, payload:[String:Any]?)->MixerLock{
+        let mixer = enumVal.rawValue as! String
         var info = payload ?? [:]
         info[FLUX_ACTION_SKIP_LOCKS] = true
         
         let lock = MixerLock(mixer:Lab.mixer)
-        Lab.mixer.formulate(action,payload:info)
+        Lab.mixer.formulate(mixer,payload:info)
         
         return lock
     }
     
     
-    static public func releaseAllLocks(){
-        Lab.mixer.releaseAllLocks()
+    static public func detachAllLocks(){
+        Lab.mixer.detachAllLocks()
     }
 }
 
@@ -94,11 +94,11 @@ public extension Lab {
     }
     
     static public func mix<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
-        let action = enumVal.rawValue as! String
+        let mixer = enumVal.rawValue as! String
         var info = payload ?? [:]
-        info[FLUX_ACTION_NAME] = action
+        info[FLUX_ACTION_NAME] = mixer
         
-        Lab.mixer.formulate(action,payload:info)
+        Lab.mixer.formulate(mixer,payload:info)
     }
 }
 

@@ -26,7 +26,7 @@ class LabFlaskManager{
     static func appendFlask(_ flask:FlaskConcrete){
         removeFlask(flask)
         flasks.append(flask)
-        LabFlaskManager.purgeOrphans()
+        LabFlaskManager.purge()
     }
     
     static func removeFlask(_ flask:FlaskConcrete){
@@ -38,7 +38,7 @@ class LabFlaskManager{
         }
     }
     
-    static func purgeOrphans(){
+    static func purge(){
         let orphans = flasks.filter {$0.getOwner() == nil}
         
         for flask in orphans {

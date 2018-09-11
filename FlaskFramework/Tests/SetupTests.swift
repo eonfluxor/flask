@@ -19,8 +19,8 @@ class SetupFlaskTests: XCTestCase {
         self.molecule = App()
         
         
-        Lab.releaseAllLocks()
-        LabFlaskManager.purgeOrphans()
+        Lab.detachAllLocks()
+        LabFlaskManager.purge()
         
         XCTAssert(LabFlaskManager.flasks.count == 0, "all flasks should dispose before this test")
         

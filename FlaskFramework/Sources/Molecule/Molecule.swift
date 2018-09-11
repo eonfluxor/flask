@@ -47,12 +47,12 @@ open class Molecule<T:Atoms,A:RawRepresentable> : MoleculeConcrete{
 
    
     
-    public func actionName(_ val:A)->String{
+    public func mixerName(_ val:A)->String{
         return val.rawValue as! String
     }
     
     public func mix(_ enumVal:A, _ reaction: @escaping MoleculeMixer){
-        action(actionName(enumVal), reaction)
+        mixer(mixerName(enumVal), reaction)
     }
     
     public override func lastAtomDictionary() -> LabDictType{
@@ -148,10 +148,10 @@ open class MoleculeConcrete {
 
 public extension MoleculeConcrete {
   
-    @discardableResult public func action(_ action:String, _ reaction: @escaping MoleculeMixer)->NSObjectProtocol{
+    @discardableResult public func mixer(_ mixer:String, _ reaction: @escaping MoleculeMixer)->NSObjectProtocol{
         let weakRegistration={ [weak self] in
             
-            NotificationCenter.default.addObserver(forName: NSNotification.Name(action), object: nil, queue: OperationQueue.main) { (notification) in
+            NotificationCenter.default.addObserver(forName: NSNotification.Name(mixer), object: nil, queue: OperationQueue.main) { (notification) in
                 
                 let payload = notification.object
                 var resolved = false

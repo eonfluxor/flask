@@ -21,27 +21,27 @@ public class MixerLock: LabAnyEquatable {
         self.mixer = mixer
         super.init()
         
-        self.mixer.addLock(self)
+        self.mixer.attachLock(self)
     }
     
     public func release(){
-        mixer.removeLock(self)
+        mixer.detachLock(self)
     }
 }
 
 public extension Mixer{
     
-    public func releaseAllLocks(){
+    public func detachAllLocks(){
         locks=[]
         applyLocks()
     }
     
-    func addLock(_ lock:MixerLock){
+    func attachLock(_ lock:MixerLock){
         locks.append(lock)
         applyLocks()
     }
     
-    func removeLock(_ lock:MixerLock){
+    func detachLock(_ lock:MixerLock){
         locks=locks.filter {$0 != lock}
         applyLocks()
     }

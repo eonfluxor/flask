@@ -64,8 +64,8 @@ public class Mixer {
 
 extension Mixer {
     
-    func formulate(_ action:String){
-        formulate(action,payload:nil)
+    func formulate(_ mixer:String){
+        formulate(mixer,payload:nil)
     }
     
     func formulate<T:RawRepresentable>(_ enumVal:T){
@@ -73,12 +73,12 @@ extension Mixer {
     }
     
     func formulate<T:RawRepresentable>(_ enumVal:T, payload:[String:Any]?){
-        let action = enumVal.rawValue as! String
-        formulate(action,payload:payload)
+        let mixer = enumVal.rawValue as! String
+        formulate(mixer,payload:payload)
     }
     
-    func formulate(_ action:String, payload:[String:Any]?){
-        queue(action,payload: payload)
+    func formulate(_ mixer:String, payload:[String:Any]?){
+        queue(mixer,payload: payload)
     }
     
     
@@ -90,16 +90,16 @@ extension Mixer {
 
 extension Mixer {
  
-    func queue(_ action:String, payload:[String:Any]?){
+    func queue(_ mixer:String, payload:[String:Any]?){
         
         var queue = mixQueue
         if  ((payload?[FLUX_ACTION_SKIP_LOCKS]) != nil) {
             queue = formulateLockedQueue
         }
         
-        //TODO: log same action warning
+        //TODO: log same mixer warning
         //TODO: log queue locked warning
-//        assert( self.currentAction != action, "cannot call recursive action in infinite loop")
+//        assert( self.currentAction != mixer, "cannot call recursive mixer in infinite loop")
         
         queue.addOperation { [weak self, weak queue] in
             
@@ -109,9 +109,9 @@ extension Mixer {
             
             assert( self?.currentAction == .none, "cannot call during formulate")
             
-            self?.currentAction = action
+            self?.currentAction = mixer
             NotificationCenter.default.post(
-                name: NSNotification.Name(action),
+                name: NSNotification.Name(mixer),
                 object: payload,
                 userInfo: .none)
             self?.currentAction = .none

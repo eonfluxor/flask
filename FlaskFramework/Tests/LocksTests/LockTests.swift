@@ -64,7 +64,7 @@ class LockTests: SetupFlaskTests {
             })
         }
         
-        // the action won't be formulateed until both locks are released
+        // the mixer won't be formulateed until both locks are released
         
         let lock  = Lab.lock()
         let lock2  = Lab.lock()
@@ -99,7 +99,7 @@ class LockTests: SetupFlaskTests {
             })
         }
         
-        let lock  = Lab.lock(action:AppMixers.Count, payload:  ["test":"testLockActon count"])
+        let lock  = Lab.lock(mixer:AppMixers.Count, payload:  ["test":"testLockActon count"])
        
         //this should be performed after the lock releases
         Lab.mix(AppMixers.Text, payload:  ["test":"testLockAction text"])
