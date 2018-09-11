@@ -12,13 +12,13 @@ import Cocoa
 #endif
 
 
-class Fluxor<D:AnyObject>:FluxorConcrete {
+public class Fluxor<D:AnyObject>:FluxorConcrete {
     
     weak var owner:D?
     
     var reactor:FluxorClosure<D>  = { owner,reaction in }
     
-    required init(_ owner:D){
+    required public init(_ owner:D){
         self.owner=owner
     }
     
@@ -49,7 +49,7 @@ class Fluxor<D:AnyObject>:FluxorConcrete {
 }
 
 
-class FluxorConcrete:FluxAnyEquatable{
+public class FluxorConcrete:FluxAnyEquatable{
     
     var stores:[FluxStoreConcrete]=[]
     var binded = false

@@ -18,6 +18,8 @@ Pod::Spec.new do |s|
   s.source_files = 'Reaktor/Sources/**/*.swift'
   s.swift_version = '4.1'
  
+  s.dependency 'Delay', '> 2.2.2'
+
   # s.resources = "Resources/*.png"
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
   # s.frameworks = "SomeFramework", "AnotherFramework"

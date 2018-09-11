@@ -1,6 +1,19 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Reaction/FluxChange.swift",
+      "line": null,
+      "symbol": "FluxChangeTemplate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor/Sources/Store/FluxStore.swift",
+      "line": null,
+      "symbol": "FluxStore",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/hassanvfx/projects/eonflux/Reaktor/Reaktor"
 }

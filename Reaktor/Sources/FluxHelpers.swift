@@ -48,8 +48,8 @@ protocol FluxAnyWithInit{
     init() //construct at initial state
 }
 
-class FluxAnyEquatable: Equatable{
-    static func == (lhs: FluxAnyEquatable, rhs: FluxAnyEquatable) -> Bool {
+public class FluxAnyEquatable: Equatable{
+    public static func == (lhs: FluxAnyEquatable, rhs: FluxAnyEquatable) -> Bool {
         return lhs === rhs
     }
 }
