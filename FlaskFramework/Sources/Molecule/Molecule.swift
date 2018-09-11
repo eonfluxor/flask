@@ -55,14 +55,14 @@ open class Molecule<T:Atoms,A:RawRepresentable> : MoleculeConcrete{
         mixer(mixerName(enumVal), reaction)
     }
     
-    public override func lastAtomDictionary() -> LabDictType{
+    public override func lastAtomsDictionary() -> LabDictType{
         return atomsSnapshot
     }
     public override func atomsDictionary() -> LabDictType{
         return _atoms.toDictionary()
     }
     
-    public func currentAtom()->T{
+    public func currentAtoms()->T{
         return _atoms
     }
     
@@ -122,7 +122,7 @@ open class MoleculeConcrete {
         initializeMetaClass()
     }
     
-    func lastAtomDictionary() -> LabDictType{
+    func lastAtomsDictionary() -> LabDictType{
         return [:]
     }
     func atomsDictionary() -> LabDictType{

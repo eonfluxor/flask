@@ -570,7 +570,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
       "line": 58,
-      "symbol": "Molecule.lastAtomDictionary()",
+      "symbol": "Molecule.lastAtomsDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -584,7 +584,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
       "line": 65,
-      "symbol": "Molecule.currentAtom()",
+      "symbol": "Molecule.currentAtoms()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

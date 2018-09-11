@@ -24,11 +24,11 @@ extension Molecule {
         return "Fx.\(archiveKeySpace()).\(name())"
     }
     
-    public func archiveDelay()->Double{
+    open func archiveDelay()->Double{
         return 2.0
     }
     
-    public func archiveDisabled()->Bool{
+    open func archiveDisabled()->Bool{
         return false
     }
 }
