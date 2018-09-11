@@ -639,13 +639,6 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 183,
-      "symbol": "MoleculeConcrete.mix(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
       "line": 231,
       "symbol": "MoleculeConcrete.get(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",

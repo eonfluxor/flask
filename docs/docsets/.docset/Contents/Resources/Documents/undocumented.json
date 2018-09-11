@@ -276,7 +276,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 37,
-      "symbol": "Lab.purge()",
+      "symbol": "Lab.purgeFlasks()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
