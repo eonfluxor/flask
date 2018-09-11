@@ -168,7 +168,7 @@ extension LabDispatcher {
 
 extension LabDispatcher {
    
-    func commitChange(_ reaction:FlaskReaction){
+    func reactChange(_ reaction:FlaskReaction){
         
         let moleculeName = reaction.molecule.name()
         let moleculeFlaskRefs = getMoleculeFlaskRefs(moleculeName)

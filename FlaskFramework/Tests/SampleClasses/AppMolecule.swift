@@ -38,14 +38,14 @@ class App : Molecule<Atoms,Mixers> {
     
     override func bindMixers(){
         
-        mix(.Count) {[weak self] (payload, commit, abort)  in
+        mix(.Count) {[weak self] (payload, react, abort)  in
             self?.atoms.counter = (self?.atoms.counter)! + 1
-            commit()
+            react()
         }
         
-        mix(.Text) {[weak self] (payload, commit, abort)  in
+        mix(.Text) {[weak self] (payload, react, abort)  in
             self?.atoms.text = "mixd"
-            commit()
+            react()
         }
     }
     

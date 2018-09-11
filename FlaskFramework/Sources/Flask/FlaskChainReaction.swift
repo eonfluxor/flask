@@ -15,7 +15,7 @@ import Cocoa
 public struct FlaskChainReaction{
     
     let flask:FlaskConcrete
-    public let commit:()->Void
+    public let react:()->Void
     public let abort:()->Void
     
     public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping (_ molecule:T) -> Void)->FlaskChainReaction{
@@ -27,7 +27,7 @@ public struct FlaskChainReaction{
             return true
         })
         
-        let chain = FlaskChainReaction(flask:flask, commit:commit, abort:abort)
+        let chain = FlaskChainReaction(flask:flask, react:react, abort:abort)
         return chain
     }
     
@@ -45,7 +45,7 @@ public extension FlaskConcrete{
     
 //    func mix<T:MoleculeConcrete>(_ aMolecule:T)->FlaskChainReaction{
 //
-//        let  commit = { [weak self] in
+//        let  react = { [weak self] in
 //            if let molecules = self?.molecules {
 //                for molecule in molecules{
 //                    molecule.handleMix()
@@ -61,14 +61,14 @@ public extension FlaskConcrete{
 //                }
 //            }
 //        }
-//        let chain = FlaskChainReaction(flask:self, commit:commit, abort:abort)
+//        let chain = FlaskChainReaction(flask:self, react:react, abort:abort)
 //        return chain
 //    }
 //
     
     public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping(_ molecule:T) -> Void)->FlaskChainReaction{
         
-        let  commit = { [weak self] in
+        let  react = { [weak self] in
             if let molecules = self?.molecules {
                 for molecule in molecules{
                     molecule.handleMix()
@@ -92,7 +92,7 @@ public extension FlaskConcrete{
             return true
         })
         
-        let chain = FlaskChainReaction(flask:self, commit:commit, abort:abort)
+        let chain = FlaskChainReaction(flask:self, react:react, abort:abort)
         return chain
     }
     

@@ -33,7 +33,7 @@ class ChainingTests: SetupFlaskTests {
             
         }.mix(molecule) { (molecule) in
             molecule.atoms.counter=2
-        }.commit()
+        }.react()
         
         waitForExpectations(timeout: 1, handler: nil)
         
@@ -94,7 +94,7 @@ class ChainingTests: SetupFlaskTests {
             molecule.atoms.counter = 1
             molecule.atoms.text = "reaction"
             molecule.atoms.object = aObject
-        }.commit()
+        }.react()
         
         
         waitForExpectations(timeout: 1, handler: nil)
@@ -120,7 +120,7 @@ class ChainingTests: SetupFlaskTests {
             molecule.atoms.counter=1
         }.mix(molecule) { (molecule) in
             molecule.atoms.counter=2
-        }.commit()
+        }.react()
         
         
         waitForExpectations(timeout: 1, handler: nil)

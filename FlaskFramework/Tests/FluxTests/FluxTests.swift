@@ -187,7 +187,7 @@ class FlaskTests: SetupFlaskTests {
             molecule.atoms.counter=1
         }).mix(Molecules.app) { (molecule) in
             molecule.atoms.counter=2
-            }.commit()
+            }.react()
         
         
         waitForExpectations(timeout: 1, handler: nil)
@@ -212,7 +212,7 @@ class FlaskTests: SetupFlaskTests {
         
         flask.mix(molecule){ (molecule) in
             molecule.atoms._internal="shouldn't cause mix"
-        }.commit()
+        }.react()
         
         waitForExpectations(timeout: 1, handler: nil)
     }

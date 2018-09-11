@@ -158,7 +158,7 @@ public extension MoleculeConcrete {
                 var resolved = false
                 var completed = true
                 
-                let commit = {
+                let react = {
                     resolved=true
                     self?.handleMix()
                 }
@@ -169,8 +169,8 @@ public extension MoleculeConcrete {
                 }
                 
                 self?.atomsTransaction({
-                    reaction(payload,commit,abort)
-                    assert(resolved, "reaction closure must call `commit` or `abort`")
+                    reaction(payload,react,abort)
+                    assert(resolved, "reaction closure must call `react` or `abort`")
                     return completed
                 })
                 
@@ -186,7 +186,7 @@ public extension MoleculeConcrete {
         var resolved = false
         var completed = true
         
-        let commit = {
+        let react = {
             resolved = true
             self.handleMix()
         }
@@ -197,8 +197,8 @@ public extension MoleculeConcrete {
         }
         
         atomsTransaction({
-            mixer(self as! T, commit, abort)
-            assert(resolved, "mixer closure must call `commit` or `abort`")
+            mixer(self as! T, react, abort)
+            assert(resolved, "mixer closure must call `react` or `abort`")
             return completed
         })
     }
@@ -215,7 +215,7 @@ extension MoleculeConcrete {
             let reaction = FlaskReaction(self! as MoleculeConcrete)
             
             if( reaction.changed()){
-                Lab.Dispatcher.commitChange(reaction)
+                Lab.Dispatcher.reactChange(reaction)
             }else{
                 //log
             }

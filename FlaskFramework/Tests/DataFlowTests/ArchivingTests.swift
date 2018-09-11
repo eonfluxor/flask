@@ -30,7 +30,7 @@ class archiveTests: SetupFlaskTests {
         
         flask.mix(molecule){ (molecule) in
             molecule.atoms.counter=expectedValue
-        }.commit()
+        }.react()
         
         wait(for: [expectation], timeout: 1)
         

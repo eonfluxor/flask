@@ -61,7 +61,7 @@ class NestedAtomTests: SetupFlaskTests {
             
             flask.mix(molecule){ (molecule) in
                 molecule.atoms.map = dictRef
-            }.commit()
+            }.react()
         }
         
         
@@ -78,7 +78,7 @@ class NestedAtomTests: SetupFlaskTests {
             
             flask.mix(molecule) { (molecule) in
                 molecule.atoms.map = dictRef2
-            }.commit()
+            }.react()
         }
         
         firstTest ( secondTest )
