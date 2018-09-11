@@ -14,7 +14,7 @@ import Cocoa
 
 import Delayed
 
-extension FlaskStore {
+extension Molecule {
     
     public func archiveKeySpace()->String{
         return "1"
@@ -33,9 +33,9 @@ extension FlaskStore {
     }
 }
 
-extension FlaskStore {
+extension Molecule {
     
-    func archiveIntent<T:FlaskState>(_ state:T){
+    func archiveIntent<T:Atoms>(_ atoms:T){
         
         guard !archiveDisabled() else{
             return
@@ -44,12 +44,12 @@ extension FlaskStore {
         let key = archiveKey()
         let delay = archiveDelay()
         Kron.idle( delay , key:key){ [weak self] key,ctx in
-            self?.archiveNow(state)
+            self?.archiveNow(atoms)
         }
         
     }
     
-    func archiveNow<T:FlaskState>(_ state:T){
+    func archiveNow<T:Atoms>(_ atoms:T){
         
         archiveQueue.addOperation { [weak self] in
             
@@ -59,7 +59,7 @@ extension FlaskStore {
                     guard self != nil else {return}
                     
                     let key = self!.archiveKey()
-                    let data = try FlaskSerializer.dataFromState(state)
+                    let data = try MoleculeSerializer.dataFromAtom(atoms)
                     
                     if let data = data {
                         
@@ -79,7 +79,7 @@ extension FlaskStore {
         
     }
 }
-extension FlaskStore {
+extension Molecule {
     
     @discardableResult
     func unarchiveIntent()->Bool{
@@ -94,8 +94,8 @@ extension FlaskStore {
             let data = UserDefaults.standard.value(forKey: key)
             
             if ((data as? Data) != nil) {
-                state = try FlaskSerializer.stateFromData(data as! Data)
-                setCurrentState(state)
+                atoms = try MoleculeSerializer.atomsFromData(data as! Data)
+                setCurrentAtom(atoms)
             }
             
         } catch {
@@ -106,7 +106,7 @@ extension FlaskStore {
     }
 }
 
-extension FlaskStore {
+extension Molecule {
     public func purgeArchive(){
         let key = archiveKey()
         UserDefaults.standard.removeObject(forKey: key)

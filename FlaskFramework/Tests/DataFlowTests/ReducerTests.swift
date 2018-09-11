@@ -1,5 +1,5 @@
 //
-//  MutationTests.swift
+//  MixTests.swift
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/4/18.
@@ -11,31 +11,31 @@ import XCTest
 
 class ChangeTests: XCTestCase {
     
-    var oldState:FlaskStateDictionaryType = [:]
-    var newState:FlaskStateDictionaryType = [:]
-    var changes:FlaskStateDictionaryType = [:]
+    var oldAtom:LabDictType = [:]
+    var newAtom:LabDictType = [:]
+    var changes:LabDictType = [:]
    
     
     func testNilVsInt(){
         
-        oldState["key"] = Flask.Nil
-        newState["key"] = Flask.Nil
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        oldAtom["key"] = Lab.Nil
+        newAtom["key"] = Lab.Nil
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 0)
         
 
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 0)
         
-        oldState["key"] = Flask.Nil
-        newState["key"] = 1
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        oldAtom["key"] = Lab.Nil
+        newAtom["key"] = 1
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 1)
         
         
-        oldState["key"] = 1
-        newState["key"] = Flask.Nil
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        oldAtom["key"] = 1
+        newAtom["key"] = Lab.Nil
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 1)
         
     }
@@ -43,40 +43,40 @@ class ChangeTests: XCTestCase {
     func testNilVsNSObject(){
         
         
-        oldState["key"] = NSObject()
-        newState["key"] = Flask.Nil
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        oldAtom["key"] = NSObject()
+        newAtom["key"] = Lab.Nil
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 1)
         
         
-        oldState["key"] = Flask.Nil
-        newState["key"] = NSObject()
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        oldAtom["key"] = Lab.Nil
+        newAtom["key"] = NSObject()
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 1)
         
         
         
-        oldState["key"] = Flask.Nil
-        newState["key"] = NSObject()
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        oldAtom["key"] = Lab.Nil
+        newAtom["key"] = NSObject()
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 1)
         
         
-        oldState["key"] = NSObject()
-        newState["key"] = Flask.Nil
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        oldAtom["key"] = NSObject()
+        newAtom["key"] = Lab.Nil
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 1)
         
         
-        oldState["key"] = Flask.Nil
-        newState["key"] = NSDictionary()
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        oldAtom["key"] = Lab.Nil
+        newAtom["key"] = NSDictionary()
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 1)
         
         
-        oldState["key"] = NSDictionary()
-        newState["key"] = Flask.Nil
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        oldAtom["key"] = NSDictionary()
+        newAtom["key"] = Lab.Nil
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 1)
         
     }
@@ -86,20 +86,20 @@ class ChangeTests: XCTestCase {
         let objectA = NSObject()
         let objectB = NSObject()
         
-        oldState["key"] = objectA
-        newState["key"] = objectA
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        oldAtom["key"] = objectA
+        newAtom["key"] = objectA
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 0)
       
-        oldState["key"] = objectA
-        newState["key"] = objectB
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        oldAtom["key"] = objectA
+        newAtom["key"] = objectB
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 1)
         
         
-        oldState["key"] = objectA
-        newState["key"] = objectB
-        changes = FlaskReaction.reduceChanges(oldState, newState)
+        oldAtom["key"] = objectA
+        newAtom["key"] = objectB
+        changes = FlaskReaction.reduceChanges(oldAtom, newAtom)
         XCTAssert(changes.count == 1)
         
     }

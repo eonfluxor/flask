@@ -3,7 +3,7 @@
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
-//  Copyright © 2018 hassanvflux. All rights reserved.
+//  Copyright © 2018 hassanvflask. All rights reserved.
 //
 
 import XCTest
@@ -11,30 +11,31 @@ import XCTest
 
 class ChainingTests: SetupFlaskTests {
 
-    func testInlineMutation(){
+    func testInlineMix(){
         
-        let expectation = self.expectation(description: "testInlineMutation")
+        let expectation = self.expectation(description: "testInlineMix")
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flux = Flask.instance(ownedBy:owner, binding:store)
+        let flask = Lab.flask(ownedBy:owner, mixin:molecule)
         
-        flux.reactor = { owner, reaction in
-            reaction.on(State.prop.counter, { (change) in
+        flask.reactor = { owner, reaction in
+            reaction.on(AppAtoms.named.counter, { (change) in
                 expectation.fulfill()
                 
             })
         }
         
-        flux.mutate(store,{ (store, commit, abort) in
-            store.state.counter=1
-            commit()
-        }).mutate(store) { (store, commit, abort) in
-            store.state.counter=2
-            commit()
-        }
+      
         
-        waitForExpectations(timeout: 1, handler: nil)
+        flask.mix(molecule){ (molecule) in
+            molecule.atoms.counter=1
+            
+        }.mix(molecule) { (molecule) in
+            molecule.atoms.counter=2
+        }.react()
+        
+        waitForExpectations(timeout: 2, handler: nil)
         
         
     }
@@ -45,59 +46,58 @@ class ChainingTests: SetupFlaskTests {
         let expectation2 = self.expectation(description: "testChangeInLine text")
         let expectation3 = self.expectation(description: "testChangeInLine object")
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flux = Flask.instance(ownedBy:owner,binding:store)
+        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         let object = NSObject()
-        let aObject = FlaskRef( object )
+        let aObject = LabRef( object )
         
         
-        flux.reactor = { owner, reaction in
+        flask.reactor = { owner, reaction in
             
-            reaction.on(State.prop.counter, { (change) in
+            reaction.on(AppAtoms.named.counter, { (change) in
                 
                 let oldValue:Int? = change.oldValue()
                 let newValue:Int? = change.newValue()
                 XCTAssert(oldValue == 0)
                 XCTAssert(newValue == 1)
-                XCTAssert(change.key() == State.prop.counter.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.key() == AppAtoms.named.counter.rawValue)
+                XCTAssert(change.molecule() === molecule)
                 
                 expectation.fulfill()
             })
             
-            reaction.on(State.prop.text, { (change) in
+            reaction.on(AppAtoms.named.text, { (change) in
                 
                 XCTAssert(change.oldValue() == "")
                 XCTAssert(change.newValue() == "reaction")
-                XCTAssert(change.key() == State.prop.text.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.key() == AppAtoms.named.text.rawValue)
+                XCTAssert(change.molecule() === molecule)
                 
                 expectation2.fulfill()
             })
             
-            reaction.on(State.prop.object, { (change) in
+            reaction.on(AppAtoms.named.object, { (change) in
                 
-                XCTAssert( isFlaskNil(change.oldValue()) )
+                XCTAssert( isLabNil(change.oldValue()) )
                 XCTAssert(change.newValue() == aObject)
-                XCTAssert(change.key() == State.prop.object.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.key() == AppAtoms.named.object.rawValue)
+                XCTAssert(change.molecule() === molecule)
                 
                 expectation3.fulfill()
             })
             
         }
         
-        flux.mutate(store,{ (store, commit, abort) in
-            store.state.counter = 1
-            store.state.text = "reaction"
-            store.state.object = aObject
-            commit()
-        })
+        flask.mix(molecule) { (molecule) in
+            molecule.atoms.counter = 1
+            molecule.atoms.text = "reaction"
+            molecule.atoms.object = aObject
+        }.react()
         
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
     }
     
@@ -105,25 +105,25 @@ class ChainingTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testChain")
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flux = Flask.instance(ownedBy:owner, binding:store)
+        let flask = Lab.flask(ownedBy:owner, mixin:molecule)
         
-        flux.reactor = { owner, reaction in
-            reaction.on(State.prop.counter, { (change) in
+        flask.reactor = { owner, reaction in
+            reaction.on(AppAtoms.named.counter, { (change) in
                 expectation.fulfill()
                 XCTAssert(change.newValue() == 2)
             })
         }
         
-        flux.mutate(store){ (store) in
-            store.state.counter=1
-        }.mutate(store) { (store) in
-            store.state.counter=2
-        }.commit()
+        flask.mix(molecule){ (molecule) in
+            molecule.atoms.counter=1
+        }.mix(molecule) { (molecule) in
+            molecule.atoms.counter=2
+        }.react()
         
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
     }
     

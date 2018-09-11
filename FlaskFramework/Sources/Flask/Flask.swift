@@ -12,11 +12,11 @@ import Cocoa
 #endif
 
 
-public class FlaskReactor<D:AnyObject>:FlaskReactorConcrete {
+public class Flask<D:AnyObject>:FlaskConcrete {
     
     weak var owner:D?
     
-    public var reactor:FlaskReactorClosure<D>  = { owner,reaction in }
+    public var reactor:ReactionClosure<D>  = { owner,reaction in }
     
     required public init(_ owner:D){
         self.owner=owner
@@ -31,14 +31,14 @@ public class FlaskReactor<D:AnyObject>:FlaskReactorConcrete {
         super.bind()
     }
     
-    override func handleMutation(_ reaction:FlaskReaction){
+    override func handleMix(_ reaction:FlaskReaction){
         
         
         if let owner = self.owner {
             reactor(owner,reaction)
         }else{
-            //dispose flux when the owner is no longer present
-            FlaskReactorManager.removeFlaskReactor(self)
+            //dispose flask when the owner is no longer present
+            LabFlaskManager.removeFlask(self)
         }
     }
     
@@ -49,18 +49,18 @@ public class FlaskReactor<D:AnyObject>:FlaskReactorConcrete {
 }
 
 
-public class FlaskReactorConcrete:FlaskAnyEquatable{
+public class FlaskConcrete:LabAnyEquatable{
     
-    var stores:[FlaskStoreConcrete]=[]
+    var molecules:[MoleculeConcrete]=[]
     var binded = false
     
     
-    func bindStore(_ store:FlaskStoreConcrete){
-        bindStores([store])
+    func bindMolecule(_ molecule:MoleculeConcrete){
+        bindMolecules([molecule])
     }
     
-    func bindStores(_ bindedStores:[FlaskStoreConcrete]){
-        stores = bindedStores
+    func bindMolecules(_ mixinMolecules:[MoleculeConcrete]){
+        molecules = mixinMolecules
         bind()
     }
     
@@ -71,19 +71,19 @@ public class FlaskReactorConcrete:FlaskAnyEquatable{
     public func bind(){
         
         assert(!binded,"Already bounded. It's required  to balance bind/unbind calls")
-        assert(!stores.isEmpty,"At least one store is required")
+        assert(!molecules.isEmpty,"At least one molecule is required")
         
         binded = true
         
-        for store in stores {
+        for molecule in molecules {
            
             { [weak self] in
                 if let wself = self {
-                    Flask.Dispatcher.bindFlaskReactor(store, flux: wself)
+                    Lab.Dispatcher.bindFlask(molecule, flask: wself)
                 }
             }()
             
-            store.bindActions()
+            molecule.bindMixers()
         }
         
         
@@ -92,45 +92,45 @@ public class FlaskReactorConcrete:FlaskAnyEquatable{
     public func unbind(_ explicit:Bool = true){
         
         if(explicit && !binded){
-            assert(binded,"Not bounded. It's required  to balance bind/unbind calls")
+            assert(binded,"Not binded. It's required  to balance bind/unbind calls")
         }
         
         if(!binded){return}
         binded = false
         
-        for store in stores {
+        for molecule in molecules {
             { [weak self] in
                 if let wself = self {
-                    Flask.Dispatcher.unbindFlaskReactor(store, flux: wself)
+                    Lab.Dispatcher.unbindFlask(molecule, flask: wself)
                 }
             }()
             
-            store.unbindActions()
+            molecule.unbindMixers()
         }
     }
     
     ///
-    func handleMutation(_ reaction:FlaskReaction){}
+    func handleMix(_ reaction:FlaskReaction){}
     
-    @discardableResult public func mutate<T:FlaskStoreConcrete>(_ aStore:T, _ mutator:@escaping FlaskMutatorParams<T>)->FlaskReactorConcrete{
-        
-        let store = self.store(aStore)
-        store.mutate(mutator)
-        
-        return self
-    }
+//    @discardableResult public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping MixParams<T>)->FlaskConcrete{
+//        
+//        let molecule = self.molecule(aMolecule)
+//        molecule.mix(mixer)
+//        
+//        return self
+//    }
     
  
     //////////////////
     // MARK: - PUBLIC METHODS
     
-    public func store<T:FlaskStoreConcrete>(_ store:T)->T{
+    public func molecule<T:MoleculeConcrete>(_ molecule:T)->T{
         
-        let registered = stores.contains { (aStore) -> Bool in
-            aStore === store
+        let registered = molecules.contains { (aMolecule) -> Bool in
+            aMolecule === molecule
         }
-        assert(registered,"Store instance is not binded to this flux")
-        return store
+        assert(registered,"Molecule instance is not mixin to this flask")
+        return molecule
     }
 
 }

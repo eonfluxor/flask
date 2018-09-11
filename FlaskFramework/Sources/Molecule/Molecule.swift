@@ -1,5 +1,5 @@
 //
-//  FlaskStoreConcrete.swift
+//  MoleculeConcrete.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 8/28/18.
@@ -12,14 +12,13 @@ import UIKit
 import Cocoa
 #endif
 
-open class FlaskStore<A:RawRepresentable,T:FlaskState > : FlaskStoreConcrete{
+open class Molecule<T:Atoms,A:RawRepresentable> : MoleculeConcrete{
     
-    typealias FlaskStateType = T
+    typealias AtomsType = T
     
-    var stateSnapshot: FlaskStateDictionaryType = [:]
-    private var _state: T = T()
-    public var state:T = T()
-   
+    var atomsSnapshot: LabDictType = [:]
+    private var _atoms: T = T()
+    public var atoms:T = T()
     //////////////////
     // MARK: - TRANSACTIONS QUEUE
     
@@ -40,7 +39,7 @@ open class FlaskStore<A:RawRepresentable,T:FlaskState > : FlaskStoreConcrete{
     
     override public func initializeMetaClass() {
         unarchiveIntent()
-        snapshotState()
+        snapshotAtom()
     }
     
     //////////////////
@@ -52,55 +51,55 @@ open class FlaskStore<A:RawRepresentable,T:FlaskState > : FlaskStoreConcrete{
         return val.rawValue as! String
     }
     
-    public func action(_ enumVal:A, _ reaction: @escaping FlaskStoreMutator){
+    public func mix(_ enumVal:A, _ reaction: @escaping MoleculeMixer){
         action(actionName(enumVal), reaction)
     }
     
-    public override func lastStateDictionary() -> FlaskStateDictionaryType{
-        return stateSnapshot
+    public override func lastAtomDictionary() -> LabDictType{
+        return atomsSnapshot
     }
-    public override func stateDictionary() -> FlaskStateDictionaryType{
-        return _state.toDictionary()
-    }
-    
-    public func currentState()->T{
-        return _state
+    public override func atomsDictionary() -> LabDictType{
+        return _atoms.toDictionary()
     }
     
-    func setCurrentState(_ state:T){
-        _state = state
+    public func currentAtom()->T{
+        return _atoms
+    }
+    
+    func setCurrentAtom(_ atoms:T){
+        _atoms = atoms
     }
     
     /// PRIVATE
     
-    override func snapshotState(){
-        self.stateSnapshot = self.stateDictionary()
-        archiveIntent(_state)
+    override func snapshotAtom(){
+        self.atomsSnapshot = self.atomsDictionary()
+        archiveIntent(_atoms)
     }
     
 
-    override func stateTransaction(_ transaction:@escaping ()-> Bool){
+    override func atomsTransaction(_ transaction:@escaping ()-> Bool){
         transactonsQueue.addOperation { [weak self] in
             
             if self == nil {return}
             
-            self!.state = self!._state
+            self!.atoms = self!._atoms
             
             if transaction() {
-                self!._state = self!.state
+                self!._atoms = self!.atoms
             }else{
-                self!.state = self!._state
+                self!.atoms = self!._atoms
             }
         }
         
     }
     
-    override func abortStateTransaction(){
+    override func abortAtomTransaction(){
         transactonsQueue.addOperation { [weak self] in
             
             if self == nil {return}
             
-            self!.state = self!._state
+            self!.atoms = self!._atoms
         }
     }
 }
@@ -108,14 +107,14 @@ open class FlaskStore<A:RawRepresentable,T:FlaskState > : FlaskStoreConcrete{
 
 
 
-open class FlaskStoreConcrete {
+open class MoleculeConcrete {
     
-    public static func isInternalProp(_ prop:String)->Bool{
-        return prop.starts(with: "_")
+    public static func isInternalProp(_ atom:String)->Bool{
+        return atom.starts(with: "_")
     }
     
-    public static func isObjectRef(_ prop:Any)->Bool{
-        return ((prop as? FlaskRef) != nil)
+    public static func isObjectRef(_ atom:Any)->Bool{
+        return ((atom as? LabRef) != nil)
     }
     
     
@@ -123,33 +122,33 @@ open class FlaskStoreConcrete {
         initializeMetaClass()
     }
     
-    func lastStateDictionary() -> FlaskStateDictionaryType{
+    func lastAtomDictionary() -> LabDictType{
         return [:]
     }
-    func stateDictionary() -> FlaskStateDictionaryType{
+    func atomsDictionary() -> LabDictType{
         return [:]
     }
     func name() -> String {
-        return "Store\(self.self)"
+        return "Molecule\(self.self)"
     }
     
-    open func bindActions(){}
-    open func unbindActions(){}
+    open func bindMixers(){}
+    open func unbindMixers(){}
     
-    func snapshotState(){}
+    func snapshotAtom(){}
     
     func initializeMetaClass(){}
-    func stateTransaction(_ transaction:@escaping ()-> Bool){}
-    func abortStateTransaction(){}
+    func atomsTransaction(_ transaction:@escaping ()-> Bool){}
+    func abortAtomTransaction(){}
     
     
 }
 
 
 
-public extension FlaskStoreConcrete {
+public extension MoleculeConcrete {
   
-    @discardableResult public func action(_ action:String, _ reaction: @escaping FlaskStoreMutator)->NSObjectProtocol{
+    @discardableResult public func action(_ action:String, _ reaction: @escaping MoleculeMixer)->NSObjectProtocol{
         let weakRegistration={ [weak self] in
             
             NotificationCenter.default.addObserver(forName: NSNotification.Name(action), object: nil, queue: OperationQueue.main) { (notification) in
@@ -158,9 +157,9 @@ public extension FlaskStoreConcrete {
                 var resolved = false
                 var completed = true
                 
-                let commit = {
+                let react = {
                     resolved=true
-                    self?.handleMutation()
+                    self?.handleMix()
                 }
                 
                 let abort = {
@@ -168,9 +167,9 @@ public extension FlaskStoreConcrete {
                     completed = false
                 }
                 
-                self?.stateTransaction({
-                    reaction(payload,commit,abort)
-                    assert(resolved, "reaction closure must call `commit` or `abort`")
+                self?.atomsTransaction({
+                    reaction(payload,react,abort)
+                    assert(resolved, "reaction closure must call `react` or `abort`")
                     return completed
                 })
                 
@@ -181,14 +180,14 @@ public extension FlaskStoreConcrete {
         return weakRegistration()
     }
     
-    public func mutate<T:FlaskStoreConcrete>(_ mutator:@escaping FlaskMutatorParams<T>){
+    public func mix<T:MoleculeConcrete>(_ mixer:@escaping MixParams<T>){
         
         var resolved = false
         var completed = true
         
-        let commit = {
+        let react = {
             resolved = true
-            self.handleMutation()
+            self.handleMix()
         }
         
         let abort = {
@@ -196,50 +195,50 @@ public extension FlaskStoreConcrete {
             completed = false
         }
         
-        stateTransaction({
-            mutator(self as! T, commit, abort)
-            assert(resolved, "mutator closure must call `commit` or `abort`")
+        atomsTransaction({
+            mixer(self as! T, react, abort)
+            assert(resolved, "mixer closure must call `react` or `abort`")
             return completed
         })
     }
     
 }
 
-extension FlaskStoreConcrete {
+extension MoleculeConcrete {
     
-    func handleMutation(){
-        Flask.Dispatcher.reactionQueue.addOperation { [weak self] in
+    func handleMix(){
+        Lab.Dispatcher.reactionQueue.addOperation { [weak self] in
             
             if self == nil { return }
             
-            let reaction = FlaskReaction(self! as FlaskStoreConcrete)
+            let reaction = FlaskReaction(self! as MoleculeConcrete)
             
             if( reaction.changed()){
-                Flask.Dispatcher.commitChange(reaction)
+                Lab.Dispatcher.reactChange(reaction)
             }else{
                 //log
             }
-            self?.snapshotState()
+            self?.snapshotAtom()
         }
        
     }
     
 }
 
-public extension FlaskStoreConcrete {
+public extension MoleculeConcrete {
     
 
     public func get(_ key:String) -> String{
         
-        assertStateKey(key)
+        assertAtomKey(key)
         
-        let state = self.stateDictionary()
-        return state[key] as! String
+        let atoms = self.atomsDictionary()
+        return atoms[key] as! String
     }
     
-    func assertStateKey(_ key:String) {
-        let state = self.stateDictionary()
-        assert(state.keys.contains(key),"Prop must be defined in state")
+    func assertAtomKey(_ key:String) {
+        let atoms = self.atomsDictionary()
+        assert(atoms.keys.contains(key),"Prop must be defined in atoms")
         
     }
     

@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-public extension FlaskChangeTemplate{
+public extension MoleculeChange{
     
     
     public func unwrapValue<A>(_ val:A?) ->A?{
-//        if let object = val as? FlaskRef {
+//        if let object = val as? LabRef {
 //            return object.object as? A
 //        }
         return val
@@ -33,21 +33,21 @@ public extension FlaskChangeTemplate{
         return _key
     }
     
-    public func store()->FlaskStoreConcrete?{
-        return _store
+    public func molecule()->MoleculeConcrete?{
+        return _molecule
     }
 }
 
-public struct FlaskChangeTemplate  {
+public struct MoleculeChange  {
     
-    weak var _store:FlaskStoreConcrete?
+    weak var _molecule:MoleculeConcrete?
     var _key:String?
     var oldVal:AnyHashable?
     var newVal:AnyHashable?
     
-    func mutated()->Bool{
+    func mixd()->Bool{
         
-        if isFlaskNil(oldVal) && isFlaskNil(newVal) {
+        if isLabNil(oldVal) && isLabNil(newVal) {
             return false
         }
         

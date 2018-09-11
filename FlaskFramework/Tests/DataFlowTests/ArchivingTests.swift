@@ -18,29 +18,28 @@ class archiveTests: SetupFlaskTests {
         
         let expectedValue = Int(Date().timeIntervalSince1970)
         
-        let store = self.store!
+        let molecule = self.molecule!
         let owner:TestOwner = TestOwner()
-        let flux = Flask.instance(ownedBy:owner, binding:store)
+        let flask = Lab.flask(ownedBy:owner, mixin:molecule)
         
-        flux.reactor = { owner, reaction in
-            reaction.on(State.prop.counter, { (change) in
+        flask.reactor = { owner, reaction in
+            reaction.on(AppAtoms.named.counter, { (change) in
                 expectation.fulfill()
             })
         }
         
-        flux.mutate(store){ (store) in
-            store.state.counter=expectedValue
-        }.commit()
+        flask.mix(molecule){ (molecule) in
+            molecule.atoms.counter=expectedValue
+        }.react()
         
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 2)
         
-        flux.unbind()
+        flask.unbind()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             
-            let anotherStore = Store()
-            XCTAssert(anotherStore.state.counter == expectedValue)
-            anotherStore.purgeArchive()
+            let anotherMolecule = App()
+            XCTAssert(anotherMolecule.atoms.counter == expectedValue)
             
             expectationUnarchive.fulfill()
         }

@@ -11,17 +11,18 @@ import XCTest
 
 class SetupFlaskTests: XCTestCase {
     
-    var store:Store?
+    var molecule:App?
     
     override func setUp() {
         super.setUp()
         
-        self.store = Store()
+        self.molecule = App()
         
-        Flask.releaseAllLocks()
-        FlaskReactorManager.purgeOrphans()
         
-        XCTAssert(FlaskReactorManager.fluxors.count == 0, "all fluxors should dispose before this test")
+        Lab.releaseAllLocks()
+        LabFlaskManager.purgeOrphans()
+        
+        XCTAssert(LabFlaskManager.flasks.count == 0, "all flasks should dispose before this test")
         
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -29,7 +30,8 @@ class SetupFlaskTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        self.store = .none
+        self.molecule?.purgeArchive()
+        self.molecule = .none
     }
     
     

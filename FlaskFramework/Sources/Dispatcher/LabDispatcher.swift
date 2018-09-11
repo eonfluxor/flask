@@ -13,12 +13,12 @@ import UIKit
 import Cocoa
 #endif
 
-public class FlaskDispatcher {
+public class LabDispatcher {
     
     //////////////////
     // MARK: - LOCKS
     
-    var locks:[FlaskLock]=[]
+    var locks:[LabLock]=[]
     
     //////////////////
     // MARK: - OPERATION QUEUE
@@ -49,12 +49,12 @@ public class FlaskDispatcher {
     //////////////////
     // MARK: - LAZY
     
-    lazy var fluxRefs: Dictionary<String, Array<FlaskWeakRef<FlaskReactorConcrete>>> = {
-        return Dictionary<String, Array<FlaskWeakRef<FlaskReactorConcrete>>>()
+    lazy var flaskRefs: Dictionary<String, Array<LabWeakRef<FlaskConcrete>>> = {
+        return Dictionary<String, Array<LabWeakRef<FlaskConcrete>>>()
     }();
     
-    func lock()->FlaskLock{
-        return FlaskLock(dispatcher:self)
+    func lock()->LabLock{
+        return LabLock(dispatcher:self)
     }
     
 }
@@ -62,7 +62,7 @@ public class FlaskDispatcher {
 //////////////////
 // MARK: - PUBLIC METHODS
 
-extension FlaskDispatcher {
+extension LabDispatcher {
     
     func dispatch(_ action:String){
         dispatch(action,payload:nil)
@@ -88,7 +88,7 @@ extension FlaskDispatcher {
 //////////////////
 // MARK: - QUEUE
 
-extension FlaskDispatcher {
+extension LabDispatcher {
  
     func queue(_ action:String, payload:[String:Any]?){
         
@@ -123,59 +123,59 @@ extension FlaskDispatcher {
 //////////////////
 // MARK: - BINDINGS
 
-extension FlaskDispatcher {
+extension LabDispatcher {
    
-    func bindFlaskReactor(_ store:FlaskStoreConcrete, flux:FlaskReactorConcrete) {
+    func bindFlask(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
         
-        let storeName = store.name()
-        var storeFlaskReactorRefs = getStoreFlaskReactorRefs(storeName)
+        let moleculeName = molecule.name()
+        var moleculeFlaskRefs = getMoleculeFlaskRefs(moleculeName)
         
-        let ref = FlaskWeakRef(value:flux)
-        storeFlaskReactorRefs.append(ref)
-        setStoreFlaskReactorRefs(storeName,storeFlaskReactorRefs)
+        let ref = LabWeakRef(value:flask)
+        moleculeFlaskRefs.append(ref)
+        setMoleculeFlaskRefs(moleculeName,moleculeFlaskRefs)
         
     }
     
-    func unbindFlaskReactor(_ store:FlaskStoreConcrete, flux:FlaskReactorConcrete) {
+    func unbindFlask(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
         
-        let storeName = store.name()
-        let storeFlaskReactorRefs = getStoreFlaskReactorRefs(storeName)
+        let moleculeName = molecule.name()
+        let moleculeFlaskRefs = getMoleculeFlaskRefs(moleculeName)
         
-        let storeFlaskReactorRefsFiltered = storeFlaskReactorRefs.filter { $0.value != flux }
+        let moleculeFlaskRefsFiltered = moleculeFlaskRefs.filter { $0.value != flask }
         
-        setStoreFlaskReactorRefs(storeName,storeFlaskReactorRefsFiltered)
+        setMoleculeFlaskRefs(moleculeName,moleculeFlaskRefsFiltered)
        
     }
     
-    func getStoreFlaskReactorRefs(_ storeName:String) -> Array<FlaskWeakRef<FlaskReactorConcrete>>{
+    func getMoleculeFlaskRefs(_ moleculeName:String) -> Array<LabWeakRef<FlaskConcrete>>{
         
-        if let fluxors = self.fluxRefs[storeName] {
-            return fluxors
+        if let flasks = self.flaskRefs[moleculeName] {
+            return flasks
         }
         
-        return Array<FlaskWeakRef<FlaskReactorConcrete>>()
+        return Array<LabWeakRef<FlaskConcrete>>()
         
     }
     
-    func setStoreFlaskReactorRefs(_ storeName:String,_ refs:Array<FlaskWeakRef<FlaskReactorConcrete>>){
+    func setMoleculeFlaskRefs(_ moleculeName:String,_ refs:Array<LabWeakRef<FlaskConcrete>>){
         
-        self.fluxRefs[storeName] = refs
+        self.flaskRefs[moleculeName] = refs
     }
 }
 
 //////////////////
 // MARK: - MUTATIONS
 
-extension FlaskDispatcher {
+extension LabDispatcher {
    
-    func commitChange(_ reaction:FlaskReaction){
+    func reactChange(_ reaction:FlaskReaction){
         
-        let storeName = reaction.store.name()
-        let storeFlaskReactorRefs = getStoreFlaskReactorRefs(storeName)
+        let moleculeName = reaction.molecule.name()
+        let moleculeFlaskRefs = getMoleculeFlaskRefs(moleculeName)
         
-        for storeFlaskReactorRef in storeFlaskReactorRefs {
-            if let flux = storeFlaskReactorRef.value{
-                flux.handleMutation( reaction)
+        for moleculeFlaskRef in moleculeFlaskRefs {
+            if let flask = moleculeFlaskRef.value{
+                flask.handleMix( reaction)
             }
         }
         

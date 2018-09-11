@@ -3,7 +3,7 @@
 //  Reaktor-tvOS
 //
 //  Created by hassan uriostegui on 9/10/18.
-//  Copyright © 2018 eonflux. All rights reserved.
+//  Copyright © 2018 Eonflux - Hassan Uriostegui. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

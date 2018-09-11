@@ -18,13 +18,13 @@ class DictionaryTests: XCTestCase {
             "nest":[
                 "nest":["foo2":"bar2"],
                 "optional":"some",
-                "none":Flask.Null
+                "none":Lab.Null
             ],
             "array":[1,2,3]
         ]
         
-        let dictRef = FlaskDictionaryRef(data)
-        let nest:FlaskDictionaryRef? = dictRef["nest"] as! FlaskDictionaryRef?
+        let dictRef = LabDictRef(data)
+        let nest:LabDictRef? = dictRef["nest"] as! LabDictRef?
         
         //structure
         XCTAssert((nest != nil))
@@ -37,7 +37,7 @@ class DictionaryTests: XCTestCase {
         
         // keep nil keys
         XCTAssert((nest?.keys().contains("none"))!)
-        XCTAssert((nest!["none"] as? NSNull) == Flask.Null)
+        XCTAssert((nest!["none"] as? NSNull) == Lab.Null)
     }
     
 }

@@ -1,5 +1,5 @@
 //
-//  FlaskState.swift
+//  Atoms.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/4/18.
@@ -12,27 +12,27 @@ import UIKit
 import Cocoa
 #endif
 
-struct AnyFlaskState:FlaskState {
+struct AnyAtoms:Atoms {
     
 }
 
-public protocol FlaskState : Codable {
-    init() //construct at initial state
-    func toDictionary()->FlaskStateDictionaryType
+public protocol Atoms : Codable {
+    init() //construct at initial atoms
+    func toDictionary()->LabDictType
     func toJsonDictionary()->[String:Any]
 }
 
 
-public extension FlaskState{
+public extension Atoms{
     
 //    var dictionary: [String: Any] {
 //        return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]
 //    }
     
     
-    func toDictionary()->FlaskStateDictionaryType{
+    func toDictionary()->LabDictType{
 //        let dict = self.dictionary
-        var result:FlaskStateDictionaryType = [:]
+        var result:LabDictType = [:]
         
         let mirror = Mirror(reflecting: self)
         
@@ -41,20 +41,22 @@ public extension FlaskState{
                 continue
             }
             
-            if FlaskStoreConcrete.isInternalProp(label) {
+            if MoleculeConcrete.isInternalProp(label) {
                 continue
             }
             
-            result[label] = Flask.Nil
+            result[label] = Lab.Nil
             result[label] = value as? AnyHashable
             
-            if(FlaskSerializer.isDictionaryRef(value)){
-                let nestedRef = FlaskSerializer.nestDictionaries(namespace: label,
-                                                                root: FlaskDictionaryRef(result as NSDictionary),
-                                                                children: value as! FlaskDictionaryRef)
-                result = nestedRef.dictionary as! FlaskStateDictionaryType
+            if(MoleculeSerializer.isDictionaryRef(value)){
+                let nestedRef = MoleculeSerializer.nestDictionaries(namespace: label,
+                                                                root: LabDictRef(result as NSDictionary),
+                                                                children: value as! LabDictRef)
+                result = nestedRef.dictionary as! LabDictType
             }
         }
+        
+        
         
         return result
         
@@ -71,16 +73,16 @@ public extension FlaskState{
                 continue
             }
             
-            if FlaskStoreConcrete.isInternalProp(label) {
+            if MoleculeConcrete.isInternalProp(label) {
                 continue
             }
             
-            if FlaskStoreConcrete.isObjectRef(value) {
+            if MoleculeConcrete.isObjectRef(value) {
                 continue
             }
             
-            if(FlaskSerializer.isDictionaryRef(value)){
-                let nest =  FlaskSerializer.flattenDictionary(value as! FlaskDictionaryRef)
+            if(MoleculeSerializer.isDictionaryRef(value)){
+                let nest =  MoleculeSerializer.flattenDictionary(value as! LabDictRef)
                  result[label] = nest
             } else{
                  result[label] = value
@@ -89,14 +91,7 @@ public extension FlaskState{
         
         return result
     }
-    
-    
-    
-    
    
-    
-    
-    
     
 }
 
