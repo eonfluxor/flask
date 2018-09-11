@@ -26,7 +26,7 @@ public typealias StateName = String
 let BUS_LOCKED_BY="BUS_LOCKED_BY"
 let FLUX_BUS_NAME="FLUX_BUS_NAME"
 
-public func isFluxNil(_ value:Any?)->Bool{
+public func isNilFlux(_ value:Any?)->Bool{
     if value == nil || ((value as? NSNull) != nil){
         return true
     }

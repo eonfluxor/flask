@@ -75,7 +75,7 @@ public struct StoreSerializer{
             
             let value = children[key]
             let childKey = "\(namespace).\(key)"
-            assert( isFluxNil(result[childKey]) , "namespace collision!" )
+            assert( isNilFlux(result[childKey]) , "namespace collision!" )
             
             result[childKey] = value
             

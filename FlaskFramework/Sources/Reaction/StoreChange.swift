@@ -47,7 +47,7 @@ public struct StoreChange  {
     
     func mutationd()->Bool{
         
-        if isFluxNil(oldVal) && isFluxNil(newVal) {
+        if isNilFlux(oldVal) && isNilFlux(newVal) {
             return false
         }
         

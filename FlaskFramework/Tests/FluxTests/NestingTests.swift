@@ -71,7 +71,7 @@ class NestedStateTests: SetupFlaskTests {
             
             flask.reactor = { owner, reaction in
                 reaction.on("map.nest.optional", { (change) in
-                    XCTAssert(isFluxNil(change.newValue()))
+                    XCTAssert(isNilFlux(change.newValue()))
                     expectation4.fulfill()
                 })
             }
