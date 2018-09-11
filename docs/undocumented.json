@@ -85,69 +85,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Dispatcher/LabDispatcher.swift",
-      "line": null,
-      "symbol": "LabDispatcher",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Dispatcher/LabDispatcher.swift",
-      "line": 16,
-      "symbol": "LabDispatcher",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Dispatcher/LabLock.swift",
-      "line": 15,
-      "symbol": "LabLock",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Dispatcher/LabLock.swift",
-      "line": 19,
-      "symbol": "LabLock.init(dispatcher:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Dispatcher/LabLock.swift",
-      "line": 27,
-      "symbol": "LabLock.release()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Dispatcher/LabLock.swift",
-      "line": 34,
-      "symbol": "LabDispatcher.releaseAllLocks()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Dispatcher/LabLock.swift",
-      "line": 39,
-      "symbol": "LabDispatcher.addLock(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Dispatcher/LabLock.swift",
-      "line": 44,
-      "symbol": "LabDispatcher.removeLock(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Dispatcher/LabLock.swift",
-      "line": 49,
-      "symbol": "LabDispatcher.applyLocks()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/ChainReaction.swift",
       "line": 15,
       "symbol": "ChainReaction",
@@ -332,7 +269,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 37,
-      "symbol": "Lab.purgeOrphans()",
+      "symbol": "Lab.purge()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
@@ -360,21 +297,21 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 68,
-      "symbol": "Lab.lock(action:)",
+      "symbol": "Lab.lock(mixer:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 72,
-      "symbol": "Lab.lock(action:payload:)",
+      "symbol": "Lab.lock(mixer:payload:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 84,
-      "symbol": "Lab.releaseAllLocks()",
+      "symbol": "Lab.detachAllLocks()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
@@ -390,6 +327,69 @@
       "line": 96,
       "symbol": "Lab.mix(_:payload:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/Mixer.swift",
+      "line": null,
+      "symbol": "Mixer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/Mixer.swift",
+      "line": 16,
+      "symbol": "Mixer",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "line": 15,
+      "symbol": "MixerLock",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "line": 19,
+      "symbol": "MixerLock.init(mixer:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "line": 27,
+      "symbol": "MixerLock.release()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "line": 34,
+      "symbol": "Mixer.detachAllLocks()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "line": 39,
+      "symbol": "Mixer.attachLock(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "line": 44,
+      "symbol": "Mixer.detachLock(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerLock.swift",
+      "line": 49,
+      "symbol": "Mixer.applyLocks()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -549,7 +549,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
       "line": 50,
-      "symbol": "Molecule.actionName(_:)",
+      "symbol": "Molecule.mixerName(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -626,7 +626,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
       "line": 151,
-      "symbol": "MoleculeConcrete.action(_:_:)",
+      "symbol": "MoleculeConcrete.mixer(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
