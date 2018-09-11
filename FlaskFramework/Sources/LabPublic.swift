@@ -18,7 +18,7 @@ public class Lab {
     
     
     /// This is the single dispatcher
-    static public let Dispatcher = LabDispatcher()
+    static public let mixer = Mixer()
     /// Use this to preserve `nil` entries in swift dictionaries
     static public let Nil = nil as AnyHashable?
     /// Use this to preseve `nul` in LabDictRef instances
@@ -31,7 +31,7 @@ public class Lab {
 public extension Lab {
     
     static public func disposeDispatchQueue(){
-        Lab.Dispatcher.dispatchQueue.cancelAllOperations()
+        Lab.mixer.mixQueue.cancelAllOperations()
     }
     
     static public func purgeOrphans(){
@@ -60,29 +60,29 @@ public extension Lab {
 
 public extension Lab {
     
-    static public func lock()->LabLock{
-        return LabLock(dispatcher:Lab.Dispatcher)
+    static public func lock()->MixerLock{
+        return MixerLock(dispatcher:Lab.mixer)
     }
     
     
-    static public func lock<T:RawRepresentable>(action enumVal:T)->LabLock{
+    static public func lock<T:RawRepresentable>(action enumVal:T)->MixerLock{
         return Lab.lock(action:enumVal,payload:nil)
     }
     
-    static public func lock<T:RawRepresentable>(action enumVal:T, payload:[String:Any]?)->LabLock{
+    static public func lock<T:RawRepresentable>(action enumVal:T, payload:[String:Any]?)->MixerLock{
         let action = enumVal.rawValue as! String
         var info = payload ?? [:]
         info[FLUX_ACTION_SKIP_LOCKS] = true
         
-        let lock = LabLock(dispatcher:Lab.Dispatcher)
-        Lab.Dispatcher.dispatch(action,payload:info)
+        let lock = MixerLock(dispatcher:Lab.mixer)
+        Lab.mixer.dispatch(action,payload:info)
         
         return lock
     }
     
     
     static public func releaseAllLocks(){
-        Lab.Dispatcher.releaseAllLocks()
+        Lab.mixer.releaseAllLocks()
     }
 }
 
@@ -98,7 +98,7 @@ public extension Lab {
         var info = payload ?? [:]
         info[FLUX_ACTION_NAME] = action
         
-        Lab.Dispatcher.dispatch(action,payload:info)
+        Lab.mixer.dispatch(action,payload:info)
     }
 }
 

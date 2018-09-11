@@ -13,17 +13,17 @@ import UIKit
 import Cocoa
 #endif
 
-public class LabDispatcher {
+public class Mixer {
     
     //////////////////
     // MARK: - LOCKS
     
-    var locks:[LabLock]=[]
+    var locks:[MixerLock]=[]
     
     //////////////////
     // MARK: - OPERATION QUEUE
     
-    let dispatchQueue:OperationQueue = {
+    let mixQueue:OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount=1
         return queue
@@ -53,8 +53,8 @@ public class LabDispatcher {
         return Dictionary<String, Array<LabWeakRef<FlaskConcrete>>>()
     }();
     
-    func lock()->LabLock{
-        return LabLock(dispatcher:self)
+    func lock()->MixerLock{
+        return MixerLock(dispatcher:self)
     }
     
 }
@@ -62,7 +62,7 @@ public class LabDispatcher {
 //////////////////
 // MARK: - PUBLIC METHODS
 
-extension LabDispatcher {
+extension Mixer {
     
     func dispatch(_ action:String){
         dispatch(action,payload:nil)
@@ -88,11 +88,11 @@ extension LabDispatcher {
 //////////////////
 // MARK: - QUEUE
 
-extension LabDispatcher {
+extension Mixer {
  
     func queue(_ action:String, payload:[String:Any]?){
         
-        var queue = dispatchQueue
+        var queue = mixQueue
         if  ((payload?[FLUX_ACTION_SKIP_LOCKS]) != nil) {
             queue = dispatchLockedQueue
         }
@@ -123,7 +123,7 @@ extension LabDispatcher {
 //////////////////
 // MARK: - BINDINGS
 
-extension LabDispatcher {
+extension Mixer {
    
     func bindFlask(_ molecule:MoleculeConcrete, flask:FlaskConcrete) {
         
@@ -166,7 +166,7 @@ extension LabDispatcher {
 //////////////////
 // MARK: - MUTATIONS
 
-extension LabDispatcher {
+extension Mixer {
    
     func reactChange(_ reaction:FlaskReaction){
         

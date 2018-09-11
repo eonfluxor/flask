@@ -1,5 +1,5 @@
 //
-//  LabLock.swift
+//  MixerLock.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/3/18.
@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-public class LabLock: LabAnyEquatable {
+public class MixerLock: LabAnyEquatable {
 
-    var dispatcher:LabDispatcher
+    var dispatcher:Mixer
     
-    required public init(dispatcher:LabDispatcher) {
+    required public init(dispatcher:Mixer) {
 
         self.dispatcher = dispatcher
         super.init()
@@ -29,25 +29,25 @@ public class LabLock: LabAnyEquatable {
     }
 }
 
-public extension LabDispatcher{
+public extension Mixer{
     
     public func releaseAllLocks(){
         locks=[]
         applyLocks()
     }
     
-    func addLock(_ lock:LabLock){
+    func addLock(_ lock:MixerLock){
         locks.append(lock)
         applyLocks()
     }
     
-    func removeLock(_ lock:LabLock){
+    func removeLock(_ lock:MixerLock){
         locks=locks.filter {$0 != lock}
         applyLocks()
     }
 
     func applyLocks(){
-        dispatchQueue.isSuspended = locks.count > 0
+        mixQueue.isSuspended = locks.count > 0
     }
     
 }

@@ -79,7 +79,7 @@ public class FlaskConcrete:LabAnyEquatable{
            
             { [weak self] in
                 if let wself = self {
-                    Lab.Dispatcher.bindFlask(molecule, flask: wself)
+                    Lab.mixer.bindFlask(molecule, flask: wself)
                 }
             }()
             
@@ -101,7 +101,7 @@ public class FlaskConcrete:LabAnyEquatable{
         for molecule in molecules {
             { [weak self] in
                 if let wself = self {
-                    Lab.Dispatcher.unbindFlask(molecule, flask: wself)
+                    Lab.mixer.unbindFlask(molecule, flask: wself)
                 }
             }()
             

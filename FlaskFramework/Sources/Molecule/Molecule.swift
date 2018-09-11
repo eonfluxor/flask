@@ -207,14 +207,14 @@ public extension MoleculeConcrete {
 extension MoleculeConcrete {
     
     func handleMix(){
-        Lab.Dispatcher.reactionQueue.addOperation { [weak self] in
+        Lab.mixer.reactionQueue.addOperation { [weak self] in
             
             if self == nil { return }
             
             let reaction = FlaskReaction(self! as MoleculeConcrete)
             
             if( reaction.changed()){
-                Lab.Dispatcher.reactChange(reaction)
+                Lab.mixer.reactChange(reaction)
             }else{
                 //log
             }
