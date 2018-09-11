@@ -11,9 +11,9 @@ import XCTest
 
 class ChangeTests: XCTestCase {
     
-    var oldState:FlaskStateDictionaryType = [:]
-    var newState:FlaskStateDictionaryType = [:]
-    var changes:FlaskStateDictionaryType = [:]
+    var oldState:MoleculeStateDictionaryType = [:]
+    var newState:MoleculeStateDictionaryType = [:]
+    var changes:MoleculeStateDictionaryType = [:]
    
     
     func testNilVsInt(){

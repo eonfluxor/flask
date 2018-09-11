@@ -13,15 +13,15 @@ import Cocoa
 #endif
 
 
-enum Actions : FlaskActions {
+enum Mixers : MoleculeMixers {
     case Count
     case Text
     case Object
 }
 
-struct State : FlaskState {
+struct State : MoleculeState {
    
-    enum prop : FlaskProps{
+    enum atom : Atoms{
         case counter, text, map, object
     }
     
@@ -34,9 +34,9 @@ struct State : FlaskState {
     
 }
 
-class App : Molecule<Actions,State> {
+class App : Molecule<Mixers,State> {
     
-    override func bindActions(){
+    override func bindMixers(){
         
         mutator(.Count) {[weak self] (payload, commit, abort)  in
             self?.state.counter = (self?.state.counter)! + 1

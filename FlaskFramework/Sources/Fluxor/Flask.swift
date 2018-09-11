@@ -83,7 +83,7 @@ public class FlaskConcrete:FlaskAnyEquatable{
                 }
             }()
             
-            molecule.bindActions()
+            molecule.bindMixers()
         }
         
         
@@ -105,7 +105,7 @@ public class FlaskConcrete:FlaskAnyEquatable{
                 }
             }()
             
-            molecule.unbindActions()
+            molecule.unbindMixers()
         }
     }
     

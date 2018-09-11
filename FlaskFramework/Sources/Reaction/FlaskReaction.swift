@@ -18,7 +18,7 @@ public class FlaskReaction {
 
     
     var molecule:MoleculeConcrete
-    var changes:FlaskStateDictionaryType
+    var changes:MoleculeStateDictionaryType
     
     required public init(_ molecule:MoleculeConcrete){
         self.molecule = molecule
@@ -79,7 +79,7 @@ public class FlaskReaction {
 
 public extension FlaskReaction {
     
-    static public func reduceChanges(molecule:MoleculeConcrete)->FlaskStateDictionaryType{
+    static public func reduceChanges(molecule:MoleculeConcrete)->MoleculeStateDictionaryType{
     
         let oldState = molecule.lastStateDictionary()
         let newState = molecule.stateDictionary()
@@ -87,9 +87,9 @@ public extension FlaskReaction {
         return reduceChanges(oldState,newState)
     }
     
-    static public func reduceChanges(_ oldState:FlaskStateDictionaryType, _ newState:FlaskStateDictionaryType)->FlaskStateDictionaryType{
+    static public func reduceChanges(_ oldState:MoleculeStateDictionaryType, _ newState:MoleculeStateDictionaryType)->MoleculeStateDictionaryType{
         
-        var changes:FlaskStateDictionaryType=[:]
+        var changes:MoleculeStateDictionaryType=[:]
         
         let uniqueKeys = Set(Array(oldState.keys) + Array(newState.keys))
         
@@ -116,7 +116,7 @@ public extension FlaskReaction {
     }
     
 
-    static public func change(_ oldState:FlaskStateDictionaryType,_ newState:FlaskStateDictionaryType, _ key: String) -> FlaskChangeTemplate {
+    static public func change(_ oldState:MoleculeStateDictionaryType,_ newState:MoleculeStateDictionaryType, _ key: String) -> FlaskChangeTemplate {
         
         var oldValue:AnyHashable? = Lab.Nil
         var newValue:AnyHashable? = Lab.Nil

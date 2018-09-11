@@ -35,7 +35,7 @@ extension Molecule {
 
 extension Molecule {
     
-    func archiveIntent<T:FlaskState>(_ state:T){
+    func archiveIntent<T:MoleculeState>(_ state:T){
         
         guard !archiveDisabled() else{
             return
@@ -49,7 +49,7 @@ extension Molecule {
         
     }
     
-    func archiveNow<T:FlaskState>(_ state:T){
+    func archiveNow<T:MoleculeState>(_ state:T){
         
         archiveQueue.addOperation { [weak self] in
             

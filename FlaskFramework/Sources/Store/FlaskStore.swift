@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-open class Molecule<A:RawRepresentable,T:FlaskState > : MoleculeConcrete{
+open class Molecule<A:RawRepresentable,T:MoleculeState > : MoleculeConcrete{
     
-    typealias FlaskStateType = T
+    typealias MoleculeStateType = T
     
-    var stateSnapshot: FlaskStateDictionaryType = [:]
+    var stateSnapshot: MoleculeStateDictionaryType = [:]
     private var _state: T = T()
     public var state:T = T()
    
@@ -56,10 +56,10 @@ open class Molecule<A:RawRepresentable,T:FlaskState > : MoleculeConcrete{
         action(actionName(enumVal), reaction)
     }
     
-    public override func lastStateDictionary() -> FlaskStateDictionaryType{
+    public override func lastStateDictionary() -> MoleculeStateDictionaryType{
         return stateSnapshot
     }
-    public override func stateDictionary() -> FlaskStateDictionaryType{
+    public override func stateDictionary() -> MoleculeStateDictionaryType{
         return _state.toDictionary()
     }
     
@@ -110,12 +110,12 @@ open class Molecule<A:RawRepresentable,T:FlaskState > : MoleculeConcrete{
 
 open class MoleculeConcrete {
     
-    public static func isInternalProp(_ prop:String)->Bool{
-        return prop.starts(with: "_")
+    public static func isInternalProp(_ atom:String)->Bool{
+        return atom.starts(with: "_")
     }
     
-    public static func isObjectRef(_ prop:Any)->Bool{
-        return ((prop as? FlaskRef) != nil)
+    public static func isObjectRef(_ atom:Any)->Bool{
+        return ((atom as? FlaskRef) != nil)
     }
     
     
@@ -123,18 +123,18 @@ open class MoleculeConcrete {
         initializeMetaClass()
     }
     
-    func lastStateDictionary() -> FlaskStateDictionaryType{
+    func lastStateDictionary() -> MoleculeStateDictionaryType{
         return [:]
     }
-    func stateDictionary() -> FlaskStateDictionaryType{
+    func stateDictionary() -> MoleculeStateDictionaryType{
         return [:]
     }
     func name() -> String {
         return "Molecule\(self.self)"
     }
     
-    open func bindActions(){}
-    open func unbindActions(){}
+    open func bindMixers(){}
+    open func unbindMixers(){}
     
     func snapshotState(){}
     

@@ -22,14 +22,14 @@ class FlaskReactorTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on(State.prop.counter, { (change) in
+            reaction.on(State.atom.counter, { (change) in
                 expectation.fulfill()
             })
             
         }
         
         DispatchQueue.main.async {
-            Lab.mix(Actions.Count, payload: ["test":"callback"])
+            Lab.mix(Mixers.Count, payload: ["test":"callback"])
         }
         
         waitForExpectations(timeout: 1, handler: nil)
@@ -47,14 +47,14 @@ class FlaskReactorTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(molecule)?.on(State.prop.counter, { (change) in
+            reaction.at(molecule)?.on(State.atom.counter, { (change) in
                 owner.reactionMethod(expectation)
             })
             
         }
         
         DispatchQueue.main.async {
-            Lab.mix(Actions.Count, payload: ["test":"testOwner"])
+            Lab.mix(Mixers.Count, payload: ["test":"testOwner"])
         }
         
         waitForExpectations(timeout: 1, handler: nil)
@@ -71,13 +71,13 @@ class FlaskReactorTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner,mixin:molecule)
         
         flask.reactor={owner, reaction in
-            reaction.on(State.prop.counter, { (change) in
+            reaction.on(State.atom.counter, { (change) in
                 expectation.fulfill()
             })
         }
         
         flask.unbind()
-        Lab.mix(Actions.Count, payload: ["test":"unmixin"])
+        Lab.mix(Mixers.Count, payload: ["test":"unmixin"])
         
         waitForExpectations(timeout: 1, handler: nil)
         
@@ -124,7 +124,7 @@ class FlaskReactorTests: SetupFlaskTests {
         // should cause the factory to release this flask
         weakOwner = nil
         
-        Lab.mix(Actions.Count, payload:  ["test":"ownerDispose"])
+        Lab.mix(Mixers.Count, payload:  ["test":"ownerDispose"])
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:  {
             if flask == nil {
@@ -148,11 +148,11 @@ class FlaskReactorTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on(State.prop.counter, { (change) in
+            reaction.on(State.atom.counter, { (change) in
                 
                 XCTAssert(change.oldValue() == 0)
                 XCTAssert(change.newValue() == 1)
-                XCTAssert(change.key() == State.prop.counter.rawValue)
+                XCTAssert(change.key() == State.atom.counter.rawValue)
                 XCTAssert(change.molecule() === molecule)
                 
                 expectation.fulfill()
@@ -160,7 +160,7 @@ class FlaskReactorTests: SetupFlaskTests {
             
         }
         
-        Lab.mix(Actions.Count, payload: ["test":"change"])
+        Lab.mix(Mixers.Count, payload: ["test":"change"])
         
         waitForExpectations(timeout: 1, handler: nil)
         
@@ -177,7 +177,7 @@ class FlaskReactorTests: SetupFlaskTests {
         let flask = Lab.flask(ownedBy:owner, mixin:Molecules.test)
         
         flask.reactor = { owner, reaction in
-            reaction.on(State.prop.counter, { (change) in
+            reaction.on(State.atom.counter, { (change) in
                 expectation.fulfill()
                 XCTAssert(Molecules.test.state.counter == 2)
             })

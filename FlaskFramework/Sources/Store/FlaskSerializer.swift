@@ -14,7 +14,7 @@ import Cocoa
 
 public struct FlaskSerializer{
     
-    static public func jsonFromState<K:FlaskState>(_ state:K) throws ->String {
+    static public func jsonFromState<K:MoleculeState>(_ state:K) throws ->String {
         
         let jsonData = try JSONEncoder().encode(state)
         
@@ -22,20 +22,20 @@ public struct FlaskSerializer{
         
     }
     
-    static public func stateFromJson<K:FlaskState>(_ json:String) throws ->K {
+    static public func stateFromJson<K:MoleculeState>(_ json:String) throws ->K {
         
         let jsonData = json.data(using: .utf8)!
         return try stateFromData(jsonData)
     }
     
     
-    static public func dataFromState<K:FlaskState>(_ state:K) throws ->Data? {
+    static public func dataFromState<K:MoleculeState>(_ state:K) throws ->Data? {
         
         let json = try jsonFromState(state)
         return json.data(using: .utf16)
     }
     
-    static public func stateFromData<K:FlaskState>(_ jsonData:Data) throws ->K {
+    static public func stateFromData<K:MoleculeState>(_ jsonData:Data) throws ->K {
         
         let state:K = try! JSONDecoder().decode(K.self, from: jsonData)
         return state
