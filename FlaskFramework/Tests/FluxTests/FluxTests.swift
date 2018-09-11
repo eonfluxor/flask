@@ -183,9 +183,9 @@ class FlaskReactorTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(Molecules.app,{ (molecule) in
+        flask.mix(Molecules.app,{ (molecule) in
             molecule.state.counter=1
-        }).mutate(Molecules.app) { (molecule) in
+        }).mix(Molecules.app) { (molecule) in
             molecule.state.counter=2
             }.commit()
         
@@ -210,7 +210,7 @@ class FlaskReactorTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(molecule,{ (molecule, commit, abort) in
+        flask.mix(molecule,{ (molecule, commit, abort) in
             molecule.state._internal="shouldn't cause mutation"
             commit()
         })

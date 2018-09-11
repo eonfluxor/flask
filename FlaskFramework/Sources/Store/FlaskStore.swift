@@ -52,7 +52,7 @@ open class Molecule<T:MoleculeState,A:RawRepresentable> : MoleculeConcrete{
         return val.rawValue as! String
     }
     
-    public func mutator(_ enumVal:A, _ reaction: @escaping MoleculeMutator){
+    public func mixer(_ enumVal:A, _ reaction: @escaping MoleculeMutator){
         action(actionName(enumVal), reaction)
     }
     
@@ -181,7 +181,7 @@ public extension MoleculeConcrete {
         return weakRegistration()
     }
     
-    public func mutate<T:MoleculeConcrete>(_ mutator:@escaping FlaskMutatorParams<T>){
+    public func mix<T:MoleculeConcrete>(_ mixer:@escaping FlaskMutatorParams<T>){
         
         var resolved = false
         var completed = true
@@ -197,8 +197,8 @@ public extension MoleculeConcrete {
         }
         
         stateTransaction({
-            mutator(self as! T, commit, abort)
-            assert(resolved, "mutator closure must call `commit` or `abort`")
+            mixer(self as! T, commit, abort)
+            assert(resolved, "mixer closure must call `commit` or `abort`")
             return completed
         })
     }

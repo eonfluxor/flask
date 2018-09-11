@@ -28,7 +28,7 @@ class archiveTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(molecule){ (molecule) in
+        flask.mix(molecule){ (molecule) in
             molecule.state.counter=expectedValue
         }.commit()
         

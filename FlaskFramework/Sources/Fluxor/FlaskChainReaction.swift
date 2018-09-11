@@ -18,12 +18,12 @@ public struct FlaskChainReaction{
     public let commit:()->Void
     public let abort:()->Void
     
-    public func mutate<T:MoleculeConcrete>(_ aMolecule:T, _ mutator:@escaping (_ molecule:T) -> Void)->FlaskChainReaction{
+    public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping (_ molecule:T) -> Void)->FlaskChainReaction{
         
         let molecule = flask.molecule(aMolecule)
         
         molecule.stateTransaction({
-            mutator(molecule)
+            mixer(molecule)
             return true
         })
         
@@ -35,15 +35,15 @@ public struct FlaskChainReaction{
 
 public extension FlaskConcrete{
     
-//    func mutate()->FlaskChainReaction{
+//    func mix()->FlaskChainReaction{
 //        
 //        if let molecule = molecules.first {
-//            return mutate(molecule)
+//            return mix(molecule)
 //        }
 //        assert(false, "error: there are not molecules binded")
 //    }
     
-//    func mutate<T:MoleculeConcrete>(_ aMolecule:T)->FlaskChainReaction{
+//    func mix<T:MoleculeConcrete>(_ aMolecule:T)->FlaskChainReaction{
 //
 //        let  commit = { [weak self] in
 //            if let molecules = self?.molecules {
@@ -66,7 +66,7 @@ public extension FlaskConcrete{
 //    }
 //
     
-    public func mutate<T:MoleculeConcrete>(_ aMolecule:T, _ mutator:@escaping(_ molecule:T) -> Void)->FlaskChainReaction{
+    public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping(_ molecule:T) -> Void)->FlaskChainReaction{
         
         let  commit = { [weak self] in
             if let molecules = self?.molecules {
@@ -88,7 +88,7 @@ public extension FlaskConcrete{
         let molecule = self.molecule(aMolecule)
         
         molecule.stateTransaction({
-            mutator(molecule)
+            mixer(molecule)
             return true
         })
         

@@ -45,7 +45,7 @@ public struct FlaskChangeTemplate  {
     var oldVal:AnyHashable?
     var newVal:AnyHashable?
     
-    func mutated()->Bool{
+    func mixd()->Bool{
         
         if isFlaskNil(oldVal) && isFlaskNil(newVal) {
             return false

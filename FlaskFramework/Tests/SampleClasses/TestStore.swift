@@ -38,13 +38,13 @@ class App : Molecule<State,Mixers> {
     
     override func bindMixers(){
         
-        mutator(.Count) {[weak self] (payload, commit, abort)  in
+        mixer(.Count) {[weak self] (payload, commit, abort)  in
             self?.state.counter = (self?.state.counter)! + 1
             commit()
         }
         
-        mutator(.Text) {[weak self] (payload, commit, abort)  in
-            self?.state.text = "mutated"
+        mixer(.Text) {[weak self] (payload, commit, abort)  in
+            self?.state.text = "mixd"
             commit()
         }
     }

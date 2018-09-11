@@ -59,7 +59,7 @@ class NestedStateTests: SetupFlaskTests {
             }
             
             
-            flask.mutate(molecule,{ (molecule, commit, abort) in
+            flask.mix(molecule,{ (molecule, commit, abort) in
                 molecule.state.map = dictRef
                 commit()
             })
@@ -77,7 +77,7 @@ class NestedStateTests: SetupFlaskTests {
                 })
             }
             
-            flask.mutate(molecule,{ (molecule, commit, abort) in
+            flask.mix(molecule,{ (molecule, commit, abort) in
                 molecule.state.map = dictRef2
                 commit()
             })

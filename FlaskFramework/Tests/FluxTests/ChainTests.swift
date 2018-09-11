@@ -26,10 +26,10 @@ class ChainingTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(molecule,{ (molecule, commit, abort) in
+        flask.mix(molecule,{ (molecule, commit, abort) in
             molecule.state.counter=1
             commit()
-        }).mutate(molecule) { (molecule, commit, abort) in
+        }).mix(molecule) { (molecule, commit, abort) in
             molecule.state.counter=2
             commit()
         }
@@ -89,7 +89,7 @@ class ChainingTests: SetupFlaskTests {
             
         }
         
-        flask.mutate(molecule,{ (molecule, commit, abort) in
+        flask.mix(molecule,{ (molecule, commit, abort) in
             molecule.state.counter = 1
             molecule.state.text = "reaction"
             molecule.state.object = aObject
@@ -116,9 +116,9 @@ class ChainingTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(molecule){ (molecule) in
+        flask.mix(molecule){ (molecule) in
             molecule.state.counter=1
-        }.mutate(molecule) { (molecule) in
+        }.mix(molecule) { (molecule) in
             molecule.state.counter=2
         }.commit()
         
