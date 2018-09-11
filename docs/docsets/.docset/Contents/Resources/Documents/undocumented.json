@@ -325,14 +325,14 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 93,
-      "symbol": "Lab.mix(_:)",
+      "symbol": "Lab.applyMixer(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 97,
-      "symbol": "Lab.mix(_:payload:)",
+      "symbol": "Lab.applyMixer(_:payload:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
@@ -563,7 +563,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
       "line": 54,
-      "symbol": "Molecule.mix(_:_:)",
+      "symbol": "Molecule.mixer(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

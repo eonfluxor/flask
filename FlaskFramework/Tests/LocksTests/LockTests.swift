@@ -46,7 +46,7 @@ class PauseTests: SetupFlaskTests {
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
-        Lab.disposeDispatchQueue()
+        Lab.purgeMixersQueue()
     }
     
     

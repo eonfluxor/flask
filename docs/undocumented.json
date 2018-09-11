@@ -269,7 +269,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
       "line": 33,
-      "symbol": "Lab.disposeDispatchQueue()",
+      "symbol": "Lab.purgeMixersQueue()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },

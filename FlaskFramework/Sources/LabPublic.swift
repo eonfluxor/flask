@@ -30,7 +30,7 @@ public class Lab {
 
 public extension Lab {
     
-    static public func disposeDispatchQueue(){
+    static public func purgeMixersQueue(){
         Lab.mixer.formulationQueue.cancelAllOperations()
     }
     
