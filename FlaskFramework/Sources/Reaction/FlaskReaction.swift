@@ -62,7 +62,7 @@ public class FlaskReaction {
             fatalError("the key `\(key)` is not defined in atoms")
             
         }
-        let atoms = molecule.pastAtomsDictionary()
+        let atoms = molecule.atomsSnapshotDictionary()
         let rootKey = key.split(separator: ".").first
         
         guard (rootKey != nil) else{
@@ -81,7 +81,7 @@ public extension FlaskReaction {
     
     static public func reduceChanges(molecule:MoleculeConcrete)->LabDictType{
     
-        let oldAtom = molecule.pastAtomsDictionary()
+        let oldAtom = molecule.atomsSnapshotDictionary()
         let newAtom = molecule.atomsDictionary()
         
         return reduceChanges(oldAtom,newAtom)
@@ -109,7 +109,7 @@ public extension FlaskReaction {
     
     static public func change(_ molecule:MoleculeConcrete, _ key: String) -> MoleculeChange {
         
-        let oldAtom = molecule.pastAtomsDictionary()
+        let oldAtom = molecule.atomsSnapshotDictionary()
         let newAtom = molecule.atomsDictionary()
         
         return change(oldAtom,newAtom,key)

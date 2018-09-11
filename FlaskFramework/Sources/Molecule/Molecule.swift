@@ -55,7 +55,7 @@ open class Molecule<T:Atoms,A:RawRepresentable> : MoleculeConcrete{
         mixer(mixerName(enumVal), reaction)
     }
     
-    public override func pastAtomsDictionary() -> LabDictType{
+    public override func atomsSnapshotDictionary() -> LabDictType{
         return atomsSnapshot
     }
     public override func atomsDictionary() -> LabDictType{
@@ -94,7 +94,7 @@ open class Molecule<T:Atoms,A:RawRepresentable> : MoleculeConcrete{
         
     }
     
-    override func abortAtomTransaction(){
+    override func abortAtomsTransaction(){
         transactonsQueue.addOperation { [weak self] in
             
             if self == nil {return}
@@ -122,7 +122,7 @@ open class MoleculeConcrete {
         initializeMetaClass()
     }
     
-    func pastAtomsDictionary() -> LabDictType{
+    func atomsSnapshotDictionary() -> LabDictType{
         return [:]
     }
     func atomsDictionary() -> LabDictType{
@@ -139,7 +139,7 @@ open class MoleculeConcrete {
     
     func initializeMetaClass(){}
     func atomsTransaction(_ transaction:@escaping ()-> Bool){}
-    func abortAtomTransaction(){}
+    func abortAtomsTransaction(){}
     
     
 }
