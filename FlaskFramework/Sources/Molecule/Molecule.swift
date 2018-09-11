@@ -39,7 +39,7 @@ open class Molecule<T:Atoms,A:RawRepresentable> : MoleculeConcrete{
     
     override public func initializeMetaClass() {
         unarchiveIntent()
-        snapshotAtom()
+        snapshotAtoms()
     }
     
     //////////////////
@@ -55,7 +55,7 @@ open class Molecule<T:Atoms,A:RawRepresentable> : MoleculeConcrete{
         mixer(mixerName(enumVal), reaction)
     }
     
-    public override func lastAtomsDictionary() -> LabDictType{
+    public override func pastAtomsDictionary() -> LabDictType{
         return atomsSnapshot
     }
     public override func atomsDictionary() -> LabDictType{
@@ -72,7 +72,7 @@ open class Molecule<T:Atoms,A:RawRepresentable> : MoleculeConcrete{
     
     /// PRIVATE
     
-    override func snapshotAtom(){
+    override func snapshotAtoms(){
         self.atomsSnapshot = self.atomsDictionary()
         archiveIntent(_atoms)
     }
@@ -122,7 +122,7 @@ open class MoleculeConcrete {
         initializeMetaClass()
     }
     
-    func lastAtomsDictionary() -> LabDictType{
+    func pastAtomsDictionary() -> LabDictType{
         return [:]
     }
     func atomsDictionary() -> LabDictType{
@@ -135,7 +135,7 @@ open class MoleculeConcrete {
     open func defineMixers(){}
     open func undefineMixers(){}
     
-    func snapshotAtom(){}
+    func snapshotAtoms(){}
     
     func initializeMetaClass(){}
     func atomsTransaction(_ transaction:@escaping ()-> Bool){}
@@ -218,7 +218,7 @@ extension MoleculeConcrete {
             }else{
                 //log
             }
-            self?.snapshotAtom()
+            self?.snapshotAtoms()
         }
        
     }
