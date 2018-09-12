@@ -12,20 +12,22 @@ import UIKit
 import Cocoa
 #endif
 
+typealias ChainedStoresClosure = (_ chainedStores:[StoreConcrete])->Void
+
 public class ChainReaction{
     
     let flask:FlaskConcrete
-    var _react:(_ stores:[StoreConcrete])->Void
-    let _abort:()->Void
+    var _react:ChainedStoresClosure
+    var _abort:ChainedStoresClosure
     
-    init(flask:FlaskConcrete,react:@escaping (_ stores:[StoreConcrete])->Void,abort:@escaping ()->Void) {
+    init(flask:FlaskConcrete,react:@escaping ChainedStoresClosure,abort:@escaping ChainedStoresClosure) {
         self.flask = flask
         self._react = react
         self._abort = abort
     }
     
     public func abort(){
-        abort()
+        andAbort()
     }
     
     public func react(){
@@ -37,7 +39,8 @@ public class ChainReaction{
     }
     
     public func andAbort(){
-        abort()
+        let stores:[StoreConcrete] = []
+        _abort(stores)
     }
     
     public func andMutate<T:StoreConcrete>(_ aStore:T, _ mutation:@escaping(_ store:T) -> Void)->ChainReaction{
@@ -48,12 +51,22 @@ public class ChainReaction{
         
         let store = flask.store(aStore)
         
-        let chainReact = _react
+        let reactInChain = _react
+        let abortInChain = _abort
+        
         _react = { (chainedStores) in
             
             var chainedStoresMut = chainedStores
             chainedStoresMut.append(store)
-            chainReact(chainedStoresMut)
+            reactInChain(chainedStoresMut)
+            
+        }
+        
+        _abort = { (chainedStores) in
+            
+            var chainedStoresMut = chainedStores
+            chainedStoresMut.append(store)
+            abortInChain(chainedStoresMut)
             
         }
         
@@ -80,30 +93,21 @@ public extension FlaskConcrete{
         let store = self.store(aStore)
         
        
-        let  react:(_ chainedStores:[StoreConcrete])->Void = {  (chainedStores)  in
+       
+        let  react:ChainedStoresClosure = {  [weak self] (chainedStores)  in
             
             var chainedStoresMut = chainedStores
             chainedStoresMut.append(store)
+            self?.reduceStoresChain(chainedStoresMut)
             
-            let uniqueStores = Array(Set<StoreConcrete>(chainedStoresMut))
-            
-       
-            for store in uniqueStores{
-                Flux.bus.performInBusQueue {
-                    store.reduceAndReact()
-                }
-            }
         }
         
-        let abort = {
-            [weak self] in
-            if let stores = self?.stores {
-                for store in stores{
-                     Flux.bus.performInBusQueue {
-                        store.abortStateTransaction();
-                    }
-                }
-            }
+        let abort:ChainedStoresClosure = {  [weak self] (chainedStores)   in
+           
+            var chainedStoresMut = chainedStores
+            chainedStoresMut.append(store)
+            self?.reduceStoresChain(chainedStoresMut,abort: true)
+
         }
         
         
@@ -117,6 +121,29 @@ public extension FlaskConcrete{
         
         let chain = ChainReaction(flask:self, react:react, abort:abort)
         return chain
+    }
+    
+    func reduceStoresChain(_ chainedStores:[StoreConcrete], abort:Bool = false){
+       
+        let uniqueStores = Array(Set<StoreConcrete>(chainedStores))
+        
+        var reduceAction:(_ store:StoreConcrete)->Void = { store in
+            store.reduceAndReact()
+        }
+        
+        if abort == true {
+            reduceAction = { store in
+                store.abortStateTransaction()
+            }
+        }
+        
+        for store in uniqueStores{
+            Flux.bus.performInBusQueue {
+                reduceAction(store)
+            }
+        }
+        
+        
     }
     
 }

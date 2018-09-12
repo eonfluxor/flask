@@ -131,4 +131,35 @@ class ChainingTests: SetupFlaskTests {
     }
     
     
+    func testChainAbort(){
+        
+        let expectation = self.expectation(description: "testChain")
+        expectation.isInverted = true
+        
+        let store = self.store!
+        let owner:TestOwner = TestOwner()
+        let flask = Flux.flask(attachedTo:owner, binding:store)
+        
+        flask.reactor = { owner, reaction in
+            reaction.on(AppState.named.counter, { (change) in
+                expectation.fulfill()
+//                XCTAssert(store.currentState().counter == 2)
+//                XCTAssert(store.currentState().text == "mutate no override")
+                
+            })
+        }
+        
+        flask.mutate(store){ (store) in
+            store.state.text="mutate no override"
+            store.state.counter=1
+            }.mutate(store) { (store) in
+                store.state.counter=2
+            }.abort()
+        
+        
+        waitForExpectations(timeout: 2, handler: nil)
+        
+    }
+    
+    
 }

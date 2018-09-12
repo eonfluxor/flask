@@ -16,7 +16,7 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     
     typealias StateType = T
     
-    var stateSnapshot: FluxDictType = [:]
+    private var _stateSnapshot: T = T()
     private var _state: T = T()
     public var state:T = T()
     //////////////////
@@ -50,7 +50,7 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     }
     
     public override func stateSnapshotDictionary() -> FluxDictType{
-        return stateSnapshot
+        return _stateSnapshot.toDictionary()
     }
     public override func stateDictionary() -> FluxDictType{
         return _state.toDictionary()
@@ -67,29 +67,17 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     /// PRIVATE
     
     override func snapshotState(){
-        self.stateSnapshot = self.stateDictionary()
+        self._stateSnapshot = self._state
         archiveIntent()
     }
     
+    func stateFromSnapshot()->T{
+        return self._stateSnapshot
+    }
 
-    override func stateTransaction(_ transaction:@escaping ()-> Bool){
-        
-       startStateTransaction()
-        
-        if transaction() {
-            commitStateTransaction()
-        }else{
-            abortStateTransaction()
-        }
-        
-    }
-    
-    override func commitStateTransaction(){
-        snapshotState()
-        finishStateTransaction()
-    }
     
     override func startStateTransaction(){
+        snapshotState()
         state = _state
     }
     
@@ -98,6 +86,7 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     }
     override func abortStateTransaction(){
         state = _state
+        state = stateFromSnapshot()
     }
 }
 
@@ -142,13 +131,10 @@ open class StoreConcrete:Hashable {
     func snapshotState(){}
     
     func initializeMetaClass(){}
-    func stateTransaction(_ transaction:@escaping ()-> Bool){}
-  
+    
     func startStateTransaction(){}
     func abortStateTransaction(){}
     func finishStateTransaction(){}
-    
-    func commitStateTransaction(){}
     
 }
 
@@ -170,7 +156,7 @@ public extension StoreConcrete {
                 
                 let react = {
                     resolved=true
-                    self?.commitStateTransaction()
+                    self?.finishStateTransaction()
                     self?.reduceAndReact(lock)
                 }
                 
