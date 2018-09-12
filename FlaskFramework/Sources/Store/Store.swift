@@ -78,7 +78,7 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     }
 
     
-    override func startStateTransaction(context:String,_ transaction:()->Void){
+    override func beginStateTransaction(context:(context:String,_ transaction:()->Void){
         
         if let lastContext = pendingStateTransaction{
             assert(lastContext == context,"please resolve `commit|abort` transaction \(String(describing: pendingStateTransaction)) first")
@@ -162,7 +162,7 @@ open class StoreConcrete:Hashable {
     
     func initializeMetaClass(){}
     
-    func startStateTransaction(context:String,_ transaction:()->Void){}
+    func beginStateTransaction(context:(context:String,_ transaction:()->Void){}
     func abortStateTransaction(context:String){}
     func commitStateTransaction(context:String){}
     
@@ -215,7 +215,7 @@ public extension StoreConcrete {
                     resolved=true
                 }
                 
-                self?.startStateTransaction(context:context){
+                self?.beginStateTransaction(context:(context:context){
                      reaction(payload,react,abort)
                 }
                
