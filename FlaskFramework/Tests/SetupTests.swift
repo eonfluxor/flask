@@ -8,6 +8,7 @@
 
 import XCTest
 
+var TestsCounter = 0
 
 class SetupFlaskTests: XCTestCase {
     
@@ -17,7 +18,8 @@ class SetupFlaskTests: XCTestCase {
         super.setUp()
         
         store = App()
-        store?.name(suffix:String(Date().timeIntervalSince1970))
+        store?.name(suffix:String(TestsCounter))
+        TestsCounter = TestsCounter + 1
         XCTAssert(FluxFlaskManager.flasks.count == 0, "all flasks should dispose before this test")
     }
     
