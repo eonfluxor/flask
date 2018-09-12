@@ -43,7 +43,7 @@ extension Store {
         
         let key = archiveKey()
         let delay = archiveDelay()
-        Kron.idle( delay , key:key){ [weak self] key,ctx in
+        Kron.idle(timeOut: delay , key:key){ [weak self] key,ctx in
             self?.archiveNow(state)
         }
         

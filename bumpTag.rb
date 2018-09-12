@@ -37,8 +37,16 @@ def increase_version! pod_spec, type=:patch
 			entry = line.split("=")
 			raise "s.version format error" unless entry.count == 2
 			current_version  = entry.last
+			current_version.gsub!("'","")
+			current_version.gsub!('"',"")
 			parts =  current_version.split(".")
 			
+			puts "parts #{parts} #{parts.count}"
+
+			parts = parts.map{|a|a.to_i}
+
+			puts "parts #{parts} #{parts.count}"
+
 			raise "s.version value format error" unless parts.count == 3
 
 			major = parts[0].to_i
