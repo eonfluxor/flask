@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-public extension MoleculeChange{
+public extension StoreChange{
     
     
     public func unwrapValue<A>(_ val:A?) ->A?{
-//        if let object = val as? LabRef {
+//        if let object = val as? FluxRef {
 //            return object.object as? A
 //        }
         return val
@@ -33,21 +33,21 @@ public extension MoleculeChange{
         return _key
     }
     
-    public func molecule()->MoleculeConcrete?{
-        return _molecule
+    public func store()->StoreConcrete?{
+        return _store
     }
 }
 
-public struct MoleculeChange  {
+public struct StoreChange  {
     
-    weak var _molecule:MoleculeConcrete?
+    weak var _store:StoreConcrete?
     var _key:String?
     var oldVal:AnyHashable?
     var newVal:AnyHashable?
     
-    func mixd()->Bool{
+    func mutationd()->Bool{
         
-        if isLabNil(oldVal) && isLabNil(newVal) {
+        if isNilFlux(oldVal) && isNilFlux(newVal) {
             return false
         }
         

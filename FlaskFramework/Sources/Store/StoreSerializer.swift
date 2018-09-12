@@ -1,5 +1,5 @@
 //
-//  MoleculeSerializer.swift
+//  StoreSerializer.swift
 //  Reaktor
 //
 //  Created by hassan uriostegui on 9/10/18.
@@ -12,36 +12,36 @@ import UIKit
 import Cocoa
 #endif
 
-public struct MoleculeSerializer{
+public struct StoreSerializer{
     
-    static public func jsonFromAtoms<K:Atoms>(_ atoms:K) throws ->String {
+    static public func jsonFromState<K:State>(_ state:K) throws ->String {
         
-        let jsonData = try JSONEncoder().encode(atoms)
+        let jsonData = try JSONEncoder().encode(state)
         
         return String(data: jsonData, encoding: .utf8)!
         
     }
     
-    static public func atomsFromJson<K:Atoms>(_ json:String) throws ->K {
+    static public func stateFromJson<K:State>(_ json:String) throws ->K {
         
         let jsonData = json.data(using: .utf8)!
-        return try atomsFromData(jsonData)
+        return try stateFromData(jsonData)
     }
     
     
-    static public func dataFromAtom<K:Atoms>(_ atoms:K) throws ->Data? {
+    static public func dataFromState<K:State>(_ state:K) throws ->Data? {
         
-        let json = try jsonFromAtoms(atoms)
+        let json = try jsonFromState(state)
         return json.data(using: .utf16)
     }
     
-    static public func atomsFromData<K:Atoms>(_ jsonData:Data) throws ->K {
+    static public func stateFromData<K:State>(_ jsonData:Data) throws ->K {
         
-        let atoms:K = try! JSONDecoder().decode(K.self, from: jsonData)
-        return atoms
+        let state:K = try! JSONDecoder().decode(K.self, from: jsonData)
+        return state
     }
     
-    static public func flattenDictionary(_ dict:LabDictRef) -> [String:Any]{
+    static public func flattenDictionary(_ dict:FluxDictRef) -> [String:Any]{
         
         var result:[String:Any] = [:]
         
@@ -53,7 +53,7 @@ public struct MoleculeSerializer{
             
             if(isDictionaryRef(value)){
                 //recursion
-                let nest = flattenDictionary(value as! LabDictRef)
+                let nest = flattenDictionary(value as! FluxDictRef)
                 result[key] = nest
             } else{
                 result[key] = value
@@ -65,9 +65,9 @@ public struct MoleculeSerializer{
         
     }
     
-    static public func nestDictionaries( namespace:String,  root:LabDictRef,  children:LabDictRef) -> LabDictRef{
+    static public func nestDictionaries( namespace:String,  root:FluxDictRef,  children:FluxDictRef) -> FluxDictRef{
         
-        var result = LabDictRef(root.dictionary)
+        var result = FluxDictRef(root.dictionary)
         
         let keys = children.keys()
         
@@ -75,15 +75,15 @@ public struct MoleculeSerializer{
             
             let value = children[key]
             let childKey = "\(namespace).\(key)"
-            assert( isLabNil(result[childKey]) , "namespace collision!" )
+            assert( isNilFlux(result[childKey]) , "namespace collision!" )
             
             result[childKey] = value
             
-            if(MoleculeSerializer.isDictionaryRef(value)){
+            if(StoreSerializer.isDictionaryRef(value)){
                 //recursion
-                result = MoleculeSerializer.nestDictionaries(namespace: childKey,
+                result = StoreSerializer.nestDictionaries(namespace: childKey,
                                                          root: result,
-                                                         children: value as! LabDictRef)
+                                                         children: value as! FluxDictRef)
             }
             
         }
@@ -94,7 +94,7 @@ public struct MoleculeSerializer{
     
     
     static public func isDictionaryRef(_ value:Any?)->Bool{
-        return ((value as? LabDictRef) != nil)
+        return ((value as? FluxDictRef) != nil)
     }
     
 }

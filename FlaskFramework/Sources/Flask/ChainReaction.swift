@@ -18,12 +18,12 @@ public struct ChainReaction{
     public let react:()->Void
     public let abort:()->Void
     
-    public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping (_ molecule:T) -> Void)->ChainReaction{
+    public func mutate<T:StoreConcrete>(_ aStore:T, _ bus:@escaping (_ store:T) -> Void)->ChainReaction{
         
-        let molecule = flask.molecule(aMolecule)
+        let store = flask.store(aStore)
         
-        molecule.atomsTransaction({
-            mixer(molecule)
+        store.stateTransaction({
+            bus(store)
             return true
         })
         
@@ -34,61 +34,32 @@ public struct ChainReaction{
 }
 
 public extension FlaskConcrete{
-    
-//    func mix()->ChainReaction{
-//        
-//        if let molecule = molecules.first {
-//            return mix(molecule)
-//        }
-//        assert(false, "error: there are not molecules mixin")
-//    }
-    
-//    func mix<T:MoleculeConcrete>(_ aMolecule:T)->ChainReaction{
-//
-//        let  react = { [weak self] in
-//            if let molecules = self?.molecules {
-//                for molecule in molecules{
-//                    molecule.handleMix()
-//                }
-//            }
-//        }
-//
-//        let abort = {
-//            [weak self] in
-//            if let molecules = self?.molecules {
-//                for molecule in molecules{
-//                    molecule.abortAtomsTransaction();
-//                }
-//            }
-//        }
-//        let chain = ChainReaction(flask:self, react:react, abort:abort)
-//        return chain
-//    }
-//
-    
-    public func mix<T:MoleculeConcrete>(_ aMolecule:T, _ mixer:@escaping(_ molecule:T) -> Void)->ChainReaction{
+  
+    public func mutate<T:StoreConcrete>(_ aStore:T, _ bus:@escaping(_ store:T) -> Void)->ChainReaction{
         
         let  react = { [weak self] in
-            if let molecules = self?.molecules {
-                for molecule in molecules{
-                    molecule.handleMix()
+            Flux.bus.performInBusQueue { [weak self] in
+                if let stores = self?.stores {
+                    for store in stores{
+                        store.reduceAndReact()
+                    }
                 }
             }
         }
         
         let abort = {
             [weak self] in
-            if let molecules = self?.molecules {
-                for molecule in molecules{
-                    molecule.abortAtomsTransaction();
+            if let stores = self?.stores {
+                for store in stores{
+                    store.abortStateTransaction();
                 }
             }
         }
         
-        let molecule = self.molecule(aMolecule)
+        let store = self.store(aStore)
         
-        molecule.atomsTransaction({
-            mixer(molecule)
+        store.stateTransaction({
+            bus(store)
             return true
         })
         

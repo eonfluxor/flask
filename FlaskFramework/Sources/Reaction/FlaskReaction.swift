@@ -17,13 +17,13 @@ import Cocoa
 public class FlaskReaction {
 
     
-    weak var labPause:MixerPause?
-    var molecule:MoleculeConcrete
-    var changes:LabDictType
+    weak public var onLock:BusLock?
+    private(set) var store:StoreConcrete
+    private(set) var changes:FluxDictType
     
-    required public init(_ molecule:MoleculeConcrete){
-        self.molecule = molecule
-        self.changes = FlaskReaction.reduceChanges(molecule: self.molecule)
+    required public init(_ store:StoreConcrete){
+        self.store = store
+        self.changes = FlaskReaction.reduceChanges(store: self.store)
     }
     
     public func changed()->Bool{
@@ -43,15 +43,15 @@ public class FlaskReaction {
             return
         }
         
-        var change = FlaskReaction.change(molecule, key)
-        change._molecule = molecule
+        var change = FlaskReaction.change(store, key)
+        change._store = store
         closure(change)
     }
     
     
-    public func at(_ aMolecule:MoleculeConcrete)->FlaskReaction?{
+    public func at(_ aStore:StoreConcrete)->FlaskReaction?{
        
-        if molecule !== aMolecule{
+        if store !== aStore{
             return .none
         }
         return self
@@ -60,17 +60,17 @@ public class FlaskReaction {
     func assertKey(_ key:String){
         
         let error = {
-            fatalError("the key `\(key)` is not defined in atoms")
+            fatalError("the key `\(key)` is not defined in state")
             
         }
-        let atoms = molecule.atomsSnapshotDictionary()
+        let state = store.stateSnapshotDictionary()
         let rootKey = key.split(separator: ".").first
         
         guard (rootKey != nil) else{
             error()
         }
         
-        guard atoms.keys.contains(String(rootKey!)) else{
+        guard state.keys.contains(String(rootKey!)) else{
             error()
         }
         
@@ -80,25 +80,25 @@ public class FlaskReaction {
 
 public extension FlaskReaction {
     
-    static public func reduceChanges(molecule:MoleculeConcrete)->LabDictType{
+    static public func reduceChanges(store:StoreConcrete)->FluxDictType{
     
-        let oldAtom = molecule.atomsSnapshotDictionary()
-        let newAtom = molecule.atomsDictionary()
+        let oldState = store.stateSnapshotDictionary()
+        let newState = store.stateDictionary()
         
-        return reduceChanges(oldAtom,newAtom)
+        return reduceChanges(oldState,newState)
     }
     
-    static public func reduceChanges(_ oldAtom:LabDictType, _ newAtom:LabDictType)->LabDictType{
+    static public func reduceChanges(_ oldState:FluxDictType, _ newState:FluxDictType)->FluxDictType{
         
-        var changes:LabDictType=[:]
+        var changes:FluxDictType=[:]
         
-        let uniqueKeys = Set(Array(oldAtom.keys) + Array(newAtom.keys))
+        let uniqueKeys = Set(Array(oldState.keys) + Array(newState.keys))
         
         for key in uniqueKeys {
             
-            let change = FlaskReaction.change(oldAtom, newAtom, key)
+            let change = FlaskReaction.change(oldState, newState, key)
             
-            if change.mixd()  {
+            if change.mutationd()  {
                 //use casting to ensure nil is passed
                 changes[key] = change.newValue() as AnyHashable?
             }
@@ -108,30 +108,30 @@ public extension FlaskReaction {
         
     }
     
-    static public func change(_ molecule:MoleculeConcrete, _ key: String) -> MoleculeChange {
+    static public func change(_ store:StoreConcrete, _ key: String) -> StoreChange {
         
-        let oldAtom = molecule.atomsSnapshotDictionary()
-        let newAtom = molecule.atomsDictionary()
+        let oldState = store.stateSnapshotDictionary()
+        let newState = store.stateDictionary()
         
-        return change(oldAtom,newAtom,key)
+        return change(oldState,newState,key)
     }
     
 
-    static public func change(_ oldAtom:LabDictType,_ newAtom:LabDictType, _ key: String) -> MoleculeChange {
+    static public func change(_ oldState:FluxDictType,_ newState:FluxDictType, _ key: String) -> StoreChange {
         
-        var oldValue:AnyHashable? = Lab.Nil
-        var newValue:AnyHashable? = Lab.Nil
+        var oldValue:AnyHashable? = Flux.Nil
+        var newValue:AnyHashable? = Flux.Nil
         
-        if let val = oldAtom[key] {
+        if let val = oldState[key] {
             oldValue = val
         }
         
-        if let val = newAtom[key] {
+        if let val = newState[key] {
             newValue = val
         }
         
     
-        var change = MoleculeChange()
+        var change = StoreChange()
         change.setOldValue(oldValue)
         change.setNewValue(newValue)
         change._key = key

@@ -1,90 +1,6 @@
 {
   "warnings": [
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabDictionary.swift",
-      "line": 15,
-      "symbol": "AtomsObservable",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabDictionary.swift",
-      "line": 16,
-      "symbol": "AtomsObservable.toLabDictRef()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabDictionary.swift",
-      "line": 19,
-      "symbol": "LabDictRef",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabDictionary.swift",
-      "line": 25,
-      "symbol": "LabDictRef.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabDictionary.swift",
-      "line": 29,
-      "symbol": "LabDictRef.init(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabDictionary.swift",
-      "line": 61,
-      "symbol": "LabDictRef.toLabDictRef()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabDictionary.swift",
-      "line": 65,
-      "symbol": "LabDictRef.subscript(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.subscript",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabDictionary.swift",
-      "line": 76,
-      "symbol": "LabDictRef.keys()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabDictionary.swift",
-      "line": 80,
-      "symbol": "LabDictRef.count()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabDictionary.swift",
-      "line": 90,
-      "symbol": "LabDictRef.==(_:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabRef.swift",
-      "line": 16,
-      "symbol": "LabRef",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Boxes/LabRef.swift",
-      "line": 20,
-      "symbol": "LabRef.init(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/ChainReaction.swift",
       "line": 15,
       "symbol": "ChainReaction",
@@ -108,14 +24,14 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/ChainReaction.swift",
       "line": 21,
-      "symbol": "ChainReaction.mix(_:_:)",
+      "symbol": "ChainReaction.mutate(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/ChainReaction.swift",
-      "line": 69,
-      "symbol": "FlaskConcrete.mix(_:_:)",
+      "line": 38,
+      "symbol": "FlaskConcrete.mutate(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -150,7 +66,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/Flask.swift",
       "line": 34,
-      "symbol": "Flask.empty(_:)",
+      "symbol": "Flask.unbind(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -178,638 +94,722 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/Flask.swift",
       "line": 75,
-      "symbol": "FlaskConcrete.fill()",
+      "symbol": "FlaskConcrete.bind()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/Flask.swift",
       "line": 96,
-      "symbol": "FlaskConcrete.empty(_:)",
+      "symbol": "FlaskConcrete.unbind(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flask/Flask.swift",
       "line": 131,
-      "symbol": "FlaskConcrete.molecule(_:)",
+      "symbol": "FlaskConcrete.store(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/Flux.swift",
+      "line": 33,
+      "symbol": "Flux.purgeBusQueue()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/Flux.swift",
+      "line": 37,
+      "symbol": "Flux.purgeFlasks()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/Flux.swift",
+      "line": 44,
+      "symbol": "Flux.flask(ownedBy:binding:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/Flux.swift",
+      "line": 48,
+      "symbol": "Flux.flask(ownedBy:binding:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/Flux.swift",
+      "line": 64,
+      "symbol": "Flux.lock()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/Flux.swift",
+      "line": 69,
+      "symbol": "Flux.lock(withEvent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/Flux.swift",
+      "line": 74,
+      "symbol": "Flux.lock(withEvent:payload:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/Flux.swift",
+      "line": 88,
+      "symbol": "Flux.removeLocks()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/Flux.swift",
+      "line": 96,
+      "symbol": "Flux.dispatch(_:payload:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxDict.swift",
+      "line": 15,
+      "symbol": "StateObservable",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxDict.swift",
       "line": 16,
-      "symbol": "MoleculeMixer",
+      "symbol": "StateObservable.toFluxDictRef()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxDict.swift",
+      "line": 19,
+      "symbol": "FluxDictRef",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxDict.swift",
+      "line": 25,
+      "symbol": "FluxDictRef.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxDict.swift",
+      "line": 29,
+      "symbol": "FluxDictRef.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxDict.swift",
+      "line": 61,
+      "symbol": "FluxDictRef.toFluxDictRef()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxDict.swift",
+      "line": 65,
+      "symbol": "FluxDictRef.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxDict.swift",
+      "line": 76,
+      "symbol": "FluxDictRef.keys()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxDict.swift",
+      "line": 80,
+      "symbol": "FluxDictRef.count()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxDict.swift",
+      "line": 90,
+      "symbol": "FluxDictRef.==(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxHelpers.swift",
+      "line": 16,
+      "symbol": "StoreBus",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxHelpers.swift",
       "line": 17,
       "symbol": "ChangeClosure",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxHelpers.swift",
       "line": 18,
       "symbol": "ReactionClosure",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxHelpers.swift",
       "line": 19,
-      "symbol": "LabDictType",
+      "symbol": "FluxDictType",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxHelpers.swift",
       "line": 20,
-      "symbol": "LabNil",
+      "symbol": "FluxNil",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxHelpers.swift",
       "line": 21,
-      "symbol": "MixParams",
+      "symbol": "MutationParams",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxHelpers.swift",
       "line": 22,
-      "symbol": "MixerName",
+      "symbol": "BusEvent",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxHelpers.swift",
       "line": 23,
-      "symbol": "AtomName",
+      "symbol": "StateName",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxHelpers.swift",
       "line": 29,
-      "symbol": "isLabNil(_:)",
+      "symbol": "isNilFlux(_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabHelpers.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxHelpers.swift",
       "line": 43,
-      "symbol": "LabAnyEquatable",
+      "symbol": "FluxEquatable",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 33,
-      "symbol": "Lab.purgeMixersQueue()",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 37,
-      "symbol": "Lab.purgeFlasks()",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 44,
-      "symbol": "Lab.flask(ownedBy:mixin:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 48,
-      "symbol": "Lab.flask(ownedBy:mixin:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 64,
-      "symbol": "Lab.pause()",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 69,
-      "symbol": "Lab.pause(mixing:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 73,
-      "symbol": "Lab.pause(mixing:payload:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 85,
-      "symbol": "Lab.removePauses()",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 93,
-      "symbol": "Lab.applyMixer(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/LabPublic.swift",
-      "line": 97,
-      "symbol": "Lab.applyMixer(_:payload:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/Mixer.swift",
-      "line": null,
-      "symbol": "Mixer",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/Mixer.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxRef.swift",
       "line": 16,
-      "symbol": "Mixer",
+      "symbol": "FluxRef",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
-      "line": 15,
-      "symbol": "MixerPause",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
-      "line": 19,
-      "symbol": "MixerPause.init(mixer:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
-      "line": 27,
-      "symbol": "MixerPause.release()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
-      "line": 34,
-      "symbol": "Mixer.removePauses()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
-      "line": 39,
-      "symbol": "Mixer.addPause(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
-      "line": 44,
-      "symbol": "Mixer.removePause(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/MixerPause.swift",
-      "line": 49,
-      "symbol": "Mixer.applyPauses()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/\u001b\u001b\u001b\u001bMoleculeSerializer\u001b.swift",
-      "line": 15,
-      "symbol": "MoleculeSerializer",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/\u001b\u001b\u001b\u001bMoleculeSerializer\u001b.swift",
-      "line": 17,
-      "symbol": "MoleculeSerializer.jsonFromAtoms(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/\u001b\u001b\u001b\u001bMoleculeSerializer\u001b.swift",
-      "line": 25,
-      "symbol": "MoleculeSerializer.atomsFromJson(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/\u001b\u001b\u001b\u001bMoleculeSerializer\u001b.swift",
-      "line": 32,
-      "symbol": "MoleculeSerializer.dataFromAtom(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/\u001b\u001b\u001b\u001bMoleculeSerializer\u001b.swift",
-      "line": 38,
-      "symbol": "MoleculeSerializer.atomsFromData(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/\u001b\u001b\u001b\u001bMoleculeSerializer\u001b.swift",
-      "line": 44,
-      "symbol": "MoleculeSerializer.flattenDictionary(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/\u001b\u001b\u001b\u001bMoleculeSerializer\u001b.swift",
-      "line": 68,
-      "symbol": "MoleculeSerializer.nestDictionaries(namespace:root:children:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/\u001b\u001b\u001b\u001bMoleculeSerializer\u001b.swift",
-      "line": 96,
-      "symbol": "MoleculeSerializer.isDictionaryRef(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
-      "line": null,
-      "symbol": "Atoms",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
-      "line": 19,
-      "symbol": "Atoms",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxRef.swift",
       "line": 20,
-      "symbol": "Atoms.init()",
+      "symbol": "FluxRef.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
-      "line": 21,
-      "symbol": "Atoms.toDictionary()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
-      "line": 22,
-      "symbol": "Atoms.toJsonDictionary()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
-      "line": 33,
-      "symbol": "Atoms.toDictionary()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Atoms.swift",
-      "line": 65,
-      "symbol": "Atoms.toJsonDictionary()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/Bus.swift",
       "line": null,
-      "symbol": "Molecule",
+      "symbol": "Bus",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": null,
-      "symbol": "Molecule",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": null,
-      "symbol": "MoleculeConcrete",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": null,
-      "symbol": "MoleculeConcrete",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 15,
-      "symbol": "Molecule",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/Bus.swift",
+      "line": 16,
+      "symbol": "Bus",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 21,
-      "symbol": "Molecule.atoms",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/BusLock.swift",
+      "line": 15,
+      "symbol": "BusLock",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/BusLock.swift",
+      "line": 19,
+      "symbol": "BusLock.init(bus:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/BusLock.swift",
+      "line": 27,
+      "symbol": "BusLock.release()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/BusLock.swift",
+      "line": 34,
+      "symbol": "Bus.removeLocks()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/BusLock.swift",
+      "line": 39,
+      "symbol": "Bus.addLock(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/BusLock.swift",
+      "line": 44,
+      "symbol": "Bus.removeLock(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Mixer/BusLock.swift",
+      "line": 49,
+      "symbol": "Bus.applyLocks()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
+      "line": null,
+      "symbol": "FlaskReaction",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
+      "line": 17,
+      "symbol": "FlaskReaction",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
+      "line": 20,
+      "symbol": "FlaskReaction.onLock",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 40,
-      "symbol": "Molecule.initializeMetaClass()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 50,
-      "symbol": "Molecule.mixerName(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 54,
-      "symbol": "Molecule.mixer(_:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 58,
-      "symbol": "Molecule.atomsSnapshotDictionary()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 61,
-      "symbol": "Molecule.atomsDictionary()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 65,
-      "symbol": "Molecule.currentAtoms()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 110,
-      "symbol": "MoleculeConcrete",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 112,
-      "symbol": "MoleculeConcrete.isInternalProp(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 116,
-      "symbol": "MoleculeConcrete.isObjectRef(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 121,
-      "symbol": "MoleculeConcrete.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 135,
-      "symbol": "MoleculeConcrete.defineMixers()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 136,
-      "symbol": "MoleculeConcrete.undefineMixers()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 151,
-      "symbol": "MoleculeConcrete.mixer(_:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 231,
-      "symbol": "MoleculeConcrete.get(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/Molecule.swift",
-      "line": 239,
-      "symbol": "MoleculeConcrete.assertAtomKey(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/MoleculeArchiver.swift",
-      "line": 19,
-      "symbol": "Molecule.archiveKeySpace()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/MoleculeArchiver.swift",
-      "line": 23,
-      "symbol": "Molecule.archiveKey()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/MoleculeArchiver.swift",
-      "line": 27,
-      "symbol": "Molecule.archiveDelay()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/MoleculeArchiver.swift",
-      "line": 31,
-      "symbol": "Molecule.archiveDisabled()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Molecule/MoleculeArchiver.swift",
-      "line": 110,
-      "symbol": "Molecule.purgeArchive()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
-      "line": null,
-      "symbol": "FlaskReaction",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
-      "line": 17,
-      "symbol": "FlaskReaction",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
-      "line": 23,
+      "line": 24,
       "symbol": "FlaskReaction.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
-      "line": 28,
+      "line": 29,
       "symbol": "FlaskReaction.changed()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
-      "line": 32,
+      "line": 33,
       "symbol": "FlaskReaction.on(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
-      "line": 36,
+      "line": 37,
       "symbol": "FlaskReaction.on(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
-      "line": 51,
+      "line": 52,
       "symbol": "FlaskReaction.at(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
-      "line": 82,
-      "symbol": "FlaskReaction.reduceChanges(molecule:)",
+      "line": 83,
+      "symbol": "FlaskReaction.reduceChanges(store:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
-      "line": 90,
+      "line": 91,
       "symbol": "FlaskReaction.reduceChanges(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
-      "line": 110,
+      "line": 111,
       "symbol": "FlaskReaction.change(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/FlaskReaction.swift",
-      "line": 119,
+      "line": 120,
       "symbol": "FlaskReaction.change(_:_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/MoleculeChange.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/StoreChange.swift",
       "line": null,
-      "symbol": "MoleculeChange",
+      "symbol": "StoreChange",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/MoleculeChange.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/StoreChange.swift",
       "line": 18,
-      "symbol": "MoleculeChange.unwrapValue(_:)",
+      "symbol": "StoreChange.unwrapValue(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/MoleculeChange.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/StoreChange.swift",
       "line": 25,
-      "symbol": "MoleculeChange.oldValue()",
+      "symbol": "StoreChange.oldValue()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/MoleculeChange.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/StoreChange.swift",
       "line": 28,
-      "symbol": "MoleculeChange.newValue()",
+      "symbol": "StoreChange.newValue()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/MoleculeChange.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/StoreChange.swift",
       "line": 32,
-      "symbol": "MoleculeChange.key()",
+      "symbol": "StoreChange.key()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/MoleculeChange.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/StoreChange.swift",
       "line": 36,
-      "symbol": "MoleculeChange.molecule()",
+      "symbol": "StoreChange.store()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/MoleculeChange.swift",
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Reaction/StoreChange.swift",
       "line": 41,
-      "symbol": "MoleculeChange",
+      "symbol": "StoreChange",
       "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/State.swift",
+      "line": null,
+      "symbol": "State",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/State.swift",
+      "line": 19,
+      "symbol": "State",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/State.swift",
+      "line": 20,
+      "symbol": "State.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/State.swift",
+      "line": 21,
+      "symbol": "State.toDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/State.swift",
+      "line": 22,
+      "symbol": "State.toJsonDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/State.swift",
+      "line": 33,
+      "symbol": "State.toDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/State.swift",
+      "line": 65,
+      "symbol": "State.toJsonDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": null,
+      "symbol": "Store",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": null,
+      "symbol": "Store",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": null,
+      "symbol": "StoreConcrete",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": null,
+      "symbol": "StoreConcrete",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 15,
+      "symbol": "Store",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 21,
+      "symbol": "Store.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 40,
+      "symbol": "Store.initializeMetaClass()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 50,
+      "symbol": "Store.actionName(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 54,
+      "symbol": "Store.on(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 58,
+      "symbol": "Store.stateSnapshotDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 61,
+      "symbol": "Store.stateDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 65,
+      "symbol": "Store.currentState()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 110,
+      "symbol": "StoreConcrete",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 112,
+      "symbol": "StoreConcrete.isInternalProp(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 116,
+      "symbol": "StoreConcrete.isObjectRef(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 121,
+      "symbol": "StoreConcrete.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 135,
+      "symbol": "StoreConcrete.defineBusEvents()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 136,
+      "symbol": "StoreConcrete.undefineBusEvents()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 151,
+      "symbol": "StoreConcrete.bus(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 213,
+      "symbol": "StoreConcrete.get(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/Store.swift",
+      "line": 221,
+      "symbol": "StoreConcrete.assertStateKey(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreArchiver.swift",
+      "line": 19,
+      "symbol": "Store.archiveKeySpace()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreArchiver.swift",
+      "line": 23,
+      "symbol": "Store.archiveKey()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreArchiver.swift",
+      "line": 27,
+      "symbol": "Store.archiveDelay()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreArchiver.swift",
+      "line": 31,
+      "symbol": "Store.archiveDisabled()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreArchiver.swift",
+      "line": 110,
+      "symbol": "Store.purgeArchive()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreSerializer\u001b.swift",
+      "line": 15,
+      "symbol": "StoreSerializer",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreSerializer\u001b.swift",
+      "line": 17,
+      "symbol": "StoreSerializer.jsonFromState(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreSerializer\u001b.swift",
+      "line": 25,
+      "symbol": "StoreSerializer.stateFromJson(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreSerializer\u001b.swift",
+      "line": 32,
+      "symbol": "StoreSerializer.dataFromState(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreSerializer\u001b.swift",
+      "line": 38,
+      "symbol": "StoreSerializer.stateFromData(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreSerializer\u001b.swift",
+      "line": 44,
+      "symbol": "StoreSerializer.flattenDictionary(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreSerializer\u001b.swift",
+      "line": 68,
+      "symbol": "StoreSerializer.nestDictionaries(namespace:root:children:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Store/StoreSerializer\u001b.swift",
+      "line": 96,
+      "symbol": "StoreSerializer.isDictionaryRef(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     }
   ],

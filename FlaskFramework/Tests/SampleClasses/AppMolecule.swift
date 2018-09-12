@@ -1,5 +1,5 @@
 //
-//  Molecule.swift
+//  Store.swift
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 8/31/18.
@@ -13,38 +13,38 @@ import Cocoa
 #endif
 
 
-enum AppMixers : MixerName {
+enum AppEvents : BusEvent {
     case Count
     case Text
     case Object
 }
 
-struct AppAtoms : Atoms {
+struct AppState : State {
    
-    enum named : AtomName{
+    enum named : StateName{
         case counter, text, map, object
     }
     
     var counter = 0
     var text = ""
-    var object:LabRef?
-    var map:LabDictRef?
+    var object:FluxRef?
+    var map:FluxDictRef?
     
     var _internal = "`_` use this prefix for internal vars "
     
 }
 
-class App : Molecule<AppAtoms,AppMixers> {
+class App : Store<AppState,AppEvents> {
     
-    override func defineMixers(){
+    override func defineBusEvents(){
         
-        mixer(.Count) {[weak self] (payload, react, abort)  in
-            self?.atoms.counter = (self?.atoms.counter)! + 1
+        on(.Count) {[weak self] (payload, react, abort)  in
+            self?.state.counter = (self?.state.counter)! + 1
             react()
         }
         
-        mixer(.Text) {[weak self] (payload, react, abort)  in
-            self?.atoms.text = "mixd"
+        on(.Text) {[weak self] (payload, react, abort)  in
+            self?.state.text = "mutated"
             react()
         }
     }

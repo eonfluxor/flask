@@ -14,23 +14,24 @@ class FlaskTests: SetupFlaskTests {
 
     func testCallback(){
         
-        let expectation = self.expectation(description: "testCallback Mix counter")
+        let expectation = self.expectation(description: "testCallback Mutation counter")
         
-        let molecule = self.molecule!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
+        let flask = Flux.flask(ownedBy:owner,binding:store)
         
         flask.reactor = { owner, reaction in
             
-            reaction.on( AppAtoms.named.counter, { (change) in
+            reaction.on( AppState.named.counter, { (change) in
                 expectation.fulfill()
             })
             
         }
         
-        DispatchQueue.main.async {
-            Lab.applyMixer(AppMixers.Count, payload: ["test":"callback"])
-        }
+//        DispatchQueue.main.async {
+        Flux.dispatch(AppEvents.Count, payload: ["test":"callback"])
+        Flux.dispatch(AppEvents.Text, payload: ["test":"callback"])
+//        }
         
         waitForExpectations(timeout: 2, handler: nil)
         
@@ -41,43 +42,43 @@ class FlaskTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testOwner Delegate")
         
-        let molecule = self.molecule!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
+        let flask = Flux.flask(ownedBy:owner,binding:store)
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(molecule)?.on(AppAtoms.named.counter, { (change) in
+            reaction.at(store)?.on(AppState.named.counter, { (change) in
                 owner.reactionMethod(expectation)
             })
             
         }
         
         DispatchQueue.main.async {
-            Lab.applyMixer(AppMixers.Count, payload: ["test":"testOwner"])
+            Flux.dispatch(AppEvents.Count, payload: ["test":"testOwner"])
         }
         
         waitForExpectations(timeout: 2, handler: nil)
         
     }
     
-    func testUnmixin(){
+    func testEmpty(){
         
-        let expectation = self.expectation(description: "testUnmixin")
+        let expectation = self.expectation(description: "testEmpty")
         expectation.isInverted=true
         
-        let molecule = self.molecule!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
+        let flask = Flux.flask(ownedBy:owner,binding:store)
         
         flask.reactor={owner, reaction in
-            reaction.on(AppAtoms.named.counter, { (change) in
+            reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
             })
         }
         
-        flask.empty()
-        Lab.applyMixer(AppMixers.Count, payload: ["test":"unmixin"])
+        flask.unbind()
+        Flux.dispatch(AppEvents.Count, payload: ["test":"empty"])
         
         waitForExpectations(timeout: 2, handler: nil)
         
@@ -89,10 +90,10 @@ class FlaskTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testStrongOwner")
         
-        let molecule = self.molecule!
+        let store = self.store!
         let owner:TestOwner? = TestOwner()
         
-        weak var flask = Lab.flask(ownedBy:owner!, mixin:molecule)
+        weak var flask = Flux.flask(ownedBy:owner!, binding:store)
         
         flask?.reactor = { owner, reaction in}
    
@@ -112,19 +113,19 @@ class FlaskTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testOwnerDispose")
         
-        let molecule = self.molecule!
+        let store = self.store!
         var weakOwner:TestOwner? = TestOwner()
         
-        weak var flask = Lab.flask(ownedBy:weakOwner!, mixin:molecule)
+        weak var flask = Flux.flask(ownedBy:weakOwner!, binding:store)
         
         flask?.reactor = { owner, reaction in}
         
         
-        // Calling formulate after disposing the owner
+        // Calling mix after disposing the owner
         // should cause the factory to release this flask
         weakOwner = nil
         
-        Lab.applyMixer(AppMixers.Count, payload:  ["test":"ownerDispose"])
+        Flux.dispatch(AppEvents.Count, payload:  ["test":"ownerDispose"])
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:  {
             if flask == nil {
@@ -140,27 +141,27 @@ class FlaskTests: SetupFlaskTests {
     
     func testChange(){
         
-        let expectation = self.expectation(description: "testChange Mix")
+        let expectation = self.expectation(description: "testChange Mutation")
         
-        let molecule = self.molecule!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner,mixin:molecule)
+        let flask = Flux.flask(ownedBy:owner,binding:store)
         
         flask.reactor = { owner, reaction in
             
-            reaction.on(AppAtoms.named.counter, { (change) in
+            reaction.on(AppState.named.counter, { (change) in
                 
                 XCTAssert(change.oldValue() == 0)
                 XCTAssert(change.newValue() == 1)
-                XCTAssert(change.key() == AppAtoms.named.counter.rawValue)
-                XCTAssert(change.molecule() === molecule)
+                XCTAssert(change.key() == AppState.named.counter.rawValue)
+                XCTAssert(change.store() === store)
                 
                 expectation.fulfill()
             })
             
         }
         
-        Lab.applyMixer(AppMixers.Count, payload: ["test":"change"])
+        Flux.dispatch(AppEvents.Count, payload: ["test":"change"])
         
         waitForExpectations(timeout: 2, handler: nil)
         
@@ -171,22 +172,22 @@ class FlaskTests: SetupFlaskTests {
     
     func testGlobalApp(){
         
-        let expectation = self.expectation(description: "testGlobalMolecule testInlineMix")
+        let expectation = self.expectation(description: "testGlobalStore testInlineMutation")
         
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, mixin:Molecules.app)
+        let flask = Flux.flask(ownedBy:owner, binding:Stores.app)
         
         flask.reactor = { owner, reaction in
-            reaction.on(AppAtoms.named.counter, { (change) in
+            reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
-                XCTAssert(Molecules.app.atoms.counter == 2)
+                XCTAssert(Stores.app.state.counter == 2)
             })
         }
         
-        flask.mix(Molecules.app,{ (molecule) in
-            molecule.atoms.counter=1
-        }).mix(Molecules.app) { (molecule) in
-            molecule.atoms.counter=2
+        flask.mutate(Stores.app,{ (store) in
+            store.state.counter=1
+        }).mutate(Stores.app) { (store) in
+            store.state.counter=2
             }.react()
         
         
@@ -195,14 +196,14 @@ class FlaskTests: SetupFlaskTests {
         
     }
     
-    func testAtomInternal(){
+    func testStateInternal(){
         
-        let expectation = self.expectation(description: "testAtomInternal")
+        let expectation = self.expectation(description: "testStateInternal")
         expectation.isInverted = true
         
-        let molecule = self.molecule!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, mixin:molecule)
+        let flask = Flux.flask(ownedBy:owner, binding:store)
         
         flask.reactor = { owner, reaction in
             reaction.on("_internal", { (change) in
@@ -210,8 +211,8 @@ class FlaskTests: SetupFlaskTests {
             })
         }
         
-        flask.mix(molecule){ (molecule) in
-            molecule.atoms._internal="shouldn't cause mix"
+        flask.mutate(store){ (store) in
+            store.state._internal="shouldn't cause mix"
         }.react()
         
         waitForExpectations(timeout: 2, handler: nil)

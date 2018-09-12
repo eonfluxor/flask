@@ -9,18 +9,18 @@
 import XCTest
 
 
-class NestedAtomTests: SetupFlaskTests {
+class NestedStateTests: SetupFlaskTests {
     
-    func testNestedAtom(){
+    func testNestedState(){
         
-        let expectation = self.expectation(description: "testLabDictRef")
-        let expectation2 = self.expectation(description: "testLabDictRef")
-        let expectation3 = self.expectation(description: "testLabDictRef optional(some)")
-        let expectation4 = self.expectation(description: "testLabDictRef optional(nil)")
+        let expectation = self.expectation(description: "testFluxDictRef")
+        let expectation2 = self.expectation(description: "testFluxDictRef")
+        let expectation3 = self.expectation(description: "testFluxDictRef optional(some)")
+        let expectation4 = self.expectation(description: "testFluxDictRef optional(nil)")
         
-        let molecule = self.molecule!
+        let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Lab.flask(ownedBy:owner, mixin:molecule)
+        let flask = Flux.flask(ownedBy:owner, binding:store)
         
         let data:NSDictionary = [
             "foo":"bar",
@@ -33,8 +33,8 @@ class NestedAtomTests: SetupFlaskTests {
         
         let data2:NSDictionary = [:]
         
-        let dictRef = LabDictRef(data)
-        let dictRef2 = LabDictRef(data2)
+        let dictRef = FluxDictRef(data)
+        let dictRef2 = FluxDictRef(data2)
         
         let firstTest:(@escaping ()->Void)->Void = { next in
             flask.reactor = { owner, reaction in
@@ -59,8 +59,8 @@ class NestedAtomTests: SetupFlaskTests {
             }
             
             
-            flask.mix(molecule){ (molecule) in
-                molecule.atoms.map = dictRef
+            flask.mutate(store){ (store) in
+                store.state.map = dictRef
             }.react()
         }
         
@@ -71,13 +71,13 @@ class NestedAtomTests: SetupFlaskTests {
             
             flask.reactor = { owner, reaction in
                 reaction.on("map.nest.optional", { (change) in
-                    XCTAssert(isLabNil(change.newValue()))
+                    XCTAssert(isNilFlux(change.newValue()))
                     expectation4.fulfill()
                 })
             }
             
-            flask.mix(molecule) { (molecule) in
-                molecule.atoms.map = dictRef2
+            flask.mutate(store) { (store) in
+                store.state.map = dictRef2
             }.react()
         }
         

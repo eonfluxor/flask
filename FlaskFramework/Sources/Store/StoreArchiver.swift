@@ -14,7 +14,7 @@ import Cocoa
 
 import Delayed
 
-extension Molecule {
+extension Store {
     
     public func archiveKeySpace()->String{
         return "1"
@@ -33,9 +33,9 @@ extension Molecule {
     }
 }
 
-extension Molecule {
+extension Store {
     
-    func archiveIntent<T:Atoms>(_ atoms:T){
+    func archiveIntent(){
         
         guard !archiveDisabled() else{
             return
@@ -43,23 +43,25 @@ extension Molecule {
         
         let key = archiveKey()
         let delay = archiveDelay()
-        Kron.idle( delay , key:key){ [weak self] key,ctx in
-            self?.archiveNow(atoms)
+        Kron.idle(timeOut: delay , key:key){ [weak self] key,ctx in
+            if let state = self?.currentState(){
+                self?.archiveNow(state)
+            }
         }
         
     }
     
-    func archiveNow<T:Atoms>(_ atoms:T){
+    func archiveNow<T:State>(_ state:T){
         
-        archiveQueue.addOperation { [weak self] in
-            
+//        archiveQueue.addOperation { [weak self] in
+        
             DispatchQueue.global().async { [weak self] in
                 
                 do{
                     guard self != nil else {return}
                     
                     let key = self!.archiveKey()
-                    let data = try MoleculeSerializer.dataFromAtom(atoms)
+                    let data = try StoreSerializer.dataFromState(state)
                     
                     if let data = data {
                         
@@ -72,14 +74,12 @@ extension Molecule {
                     
                 } catch{
                     fatalError("Serialization error")
-                    //TODO: log
                 }
             }
-        }
         
     }
 }
-extension Molecule {
+extension Store {
     
     @discardableResult
     func unarchiveIntent()->Bool{
@@ -94,8 +94,8 @@ extension Molecule {
             let data = UserDefaults.standard.value(forKey: key)
             
             if ((data as? Data) != nil) {
-                atoms = try MoleculeSerializer.atomsFromData(data as! Data)
-                setCurrentAtom(atoms)
+                state = try StoreSerializer.stateFromData(data as! Data)
+                setCurrentState(state)
             }
             
         } catch {
@@ -106,7 +106,7 @@ extension Molecule {
     }
 }
 
-extension Molecule {
+extension Store {
     public func purgeArchive(){
         let key = archiveKey()
         UserDefaults.standard.removeObject(forKey: key)

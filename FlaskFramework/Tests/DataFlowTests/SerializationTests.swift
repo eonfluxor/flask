@@ -12,7 +12,7 @@ import XCTest
 class SerializationTests: XCTestCase {
 
     
-    func testAtomSerialization(){
+    func testStateSerialization(){
         
         do {
             let dict:NSDictionary = [
@@ -20,22 +20,22 @@ class SerializationTests: XCTestCase {
                 "nest":["foo":"bar"]
             ]
             
-            var atoms:AppAtoms = AppAtoms()
-            atoms.counter = 666
-            atoms.text = "hello world"
-            atoms.map = LabDictRef(dict)
-            atoms.object = LabRef(NSObject())
+            var state:AppState = AppState()
+            state.counter = 666
+            state.text = "hello world"
+            state.map = FluxDictRef(dict)
+            state.object = FluxRef(NSObject())
             
-            let jsonString:String = try MoleculeSerializer.jsonFromAtoms(atoms)
+            let jsonString:String = try StoreSerializer.jsonFromState(state)
             
-            let atomsDecoded:AppAtoms = try MoleculeSerializer.atomsFromJson(jsonString)
+            let stateDecoded:AppState = try StoreSerializer.stateFromJson(jsonString)
             
-            XCTAssert(atoms.counter == atomsDecoded.counter )
-            XCTAssert(atoms.text == atomsDecoded.text )
-            XCTAssert(atoms.map!["foo"] == atomsDecoded.map!["foo"] )
+            XCTAssert(state.counter == stateDecoded.counter )
+            XCTAssert(state.text == stateDecoded.text )
+            XCTAssert(state.map!["foo"] == stateDecoded.map!["foo"] )
             
-            let nest:LabDictRef = atoms.map!["nest"] as! LabDictRef
-            let nestDecoded:LabDictRef = atomsDecoded.map!["nest"] as! LabDictRef
+            let nest:FluxDictRef = state.map!["nest"] as! FluxDictRef
+            let nestDecoded:FluxDictRef = stateDecoded.map!["nest"] as! FluxDictRef
             
             XCTAssert(nest["foo"] == nestDecoded["foo"] )
             

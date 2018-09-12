@@ -1,5 +1,5 @@
 //
-//  Atoms.swift
+//  State.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/4/18.
@@ -12,27 +12,27 @@ import UIKit
 import Cocoa
 #endif
 
-struct AnyAtoms:Atoms {
+struct AnyState:State {
     
 }
 
-public protocol Atoms : Codable {
-    init() //construct at initial atoms
-    func toDictionary()->LabDictType
+public protocol State : Codable {
+    init() //construct at initial state
+    func toDictionary()->FluxDictType
     func toJsonDictionary()->[String:Any]
 }
 
 
-public extension Atoms{
+public extension State{
     
 //    var dictionary: [String: Any] {
 //        return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]
 //    }
     
     
-    func toDictionary()->LabDictType{
+    func toDictionary()->FluxDictType{
 //        let dict = self.dictionary
-        var result:LabDictType = [:]
+        var result:FluxDictType = [:]
         
         let mirror = Mirror(reflecting: self)
         
@@ -41,18 +41,18 @@ public extension Atoms{
                 continue
             }
             
-            if MoleculeConcrete.isInternalProp(label) {
+            if StoreConcrete.isInternalProp(label) {
                 continue
             }
             
-            result[label] = Lab.Nil
+            result[label] = Flux.Nil
             result[label] = value as? AnyHashable
             
-            if(MoleculeSerializer.isDictionaryRef(value)){
-                let nestedRef = MoleculeSerializer.nestDictionaries(namespace: label,
-                                                                root: LabDictRef(result as NSDictionary),
-                                                                children: value as! LabDictRef)
-                result = nestedRef.dictionary as! LabDictType
+            if(StoreSerializer.isDictionaryRef(value)){
+                let nestedRef = StoreSerializer.nestDictionaries(namespace: label,
+                                                                root: FluxDictRef(result as NSDictionary),
+                                                                children: value as! FluxDictRef)
+                result = nestedRef.dictionary as! FluxDictType
             }
         }
         
@@ -73,16 +73,16 @@ public extension Atoms{
                 continue
             }
             
-            if MoleculeConcrete.isInternalProp(label) {
+            if StoreConcrete.isInternalProp(label) {
                 continue
             }
             
-            if MoleculeConcrete.isObjectRef(value) {
+            if StoreConcrete.isObjectRef(value) {
                 continue
             }
             
-            if(MoleculeSerializer.isDictionaryRef(value)){
-                let nest =  MoleculeSerializer.flattenDictionary(value as! LabDictRef)
+            if(StoreSerializer.isDictionaryRef(value)){
+                let nest =  StoreSerializer.flattenDictionary(value as! FluxDictRef)
                  result[label] = nest
             } else{
                  result[label] = value
