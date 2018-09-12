@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Flask Class Reference</title>
+    <title>BusNotifier Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/Flask" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/BusNotifier" class="dashAnchor"></a>
 
-    <a title="Flask Class Reference"></a>
+    <a title="BusNotifier Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html"> Reference</a>
       <img class="carat" src="../img/carat.png" />
-      Flask Class Reference
+      BusNotifier Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -191,10 +191,10 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>Flask</h1>
+            <h1>BusNotifier</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Flask</span><span class="o">&lt;</span><span class="kt">D</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Classes/FlaskConcrete.html">FlaskConcrete</a></span> <span class="k">where</span> <span class="kt">D</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BusNotifier</span></code></pre>
 
                 </div>
               </div>
@@ -210,9 +210,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS0A0C7reactoryx_AA0A8ReactionCtcvp"></a>
-                    <a name="//apple_ref/swift/Property/reactor" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS0A0C7reactoryx_AA0A8ReactionCtcvp">reactor</a>
+                    <a name="/s:9Flask_iOS11BusNotifierC11addCallbackySS8forEvent_yXlSg6objectyAA0C12NotificationVctFZ"></a>
+                    <a name="//apple_ref/swift/Method/addCallback(forEvent:object:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS11BusNotifierC11addCallbackySS8forEvent_yXlSg6objectyAA0C12NotificationVctFZ">addCallback(forEvent:object:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -227,7 +227,9 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">reactor</span><span class="p">:</span> <span class="p">(</span><span class="kt">D</span><span class="p">,</span> <span class="kt"><a href="../Classes/FlaskReaction.html">FlaskReaction</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">addCallback</span><span class="p">(</span><span class="n">forEvent</span> <span class="nv">event</span><span class="p">:</span><span class="kt"><a href="../Typealiases.html#/s:9Flask_iOS8BusEventa">BusEvent</a></span><span class="p">,</span>
+                               <span class="nv">object</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">?,</span>
+                               <span class="n">_</span> <span class="nv">callback</span><span class="p">:</span><span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:9Flask_iOS11BusCallbacka">BusCallback</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -237,9 +239,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS0A0CACyxGxcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS0A0CACyxGxcfc">init(_:)</a>
+                    <a name="/s:9Flask_iOS11BusNotifierC15removeObserversyyXl9forObject_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/removeObservers(forObject:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS11BusNotifierC15removeObserversyyXl9forObject_tFZ">removeObservers(forObject:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -254,7 +256,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">owner</span><span class="p">:</span> <span class="kt">D</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">removeObservers</span><span class="p">(</span><span class="n">forObject</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -264,36 +266,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS0A0C4bindyyF"></a>
-                    <a name="//apple_ref/swift/Method/bind()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS0A0C4bindyyF">bind()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>MARK: -</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">bind</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:9Flask_iOS0A0C6unbindySbF"></a>
-                    <a name="//apple_ref/swift/Method/unbind(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS0A0C6unbindySbF">unbind(_:)</a>
+                    <a name="/s:9Flask_iOS11BusNotifierC11addObserverySS8forEvent_AA0cF0C8observertFZ"></a>
+                    <a name="//apple_ref/swift/Method/addObserver(forEvent:observer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS11BusNotifierC11addObserverySS8forEvent_AA0cF0C8observertFZ">addObserver(forEvent:observer:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -308,19 +283,24 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">unbind</span><span class="p">(</span><span class="n">_</span> <span class="nv">explicit</span><span class="p">:</span><span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">addObserver</span><span class="p">(</span><span class="n">forEvent</span> <span class="nv">event</span><span class="p">:</span><span class="kt"><a href="../Typealiases.html#/s:9Flask_iOS8BusEventa">BusEvent</a></span><span class="p">,</span>
+                               <span class="nv">observer</span><span class="p">:</span><span class="kt"><a href="../Classes/BusObserver.html">BusObserver</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS0A0C8getOwneryXlSgyF"></a>
-                    <a name="//apple_ref/swift/Method/getOwner()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS0A0C8getOwneryXlSgyF">getOwner()</a>
+                    <a name="/s:9Flask_iOS11BusNotifierC12getObserversSayAA0C8ObserverCGSS8forEvent_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/getObservers(forEvent:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS11BusNotifierC12getObserversSayAA0C8ObserverCGSS8forEvent_tFZ">getObservers(forEvent:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -335,7 +315,65 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getOwner</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyObject</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getObservers</span><span class="p">(</span><span class="n">forEvent</span> <span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9Flask_iOS8BusEventa">BusEvent</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/BusObserver.html">BusObserver</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9Flask_iOS11BusNotifierC12setObserversySS8forEvent_SayAA0C8ObserverCG9observerstFZ"></a>
+                    <a name="//apple_ref/swift/Method/setObservers(forEvent:observers:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS11BusNotifierC12setObserversySS8forEvent_SayAA0C8ObserverCG9observerstFZ">setObservers(forEvent:observers:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">setObservers</span><span class="p">(</span><span class="n">forEvent</span> <span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9Flask_iOS8BusEventa">BusEvent</a></span><span class="p">,</span> <span class="nv">observers</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BusObserver.html">BusObserver</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9Flask_iOS11BusNotifierC16postNotificationySS8forEvent_s10DictionaryVySSypSgGSg7payloadyycSg10completiontFZ"></a>
+                    <a name="//apple_ref/swift/Method/postNotification(forEvent:payload:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS11BusNotifierC16postNotificationySS8forEvent_s10DictionaryVySSypSgGSg7payloadyycSg10completiontFZ">postNotification(forEvent:payload:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">postNotification</span><span class="p">(</span><span class="n">forEvent</span> <span class="nv">event</span><span class="p">:</span><span class="kt"><a href="../Typealiases.html#/s:9Flask_iOS8BusEventa">BusEvent</a></span><span class="p">,</span> <span class="nv">payload</span><span class="p">:</span><span class="kt"><a href="../Typealiases.html#/s:9Flask_iOS10BusPayloada">BusPayload</a></span><span class="p">?,</span> <span class="nv">completion</span><span class="p">:</span><span class="kt"><a href="../Typealiases.html#/s:9Flask_iOS20BusCompletionClosurea">BusCompletionClosure</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
