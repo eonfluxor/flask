@@ -71,7 +71,7 @@ public class ChainReaction{
         }
         
         Flux.bus.performInBusQueue {
-            store.beginStateTransaction(context:(context:CHAIN_REACTION_CONTEXT){
+            store.beginStateTransaction(context:CHAIN_REACTION_CONTEXT){
                 mutation(store)
             }
             
@@ -113,7 +113,7 @@ public extension FlaskConcrete{
         
         
         Flux.bus.performInBusQueue {
-            store.beginStateTransaction(context:(context:CHAIN_REACTION_CONTEXT){
+            store.beginStateTransaction(context:CHAIN_REACTION_CONTEXT){
                 mutation(store)
             }
         }
