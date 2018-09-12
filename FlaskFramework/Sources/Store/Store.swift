@@ -91,25 +91,16 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
 }
 
 
-
-
 open class StoreConcrete:Hashable {
-    public var hashValue: Int {
-        return ObjectIdentifier(self).hashValue
-    }
     
-    public static func == (lhs: StoreConcrete, rhs: StoreConcrete) -> Bool {
-        return lhs === rhs
-    }
+    var _namePrefix:String?
+    var _nameSuffix:String?
+    var _name:String?
     
-    public static func isInternalProp(_ state:String)->Bool{
-        return state.starts(with: "_")
+    required  public init(name aName:String){
+        name(as:aName)
+        initializeMetaClass()
     }
-    
-    public static func isObjectRef(_ state:Any)->Bool{
-        return ((state as? FluxRef) != nil)
-    }
-    
     
     required  public init(){
         initializeMetaClass()
@@ -122,7 +113,25 @@ open class StoreConcrete:Hashable {
         return [:]
     }
     func name() -> String {
-        return "Store\(self.self)"
+        let prefix = _namePrefix ?? "Flx"
+        let name = _name ?? "Str"
+        let suffix = _nameSuffix ?? ".\(self.self)"
+        
+        return "\(prefix)\(name)\(suffix)"
+    }
+    
+    func name(as aName:String){
+        _name = aName
+        _namePrefix = ""
+        _nameSuffix = ""
+    }
+    
+    func name(prefix:String){
+        _namePrefix = prefix
+    }
+    
+    func name(suffix:String){
+         _nameSuffix = suffix
     }
     
     open func defineBusEvents(){}
@@ -136,8 +145,27 @@ open class StoreConcrete:Hashable {
     func abortStateTransaction(){}
     func finishStateTransaction(){}
     
+    /////
+    public var hashValue: Int {
+        return ObjectIdentifier(self).hashValue
+    }
+    
+    public static func == (lhs: StoreConcrete, rhs: StoreConcrete) -> Bool {
+        return lhs === rhs
+    }
+    
 }
 
+
+public extension StoreConcrete{
+    public static func isInternalProp(_ state:String)->Bool{
+        return state.starts(with: "_")
+    }
+    
+    public static func isObjectRef(_ state:Any)->Bool{
+        return ((state as? FluxRef) != nil)
+    }
+}
 
 
 public extension StoreConcrete {

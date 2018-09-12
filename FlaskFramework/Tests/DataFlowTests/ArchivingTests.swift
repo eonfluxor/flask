@@ -36,9 +36,12 @@ class archiveTests: SetupFlaskTests {
         
         flask.unbind()
         
+        let storeName = store.name()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             
-            let anotherStore = App()
+            let anotherStore = App(name:storeName)
+            
             XCTAssert(anotherStore.state.counter == expectedValue)
             
             expectationUnarchive.fulfill()

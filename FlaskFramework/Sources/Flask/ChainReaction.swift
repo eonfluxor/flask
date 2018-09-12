@@ -112,7 +112,6 @@ public extension FlaskConcrete{
         
         
         Flux.bus.performInBusQueue {
-            store.snapshotState()
             store.startStateTransaction()
             mutation(store)
             store.finishStateTransaction()

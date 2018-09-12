@@ -16,15 +16,9 @@ class SetupFlaskTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        self.store = App()
-        
-        
-      
-        
+        store = App()
+        store?.name(suffix:String(Date().timeIntervalSince1970))
         XCTAssert(FluxFlaskManager.flasks.count == 0, "all flasks should dispose before this test")
-        
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
@@ -34,7 +28,6 @@ class SetupFlaskTests: XCTestCase {
         self.store = .none
         Flux.removeLocks()
         FluxFlaskManager.purge()
-//        sleep(2)
     }
     
     
