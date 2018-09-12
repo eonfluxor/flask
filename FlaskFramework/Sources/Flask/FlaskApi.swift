@@ -16,16 +16,16 @@ public protocol FlaskReactor{
     func flaskReactor( attachedTo:AnyObject, reaction: FlaskReaction)
 }
 
-func FlaskAttach<T:AnyObject & FlaskReactor>( to object:T, mixing stores:[StoreConcrete]){
+public func FlaskAttach<T:AnyObject & FlaskReactor>( to object:T, mixing stores:[StoreConcrete]){
     Flux.attachFlask(to:object,mixing:stores)
 }
 
-func FlaskDetach<T:AnyObject & FlaskReactor>( from object:T){
+public func FlaskDetach<T:AnyObject & FlaskReactor>( from object:T){
     Flux.detachFlask(from:object)
 }
 
 
-func FlaskUse<T:AnyObject & FlaskReactor>(_ object:T )->Flask<T>{
+public func FlaskUse<T:AnyObject & FlaskReactor>(_ object:T )->Flask<T>{
     let flasks = FluxFlaskManager.getFlasks(from:object)
     assert(flasks.count > 0, "No Flasks attached. Did you call `AttachFlask(to:mixing:)` ? ")
     assert(flasks.count == 1, "UseFlask required `object` to have only one Flask attached")
