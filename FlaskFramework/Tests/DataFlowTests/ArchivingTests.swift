@@ -20,7 +20,7 @@ class archiveTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner, binding:store)
+        let flask = Flux.flask(attachedTo:owner, binding:store)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
