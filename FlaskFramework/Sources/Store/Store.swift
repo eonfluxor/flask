@@ -80,6 +80,12 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     
     override func startStateTransaction(context:String,_ transaction:()->Void){
         
+        if let lastContext = pendingStateTransaction{
+            assert(lastContext == context,"please resolve `commit|abort` transaction \(String(describing: pendingStateTransaction)) first")
+        } else{
+            assert(pendingStateTransaction == nil, "please resolve `commit|abort` transaction \(String(describing: pendingStateTransaction)) first")
+        }
+        
         pendingStateTransaction = context;
         //CAPTURE ORIGINAL STATE FOR ROLLBACK
         snapshotState()
@@ -92,12 +98,15 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     
     override func commitStateTransaction(context:String){
         
-        assert(self.pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
+        assert(pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
+        pendingStateTransaction = nil
         _state = state
     }
     override func abortStateTransaction(context:String){
         
         assert(self.pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
+        pendingStateTransaction = nil
+        
         state = stateFromSnapshot()
     }
 }
