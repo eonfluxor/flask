@@ -304,7 +304,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/Flask/FlaskFramework/Sources/Flux/FluxHelpers.swift",
       "line": 29,
-      "symbol": "isFluxNil(_:)",
+      "symbol": "isNilFlux(_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },

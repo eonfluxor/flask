@@ -71,6 +71,15 @@
                 <a class="nav-group-task-link" href="../Classes/BusLock.html">BusLock</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/BusNotifier.html">BusNotifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/BusObserver.html">BusObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ChainReaction.html">ChainReaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/Flask.html">Flask</a>
               </li>
               <li class="nav-group-task">
@@ -92,6 +101,9 @@
                 <a class="nav-group-task-link" href="../Classes/FluxRef.html">FluxRef</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes.html#/s:9Flask_iOS11FluxWeakRefC">FluxWeakRef</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/Store.html">Store</a>
               </li>
               <li class="nav-group-task">
@@ -111,6 +123,9 @@
             <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/FlaskReactor.html">FlaskReactor</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/State.html">State</a>
               </li>
               <li class="nav-group-task">
@@ -122,7 +137,7 @@
             <a class="nav-group-name-link" href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs/ChainReaction.html">ChainReaction</a>
+                <a class="nav-group-task-link" href="../Structs.html#/s:9Flask_iOS15BusNotificationV">BusNotification</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/StoreChange.html">StoreChange</a>
@@ -136,7 +151,22 @@
             <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS03BusC7Payloada">BusBusPayload</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS11BusCallbacka">BusCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS20BusCompletionClosurea">BusCompletionClosure</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS8BusEventa">BusEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS11BusMutationa">BusMutation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS10BusPayloada">BusPayload</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS13ChangeClosurea">ChangeClosure</a>
@@ -155,9 +185,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS9StateNamea">StateName</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS8StoreBusa">StoreBus</a>
               </li>
             </ul>
           </li>
@@ -309,9 +336,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS0A8ConcreteC6mutateAA13ChainReactionVx_yxctAA05StoreC0CRbzlF"></a>
-                    <a name="//apple_ref/swift/Method/mutate(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS0A8ConcreteC6mutateAA13ChainReactionVx_yxctAA05StoreC0CRbzlF">mutate(_:_:)</a>
+                    <a name="/s:9Flask_iOS0A8ConcreteC8toMutateAA13ChainReactionCx_yxctAA05StoreC0CRbzlF"></a>
+                    <a name="//apple_ref/swift/Method/toMutate(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS0A8ConcreteC8toMutateAA13ChainReactionCx_yxctAA05StoreC0CRbzlF">toMutate(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -326,7 +353,61 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">mutate</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span><span class="kt"><a href="../Classes/StoreConcrete.html">StoreConcrete</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">aStore</span><span class="p">:</span><span class="kt">T</span><span class="p">,</span> <span class="n">_</span> <span class="nv">bus</span><span class="p">:</span><span class="kd">@escaping(_ store:T)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt"><a href="../Structs/ChainReaction.html">ChainReaction</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">toMutate</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span><span class="kt"><a href="../Classes/StoreConcrete.html">StoreConcrete</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">aStore</span><span class="p">:</span><span class="kt">T</span><span class="p">,</span> <span class="n">_</span> <span class="nv">mutation</span><span class="p">:</span><span class="kd">@escaping(_ store:T)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt"><a href="../Classes/ChainReaction.html">ChainReaction</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9Flask_iOS0A8ConcreteC6mutateAA13ChainReactionCx_yxctAA05StoreC0CRbzlF"></a>
+                    <a name="//apple_ref/swift/Method/mutate(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS0A8ConcreteC6mutateAA13ChainReactionCx_yxctAA05StoreC0CRbzlF">mutate(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">mutate</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span><span class="kt"><a href="../Classes/StoreConcrete.html">StoreConcrete</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">aStore</span><span class="p">:</span><span class="kt">T</span><span class="p">,</span> <span class="n">_</span> <span class="nv">mutation</span><span class="p">:</span><span class="kd">@escaping(_ store:T)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt"><a href="../Classes/ChainReaction.html">ChainReaction</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9Flask_iOS0A8ConcreteC17reduceStoresChainySayAA05StoreC0CG_Sb5aborttF"></a>
+                    <a name="//apple_ref/swift/Method/reduceStoresChain(_:abort:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Flask_iOS0A8ConcreteC17reduceStoresChainySayAA05StoreC0CG_Sb5aborttF">reduceStoresChain(_:abort:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">reduceStoresChain</span><span class="p">(</span><span class="n">_</span> <span class="nv">chainedStores</span><span class="p">:[</span><span class="kt"><a href="../Classes/StoreConcrete.html">StoreConcrete</a></span><span class="p">],</span> <span class="nv">abort</span><span class="p">:</span><span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -341,7 +422,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://eonflux.io/" target="_blank" rel="external">Eonflux</a>. All rights reserved. (Last updated: 2018-09-11)</p>
+      <p>&copy; 2018 <a class="link" href="https://eonflux.io/" target="_blank" rel="external">Eonflux</a>. All rights reserved. (Last updated: 2018-09-12)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
