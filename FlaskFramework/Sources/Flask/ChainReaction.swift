@@ -13,7 +13,7 @@ import Cocoa
 #endif
 
 typealias ChainedStoresClosure = (_ chainedStores:[StoreConcrete])->Void
-
+let CHAIN_REACTION_CONTEXT = "ChainReaction"
 public class ChainReaction{
     
     let flask:FlaskConcrete
@@ -71,9 +71,10 @@ public class ChainReaction{
         }
         
         Flux.bus.performInBusQueue {
-            store.startStateTransaction()
-            mutation(store)
-            store.finishStateTransaction()
+            store.startStateTransaction(context:CHAIN_REACTION_CONTEXT){
+                mutation(store)
+            }
+            
         }
         
         let chain = ChainReaction(flask:flask, react:_react, abort:_abort)
@@ -112,9 +113,9 @@ public extension FlaskConcrete{
         
         
         Flux.bus.performInBusQueue {
-            store.startStateTransaction()
-            mutation(store)
-            store.finishStateTransaction()
+            store.startStateTransaction(context:CHAIN_REACTION_CONTEXT){
+                mutation(store)
+            }
         }
         
         
@@ -127,12 +128,14 @@ public extension FlaskConcrete{
         let uniqueStores = Array(Set<StoreConcrete>(chainedStores))
         
         var reduceAction:(_ store:StoreConcrete)->Void = { store in
+            
+            store.commitStateTransaction(context: CHAIN_REACTION_CONTEXT)
             store.reduceAndReact()
         }
         
         if abort == true {
             reduceAction = { store in
-                store.abortStateTransaction()
+                store.abortStateTransaction(context: CHAIN_REACTION_CONTEXT)
             }
         }
         

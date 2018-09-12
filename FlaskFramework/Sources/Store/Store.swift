@@ -19,6 +19,8 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     private var _stateSnapshot: T = T()
     private var _state: T = T()
     public var state:T = T()
+    
+    private var pendingStateTransaction:String?
     //////////////////
     // MARK: - TRANSACTIONS QUEUE
     
@@ -76,15 +78,26 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     }
 
     
-    override func startStateTransaction(){
+    override func startStateTransaction(context:String,_ transaction:()->Void){
+        
+        pendingStateTransaction = context;
+        //CAPTURE ORIGINAL STATE FOR ROLLBACK
         snapshotState()
+        
+        //OPTIMISCALLY MUTATE THE STATE
         state = _state
-    }
-    
-    override func finishStateTransaction(){
+        transaction()
         _state = state
     }
-    override func abortStateTransaction(){
+    
+    override func commitStateTransaction(context:String){
+        
+        assert(self.pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
+        _state = state
+    }
+    override func abortStateTransaction(context:String){
+        
+        assert(self.pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
         state = _state
         state = stateFromSnapshot()
     }
@@ -141,9 +154,9 @@ open class StoreConcrete:Hashable {
     
     func initializeMetaClass(){}
     
-    func startStateTransaction(){}
-    func abortStateTransaction(){}
-    func finishStateTransaction(){}
+    func startStateTransaction(context:String,_ transaction:()->Void){}
+    func abortStateTransaction(context:String){}
+    func commitStateTransaction(context:String){}
     
     /////
     public var hashValue: Int {
@@ -176,6 +189,7 @@ public extension StoreConcrete {
             BusNotifier.addCallback(forEvent: event, object: self) { (notification) in
                 
                 
+                let context = "Store.on(event:reaction:)"
                 let payload = notification.payload
                 
                 let lock = payload?[BUS_LOCKED_BY] as? BusLock
@@ -184,17 +198,19 @@ public extension StoreConcrete {
                 
                 let react = {
                     resolved=true
-                    self?.finishStateTransaction()
+                    self?.commitStateTransaction(context:context)
                     self?.reduceAndReact(lock)
                 }
                 
                 let abort = {
-                    self?.abortStateTransaction()
+                    self?.abortStateTransaction(context:context)
                     resolved=true
                 }
                 
-                self?.startStateTransaction()
-                reaction(payload,react,abort)
+                self?.startStateTransaction(context:context){
+                     reaction(payload,react,abort)
+                }
+               
                 assert(resolved, "reaction closure must call `react` or `abort`")
       
                 
