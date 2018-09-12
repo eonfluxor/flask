@@ -98,7 +98,14 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
 
 
 
-open class StoreConcrete {
+open class StoreConcrete:Hashable {
+    public var hashValue: Int {
+        return ObjectIdentifier(self).hashValue
+    }
+    
+    public static func == (lhs: StoreConcrete, rhs: StoreConcrete) -> Bool {
+        return lhs === rhs
+    }
     
     public static func isInternalProp(_ state:String)->Bool{
         return state.starts(with: "_")
@@ -109,7 +116,7 @@ open class StoreConcrete {
     }
     
     
-    required public init(){
+    required  public init(){
         initializeMetaClass()
     }
     
