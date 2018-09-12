@@ -16,7 +16,7 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     
     typealias StateType = T
     
-    var stateSnapshot: FluxDictType = [:]
+    private var _stateSnapshot: T = T()
     private var _state: T = T()
     public var state:T = T()
     //////////////////
@@ -50,7 +50,7 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     }
     
     public override func stateSnapshotDictionary() -> FluxDictType{
-        return stateSnapshot
+        return _stateSnapshot.toDictionary()
     }
     public override func stateDictionary() -> FluxDictType{
         return _state.toDictionary()
@@ -67,49 +67,42 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     /// PRIVATE
     
     override func snapshotState(){
-        self.stateSnapshot = self.stateDictionary()
+        self._stateSnapshot = self._state
         archiveIntent()
     }
     
-
-    override func stateTransaction(_ transaction:@escaping ()-> Bool){
-        
-       startStateTransaction()
-        
-        if transaction() {
-            commitStateTransaction()
-        }else{
-            abortStateTransaction()
-        }
-        
+    func stateFromSnapshot()->T{
+        return self._stateSnapshot
     }
+
+    
     override func startStateTransaction(){
+        snapshotState()
         state = _state
     }
-    override func commitStateTransaction(){
-        snapshotState()
+    
+    override func finishStateTransaction(){
         _state = state
     }
     override func abortStateTransaction(){
         state = _state
+        state = stateFromSnapshot()
     }
 }
 
 
-
-
-open class StoreConcrete {
+open class StoreConcrete:Hashable {
     
-    public static func isInternalProp(_ state:String)->Bool{
-        return state.starts(with: "_")
+    var _namePrefix:String?
+    var _nameSuffix:String?
+    var _name:String?
+    
+    required  public init(name aName:String){
+        name(as:aName)
+        initializeMetaClass()
     }
     
-    public static func isObjectRef(_ state:Any)->Bool{
-        return ((state as? FluxRef) != nil)
-    }
-    
-    
-    required public init(){
+    required  public init(){
         initializeMetaClass()
     }
     
@@ -120,7 +113,25 @@ open class StoreConcrete {
         return [:]
     }
     func name() -> String {
-        return "Store\(self.self)"
+        let prefix = _namePrefix ?? "Flx"
+        let name = _name ?? "Str"
+        let suffix = _nameSuffix ?? ".\(self.self)"
+        
+        return "\(prefix)\(name)\(suffix)"
+    }
+    
+    func name(as aName:String){
+        _name = aName
+        _namePrefix = ""
+        _nameSuffix = ""
+    }
+    
+    func name(prefix:String){
+        _namePrefix = prefix
+    }
+    
+    func name(suffix:String){
+         _nameSuffix = suffix
     }
     
     open func defineBusEvents(){}
@@ -129,14 +140,32 @@ open class StoreConcrete {
     func snapshotState(){}
     
     func initializeMetaClass(){}
-    func stateTransaction(_ transaction:@escaping ()-> Bool){}
-  
+    
     func startStateTransaction(){}
     func abortStateTransaction(){}
-    func commitStateTransaction(){}
+    func finishStateTransaction(){}
+    
+    /////
+    public var hashValue: Int {
+        return ObjectIdentifier(self).hashValue
+    }
+    
+    public static func == (lhs: StoreConcrete, rhs: StoreConcrete) -> Bool {
+        return lhs === rhs
+    }
     
 }
 
+
+public extension StoreConcrete{
+    public static func isInternalProp(_ state:String)->Bool{
+        return state.starts(with: "_")
+    }
+    
+    public static func isObjectRef(_ state:Any)->Bool{
+        return ((state as? FluxRef) != nil)
+    }
+}
 
 
 public extension StoreConcrete {
@@ -155,7 +184,7 @@ public extension StoreConcrete {
                 
                 let react = {
                     resolved=true
-                    self?.commitStateTransaction()
+                    self?.finishStateTransaction()
                     self?.reduceAndReact(lock)
                 }
                 

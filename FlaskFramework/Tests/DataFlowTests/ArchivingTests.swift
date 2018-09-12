@@ -20,7 +20,7 @@ class archiveTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner, binding:store)
+        let flask = Flux.flask(attachedTo:owner, binding:store)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -36,9 +36,12 @@ class archiveTests: SetupFlaskTests {
         
         flask.unbind()
         
+        let storeName = store.name()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             
-            let anotherStore = App()
+            let anotherStore = App(name:storeName)
+            
             XCTAssert(anotherStore.state.counter == expectedValue)
             
             expectationUnarchive.fulfill()
