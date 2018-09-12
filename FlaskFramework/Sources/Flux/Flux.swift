@@ -39,6 +39,7 @@ public extension Flux {
     }
 }
 
+
 public extension Flux {
     
     static public func flask<T:AnyObject>(attachedTo owner:T, mixing store:StoreConcrete) -> Flask<T>{
@@ -46,7 +47,7 @@ public extension Flux {
     }
     
     static public func flask<T:AnyObject>(attachedTo owner:T, mixing stores:[StoreConcrete]) -> Flask<T>{
-        let flask = Flux.flask(attachedTo:owner)
+        let flask = FluxFlaskManager.instance(attachedTo:owner)
         flask.defineStores(stores)
         flask.bind()
         return flask

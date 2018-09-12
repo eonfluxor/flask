@@ -14,13 +14,28 @@ import Cocoa
 
 import XCTest
 
-class InitializerTests: XCTestCase {
-    class ViewController: UIViewController, FlaskOwner {
-        
+class InitializerTests: XCTestCase, FlaskReactor  {
+   
+    func flaskReactor(attachedTo: AnyObject, reaction: FlaskReaction) {
+        reaction.on(AppState.named.counter) { (change) in
+            
+        }
+        reaction.on(AppState.named.text) { (change) in
+            
+        }
+    }
+    
+    override func setUp() {
+        AttachFlask(to:self, mixing:[Stores.app])
     }
     
     func testOwnerInit(){
-        let vc = ViewController()
+    
+        UseFlask(self).toMutate(Stores.app) { (store) in
+            store.state.counter = 10
+        }.andMutate(Stores.app) { (store) in
+            store.state.text = "text"
+        }.andReact()
         
     }
     

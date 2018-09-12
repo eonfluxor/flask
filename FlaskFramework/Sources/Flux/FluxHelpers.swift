@@ -41,7 +41,7 @@ protocol FluxAnyWithInit{
     init() //construct at initial state
 }
 
-public class FluxEquatable: Equatable{
+open class FluxEquatable: Equatable{
     public static func == (lhs: FluxEquatable, rhs: FluxEquatable) -> Bool {
         return lhs === rhs
     }

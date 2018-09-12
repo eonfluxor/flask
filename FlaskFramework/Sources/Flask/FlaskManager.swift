@@ -38,6 +38,20 @@ class FluxFlaskManager{
         }
     }
     
+    @discardableResult
+    static func removeFlask(fromOwner owner: AnyObject)->Bool{
+        
+        let originalCount = flasks.count
+        let newFlasks = flasks.filter{ $0 !== owner}
+        flasks = newFlasks
+        
+        return flasks.count < originalCount
+    }
+    
+    static func getFlasks(from owner: AnyObject)->[FlaskConcrete]{
+        return flasks.filter{ $0.getOwner() === owner}
+    }
+    
     static func purge(){
         let orphans = flasks.filter {$0.getOwner() == nil}
         
