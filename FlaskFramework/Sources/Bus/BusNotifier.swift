@@ -109,13 +109,4 @@ extension BusNotifier{
         }
     }
 }
-//    NotificationCenter.default.post(
-//    name: NSNotification.Name(bus),
-//    object: payload,
-//    userInfo: .none)
-    
-    
-//    NotificationCenter.default.addObserver(
-//    forName: NSNotification.Name(bus),
-//    object: nil, queue: OperationQueue.main) { (notification) in
 

@@ -22,12 +22,6 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     //////////////////
     // MARK: - TRANSACTIONS QUEUE
     
-//    let transactonsQueue:OperationQueue = {
-//        let queue = OperationQueue()
-//        queue.maxConcurrentOperationCount=1
-//        return queue
-//    }()
-    
     let archiveQueue:OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount=1

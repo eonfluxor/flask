@@ -35,12 +35,7 @@ public class Bus {
         return queue
     }()
     
-//    let reactionQueue:OperationQueue = {
-//        let queue = OperationQueue()
-//        queue.maxConcurrentOperationCount=1
-//        return queue
-//    }()
-    
+
     //////////////////
     // MARK: - OPTIONALS
     
