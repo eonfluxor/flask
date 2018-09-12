@@ -98,7 +98,6 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     override func abortStateTransaction(context:String){
         
         assert(self.pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
-        state = _state
         state = stateFromSnapshot()
     }
 }
@@ -211,8 +210,9 @@ public extension StoreConcrete {
                      reaction(payload,react,abort)
                 }
                
-                assert(resolved, "reaction closure must call `react` or `abort`")
-      
+                if self != nil {
+                    assert(resolved, "reaction closure must call `react` or `abort`")
+                }
                 
             }
             
