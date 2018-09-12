@@ -95,11 +95,8 @@ extension Bus {
         
         busQueue.addOperation { [weak self] in
             
-          
-//            assert( !(self?.busQueue.isSuspended)!, "queue should not perform when suspended")
-          
-            
-            assert( self?.currentEvent == .none, "cannot call during mix")
+  
+            assert( self?.currentEvent == .none, "The sngle flow is broken!")
             self?.currentEvent = event
             
             BusNotifier.postNotification(forEvent: event,
@@ -114,13 +111,30 @@ extension Bus {
         busQueue.isSuspended = true
     }
     
+    func performInBusQueue(_ action:@escaping ()->Void){
+        
+        busQueue.addOperation {
+            action()
+        }
+
+    }
+    
     func dispatchInLockQueue(_ event:String, payload:BusPayload?){
+        
+        let completed = { [weak self] in
+            if let me = self{
+                me.busOnLockQueue.isSuspended = false
+            }
+        }
         
         busOnLockQueue.addOperation {
             BusNotifier.postNotification(forEvent: event,
-                                         payload: payload)
+                                         payload: payload,
+                                         completion: completed)
             
         }
+        
+        busOnLockQueue.isSuspended = true
     }
  
 }

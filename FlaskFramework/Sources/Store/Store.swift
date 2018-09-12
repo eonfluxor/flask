@@ -68,7 +68,7 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     
     override func snapshotState(){
         self.stateSnapshot = self.stateDictionary()
-        archiveIntent(_state)
+        archiveIntent()
     }
     
 
@@ -180,21 +180,15 @@ public extension StoreConcrete {
 extension StoreConcrete {
     
     func reduceAndReact(_ busLock: BusLock? = nil){
-//        Flux.bus.reactionQueue.addOperation { [weak self] in
-//
-//            if self == nil { return }
         
-            let reaction = FlaskReaction(self as StoreConcrete)
-            reaction.onLock = busLock
-            
-            if( reaction.changed()){
-                Flux.bus.reactChange(reaction)
-            }else{
-                //log
-            }
-            self.snapshotState()
-//        }
-       
+        let reaction = FlaskReaction(self as StoreConcrete)
+        reaction.onLock = busLock
+        
+        if( reaction.changed()){
+            Flux.bus.reactChange(reaction)
+        }else{
+        }
+        
     }
     
 }

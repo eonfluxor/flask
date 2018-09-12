@@ -38,9 +38,11 @@ public extension FlaskConcrete{
     public func mutate<T:StoreConcrete>(_ aStore:T, _ bus:@escaping(_ store:T) -> Void)->ChainReaction{
         
         let  react = { [weak self] in
-            if let stores = self?.stores {
-                for store in stores{
-                    store.reduceAndReact()
+            Flux.bus.performInBusQueue { [weak self] in
+                if let stores = self?.stores {
+                    for store in stores{
+                        store.reduceAndReact()
+                    }
                 }
             }
         }

@@ -95,7 +95,7 @@ class LockTests: SetupFlaskTests {
                 
                 reaction.onLock?.release()
                 expectation.fulfill()
-           
+                
             })
             reaction.at(store)?.on(AppState.named.text, { (change) in
                 expectation2.fulfill()
@@ -113,6 +113,52 @@ class LockTests: SetupFlaskTests {
         wait(for: [expectation2], timeout: 2)
         
         
+    }
+    
+    func testLockActionConcurrent(){
+        
+        let expectation = self.expectation(description: "should perform  over lock")
+        let expectation2 = self.expectation(description: "should perform over lock")
+        let expectation3 = self.expectation(description: "should perform after lock")
+        
+        let store = self.store!
+        let owner:TestOwner = TestOwner()
+        let flask = Flux.flask(ownedBy:owner,binding:store)
+        
+        var counter = 0
+        
+        flask.reactor = { owner, reaction in
+            reaction.at(store)?.on(AppState.named.counter, { (change) in
+               
+                expectation.fulfill()
+                reaction.onLock?.release()
+                
+            })
+            reaction.at(store)?.on(AppState.named.text, { (change) in
+                if counter == 0 {
+                    
+                    expectation2.fulfill()
+                    counter += 1
+                    
+                    reaction.onLock?.release()
+                    
+                }else{
+                    expectation3.fulfill()
+                }
+            })
+        }
+        
+        Flux.lock(withEvent:AppEvents.Count, payload:  ["test":"testLockActon count"])
+        Flux.lock(withEvent:AppEvents.Text, payload:  ["test":"testLockActon count"])
+        
+        flask.mutate(store) { (store) in
+            store.state.text = "unchained!"
+        }.react()
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        
+        
+
     }
     
 }
