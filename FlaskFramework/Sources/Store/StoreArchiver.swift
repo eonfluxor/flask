@@ -73,7 +73,7 @@ extension Store {
                     }
                     
                 } catch{
-                    fatalError("Serialization error")x
+                    fatalError("Serialization error")
                 }
             }
         
