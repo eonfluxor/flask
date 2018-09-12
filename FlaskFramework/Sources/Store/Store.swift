@@ -22,11 +22,11 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     //////////////////
     // MARK: - TRANSACTIONS QUEUE
     
-    let transactonsQueue:OperationQueue = {
-        let queue = OperationQueue()
-        queue.maxConcurrentOperationCount=1
-        return queue
-    }()
+//    let transactonsQueue:OperationQueue = {
+//        let queue = OperationQueue()
+//        queue.maxConcurrentOperationCount=1
+//        return queue
+//    }()
     
     let archiveQueue:OperationQueue = {
         let queue = OperationQueue()
@@ -79,28 +79,25 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     
 
     override func stateTransaction(_ transaction:@escaping ()-> Bool){
-        transactonsQueue.addOperation { [weak self] in
-            
-            if self == nil {return}
-            
-            self!.state = self!._state
-            
-            if transaction() {
-                self!._state = self!.state
-            }else{
-                self!.state = self!._state
-            }
+        
+       startStateTransaction()
+        
+        if transaction() {
+            commitStateTransaction()
+        }else{
+            abortStateTransaction()
         }
         
     }
-    
+    override func startStateTransaction(){
+        state = _state
+    }
+    override func commitStateTransaction(){
+        snapshotState()
+        _state = state
+    }
     override func abortStateTransaction(){
-        transactonsQueue.addOperation { [weak self] in
-            
-            if self == nil {return}
-            
-            self!.state = self!._state
-        }
+        state = _state
     }
 }
 
@@ -139,8 +136,10 @@ open class StoreConcrete {
     
     func initializeMetaClass(){}
     func stateTransaction(_ transaction:@escaping ()-> Bool){}
+  
+    func startStateTransaction(){}
     func abortStateTransaction(){}
-    
+    func commitStateTransaction(){}
     
 }
 
@@ -153,31 +152,28 @@ public extension StoreConcrete {
             
             BusNotifier.addCallback(forEvent: event, object: self) { (notification) in
                 
-                //            NotificationCenter.default.addObserver(forName: NSNotification.Name(bus), object: nil, queue: OperationQueue.main) { (notification) in
                 
                 let payload = notification.payload
                 
                 let lock = payload?[BUS_LOCKED_BY] as? BusLock
                 
                 var resolved = false
-                var completed = true
                 
                 let react = {
                     resolved=true
-                    self?.handleMutation(lock)
+                    self?.commitStateTransaction()
+                    self?.reduceAndReact(lock)
                 }
                 
                 let abort = {
+                    self?.abortStateTransaction()
                     resolved=true
-                    completed = false
                 }
                 
-                self?.stateTransaction({
-                    reaction(payload,react,abort)
-                    assert(resolved, "reaction closure must call `react` or `abort`")
-                    return completed
-                })
-                
+                self?.startStateTransaction()
+                reaction(payload,react,abort)
+                assert(resolved, "reaction closure must call `react` or `abort`")
+      
                 
             }
             
@@ -189,12 +185,12 @@ public extension StoreConcrete {
 
 extension StoreConcrete {
     
-    func handleMutation(_ busLock: BusLock? = nil){
-        Flux.bus.reactionQueue.addOperation { [weak self] in
-            
-            if self == nil { return }
-            
-            let reaction = FlaskReaction(self! as StoreConcrete)
+    func reduceAndReact(_ busLock: BusLock? = nil){
+//        Flux.bus.reactionQueue.addOperation { [weak self] in
+//
+//            if self == nil { return }
+        
+            let reaction = FlaskReaction(self as StoreConcrete)
             reaction.onLock = busLock
             
             if( reaction.changed()){
@@ -202,8 +198,8 @@ extension StoreConcrete {
             }else{
                 //log
             }
-            self?.snapshotState()
-        }
+            self.snapshotState()
+//        }
        
     }
     

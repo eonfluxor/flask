@@ -12,6 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
+public typealias BusCompletionClosure = ()->Void
 public typealias BusBusPayload = [String:Any?]
 public typealias BusCallback = (_ notification:BusNotification)->Void
 
@@ -92,7 +93,7 @@ extension BusNotifier{
 
 extension BusNotifier{
     
-    static public func postNotification(forEvent event:BusEvent, payload:BusPayload?){
+    static public func postNotification(forEvent event:BusEvent, payload:BusPayload?, completion:BusCompletionClosure? = nil){
         let observers = getObservers(forEvent: event)
 
         for observer in observers {
@@ -101,6 +102,10 @@ extension BusNotifier{
                                                object:observer.objectRef.value,
                                                payload: payload)
             observer.callback(notification)
+        }
+        
+        if let completion = completion {
+            completion()
         }
     }
 }

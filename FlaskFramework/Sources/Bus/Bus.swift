@@ -35,11 +35,11 @@ public class Bus {
         return queue
     }()
     
-    let reactionQueue:OperationQueue = {
-        let queue = OperationQueue()
-        queue.maxConcurrentOperationCount=1
-        return queue
-    }()
+//    let reactionQueue:OperationQueue = {
+//        let queue = OperationQueue()
+//        queue.maxConcurrentOperationCount=1
+//        return queue
+//    }()
     
     //////////////////
     // MARK: - OPTIONALS
@@ -82,35 +82,55 @@ extension Bus {
  
     func enqueue(_ event:String, payload:BusPayload?){
         
-
-        var queue = busQueue
-        if (payload?[BUS_LOCKED_BY]) != nil {
-            queue = busOnLockQueue
+        if (payload?[BUS_LOCKED_BY]) == nil {
+            dispatchInBusQueue(event,payload:payload)
+        }else{
+            dispatchInLockQueue(event,payload:payload)
         }
         
-        //TODO: log same bus warning
-        //TODO: log queue locked warning
-//        assert( self.currentEvent != bus, "cannot call recursive bus in infinite loop")
+    }
+    
+    func dispatchInBusQueue(_ event:String, payload:BusPayload?){
         
-        queue.addOperation { [weak self, weak queue] in
-            
-            if let q = queue {
-                assert( !q.isSuspended, "queue should not perform when suspended")
+        let completed = { [weak self] in
+            if let me = self{
+                me.applyLocks()
             }
+        }
+        
+        busQueue.addOperation { [weak self] in
+            
+          
+//            assert( !(self?.busQueue.isSuspended)!, "queue should not perform when suspended")
+          
             
             assert( self?.currentEvent == .none, "cannot call during mix")
-            
             self?.currentEvent = event
+            
+            BusNotifier.postNotification(forEvent: event,
+                                         payload: payload,
+                                         completion: completed)
+            
+            
+            self?.currentEvent = .none
+            
+        }
+        
+        busQueue.isSuspended = true
+    }
+    
+    func dispatchInLockQueue(_ event:String, payload:BusPayload?){
+        
+        busOnLockQueue.addOperation {
             BusNotifier.postNotification(forEvent: event,
                                          payload: payload)
-            
-
-            self?.currentEvent = .none
             
         }
     }
  
 }
+
+
 
 //////////////////
 // MARK: - BINDINGS

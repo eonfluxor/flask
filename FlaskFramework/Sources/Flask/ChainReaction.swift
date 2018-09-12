@@ -40,7 +40,7 @@ public extension FlaskConcrete{
         let  react = { [weak self] in
             if let stores = self?.stores {
                 for store in stores{
-                    store.handleMutation()
+                    store.reduceAndReact()
                 }
             }
         }
