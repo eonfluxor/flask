@@ -16,7 +16,7 @@ import Cocoa
 public typealias BusPayload = [String:Any?]
 public typealias BusMutation = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
 public typealias ChangeClosure = (_ change:StoreChange)->Void
-public typealias ReactionClosure<T> = (_ ownedBy:T, _ reaction: FlaskReaction) -> Void
+public typealias ReactionClosure<T> = (_ attachedTo:T, _ reaction: FlaskReaction) -> Void
 public typealias FluxDictType = Dictionary<String,AnyHashable?>
 public typealias FluxNil = (AnyHashable?)
 public typealias MutationParams<T> = (_ store:T,_ react:()-> Void,_ abort:()-> Void) -> Void
@@ -41,7 +41,7 @@ protocol FluxAnyWithInit{
     init() //construct at initial state
 }
 
-public class FluxEquatable: Equatable{
+open class FluxEquatable: Equatable{
     public static func == (lhs: FluxEquatable, rhs: FluxEquatable) -> Bool {
         return lhs === rhs
     }

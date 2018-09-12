@@ -39,22 +39,23 @@ public extension Flux {
     }
 }
 
+
 public extension Flux {
     
-    static public func flask<T:AnyObject>(ownedBy owner:T, binding store:StoreConcrete) -> Flask<T>{
-        return Flux.flask(ownedBy:owner,binding:[store])
+    static public func flask<T:AnyObject>(attachedTo owner:T, mixing store:StoreConcrete) -> Flask<T>{
+        return Flux.flask(attachedTo:owner,mixing:[store])
     }
     
-    static public func flask<T:AnyObject>(ownedBy owner:T, binding stores:[StoreConcrete]) -> Flask<T>{
-        let flask = Flux.flask(ownedBy:owner)
+    static public func flask<T:AnyObject>(attachedTo owner:T, mixing stores:[StoreConcrete]) -> Flask<T>{
+        let flask = FluxFlaskManager.instance(attachedTo:owner)
         flask.defineStores(stores)
         flask.bind()
         return flask
     }
     
     
-    static private func flask<T:AnyObject>(ownedBy owner:T) -> Flask<T>{
-        return FluxFlaskManager.instance(ownedBy:owner)
+    static private func flask<T:AnyObject>(attachedTo owner:T) -> Flask<T>{
+        return FluxFlaskManager.instance(attachedTo:owner)
     }
 }
 

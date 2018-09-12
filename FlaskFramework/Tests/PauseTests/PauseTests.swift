@@ -19,7 +19,7 @@ class LockTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,mixing:store)
         
         var calls = 0
         
@@ -56,7 +56,7 @@ class LockTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,mixing:store)
         
         flask.reactor = { owner, reaction in
             reaction.at(store)?.on(AppState.named.counter, { (change) in
@@ -88,7 +88,7 @@ class LockTests: SetupFlaskTests {
      
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,mixing:store)
         
         flask.reactor = { owner, reaction in
             reaction.at(store)?.on(AppState.named.counter, { (change) in
@@ -123,7 +123,7 @@ class LockTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,mixing:store)
         
         var counter = 0
         

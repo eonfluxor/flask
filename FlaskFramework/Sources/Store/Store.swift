@@ -93,12 +93,18 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
     override func abortStateTransaction(){
         state = _state
     }
+    override func continueStateTransaction(){
+         _state = state
+    }
 }
 
 
 
 
-open class StoreConcrete {
+open class StoreConcrete:NSObject {
+    
+  
+    
     
     public static func isInternalProp(_ state:String)->Bool{
         return state.starts(with: "_")
@@ -109,7 +115,8 @@ open class StoreConcrete {
     }
     
     
-    required public init(){
+    required public override init(){
+        super.init()
         initializeMetaClass()
     }
     
@@ -134,6 +141,7 @@ open class StoreConcrete {
     func startStateTransaction(){}
     func abortStateTransaction(){}
     func commitStateTransaction(){}
+    func continueStateTransaction(){}
     
 }
 

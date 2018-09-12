@@ -44,21 +44,22 @@ extension Store {
         let key = archiveKey()
         let delay = archiveDelay()
         Kron.idle(timeOut: delay , key:key){ [weak self] key,ctx in
-            if let state = self?.currentState(){
-                self?.archiveNow(state)
-            }
+            self?.archiveNow()
         }
         
     }
     
-    func archiveNow<T:State>(_ state:T){
+    func archiveNow(){
         
-//        archiveQueue.addOperation { [weak self] in
+        archiveQueue.addOperation { [weak self] in
         
             DispatchQueue.global().async { [weak self] in
                 
+                guard let state = self?.currentState() else{
+                    return
+                }
+                
                 do{
-                    guard self != nil else {return}
                     
                     let key = self!.archiveKey()
                     let data = try StoreSerializer.dataFromState(state)
@@ -76,7 +77,7 @@ extension Store {
                     fatalError("Serialization error")
                 }
             }
-        
+        }
     }
 }
 extension Store {

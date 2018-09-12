@@ -16,6 +16,8 @@ public class Flask<D:AnyObject>:FlaskConcrete {
     
     weak var owner:D?
     
+    
+    
     public var reactor:ReactionClosure<D>  = { owner,reaction in }
     
     required public init(_ owner:D){
@@ -57,7 +59,6 @@ public class FlaskConcrete:FluxEquatable{
     
     var stores:[StoreConcrete]=[]
     var binded = false
-    
     
     func defineStore(_ store:StoreConcrete){
         defineStores([store])

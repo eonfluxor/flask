@@ -71,6 +71,12 @@
                 <a class="nav-group-task-link" href="../Classes/BusLock.html">BusLock</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/BusNotifier.html">BusNotifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/BusObserver.html">BusObserver</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/Flask.html">Flask</a>
               </li>
               <li class="nav-group-task">
@@ -90,6 +96,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/FluxRef.html">FluxRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes.html#/s:9Flask_iOS11FluxWeakRefC">FluxWeakRef</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/Store.html">Store</a>
@@ -122,6 +131,9 @@
             <a class="nav-group-name-link" href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:9Flask_iOS15BusNotificationV">BusNotification</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/ChainReaction.html">ChainReaction</a>
               </li>
               <li class="nav-group-task">
@@ -136,7 +148,22 @@
             <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS03BusC7Payloada">BusBusPayload</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS11BusCallbacka">BusCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS20BusCompletionClosurea">BusCompletionClosure</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS8BusEventa">BusEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS11BusMutationa">BusMutation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS10BusPayloada">BusPayload</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS13ChangeClosurea">ChangeClosure</a>
@@ -155,9 +182,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS9StateNamea">StateName</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Typealiases.html#/s:9Flask_iOS8StoreBusa">StoreBus</a>
               </li>
             </ul>
           </li>
@@ -442,9 +466,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS4FluxC4lockAA7BusLockCx9withEvent_s10DictionaryVySSypGSg7payloadts16RawRepresentableRzlFZ"></a>
+                    <a name="/s:9Flask_iOS4FluxC4lockAA7BusLockCx9withEvent_s10DictionaryVySSypSgGSg7payloadts16RawRepresentableRzlFZ"></a>
                     <a name="//apple_ref/swift/Method/lock(withEvent:payload:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS4FluxC4lockAA7BusLockCx9withEvent_s10DictionaryVySSypGSg7payloadts16RawRepresentableRzlFZ">lock(withEvent:payload:)</a>
+                    <a class="token" href="#/s:9Flask_iOS4FluxC4lockAA7BusLockCx9withEvent_s10DictionaryVySSypSgGSg7payloadts16RawRepresentableRzlFZ">lock(withEvent:payload:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -460,7 +484,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">lock</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">withEvent</span> <span class="nv">enumVal</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/BusLock.html">BusLock</a></span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">RawRepresentable</span></code></pre>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">lock</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">withEvent</span> <span class="nv">enumVal</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9Flask_iOS10BusPayloada">BusPayload</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/BusLock.html">BusLock</a></span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">RawRepresentable</span></code></pre>
 
                         </div>
                       </div>
@@ -501,9 +525,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Flask_iOS4FluxC8dispatchyx_s10DictionaryVySSypGSg7payloadts16RawRepresentableRzlFZ"></a>
+                    <a name="/s:9Flask_iOS4FluxC8dispatchyx_s10DictionaryVySSypSgGSg7payloadts16RawRepresentableRzlFZ"></a>
                     <a name="//apple_ref/swift/Method/dispatch(_:payload:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Flask_iOS4FluxC8dispatchyx_s10DictionaryVySSypGSg7payloadts16RawRepresentableRzlFZ">dispatch(_:payload:)</a>
+                    <a class="token" href="#/s:9Flask_iOS4FluxC8dispatchyx_s10DictionaryVySSypSgGSg7payloadts16RawRepresentableRzlFZ">dispatch(_:payload:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -518,7 +542,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">dispatch</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span><span class="kt">RawRepresentable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">enumVal</span><span class="p">:</span><span class="kt">T</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:[</span><span class="kt">String</span><span class="p">:</span><span class="kt">Any</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">dispatch</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span><span class="kt">RawRepresentable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">enumVal</span><span class="p">:</span><span class="kt">T</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:</span><span class="kt"><a href="../Typealiases.html#/s:9Flask_iOS10BusPayloada">BusPayload</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
