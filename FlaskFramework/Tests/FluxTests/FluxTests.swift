@@ -18,7 +18,7 @@ class FlaskTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,mixing:store)
         
         flask.reactor = { owner, reaction in
             
@@ -44,7 +44,7 @@ class FlaskTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,mixing:store)
         
         flask.reactor = { owner, reaction in
             
@@ -69,7 +69,7 @@ class FlaskTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,mixing:store)
         
         flask.reactor={owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -93,7 +93,7 @@ class FlaskTests: SetupFlaskTests {
         let store = self.store!
         let owner:TestOwner? = TestOwner()
         
-        weak var flask = Flux.flask(ownedBy:owner!, binding:store)
+        weak var flask = Flux.flask(attachedTo:owner!, mixing:store)
         
         flask?.reactor = { owner, reaction in}
    
@@ -116,7 +116,7 @@ class FlaskTests: SetupFlaskTests {
         let store = self.store!
         var weakOwner:TestOwner? = TestOwner()
         
-        weak var flask = Flux.flask(ownedBy:weakOwner!, binding:store)
+        weak var flask = Flux.flask(attachedTo:weakOwner!, mixing:store)
         
         flask?.reactor = { owner, reaction in}
         
@@ -145,7 +145,7 @@ class FlaskTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,mixing:store)
         
         flask.reactor = { owner, reaction in
             
@@ -175,7 +175,7 @@ class FlaskTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testGlobalStore testInlineMutation")
         
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner, binding:Stores.app)
+        let flask = Flux.flask(attachedTo:owner, mixing:Stores.app)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -203,7 +203,7 @@ class FlaskTests: SetupFlaskTests {
         
         let store = self.store!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(ownedBy:owner, binding:store)
+        let flask = Flux.flask(attachedTo:owner, mixing:store)
         
         flask.reactor = { owner, reaction in
             reaction.on("_internal", { (change) in
