@@ -83,11 +83,17 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
         }
         
     }
+    
+    override func commitStateTransaction(){
+        snapshotState()
+        finishStateTransaction()
+    }
+    
     override func startStateTransaction(){
         state = _state
     }
-    override func commitStateTransaction(){
-        snapshotState()
+    
+    override func finishStateTransaction(){
         _state = state
     }
     override func abortStateTransaction(){
@@ -140,6 +146,8 @@ open class StoreConcrete:Hashable {
   
     func startStateTransaction(){}
     func abortStateTransaction(){}
+    func finishStateTransaction(){}
+    
     func commitStateTransaction(){}
     
 }

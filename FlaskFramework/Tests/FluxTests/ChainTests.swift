@@ -112,11 +112,14 @@ class ChainingTests: SetupFlaskTests {
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
-                XCTAssert(change.newValue() == 2)
+                XCTAssert(store.currentState().counter == 2)
+                XCTAssert(store.currentState().text == "mutate no override")
+                
             })
         }
         
         flask.mutate(store){ (store) in
+            store.state.text="mutate no override"
             store.state.counter=1
         }.mutate(store) { (store) in
             store.state.counter=2

@@ -54,11 +54,13 @@ public class ChainReaction{
             var chainedStoresMut = chainedStores
             chainedStoresMut.append(store)
             chainReact(chainedStoresMut)
+            
         }
         
         Flux.bus.performInBusQueue {
             store.startStateTransaction()
             mutation(store)
+            store.finishStateTransaction()
         }
         
         let chain = ChainReaction(flask:flask, react:_react, abort:_abort)
@@ -77,6 +79,7 @@ public extension FlaskConcrete{
         
         let store = self.store(aStore)
         
+       
         let  react:(_ chainedStores:[StoreConcrete])->Void = {  (chainedStores)  in
             
             var chainedStoresMut = chainedStores
@@ -84,11 +87,9 @@ public extension FlaskConcrete{
             
             let uniqueStores = Array(Set<StoreConcrete>(chainedStoresMut))
             
-            assert(chainedStoresMut.count == uniqueStores.count, "Concatenate same store mutations in a single closure.")
-            
+       
             for store in uniqueStores{
                 Flux.bus.performInBusQueue {
-                    store.commitStateTransaction()
                     store.reduceAndReact()
                 }
             }
@@ -107,8 +108,10 @@ public extension FlaskConcrete{
         
         
         Flux.bus.performInBusQueue {
+            store.snapshotState()
             store.startStateTransaction()
             mutation(store)
+            store.finishStateTransaction()
         }
         
         
