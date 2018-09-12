@@ -184,10 +184,10 @@ class FlaskTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(Stores.app,{ (store) in
+        flask.mutate(Stores.app){ (store) in
             store.state.counter=1
-        }).mutate(Stores.app) { (store) in
-            store.state.counter=2
+            }.mutate(Stores.app) { (store) in
+                store.state.counter=2
             }.react()
         
         
