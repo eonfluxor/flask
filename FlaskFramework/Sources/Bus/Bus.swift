@@ -59,12 +59,12 @@ public class Bus {
 
 extension Bus {
     
-    func dispatch<T:RawRepresentable>(_ enumVal:T, payload:BusPayload? = nil){
+    func applyMixer<T:RawRepresentable>(_ enumVal:T, payload:BusPayload? = nil){
         let bus = enumVal.rawValue as! String
-        dispatch(bus,payload:payload)
+        applyMixer(bus,payload:payload)
     }
     
-    func dispatch(_ bus:String, payload:BusPayload? = nil ){
+    func applyMixer(_ bus:String, payload:BusPayload? = nil ){
         enqueue(bus,payload: payload)
     }
     
@@ -78,14 +78,14 @@ extension Bus {
     func enqueue(_ event:String, payload:BusPayload?){
         
         if (payload?[BUS_LOCKED_BY]) == nil {
-            dispatchInBusQueue(event,payload:payload)
+            applyMixerInBusQueue(event,payload:payload)
         }else{
-            dispatchInLockQueue(event,payload:payload)
+            applyMixerInLockQueue(event,payload:payload)
         }
         
     }
     
-    func dispatchInBusQueue(_ event:String, payload:BusPayload?){
+    func applyMixerInBusQueue(_ event:String, payload:BusPayload?){
         
         let completed = { [weak self] in
             if let me = self{
@@ -119,7 +119,7 @@ extension Bus {
 
     }
     
-    func dispatchInLockQueue(_ event:String, payload:BusPayload?){
+    func applyMixerInLockQueue(_ event:String, payload:BusPayload?){
         
         let completed = { [weak self] in
             if let me = self{

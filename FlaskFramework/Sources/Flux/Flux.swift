@@ -79,7 +79,7 @@ public extension Flux {
         var info = payload ?? [:]
         info[BUS_LOCKED_BY] = lock
         
-        Flux.bus.dispatch(bus,payload:info)
+        Flux.bus.applyMixer(bus,payload:info)
         
         return lock
     }
@@ -93,12 +93,12 @@ public extension Flux {
 
 public extension Flux {
     
-    static public func dispatch<T:RawRepresentable>(_ enumVal:T, payload:BusPayload? = nil){
+    static public func applyMixer<T:RawRepresentable>(_ enumVal:T, payload:BusPayload? = nil){
         let bus = enumVal.rawValue as! String
         var info = payload ?? [:]
         info[FLUX_BUS_NAME] = bus
         
-        Flux.bus.dispatch(bus,payload:info)
+        Flux.bus.applyMixer(bus,payload:info)
     }
 }
 

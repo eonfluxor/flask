@@ -29,8 +29,8 @@ class FlaskTests: SetupFlaskTests {
         }
         
 //        DispatchQueue.main.async {
-        Flux.dispatch(AppEvents.Count, payload: ["test":"callback"])
-        Flux.dispatch(AppEvents.Text, payload: ["test":"callback"])
+        Flux.applyMixer(AppEvents.Count, payload: ["test":"callback"])
+        Flux.applyMixer(AppEvents.Text, payload: ["test":"callback"])
 //        }
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -55,7 +55,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         DispatchQueue.main.async {
-            Flux.dispatch(AppEvents.Count, payload: ["test":"testOwner"])
+            Flux.applyMixer(AppEvents.Count, payload: ["test":"testOwner"])
         }
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -78,7 +78,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         flask.unbind()
-        Flux.dispatch(AppEvents.Count, payload: ["test":"empty"])
+        Flux.applyMixer(AppEvents.Count, payload: ["test":"empty"])
         
         waitForExpectations(timeout: 2, handler: nil)
         
@@ -125,7 +125,7 @@ class FlaskTests: SetupFlaskTests {
         // should cause the factory to release this flask
         weakOwner = nil
         
-        Flux.dispatch(AppEvents.Count, payload:  ["test":"ownerDispose"])
+        Flux.applyMixer(AppEvents.Count, payload:  ["test":"ownerDispose"])
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:  {
             if flask == nil {
@@ -161,7 +161,7 @@ class FlaskTests: SetupFlaskTests {
             
         }
         
-        Flux.dispatch(AppEvents.Count, payload: ["test":"change"])
+        Flux.applyMixer(AppEvents.Count, payload: ["test":"change"])
         
         waitForExpectations(timeout: 2, handler: nil)
         
