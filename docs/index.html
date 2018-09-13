@@ -223,9 +223,33 @@
 <img src="https://img.shields.io/badge/Swift-4.1-orange.svg" alt="Swift 4.0"> 
 <img src="https://img.shields.io/cocoapods/p/Flask.svg" alt="platforms">
 <a href="https://travis-ci.org/eonfluxor/flask"><img src="https://travis-ci.org/eonfluxor/flask.svg?branch=master" alt="Build Status"></a></p>
+
+<p><strong>Supported Swift Versions:</strong> Swift 4.0</p>
 <h1 id='what-is-flask' class='heading'>What is Flask?</h1>
 
-<p>Flask is a framework implementing the Single-Flux- Reactive pattern using lab naming semantics.</p>
+<p>Flask is a multiplatform (iOS | OSX | tvOS) implementation of the unidirectional data flow architecture in Swift. Flask offers a friendly API that makes easy to understand an implement its robust feature set. </p>
+
+<p>While the Flux architeture is abstract, explaining Flask is easy:</p>
+
+<p><strong>Flask lets you <code>Mix</code> <code>Substances</code> and <code>React</code> to their <code><a href="Protocols/State.html">State</a></code> <code>Changes</code>.</strong></p>
+
+<p>To preserve this natural intuition in Flask <code>Flux Stores</code> are called <code>Substances</code>. Thus a <code>substance</code> would represents any homogeneous data structure in your application (ie. Feed, Settings, or the application itself). </p>
+
+<p><strong>You can create <code>ReactiveSubstances</code> that <code>React</code> to <code>Global Events</code>, or simple <code>Substances</code> that are <code>Mixed</code> inside your Flask</strong></p>
+
+<p>The above conveys the idea of using the <code>Fluxxor</code> pattern of <code>Reactive Stores</code> as <code>Reactive Substances</code> and the <code>Redux</code> pattern of <code>Store Reducers</code>  as a plain <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code>.</p>
+<h2 id='why-flask' class='heading'>Why Flask?</h2>
+
+<p>Flask implements both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxxor</a> through a unified architecture. Aditionally provides unique features not found in similar frameworks:</p>
+
+<ul>
+<li>Binding multiple stores</li>
+<li>Reduce changes in nested keys</li>
+<li>Locks and exclusive dispatch</li>
+<li>Automatic archive / unarchive</li>
+<li>Chained mutations</li>
+<li>Automatic unsubscription</li>
+</ul>
 <h2 id='motivation' class='heading'>Motivation</h2>
 
 <p>Flask is designed with the following goals:</p>

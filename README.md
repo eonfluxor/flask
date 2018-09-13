@@ -9,10 +9,32 @@
 ![platforms](https://img.shields.io/cocoapods/p/Flask.svg)
 [![Build Status](https://travis-ci.org/eonfluxor/flask.svg?branch=master)](https://travis-ci.org/eonfluxor/flask)
 
-
+**Supported Swift Versions:** Swift 4.0
 
 # What is Flask?
-Flask is a framework implementing the Single-Flux- Reactive pattern using lab naming semantics.
+Flask is a multiplatform (iOS | OSX | tvOS) implementation of the unidirectional data flow architecture in Swift. Flask offers a friendly API that makes easy to understand an implement its robust feature set. 
+
+While the Flux architeture is abstract, explaining Flask is easy:
+
+**Flask lets you `Mix` `Substances` and `React` to their `State` `Changes`.**
+
+To preserve this natural intuition in Flask `Flux Stores` are called `Substances`. Thus a `substance` would represents any homogeneous data structure in your application (ie. Feed, Settings, or the application itself). 
+
+**You can create `ReactiveSubstances` that `React` to `Global Events`, or simple `Substances` that are `Mixed` inside your Flask**
+
+The above conveys the idea of using the `Fluxxor` pattern of `Reactive Stores` as `Reactive Substances` and the `Redux` pattern of `Store Reducers`  as a plain `Substance`.
+
+## Why Flask?
+
+Flask implements both the [Redux](https://github.com/reactjs/redux) and [Fluxxor](http://fluxxor.com/) through a unified architecture. Aditionally provides unique features not found in similar frameworks:
+
+* Binding multiple stores
+* Reduce changes in nested keys
+* Locks and exclusive dispatch
+* Automatic archive / unarchive
+* Chained mutations
+* Automatic unsubscription
+
 
 ## Motivation
 Flask is designed with the following goals:
