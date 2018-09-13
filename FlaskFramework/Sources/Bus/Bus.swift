@@ -146,31 +146,31 @@ extension Bus {
 
 extension Bus {
    
-    func bindFlask(_ store:StoreConcrete, flask:FlaskConcrete) {
+    func bindFlask(_ substance:SubstanceConcrete, flask:FlaskConcrete) {
         
-        let storeName = store.name()
-        var storeFlaskRefs = getStoreFlaskRefs(storeName)
+        let substanceName = substance.name()
+        var substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
         
         let ref = FluxWeakRef(value:flask)
-        storeFlaskRefs.append(ref)
-        setStoreFlaskRefs(storeName,storeFlaskRefs)
+        substanceFlaskRefs.append(ref)
+        setSubstanceFlaskRefs(substanceName,substanceFlaskRefs)
         
     }
     
-    func unbindFlask(_ store:StoreConcrete, flask:FlaskConcrete) {
+    func unbindFlask(_ substance:SubstanceConcrete, flask:FlaskConcrete) {
         
-        let storeName = store.name()
-        let storeFlaskRefs = getStoreFlaskRefs(storeName)
+        let substanceName = substance.name()
+        let substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
         
-        let storeFlaskRefsFiltered = storeFlaskRefs.filter { $0.value != flask }
+        let substanceFlaskRefsFiltered = substanceFlaskRefs.filter { $0.value != flask }
         
-        setStoreFlaskRefs(storeName,storeFlaskRefsFiltered)
+        setSubstanceFlaskRefs(substanceName,substanceFlaskRefsFiltered)
        
     }
     
-    func getStoreFlaskRefs(_ storeName:String) -> Array<FluxWeakRef<FlaskConcrete>>{
+    func getSubstanceFlaskRefs(_ substanceName:String) -> Array<FluxWeakRef<FlaskConcrete>>{
         
-        if let flasks = self.flaskRefs[storeName] {
+        if let flasks = self.flaskRefs[substanceName] {
             return flasks
         }
         
@@ -178,9 +178,9 @@ extension Bus {
         
     }
     
-    func setStoreFlaskRefs(_ storeName:String,_ refs:Array<FluxWeakRef<FlaskConcrete>>){
+    func setSubstanceFlaskRefs(_ substanceName:String,_ refs:Array<FluxWeakRef<FlaskConcrete>>){
         
-        self.flaskRefs[storeName] = refs
+        self.flaskRefs[substanceName] = refs
     }
 }
 
@@ -191,11 +191,11 @@ extension Bus {
    
     func reactChange(_ reaction:FlaskReaction){
         
-        let storeName = reaction.store.name()
-        let storeFlaskRefs = getStoreFlaskRefs(storeName)
+        let substanceName = reaction.substance.name()
+        let substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
         
-        for storeFlaskRef in storeFlaskRefs {
-            if let flask = storeFlaskRef.value{
+        for substanceFlaskRef in substanceFlaskRefs {
+            if let flask = substanceFlaskRef.value{
                 flask.handleReaction( reaction)
             }
         }

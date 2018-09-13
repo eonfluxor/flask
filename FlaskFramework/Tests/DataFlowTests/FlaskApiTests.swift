@@ -26,7 +26,7 @@ class InitializerTests: XCTestCase, FlaskReactor  {
     }
     
     override func setUp() {
-         FlaskAttach(to:self, mixing:[Stores.app])
+         FlaskAttach(to:self, mixing:[Substances.app])
     }
     
     func testOwnerInit(){
@@ -34,10 +34,10 @@ class InitializerTests: XCTestCase, FlaskReactor  {
         FlaskUse(self)
         FlaskDetach(from: self)
         
-//        UseFlask(self).toMutate(Stores.app) { (store) in
-//            store.state.counter = 10
-//            }.andMutate(Stores.app) { (store) in
-//                store.state.text = "text"
+//        UseFlask(self).toMutate(Substances.app) { (substance) in
+//            substance.state.counter = 10
+//            }.andMutate(Substances.app) { (substance) in
+//                substance.state.text = "text"
 //            }.andReact()
         
     }

@@ -12,15 +12,15 @@ import UIKit
 import Cocoa
 #endif
 
-typealias ChainedStoresClosure = (_ chainedStores:[StoreConcrete])->Void
+typealias ChainedSubstancesClosure = (_ chainedSubstances:[SubstanceConcrete])->Void
 let CHAIN_REACTION_CONTEXT = "ChainReaction"
 public class ChainReaction{
     
     let flask:FlaskConcrete
-    var _react:ChainedStoresClosure
-    var _abort:ChainedStoresClosure
+    var _react:ChainedSubstancesClosure
+    var _abort:ChainedSubstancesClosure
     
-    init(flask:FlaskConcrete,react:@escaping ChainedStoresClosure,abort:@escaping ChainedStoresClosure) {
+    init(flask:FlaskConcrete,react:@escaping ChainedSubstancesClosure,abort:@escaping ChainedSubstancesClosure) {
         self.flask = flask
         self._react = react
         self._abort = abort
@@ -34,45 +34,45 @@ public class ChainReaction{
         andReact()
     }
     public func andReact(){
-        let stores:[StoreConcrete] = []
-        _react(stores)
+        let substances:[SubstanceConcrete] = []
+        _react(substances)
     }
     
     public func andAbort(){
-        let stores:[StoreConcrete] = []
-        _abort(stores)
+        let substances:[SubstanceConcrete] = []
+        _abort(substances)
     }
     
-    public func andMutate<T:StoreConcrete>(_ aStore:T, _ mutation:@escaping(_ store:T) -> Void)->ChainReaction{
-        return mutate(aStore, mutation)
+    public func andMutate<T:SubstanceConcrete>(_ aSubstance:T, _ mutation:@escaping(_ substance:T) -> Void)->ChainReaction{
+        return mutate(aSubstance, mutation)
     }
     
-    public func mutate<T:StoreConcrete>(_ aStore:T, _ mutation:@escaping (_ store:T) -> Void)->ChainReaction{
+    public func mutate<T:SubstanceConcrete>(_ aSubstance:T, _ mutation:@escaping (_ substance:T) -> Void)->ChainReaction{
         
-        let store = flask.store(aStore)
+        let substance = flask.substance(aSubstance)
         
         let reactInChain = _react
         let abortInChain = _abort
         
-        _react = { (chainedStores) in
+        _react = { (chainedSubstances) in
             
-            var chainedStoresMut = chainedStores
-            chainedStoresMut.append(store)
-            reactInChain(chainedStoresMut)
+            var chainedSubstancesMut = chainedSubstances
+            chainedSubstancesMut.append(substance)
+            reactInChain(chainedSubstancesMut)
             
         }
         
-        _abort = { (chainedStores) in
+        _abort = { (chainedSubstances) in
             
-            var chainedStoresMut = chainedStores
-            chainedStoresMut.append(store)
-            abortInChain(chainedStoresMut)
+            var chainedSubstancesMut = chainedSubstances
+            chainedSubstancesMut.append(substance)
+            abortInChain(chainedSubstancesMut)
             
         }
         
         Flux.bus.performInBusQueue {
-            store.beginStateTransaction(context:CHAIN_REACTION_CONTEXT){
-                mutation(store)
+            substance.beginStateTransaction(context:CHAIN_REACTION_CONTEXT){
+                mutation(substance)
             }
             
         }
@@ -85,36 +85,36 @@ public class ChainReaction{
 
 public extension FlaskConcrete{
     
-    public func toMutate<T:StoreConcrete>(_ aStore:T, _ mutation:@escaping(_ store:T) -> Void)->ChainReaction{
-        return mutate(aStore, mutation)
+    public func toMutate<T:SubstanceConcrete>(_ aSubstance:T, _ mutation:@escaping(_ substance:T) -> Void)->ChainReaction{
+        return mutate(aSubstance, mutation)
     }
     
-    public func mutate<T:StoreConcrete>(_ aStore:T, _ mutation:@escaping(_ store:T) -> Void)->ChainReaction{
+    public func mutate<T:SubstanceConcrete>(_ aSubstance:T, _ mutation:@escaping(_ substance:T) -> Void)->ChainReaction{
         
-        let store = self.store(aStore)
+        let substance = self.substance(aSubstance)
         
        
        
-        let  react:ChainedStoresClosure = {  [weak self] (chainedStores)  in
+        let  react:ChainedSubstancesClosure = {  [weak self] (chainedSubstances)  in
             
-            var chainedStoresMut = chainedStores
-            chainedStoresMut.append(store)
-            self?.reduceStoresChain(chainedStoresMut)
+            var chainedSubstancesMut = chainedSubstances
+            chainedSubstancesMut.append(substance)
+            self?.reduceSubstancesChain(chainedSubstancesMut)
             
         }
         
-        let abort:ChainedStoresClosure = {  [weak self] (chainedStores)   in
+        let abort:ChainedSubstancesClosure = {  [weak self] (chainedSubstances)   in
            
-            var chainedStoresMut = chainedStores
-            chainedStoresMut.append(store)
-            self?.reduceStoresChain(chainedStoresMut,abort: true)
+            var chainedSubstancesMut = chainedSubstances
+            chainedSubstancesMut.append(substance)
+            self?.reduceSubstancesChain(chainedSubstancesMut,abort: true)
 
         }
         
         
         Flux.bus.performInBusQueue {
-            store.beginStateTransaction(context:CHAIN_REACTION_CONTEXT){
-                mutation(store)
+            substance.beginStateTransaction(context:CHAIN_REACTION_CONTEXT){
+                mutation(substance)
             }
         }
         
@@ -123,25 +123,25 @@ public extension FlaskConcrete{
         return chain
     }
     
-    func reduceStoresChain(_ chainedStores:[StoreConcrete], abort:Bool = false){
+    func reduceSubstancesChain(_ chainedSubstances:[SubstanceConcrete], abort:Bool = false){
        
-        let uniqueStores = Array(Set<StoreConcrete>(chainedStores))
+        let uniqueSubstances = Array(Set<SubstanceConcrete>(chainedSubstances))
         
-        var reduceAction:(_ store:StoreConcrete)->Void = { store in
+        var reduceAction:(_ substance:SubstanceConcrete)->Void = { substance in
             
-            store.commitStateTransaction(context: CHAIN_REACTION_CONTEXT)
-            store.reduceAndReact()
+            substance.commitStateTransaction(context: CHAIN_REACTION_CONTEXT)
+            substance.reduceAndReact()
         }
         
         if abort == true {
-            reduceAction = { store in
-                store.abortStateTransaction(context: CHAIN_REACTION_CONTEXT)
+            reduceAction = { substance in
+                substance.abortStateTransaction(context: CHAIN_REACTION_CONTEXT)
             }
         }
         
-        for store in uniqueStores{
+        for substance in uniqueSubstances{
             Flux.bus.performInBusQueue {
-                reduceAction(store)
+                reduceAction(substance)
             }
         }
         

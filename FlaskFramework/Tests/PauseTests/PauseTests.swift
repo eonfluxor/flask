@@ -17,15 +17,15 @@ class LockTests: SetupFlaskTests {
         let expectation2 = self.expectation(description: "testLock Mutation Ignored")
         expectation2.isInverted=true
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,binding:substance)
         
         var calls = 0
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(store)?.on(AppState.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.named.counter, { (change) in
                 
                 if calls == 0 {
                     expectation.fulfill()
@@ -54,12 +54,12 @@ class LockTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testLockRelease Mutation")
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,binding:substance)
         
         flask.reactor = { owner, reaction in
-            reaction.at(store)?.on(AppState.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
             })
         }
@@ -86,18 +86,18 @@ class LockTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testLockRelease Mutation")
         let expectation2 = self.expectation(description: "testLockRelease Mutation Ignored")
      
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,binding:substance)
         
         flask.reactor = { owner, reaction in
-            reaction.at(store)?.on(AppState.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.named.counter, { (change) in
                 
                 reaction.onLock?.release()
                 expectation.fulfill()
                 
             })
-            reaction.at(store)?.on(AppState.named.text, { (change) in
+            reaction.at(substance)?.on(AppState.named.text, { (change) in
                 expectation2.fulfill()
             })
         }
@@ -121,20 +121,20 @@ class LockTests: SetupFlaskTests {
         let expectation2 = self.expectation(description: "should perform over lock")
         let expectation3 = self.expectation(description: "should perform after lock")
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,binding:substance)
         
         var counter = 0
         
         flask.reactor = { owner, reaction in
-            reaction.at(store)?.on(AppState.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.named.counter, { (change) in
                
                 expectation.fulfill()
                 reaction.onLock?.release()
                 
             })
-            reaction.at(store)?.on(AppState.named.text, { (change) in
+            reaction.at(substance)?.on(AppState.named.text, { (change) in
                 if counter == 0 {
                     
                     expectation2.fulfill()
@@ -151,8 +151,8 @@ class LockTests: SetupFlaskTests {
         Flux.lock(withEvent:AppEvents.Count, payload:  ["test":"testLockActon count"])
         Flux.lock(withEvent:AppEvents.Text, payload:  ["test":"testLockActon count"])
         
-        flask.mutate(store) { (store) in
-            store.state.text = "unchained!"
+        flask.mutate(substance) { (substance) in
+            substance.state.text = "unchained!"
         }.react()
         
         waitForExpectations(timeout: 5, handler: nil)

@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-public extension StoreChange{
+public extension SubstanceChange{
     
     
     public func unwrapValue<A>(_ val:A?) ->A?{
@@ -33,14 +33,14 @@ public extension StoreChange{
         return _key
     }
     
-    public func store()->StoreConcrete?{
-        return _store
+    public func substance()->SubstanceConcrete?{
+        return _substance
     }
 }
 
-public struct StoreChange  {
+public struct SubstanceChange  {
     
-    weak var _store:StoreConcrete?
+    weak var _substance:SubstanceConcrete?
     var _key:String?
     var oldVal:AnyHashable?
     var newVal:AnyHashable?

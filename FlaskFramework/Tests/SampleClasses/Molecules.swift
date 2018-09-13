@@ -1,5 +1,5 @@
 //
-//  Stores.swift
+//  Substances.swift
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
@@ -12,6 +12,6 @@ import UIKit
 import Cocoa
 #endif
 
-struct Stores  {
+struct Substances  {
   static let app = App()
 }

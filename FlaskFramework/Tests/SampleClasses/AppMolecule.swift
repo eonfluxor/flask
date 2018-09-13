@@ -1,5 +1,5 @@
 //
-//  Store.swift
+//  Substance.swift
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 8/31/18.
@@ -34,7 +34,7 @@ struct AppState : State {
     
 }
 
-class App : Store<AppState,AppEvents> {
+class App : Substance<AppState,AppEvents> {
     
     override func defineBusEvents(){
         

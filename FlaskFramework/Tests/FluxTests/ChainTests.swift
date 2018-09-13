@@ -15,9 +15,9 @@ class ChainingTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testInlineMutation")
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner, binding:store)
+        let flask = Flux.flask(attachedTo:owner, binding:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -28,11 +28,11 @@ class ChainingTests: SetupFlaskTests {
         
       
         
-        flask.mutate(store){ (store) in
-            store.state.counter=1
+        flask.mutate(substance){ (substance) in
+            substance.state.counter=1
             
-        }.mutate(store) { (store) in
-            store.state.counter=2
+        }.mutate(substance) { (substance) in
+            substance.state.counter=2
         }.react()
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -46,9 +46,9 @@ class ChainingTests: SetupFlaskTests {
         let expectation2 = self.expectation(description: "testChangeInLine text")
         let expectation3 = self.expectation(description: "testChangeInLine object")
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,binding:substance)
         
         let object = NSObject()
         let aObject = FluxRef( object )
@@ -63,7 +63,7 @@ class ChainingTests: SetupFlaskTests {
                 XCTAssert(oldValue == 0)
                 XCTAssert(newValue == 1)
                 XCTAssert(change.key() == AppState.named.counter.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.substance() === substance)
                 
                 expectation.fulfill()
             })
@@ -73,7 +73,7 @@ class ChainingTests: SetupFlaskTests {
                 XCTAssert(change.oldValue() == "")
                 XCTAssert(change.newValue() == "reaction")
                 XCTAssert(change.key() == AppState.named.text.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.substance() === substance)
                 
                 expectation2.fulfill()
             })
@@ -83,17 +83,17 @@ class ChainingTests: SetupFlaskTests {
                 XCTAssert( isNilFlux(change.oldValue()) )
                 XCTAssert(change.newValue() == aObject)
                 XCTAssert(change.key() == AppState.named.object.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.substance() === substance)
                 
                 expectation3.fulfill()
             })
             
         }
         
-        flask.mutate(store) { (store) in
-            store.state.counter = 1
-            store.state.text = "reaction"
-            store.state.object = aObject
+        flask.mutate(substance) { (substance) in
+            substance.state.counter = 1
+            substance.state.text = "reaction"
+            substance.state.object = aObject
         }.react()
         
         
@@ -105,24 +105,24 @@ class ChainingTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testChain")
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner, binding:store)
+        let flask = Flux.flask(attachedTo:owner, binding:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
-                XCTAssert(store.currentState().counter == 2)
-                XCTAssert(store.currentState().text == "mutate no override")
+                XCTAssert(substance.currentState().counter == 2)
+                XCTAssert(substance.currentState().text == "mutate no override")
                 
             })
         }
         
-        flask.mutate(store){ (store) in
-            store.state.text="mutate no override"
-            store.state.counter=1
-        }.mutate(store) { (store) in
-            store.state.counter=2
+        flask.mutate(substance){ (substance) in
+            substance.state.text="mutate no override"
+            substance.state.counter=1
+        }.mutate(substance) { (substance) in
+            substance.state.counter=2
         }.react()
         
         
@@ -136,24 +136,24 @@ class ChainingTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testChain")
         expectation.isInverted = true
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner, binding:store)
+        let flask = Flux.flask(attachedTo:owner, binding:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
-//                XCTAssert(store.currentState().counter == 2)
-//                XCTAssert(store.currentState().text == "mutate no override")
+//                XCTAssert(substance.currentState().counter == 2)
+//                XCTAssert(substance.currentState().text == "mutate no override")
                 
             })
         }
         
-        flask.mutate(store){ (store) in
-            store.state.text="mutate no override"
-            store.state.counter=1
-            }.mutate(store) { (store) in
-                store.state.counter=2
+        flask.mutate(substance){ (substance) in
+            substance.state.text="mutate no override"
+            substance.state.counter=1
+            }.mutate(substance) { (substance) in
+                substance.state.counter=2
             }.abort()
         
         

@@ -55,16 +55,16 @@ public class Flask<D:AnyObject>:FlaskConcrete {
 
 public class FlaskConcrete:FluxEquatable{
     
-    var stores:[StoreConcrete]=[]
+    var substances:[SubstanceConcrete]=[]
     var binded = false
     
     
-    func defineStore(_ store:StoreConcrete){
-        defineStores([store])
+    func defineSubstance(_ substance:SubstanceConcrete){
+        defineSubstances([substance])
     }
     
-    func defineStores(_ bindingStores:[StoreConcrete]){
-        stores = bindingStores
+    func defineSubstances(_ bindingSubstances:[SubstanceConcrete]){
+        substances = bindingSubstances
         
     }
     
@@ -75,19 +75,19 @@ public class FlaskConcrete:FluxEquatable{
     public func bind(){
         
         assert(!binded,"Already bounded. It's required  to balance bind/unbind calls")
-        assert(!stores.isEmpty,"At least one store is required")
+        assert(!substances.isEmpty,"At least one substance is required")
         
         binded = true
         
-        for store in stores {
+        for substance in substances {
            
             { [weak self] in
                 if let wself = self {
-                    Flux.bus.bindFlask(store, flask: wself)
+                    Flux.bus.bindFlask(substance, flask: wself)
                 }
             }()
             
-            store.defineBusEvents()
+            substance.defineBusEvents()
         }
         
         
@@ -102,24 +102,24 @@ public class FlaskConcrete:FluxEquatable{
         if(!binded){return}
         binded = false
         
-        for store in stores {
+        for substance in substances {
             { [weak self] in
                 if let wself = self {
-                    Flux.bus.unbindFlask(store, flask: wself)
+                    Flux.bus.unbindFlask(substance, flask: wself)
                 }
             }()
             
-            store.undefineBusEvents()
+            substance.undefineBusEvents()
         }
     }
     
     ///
     func handleReaction(_ reaction:FlaskReaction){}
     
-//    @discardableResult public mutation<T:StoreConcrete>(_ aStore:T, _ bus:@escaping MutationParams<T>)->FlaskConcrete{
+//    @discardableResult public mutation<T:SubstanceConcrete>(_ aSubstance:T, _ bus:@escaping MutationParams<T>)->FlaskConcrete{
 //        
-//        let store = self.store(aStore)
-//        store.mutation(bus)
+//        let substance = self.substance(aSubstance)
+//        substance.mutation(bus)
 //        
 //        return self
 //    }
@@ -128,13 +128,13 @@ public class FlaskConcrete:FluxEquatable{
     //////////////////
     // MARK: - PUBLIC METHODS
     
-    public func store<T:StoreConcrete>(_ store:T)->T{
+    public func substance<T:SubstanceConcrete>(_ substance:T)->T{
         
-        let registered = stores.contains { (aStore) -> Bool in
-            aStore === store
+        let registered = substances.contains { (aSubstance) -> Bool in
+            aSubstance === substance
         }
-        assert(registered,"Store instance is not binding to this flask")
-        return store
+        assert(registered,"Substance instance is not binding to this flask")
+        return substance
     }
 
 }

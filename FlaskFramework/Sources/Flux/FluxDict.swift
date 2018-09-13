@@ -105,7 +105,7 @@ public class FluxDictRef: NSObject, Codable, StateObservable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        let normalDict = StoreSerializer.flattenDictionary(self)
+        let normalDict = SubstanceSerializer.flattenDictionary(self)
         
         let jsonData:Data = try JSONSerialization.data(withJSONObject: normalDict, options: [])
         let string:String = String(data: jsonData, encoding: .utf8)!

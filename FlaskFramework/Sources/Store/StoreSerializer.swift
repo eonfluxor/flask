@@ -1,5 +1,5 @@
 //
-//  StoreSerializer.swift
+//  SubstanceSerializer.swift
 //  Reaktor
 //
 //  Created by hassan uriostegui on 9/10/18.
@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-public struct StoreSerializer{
+public struct SubstanceSerializer{
     
     static public func jsonFromState<K:State>(_ state:K) throws ->String {
         
@@ -79,9 +79,9 @@ public struct StoreSerializer{
             
             result[childKey] = value
             
-            if(StoreSerializer.isDictionaryRef(value)){
+            if(SubstanceSerializer.isDictionaryRef(value)){
                 //recursion
-                result = StoreSerializer.nestDictionaries(namespace: childKey,
+                result = SubstanceSerializer.nestDictionaries(namespace: childKey,
                                                          root: result,
                                                          children: value as! FluxDictRef)
             }

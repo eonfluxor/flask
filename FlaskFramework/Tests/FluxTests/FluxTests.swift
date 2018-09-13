@@ -16,9 +16,9 @@ class FlaskTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testCallback Mutation counter")
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,binding:substance)
         
         flask.reactor = { owner, reaction in
             
@@ -42,13 +42,13 @@ class FlaskTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testOwner Delegate")
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,binding:substance)
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(store)?.on(AppState.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.named.counter, { (change) in
                 owner.reactionMethod(expectation)
             })
             
@@ -67,9 +67,9 @@ class FlaskTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testEmpty")
         expectation.isInverted=true
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,binding:substance)
         
         flask.reactor={owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -90,10 +90,10 @@ class FlaskTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testStrongOwner")
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner? = TestOwner()
         
-        weak var flask = Flux.flask(attachedTo:owner!, binding:store)
+        weak var flask = Flux.flask(attachedTo:owner!, binding:substance)
         
         flask?.reactor = { owner, reaction in}
    
@@ -113,10 +113,10 @@ class FlaskTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testOwnerDispose")
         
-        let store = self.store!
+        let substance = self.substance!
         var weakOwner:TestOwner? = TestOwner()
         
-        weak var flask = Flux.flask(attachedTo:weakOwner!, binding:store)
+        weak var flask = Flux.flask(attachedTo:weakOwner!, binding:substance)
         
         flask?.reactor = { owner, reaction in}
         
@@ -143,9 +143,9 @@ class FlaskTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "testChange Mutation")
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:store)
+        let flask = Flux.flask(attachedTo:owner,binding:substance)
         
         flask.reactor = { owner, reaction in
             
@@ -154,7 +154,7 @@ class FlaskTests: SetupFlaskTests {
                 XCTAssert(change.oldValue() == 0)
                 XCTAssert(change.newValue() == 1)
                 XCTAssert(change.key() == AppState.named.counter.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.substance() === substance)
                 
                 expectation.fulfill()
             })
@@ -172,22 +172,22 @@ class FlaskTests: SetupFlaskTests {
     
     func testGlobalApp(){
         
-        let expectation = self.expectation(description: "testGlobalStore testInlineMutation")
+        let expectation = self.expectation(description: "testGlobalSubstance testInlineMutation")
         
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner, binding:Stores.app)
+        let flask = Flux.flask(attachedTo:owner, binding:Substances.app)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
-                XCTAssert(Stores.app.state.counter == 2)
+                XCTAssert(Substances.app.state.counter == 2)
             })
         }
         
-        flask.mutate(Stores.app){ (store) in
-            store.state.counter=1
-            }.mutate(Stores.app) { (store) in
-                store.state.counter=2
+        flask.mutate(Substances.app){ (substance) in
+            substance.state.counter=1
+            }.mutate(Substances.app) { (substance) in
+                substance.state.counter=2
             }.react()
         
         
@@ -201,9 +201,9 @@ class FlaskTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testStateInternal")
         expectation.isInverted = true
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner, binding:store)
+        let flask = Flux.flask(attachedTo:owner, binding:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on("_internal", { (change) in
@@ -211,8 +211,8 @@ class FlaskTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(store){ (store) in
-            store.state._internal="shouldn't cause mix"
+        flask.mutate(substance){ (substance) in
+            substance.state._internal="shouldn't cause mix"
         }.react()
         
         waitForExpectations(timeout: 2, handler: nil)

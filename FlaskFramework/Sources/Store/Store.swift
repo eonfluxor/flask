@@ -1,5 +1,5 @@
 //
-//  StoreConcrete.swift
+//  SubstanceConcrete.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 8/28/18.
@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-open class Store<T:State,A:RawRepresentable> : StoreConcrete{
+open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
     
     typealias StateType = T
     
@@ -112,7 +112,7 @@ open class Store<T:State,A:RawRepresentable> : StoreConcrete{
 }
 
 
-open class StoreConcrete:Hashable {
+open class SubstanceConcrete:Hashable {
     
     var _namePrefix:String?
     var _nameSuffix:String?
@@ -171,14 +171,14 @@ open class StoreConcrete:Hashable {
         return ObjectIdentifier(self).hashValue
     }
     
-    public static func == (lhs: StoreConcrete, rhs: StoreConcrete) -> Bool {
+    public static func == (lhs: SubstanceConcrete, rhs: SubstanceConcrete) -> Bool {
         return lhs === rhs
     }
     
 }
 
 
-public extension StoreConcrete{
+public extension SubstanceConcrete{
     public static func isInternalProp(_ state:String)->Bool{
         return state.starts(with: "_")
     }
@@ -189,7 +189,7 @@ public extension StoreConcrete{
 }
 
 
-public extension StoreConcrete {
+public extension SubstanceConcrete {
   
     public func on(_ event:String, _ reaction: @escaping BusMutation){
         let weakRegistration={ [weak self] in
@@ -197,7 +197,7 @@ public extension StoreConcrete {
             BusNotifier.addCallback(forEvent: event, object: self) { (notification) in
                 
                 
-                let context = "Store.on(event:reaction:)"
+                let context = "Substance.on(event:reaction:)"
                 let payload = notification.payload
                 
                 let lock = payload?[BUS_LOCKED_BY] as? BusLock
@@ -231,11 +231,11 @@ public extension StoreConcrete {
     
 }
 
-extension StoreConcrete {
+extension SubstanceConcrete {
     
     func reduceAndReact(_ busLock: BusLock? = nil){
         
-        let reaction = FlaskReaction(self as StoreConcrete)
+        let reaction = FlaskReaction(self as SubstanceConcrete)
         reaction.onLock = busLock
         
         if( reaction.changed()){
@@ -247,7 +247,7 @@ extension StoreConcrete {
     
 }
 
-public extension StoreConcrete {
+public extension SubstanceConcrete {
     
 
     public func get(_ key:String) -> String{

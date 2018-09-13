@@ -16,8 +16,8 @@ public protocol FlaskReactor{
     func flaskReactor( attachedTo:AnyObject, reaction: FlaskReaction)
 }
 
-public func FlaskAttach<T:AnyObject & FlaskReactor>( to object:T, mixing stores:[StoreConcrete]){
-    Flux.attachFlask(to:object,mixing:stores)
+public func FlaskAttach<T:AnyObject & FlaskReactor>( to object:T, mixing substances:[SubstanceConcrete]){
+    Flux.attachFlask(to:object,mixing:substances)
 }
 
 public func FlaskDetach<T:AnyObject & FlaskReactor>( from object:T){
@@ -35,10 +35,10 @@ public func FlaskUse<T:AnyObject & FlaskReactor>(_ object:T )->Flask<T>{
 
 extension Flux{
     
-    static public func attachFlask<T:AnyObject & FlaskReactor>( to object:T, mixing stores:[StoreConcrete]){
+    static public func attachFlask<T:AnyObject & FlaskReactor>( to object:T, mixing substances:[SubstanceConcrete]){
         
         let flask = FluxFlaskManager.instance(attachedTo:object)
-        flask.defineStores(stores)
+        flask.defineSubstances(substances)
         flask.bind()
         flask.reactor = { (owner, reaction) in
             object.flaskReactor(attachedTo: owner, reaction: reaction)

@@ -12,13 +12,13 @@ var TestsCounter = 0
 
 class SetupFlaskTests: XCTestCase {
     
-    var store:App?
+    var substance:App?
     
     override func setUp() {
         super.setUp()
         
-        store = App()
-        store?.name(suffix:String(TestsCounter))
+        substance = App()
+        substance?.name(suffix:String(TestsCounter))
         TestsCounter = TestsCounter + 1
         XCTAssert(FluxFlaskManager.flasks.count == 0, "all flasks should dispose before this test")
     }
@@ -26,8 +26,8 @@ class SetupFlaskTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        self.store?.purgeArchive()
-        self.store = .none
+        self.substance?.purgeArchive()
+        self.substance = .none
         Flux.removeLocks()
         FluxFlaskManager.purge()
     }

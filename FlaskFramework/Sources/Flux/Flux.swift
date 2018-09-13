@@ -41,13 +41,13 @@ public extension Flux {
 
 public extension Flux {
     
-    static public func flask<T:AnyObject>(attachedTo owner:T, binding store:StoreConcrete) -> Flask<T>{
-        return Flux.flask(attachedTo:owner,binding:[store])
+    static public func flask<T:AnyObject>(attachedTo owner:T, binding substance:SubstanceConcrete) -> Flask<T>{
+        return Flux.flask(attachedTo:owner,binding:[substance])
     }
     
-    static public func flask<T:AnyObject>(attachedTo owner:T, binding stores:[StoreConcrete]) -> Flask<T>{
+    static public func flask<T:AnyObject>(attachedTo owner:T, binding substances:[SubstanceConcrete]) -> Flask<T>{
         let flask = Flux.flask(attachedTo:owner)
-        flask.defineStores(stores)
+        flask.defineSubstances(substances)
         flask.bind()
         return flask
     }

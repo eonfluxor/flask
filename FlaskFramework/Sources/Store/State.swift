@@ -41,15 +41,15 @@ public extension State{
                 continue
             }
             
-            if StoreConcrete.isInternalProp(label) {
+            if SubstanceConcrete.isInternalProp(label) {
                 continue
             }
             
             result[label] = Flux.Nil
             result[label] = value as? AnyHashable
             
-            if(StoreSerializer.isDictionaryRef(value)){
-                let nestedRef = StoreSerializer.nestDictionaries(namespace: label,
+            if(SubstanceSerializer.isDictionaryRef(value)){
+                let nestedRef = SubstanceSerializer.nestDictionaries(namespace: label,
                                                                 root: FluxDictRef(result as NSDictionary),
                                                                 children: value as! FluxDictRef)
                 result = nestedRef.dictionary as! FluxDictType
@@ -73,16 +73,16 @@ public extension State{
                 continue
             }
             
-            if StoreConcrete.isInternalProp(label) {
+            if SubstanceConcrete.isInternalProp(label) {
                 continue
             }
             
-            if StoreConcrete.isObjectRef(value) {
+            if SubstanceConcrete.isObjectRef(value) {
                 continue
             }
             
-            if(StoreSerializer.isDictionaryRef(value)){
-                let nest =  StoreSerializer.flattenDictionary(value as! FluxDictRef)
+            if(SubstanceSerializer.isDictionaryRef(value)){
+                let nest =  SubstanceSerializer.flattenDictionary(value as! FluxDictRef)
                  result[label] = nest
             } else{
                  result[label] = value
