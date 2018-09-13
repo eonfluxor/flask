@@ -16,7 +16,7 @@ public extension SubstanceChange{
     
     
     public func unwrapValue<A>(_ val:A?) ->A?{
-//        if let object = val as? FlaskRef {
+//        if let object = val as? FlaskNSRef {
 //            return object.object as? A
 //        }
         return val

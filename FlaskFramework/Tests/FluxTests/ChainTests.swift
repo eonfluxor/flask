@@ -51,7 +51,7 @@ class ChainingTests: SetupFlaskTests {
         let flask = Flask.flask(attachedTo:owner,mixing:substance)
         
         let object = NSObject()
-        let aObject = FlaskRef( object )
+        let aObject = FlaskNSRef( object )
         
         
         flask.reactor = { owner, reaction in

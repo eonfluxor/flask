@@ -188,7 +188,7 @@ public extension SubstanceConcrete{
     }
     
     public static func isObjectRef(_ state:Any)->Bool{
-        return ((state as? FlaskRef) != nil)
+        return ((state as? FlaskNSRef) != nil)
     }
 }
 

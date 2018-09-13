@@ -27,7 +27,7 @@ struct AppState : State {
     
     var counter = 0
     var text = ""
-    var object:FlaskRef?
+    var object:FlaskNSRef?
     var map:FlaskDictRef?
     
     var _internal = "`_` use this prefix for internal vars "

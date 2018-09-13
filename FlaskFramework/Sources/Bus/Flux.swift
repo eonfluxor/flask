@@ -149,26 +149,26 @@ extension Flux {
     func bindFlask(_ substance:SubstanceConcrete, flask:FlaskConcrete) {
         
         let substanceName = substance.name()
-        var substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
+        var substanceFlaskNSRefs = getSubstanceFlaskNSRefs(substanceName)
         
         let ref = FlaskWeakRef(value:flask)
-        substanceFlaskRefs.append(ref)
-        setSubstanceFlaskRefs(substanceName,substanceFlaskRefs)
+        substanceFlaskNSRefs.append(ref)
+        setSubstanceFlaskNSRefs(substanceName,substanceFlaskNSRefs)
         
     }
     
     func unbindFlask(_ substance:SubstanceConcrete, flask:FlaskConcrete) {
         
         let substanceName = substance.name()
-        let substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
+        let substanceFlaskNSRefs = getSubstanceFlaskNSRefs(substanceName)
         
-        let substanceFlaskRefsFiltered = substanceFlaskRefs.filter { $0.value != flask }
+        let substanceFlaskNSRefsFiltered = substanceFlaskNSRefs.filter { $0.value != flask }
         
-        setSubstanceFlaskRefs(substanceName,substanceFlaskRefsFiltered)
+        setSubstanceFlaskNSRefs(substanceName,substanceFlaskNSRefsFiltered)
        
     }
     
-    func getSubstanceFlaskRefs(_ substanceName:String) -> Array<FlaskWeakRef<FlaskConcrete>>{
+    func getSubstanceFlaskNSRefs(_ substanceName:String) -> Array<FlaskWeakRef<FlaskConcrete>>{
         
         if let flasks = self.flaskRefs[substanceName] {
             return flasks
@@ -178,7 +178,7 @@ extension Flux {
         
     }
     
-    func setSubstanceFlaskRefs(_ substanceName:String,_ refs:Array<FlaskWeakRef<FlaskConcrete>>){
+    func setSubstanceFlaskNSRefs(_ substanceName:String,_ refs:Array<FlaskWeakRef<FlaskConcrete>>){
         
         self.flaskRefs[substanceName] = refs
     }
@@ -192,10 +192,10 @@ extension Flux {
     func reactChange(_ reaction:FlaskReaction){
         
         let substanceName = reaction.substance.name()
-        let substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
+        let substanceFlaskNSRefs = getSubstanceFlaskNSRefs(substanceName)
         
-        for substanceFlaskRef in substanceFlaskRefs {
-            if let flask = substanceFlaskRef.value{
+        for substanceFlaskNSRef in substanceFlaskNSRefs {
+            if let flask = substanceFlaskNSRef.value{
                 flask.handleReaction( reaction)
             }
         }

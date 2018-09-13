@@ -1,5 +1,5 @@
 //
-//  FlaskRef.swift
+//  FlaskNSRef.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/4/18.
@@ -13,7 +13,7 @@ import UIKit
 import Cocoa
 #endif
 
-public class FlaskRef: NSObject, Codable{
+public class FlaskNSRef: NSObject, Codable{
     
     private(set) weak var object:NSObject? 
     
@@ -22,7 +22,7 @@ public class FlaskRef: NSObject, Codable{
     }
     ///// required
     
-    static public func == (lhs: FlaskRef, rhs: FlaskRef) -> Bool {
+    static public func == (lhs: FlaskNSRef, rhs: FlaskNSRef) -> Bool {
         return lhs.object == rhs.object
     }
     

@@ -24,7 +24,7 @@ class SerializationTests: XCTestCase {
             state.counter = 666
             state.text = "hello world"
             state.map = FlaskDictRef(dict)
-            state.object = FlaskRef(NSObject())
+            state.object = FlaskNSRef(NSObject())
             
             let jsonString:String = try SubstanceSerializer.jsonFromState(state)
             
