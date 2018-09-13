@@ -13,6 +13,8 @@ import Cocoa
 #endif
 import XCTest
 
+import Flask
+
 class TestOwner: NSObject {
 
     func reactionMethod(_ expectation:XCTestExpectation){

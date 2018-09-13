@@ -7,7 +7,8 @@
 //
 
 import XCTest
-import Reaktor
+import Flask
+
 
 class SerializationTests: XCTestCase {
 
@@ -20,22 +21,22 @@ class SerializationTests: XCTestCase {
                 "nest":["foo":"bar"]
             ]
             
-            var state:State = State()
+            var state:AppState = AppState()
             state.counter = 666
             state.text = "hello world"
-            state.map = FluxDictionaryRef(dict)
-            state.object = FluxRef(NSObject())
+            state.map = FlaskDictRef(dict)
+            state.object = FlaskNSRef(NSObject())
             
-            let jsonString:String = try FluxSerializer.jsonFromState(state)
+            let jsonString:String = try SubstanceSerializer.jsonFromState(state)
             
-            let stateDecoded:State = try FluxSerializer.stateFromJson(jsonString)
+            let stateDecoded:AppState = try SubstanceSerializer.stateFromJson(jsonString)
             
             XCTAssert(state.counter == stateDecoded.counter )
             XCTAssert(state.text == stateDecoded.text )
             XCTAssert(state.map!["foo"] == stateDecoded.map!["foo"] )
             
-            let nest:FluxDictionaryRef = state.map!["nest"] as! FluxDictionaryRef
-            let nestDecoded:FluxDictionaryRef = stateDecoded.map!["nest"] as! FluxDictionaryRef
+            let nest:FlaskDictRef = state.map!["nest"] as! FlaskDictRef
+            let nestDecoded:FlaskDictRef = stateDecoded.map!["nest"] as! FlaskDictRef
             
             XCTAssert(nest["foo"] == nestDecoded["foo"] )
             

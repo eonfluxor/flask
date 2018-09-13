@@ -94,7 +94,7 @@ extension ReactiveSubstance {
             let data = UserDefaults.standard.value(forKey: key)
             
             if ((data as? Data) != nil) {
-                state = try SubstanceSerializer.stateFromData(data as! Data)
+                setState ( try SubstanceSerializer.stateFromData(data as! Data) )
             }
             
         } catch {

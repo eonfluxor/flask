@@ -7,9 +7,10 @@
 //
 
 import XCTest
-import Reaktor
+import Flask
 
-class archiveTests: SetupFluxTests {
+
+class archiveTests: SetupFlaskTests {
     
     func testarchive(){
         
@@ -18,27 +19,32 @@ class archiveTests: SetupFluxTests {
         
         let expectedValue = Int(Date().timeIntervalSince1970)
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flux = Flux.instance(ownedBy:owner, binding:store)
+        let flask = Flask.instance(attachedTo:owner, mixing:substance)
         
-        flux.reactor = { owner, reaction in
-            reaction.on(State.prop.counter, { (change) in
+        flask.reactor = { owner, reaction in
+            reaction.on(AppState.prop.counter, { (change) in
                 expectation.fulfill()
             })
         }
         
-        flux.mutate(store){ (store) in
-            store.state.counter=expectedValue
-        }.commit()
+        flask.mix(substance){ (substance) in
+            substance.prop.counter=expectedValue
+        }.react()
         
         wait(for: [expectation], timeout: 2)
         
-        flux.unbind()
+        flask.unbind()
+        
+        let substanceName = substance.name()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            let anotherStore = Store()
-            XCTAssert(anotherStore.state.counter == expectedValue)
+            
+            let anotherSubstance = App(name:substanceName)
+            
+            XCTAssert(anotherSubstance.state.counter == expectedValue)
+            
             expectationUnarchive.fulfill()
         }
         

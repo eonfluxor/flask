@@ -35,7 +35,7 @@ public extension Flask {
     }
     
     static public func purgeFlasks(){
-        FlaskFlaskManager.purge()
+        FlaskManager.purge()
     }
 }
 
@@ -54,7 +54,7 @@ public extension Flask {
     
     
     static private func instance<T:AnyObject>(attachedTo owner:T) -> FlaskClass<T>{
-        return FlaskFlaskManager.instance(attachedTo:owner)
+        return FlaskManager.instance(attachedTo:owner)
     }
 }
 

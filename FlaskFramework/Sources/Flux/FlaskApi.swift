@@ -27,7 +27,7 @@ public func DetachFlaskReactor<T:AnyObject & FlaskReactor>( from object:T){
 
 
 public func UseFlaskReactor<T:AnyObject & FlaskReactor>(at object:T )->FlaskClass<T>{
-    let flasks = FlaskFlaskManager.getFlasks(from:object)
+    let flasks = FlaskManager.getFlasks(from:object)
     assert(flasks.count > 0, "No Flasks attached. Did you call `AttachFlaskReactor(to:mixing:)` ? ")
     assert(flasks.count == 1, "UseFlaskReactor required `object` to have only one Flask attached")
     return flasks.first as! FlaskClass<T>
@@ -45,7 +45,7 @@ extension Flask{
     
     static public func attachFlask<T:AnyObject & FlaskReactor>( to object:T, mixing substances:[SubstanceConcrete]){
         
-        let flask = FlaskFlaskManager.instance(attachedTo:object)
+        let flask = FlaskManager.instance(attachedTo:object)
         flask.defineSubstances(substances)
         flask.bind()
         flask.reactor = { (owner, reaction) in
@@ -55,6 +55,6 @@ extension Flask{
     
     static public func detachFlask(from object:AnyObject){
         
-        assert(FlaskFlaskManager.removeFlask(fromOwner: object),"The Flask was not connected, please balance enable/disable calls")
+        assert(FlaskManager.removeFlask(fromOwner: object),"The Flask was not connected, please balance enable/disable calls")
     }
 }

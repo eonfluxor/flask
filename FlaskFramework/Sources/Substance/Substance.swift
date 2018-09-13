@@ -21,17 +21,20 @@ open class ReactiveSubstance<T:State,A:RawRepresentable> : SubstanceConcrete{
     private var _stateSnapshot: T = T()
     
     private var _state: T = T()
-    public var state:T{
+    private(set) var state:T{
         get{
             assert(pendingStateTransaction == nil, "You may use `prop` instead. `state` is only accesible outside `Flask.mix` or `Substance.mixer` transactions")
             return _state
         }
         set(newState){
             assert(pendingStateTransaction == nil, "You may use `prop=` instead. `state` is only accesible outside `Flask.mix` or `Substance.mixer` transactions")
-            _state = newState
+            setState(newState)
         }
     }
     
+    func setState(_ newState:T){
+        _state = newState
+    }
     
     private var _prop:T = T()
     public var prop:T{
@@ -165,7 +168,7 @@ open class SubstanceConcrete:Hashable {
     func stateDictionary() -> FlaskDictType{
         return [:]
     }
-    func name() -> String {
+    public func name() -> String {
         let prefix = _namePrefix ?? "Flx"
         let name = _name ?? "Str"
         let suffix = _nameSuffix ?? ".\(self.self)"
@@ -173,17 +176,17 @@ open class SubstanceConcrete:Hashable {
         return "\(prefix)\(name)\(suffix)"
     }
     
-    func name(as aName:String){
+    public func name(as aName:String){
         _name = aName
         _namePrefix = ""
         _nameSuffix = ""
     }
     
-    func name(prefix:String){
+    public func name(prefix:String){
         _namePrefix = prefix
     }
     
-    func name(suffix:String){
+    public func name(suffix:String){
          _nameSuffix = suffix
     }
     

@@ -28,54 +28,68 @@ The above conveys the ability of using the `Fluxor` pattern of `Reactive Stores`
 
 ## Redux Style
 
-This is a gist of a basic ReSwift-like implementation.
+This is a gist of a basic ReSwift-like implementation. 
 
 ```swift
+struct AppState : State{
 
+	enum prop: StateProp{
+	  case counter, text
+	}
+	
+	var counter = 0
+	var text = ""
+}
+```
 
+```swift
 class ViewController: UIViewController, FlaskReactor  {
+       
+    let substance = NewSubstance(definedBy: AppState)
+       
+    func flaskReactor(reaction: FlaskReaction) {
     
-    var substance:ReactiveSubstance? = App()
-    
-    func flaskReactor( reaction:FlaskReaction) {
         reaction.on(AppState.prop.counter) { (change) in
-            expecation?.fulfill()
+           print("counter = \(substance.state.counter)")
         }
         reaction.on(AppState.prop.text) { (change) in
-            expecation2?.fulfill()
+            print("text = \(substance.state.text)")
         }
-    }
-    
-    override func setUp() {
-        substance!.name(as:"chain tests")
-        AttachFlaskReactor(to:self, mixing:[substance!])
-        expecation = self.expectation(description: "callback on counter")
-        expecation2 = self.expectation(description: "callback on text")
         
     }
-    override func tearDown(){
-        //it needs to explictely detached because the test keeps owner isntance reference alive after this
-        DetachFlaskReactor(from: self)
-        substance = nil
+    
+    override func viewDidLoad() {
+      
+        AttachFlaskReactor(to:self, mixing:substance)
+        produceTestReaction()
     }
     
-    func testFlaskAPI(){
-        
-        UseFlaskReactor(at:self)
+ 
+    func produceTestReaction(){    
+    
+        GetFlaskReactor(from:self)
             .toMix(self.substance!) { (substance) in
                 substance.prop.counter = 10
             }.with(self.substance!) { (substance) in
-                substance.prop.text = "text"
+                substance.prop.text = "changed!"
             }.andReact()
-        
-        waitForExpectations(timeout: 2, handler: nil)
-      
+            
     }
     
 }
 
 ```
+While the code is compact there's a lot of magic happening behind the scenes: Some things to note:
 
+* State is a read only property and it'a protected during the `mix` operatons.
+* While `mixing` you would mutate the state using `prop` (properties) instead of state.
+* Using `AttachFlaskReactor` creates a managed `Flask` instance that is **automatically disposed** when its owner instance (ViewController in this case) turns into `nil`.  
+* Optionally you can call `DetachFlaskReactor(from:)` to explicitly dispose your Flask.
+
+Keep in mind that:
+ 
+* It's possible to instantiate Flask using a substances array: `AttachFlaskReactor(to:self, mixing:[app,settings,login])`
+* These global functions are just idiomatic suggar and a lower-level API is also available for more granular control.
 
 ## Fluxor Style
 
@@ -108,19 +122,6 @@ When a event is dispatched, there is a guarantee that all stores will be mutated
 The naming semantics in Flask are built around four commonly used Laboratory concepts: Lab, Flask, Substance and State.
 
 
-1. feature
-
-
-### Why Flask?
-
-* reason
-
-
-### Gist
-
-```
-//TODO
-```
 
 
 ## Documentation

@@ -7,35 +7,35 @@
 //
 
 import XCTest
-import Reaktor
+import Flask
 
 class ChangeTests: XCTestCase {
     
-    var oldState:FluxStateDictionaryType = [:]
-    var newState:FluxStateDictionaryType = [:]
-    var changes:FluxStateDictionaryType = [:]
+    var oldState:FlaskDictType = [:]
+    var newState:FlaskDictType = [:]
+    var changes:FlaskDictType = [:]
    
     
     func testNilVsInt(){
         
-        oldState["key"] = Flux.Nil
-        newState["key"] = Flux.Nil
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        oldState["key"] = Flask.Nil
+        newState["key"] = Flask.Nil
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 0)
         
 
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 0)
         
-        oldState["key"] = Flux.Nil
+        oldState["key"] = Flask.Nil
         newState["key"] = 1
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
         oldState["key"] = 1
-        newState["key"] = Flux.Nil
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        newState["key"] = Flask.Nil
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
     }
@@ -44,39 +44,39 @@ class ChangeTests: XCTestCase {
         
         
         oldState["key"] = NSObject()
-        newState["key"] = Flux.Nil
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        newState["key"] = Flask.Nil
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
-        oldState["key"] = Flux.Nil
+        oldState["key"] = Flask.Nil
         newState["key"] = NSObject()
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
         
-        oldState["key"] = Flux.Nil
+        oldState["key"] = Flask.Nil
         newState["key"] = NSObject()
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
         oldState["key"] = NSObject()
-        newState["key"] = Flux.Nil
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        newState["key"] = Flask.Nil
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
-        oldState["key"] = Flux.Nil
+        oldState["key"] = Flask.Nil
         newState["key"] = NSDictionary()
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
         oldState["key"] = NSDictionary()
-        newState["key"] = Flux.Nil
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        newState["key"] = Flask.Nil
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
     }
@@ -88,18 +88,18 @@ class ChangeTests: XCTestCase {
         
         oldState["key"] = objectA
         newState["key"] = objectA
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 0)
       
         oldState["key"] = objectA
         newState["key"] = objectB
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
         oldState["key"] = objectA
         newState["key"] = objectB
-        changes = FluxReaction.reduceChanges(oldState, newState)
+        changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
     }

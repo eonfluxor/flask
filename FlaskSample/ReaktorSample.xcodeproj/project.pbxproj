@@ -12,19 +12,21 @@
 		2686CF852147660A0055F0B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2686CF832147660A0055F0B2 /* Main.storyboard */; };
 		2686CF872147660A0055F0B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2686CF862147660A0055F0B2 /* Assets.xcassets */; };
 		2686CF8A2147660A0055F0B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2686CF882147660A0055F0B2 /* LaunchScreen.storyboard */; };
-		2686CFD1214766FA0055F0B2 /* FluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFC1214766FA0055F0B2 /* FluxTests.swift */; };
-		2686CFD2214766FA0055F0B2 /* ChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFC2214766FA0055F0B2 /* ChainTests.swift */; };
-		2686CFD3214766FA0055F0B2 /* NestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFC3214766FA0055F0B2 /* NestingTests.swift */; };
-		2686CFD4214766FA0055F0B2 /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFC5214766FA0055F0B2 /* TestStore.swift */; };
-		2686CFD5214766FA0055F0B2 /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFC6214766FA0055F0B2 /* Stores.swift */; };
-		2686CFD6214766FA0055F0B2 /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFC7214766FA0055F0B2 /* TestOwner.swift */; };
-		2686CFD7214766FA0055F0B2 /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFC8214766FA0055F0B2 /* SetupTests.swift */; };
-		2686CFD8214766FA0055F0B2 /* LockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFCA214766FA0055F0B2 /* LockTests.swift */; };
-		2686CFD9214766FA0055F0B2 /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFCC214766FA0055F0B2 /* ReducerTests.swift */; };
-		2686CFDA214766FA0055F0B2 /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFCD214766FA0055F0B2 /* SerializationTests.swift */; };
-		2686CFDB214766FA0055F0B2 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFCE214766FA0055F0B2 /* DictionaryTests.swift */; };
-		2686CFDC214766FA0055F0B2 /* KronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFCF214766FA0055F0B2 /* KronTests.swift */; };
-		2686CFDD214766FA0055F0B2 /* ArchivingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686CFD0214766FA0055F0B2 /* ArchivingTests.swift */; };
+		26972F01214B26C60082E0C7 /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EEF214B26C60082E0C7 /* ReducerTests.swift */; };
+		26972F02214B26C60082E0C7 /* BusNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EF0214B26C60082E0C7 /* BusNotifierTests.swift */; };
+		26972F03214B26C60082E0C7 /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EF1214B26C60082E0C7 /* SerializationTests.swift */; };
+		26972F04214B26C60082E0C7 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EF2214B26C60082E0C7 /* DictionaryTests.swift */; };
+		26972F05214B26C60082E0C7 /* FlaskApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EF3214B26C60082E0C7 /* FlaskApiTests.swift */; };
+		26972F06214B26C60082E0C7 /* KronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EF4214B26C60082E0C7 /* KronTests.swift */; };
+		26972F07214B26C60082E0C7 /* ArchivingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EF5214B26C60082E0C7 /* ArchivingTests.swift */; };
+		26972F08214B26C60082E0C7 /* SetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EF6214B26C60082E0C7 /* SetupTests.swift */; };
+		26972F09214B26C60082E0C7 /* FluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EF8214B26C60082E0C7 /* FluxTests.swift */; };
+		26972F0A214B26C60082E0C7 /* ChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EF9214B26C60082E0C7 /* ChainTests.swift */; };
+		26972F0B214B26C60082E0C7 /* NestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EFA214B26C60082E0C7 /* NestingTests.swift */; };
+		26972F0C214B26C60082E0C7 /* PauseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EFC214B26C60082E0C7 /* PauseTests.swift */; };
+		26972F0D214B26C60082E0C7 /* Substances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EFE214B26C60082E0C7 /* Substances.swift */; };
+		26972F0E214B26C60082E0C7 /* AppSubstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972EFF214B26C60082E0C7 /* AppSubstance.swift */; };
+		26972F0F214B26C60082E0C7 /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972F00214B26C60082E0C7 /* TestOwner.swift */; };
 		7D263202DCBF7EEB9F70015A /* Pods_ReaktorSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0233A53351A7DF501736FC /* Pods_ReaktorSampleTests.framework */; };
 		C584B9D571C1EAA60D5BF25E /* Pods_ReaktorSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949D6A4D1C315053C4A3194B /* Pods_ReaktorSample.framework */; };
 /* End PBXBuildFile section */
@@ -64,23 +66,25 @@
 		2686CF902147660A0055F0B2 /* ReaktorSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReaktorSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2686CF962147660A0055F0B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2686CFA0214766640055F0B2 /* Reaktor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Reaktor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2686CFC1214766FA0055F0B2 /* FluxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxTests.swift; sourceTree = "<group>"; };
-		2686CFC2214766FA0055F0B2 /* ChainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainTests.swift; sourceTree = "<group>"; };
-		2686CFC3214766FA0055F0B2 /* NestingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestingTests.swift; sourceTree = "<group>"; };
-		2686CFC5214766FA0055F0B2 /* TestStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStore.swift; sourceTree = "<group>"; };
-		2686CFC6214766FA0055F0B2 /* Stores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
-		2686CFC7214766FA0055F0B2 /* TestOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestOwner.swift; sourceTree = "<group>"; };
-		2686CFC8214766FA0055F0B2 /* SetupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupTests.swift; sourceTree = "<group>"; };
-		2686CFCA214766FA0055F0B2 /* LockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockTests.swift; sourceTree = "<group>"; };
-		2686CFCC214766FA0055F0B2 /* ReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReducerTests.swift; sourceTree = "<group>"; };
-		2686CFCD214766FA0055F0B2 /* SerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationTests.swift; sourceTree = "<group>"; };
-		2686CFCE214766FA0055F0B2 /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
-		2686CFCF214766FA0055F0B2 /* KronTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KronTests.swift; sourceTree = "<group>"; };
-		2686CFD0214766FA0055F0B2 /* ArchivingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchivingTests.swift; sourceTree = "<group>"; };
 		2686CFDE214767A20055F0B2 /* Reaktor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Reaktor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2686CFE021476F060055F0B2 /* Delayed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Delayed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2686CFE221476F110055F0B2 /* Delayed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Delayed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2686CFE421476F7A0055F0B2 /* Pods_Reaktor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Reaktor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26972EEF214B26C60082E0C7 /* ReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReducerTests.swift; sourceTree = "<group>"; };
+		26972EF0214B26C60082E0C7 /* BusNotifierTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusNotifierTests.swift; sourceTree = "<group>"; };
+		26972EF1214B26C60082E0C7 /* SerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationTests.swift; sourceTree = "<group>"; };
+		26972EF2214B26C60082E0C7 /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		26972EF3214B26C60082E0C7 /* FlaskApiTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskApiTests.swift; sourceTree = "<group>"; };
+		26972EF4214B26C60082E0C7 /* KronTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KronTests.swift; sourceTree = "<group>"; };
+		26972EF5214B26C60082E0C7 /* ArchivingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchivingTests.swift; sourceTree = "<group>"; };
+		26972EF6214B26C60082E0C7 /* SetupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupTests.swift; sourceTree = "<group>"; };
+		26972EF8214B26C60082E0C7 /* FluxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxTests.swift; sourceTree = "<group>"; };
+		26972EF9214B26C60082E0C7 /* ChainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainTests.swift; sourceTree = "<group>"; };
+		26972EFA214B26C60082E0C7 /* NestingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestingTests.swift; sourceTree = "<group>"; };
+		26972EFC214B26C60082E0C7 /* PauseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseTests.swift; sourceTree = "<group>"; };
+		26972EFE214B26C60082E0C7 /* Substances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Substances.swift; sourceTree = "<group>"; };
+		26972EFF214B26C60082E0C7 /* AppSubstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSubstance.swift; sourceTree = "<group>"; };
+		26972F00214B26C60082E0C7 /* TestOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestOwner.swift; sourceTree = "<group>"; };
 		38DE603CEFADC908A585E181 /* Pods-ReaktorSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReaktorSampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReaktorSampleTests/Pods-ReaktorSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		946D9DF95205F2608F3AFCAC /* Pods-ReaktorSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReaktorSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReaktorSample/Pods-ReaktorSample.debug.xcconfig"; sourceTree = "<group>"; };
 		949D6A4D1C315053C4A3194B /* Pods_ReaktorSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReaktorSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,11 +148,11 @@
 		2686CF932147660A0055F0B2 /* ReaktorSampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				2686CFCB214766FA0055F0B2 /* DataFlowTests */,
-				2686CFC0214766FA0055F0B2 /* FluxTests */,
-				2686CFC9214766FA0055F0B2 /* LocksTests */,
-				2686CFC4214766FA0055F0B2 /* SampleClasses */,
-				2686CFC8214766FA0055F0B2 /* SetupTests.swift */,
+				26972EEE214B26C60082E0C7 /* DataFlowTests */,
+				26972EF7214B26C60082E0C7 /* FluxTests */,
+				26972EFB214B26C60082E0C7 /* PauseTests */,
+				26972EFD214B26C60082E0C7 /* SampleClasses */,
+				26972EF6214B26C60082E0C7 /* SetupTests.swift */,
 				2686CF962147660A0055F0B2 /* Info.plist */,
 			);
 			path = ReaktorSampleTests;
@@ -168,44 +172,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2686CFC0214766FA0055F0B2 /* FluxTests */ = {
+		26972EEE214B26C60082E0C7 /* DataFlowTests */ = {
 			isa = PBXGroup;
 			children = (
-				2686CFC1214766FA0055F0B2 /* FluxTests.swift */,
-				2686CFC2214766FA0055F0B2 /* ChainTests.swift */,
-				2686CFC3214766FA0055F0B2 /* NestingTests.swift */,
+				26972EEF214B26C60082E0C7 /* ReducerTests.swift */,
+				26972EF0214B26C60082E0C7 /* BusNotifierTests.swift */,
+				26972EF1214B26C60082E0C7 /* SerializationTests.swift */,
+				26972EF2214B26C60082E0C7 /* DictionaryTests.swift */,
+				26972EF3214B26C60082E0C7 /* FlaskApiTests.swift */,
+				26972EF4214B26C60082E0C7 /* KronTests.swift */,
+				26972EF5214B26C60082E0C7 /* ArchivingTests.swift */,
+			);
+			path = DataFlowTests;
+			sourceTree = "<group>";
+		};
+		26972EF7214B26C60082E0C7 /* FluxTests */ = {
+			isa = PBXGroup;
+			children = (
+				26972EF8214B26C60082E0C7 /* FluxTests.swift */,
+				26972EF9214B26C60082E0C7 /* ChainTests.swift */,
+				26972EFA214B26C60082E0C7 /* NestingTests.swift */,
 			);
 			path = FluxTests;
 			sourceTree = "<group>";
 		};
-		2686CFC4214766FA0055F0B2 /* SampleClasses */ = {
+		26972EFB214B26C60082E0C7 /* PauseTests */ = {
 			isa = PBXGroup;
 			children = (
-				2686CFC5214766FA0055F0B2 /* TestStore.swift */,
-				2686CFC6214766FA0055F0B2 /* Stores.swift */,
-				2686CFC7214766FA0055F0B2 /* TestOwner.swift */,
+				26972EFC214B26C60082E0C7 /* PauseTests.swift */,
+			);
+			path = PauseTests;
+			sourceTree = "<group>";
+		};
+		26972EFD214B26C60082E0C7 /* SampleClasses */ = {
+			isa = PBXGroup;
+			children = (
+				26972EFE214B26C60082E0C7 /* Substances.swift */,
+				26972EFF214B26C60082E0C7 /* AppSubstance.swift */,
+				26972F00214B26C60082E0C7 /* TestOwner.swift */,
 			);
 			path = SampleClasses;
-			sourceTree = "<group>";
-		};
-		2686CFC9214766FA0055F0B2 /* LocksTests */ = {
-			isa = PBXGroup;
-			children = (
-				2686CFCA214766FA0055F0B2 /* LockTests.swift */,
-			);
-			path = LocksTests;
-			sourceTree = "<group>";
-		};
-		2686CFCB214766FA0055F0B2 /* DataFlowTests */ = {
-			isa = PBXGroup;
-			children = (
-				2686CFCC214766FA0055F0B2 /* ReducerTests.swift */,
-				2686CFCD214766FA0055F0B2 /* SerializationTests.swift */,
-				2686CFCE214766FA0055F0B2 /* DictionaryTests.swift */,
-				2686CFCF214766FA0055F0B2 /* KronTests.swift */,
-				2686CFD0214766FA0055F0B2 /* ArchivingTests.swift */,
-			);
-			path = DataFlowTests;
 			sourceTree = "<group>";
 		};
 		DB648D87386D3E0DE773AC98 /* Pods */ = {
@@ -277,6 +283,7 @@
 					};
 					2686CF8F2147660A0055F0B2 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 						TestTargetID = 2686CF7B2147660A0055F0B2;
 					};
 				};
@@ -365,12 +372,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ReaktorSample/Pods-ReaktorSample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Delayed/Delayed.framework",
-				"${BUILT_PRODUCTS_DIR}/Reaktor/Reaktor.framework",
+				"${BUILT_PRODUCTS_DIR}/Flask/Flask.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Delayed.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reaktor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flask.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -385,12 +392,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ReaktorSampleTests/Pods-ReaktorSampleTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Delayed/Delayed.framework",
-				"${BUILT_PRODUCTS_DIR}/Reaktor/Reaktor.framework",
+				"${BUILT_PRODUCTS_DIR}/Flask/Flask.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Delayed.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reaktor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flask.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -413,19 +420,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2686CFDA214766FA0055F0B2 /* SerializationTests.swift in Sources */,
-				2686CFD3214766FA0055F0B2 /* NestingTests.swift in Sources */,
-				2686CFDC214766FA0055F0B2 /* KronTests.swift in Sources */,
-				2686CFD2214766FA0055F0B2 /* ChainTests.swift in Sources */,
-				2686CFD1214766FA0055F0B2 /* FluxTests.swift in Sources */,
-				2686CFDB214766FA0055F0B2 /* DictionaryTests.swift in Sources */,
-				2686CFD4214766FA0055F0B2 /* TestStore.swift in Sources */,
-				2686CFD6214766FA0055F0B2 /* TestOwner.swift in Sources */,
-				2686CFD9214766FA0055F0B2 /* ReducerTests.swift in Sources */,
-				2686CFD5214766FA0055F0B2 /* Stores.swift in Sources */,
-				2686CFD7214766FA0055F0B2 /* SetupTests.swift in Sources */,
-				2686CFD8214766FA0055F0B2 /* LockTests.swift in Sources */,
-				2686CFDD214766FA0055F0B2 /* ArchivingTests.swift in Sources */,
+				26972F02214B26C60082E0C7 /* BusNotifierTests.swift in Sources */,
+				26972F0B214B26C60082E0C7 /* NestingTests.swift in Sources */,
+				26972F0D214B26C60082E0C7 /* Substances.swift in Sources */,
+				26972F06214B26C60082E0C7 /* KronTests.swift in Sources */,
+				26972F04214B26C60082E0C7 /* DictionaryTests.swift in Sources */,
+				26972F0C214B26C60082E0C7 /* PauseTests.swift in Sources */,
+				26972F05214B26C60082E0C7 /* FlaskApiTests.swift in Sources */,
+				26972F09214B26C60082E0C7 /* FluxTests.swift in Sources */,
+				26972F0E214B26C60082E0C7 /* AppSubstance.swift in Sources */,
+				26972F0F214B26C60082E0C7 /* TestOwner.swift in Sources */,
+				26972F03214B26C60082E0C7 /* SerializationTests.swift in Sources */,
+				26972F01214B26C60082E0C7 /* ReducerTests.swift in Sources */,
+				26972F07214B26C60082E0C7 /* ArchivingTests.swift in Sources */,
+				26972F08214B26C60082E0C7 /* SetupTests.swift in Sources */,
+				26972F0A214B26C60082E0C7 /* ChainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +624,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReaktorSampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -624,6 +634,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = eonflux.ReaktorSampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReaktorSample.app/ReaktorSample";
@@ -636,6 +647,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReaktorSampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

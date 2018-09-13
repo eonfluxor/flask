@@ -3,37 +3,40 @@
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
-//  Copyright © 2018 hassanvflux. All rights reserved.
+//  Copyright © 2018 hassanvflask. All rights reserved.
 //
 
 import XCTest
-import Reaktor
+import Flask
 
-class ChainingTests: SetupFluxTests {
+
+class ChainingTests: SetupFlaskTests {
 
     func testInlineMutation(){
         
         let expectation = self.expectation(description: "testInlineMutation")
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flux = Flux.instance(ownedBy:owner, binding:store)
+        let flask = Flask.instance(attachedTo:owner, mixing:substance)
         
-        flux.reactor = { owner, reaction in
-            reaction.on(State.prop.counter, { (change) in
+        flask.reactor = { owner, reaction in
+            reaction.on(AppState.prop.counter, { (change) in
                 expectation.fulfill()
+                
             })
         }
         
-        flux.mutate(store,{ (store, commit, abort) in
-            store.state.counter=1
-            commit()
-        }).mutate(store) { (store, commit, abort) in
-            store.state.counter=2
-            commit()
-        }
+      
         
-        waitForExpectations(timeout: 1, handler: nil)
+        flask
+            .mix(substance){ (substance) in
+                substance.prop.counter=1
+            }.mix(substance) { (substance) in
+                substance.prop.counter=2
+            }.react()
+        
+        waitForExpectations(timeout: 2, handler: nil)
         
         
     }
@@ -44,83 +47,125 @@ class ChainingTests: SetupFluxTests {
         let expectation2 = self.expectation(description: "testChangeInLine text")
         let expectation3 = self.expectation(description: "testChangeInLine object")
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flux = Flux.instance(ownedBy:owner,binding:store)
+        let flask = Flask.instance(attachedTo:owner,mixing:substance)
         
         let object = NSObject()
-        let aObject = FluxRef( object )
+        let aObject = FlaskNSRef( object )
         
         
-        flux.reactor = { owner, reaction in
+        flask.reactor = { owner, reaction in
             
-            reaction.on(State.prop.counter, { (change) in
+            reaction.on(AppState.prop.counter, { (change) in
                 
-                XCTAssert(change.oldValue() == 0)
-                XCTAssert(change.newValue() == 1)
-                XCTAssert(change.key() == State.prop.counter.rawValue)
-                XCTAssert(change.store() === store)
+                let oldValue:Int? = change.oldValue()
+                let newValue:Int? = change.newValue()
+                XCTAssert(oldValue == 0)
+                XCTAssert(newValue == 1)
+                XCTAssert(change.key() == AppState.prop.counter.rawValue)
+                XCTAssert(change.substance() === substance)
                 
                 expectation.fulfill()
             })
             
-            reaction.on(State.prop.text, { (change) in
+            reaction.on(AppState.prop.text, { (change) in
                 
                 XCTAssert(change.oldValue() == "")
                 XCTAssert(change.newValue() == "reaction")
-                XCTAssert(change.key() == State.prop.text.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.key() == AppState.prop.text.rawValue)
+                XCTAssert(change.substance() === substance)
                 
                 expectation2.fulfill()
             })
             
-            reaction.on(State.prop.object, { (change) in
+            reaction.on(AppState.prop.object, { (change) in
                 
-                XCTAssert( isFluxNil(change.oldValue()) )
+                XCTAssert( isNilorNull(change.oldValue()) )
                 XCTAssert(change.newValue() == aObject)
-                XCTAssert(change.key() == State.prop.object.rawValue)
-                XCTAssert(change.store() === store)
+                XCTAssert(change.key() == AppState.prop.object.rawValue)
+                XCTAssert(change.substance() === substance)
                 
                 expectation3.fulfill()
             })
             
         }
         
-        flux.mutate(store,{ (store, commit, abort) in
-            store.state.counter = 1
-            store.state.text = "reaction"
-            store.state.object = aObject
-            commit()
-        })
+        flask.mix(substance) { (substance) in
+            substance.prop.counter = 1
+            substance.prop.text = "reaction"
+            substance.prop.object = aObject
+        }.react()
         
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
         
     }
     
     func testChain(){
         
         let expectation = self.expectation(description: "testChain")
+        let expectation2 = self.expectation(description: "testChain")
         
-        let store = self.store!
+        let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flux = Flux.instance(ownedBy:owner, binding:store)
+        let flask = Flask.instance(attachedTo:owner, mixing:substance)
         
-        flux.reactor = { owner, reaction in
-            reaction.on(State.prop.counter, { (change) in
+        flask.reactor = { owner, reaction in
+            reaction.on(AppState.prop.counter, { (change) in
+                
+                XCTAssert(substance.state.counter == 2)
                 expectation.fulfill()
-                XCTAssert(change.newValue() == 2)
+            })
+            
+            reaction.on(AppState.prop.text, { (change) in
+                
+                XCTAssert(substance.state.text == "mix no override")
+                expectation2.fulfill()
             })
         }
         
-        flux.mutate(store){ (store) in
-           store.state.counter=1
-        }.mutate(store) { (store) in
-            store.state.counter=2
-        }.commit()
+        flask
+            .mix(substance){ (substance) in
+                substance.prop.counter=2
+            }.mix(substance) { (substance) in
+                substance.prop.text="mix no override"
+            }.react()
         
         
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
+        
+    }
+    
+    
+    func testChainAbort(){
+        
+        let expectation = self.expectation(description: "testChain")
+        expectation.isInverted = true
+        
+        let substance = self.substance!
+        let owner:TestOwner = TestOwner()
+        let flask = Flask.instance(attachedTo:owner, mixing:substance)
+        
+        flask.reactor = { owner, reaction in
+            reaction.on(AppState.prop.counter, { (change) in
+                expectation.fulfill()
+//                XCTAssert(substance.state.counter == 2)
+//                XCTAssert(substance.state.text == "mix no override")
+                
+            })
+        }
+        
+        flask
+            .mix(substance){ (substance) in
+                substance.prop.text="mix no override"
+                substance.prop.counter=1
+            }.mix(substance) { (substance) in
+                substance.prop.counter=2
+            }.abort()
+        
+        
+        waitForExpectations(timeout: 2, handler: nil)
         
     }
     

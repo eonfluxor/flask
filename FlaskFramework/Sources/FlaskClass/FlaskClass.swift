@@ -41,7 +41,7 @@ public class FlaskClass<D:AnyObject>:FlaskConcrete {
             reactor(owner,reaction)
         }else{
             //dispose flask when the owner is no longer present
-            FlaskFlaskManager.removeFlask(self)
+            FlaskManager.removeFlask(self)
         }
     }
     

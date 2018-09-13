@@ -7,29 +7,31 @@
 //
 
 import XCTest
-import Reaktor
+import Flask
 
-class SetupFluxTests: XCTestCase {
+var TestsCounter = 0
+
+class SetupFlaskTests: XCTestCase {
     
-    var store:Store?
+    var substance:App?
     
     override func setUp() {
         super.setUp()
         
-        self.store = Store()
-        
-        Flux.releaseAllLocks()
-        Flux.purgeOrphans()
-        
-//        XCTAssert(FluxorManager.fluxors.count == 0, "all fluxors should dispose before this test")
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        substance = App()
+        substance?.name(suffix:String(TestsCounter))
+        TestsCounter = TestsCounter + 1
+        FlaskFlaskManager.purge()
+        XCTAssert(FlaskFlaskManager.flasks.count == 0, "all flasks should dispose before this test")
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        self.store = .none
+        self.substance?.purgeArchive()
+        self.substance = .none
+        Flask.removeLocks()
+        FlaskFlaskManager.purge()
     }
     
     

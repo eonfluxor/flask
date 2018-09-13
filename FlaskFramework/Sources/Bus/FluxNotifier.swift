@@ -14,9 +14,9 @@ import Cocoa
 
 
 public struct FluxNotification{
-    let mixer:FluxMixer
-    let object:AnyObject?
-    let payload:FluxPayloadType?
+    public let mixer:FluxMixer
+    public let object:AnyObject?
+    public let payload:FluxPayloadType?
 //    let react:()->
 }
 
