@@ -16,15 +16,29 @@ Flask is a multiplatform **[ iOS | OSX | tvOS ]** implementation of the unidirec
 
 While the Flux architeture is abstract, explaining Flask is easy:
 
-### Flask lets you `Mix` `Substances` and `React` to their `State` `Changes`
+> ###Flask lets you `Mix` `Substances` and `React` to their `State` `Changes`
 
-To preserve this natural intuition in Flask `Flux Stores` are called `Substances`. Thus a `substance` would represents any homogeneous data structure in your application (ie. Feed, Settings, or the application itself). 
+Easy right?
 
-Flask allows to implement both the [Redux](https://github.com/reactjs/redux) and [Fluxor](http://fluxxor.com/) through a unified architecture:
+As such to preserve this natural intuition  `Flux Stores` are called `Substances` in  Flask. A `substance` would represents any homogeneous data structure in your application *(ie. feed, settings, or the application itself).*
 
-### You can create `ReactiveSubstances` that `React` to Global Events, or plain `Substances` that are `Mixed` in your Flask
+Flask allows to implement both the [Redux](https://github.com/reactjs/redux) and [Fluxor](http://fluxxor.com/) through a unified architecture.
 
-The above conveys the ability of using the `Fluxor` pattern of `Reactive Stores` (as `Reactive Substances`) and the `Redux` pattern of `Store Reducers`  (as a plain `Substance`).
+And it's also easy to explain:
+
+> ###You can create `ReactiveSubstances` that `React` to environmental events, or plain `Substances` that are `Mixed` only inside your Flask
+
+Also very inituituve!
+
+And it's a direct analogy between the *Fluxor* pattern of `Reactive Stores` as `Reactive Substances`. And also the *Redux* pattern of `Store Reducers`  as a plain `Substance`.
+
+## Motivation
+
+Flask should deliver the most robust feature set accesible through the most friendly API.
+
+With this in mind Flask goes beyond the nolvety of this architecture to develops an expressive API borrowing semantics from high school lab classes creating a framework that is easy to understand through analogies of the physical world.
+
+All this while the Flask core offers a unified implementation of both the `Redux` and `Fluxor` patterns while offering advanced features not available in current frameworks (such as locks and nested keys reduction). 
 
 ## Redux Style
 
