@@ -98,7 +98,7 @@ public extension FlaskReaction {
             
             let change = FlaskReaction.change(oldState, newState, key)
             
-            if change.mixingd()  {
+            if change.valid()  {
                 //use casting to ensure nil is passed
                 changes[key] = change.newValue() as AnyHashable?
             }
