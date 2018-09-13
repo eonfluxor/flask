@@ -13,13 +13,13 @@ import Cocoa
 #endif
 
 public typealias FluxCompletionClosure = ()->Void
-public typealias BusFluxPayload = [String:Any?]
+public typealias FluxPayload = [String:Any?]
 public typealias FluxCallback = (_ notification:FluxNotification)->Void
 
 public struct FluxNotification{
     let mixer:FluxMixer
     let object:AnyObject?
-    let payload:BusFluxPayload?
+    let payload:FluxPayload?
 //    let react:()->
 }
 
