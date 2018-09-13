@@ -835,13 +835,6 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 34,
-      "symbol": "Substance._prop",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
       "line": 35,
       "symbol": "Substance.prop",
       "symbol_kind": "source.lang.swift.decl.var.instance",
