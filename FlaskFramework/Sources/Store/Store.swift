@@ -155,8 +155,8 @@ open class SubstanceConcrete:Hashable {
          _nameSuffix = suffix
     }
     
-    open func defineBusEvents(){}
-    open func undefineBusEvents(){}
+    open func defineMixers(){}
+    open func undefineMixers(){}
     
     func snapshotState(){}
     
@@ -191,13 +191,13 @@ public extension SubstanceConcrete{
 
 public extension SubstanceConcrete {
   
-    public func on(_ event:String, _ reaction: @escaping BusMutation){
+    public func on(_ mixer:String, _ reaction: @escaping BusMutation){
         let weakRegistration={ [weak self] in
             
-            BusNotifier.addCallback(forEvent: event, object: self) { (notification) in
+            BusNotifier.addCallback(forMixer: mixer, object: self) { (notification) in
                 
                 
-                let context = "Substance.on(event:reaction:)"
+                let context = "Substance.on(mixer:reaction:)"
                 let payload = notification.payload
                 
                 let lock = payload?[BUS_LOCKED_BY] as? BusLock

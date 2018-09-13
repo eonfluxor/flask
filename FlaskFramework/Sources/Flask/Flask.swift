@@ -87,7 +87,7 @@ public class FlaskConcrete:FluxEquatable{
                 }
             }()
             
-            substance.defineBusEvents()
+            substance.defineMixers()
         }
         
         
@@ -109,7 +109,7 @@ public class FlaskConcrete:FluxEquatable{
                 }
             }()
             
-            substance.undefineBusEvents()
+            substance.undefineMixers()
         }
     }
     

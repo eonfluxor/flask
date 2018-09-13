@@ -20,7 +20,7 @@ public typealias ReactionClosure<T> = (_ attachedTo:T, _ reaction: FlaskReaction
 public typealias FluxDictType = Dictionary<String,AnyHashable?>
 public typealias FluxNil = (AnyHashable?)
 public typealias MutationParams<T> = (_ substance:T,_ react:()-> Void,_ abort:()-> Void) -> Void
-public typealias BusEvent = String
+public typealias BusMixer = String
 public typealias StateName = String
 
 

@@ -15,9 +15,9 @@ class notifierTests: SetupFlaskTests {
         
         let expectation = self.expectation(description: "perform notification")
         let payload = ["foo":"bar"]
-        let event = "test"
+        let mixer = "test"
         
-        BusNotifier.addCallback(forEvent: event, object: self) { (notification) in
+        BusNotifier.addCallback(forMixer: mixer, object: self) { (notification) in
             
             let payload = notification.payload
             XCTAssert((payload!["foo"] as! String) == "bar")
@@ -25,7 +25,7 @@ class notifierTests: SetupFlaskTests {
             expectation.fulfill()
         }
         
-        BusNotifier.postNotification(forEvent: event, payload: payload)
+        BusNotifier.postNotification(forMixer: mixer, payload: payload)
         
         waitForExpectations(timeout: 2, handler: nil)
     }

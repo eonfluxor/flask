@@ -13,7 +13,7 @@ import Cocoa
 #endif
 
 
-enum AppEvents : BusEvent {
+enum AppMixers : BusMixer {
     case Count
     case Text
     case Object
@@ -34,9 +34,9 @@ struct AppState : State {
     
 }
 
-class App : Substance<AppState,AppEvents> {
+class App : Substance<AppState,AppMixers> {
     
-    override func defineBusEvents(){
+    override func defineMixers(){
         
         on(.Count) {[weak self] (payload, react, abort)  in
             self?.state.counter = (self?.state.counter)! + 1

@@ -17,7 +17,7 @@ public typealias BusBusPayload = [String:Any?]
 public typealias BusCallback = (_ notification:BusNotification)->Void
 
 public struct BusNotification{
-    let event:BusEvent
+    let mixer:BusMixer
     let object:AnyObject?
     let payload:BusBusPayload?
 //    let react:()->
@@ -35,23 +35,23 @@ public class BusObserver:FluxEquatable{
 
 public class BusNotifier {
 
-    static var observersMap:[BusEvent:[BusObserver]]=[:]
+    static var observersMap:[BusMixer:[BusObserver]]=[:]
 }
 
 extension BusNotifier {
     
-    static public func addCallback(forEvent event:BusEvent,
+    static public func addCallback(forMixer mixer:BusMixer,
                                    object: AnyObject?,
                                    _ callback:@escaping BusCallback){
         
         let ref = FluxWeakRef(value: object)
         let observer = BusObserver(callback: callback, objectRef:ref)
-        addObserver(forEvent: event, observer: observer )
+        addObserver(forMixer: mixer, observer: observer )
     }
     
     static public func removeObservers(forObject object:AnyObject){
         
-        var newMap:[BusEvent:[BusObserver]]=[:]
+        var newMap:[BusMixer:[BusObserver]]=[:]
         for key in observersMap.keys {
             let observers = observersMap[key]!
             newMap[key] = observers.filter { $0.objectRef.value !== object}
@@ -60,13 +60,13 @@ extension BusNotifier {
         observersMap = newMap
     }
     
-    static public func addObserver(forEvent event:BusEvent,
+    static public func addObserver(forMixer mixer:BusMixer,
                                    observer:BusObserver){
         
-        var observers = getObservers(forEvent: event)
+        var observers = getObservers(forMixer: mixer)
         observers.append(observer)
         
-        setObservers(forEvent: event, observers: observers)
+        setObservers(forMixer: mixer, observers: observers)
         
     }
     
@@ -76,29 +76,29 @@ extension BusNotifier {
 
 extension BusNotifier{
     
-    static public func getObservers(forEvent event:BusEvent)->[BusObserver]{
+    static public func getObservers(forMixer mixer:BusMixer)->[BusObserver]{
         
-        if let observers = observersMap[event]{
+        if let observers = observersMap[mixer]{
             return observers
         }
         return []
     }
     
-    static public func setObservers(forEvent event:BusEvent, observers:[BusObserver]){
+    static public func setObservers(forMixer mixer:BusMixer, observers:[BusObserver]){
         
-        observersMap[event] = observers
+        observersMap[mixer] = observers
     }
     
 }
 
 extension BusNotifier{
     
-    static public func postNotification(forEvent event:BusEvent, payload:BusPayload?, completion:BusCompletionClosure? = nil){
-        let observers = getObservers(forEvent: event)
+    static public func postNotification(forMixer mixer:BusMixer, payload:BusPayload?, completion:BusCompletionClosure? = nil){
+        let observers = getObservers(forMixer: mixer)
 
         for observer in observers {
             
-            let notification = BusNotification(event: event,
+            let notification = BusNotification(mixer: mixer,
                                                object:observer.objectRef.value,
                                                payload: payload)
             observer.callback(notification)

@@ -66,12 +66,12 @@ public extension Flux {
     }
     
     @discardableResult
-    static public func lock<T:RawRepresentable>(withEvent enumVal:T)->BusLock{
-        return Flux.lock(withEvent:enumVal,payload:nil)
+    static public func lock<T:RawRepresentable>(withMixer enumVal:T)->BusLock{
+        return Flux.lock(withMixer:enumVal,payload:nil)
     }
     
     @discardableResult
-    static public func lock<T:RawRepresentable>(withEvent enumVal:T, payload:BusPayload?)->BusLock{
+    static public func lock<T:RawRepresentable>(withMixer enumVal:T, payload:BusPayload?)->BusLock{
         
         let bus = enumVal.rawValue as! String
         let lock = BusLock(bus:Flux.bus)

@@ -39,7 +39,7 @@ public class Bus {
     //////////////////
     // MARK: - OPTIONALS
     
-    var currentEvent: String?
+    var currentMixer: String?
     
     //////////////////
     // MARK: - LAZY
@@ -75,17 +75,17 @@ extension Bus {
 
 extension Bus {
  
-    func enqueue(_ event:String, payload:BusPayload?){
+    func enqueue(_ mixer:String, payload:BusPayload?){
         
         if (payload?[BUS_LOCKED_BY]) == nil {
-            applyMixerInBusQueue(event,payload:payload)
+            applyMixerInBusQueue(mixer,payload:payload)
         }else{
-            applyMixerInLockQueue(event,payload:payload)
+            applyMixerInLockQueue(mixer,payload:payload)
         }
         
     }
     
-    func applyMixerInBusQueue(_ event:String, payload:BusPayload?){
+    func applyMixerInBusQueue(_ mixer:String, payload:BusPayload?){
         
         let completed = { [weak self] in
             if let me = self{
@@ -96,15 +96,15 @@ extension Bus {
         busQueue.addOperation { [weak self] in
             
   
-            assert( self?.currentEvent == .none, "The sngle flow is broken!")
-            self?.currentEvent = event
+            assert( self?.currentMixer == .none, "The sngle flow is broken!")
+            self?.currentMixer = mixer
             
-            BusNotifier.postNotification(forEvent: event,
+            BusNotifier.postNotification(forMixer: mixer,
                                          payload: payload,
                                          completion: completed)
             
             
-            self?.currentEvent = .none
+            self?.currentMixer = .none
             
         }
         
@@ -119,7 +119,7 @@ extension Bus {
 
     }
     
-    func applyMixerInLockQueue(_ event:String, payload:BusPayload?){
+    func applyMixerInLockQueue(_ mixer:String, payload:BusPayload?){
         
         let completed = { [weak self] in
             if let me = self{
@@ -128,7 +128,7 @@ extension Bus {
         }
         
         busOnLockQueue.addOperation {
-            BusNotifier.postNotification(forEvent: event,
+            BusNotifier.postNotification(forMixer: mixer,
                                          payload: payload,
                                          completion: completed)
             
