@@ -584,14 +584,14 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskRef.swift",
       "line": 16,
-      "symbol": "FlaskRef",
+      "symbol": "FlaskNSRef",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskRef.swift",
       "line": 20,
-      "symbol": "FlaskRef.init(_:)",
+      "symbol": "FlaskNSRef.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
