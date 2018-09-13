@@ -41,19 +41,19 @@ public extension Flask {
 
 public extension Flask {
     
-    static public func flask<T:AnyObject>(attachedTo owner:T, mixing substance:SubstanceConcrete) -> FlaskClass<T>{
-        return Flask.flask(attachedTo:owner,mixing:[substance])
+    static public func instance<T:AnyObject>(attachedTo owner:T, mixing substance:SubstanceConcrete) -> FlaskClass<T>{
+        return Flask.instance(attachedTo:owner,mixing:[substance])
     }
     
-    static public func flask<T:AnyObject>(attachedTo owner:T, mixing substances:[SubstanceConcrete]) -> FlaskClass<T>{
-        let flask = Flask.flask(attachedTo:owner)
+    static public func instance<T:AnyObject>(attachedTo owner:T, mixing substances:[SubstanceConcrete]) -> FlaskClass<T>{
+        let flask = Flask.instance(attachedTo:owner)
         flask.defineSubstances(substances)
         flask.bind()
         return flask
     }
     
     
-    static private func flask<T:AnyObject>(attachedTo owner:T) -> FlaskClass<T>{
+    static private func instance<T:AnyObject>(attachedTo owner:T) -> FlaskClass<T>{
         return FlaskFlaskManager.instance(attachedTo:owner)
     }
 }

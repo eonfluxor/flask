@@ -20,7 +20,7 @@ class archiveTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner, mixing:substance)
+        let flask = Flask.instance(attachedTo:owner, mixing:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in

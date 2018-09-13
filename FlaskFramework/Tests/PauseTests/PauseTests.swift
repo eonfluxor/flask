@@ -19,7 +19,7 @@ class LockTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner,mixing:substance)
+        let flask = Flask.instance(attachedTo:owner,mixing:substance)
         
         var calls = 0
         
@@ -56,7 +56,7 @@ class LockTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner,mixing:substance)
+        let flask = Flask.instance(attachedTo:owner,mixing:substance)
         
         flask.reactor = { owner, reaction in
             reaction.at(substance)?.on(AppState.named.counter, { (change) in
@@ -88,7 +88,7 @@ class LockTests: SetupFlaskTests {
      
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner,mixing:substance)
+        let flask = Flask.instance(attachedTo:owner,mixing:substance)
         
         flask.reactor = { owner, reaction in
             reaction.at(substance)?.on(AppState.named.counter, { (change) in
@@ -123,7 +123,7 @@ class LockTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner,mixing:substance)
+        let flask = Flask.instance(attachedTo:owner,mixing:substance)
         
         var counter = 0
         

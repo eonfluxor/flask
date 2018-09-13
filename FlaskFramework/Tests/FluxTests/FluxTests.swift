@@ -18,7 +18,7 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner,mixing:substance)
+        let flask = Flask.instance(attachedTo:owner,mixing:substance)
         
         flask.reactor = { owner, reaction in
             
@@ -44,7 +44,7 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner,mixing:substance)
+        let flask = Flask.instance(attachedTo:owner,mixing:substance)
         
         flask.reactor = { owner, reaction in
             
@@ -69,7 +69,7 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner,mixing:substance)
+        let flask = Flask.instance(attachedTo:owner,mixing:substance)
         
         flask.reactor={owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -93,7 +93,7 @@ class FlaskTests: SetupFlaskTests {
         let substance = self.substance!
         let owner:TestOwner? = TestOwner()
         
-        weak var flask = Flask.flask(attachedTo:owner!, mixing:substance)
+        weak var flask = Flask.instance(attachedTo:owner!, mixing:substance)
         
         flask?.reactor = { owner, reaction in}
    
@@ -116,7 +116,7 @@ class FlaskTests: SetupFlaskTests {
         let substance = self.substance!
         var weakOwner:TestOwner? = TestOwner()
         
-        weak var flask = Flask.flask(attachedTo:weakOwner!, mixing:substance)
+        weak var flask = Flask.instance(attachedTo:weakOwner!, mixing:substance)
         
         flask?.reactor = { owner, reaction in}
         
@@ -145,7 +145,7 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner,mixing:substance)
+        let flask = Flask.instance(attachedTo:owner,mixing:substance)
         
         flask.reactor = { owner, reaction in
             
@@ -175,7 +175,7 @@ class FlaskTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testGlobalSubstance testInlineMutation")
         
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner, mixing:Substances.app)
+        let flask = Flask.instance(attachedTo:owner, mixing:Substances.app)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -203,7 +203,7 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner, mixing:substance)
+        let flask = Flask.instance(attachedTo:owner, mixing:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on("_internal", { (change) in
