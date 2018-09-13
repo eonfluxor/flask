@@ -70,6 +70,10 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
         return val.rawValue as! String
     }
     
+    public func define<T:RawRepresentable>(mix enumVal:T, _ reaction: @escaping FluxMutation){
+        define( mix: (enumVal.rawValue as! String), reaction)
+    }
+    
     public func define(mix enumVal:A, _ reaction: @escaping FluxMutation){
         define( mix: actionName(enumVal), reaction)
     }

@@ -19,6 +19,12 @@ enum Mixers : FluxMixer {
     case Object
 }
 
+enum Mixers2 : FluxMixer {
+    case Count
+    case Text
+    case Object
+}
+
 struct AppState : State {
    
     enum named : StateName{
