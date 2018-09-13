@@ -38,12 +38,12 @@ class App : Substance<AppState,AppMixers> {
     
     override func defineMixers(){
         
-        on(.Count) {[weak self] (payload, react, abort)  in
+        mix(.Count) {[weak self] (payload, react, abort)  in
             self?.state.counter = (self?.state.counter)! + 1
             react()
         }
         
-        on(.Text) {[weak self] (payload, react, abort)  in
+        mix(.Text) {[weak self] (payload, react, abort)  in
             self?.state.text = "mutated"
             react()
         }

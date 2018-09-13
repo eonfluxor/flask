@@ -47,8 +47,8 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
         return val.rawValue as! String
     }
     
-    public func on(_ enumVal:A, _ reaction: @escaping FluxMutation){
-        on(actionName(enumVal), reaction)
+    public func mix(_ enumVal:A, _ reaction: @escaping FluxMutation){
+        mix(actionName(enumVal), reaction)
     }
     
     public override func stateSnapshotDictionary() -> FlaskDictType{
@@ -191,7 +191,7 @@ public extension SubstanceConcrete{
 
 public extension SubstanceConcrete {
   
-    public func on(_ mixer:String, _ reaction: @escaping FluxMutation){
+    public func mix(_ mixer:String, _ reaction: @escaping FluxMutation){
         let weakRegistration={ [weak self] in
             
             FluxNotifier.addCallback(forMixer: mixer, object: self) { (notification) in
