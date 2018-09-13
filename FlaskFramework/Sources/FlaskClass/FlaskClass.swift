@@ -63,8 +63,8 @@ public class FlaskConcrete:FlaskEquatable{
         defineSubstances([substance])
     }
     
-    func defineSubstances(_ bindingSubstances:[SubstanceConcrete]){
-        substances = bindingSubstances
+    func defineSubstances(_ mixingSubstances:[SubstanceConcrete]){
+        substances = mixingSubstances
         
     }
     
@@ -133,7 +133,7 @@ public class FlaskConcrete:FlaskEquatable{
         let registered = substances.contains { (aSubstance) -> Bool in
             aSubstance === substance
         }
-        assert(registered,"Substance instance is not binding to this flask")
+        assert(registered,"Substance instance is not mixing to this flask")
         return substance
     }
 

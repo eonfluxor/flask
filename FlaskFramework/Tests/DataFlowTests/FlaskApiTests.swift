@@ -16,30 +16,42 @@ import XCTest
 
 class InitializerTests: XCTestCase, FlaskReactor  {
     
+    var expecation:XCTestExpectation?
+    var expecation2:XCTestExpectation?
+    var substance:Substance? = App()
+    
     func flaskReactor(attachedTo: AnyObject, reaction: FlaskReaction) {
         reaction.on(AppState.named.counter) { (change) in
-            
+            expecation?.fulfill()
         }
         reaction.on(AppState.named.text) { (change) in
-            
+            expecation2?.fulfill()
         }
     }
     
     override func setUp() {
-         FlaskAttach(to:self, mixing:[Substances.app])
+        substance!.name(as:"chain tests")
+        FlaskAttach(to:self, mixing:[substance!])
+        expecation = self.expectation(description: "callbac on counter")
+        expecation2 = self.expectation(description: "callbac on text")
+        
+    }
+    override func tearDown(){
+        FlaskDetach(from: self)
+        substance = nil
     }
     
     func testOwnerInit(){
         
         FlaskUse(self)
-        FlaskDetach(from: self)
+            .toMix(self.substance!) { (substance) in
+                substance.state.counter = 10
+            }.andMix(self.substance!) { (substance) in
+                substance.state.text = "text"
+            }.andReact()
         
-//        UseFlask(self).toMix(Substances.app) { (substance) in
-//            substance.state.counter = 10
-//            }.andMix(Substances.app) { (substance) in
-//                substance.state.text = "text"
-//            }.andReact()
-        
+        waitForExpectations(timeout: 2, handler: nil)
+      
     }
     
 }

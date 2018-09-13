@@ -17,7 +17,7 @@ class ChainingTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner, binding:substance)
+        let flask = Flask.flask(attachedTo:owner, mixing:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -48,7 +48,7 @@ class ChainingTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner,binding:substance)
+        let flask = Flask.flask(attachedTo:owner,mixing:substance)
         
         let object = NSObject()
         let aObject = FlaskRef( object )
@@ -104,26 +104,32 @@ class ChainingTests: SetupFlaskTests {
     func testChain(){
         
         let expectation = self.expectation(description: "testChain")
+        let expectation2 = self.expectation(description: "testChain")
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner, binding:substance)
+        let flask = Flask.flask(attachedTo:owner, mixing:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
-                expectation.fulfill()
-                XCTAssert(substance.currentState().counter == 2)
-                XCTAssert(substance.currentState().text == "mix no override")
                 
+                XCTAssert(substance.currentState().counter == 2)
+                expectation.fulfill()
+            })
+            
+            reaction.on(AppState.named.text, { (change) in
+                
+                XCTAssert(substance.currentState().text == "mix no override")
+                expectation2.fulfill()
             })
         }
         
-        flask.mix(substance){ (substance) in
-            substance.state.text="mix no override"
-            substance.state.counter=1
-        }.mix(substance) { (substance) in
-            substance.state.counter=2
-        }.react()
+        flask
+            .mix(substance){ (substance) in
+                substance.state.counter=2
+            }.mix(substance) { (substance) in
+                substance.state.text="mix no override"
+            }.react()
         
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -138,7 +144,7 @@ class ChainingTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner, binding:substance)
+        let flask = Flask.flask(attachedTo:owner, mixing:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in

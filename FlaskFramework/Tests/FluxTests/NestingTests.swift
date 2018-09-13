@@ -20,7 +20,7 @@ class NestedStateTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.flask(attachedTo:owner, binding:substance)
+        let flask = Flask.flask(attachedTo:owner, mixing:substance)
         
         let data:NSDictionary = [
             "foo":"bar",

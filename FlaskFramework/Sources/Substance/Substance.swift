@@ -86,9 +86,13 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
             assert(pendingStateTransaction == nil, "please resolve `commit|abort` transaction \(String(describing: pendingStateTransaction)) first")
         }
         
+        if pendingStateTransaction == nil ||
+            pendingStateTransaction != context{
+              snapshotState()
+        }
         pendingStateTransaction = context;
         //CAPTURE ORIGINAL STATE FOR ROLLBACK
-        snapshotState()
+      
         
         //OPTIMISCALLY MUTATE THE STATE
         state = _state
