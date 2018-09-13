@@ -134,13 +134,13 @@
                 <a class="nav-group-task-link" href="Functions.html#/s:9Flask_iOS06DetachA7Reactoryx4from_tRlzCAA0aD0RzlF">DetachFlaskReactor(from:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:9Flask_iOS03GetA7ReactorAA0A5ClassCyxGx2at_tRlzCAA0aD0RzlF">GetFlaskReactor(at:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:9Flask_iOS13MixSubstancesyx4with_s10DictionaryVySSypSgGSg7payloadts16RawRepresentableRzlF">MixSubstances(with:payload:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:9Flask_iOS12NewSubstanceAA0D0CyxGxm9definedBy_tAA5StateRzlF">NewSubstance(definedBy:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:9Flask_iOS03UseA7ReactorAA0A5ClassCyxGx2at_tRlzCAA0aD0RzlF">UseFlaskReactor(at:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:9Flask_iOS11isNilorNullSbypSgF">isNilorNull(_:)</a>
@@ -230,14 +230,33 @@
 <p>Flask is a multiplatform <strong>[ iOS | OSX | tvOS ]</strong> implementation of the unidirectional data flow architecture in Swift. Flask offers a <em>friendly API</em> and a robust feature set. </p>
 
 <p>While the Flux architeture is abstract, explaining Flask is easy:</p>
+
+<blockquote>
 <h3 id='flask-lets-you-code-mix-code-code-substances-code-and-code-react-code-to-their-code-state-code-code-changes-code' class='heading'>Flask lets you <code>Mix</code> <code>Substances</code> and <code>React</code> to their <code><a href="Protocols/State.html">State</a></code> <code>Changes</code></h3>
+</blockquote>
 
-<p>To preserve this natural intuition in Flask <code>Flux Stores</code> are called <code>Substances</code>. Thus a <code>substance</code> would represents any homogeneous data structure in your application (ie. Feed, Settings, or the application itself). </p>
+<p>Easy right?</p>
 
-<p>Flask allows to implement both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxor</a> through a unified architecture:</p>
-<h3 id='you-can-create-code-reactivesubstances-code-that-code-react-code-to-global-events-or-plain-code-substances-code-that-are-code-mixed-code-in-your-flask' class='heading'>You can create <code>ReactiveSubstances</code> that <code>React</code> to Global Events, or plain <code>Substances</code> that are <code>Mixed</code> in your Flask</h3>
+<p>As such to preserve this natural intuition  <code>Flux Stores</code> are called <code>Substances</code> in  Flask. A <code>substance</code> would represents any homogeneous data structure in your application <em>(ie. feed, settings, or the application itself).</em></p>
 
-<p>The above conveys the ability of using the <code>Fluxor</code> pattern of <code>Reactive Stores</code> (as <code>Reactive Substances</code>) and the <code>Redux</code> pattern of <code>Store Reducers</code>  (as a plain <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code>).</p>
+<p>Flask allows to implement both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxor</a> through a unified architecture.</p>
+
+<p>And it&rsquo;s also easy to explain:</p>
+
+<blockquote>
+<h3 id='you-can-create-code-reactivesubstances-code-that-code-react-code-to-environmental-events-or-plain-code-substances-code-that-are-code-mixed-code-only-inside-your-flask' class='heading'>You can create <code>ReactiveSubstances</code> that <code>React</code> to environmental events, or plain <code>Substances</code> that are <code>Mixed</code> only inside your Flask</h3>
+</blockquote>
+
+<p>Also very inituituve!</p>
+
+<p>And it&rsquo;s a direct analogy between the <em>Fluxor</em> pattern of <code>Reactive Stores</code> as <code>Reactive Substances</code>. And also the <em>Redux</em> pattern of <code>Store Reducers</code>  as a plain <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code>.</p>
+<h2 id='motivation' class='heading'>Motivation</h2>
+
+<p>Flask should deliver the most robust feature set accesible through the most friendly API.</p>
+
+<p>With this in mind Flask goes beyond the nolvety of this architecture to develop an expressive API borrowing semantics from high school lab classes creating a framework that is easy to understand through analogies of the physical world.</p>
+
+<p>All this while the core technology offers a unified implementation of both the <code>Redux</code> and <code>Fluxor</code> patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). </p>
 <h2 id='redux-style' class='heading'>Redux Style</h2>
 
 <p>This is a gist of a basic ReSwift-like implementation. </p>
@@ -316,28 +335,11 @@
 <li>Chained mutations</li>
 <li>Automatic unsubscription</li>
 </ul>
-<h2 id='motivation' class='heading'>Motivation</h2>
-
-<p>Flask is designed with the following goals:</p>
-
-<ul>
-<li>Support Fluxxor and Redux patterns</li>
-<li>Bind single or multiple stores</li>
-<li>Reduce changes in nested keys</li>
-<li>Dispatch locks and exclusive Dispatch</li>
-<li>Automatic State archive / unarchive</li>
-<li>Inline mutations like Redux</li>
-<li>Event mutations like Fluxxor</li>
-</ul>
-
-<p>When a event is dispatched, there is a guarantee that all stores will be mutated and the reaction</p>
-
-<p>The naming semantics in Flask are built around four commonly used Laboratory concepts: Lab, Flask, Substance and State.</p>
 <h2 id='documentation' class='heading'>Documentation</h2>
 
-<p>Self-generated documentation using jazzy and hosted in github available here:</p>
+<p>Self-generated documentation available here:</p>
 
-<p><a href="https://eonfluxor.github.io/Flask/">Documentation</a></p>
+<p><a href="https://eonfluxor.github.io/flask/">Documentation</a></p>
 <h2 id='cocoapods' class='heading'>CocoaPods</h2>
 
 <p>If you use <a href="https://cocoapods.org/pods/Flask">CocoaPods</a> to manage your dependencies, simply add
@@ -349,11 +351,7 @@ Kron to your <code>Podfile</code>:</p>
 <pre class="highlight plaintext"><code>import Flask
 </code></pre>
 <h2 id='more-examples' class='heading'>More Examples</h2>
-
-<ul>
-<li><strong>Example</strong></li>
-</ul>
-<pre class="highlight plaintext"><code>//TODO
+<pre class="highlight plaintext"><code>// Coming soon
 </code></pre>
 <h2 id='have-a-question' class='heading'>Have a question?</h2>
 

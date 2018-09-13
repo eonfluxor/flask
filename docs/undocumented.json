@@ -416,7 +416,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskApi.swift",
       "line": 29,
-      "symbol": "UseFlaskReactor(at:)",
+      "symbol": "GetFlaskReactor(at:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
@@ -866,6 +866,13 @@
       "line": 17,
       "symbol": "ReactiveSubstance",
       "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
+      "line": 24,
+      "symbol": "ReactiveSubstance.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
