@@ -12,21 +12,77 @@
 **Supported Swift Versions:** Swift 4.0
 
 # What is Flask?
-Flask is a multiplatform (iOS | OSX | tvOS) implementation of the unidirectional data flow architecture in Swift. Flask offers a friendly API that makes easy to understand an implement its robust feature set. 
+Flask is a multiplatform **[ iOS | OSX | tvOS ]** implementation of the unidirectional data flow architecture in Swift. Flask offers a *friendly API* and a robust feature set. 
 
 While the Flux architeture is abstract, explaining Flask is easy:
 
-**Flask lets you `Mix` `Substances` and `React` to their `State` `Changes`.**
+### Flask lets you `Mix` `Substances` and `React` to their `State` `Changes`
 
 To preserve this natural intuition in Flask `Flux Stores` are called `Substances`. Thus a `substance` would represents any homogeneous data structure in your application (ie. Feed, Settings, or the application itself). 
 
-**You can create `ReactiveSubstances` that `React` to `Global Events`, or simple `Substances` that are `Mixed` inside your Flask**
+Flask allows to implement both the [Redux](https://github.com/reactjs/redux) and [Fluxor](http://fluxxor.com/) through a unified architecture:
 
-The above conveys the idea of using the `Fluxxor` pattern of `Reactive Stores` as `Reactive Substances` and the `Redux` pattern of `Store Reducers`  as a plain `Substance`.
+### You can create `ReactiveSubstances` that `React` to Global Events, or plain `Substances` that are `Mixed` in your Flask
+
+The above conveys the ability of using the `Fluxor` pattern of `Reactive Stores` (as `Reactive Substances`) and the `Redux` pattern of `Store Reducers`  (as a plain `Substance`).
+
+## Redux Style
+
+This is a gist of a basic ReSwift-like implementation.
+
+```swift
+
+
+class ViewController: UIViewController, FlaskReactor  {
+    
+    var substance:ReactiveSubstance? = App()
+    
+    func flaskReactor( reaction:FlaskReaction) {
+        reaction.on(AppState.prop.counter) { (change) in
+            expecation?.fulfill()
+        }
+        reaction.on(AppState.prop.text) { (change) in
+            expecation2?.fulfill()
+        }
+    }
+    
+    override func setUp() {
+        substance!.name(as:"chain tests")
+        AttachFlaskReactor(to:self, mixing:[substance!])
+        expecation = self.expectation(description: "callback on counter")
+        expecation2 = self.expectation(description: "callback on text")
+        
+    }
+    override func tearDown(){
+        //it needs to explictely detached because the test keeps owner isntance reference alive after this
+        DetachFlaskReactor(from: self)
+        substance = nil
+    }
+    
+    func testFlaskAPI(){
+        
+        UseFlaskReactor(at:self)
+            .toMix(self.substance!) { (substance) in
+                substance.prop.counter = 10
+            }.with(self.substance!) { (substance) in
+                substance.prop.text = "text"
+            }.andReact()
+        
+        waitForExpectations(timeout: 2, handler: nil)
+      
+    }
+    
+}
+
+```
+
+
+## Fluxor Style
+
 
 ## Why Flask?
 
-Flask implements both the [Redux](https://github.com/reactjs/redux) and [Fluxxor](http://fluxxor.com/) through a unified architecture. Aditionally provides unique features not found in similar frameworks:
+Flask implements both the [Redux](https://github.com/reactjs/redux) and [Fluxor](http://fluxxor.com/) through a unified architecture. Aditionally provides unique features not found in similar frameworks:
 
 * Binding multiple stores
 * Reduce changes in nested keys

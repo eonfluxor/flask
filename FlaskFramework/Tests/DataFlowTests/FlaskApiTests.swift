@@ -42,7 +42,7 @@ class InitializerTests: XCTestCase, FlaskReactor  {
         substance = nil
     }
     
-    func testOwnerInit(){
+    func testFlaskAPI(){
         
         UseFlaskReactor(at:self)
             .toMix(self.substance!) { (substance) in
