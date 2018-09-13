@@ -423,14 +423,14 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskDict.swift",
       "line": 15,
-      "symbol": "StateObservable",
+      "symbol": "StateSerializer",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskDict.swift",
       "line": 16,
-      "symbol": "StateObservable.toFlaskDictRef()",
+      "symbol": "StateSerializer.toFlaskDictRef()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
