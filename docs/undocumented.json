@@ -262,21 +262,21 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/FlaskClass/FlaskApi.swift",
       "line": 19,
-      "symbol": "FlaskAttach(to:mixing:)",
+      "symbol": "AttachFlask(to:mixing:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/FlaskClass/FlaskApi.swift",
       "line": 23,
-      "symbol": "FlaskDetach(from:)",
+      "symbol": "DetachFlask(from:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/FlaskClass/FlaskApi.swift",
       "line": 28,
-      "symbol": "FlaskUse(_:)",
+      "symbol": "UseFlask(_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
