@@ -116,10 +116,10 @@ public class FlaskConcrete:FlaskEquatable{
     ///
     func handleReaction(_ reaction:FlaskReaction){}
     
-//    @discardableResult public mutation<T:SubstanceConcrete>(_ aSubstance:T, _ bus:@escaping MutationParams<T>)->FlaskConcrete{
+//    @discardableResult public mixing<T:SubstanceConcrete>(_ aSubstance:T, _ bus:@escaping MutationParams<T>)->FlaskConcrete{
 //        
 //        let substance = self.substance(aSubstance)
-//        substance.mutation(bus)
+//        substance.mixing(bus)
 //        
 //        return self
 //    }

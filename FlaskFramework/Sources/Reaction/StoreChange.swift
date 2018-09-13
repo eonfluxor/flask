@@ -45,7 +45,7 @@ public struct SubstanceChange  {
     var oldVal:AnyHashable?
     var newVal:AnyHashable?
     
-    func mutationd()->Bool{
+    func mixingd()->Bool{
         
         if isNilFlask(oldVal) && isNilFlask(newVal) {
             return false

@@ -43,11 +43,11 @@ public class ChainReaction{
         _abort(substances)
     }
     
-    public func andMutate<T:SubstanceConcrete>(_ aSubstance:T, _ mutation:@escaping(_ substance:T) -> Void)->ChainReaction{
-        return mutate(aSubstance, mutation)
+    public func andMix<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping(_ substance:T) -> Void)->ChainReaction{
+        return mix(aSubstance, mixing)
     }
     
-    public func mutate<T:SubstanceConcrete>(_ aSubstance:T, _ mutation:@escaping (_ substance:T) -> Void)->ChainReaction{
+    public func mix<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping (_ substance:T) -> Void)->ChainReaction{
         
         let substance = flask.substance(aSubstance)
         
@@ -72,7 +72,7 @@ public class ChainReaction{
         
         Flask.bus.performInFluxQueue {
             substance.beginStateTransaction(context:CHAIN_REACTION_CONTEXT){
-                mutation(substance)
+                mixing(substance)
             }
             
         }
@@ -85,11 +85,11 @@ public class ChainReaction{
 
 public extension FlaskConcrete{
     
-    public func toMutate<T:SubstanceConcrete>(_ aSubstance:T, _ mutation:@escaping(_ substance:T) -> Void)->ChainReaction{
-        return mutate(aSubstance, mutation)
+    public func toMix<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping(_ substance:T) -> Void)->ChainReaction{
+        return mix(aSubstance, mixing)
     }
     
-    public func mutate<T:SubstanceConcrete>(_ aSubstance:T, _ mutation:@escaping(_ substance:T) -> Void)->ChainReaction{
+    public func mix<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping(_ substance:T) -> Void)->ChainReaction{
         
         let substance = self.substance(aSubstance)
         
@@ -114,7 +114,7 @@ public extension FlaskConcrete{
         
         Flask.bus.performInFluxQueue {
             substance.beginStateTransaction(context:CHAIN_REACTION_CONTEXT){
-                mutation(substance)
+                mixing(substance)
             }
         }
         

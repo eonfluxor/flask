@@ -28,10 +28,10 @@ class ChainingTests: SetupFlaskTests {
         
       
         
-        flask.mutate(substance){ (substance) in
+        flask.mix(substance){ (substance) in
             substance.state.counter=1
             
-        }.mutate(substance) { (substance) in
+        }.mix(substance) { (substance) in
             substance.state.counter=2
         }.react()
         
@@ -90,7 +90,7 @@ class ChainingTests: SetupFlaskTests {
             
         }
         
-        flask.mutate(substance) { (substance) in
+        flask.mix(substance) { (substance) in
             substance.state.counter = 1
             substance.state.text = "reaction"
             substance.state.object = aObject
@@ -113,15 +113,15 @@ class ChainingTests: SetupFlaskTests {
             reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
                 XCTAssert(substance.currentState().counter == 2)
-                XCTAssert(substance.currentState().text == "mutate no override")
+                XCTAssert(substance.currentState().text == "mix no override")
                 
             })
         }
         
-        flask.mutate(substance){ (substance) in
-            substance.state.text="mutate no override"
+        flask.mix(substance){ (substance) in
+            substance.state.text="mix no override"
             substance.state.counter=1
-        }.mutate(substance) { (substance) in
+        }.mix(substance) { (substance) in
             substance.state.counter=2
         }.react()
         
@@ -144,15 +144,15 @@ class ChainingTests: SetupFlaskTests {
             reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
 //                XCTAssert(substance.currentState().counter == 2)
-//                XCTAssert(substance.currentState().text == "mutate no override")
+//                XCTAssert(substance.currentState().text == "mix no override")
                 
             })
         }
         
-        flask.mutate(substance){ (substance) in
-            substance.state.text="mutate no override"
+        flask.mix(substance){ (substance) in
+            substance.state.text="mix no override"
             substance.state.counter=1
-            }.mutate(substance) { (substance) in
+            }.mix(substance) { (substance) in
                 substance.state.counter=2
             }.abort()
         

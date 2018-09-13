@@ -34,9 +34,9 @@ class InitializerTests: XCTestCase, FlaskReactor  {
         FlaskUse(self)
         FlaskDetach(from: self)
         
-//        UseFlask(self).toMutate(Substances.app) { (substance) in
+//        UseFlask(self).toMix(Substances.app) { (substance) in
 //            substance.state.counter = 10
-//            }.andMutate(Substances.app) { (substance) in
+//            }.andMix(Substances.app) { (substance) in
 //                substance.state.text = "text"
 //            }.andReact()
         

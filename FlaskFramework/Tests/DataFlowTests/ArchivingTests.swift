@@ -28,7 +28,7 @@ class archiveTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(substance){ (substance) in
+        flask.mix(substance){ (substance) in
             substance.state.counter=expectedValue
         }.react()
         

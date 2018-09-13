@@ -151,7 +151,7 @@ class LockTests: SetupFlaskTests {
         Flask.lock(withMixer:AppMixers.Count, payload:  ["test":"testLockActon count"])
         Flask.lock(withMixer:AppMixers.Text, payload:  ["test":"testLockActon count"])
         
-        flask.mutate(substance) { (substance) in
+        flask.mix(substance) { (substance) in
             substance.state.text = "unchained!"
         }.react()
         

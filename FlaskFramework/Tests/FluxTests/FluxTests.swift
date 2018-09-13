@@ -184,9 +184,9 @@ class FlaskTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(Substances.app){ (substance) in
+        flask.mix(Substances.app){ (substance) in
             substance.state.counter=1
-            }.mutate(Substances.app) { (substance) in
+            }.mix(Substances.app) { (substance) in
                 substance.state.counter=2
             }.react()
         
@@ -211,7 +211,7 @@ class FlaskTests: SetupFlaskTests {
             })
         }
         
-        flask.mutate(substance){ (substance) in
+        flask.mix(substance){ (substance) in
             substance.state._internal="shouldn't cause mix"
         }.react()
         

@@ -44,7 +44,7 @@ class App : Substance<AppState,AppMixers> {
         }
         
         mix(.Text) {[weak self] (payload, react, abort)  in
-            self?.state.text = "mutated"
+            self?.state.text = "mixd"
             react()
         }
     }
