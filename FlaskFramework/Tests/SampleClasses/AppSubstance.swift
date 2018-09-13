@@ -13,7 +13,7 @@ import Cocoa
 #endif
 
 
-enum AppMixers : FluxMixer {
+enum Mixers : FluxMixer {
     case Count
     case Text
     case Object
@@ -34,7 +34,7 @@ struct AppState : State {
     
 }
 
-class App : Substance<AppState,AppMixers> {
+class App : Substance<AppState,Mixers> {
     
     override func defineMixers(){
         
