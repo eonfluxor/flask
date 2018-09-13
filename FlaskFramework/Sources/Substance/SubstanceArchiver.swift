@@ -94,8 +94,7 @@ extension Substance {
             let data = UserDefaults.standard.value(forKey: key)
             
             if ((data as? Data) != nil) {
-                state = try SubstanceSerializer.stateFromData(data as! Data)
-                setCurrentState(state)
+                setCurrentState( try SubstanceSerializer.stateFromData(data as! Data) )
             }
             
         } catch {

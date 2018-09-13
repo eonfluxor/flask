@@ -180,7 +180,7 @@ class FlaskTests: SetupFlaskTests {
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
-                XCTAssert(Substances.app.state.counter == 2)
+                XCTAssert(Substances.app.currentState().counter == 2)
             })
         }
         

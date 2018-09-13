@@ -16,9 +16,20 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
     
     typealias StateType = T
     
-    private var _stateSnapshot: T = T()
-    private var _state: T = T()
-    public var state:T = T()
+    private var _innerStateSnapshot: T = T()
+    private var _innerState: T = T()
+    public var _mixingState:T = T()
+    
+    public var state:T{
+        get{
+            assert(pendingStateTransaction != nil, "Use `currentState()` instead. `state` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
+            return _mixingState
+        }
+        set(newState){
+            assert(pendingStateTransaction != nil, "`state` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
+            _mixingState = newState
+        }
+    }
     
     private var pendingStateTransaction:String?
     //////////////////
@@ -52,29 +63,30 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
     }
     
     public override func stateSnapshotDictionary() -> FlaskDictType{
-        return _stateSnapshot.toDictionary()
+        return _innerStateSnapshot.toDictionary()
     }
     public override func stateDictionary() -> FlaskDictType{
-        return _state.toDictionary()
+        return _innerState.toDictionary()
     }
     
+    
     public func currentState()->T{
-        return _state
+        return _innerState
     }
     
     func setCurrentState(_ state:T){
-        _state = state
+        _innerState = state
     }
     
     /// PRIVATE
     
     override func snapshotState(){
-        self._stateSnapshot = self._state
+        self._innerStateSnapshot = self._innerState
         archiveIntent()
     }
     
     func stateFromSnapshot()->T{
-        return self._stateSnapshot
+        return self._innerStateSnapshot
     }
 
     
@@ -95,23 +107,27 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
       
         
         //OPTIMISCALLY MUTATE THE STATE
-        state = _state
+        state = _innerState
         transaction()
-        _state = state
+        
+        if pendingStateTransaction != nil{
+            _innerState = state
+        }
     }
     
     override func commitStateTransaction(context:String){
         
         assert(pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
+
+        _innerState = state
         pendingStateTransaction = nil
-        _state = state
     }
     override func abortStateTransaction(context:String){
         
         assert(self.pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
-        pendingStateTransaction = nil
         
         state = stateFromSnapshot()
+        pendingStateTransaction = nil
     }
 }
 

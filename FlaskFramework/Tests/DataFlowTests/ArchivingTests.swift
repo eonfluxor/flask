@@ -42,7 +42,7 @@ class archiveTests: SetupFlaskTests {
             
             let anotherSubstance = App(name:substanceName)
             
-            XCTAssert(anotherSubstance.state.counter == expectedValue)
+            XCTAssert(anotherSubstance.currentState().counter == expectedValue)
             
             expectationUnarchive.fulfill()
         }
