@@ -93,6 +93,27 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
+      "line": 17,
+      "symbol": "FluxNotification.mixer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
+      "line": 18,
+      "symbol": "FluxNotification.object",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
+      "line": 19,
+      "symbol": "FluxNotification.payload",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
       "line": 23,
       "symbol": "FluxObserver",
       "symbol_kind": "source.lang.swift.decl.class",
@@ -849,126 +870,147 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 24,
-      "symbol": "ReactiveSubstance.state",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 37,
+      "line": 40,
       "symbol": "ReactiveSubstance.prop",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 61,
+      "line": 64,
       "symbol": "ReactiveSubstance.initializeMetaClass()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 71,
+      "line": 74,
       "symbol": "ReactiveSubstance.actionName(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 75,
+      "line": 78,
       "symbol": "ReactiveSubstance.define(mix:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 79,
+      "line": 82,
       "symbol": "ReactiveSubstance.define(mix:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 83,
-      "symbol": "ReactiveSubstance.stateSnapshotDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
       "line": 86,
+      "symbol": "ReactiveSubstance.stateSnapshotDictionary()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
+      "line": 89,
       "symbol": "ReactiveSubstance.stateDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 147,
+      "line": 150,
       "symbol": "SubstanceConcrete",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 153,
+      "line": 156,
       "symbol": "SubstanceConcrete.init(name:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 158,
+      "line": 161,
       "symbol": "SubstanceConcrete.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 190,
+      "line": 171,
+      "symbol": "SubstanceConcrete.name()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
+      "line": 179,
+      "symbol": "SubstanceConcrete.name(as:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
+      "line": 185,
+      "symbol": "SubstanceConcrete.name(prefix:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
+      "line": 189,
+      "symbol": "SubstanceConcrete.name(suffix:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
+      "line": 193,
       "symbol": "SubstanceConcrete.defineMixers()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 191,
+      "line": 194,
       "symbol": "SubstanceConcrete.undefineMixers()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 214,
+      "line": 217,
       "symbol": "SubstanceConcrete.isInternalProp(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 218,
+      "line": 221,
       "symbol": "SubstanceConcrete.isObjectRef(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 226,
+      "line": 229,
       "symbol": "SubstanceConcrete.define(mix:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 286,
+      "line": 289,
       "symbol": "SubstanceConcrete.get(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
-      "line": 294,
+      "line": 297,
       "symbol": "SubstanceConcrete.assertStateKey(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

@@ -165,7 +165,7 @@
             <a class="nav-group-name-link" href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs.html#/s:9Flask_iOS16FluxNotificationV">FluxNotification</a>
+                <a class="nav-group-task-link" href="Structs/FluxNotification.html">FluxNotification</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/SubstanceChange.html">SubstanceChange</a>
@@ -227,20 +227,86 @@
 <p><strong>Supported Swift Versions:</strong> Swift 4.0</p>
 <h1 id='what-is-flask' class='heading'>What is Flask?</h1>
 
-<p>Flask is a multiplatform (iOS | OSX | tvOS) implementation of the unidirectional data flow architecture in Swift. Flask offers a friendly API that makes easy to understand an implement its robust feature set. </p>
+<p>Flask is a multiplatform <strong>[ iOS | OSX | tvOS ]</strong> implementation of the unidirectional data flow architecture in Swift. Flask offers a <em>friendly API</em> and a robust feature set. </p>
 
 <p>While the Flux architeture is abstract, explaining Flask is easy:</p>
-
-<p><strong>Flask lets you <code>Mix</code> <code>Substances</code> and <code>React</code> to their <code><a href="Protocols/State.html">State</a></code> <code>Changes</code>.</strong></p>
+<h3 id='flask-lets-you-code-mix-code-code-substances-code-and-code-react-code-to-their-code-state-code-code-changes-code' class='heading'>Flask lets you <code>Mix</code> <code>Substances</code> and <code>React</code> to their <code><a href="Protocols/State.html">State</a></code> <code>Changes</code></h3>
 
 <p>To preserve this natural intuition in Flask <code>Flux Stores</code> are called <code>Substances</code>. Thus a <code>substance</code> would represents any homogeneous data structure in your application (ie. Feed, Settings, or the application itself). </p>
 
-<p><strong>You can create <code>ReactiveSubstances</code> that <code>React</code> to <code>Global Events</code>, or simple <code>Substances</code> that are <code>Mixed</code> inside your Flask</strong></p>
+<p>Flask allows to implement both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxor</a> through a unified architecture:</p>
+<h3 id='you-can-create-code-reactivesubstances-code-that-code-react-code-to-global-events-or-plain-code-substances-code-that-are-code-mixed-code-in-your-flask' class='heading'>You can create <code>ReactiveSubstances</code> that <code>React</code> to Global Events, or plain <code>Substances</code> that are <code>Mixed</code> in your Flask</h3>
 
-<p>The above conveys the idea of using the <code>Fluxxor</code> pattern of <code>Reactive Stores</code> as <code>Reactive Substances</code> and the <code>Redux</code> pattern of <code>Store Reducers</code>  as a plain <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code>.</p>
+<p>The above conveys the ability of using the <code>Fluxor</code> pattern of <code>Reactive Stores</code> (as <code>Reactive Substances</code>) and the <code>Redux</code> pattern of <code>Store Reducers</code>  (as a plain <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code>).</p>
+<h2 id='redux-style' class='heading'>Redux Style</h2>
+
+<p>This is a gist of a basic ReSwift-like implementation. </p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">:</span> <span class="kt">State</span><span class="p">{</span>
+
+    <span class="kd">enum</span> <span class="nv">prop</span><span class="p">:</span> <span class="kt">StateProp</span><span class="p">{</span>
+      <span class="k">case</span> <span class="n">counter</span><span class="p">,</span> <span class="n">text</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">text</span> <span class="o">=</span> <span class="s">""</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">FlaskReactor</span>  <span class="p">{</span>
+
+    <span class="k">let</span> <span class="nv">substance</span> <span class="o">=</span> <span class="kt">NewSubstance</span><span class="p">(</span><span class="nv">definedBy</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">)</span>
+
+    <span class="kd">func</span> <span class="nf">flaskReactor</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="kt">AppState</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">counter</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
+           <span class="nf">print</span><span class="p">(</span><span class="s">"counter = </span><span class="se">\(</span><span class="n">substance</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">counter</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="kt">AppState</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"text = </span><span class="se">\(</span><span class="n">substance</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">text</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="kt">AttachFlaskReactor</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span><span class="k">self</span><span class="p">,</span> <span class="nv">mixing</span><span class="p">:</span><span class="n">substance</span><span class="p">)</span>
+        <span class="nf">produceTestReaction</span><span class="p">()</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">func</span> <span class="nf">produceTestReaction</span><span class="p">(){</span>    
+
+        <span class="kt">GetFlaskReactor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span><span class="k">self</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">toMix</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">substance</span><span class="o">!</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">substance</span><span class="p">)</span> <span class="k">in</span>
+                <span class="n">substance</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">10</span>
+            <span class="p">}</span><span class="o">.</span><span class="nf">with</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">substance</span><span class="o">!</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">substance</span><span class="p">)</span> <span class="k">in</span>
+                <span class="n">substance</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"changed!"</span>
+            <span class="p">}</span><span class="o">.</span><span class="nf">andReact</span><span class="p">()</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+</code></pre>
+
+<p>While the code is compact there&rsquo;s a lot of magic happening behind the scenes: Some things to note:</p>
+
+<ul>
+<li>State is a read only property and it&#39;a protected during the <code>mix</code> operatons.</li>
+<li>While <code>mixing</code> you would mutate the state using <code>prop</code> (properties) instead of state.</li>
+<li>Using <code>AttachFlaskReactor</code> creates a managed <code><a href="Classes/Flask.html">Flask</a></code> instance that is <strong>automatically disposed</strong> when its owner instance (ViewController in this case) turns into <code>nil</code>.<br></li>
+<li>Optionally you can call <code><a href="Functions.html#/s:9Flask_iOS06DetachA7Reactoryx4from_tRlzCAA0aD0RzlF">DetachFlaskReactor(from:)</a></code> to explicitly dispose your Flask.</li>
+</ul>
+
+<p>Keep in mind that:</p>
+
+<ul>
+<li>It&rsquo;s possible to instantiate Flask using a substances array: <code>AttachFlaskReactor(to:self, mixing:[app,settings,login])</code></li>
+<li>These global functions are just idiomatic suggar and a lower-level API is also available for more granular control.</li>
+</ul>
+<h2 id='fluxor-style' class='heading'>Fluxor Style</h2>
 <h2 id='why-flask' class='heading'>Why Flask?</h2>
 
-<p>Flask implements both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxxor</a> through a unified architecture. Aditionally provides unique features not found in similar frameworks:</p>
+<p>Flask implements both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxor</a> through a unified architecture. Aditionally provides unique features not found in similar frameworks:</p>
 
 <ul>
 <li>Binding multiple stores</li>
@@ -267,18 +333,6 @@
 <p>When a event is dispatched, there is a guarantee that all stores will be mutated and the reaction</p>
 
 <p>The naming semantics in Flask are built around four commonly used Laboratory concepts: Lab, Flask, Substance and State.</p>
-
-<ol>
-<li>feature</li>
-</ol>
-<h3 id='why-flask' class='heading'>Why Flask?</h3>
-
-<ul>
-<li>reason</li>
-</ul>
-<h3 id='gist' class='heading'>Gist</h3>
-<pre class="highlight plaintext"><code>//TODO
-</code></pre>
 <h2 id='documentation' class='heading'>Documentation</h2>
 
 <p>Self-generated documentation using jazzy and hosted in github available here:</p>
