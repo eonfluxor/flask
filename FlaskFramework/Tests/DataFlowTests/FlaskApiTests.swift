@@ -37,6 +37,7 @@ class InitializerTests: XCTestCase, FlaskReactor  {
         
     }
     override func tearDown(){
+        //er need to explictely detach because the test keeps the reference alive!
         DetachFlaskReactor(from: self)
         substance = nil
     }

@@ -26,17 +26,16 @@ public class FlaskClass<D:AnyObject>:FlaskConcrete {
     
     override public func bind(){
         guard (self.owner) != nil else {
-            return assertionFailure("a owner is required")
+            return assertionFailure("attaching to an owner is required")
         }
         super.bind()
     }
     
-    override public func unbind(_ explicit:Bool = true){
-        super.unbind(explicit)
+    override public func unbind(explicit:Bool = true){
+        super.unbind(explicit:explicit)
     }
     
     override func handleReaction(_ reaction:FlaskReaction){
-        
         
         if let owner = self.owner {
             reactor(owner,reaction)
@@ -93,7 +92,7 @@ public class FlaskConcrete:FlaskEquatable{
         
     }
     
-    public func unbind(_ explicit:Bool = true){
+    public func unbind(explicit:Bool = true){
         
         if(explicit && !binded){
             assert(binded,"Not binded. It's required  to balance bind/unbind calls")

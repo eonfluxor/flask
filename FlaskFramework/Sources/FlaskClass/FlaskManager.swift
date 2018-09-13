@@ -30,6 +30,7 @@ class FlaskFlaskManager{
     }
     
     static func removeFlask(_ flask:FlaskConcrete){
+        flask.unbind(explicit:false)
         flasks = flasks.filter{ $0 !== flask}
     }
     
