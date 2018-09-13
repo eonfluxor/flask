@@ -71,7 +71,7 @@ public extension Flask {
     }
     
     @discardableResult
-    static public func lock<T:RawRepresentable>(withMixer enumVal:T, payload:FluxPayload?)->FluxLock{
+    static public func lock<T:RawRepresentable>(withMixer enumVal:T, payload:FluxPayloadType?)->FluxLock{
         
         let bus = enumVal.rawValue as! String
         let lock = FluxLock(bus:Flask.bus)
@@ -93,7 +93,7 @@ public extension Flask {
 
 public extension Flask {
     
-    static public func applyMixer<T:RawRepresentable>(_ enumVal:T, payload:FluxPayload? = nil){
+    static public func applyMixer<T:RawRepresentable>(_ enumVal:T, payload:FluxPayloadType? = nil){
         let bus = enumVal.rawValue as! String
         var info = payload ?? [:]
         info[FLUX_BUS_NAME] = bus

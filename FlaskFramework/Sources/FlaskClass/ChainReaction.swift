@@ -13,6 +13,7 @@ import Cocoa
 #endif
 
 typealias ChainedSubstancesClosure = (_ chainedSubstances:[SubstanceConcrete])->Void
+
 let CHAIN_REACTION_CONTEXT = "ChainReaction"
 public class ChainReaction{
     

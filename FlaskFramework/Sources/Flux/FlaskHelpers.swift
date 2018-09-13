@@ -12,15 +12,15 @@ import UIKit
 import Cocoa
 #endif
 
-public typealias FluxCompletionClosure = ()->Void
-public typealias FluxPayload = [String:Any?]
-public typealias FluxCallback = (_ notification:FluxNotification)->Void
-public typealias FluxMutation = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
+public typealias FluxEmptyClosure = ()->Void
+public typealias FluxNotificationClosure = (_ notification:FluxNotification)->Void
+public typealias FluxMutationClosure = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
 public typealias ChangeClosure = (_ change:SubstanceChange)->Void
 public typealias ReactionClosure<T> = (_ attachedTo:T, _ reaction: FlaskReaction) -> Void
-public typealias FlaskDictType = Dictionary<String,AnyHashable?>
-public typealias FlaskNil = (AnyHashable?)
-public typealias MutationParams<T> = (_ substance:T,_ react:()-> Void,_ abort:()-> Void) -> Void
+public typealias MutationClosure<T> = (_ substance:T,_ react:()-> Void,_ abort:()-> Void) -> Void
+
+public typealias FluxPayloadType = [String:Any?]
+public typealias FlaskDictType = [String:AnyHashable?]
 public typealias FluxMixer = String
 public typealias StateName = String
 

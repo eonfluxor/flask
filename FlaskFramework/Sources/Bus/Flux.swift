@@ -59,12 +59,12 @@ public class Flux {
 
 extension Flux {
     
-    func applyMixer<T:RawRepresentable>(_ enumVal:T, payload:FluxPayload? = nil){
+    func applyMixer<T:RawRepresentable>(_ enumVal:T, payload:FluxPayloadType? = nil){
         let bus = enumVal.rawValue as! String
         applyMixer(bus,payload:payload)
     }
     
-    func applyMixer(_ bus:String, payload:FluxPayload? = nil ){
+    func applyMixer(_ bus:String, payload:FluxPayloadType? = nil ){
         enqueue(bus,payload: payload)
     }
     
@@ -75,7 +75,7 @@ extension Flux {
 
 extension Flux {
  
-    func enqueue(_ mixer:String, payload:FluxPayload?){
+    func enqueue(_ mixer:String, payload:FluxPayloadType?){
         
         if (payload?[BUS_LOCKED_BY]) == nil {
             applyMixerInFluxQueue(mixer,payload:payload)
@@ -85,7 +85,7 @@ extension Flux {
         
     }
     
-    func applyMixerInFluxQueue(_ mixer:String, payload:FluxPayload?){
+    func applyMixerInFluxQueue(_ mixer:String, payload:FluxPayloadType?){
         
         let completed = { [weak self] in
             if let me = self{
@@ -119,7 +119,7 @@ extension Flux {
 
     }
     
-    func applyMixerInLockQueue(_ mixer:String, payload:FluxPayload?){
+    func applyMixerInLockQueue(_ mixer:String, payload:FluxPayloadType?){
         
         let completed = { [weak self] in
             if let me = self{

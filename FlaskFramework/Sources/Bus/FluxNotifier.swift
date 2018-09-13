@@ -16,15 +16,15 @@ import Cocoa
 public struct FluxNotification{
     let mixer:FluxMixer
     let object:AnyObject?
-    let payload:FluxPayload?
+    let payload:FluxPayloadType?
 //    let react:()->
 }
 
 public class FluxObserver:FlaskEquatable{
-    let callback:FluxCallback
+    let callback:FluxNotificationClosure
     let objectRef:FlaskWeakRef<AnyObject>
     
-    required public init(callback:@escaping FluxCallback, objectRef:FlaskWeakRef<AnyObject>){
+    required public init(callback:@escaping FluxNotificationClosure, objectRef:FlaskWeakRef<AnyObject>){
         self.callback = callback
         self.objectRef = objectRef
     }
@@ -39,7 +39,7 @@ extension FluxNotifier {
     
     static public func addCallback(forMixer mixer:FluxMixer,
                                    object: AnyObject?,
-                                   _ callback:@escaping FluxCallback){
+                                   _ callback:@escaping FluxNotificationClosure){
         
         let ref = FlaskWeakRef(value: object)
         let observer = FluxObserver(callback: callback, objectRef:ref)
@@ -90,7 +90,7 @@ extension FluxNotifier{
 
 extension FluxNotifier{
     
-    static public func postNotification(forMixer mixer:FluxMixer, payload:FluxPayload?, completion:FluxCompletionClosure? = nil){
+    static public func postNotification(forMixer mixer:FluxMixer, payload:FluxPayloadType?, completion:FluxEmptyClosure? = nil){
         let observers = getObservers(forMixer: mixer)
 
         for observer in observers {

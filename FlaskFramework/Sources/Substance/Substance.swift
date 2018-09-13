@@ -70,11 +70,11 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
         return val.rawValue as! String
     }
     
-    public func define<T:RawRepresentable>(mix enumVal:T, _ reaction: @escaping FluxMutation){
+    public func define<T:RawRepresentable>(mix enumVal:T, _ reaction: @escaping FluxMutationClosure){
         define( mix: (enumVal.rawValue as! String), reaction)
     }
     
-    public func define(mix enumVal:A, _ reaction: @escaping FluxMutation){
+    public func define(mix enumVal:A, _ reaction: @escaping FluxMutationClosure){
         define( mix: actionName(enumVal), reaction)
     }
     
@@ -221,7 +221,7 @@ public extension SubstanceConcrete{
 
 public extension SubstanceConcrete {
   
-    public func define(mix mixer:String, _ reaction: @escaping FluxMutation){
+    public func define(mix mixer:String, _ reaction: @escaping FluxMutationClosure){
         let weakRegistration={ [weak self] in
             
             FluxNotifier.addCallback(forMixer: mixer, object: self) { (notification) in
