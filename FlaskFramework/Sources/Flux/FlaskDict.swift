@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-public protocol StateObservable{
+public protocol StateSerializer{
     func toFlaskDictRef()->NSDictionary
 }
 
-public class FlaskDictRef: NSObject, Codable, StateObservable {
+public class FlaskDictRef: NSObject, Codable, StateSerializer {
    
    
     
