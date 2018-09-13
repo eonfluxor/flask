@@ -31,7 +31,7 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
     }
     
     
-    public var _prop:T = T()
+    private var _prop:T = T()
     public var prop:T{
         get{
             assert(pendingStateTransaction != nil, "You may use `state` instead. `prop` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
