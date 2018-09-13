@@ -32,6 +32,10 @@ public func UseFlask<T:AnyObject & FlaskReactor>(_ object:T )->FlaskClass<T>{
     return flasks.first as! FlaskClass<T>
 }
 
+public func MixSubstances<T:RawRepresentable>(with enumVal:T, payload:FluxPayload? = nil){
+    Flask.applyMixer(enumVal, payload: payload)
+}
+
 
 extension Flask{
     
