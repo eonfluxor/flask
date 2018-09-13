@@ -36,9 +36,9 @@ And it's a direct analogy between the *Fluxor* pattern of `Reactive Stores` as `
 
 Flask should deliver the most robust feature set accesible through the most friendly API.
 
-With this in mind Flask goes beyond the nolvety of this architecture to develops an expressive API borrowing semantics from high school lab classes creating a framework that is easy to understand through analogies of the physical world.
+With this in mind Flask goes beyond the nolvety of this architecture to develop an expressive API borrowing semantics from high school lab classes creating a framework that is easy to understand through analogies of the physical world.
 
-All this while the Flask core offers a unified implementation of both the `Redux` and `Fluxor` patterns while offering advanced features not available in current frameworks (such as locks and nested keys reduction). 
+All this while the core technology offers a unified implementation of both the `Redux` and `Fluxor` patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). 
 
 ## Redux Style
 
@@ -120,29 +120,11 @@ Flask implements both the [Redux](https://github.com/reactjs/redux) and [Fluxor]
 * Automatic unsubscription
 
 
-## Motivation
-Flask is designed with the following goals:
-
-* Support Fluxxor and Redux patterns
-* Bind single or multiple stores
-* Reduce changes in nested keys
-* Dispatch locks and exclusive Dispatch
-* Automatic State archive / unarchive
-* Inline mutations like Redux
-* Event mutations like Fluxxor
-
-When a event is dispatched, there is a guarantee that all stores will be mutated and the reaction
-
-The naming semantics in Flask are built around four commonly used Laboratory concepts: Lab, Flask, Substance and State.
-
-
-
-
 ## Documentation
 
-Self-generated documentation using jazzy and hosted in github available here:
+Self-generated documentation available here:
 
-[Documentation](https://eonfluxor.github.io/Flask/)
+[Documentation](https://eonfluxor.github.io/flask/)
 
 ## CocoaPods
 
@@ -162,11 +144,8 @@ import Flask
    
 ## More Examples
 
-* **Example**
-
-
 ```
-//TODO
+// Coming soon
 ```
 
 ## Have a question?

@@ -26,10 +26,10 @@ public func DetachFlaskReactor<T:AnyObject & FlaskReactor>( from object:T){
 }
 
 
-public func UseFlaskReactor<T:AnyObject & FlaskReactor>(at object:T )->FlaskClass<T>{
+public func GetFlaskReactor<T:AnyObject & FlaskReactor>(at object:T )->FlaskClass<T>{
     let flasks = FlaskManager.getFlasks(from:object)
     assert(flasks.count > 0, "No Flasks attached. Did you call `AttachFlaskReactor(to:mixing:)` ? ")
-    assert(flasks.count == 1, "UseFlaskReactor required `object` to have only one Flask attached")
+    assert(flasks.count == 1, "GetFlaskReactor required `object` to have only one Flask attached")
     return flasks.first as! FlaskClass<T>
 }
 

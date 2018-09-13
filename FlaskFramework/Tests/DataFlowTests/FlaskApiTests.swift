@@ -44,7 +44,7 @@ class InitializerTests: XCTestCase, FlaskReactor  {
     
     func testFlaskAPI(){
         
-        UseFlaskReactor(at:self)
+        GetFlaskReactor(at:self)
             .toMix(self.substance!) { (substance) in
                 substance.prop.counter = 10
             }.with(self.substance!) { (substance) in

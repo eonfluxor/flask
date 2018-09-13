@@ -21,7 +21,7 @@ open class ReactiveSubstance<T:State,A:RawRepresentable> : SubstanceConcrete{
     private var _stateSnapshot: T = T()
     
     private var _state: T = T()
-    private(set) var state:T{
+    public private(set) var state:T{
         get{
             assert(pendingStateTransaction == nil, "You may use `prop` instead. `state` is only accesible outside `Flask.mix` or `Substance.mixer` transactions")
             return _state
