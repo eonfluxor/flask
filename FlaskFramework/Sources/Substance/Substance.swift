@@ -21,25 +21,25 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
     private var _state: T = T()
     public var state:T{
         get{
-            assert(pendingStateTransaction == nil, "You may use `stateMix` instead. `state` is only accesible outside `Flask.mix` or `Substance.mixer` transactions")
+            assert(pendingStateTransaction == nil, "You may use `prop` instead. `state` is only accesible outside `Flask.mix` or `Substance.mixer` transactions")
             return _state
         }
         set(newState){
-            assert(pendingStateTransaction == nil, "You may use `stateMix=` instead. `state` is only accesible outside `Flask.mix` or `Substance.mixer` transactions")
+            assert(pendingStateTransaction == nil, "You may use `prop=` instead. `state` is only accesible outside `Flask.mix` or `Substance.mixer` transactions")
             _state = newState
         }
     }
     
     
-    public var _stateMix:T = T()
-    public var stateMix:T{
+    public var _prop:T = T()
+    public var prop:T{
         get{
-            assert(pendingStateTransaction != nil, "You may use `state` instead. `stateMix` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
-            return _stateMix
+            assert(pendingStateTransaction != nil, "You may use `state` instead. `prop` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
+            return _prop
         }
         set(newState){
-            assert(pendingStateTransaction != nil, "You may use `state=` instead.`stateMix` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
-            _stateMix = newState
+            assert(pendingStateTransaction != nil, "You may use `state=` instead.`prop` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
+            _prop = newState
         }
     }
     
@@ -117,11 +117,11 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
       
         
         //OPTIMISCALLY MUTATE THE STATE
-        stateMix = _state
+        prop = _state
         transaction()
         
         if pendingStateTransaction != nil{
-            _state = stateMix
+            _state = prop
         }
     }
     
@@ -129,14 +129,14 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
         
         assert(pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
 
-        _state = stateMix
+        _state = prop
         pendingStateTransaction = nil
     }
     override func abortStateTransaction(context:String){
         
         assert(self.pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
         
-        stateMix = stateFromSnapshot()
+        prop = stateFromSnapshot()
         pendingStateTransaction = nil
     }
 }

@@ -186,9 +186,9 @@ class FlaskTests: SetupFlaskTests {
         
         flask
             .mix(Substances.app){ (substance) in
-                substance.stateMix.counter=1
+                substance.prop.counter=1
             }.mix(Substances.app) { (substance) in
-                substance.stateMix.counter=2
+                substance.prop.counter=2
             }.react()
         
         
@@ -213,7 +213,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         flask.mix(substance){ (substance) in
-            substance.stateMix._internal="shouldn't cause mix"
+            substance.prop._internal="shouldn't cause mix"
         }.react()
         
         waitForExpectations(timeout: 2, handler: nil)

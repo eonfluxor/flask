@@ -152,7 +152,7 @@ class LockTests: SetupFlaskTests {
         Flask.lock(withMixer:Mixers.Text, payload:  ["test":"testLockActon count"])
         
         flask.mix(substance) { (substance) in
-            substance.stateMix.text = "unchained!"
+            substance.prop.text = "unchained!"
         }.react()
         
         waitForExpectations(timeout: 5, handler: nil)

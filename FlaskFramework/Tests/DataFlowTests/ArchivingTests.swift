@@ -29,7 +29,7 @@ class archiveTests: SetupFlaskTests {
         }
         
         flask.mix(substance){ (substance) in
-            substance.stateMix.counter=expectedValue
+            substance.prop.counter=expectedValue
         }.react()
         
         wait(for: [expectation], timeout: 2)
