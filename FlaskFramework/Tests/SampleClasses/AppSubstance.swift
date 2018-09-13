@@ -57,5 +57,5 @@ class App : Substance<AppState,Mixers> {
     
 }
 
-class AppNoMixers : Substance<AppState,NoMixers> {
+class AppNoMixers : Substance<AppState,NoMixers> {}
 
