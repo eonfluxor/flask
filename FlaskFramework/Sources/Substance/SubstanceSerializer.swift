@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-public struct SubstanceSerializer{
+public class SubstanceSerializer{
     
     static public func jsonFromState<K:State>(_ state:K) throws ->String {
         
