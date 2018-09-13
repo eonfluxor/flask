@@ -60,7 +60,7 @@ class NestedStateTests: SetupFlaskTests {
             
             
             flask.mix(substance){ (substance) in
-                substance.mixState.map = dictRef
+                substance.stateMix.map = dictRef
             }.react()
         }
         
@@ -77,7 +77,7 @@ class NestedStateTests: SetupFlaskTests {
             }
             
             flask.mix(substance) { (substance) in
-                substance.mixState.map = dictRef2
+                substance.stateMix.map = dictRef2
             }.react()
         }
         

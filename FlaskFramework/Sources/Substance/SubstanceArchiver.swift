@@ -44,7 +44,7 @@ extension Substance {
         let key = archiveKey()
         let delay = archiveDelay()
         Kron.idle(timeOut: delay , key:key){ [weak self] key,ctx in
-            if let state = self?.finalState {
+            if let state = self?.state {
                 self?.archiveNow(state)
             }
         }
@@ -94,7 +94,7 @@ extension Substance {
             let data = UserDefaults.standard.value(forKey: key)
             
             if ((data as? Data) != nil) {
-                finalState = try SubstanceSerializer.stateFromData(data as! Data)
+                state = try SubstanceSerializer.stateFromData(data as! Data)
             }
             
         } catch {

@@ -16,30 +16,30 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
     
     typealias StateType = T
     
-    private var _finalStateSnapshot: T = T()
+    private var _stateSnapshot: T = T()
     
-    private var _finalState: T = T()
-    public var finalState:T{
+    private var _state: T = T()
+    public var state:T{
         get{
-            assert(pendingStateTransaction == nil, "Use `finalState` instead. `state` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
-            return _finalState
+            assert(pendingStateTransaction == nil, "You may use `stateMix` instead. `state` is only accesible outside `Flask.mix` or `Substance.mixer` transactions")
+            return _state
         }
         set(newState){
-            assert(pendingStateTransaction == nil, "`state` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
-            _finalState = newState
+            assert(pendingStateTransaction == nil, "You may use `stateMix=` instead. `state` is only accesible outside `Flask.mix` or `Substance.mixer` transactions")
+            _state = newState
         }
     }
     
     
-    public var _mixingState:T = T()
-    public var mixState:T{
+    public var _stateMix:T = T()
+    public var stateMix:T{
         get{
-            assert(pendingStateTransaction != nil, "Use `finalState` instead. `state` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
-            return _mixingState
+            assert(pendingStateTransaction != nil, "You may use `state` instead. `stateMix` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
+            return _stateMix
         }
         set(newState){
-            assert(pendingStateTransaction != nil, "`state` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
-            _mixingState = newState
+            assert(pendingStateTransaction != nil, "You may use `state=` instead.`stateMix` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
+            _stateMix = newState
         }
     }
     
@@ -75,10 +75,10 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
     }
     
     public override func stateSnapshotDictionary() -> FlaskDictType{
-        return _finalStateSnapshot.toDictionary()
+        return _stateSnapshot.toDictionary()
     }
     public override func stateDictionary() -> FlaskDictType{
-        return _finalState.toDictionary()
+        return _state.toDictionary()
     }
     
     
@@ -87,12 +87,12 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
     /// PRIVATE
     
     override func snapshotState(){
-        self._finalStateSnapshot = self._finalState
+        self._stateSnapshot = self._state
         archiveIntent()
     }
     
     func stateFromSnapshot()->T{
-        return self._finalStateSnapshot
+        return self._stateSnapshot
     }
 
     
@@ -113,11 +113,11 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
       
         
         //OPTIMISCALLY MUTATE THE STATE
-        mixState = _finalState
+        stateMix = _state
         transaction()
         
         if pendingStateTransaction != nil{
-            _finalState = mixState
+            _state = stateMix
         }
     }
     
@@ -125,14 +125,14 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
         
         assert(pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
 
-        _finalState = mixState
+        _state = stateMix
         pendingStateTransaction = nil
     }
     override func abortStateTransaction(context:String){
         
         assert(self.pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
         
-        mixState = stateFromSnapshot()
+        stateMix = stateFromSnapshot()
         pendingStateTransaction = nil
     }
 }

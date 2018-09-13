@@ -29,10 +29,10 @@ class ChainingTests: SetupFlaskTests {
       
         
         flask.mix(substance){ (substance) in
-            substance.mixState.counter=1
+            substance.stateMix.counter=1
             
         }.mix(substance) { (substance) in
-            substance.mixState.counter=2
+            substance.stateMix.counter=2
         }.react()
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -91,9 +91,9 @@ class ChainingTests: SetupFlaskTests {
         }
         
         flask.mix(substance) { (substance) in
-            substance.mixState.counter = 1
-            substance.mixState.text = "reaction"
-            substance.mixState.object = aObject
+            substance.stateMix.counter = 1
+            substance.stateMix.text = "reaction"
+            substance.stateMix.object = aObject
         }.react()
         
         
@@ -113,22 +113,22 @@ class ChainingTests: SetupFlaskTests {
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
                 
-                XCTAssert(substance.finalState.counter == 2)
+                XCTAssert(substance.state.counter == 2)
                 expectation.fulfill()
             })
             
             reaction.on(AppState.named.text, { (change) in
                 
-                XCTAssert(substance.finalState.text == "mix no override")
+                XCTAssert(substance.state.text == "mix no override")
                 expectation2.fulfill()
             })
         }
         
         flask
             .mix(substance){ (substance) in
-                substance.mixState.counter=2
+                substance.stateMix.counter=2
             }.mix(substance) { (substance) in
-                substance.mixState.text="mix no override"
+                substance.stateMix.text="mix no override"
             }.react()
         
         
@@ -149,17 +149,17 @@ class ChainingTests: SetupFlaskTests {
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
-//                XCTAssert(substance.finalState.counter == 2)
-//                XCTAssert(substance.finalState.text == "mix no override")
+//                XCTAssert(substance.state.counter == 2)
+//                XCTAssert(substance.state.text == "mix no override")
                 
             })
         }
         
         flask.mix(substance){ (substance) in
-            substance.mixState.text="mix no override"
-            substance.mixState.counter=1
+            substance.stateMix.text="mix no override"
+            substance.stateMix.counter=1
             }.mix(substance) { (substance) in
-                substance.mixState.counter=2
+                substance.stateMix.counter=2
             }.abort()
         
         

@@ -29,7 +29,7 @@ class archiveTests: SetupFlaskTests {
         }
         
         flask.mix(substance){ (substance) in
-            substance.mixState.counter=expectedValue
+            substance.stateMix.counter=expectedValue
         }.react()
         
         wait(for: [expectation], timeout: 2)
@@ -42,7 +42,7 @@ class archiveTests: SetupFlaskTests {
             
             let anotherSubstance = App(name:substanceName)
             
-            XCTAssert(anotherSubstance.finalState.counter == expectedValue)
+            XCTAssert(anotherSubstance.state.counter == expectedValue)
             
             expectationUnarchive.fulfill()
         }

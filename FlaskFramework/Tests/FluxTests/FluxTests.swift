@@ -180,14 +180,14 @@ class FlaskTests: SetupFlaskTests {
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
                 expectation.fulfill()
-                XCTAssert(Substances.app.finalState.counter == 2)
+                XCTAssert(Substances.app.state.counter == 2)
             })
         }
         
         flask.mix(Substances.app){ (substance) in
-            substance.mixState.counter=1
+            substance.stateMix.counter=1
             }.mix(Substances.app) { (substance) in
-                substance.mixState.counter=2
+                substance.stateMix.counter=2
             }.react()
         
         
@@ -212,7 +212,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         flask.mix(substance){ (substance) in
-            substance.mixState._internal="shouldn't cause mix"
+            substance.stateMix._internal="shouldn't cause mix"
         }.react()
         
         waitForExpectations(timeout: 2, handler: nil)
