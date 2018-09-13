@@ -51,10 +51,10 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
         on(actionName(enumVal), reaction)
     }
     
-    public override func stateSnapshotDictionary() -> FluxDictType{
+    public override func stateSnapshotDictionary() -> FlaskDictType{
         return _stateSnapshot.toDictionary()
     }
-    public override func stateDictionary() -> FluxDictType{
+    public override func stateDictionary() -> FlaskDictType{
         return _state.toDictionary()
     }
     
@@ -127,10 +127,10 @@ open class SubstanceConcrete:Hashable {
         initializeMetaClass()
     }
     
-    func stateSnapshotDictionary() -> FluxDictType{
+    func stateSnapshotDictionary() -> FlaskDictType{
         return [:]
     }
-    func stateDictionary() -> FluxDictType{
+    func stateDictionary() -> FlaskDictType{
         return [:]
     }
     func name() -> String {
@@ -184,7 +184,7 @@ public extension SubstanceConcrete{
     }
     
     public static func isObjectRef(_ state:Any)->Bool{
-        return ((state as? FluxRef) != nil)
+        return ((state as? FlaskRef) != nil)
     }
 }
 
@@ -239,7 +239,7 @@ extension SubstanceConcrete {
         reaction.onLock = busLock
         
         if( reaction.changed()){
-            Flux.bus.reactChange(reaction)
+            Flask.bus.reactChange(reaction)
         }else{
         }
         

@@ -42,7 +42,7 @@ public class FlaskClass<D:AnyObject>:FlaskConcrete {
             reactor(owner,reaction)
         }else{
             //dispose flask when the owner is no longer present
-            FluxFlaskManager.removeFlask(self)
+            FlaskFlaskManager.removeFlask(self)
         }
     }
     
@@ -53,7 +53,7 @@ public class FlaskClass<D:AnyObject>:FlaskConcrete {
 }
 
 
-public class FlaskConcrete:FluxEquatable{
+public class FlaskConcrete:FlaskEquatable{
     
     var substances:[SubstanceConcrete]=[]
     var binded = false
@@ -83,7 +83,7 @@ public class FlaskConcrete:FluxEquatable{
            
             { [weak self] in
                 if let wself = self {
-                    Flux.bus.bindFlask(substance, flask: wself)
+                    Flask.bus.bindFlask(substance, flask: wself)
                 }
             }()
             
@@ -105,7 +105,7 @@ public class FlaskConcrete:FluxEquatable{
         for substance in substances {
             { [weak self] in
                 if let wself = self {
-                    Flux.bus.unbindFlask(substance, flask: wself)
+                    Flask.bus.unbindFlask(substance, flask: wself)
                 }
             }()
             

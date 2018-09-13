@@ -1,5 +1,5 @@
 //
-//  FluxDictRef.swift
+//  FlaskDictRef.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/5/18.
@@ -13,10 +13,10 @@ import Cocoa
 #endif
 
 public protocol StateObservable{
-    func toFluxDictRef()->NSDictionary
+    func toFlaskDictRef()->NSDictionary
 }
 
-public class FluxDictRef: NSObject, Codable, StateObservable {
+public class FlaskDictRef: NSObject, Codable, StateObservable {
    
    
     
@@ -38,11 +38,11 @@ public class FluxDictRef: NSObject, Codable, StateObservable {
         for key in dict.allKeys {
             let value = dict[key]
             
-             result[key]  = Flux.Nil
+             result[key]  = Flask.Nil
             
             if ((value as? NSDictionary) != nil) {
                 
-                let ref = FluxDictRef(normalize( value as! NSDictionary ))
+                let ref = FlaskDictRef(normalize( value as! NSDictionary ))
                 result[key] = ref
             
             } else {
@@ -58,7 +58,7 @@ public class FluxDictRef: NSObject, Codable, StateObservable {
     
    
     
-    public  func toFluxDictRef() -> NSDictionary {
+    public  func toFlaskDictRef() -> NSDictionary {
         return dictionary
     }
     
@@ -87,7 +87,7 @@ public class FluxDictRef: NSObject, Codable, StateObservable {
         case dictionary
     }
     
-    static public func == (lhs: FluxDictRef, rhs: FluxDictRef) -> Bool {
+    static public func == (lhs: FlaskDictRef, rhs: FlaskDictRef) -> Bool {
         return lhs == rhs
     }
     
@@ -98,7 +98,7 @@ public class FluxDictRef: NSObject, Codable, StateObservable {
         let data = jsonString.data(using: .utf8)
         let normalDictionary:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
     
-        let ref = FluxDictRef(normalDictionary)
+        let ref = FlaskDictRef(normalDictionary)
         dictionary = ref.dictionary
     }
     

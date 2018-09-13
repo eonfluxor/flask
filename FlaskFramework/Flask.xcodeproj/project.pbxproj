@@ -36,30 +36,30 @@
 		26C53E412147908E0090AA0C /* Flask_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C53E382147908D0090AA0C /* Flask_tvOS.framework */; };
 		26C53E462147908E0090AA0C /* Flask_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E452147908E0090AA0C /* Flask_tvOSTests.swift */; };
 		26C53E482147908E0090AA0C /* Flask_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C53E3A2147908D0090AA0C /* Flask_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		26C53E64214790A90090AA0C /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Flux.swift */; };
-		26C53E65214790A90090AA0C /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Flux.swift */; };
-		26C53E66214790A90090AA0C /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Flux.swift */; };
-		26C53E67214790A90090AA0C /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Flux.swift */; };
-		26C53E68214790A90090AA0C /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Flux.swift */; };
-		26C53E69214790A90090AA0C /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Flux.swift */; };
-		26C53E6A214790A90090AA0C /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FluxHelpers.swift */; };
-		26C53E6B214790A90090AA0C /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FluxHelpers.swift */; };
-		26C53E6C214790A90090AA0C /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FluxHelpers.swift */; };
-		26C53E6D214790A90090AA0C /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FluxHelpers.swift */; };
-		26C53E6E214790A90090AA0C /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FluxHelpers.swift */; };
-		26C53E6F214790A90090AA0C /* FluxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FluxHelpers.swift */; };
-		26C53E70214790A90090AA0C /* FluxDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FluxDict.swift */; };
-		26C53E71214790A90090AA0C /* FluxDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FluxDict.swift */; };
-		26C53E72214790A90090AA0C /* FluxDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FluxDict.swift */; };
-		26C53E73214790A90090AA0C /* FluxDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FluxDict.swift */; };
-		26C53E74214790A90090AA0C /* FluxDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FluxDict.swift */; };
-		26C53E75214790A90090AA0C /* FluxDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FluxDict.swift */; };
-		26C53E7C214790A90090AA0C /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FluxRef.swift */; };
-		26C53E7D214790A90090AA0C /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FluxRef.swift */; };
-		26C53E7E214790A90090AA0C /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FluxRef.swift */; };
-		26C53E7F214790A90090AA0C /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FluxRef.swift */; };
-		26C53E80214790A90090AA0C /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FluxRef.swift */; };
-		26C53E81214790A90090AA0C /* FluxRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FluxRef.swift */; };
+		26C53E64214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Flask.swift */; };
+		26C53E65214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Flask.swift */; };
+		26C53E66214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Flask.swift */; };
+		26C53E67214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Flask.swift */; };
+		26C53E68214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Flask.swift */; };
+		26C53E69214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E4F214790A90090AA0C /* Flask.swift */; };
+		26C53E6A214790A90090AA0C /* FlaskHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FlaskHelpers.swift */; };
+		26C53E6B214790A90090AA0C /* FlaskHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FlaskHelpers.swift */; };
+		26C53E6C214790A90090AA0C /* FlaskHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FlaskHelpers.swift */; };
+		26C53E6D214790A90090AA0C /* FlaskHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FlaskHelpers.swift */; };
+		26C53E6E214790A90090AA0C /* FlaskHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FlaskHelpers.swift */; };
+		26C53E6F214790A90090AA0C /* FlaskHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E50214790A90090AA0C /* FlaskHelpers.swift */; };
+		26C53E70214790A90090AA0C /* FlaskDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FlaskDict.swift */; };
+		26C53E71214790A90090AA0C /* FlaskDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FlaskDict.swift */; };
+		26C53E72214790A90090AA0C /* FlaskDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FlaskDict.swift */; };
+		26C53E73214790A90090AA0C /* FlaskDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FlaskDict.swift */; };
+		26C53E74214790A90090AA0C /* FlaskDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FlaskDict.swift */; };
+		26C53E75214790A90090AA0C /* FlaskDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E52214790A90090AA0C /* FlaskDict.swift */; };
+		26C53E7C214790A90090AA0C /* FlaskRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FlaskRef.swift */; };
+		26C53E7D214790A90090AA0C /* FlaskRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FlaskRef.swift */; };
+		26C53E7E214790A90090AA0C /* FlaskRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FlaskRef.swift */; };
+		26C53E7F214790A90090AA0C /* FlaskRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FlaskRef.swift */; };
+		26C53E80214790A90090AA0C /* FlaskRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FlaskRef.swift */; };
+		26C53E81214790A90090AA0C /* FlaskRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E54214790A90090AA0C /* FlaskRef.swift */; };
 		26C53E82214790A90090AA0C /* ChainReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* ChainReaction.swift */; };
 		26C53E83214790A90090AA0C /* ChainReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* ChainReaction.swift */; };
 		26C53E84214790A90090AA0C /* ChainReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E56214790A90090AA0C /* ChainReaction.swift */; };
@@ -72,12 +72,12 @@
 		26C53E8B214790A90090AA0C /* FlaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FlaskManager.swift */; };
 		26C53E8C214790A90090AA0C /* FlaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FlaskManager.swift */; };
 		26C53E8D214790A90090AA0C /* FlaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E57214790A90090AA0C /* FlaskManager.swift */; };
-		26C53E8E214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
-		26C53E8F214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
-		26C53E90214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
-		26C53E91214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
-		26C53E92214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
-		26C53E93214790A90090AA0C /* Flask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* Flask.swift */; };
+		26C53E8E214790A90090AA0C /* FlaskClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskClass.swift */; };
+		26C53E8F214790A90090AA0C /* FlaskClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskClass.swift */; };
+		26C53E90214790A90090AA0C /* FlaskClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskClass.swift */; };
+		26C53E91214790A90090AA0C /* FlaskClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskClass.swift */; };
+		26C53E92214790A90090AA0C /* FlaskClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskClass.swift */; };
+		26C53E93214790A90090AA0C /* FlaskClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskClass.swift */; };
 		26C53E94214790A90090AA0C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Bus.swift */; };
 		26C53E95214790A90090AA0C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Bus.swift */; };
 		26C53E96214790A90090AA0C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Bus.swift */; };
@@ -237,13 +237,13 @@
 		26C53E402147908E0090AA0C /* Flask-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flask-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C53E452147908E0090AA0C /* Flask_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flask_tvOSTests.swift; sourceTree = "<group>"; };
 		26C53E472147908E0090AA0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26C53E4F214790A90090AA0C /* Flux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flux.swift; sourceTree = "<group>"; };
-		26C53E50214790A90090AA0C /* FluxHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxHelpers.swift; sourceTree = "<group>"; };
-		26C53E52214790A90090AA0C /* FluxDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxDict.swift; sourceTree = "<group>"; };
-		26C53E54214790A90090AA0C /* FluxRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxRef.swift; sourceTree = "<group>"; };
+		26C53E4F214790A90090AA0C /* Flask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flask.swift; sourceTree = "<group>"; };
+		26C53E50214790A90090AA0C /* FlaskHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskHelpers.swift; sourceTree = "<group>"; };
+		26C53E52214790A90090AA0C /* FlaskDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskDict.swift; sourceTree = "<group>"; };
+		26C53E54214790A90090AA0C /* FlaskRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskRef.swift; sourceTree = "<group>"; };
 		26C53E56214790A90090AA0C /* ChainReaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainReaction.swift; sourceTree = "<group>"; };
 		26C53E57214790A90090AA0C /* FlaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskManager.swift; sourceTree = "<group>"; };
-		26C53E58214790A90090AA0C /* Flask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flask.swift; sourceTree = "<group>"; };
+		26C53E58214790A90090AA0C /* FlaskClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskClass.swift; sourceTree = "<group>"; };
 		26C53E5A214790A90090AA0C /* Bus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
 		26C53E5B214790A90090AA0C /* BusLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLock.swift; sourceTree = "<group>"; };
 		26C53E5D214790A90090AA0C /* StoreChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreChange.swift; sourceTree = "<group>"; };
@@ -360,14 +360,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		26A0F925214834DC00555C8D /* Flux */ = {
+		26A0F925214834DC00555C8D /* Flask */ = {
 			isa = PBXGroup;
 			children = (
-				26C53E4F214790A90090AA0C /* Flux.swift */,
-				26C53E50214790A90090AA0C /* FluxHelpers.swift */,
-				26C53E52214790A90090AA0C /* FluxDict.swift */,
-				26C53E54214790A90090AA0C /* FluxRef.swift */,
+				26C53E4F214790A90090AA0C /* Flask.swift */,
+				26C53E50214790A90090AA0C /* FlaskHelpers.swift */,
+				26C53E52214790A90090AA0C /* FlaskDict.swift */,
+				26C53E54214790A90090AA0C /* FlaskRef.swift */,
 			);
+			name = Flask;
 			path = Flux;
 			sourceTree = "<group>";
 		};
@@ -464,9 +465,9 @@
 		26A82AC82146D80E008C8009 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				26A0F925214834DC00555C8D /* Flux */,
+				26A0F925214834DC00555C8D /* Flask */,
 				26C53E59214790A90090AA0C /* Bus */,
-				26C53E55214790A90090AA0C /* Flask */,
+				26C53E55214790A90090AA0C /* FlaskClass */,
 				26C53E5C214790A90090AA0C /* Reaction */,
 				26C53E5F214790A90090AA0C /* Store */,
 			);
@@ -539,15 +540,15 @@
 			path = "Flask-tvOSTests";
 			sourceTree = "<group>";
 		};
-		26C53E55214790A90090AA0C /* Flask */ = {
+		26C53E55214790A90090AA0C /* FlaskClass */ = {
 			isa = PBXGroup;
 			children = (
-				26C53E58214790A90090AA0C /* Flask.swift */,
+				26C53E58214790A90090AA0C /* FlaskClass.swift */,
 				26C53E57214790A90090AA0C /* FlaskManager.swift */,
 				26C53E56214790A90090AA0C /* ChainReaction.swift */,
 				2671C1522149B7C000888F3E /* FlaskApi.swift */,
 			);
-			path = Flask;
+			path = FlaskClass;
 			sourceTree = "<group>";
 		};
 		26C53E59214790A90090AA0C /* Bus */ = {
@@ -1107,13 +1108,13 @@
 				26C53EBE214790A90090AA0C /* Store.swift in Sources */,
 				2622A5312148781F003F4C38 /* BusNotifier.swift in Sources */,
 				26C53E9A214790A90090AA0C /* BusLock.swift in Sources */,
-				26C53E6A214790A90090AA0C /* FluxHelpers.swift in Sources */,
-				26C53E64214790A90090AA0C /* Flux.swift in Sources */,
+				26C53E6A214790A90090AA0C /* FlaskHelpers.swift in Sources */,
+				26C53E64214790A90090AA0C /* Flask.swift in Sources */,
 				26C53E94214790A90090AA0C /* Bus.swift in Sources */,
-				26C53E70214790A90090AA0C /* FluxDict.swift in Sources */,
+				26C53E70214790A90090AA0C /* FlaskDict.swift in Sources */,
 				26C53EAC214790A90090AA0C /* State.swift in Sources */,
-				26C53E7C214790A90090AA0C /* FluxRef.swift in Sources */,
-				26C53E8E214790A90090AA0C /* Flask.swift in Sources */,
+				26C53E7C214790A90090AA0C /* FlaskRef.swift in Sources */,
+				26C53E8E214790A90090AA0C /* FlaskClass.swift in Sources */,
 				26C53EA0214790A90090AA0C /* StoreChange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1128,12 +1129,12 @@
 				26C53EBF214790A90090AA0C /* Store.swift in Sources */,
 				26C53EEA214790C00090AA0C /* NestingTests.swift in Sources */,
 				26C53EED214790C00090AA0C /* SetupTests.swift in Sources */,
-				26C53E71214790A90090AA0C /* FluxDict.swift in Sources */,
+				26C53E71214790A90090AA0C /* FlaskDict.swift in Sources */,
 				26C53E95214790A90090AA0C /* Bus.swift in Sources */,
 				26C53EDB214790C00090AA0C /* DictionaryTests.swift in Sources */,
 				26C53EF9214790C00090AA0C /* TestOwner.swift in Sources */,
 				26C53E0E214790730090AA0C /* Flask_iOSTests.swift in Sources */,
-				26C53E6B214790A90090AA0C /* FluxHelpers.swift in Sources */,
+				26C53E6B214790A90090AA0C /* FlaskHelpers.swift in Sources */,
 				2671C1572149B96800888F3E /* FlaskApiTests.swift in Sources */,
 				26C53EF6214790C00090AA0C /* Molecules.swift in Sources */,
 				26C53EE7214790C00090AA0C /* ChainTests.swift in Sources */,
@@ -1144,16 +1145,16 @@
 				26C53EAD214790A90090AA0C /* State.swift in Sources */,
 				26C53EF0214790C00090AA0C /* PauseTests.swift in Sources */,
 				26C53EE1214790C00090AA0C /* ArchivingTests.swift in Sources */,
-				26C53E7D214790A90090AA0C /* FluxRef.swift in Sources */,
+				26C53E7D214790A90090AA0C /* FlaskRef.swift in Sources */,
 				26C53ED5214790C00090AA0C /* ReducerTests.swift in Sources */,
 				26C53E89214790A90090AA0C /* FlaskManager.swift in Sources */,
 				2622A5332148828E003F4C38 /* BusNotifierTests.swift in Sources */,
 				2622A536214882BB003F4C38 /* BusNotifier.swift in Sources */,
 				2671C15A2149B99F00888F3E /* FlaskApi.swift in Sources */,
 				26C53ED8214790C00090AA0C /* SerializationTests.swift in Sources */,
-				26C53E8F214790A90090AA0C /* Flask.swift in Sources */,
+				26C53E8F214790A90090AA0C /* FlaskClass.swift in Sources */,
 				26C53EA7214790A90090AA0C /* FlaskReaction.swift in Sources */,
-				26C53E65214790A90090AA0C /* Flux.swift in Sources */,
+				26C53E65214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EB3214790A90090AA0C /* StoreSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1171,13 +1172,13 @@
 				26C53EC0214790A90090AA0C /* Store.swift in Sources */,
 				2622A537214882BC003F4C38 /* BusNotifier.swift in Sources */,
 				26C53E9C214790A90090AA0C /* BusLock.swift in Sources */,
-				26C53E6C214790A90090AA0C /* FluxHelpers.swift in Sources */,
-				26C53E66214790A90090AA0C /* Flux.swift in Sources */,
+				26C53E6C214790A90090AA0C /* FlaskHelpers.swift in Sources */,
+				26C53E66214790A90090AA0C /* Flask.swift in Sources */,
 				26C53E96214790A90090AA0C /* Bus.swift in Sources */,
-				26C53E72214790A90090AA0C /* FluxDict.swift in Sources */,
+				26C53E72214790A90090AA0C /* FlaskDict.swift in Sources */,
 				26C53EAE214790A90090AA0C /* State.swift in Sources */,
-				26C53E7E214790A90090AA0C /* FluxRef.swift in Sources */,
-				26C53E90214790A90090AA0C /* Flask.swift in Sources */,
+				26C53E7E214790A90090AA0C /* FlaskRef.swift in Sources */,
+				26C53E90214790A90090AA0C /* FlaskClass.swift in Sources */,
 				26C53EA2214790A90090AA0C /* StoreChange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1192,12 +1193,12 @@
 				26C53EC1214790A90090AA0C /* Store.swift in Sources */,
 				26C53EEB214790C00090AA0C /* NestingTests.swift in Sources */,
 				26C53EEE214790C00090AA0C /* SetupTests.swift in Sources */,
-				26C53E73214790A90090AA0C /* FluxDict.swift in Sources */,
+				26C53E73214790A90090AA0C /* FlaskDict.swift in Sources */,
 				26C53E97214790A90090AA0C /* Bus.swift in Sources */,
 				26C53EDC214790C00090AA0C /* DictionaryTests.swift in Sources */,
 				26C53EFA214790C00090AA0C /* TestOwner.swift in Sources */,
 				26C53E2A214790800090AA0C /* Flask_macOSTests.swift in Sources */,
-				26C53E6D214790A90090AA0C /* FluxHelpers.swift in Sources */,
+				26C53E6D214790A90090AA0C /* FlaskHelpers.swift in Sources */,
 				2671C1582149B96900888F3E /* FlaskApiTests.swift in Sources */,
 				26C53EF7214790C00090AA0C /* Molecules.swift in Sources */,
 				26C53EE8214790C00090AA0C /* ChainTests.swift in Sources */,
@@ -1208,16 +1209,16 @@
 				26C53EAF214790A90090AA0C /* State.swift in Sources */,
 				26C53EF1214790C00090AA0C /* PauseTests.swift in Sources */,
 				26C53EE2214790C00090AA0C /* ArchivingTests.swift in Sources */,
-				26C53E7F214790A90090AA0C /* FluxRef.swift in Sources */,
+				26C53E7F214790A90090AA0C /* FlaskRef.swift in Sources */,
 				26C53ED6214790C00090AA0C /* ReducerTests.swift in Sources */,
 				26C53E8B214790A90090AA0C /* FlaskManager.swift in Sources */,
 				2622A5342148828E003F4C38 /* BusNotifierTests.swift in Sources */,
 				2622A538214882BC003F4C38 /* BusNotifier.swift in Sources */,
 				2671C15C2149B9A100888F3E /* FlaskApi.swift in Sources */,
 				26C53ED9214790C00090AA0C /* SerializationTests.swift in Sources */,
-				26C53E91214790A90090AA0C /* Flask.swift in Sources */,
+				26C53E91214790A90090AA0C /* FlaskClass.swift in Sources */,
 				26C53EA9214790A90090AA0C /* FlaskReaction.swift in Sources */,
-				26C53E67214790A90090AA0C /* Flux.swift in Sources */,
+				26C53E67214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EB5214790A90090AA0C /* StoreSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1235,13 +1236,13 @@
 				26C53EC2214790A90090AA0C /* Store.swift in Sources */,
 				2622A539214882BD003F4C38 /* BusNotifier.swift in Sources */,
 				26C53E9E214790A90090AA0C /* BusLock.swift in Sources */,
-				26C53E6E214790A90090AA0C /* FluxHelpers.swift in Sources */,
-				26C53E68214790A90090AA0C /* Flux.swift in Sources */,
+				26C53E6E214790A90090AA0C /* FlaskHelpers.swift in Sources */,
+				26C53E68214790A90090AA0C /* Flask.swift in Sources */,
 				26C53E98214790A90090AA0C /* Bus.swift in Sources */,
-				26C53E74214790A90090AA0C /* FluxDict.swift in Sources */,
+				26C53E74214790A90090AA0C /* FlaskDict.swift in Sources */,
 				26C53EB0214790A90090AA0C /* State.swift in Sources */,
-				26C53E80214790A90090AA0C /* FluxRef.swift in Sources */,
-				26C53E92214790A90090AA0C /* Flask.swift in Sources */,
+				26C53E80214790A90090AA0C /* FlaskRef.swift in Sources */,
+				26C53E92214790A90090AA0C /* FlaskClass.swift in Sources */,
 				26C53EA4214790A90090AA0C /* StoreChange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1256,12 +1257,12 @@
 				26C53EC3214790A90090AA0C /* Store.swift in Sources */,
 				26C53EEC214790C00090AA0C /* NestingTests.swift in Sources */,
 				26C53EEF214790C00090AA0C /* SetupTests.swift in Sources */,
-				26C53E75214790A90090AA0C /* FluxDict.swift in Sources */,
+				26C53E75214790A90090AA0C /* FlaskDict.swift in Sources */,
 				26C53E99214790A90090AA0C /* Bus.swift in Sources */,
 				26C53EDD214790C00090AA0C /* DictionaryTests.swift in Sources */,
 				26C53EFB214790C00090AA0C /* TestOwner.swift in Sources */,
 				26C53E462147908E0090AA0C /* Flask_tvOSTests.swift in Sources */,
-				26C53E6F214790A90090AA0C /* FluxHelpers.swift in Sources */,
+				26C53E6F214790A90090AA0C /* FlaskHelpers.swift in Sources */,
 				2671C1592149B96A00888F3E /* FlaskApiTests.swift in Sources */,
 				26C53EF8214790C00090AA0C /* Molecules.swift in Sources */,
 				26C53EE9214790C00090AA0C /* ChainTests.swift in Sources */,
@@ -1272,16 +1273,16 @@
 				26C53EB1214790A90090AA0C /* State.swift in Sources */,
 				26C53EF2214790C00090AA0C /* PauseTests.swift in Sources */,
 				26C53EE3214790C00090AA0C /* ArchivingTests.swift in Sources */,
-				26C53E81214790A90090AA0C /* FluxRef.swift in Sources */,
+				26C53E81214790A90090AA0C /* FlaskRef.swift in Sources */,
 				26C53ED7214790C00090AA0C /* ReducerTests.swift in Sources */,
 				26C53E8D214790A90090AA0C /* FlaskManager.swift in Sources */,
 				2622A5352148828E003F4C38 /* BusNotifierTests.swift in Sources */,
 				2622A53B214882BF003F4C38 /* BusNotifier.swift in Sources */,
 				2671C15E2149B9A200888F3E /* FlaskApi.swift in Sources */,
 				26C53EDA214790C00090AA0C /* SerializationTests.swift in Sources */,
-				26C53E93214790A90090AA0C /* Flask.swift in Sources */,
+				26C53E93214790A90090AA0C /* FlaskClass.swift in Sources */,
 				26C53EAB214790A90090AA0C /* FlaskReaction.swift in Sources */,
-				26C53E69214790A90090AA0C /* Flux.swift in Sources */,
+				26C53E69214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EB7214790A90090AA0C /* StoreSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

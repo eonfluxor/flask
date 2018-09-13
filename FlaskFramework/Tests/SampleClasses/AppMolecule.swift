@@ -27,8 +27,8 @@ struct AppState : State {
     
     var counter = 0
     var text = ""
-    var object:FluxRef?
-    var map:FluxDictRef?
+    var object:FlaskRef?
+    var map:FlaskDictRef?
     
     var _internal = "`_` use this prefix for internal vars "
     

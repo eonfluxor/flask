@@ -17,7 +17,7 @@ class ChainingTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner, binding:substance)
+        let flask = Flask.flask(attachedTo:owner, binding:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -48,10 +48,10 @@ class ChainingTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:substance)
+        let flask = Flask.flask(attachedTo:owner,binding:substance)
         
         let object = NSObject()
-        let aObject = FluxRef( object )
+        let aObject = FlaskRef( object )
         
         
         flask.reactor = { owner, reaction in
@@ -80,7 +80,7 @@ class ChainingTests: SetupFlaskTests {
             
             reaction.on(AppState.named.object, { (change) in
                 
-                XCTAssert( isNilFlux(change.oldValue()) )
+                XCTAssert( isNilFlask(change.oldValue()) )
                 XCTAssert(change.newValue() == aObject)
                 XCTAssert(change.key() == AppState.named.object.rawValue)
                 XCTAssert(change.substance() === substance)
@@ -107,7 +107,7 @@ class ChainingTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner, binding:substance)
+        let flask = Flask.flask(attachedTo:owner, binding:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -138,7 +138,7 @@ class ChainingTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner, binding:substance)
+        let flask = Flask.flask(attachedTo:owner, binding:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in

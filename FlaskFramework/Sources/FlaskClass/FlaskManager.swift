@@ -1,5 +1,5 @@
 //
-//  FluxFlaskManager.swift
+//  FlaskFlaskManager.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/5/18.
@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-class FluxFlaskManager{
+class FlaskFlaskManager{
     
     static var flasks:Array<FlaskConcrete>=[]
     
@@ -26,7 +26,7 @@ class FluxFlaskManager{
     static func appendFlask(_ flask:FlaskConcrete){
         removeFlask(flask)
         flasks.append(flask)
-        FluxFlaskManager.purge()
+        FlaskFlaskManager.purge()
     }
     
     static func removeFlask(_ flask:FlaskConcrete){

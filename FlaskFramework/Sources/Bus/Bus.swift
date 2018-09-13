@@ -44,8 +44,8 @@ public class Bus {
     //////////////////
     // MARK: - LAZY
     
-    lazy var flaskRefs: Dictionary<String, Array<FluxWeakRef<FlaskConcrete>>> = {
-        return Dictionary<String, Array<FluxWeakRef<FlaskConcrete>>>()
+    lazy var flaskRefs: Dictionary<String, Array<FlaskWeakRef<FlaskConcrete>>> = {
+        return Dictionary<String, Array<FlaskWeakRef<FlaskConcrete>>>()
     }();
     
     func lock()->BusLock{
@@ -151,7 +151,7 @@ extension Bus {
         let substanceName = substance.name()
         var substanceFlaskRefs = getSubstanceFlaskRefs(substanceName)
         
-        let ref = FluxWeakRef(value:flask)
+        let ref = FlaskWeakRef(value:flask)
         substanceFlaskRefs.append(ref)
         setSubstanceFlaskRefs(substanceName,substanceFlaskRefs)
         
@@ -168,17 +168,17 @@ extension Bus {
        
     }
     
-    func getSubstanceFlaskRefs(_ substanceName:String) -> Array<FluxWeakRef<FlaskConcrete>>{
+    func getSubstanceFlaskRefs(_ substanceName:String) -> Array<FlaskWeakRef<FlaskConcrete>>{
         
         if let flasks = self.flaskRefs[substanceName] {
             return flasks
         }
         
-        return Array<FluxWeakRef<FlaskConcrete>>()
+        return Array<FlaskWeakRef<FlaskConcrete>>()
         
     }
     
-    func setSubstanceFlaskRefs(_ substanceName:String,_ refs:Array<FluxWeakRef<FlaskConcrete>>){
+    func setSubstanceFlaskRefs(_ substanceName:String,_ refs:Array<FlaskWeakRef<FlaskConcrete>>){
         
         self.flaskRefs[substanceName] = refs
     }

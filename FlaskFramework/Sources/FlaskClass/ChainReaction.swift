@@ -70,7 +70,7 @@ public class ChainReaction{
             
         }
         
-        Flux.bus.performInBusQueue {
+        Flask.bus.performInBusQueue {
             substance.beginStateTransaction(context:CHAIN_REACTION_CONTEXT){
                 mutation(substance)
             }
@@ -112,7 +112,7 @@ public extension FlaskConcrete{
         }
         
         
-        Flux.bus.performInBusQueue {
+        Flask.bus.performInBusQueue {
             substance.beginStateTransaction(context:CHAIN_REACTION_CONTEXT){
                 mutation(substance)
             }
@@ -140,7 +140,7 @@ public extension FlaskConcrete{
         }
         
         for substance in uniqueSubstances{
-            Flux.bus.performInBusQueue {
+            Flask.bus.performInBusQueue {
                 reduceAction(substance)
             }
         }

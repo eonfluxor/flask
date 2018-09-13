@@ -23,11 +23,11 @@ public struct BusNotification{
 //    let react:()->
 }
 
-public class BusObserver:FluxEquatable{
+public class BusObserver:FlaskEquatable{
     let callback:BusCallback
-    let objectRef:FluxWeakRef<AnyObject>
+    let objectRef:FlaskWeakRef<AnyObject>
     
-    required public init(callback:@escaping BusCallback, objectRef:FluxWeakRef<AnyObject>){
+    required public init(callback:@escaping BusCallback, objectRef:FlaskWeakRef<AnyObject>){
         self.callback = callback
         self.objectRef = objectRef
     }
@@ -44,7 +44,7 @@ extension BusNotifier {
                                    object: AnyObject?,
                                    _ callback:@escaping BusCallback){
         
-        let ref = FluxWeakRef(value: object)
+        let ref = FlaskWeakRef(value: object)
         let observer = BusObserver(callback: callback, objectRef:ref)
         addObserver(forMixer: mixer, observer: observer )
     }

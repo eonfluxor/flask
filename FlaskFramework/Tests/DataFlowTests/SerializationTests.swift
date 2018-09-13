@@ -23,8 +23,8 @@ class SerializationTests: XCTestCase {
             var state:AppState = AppState()
             state.counter = 666
             state.text = "hello world"
-            state.map = FluxDictRef(dict)
-            state.object = FluxRef(NSObject())
+            state.map = FlaskDictRef(dict)
+            state.object = FlaskRef(NSObject())
             
             let jsonString:String = try SubstanceSerializer.jsonFromState(state)
             
@@ -34,8 +34,8 @@ class SerializationTests: XCTestCase {
             XCTAssert(state.text == stateDecoded.text )
             XCTAssert(state.map!["foo"] == stateDecoded.map!["foo"] )
             
-            let nest:FluxDictRef = state.map!["nest"] as! FluxDictRef
-            let nestDecoded:FluxDictRef = stateDecoded.map!["nest"] as! FluxDictRef
+            let nest:FlaskDictRef = state.map!["nest"] as! FlaskDictRef
+            let nestDecoded:FlaskDictRef = stateDecoded.map!["nest"] as! FlaskDictRef
             
             XCTAssert(nest["foo"] == nestDecoded["foo"] )
             

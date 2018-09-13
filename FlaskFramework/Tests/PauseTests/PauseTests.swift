@@ -19,7 +19,7 @@ class LockTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:substance)
+        let flask = Flask.flask(attachedTo:owner,binding:substance)
         
         var calls = 0
         
@@ -35,18 +35,18 @@ class LockTests: SetupFlaskTests {
                 
                 calls += 1
                 
-                _ = Flux.lock()
-                Flux.applyMixer(AppMixers.Count, payload:  ["test":"testLock"])
+                _ = Flask.lock()
+                Flask.applyMixer(AppMixers.Count, payload:  ["test":"testLock"])
                 
             })
         }
         
         DispatchQueue.main.async {
-            Flux.applyMixer(AppMixers.Count, payload: ["test":"testLock"])
+            Flask.applyMixer(AppMixers.Count, payload: ["test":"testLock"])
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
-        Flux.purgeBusQueue()
+        Flask.purgeBusQueue()
     }
     
     
@@ -56,7 +56,7 @@ class LockTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:substance)
+        let flask = Flask.flask(attachedTo:owner,binding:substance)
         
         flask.reactor = { owner, reaction in
             reaction.at(substance)?.on(AppState.named.counter, { (change) in
@@ -66,9 +66,9 @@ class LockTests: SetupFlaskTests {
         
         // the bus won't be mixed until both locks are released
         
-        let lock  = Flux.lock()
-        let lock2  = Flux.lock()
-        Flux.applyMixer(AppMixers.Count, payload:  ["test":"testLockRelease"])
+        let lock  = Flask.lock()
+        let lock2  = Flask.lock()
+        Flask.applyMixer(AppMixers.Count, payload:  ["test":"testLockRelease"])
         
         DispatchQueue.main.async {
             lock.release()
@@ -88,7 +88,7 @@ class LockTests: SetupFlaskTests {
      
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:substance)
+        let flask = Flask.flask(attachedTo:owner,binding:substance)
         
         flask.reactor = { owner, reaction in
             reaction.at(substance)?.on(AppState.named.counter, { (change) in
@@ -102,10 +102,10 @@ class LockTests: SetupFlaskTests {
             })
         }
         
-        Flux.lock(withMixer:AppMixers.Count, payload:  ["test":"testLockActon count"])
+        Flask.lock(withMixer:AppMixers.Count, payload:  ["test":"testLockActon count"])
        
         //this should be performed after the lock releases
-        Flux.applyMixer(AppMixers.Text, payload:  ["test":"testLockAction text"])
+        Flask.applyMixer(AppMixers.Text, payload:  ["test":"testLockAction text"])
         
         wait(for: [expectation], timeout: 2)
         
@@ -123,7 +123,7 @@ class LockTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:substance)
+        let flask = Flask.flask(attachedTo:owner,binding:substance)
         
         var counter = 0
         
@@ -148,8 +148,8 @@ class LockTests: SetupFlaskTests {
             })
         }
         
-        Flux.lock(withMixer:AppMixers.Count, payload:  ["test":"testLockActon count"])
-        Flux.lock(withMixer:AppMixers.Text, payload:  ["test":"testLockActon count"])
+        Flask.lock(withMixer:AppMixers.Count, payload:  ["test":"testLockActon count"])
+        Flask.lock(withMixer:AppMixers.Text, payload:  ["test":"testLockActon count"])
         
         flask.mutate(substance) { (substance) in
             substance.state.text = "unchained!"

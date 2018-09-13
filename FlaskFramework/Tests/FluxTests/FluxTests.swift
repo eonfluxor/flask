@@ -18,7 +18,7 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:substance)
+        let flask = Flask.flask(attachedTo:owner,binding:substance)
         
         flask.reactor = { owner, reaction in
             
@@ -29,8 +29,8 @@ class FlaskTests: SetupFlaskTests {
         }
         
 //        DispatchQueue.main.async {
-        Flux.applyMixer(AppMixers.Count, payload: ["test":"callback"])
-        Flux.applyMixer(AppMixers.Text, payload: ["test":"callback"])
+        Flask.applyMixer(AppMixers.Count, payload: ["test":"callback"])
+        Flask.applyMixer(AppMixers.Text, payload: ["test":"callback"])
 //        }
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -44,7 +44,7 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:substance)
+        let flask = Flask.flask(attachedTo:owner,binding:substance)
         
         flask.reactor = { owner, reaction in
             
@@ -55,7 +55,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         DispatchQueue.main.async {
-            Flux.applyMixer(AppMixers.Count, payload: ["test":"testOwner"])
+            Flask.applyMixer(AppMixers.Count, payload: ["test":"testOwner"])
         }
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -69,7 +69,7 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:substance)
+        let flask = Flask.flask(attachedTo:owner,binding:substance)
         
         flask.reactor={owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -78,7 +78,7 @@ class FlaskTests: SetupFlaskTests {
         }
         
         flask.unbind()
-        Flux.applyMixer(AppMixers.Count, payload: ["test":"empty"])
+        Flask.applyMixer(AppMixers.Count, payload: ["test":"empty"])
         
         waitForExpectations(timeout: 2, handler: nil)
         
@@ -93,7 +93,7 @@ class FlaskTests: SetupFlaskTests {
         let substance = self.substance!
         let owner:TestOwner? = TestOwner()
         
-        weak var flask = Flux.flask(attachedTo:owner!, binding:substance)
+        weak var flask = Flask.flask(attachedTo:owner!, binding:substance)
         
         flask?.reactor = { owner, reaction in}
    
@@ -116,7 +116,7 @@ class FlaskTests: SetupFlaskTests {
         let substance = self.substance!
         var weakOwner:TestOwner? = TestOwner()
         
-        weak var flask = Flux.flask(attachedTo:weakOwner!, binding:substance)
+        weak var flask = Flask.flask(attachedTo:weakOwner!, binding:substance)
         
         flask?.reactor = { owner, reaction in}
         
@@ -125,7 +125,7 @@ class FlaskTests: SetupFlaskTests {
         // should cause the factory to release this flask
         weakOwner = nil
         
-        Flux.applyMixer(AppMixers.Count, payload:  ["test":"ownerDispose"])
+        Flask.applyMixer(AppMixers.Count, payload:  ["test":"ownerDispose"])
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:  {
             if flask == nil {
@@ -145,7 +145,7 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner,binding:substance)
+        let flask = Flask.flask(attachedTo:owner,binding:substance)
         
         flask.reactor = { owner, reaction in
             
@@ -161,7 +161,7 @@ class FlaskTests: SetupFlaskTests {
             
         }
         
-        Flux.applyMixer(AppMixers.Count, payload: ["test":"change"])
+        Flask.applyMixer(AppMixers.Count, payload: ["test":"change"])
         
         waitForExpectations(timeout: 2, handler: nil)
         
@@ -175,7 +175,7 @@ class FlaskTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testGlobalSubstance testInlineMutation")
         
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner, binding:Substances.app)
+        let flask = Flask.flask(attachedTo:owner, binding:Substances.app)
         
         flask.reactor = { owner, reaction in
             reaction.on(AppState.named.counter, { (change) in
@@ -203,7 +203,7 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flux.flask(attachedTo:owner, binding:substance)
+        let flask = Flask.flask(attachedTo:owner, binding:substance)
         
         flask.reactor = { owner, reaction in
             reaction.on("_internal", { (change) in

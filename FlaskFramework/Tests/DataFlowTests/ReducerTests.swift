@@ -11,15 +11,15 @@ import XCTest
 
 class ChangeTests: XCTestCase {
     
-    var oldState:FluxDictType = [:]
-    var newState:FluxDictType = [:]
-    var changes:FluxDictType = [:]
+    var oldState:FlaskDictType = [:]
+    var newState:FlaskDictType = [:]
+    var changes:FlaskDictType = [:]
    
     
     func testNilVsInt(){
         
-        oldState["key"] = Flux.Nil
-        newState["key"] = Flux.Nil
+        oldState["key"] = Flask.Nil
+        newState["key"] = Flask.Nil
         changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 0)
         
@@ -27,14 +27,14 @@ class ChangeTests: XCTestCase {
         changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 0)
         
-        oldState["key"] = Flux.Nil
+        oldState["key"] = Flask.Nil
         newState["key"] = 1
         changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
         oldState["key"] = 1
-        newState["key"] = Flux.Nil
+        newState["key"] = Flask.Nil
         changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
@@ -44,38 +44,38 @@ class ChangeTests: XCTestCase {
         
         
         oldState["key"] = NSObject()
-        newState["key"] = Flux.Nil
+        newState["key"] = Flask.Nil
         changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
-        oldState["key"] = Flux.Nil
+        oldState["key"] = Flask.Nil
         newState["key"] = NSObject()
         changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
         
-        oldState["key"] = Flux.Nil
+        oldState["key"] = Flask.Nil
         newState["key"] = NSObject()
         changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
         oldState["key"] = NSObject()
-        newState["key"] = Flux.Nil
+        newState["key"] = Flask.Nil
         changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
-        oldState["key"] = Flux.Nil
+        oldState["key"] = Flask.Nil
         newState["key"] = NSDictionary()
         changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         
         
         oldState["key"] = NSDictionary()
-        newState["key"] = Flux.Nil
+        newState["key"] = Flask.Nil
         changes = FlaskReaction.reduceChanges(oldState, newState)
         XCTAssert(changes.count == 1)
         

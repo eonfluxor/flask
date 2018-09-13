@@ -41,7 +41,7 @@ public struct SubstanceSerializer{
         return state
     }
     
-    static public func flattenDictionary(_ dict:FluxDictRef) -> [String:Any]{
+    static public func flattenDictionary(_ dict:FlaskDictRef) -> [String:Any]{
         
         var result:[String:Any] = [:]
         
@@ -53,7 +53,7 @@ public struct SubstanceSerializer{
             
             if(isDictionaryRef(value)){
                 //recursion
-                let nest = flattenDictionary(value as! FluxDictRef)
+                let nest = flattenDictionary(value as! FlaskDictRef)
                 result[key] = nest
             } else{
                 result[key] = value
@@ -65,9 +65,9 @@ public struct SubstanceSerializer{
         
     }
     
-    static public func nestDictionaries( namespace:String,  root:FluxDictRef,  children:FluxDictRef) -> FluxDictRef{
+    static public func nestDictionaries( namespace:String,  root:FlaskDictRef,  children:FlaskDictRef) -> FlaskDictRef{
         
-        var result = FluxDictRef(root.dictionary)
+        var result = FlaskDictRef(root.dictionary)
         
         let keys = children.keys()
         
@@ -75,7 +75,7 @@ public struct SubstanceSerializer{
             
             let value = children[key]
             let childKey = "\(namespace).\(key)"
-            assert( isNilFlux(result[childKey]) , "namespace collision!" )
+            assert( isNilFlask(result[childKey]) , "namespace collision!" )
             
             result[childKey] = value
             
@@ -83,7 +83,7 @@ public struct SubstanceSerializer{
                 //recursion
                 result = SubstanceSerializer.nestDictionaries(namespace: childKey,
                                                          root: result,
-                                                         children: value as! FluxDictRef)
+                                                         children: value as! FlaskDictRef)
             }
             
         }
@@ -94,7 +94,7 @@ public struct SubstanceSerializer{
     
     
     static public func isDictionaryRef(_ value:Any?)->Bool{
-        return ((value as? FluxDictRef) != nil)
+        return ((value as? FlaskDictRef) != nil)
     }
     
 }

@@ -17,8 +17,8 @@ public typealias BusPayload = [String:Any?]
 public typealias BusMutation = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
 public typealias ChangeClosure = (_ change:SubstanceChange)->Void
 public typealias ReactionClosure<T> = (_ attachedTo:T, _ reaction: FlaskReaction) -> Void
-public typealias FluxDictType = Dictionary<String,AnyHashable?>
-public typealias FluxNil = (AnyHashable?)
+public typealias FlaskDictType = Dictionary<String,AnyHashable?>
+public typealias FlaskNil = (AnyHashable?)
 public typealias MutationParams<T> = (_ substance:T,_ react:()-> Void,_ abort:()-> Void) -> Void
 public typealias BusMixer = String
 public typealias StateName = String
@@ -27,7 +27,7 @@ public typealias StateName = String
 let BUS_LOCKED_BY="BUS_LOCKED_BY"
 let FLUX_BUS_NAME="FLUX_BUS_NAME"
 
-public func isNilFlux(_ value:Any?)->Bool{
+public func isNilFlask(_ value:Any?)->Bool{
     if value == nil || ((value as? NSNull) != nil){
         return true
     }
@@ -37,18 +37,18 @@ public func isNilFlux(_ value:Any?)->Bool{
 
 
 
-protocol FluxAnyWithInit{
+protocol FlaskAnyWithInit{
     init() //construct at initial state
 }
 
-public class FluxEquatable: Equatable{
-    public static func == (lhs: FluxEquatable, rhs: FluxEquatable) -> Bool {
+public class FlaskEquatable: Equatable{
+    public static func == (lhs: FlaskEquatable, rhs: FlaskEquatable) -> Bool {
         return lhs === rhs
     }
 }
 
 
-public class FluxWeakRef<T> where T: AnyObject {
+public class FlaskWeakRef<T> where T: AnyObject {
     
     private(set) weak var value: T?
     

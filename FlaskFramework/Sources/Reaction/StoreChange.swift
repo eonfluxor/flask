@@ -16,7 +16,7 @@ public extension SubstanceChange{
     
     
     public func unwrapValue<A>(_ val:A?) ->A?{
-//        if let object = val as? FluxRef {
+//        if let object = val as? FlaskRef {
 //            return object.object as? A
 //        }
         return val
@@ -47,7 +47,7 @@ public struct SubstanceChange  {
     
     func mutationd()->Bool{
         
-        if isNilFlux(oldVal) && isNilFlux(newVal) {
+        if isNilFlask(oldVal) && isNilFlask(newVal) {
             return false
         }
         

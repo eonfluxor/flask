@@ -12,7 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-public class BusLock: FluxEquatable {
+public class BusLock: FlaskEquatable {
 
     var bus:Bus
     

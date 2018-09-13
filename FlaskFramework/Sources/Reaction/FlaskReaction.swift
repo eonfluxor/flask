@@ -19,7 +19,7 @@ public class FlaskReaction {
     
     weak public var onLock:BusLock?
     private(set) var substance:SubstanceConcrete
-    private(set) var changes:FluxDictType
+    private(set) var changes:FlaskDictType
     
     required public init(_ substance:SubstanceConcrete){
         self.substance = substance
@@ -80,7 +80,7 @@ public class FlaskReaction {
 
 public extension FlaskReaction {
     
-    static public func reduceChanges(substance:SubstanceConcrete)->FluxDictType{
+    static public func reduceChanges(substance:SubstanceConcrete)->FlaskDictType{
     
         let oldState = substance.stateSnapshotDictionary()
         let newState = substance.stateDictionary()
@@ -88,9 +88,9 @@ public extension FlaskReaction {
         return reduceChanges(oldState,newState)
     }
     
-    static public func reduceChanges(_ oldState:FluxDictType, _ newState:FluxDictType)->FluxDictType{
+    static public func reduceChanges(_ oldState:FlaskDictType, _ newState:FlaskDictType)->FlaskDictType{
         
-        var changes:FluxDictType=[:]
+        var changes:FlaskDictType=[:]
         
         let uniqueKeys = Set(Array(oldState.keys) + Array(newState.keys))
         
@@ -117,10 +117,10 @@ public extension FlaskReaction {
     }
     
 
-    static public func change(_ oldState:FluxDictType,_ newState:FluxDictType, _ key: String) -> SubstanceChange {
+    static public func change(_ oldState:FlaskDictType,_ newState:FlaskDictType, _ key: String) -> SubstanceChange {
         
-        var oldValue:AnyHashable? = Flux.Nil
-        var newValue:AnyHashable? = Flux.Nil
+        var oldValue:AnyHashable? = Flask.Nil
+        var newValue:AnyHashable? = Flask.Nil
         
         if let val = oldState[key] {
             oldValue = val
