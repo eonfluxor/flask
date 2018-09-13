@@ -82,6 +82,9 @@
                 <a class="nav-group-task-link" href="Classes/FlaskEquatable.html">FlaskEquatable</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/FlaskManager.html">FlaskManager</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/FlaskNSRef.html">FlaskNSRef</a>
               </li>
               <li class="nav-group-task">
@@ -307,20 +310,20 @@
 
 </code></pre>
 
-<p>While the code is compact there&rsquo;s a lot of magic happening behind the scenes: Some things to note:</p>
+<p>The above show cases Flask high-level API. Some things to consider:</p>
 
 <ul>
 <li>State is a read only property and it&#39;a protected during the <code>mix</code> operatons.</li>
 <li>While <code>mixing</code> you would mutate the state using <code>prop</code> (properties) instead of state.</li>
 <li>Using <code>AttachFlaskReactor</code> creates a managed <code><a href="Classes/Flask.html">Flask</a></code> instance that is <strong>automatically disposed</strong> when its owner instance (ViewController in this case) turns into <code>nil</code>.<br></li>
-<li>Optionally you can call <code><a href="Functions.html#/s:9Flask_iOS06DetachA7Reactoryx4from_tRlzCAA0aD0RzlF">DetachFlaskReactor(from:)</a></code> to explicitly dispose your Flask.</li>
 </ul>
 
-<p>Keep in mind that:</p>
+<p>Also keep in mind that:</p>
 
 <ul>
 <li>It&rsquo;s possible to instantiate Flask using a substances array: <code>AttachFlaskReactor(to:self, mixing:[app,settings,login])</code></li>
-<li>These global functions are just idiomatic suggar and a lower-level API is also available for more granular control.</li>
+<li>These global functions are just idiomatic suggar and a  public low-level API is also available for more granular control.</li>
+<li>When needed you may call <code><a href="Functions.html#/s:9Flask_iOS06DetachA7Reactoryx4from_tRlzCAA0aD0RzlF">DetachFlaskReactor(from:)</a></code> to immediately dispose your Flask.</li>
 </ul>
 <h2 id='fluxor-style' class='heading'>Fluxor Style</h2>
 <h2 id='why-flask' class='heading'>Why Flask?</h2>
@@ -350,7 +353,23 @@ Kron to your <code>Podfile</code>:</p>
 <p>And then import the module</p>
 <pre class="highlight plaintext"><code>import Flask
 </code></pre>
+<h2 id='sample-project' class='heading'>Sample Project</h2>
+
+<p>A sample project is available in this repo under</p>
+
+<ul>
+<li>FlaskSample/</li>
+</ul>
+
+<p>Make sure to run <code>Pod install</code> to create your workspace.</p>
+<h2 id='test-cases' class='heading'>Test Cases</h2>
+
+<p>The above sample project also ships with dozes of test cases as standard Xcode test units. It&rsquo;s a great source to learn more implementation patterns and have peace of mind about the code stability.</p>
+
+<p>This tests are automatically run in Travis-CI on each deployment and you can check the health status above.</p>
 <h2 id='more-examples' class='heading'>More Examples</h2>
+
+<p>More practical examples are on the works and we would love to  feature yours!</p>
 <pre class="highlight plaintext"><code>// Coming soon
 </code></pre>
 <h2 id='have-a-question' class='heading'>Have a question?</h2>
@@ -362,7 +381,7 @@ Kron to your <code>Podfile</code>:</p>
 <p><code>eonfluxor@gmail.com</code></p>
 <h2 id='about' class='heading'>About</h2>
 
-<p><strong>Flask</strong> created by <a href="http://linkedin.com/in/hassanvfx">Hassan Uriostegui</a> </p>
+<p><strong>Flask</strong> was created by <a href="http://linkedin.com/in/hassanvfx">Hassan Uriostegui</a> </p>
 
           </div>
         </section>

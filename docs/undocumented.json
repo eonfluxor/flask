@@ -323,6 +323,27 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/FlaskClass/FlaskManager.swift",
+      "line": 15,
+      "symbol": "FlaskManager",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/FlaskClass/FlaskManager.swift",
+      "line": 17,
+      "symbol": "FlaskManager.flasks",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/FlaskClass/FlaskManager.swift",
+      "line": 49,
+      "symbol": "FlaskManager.purge()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/Flask.swift",
       "line": 33,
       "symbol": "Flask.purgeFluxQueue()",
