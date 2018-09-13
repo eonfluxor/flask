@@ -47,8 +47,8 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
         return val.rawValue as! String
     }
     
-    public func mix(_ enumVal:A, _ reaction: @escaping FluxMutation){
-        mix(actionName(enumVal), reaction)
+    public func define(mix enumVal:A, _ reaction: @escaping FluxMutation){
+        define( mix: actionName(enumVal), reaction)
     }
     
     public override func stateSnapshotDictionary() -> FlaskDictType{
@@ -195,23 +195,28 @@ public extension SubstanceConcrete{
 
 public extension SubstanceConcrete {
   
-    public func mix(_ mixer:String, _ reaction: @escaping FluxMutation){
+    public func define(mix mixer:String, _ reaction: @escaping FluxMutation){
         let weakRegistration={ [weak self] in
             
             FluxNotifier.addCallback(forMixer: mixer, object: self) { (notification) in
                 
+                var resolved = false
+                
+                defer{
+                    if self != nil {
+                        assert(resolved, "reaction closure must call `react` or `abort`")
+                    }
+                }
                 
                 let context = "Substance.on(mixer:reaction:)"
                 let payload = notification.payload
                 
                 let lock = payload?[BUS_LOCKED_BY] as? FluxLock
                 
-                var resolved = false
-                
                 let react = {
-                    resolved=true
                     self?.commitStateTransaction(context:context)
                     self?.reduceAndReact(lock)
+                    resolved=true
                 }
                 
                 let abort = {
@@ -223,9 +228,7 @@ public extension SubstanceConcrete {
                      reaction(payload,react,abort)
                 }
                
-                if self != nil {
-                    assert(resolved, "reaction closure must call `react` or `abort`")
-                }
+                
                 
             }
             
