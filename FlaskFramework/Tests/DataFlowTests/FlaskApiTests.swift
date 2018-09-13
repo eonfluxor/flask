@@ -46,9 +46,9 @@ class InitializerTests: XCTestCase, FlaskReactor  {
         
         UseFlaskReactor(at:self)
             .toMix(self.substance!) { (substance) in
-                substance.state.counter = 10
+                substance.mixState.counter = 10
             }.andMix(self.substance!) { (substance) in
-                substance.state.text = "text"
+                substance.mixState.text = "text"
             }.andReact()
         
         waitForExpectations(timeout: 2, handler: nil)

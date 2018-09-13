@@ -16,13 +16,25 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
     
     typealias StateType = T
     
-    private var _innerStateSnapshot: T = T()
-    private var _innerState: T = T()
-    public var _mixingState:T = T()
+    private var _finalStateSnapshot: T = T()
     
-    public var state:T{
+    private var _finalState: T = T()
+    public var finalState:T{
         get{
-            assert(pendingStateTransaction != nil, "Use `currentState()` instead. `state` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
+            assert(pendingStateTransaction == nil, "Use `finalState` instead. `state` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
+            return _finalState
+        }
+        set(newState){
+            assert(pendingStateTransaction == nil, "`state` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
+            _finalState = newState
+        }
+    }
+    
+    
+    public var _mixingState:T = T()
+    public var mixState:T{
+        get{
+            assert(pendingStateTransaction != nil, "Use `finalState` instead. `state` is only accesible during `Flask.mix` or `Substance.mixer` transactions")
             return _mixingState
         }
         set(newState){
@@ -63,30 +75,24 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
     }
     
     public override func stateSnapshotDictionary() -> FlaskDictType{
-        return _innerStateSnapshot.toDictionary()
+        return _finalStateSnapshot.toDictionary()
     }
     public override func stateDictionary() -> FlaskDictType{
-        return _innerState.toDictionary()
+        return _finalState.toDictionary()
     }
     
     
-    public func currentState()->T{
-        return _innerState
-    }
-    
-    func setCurrentState(_ state:T){
-        _innerState = state
-    }
+   
     
     /// PRIVATE
     
     override func snapshotState(){
-        self._innerStateSnapshot = self._innerState
+        self._finalStateSnapshot = self._finalState
         archiveIntent()
     }
     
     func stateFromSnapshot()->T{
-        return self._innerStateSnapshot
+        return self._finalStateSnapshot
     }
 
     
@@ -107,11 +113,11 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
       
         
         //OPTIMISCALLY MUTATE THE STATE
-        state = _innerState
+        mixState = _finalState
         transaction()
         
         if pendingStateTransaction != nil{
-            _innerState = state
+            _finalState = mixState
         }
     }
     
@@ -119,14 +125,14 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
         
         assert(pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
 
-        _innerState = state
+        _finalState = mixState
         pendingStateTransaction = nil
     }
     override func abortStateTransaction(context:String){
         
         assert(self.pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
         
-        state = stateFromSnapshot()
+        mixState = stateFromSnapshot()
         pendingStateTransaction = nil
     }
 }

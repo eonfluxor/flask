@@ -575,9 +575,9 @@
 			isa = PBXGroup;
 			children = (
 				26C53E60214790A90090AA0C /* State.swift */,
+				26C53E63214790A90090AA0C /* Substance.swift */,
 				26C53E61214790A90090AA0C /* SubstanceSerializer.swift */,
 				26C53E62214790A90090AA0C /* SubstanceArchiver.swift */,
-				26C53E63214790A90090AA0C /* Substance.swift */,
 			);
 			path = Substance;
 			sourceTree = "<group>";
