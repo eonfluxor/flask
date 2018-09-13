@@ -12,9 +12,6 @@ import UIKit
 import Cocoa
 #endif
 
-public typealias FluxCompletionClosure = ()->Void
-public typealias FluxPayload = [String:Any?]
-public typealias FluxCallback = (_ notification:FluxNotification)->Void
 
 public struct FluxNotification{
     let mixer:FluxMixer

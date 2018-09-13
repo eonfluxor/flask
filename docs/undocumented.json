@@ -86,91 +86,70 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
-      "line": 15,
-      "symbol": "FluxCompletionClosure",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
       "line": 16,
-      "symbol": "FluxPayload",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
-      "line": 17,
-      "symbol": "FluxCallback",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
-      "line": 19,
       "symbol": "FluxNotification",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
-      "line": 26,
+      "line": 23,
       "symbol": "FluxObserver",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
-      "line": 30,
+      "line": 27,
       "symbol": "FluxObserver.init(callback:objectRef:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
-      "line": 36,
+      "line": 33,
       "symbol": "FluxNotifier",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
-      "line": 43,
+      "line": 40,
       "symbol": "FluxNotifier.addCallback(forMixer:object:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
-      "line": 52,
+      "line": 49,
       "symbol": "FluxNotifier.removeObservers(forObject:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
-      "line": 63,
+      "line": 60,
       "symbol": "FluxNotifier.addObserver(forMixer:observer:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
-      "line": 79,
+      "line": 76,
       "symbol": "FluxNotifier.getObservers(forMixer:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
-      "line": 87,
+      "line": 84,
       "symbol": "FluxNotifier.setObservers(forMixer:observers:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxNotifier.swift",
-      "line": 96,
+      "line": 93,
       "symbol": "FluxNotifier.postNotification(forMixer:payload:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
@@ -506,6 +485,13 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
+      "line": 15,
+      "symbol": "FluxCompletionClosure",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
       "line": 16,
       "symbol": "FluxPayload",
       "symbol_kind": "source.lang.swift.decl.typealias",
@@ -514,76 +500,83 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
       "line": 17,
-      "symbol": "FluxMutation",
+      "symbol": "FluxCallback",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
       "line": 18,
-      "symbol": "ChangeClosure",
+      "symbol": "FluxMutation",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
       "line": 19,
-      "symbol": "ReactionClosure",
+      "symbol": "ChangeClosure",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
       "line": 20,
-      "symbol": "FlaskDictType",
+      "symbol": "ReactionClosure",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
       "line": 21,
-      "symbol": "FlaskNil",
+      "symbol": "FlaskDictType",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
       "line": 22,
-      "symbol": "MutationParams",
+      "symbol": "FlaskNil",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
       "line": 23,
-      "symbol": "FluxMixer",
+      "symbol": "MutationParams",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
       "line": 24,
+      "symbol": "FluxMixer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
+      "line": 25,
       "symbol": "StateName",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
-      "line": 30,
-      "symbol": "isNilFlask(_:)",
+      "line": 31,
+      "symbol": "isNilorNull(_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
-      "line": 44,
+      "line": 45,
       "symbol": "FlaskEquatable",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
-      "line": 51,
+      "line": 52,
       "symbol": "FlaskWeakRef",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"

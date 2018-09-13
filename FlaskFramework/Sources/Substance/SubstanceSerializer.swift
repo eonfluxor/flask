@@ -75,7 +75,7 @@ public struct SubstanceSerializer{
             
             let value = children[key]
             let childKey = "\(namespace).\(key)"
-            assert( isNilFlask(result[childKey]) , "namespace collision!" )
+            assert( isNilorNull(result[childKey]) , "namespace collision!" )
             
             result[childKey] = value
             

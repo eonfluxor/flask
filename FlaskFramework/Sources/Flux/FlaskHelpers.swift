@@ -12,8 +12,9 @@ import UIKit
 import Cocoa
 #endif
 
-
+public typealias FluxCompletionClosure = ()->Void
 public typealias FluxPayload = [String:Any?]
+public typealias FluxCallback = (_ notification:FluxNotification)->Void
 public typealias FluxMutation = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
 public typealias ChangeClosure = (_ change:SubstanceChange)->Void
 public typealias ReactionClosure<T> = (_ attachedTo:T, _ reaction: FlaskReaction) -> Void
@@ -27,7 +28,7 @@ public typealias StateName = String
 let BUS_LOCKED_BY="BUS_LOCKED_BY"
 let FLUX_BUS_NAME="FLUX_BUS_NAME"
 
-public func isNilFlask(_ value:Any?)->Bool{
+public func isNilorNull(_ value:Any?)->Bool{
     if value == nil || ((value as? NSNull) != nil){
         return true
     }

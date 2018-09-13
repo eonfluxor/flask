@@ -47,7 +47,7 @@ public struct SubstanceChange  {
     
     func mixingd()->Bool{
         
-        if isNilFlask(oldVal) && isNilFlask(newVal) {
+        if isNilorNull(oldVal) && isNilorNull(newVal) {
             return false
         }
         
