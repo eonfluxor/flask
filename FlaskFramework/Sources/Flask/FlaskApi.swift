@@ -25,11 +25,11 @@ public func FlaskDetach<T:AnyObject & FlaskReactor>( from object:T){
 }
 
 
-public func FlaskUse<T:AnyObject & FlaskReactor>(_ object:T )->Flask<T>{
+public func FlaskUse<T:AnyObject & FlaskReactor>(_ object:T )->FlaskClass<T>{
     let flasks = FluxFlaskManager.getFlasks(from:object)
     assert(flasks.count > 0, "No Flasks attached. Did you call `AttachFlask(to:mixing:)` ? ")
     assert(flasks.count == 1, "UseFlask required `object` to have only one Flask attached")
-    return flasks.first as! Flask<T>
+    return flasks.first as! FlaskClass<T>
 }
 
 

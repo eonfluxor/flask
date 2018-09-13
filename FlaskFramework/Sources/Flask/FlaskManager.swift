@@ -16,9 +16,9 @@ class FluxFlaskManager{
     
     static var flasks:Array<FlaskConcrete>=[]
     
-    static func instance<T:AnyObject>(attachedTo owner:T) -> Flask<T>{
+    static func instance<T:AnyObject>(attachedTo owner:T) -> FlaskClass<T>{
         
-        let flask = Flask<T>(owner)
+        let flask = FlaskClass<T>(owner)
         appendFlask(flask)
         return flask
     }

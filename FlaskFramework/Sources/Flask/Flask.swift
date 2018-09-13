@@ -12,7 +12,7 @@ import Cocoa
 #endif
 
 
-public class Flask<D:AnyObject>:FlaskConcrete {
+public class FlaskClass<D:AnyObject>:FlaskConcrete {
     
     weak var owner:D?
     

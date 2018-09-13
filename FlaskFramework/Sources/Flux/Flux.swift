@@ -41,11 +41,11 @@ public extension Flux {
 
 public extension Flux {
     
-    static public func flask<T:AnyObject>(attachedTo owner:T, binding substance:SubstanceConcrete) -> Flask<T>{
+    static public func flask<T:AnyObject>(attachedTo owner:T, binding substance:SubstanceConcrete) -> FlaskClass<T>{
         return Flux.flask(attachedTo:owner,binding:[substance])
     }
     
-    static public func flask<T:AnyObject>(attachedTo owner:T, binding substances:[SubstanceConcrete]) -> Flask<T>{
+    static public func flask<T:AnyObject>(attachedTo owner:T, binding substances:[SubstanceConcrete]) -> FlaskClass<T>{
         let flask = Flux.flask(attachedTo:owner)
         flask.defineSubstances(substances)
         flask.bind()
@@ -53,7 +53,7 @@ public extension Flux {
     }
     
     
-    static private func flask<T:AnyObject>(attachedTo owner:T) -> Flask<T>{
+    static private func flask<T:AnyObject>(attachedTo owner:T) -> FlaskClass<T>{
         return FluxFlaskManager.instance(attachedTo:owner)
     }
 }
