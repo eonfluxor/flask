@@ -991,7 +991,7 @@
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/SubstanceSerializer\u001b.swift",
       "line": 15,
       "symbol": "SubstanceSerializer",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
