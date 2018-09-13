@@ -93,17 +93,17 @@ class ViewController: UIViewController, FlaskReactor  {
 }
 
 ```
-While the code is compact there's a lot of magic happening behind the scenes: Some things to note:
+The above show cases Flask high-level API. Some things to consider:
 
 * State is a read only property and it'a protected during the `mix` operatons.
 * While `mixing` you would mutate the state using `prop` (properties) instead of state.
 * Using `AttachFlaskReactor` creates a managed `Flask` instance that is **automatically disposed** when its owner instance (ViewController in this case) turns into `nil`.  
-* Optionally you can call `DetachFlaskReactor(from:)` to explicitly dispose your Flask.
 
-Keep in mind that:
+Also keep in mind that:
  
 * It's possible to instantiate Flask using a substances array: `AttachFlaskReactor(to:self, mixing:[app,settings,login])`
-* These global functions are just idiomatic suggar and a lower-level API is also available for more granular control.
+* These global functions are just idiomatic suggar and a  public low-level API is also available for more granular control.
+* When needed you may call `DetachFlaskReactor(from:)` to immediately dispose your Flask.
 
 ## Fluxor Style
 
@@ -140,9 +140,23 @@ And then import the module
 ```
 import Flask
 ```
-   
+## Sample Project
+
+A sample project is available in this repo under
+
+* FlaskSample/
+
+Make sure to run `Pod install` to create your workspace.
+
+## Test Cases
+
+The above sample project also ships with dozes of test cases as standard Xcode test units. It's a great source to learn more implementation patterns and have peace of mind about the code stability.
+
+This tests are automatically run in Travis-CI on each deployment and you can check the health status above.
    
 ## More Examples
+
+More practical examples are on the works and we would love to  feature yours!
 
 ```
 // Coming soon
@@ -157,4 +171,4 @@ You can also reach us at:
 
 ## About
 
-**Flask** created by [Hassan Uriostegui](http://linkedin.com/in/hassanvfx) 
+**Flask** was created by [Hassan Uriostegui](http://linkedin.com/in/hassanvfx) 

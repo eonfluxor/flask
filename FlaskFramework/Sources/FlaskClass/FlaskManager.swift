@@ -12,9 +12,9 @@ import UIKit
 import Cocoa
 #endif
 
-class FlaskManager{
+public class FlaskManager{
     
-    static var flasks:Array<FlaskConcrete>=[]
+    static public private(set) var flasks:Array<FlaskConcrete>=[]
     
     static func instance<T:AnyObject>(attachedTo owner:T) -> FlaskClass<T>{
         
@@ -46,7 +46,7 @@ class FlaskManager{
         return flasks.filter{ $0.getOwner() === owner}
     }
     
-    static func purge(){
+    static public func purge(){
         let orphans = flasks.filter {$0.getOwner() == nil}
         
         for flask in orphans {
