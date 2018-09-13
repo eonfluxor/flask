@@ -20,11 +20,11 @@ class InitializerTests: XCTestCase, FlaskReactor  {
     var expecation2:XCTestExpectation?
     var substance:Substance? = App()
     
-    func flaskReactor(attachedTo: AnyObject, reaction: FlaskReaction) {
-        reaction.on(AppState.named.counter) { (change) in
+    func flaskReactor( reaction:FlaskReaction) {
+        reaction.on(AppState.prop.counter) { (change) in
             expecation?.fulfill()
         }
-        reaction.on(AppState.named.text) { (change) in
+        reaction.on(AppState.prop.text) { (change) in
             expecation2?.fulfill()
         }
     }
@@ -32,12 +32,12 @@ class InitializerTests: XCTestCase, FlaskReactor  {
     override func setUp() {
         substance!.name(as:"chain tests")
         AttachFlaskReactor(to:self, mixing:[substance!])
-        expecation = self.expectation(description: "callbac on counter")
-        expecation2 = self.expectation(description: "callbac on text")
+        expecation = self.expectation(description: "callback on counter")
+        expecation2 = self.expectation(description: "callback on text")
         
     }
     override func tearDown(){
-        //er need to explictely detach because the test keeps the reference alive!
+        //it needs to explictely detached because the test keeps owner isntance reference alive after this
         DetachFlaskReactor(from: self)
         substance = nil
     }
@@ -47,7 +47,7 @@ class InitializerTests: XCTestCase, FlaskReactor  {
         UseFlaskReactor(at:self)
             .toMix(self.substance!) { (substance) in
                 substance.prop.counter = 10
-            }.andMix(self.substance!) { (substance) in
+            }.with(self.substance!) { (substance) in
                 substance.prop.text = "text"
             }.andReact()
         

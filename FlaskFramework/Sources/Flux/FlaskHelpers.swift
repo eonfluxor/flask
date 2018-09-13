@@ -58,4 +58,8 @@ public class FlaskWeakRef<T> where T: AnyObject {
     }
 }
 
+public enum NoMixers:FluxMixer{
+    case None
+}
+
 

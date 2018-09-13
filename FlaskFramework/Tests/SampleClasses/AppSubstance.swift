@@ -27,7 +27,7 @@ enum Mixers2 : FluxMixer {
 
 struct AppState : State {
    
-    enum named : StateName{
+    enum prop : StateName{
         case counter, text, map, object
     }
     
@@ -56,4 +56,6 @@ class App : Substance<AppState,Mixers> {
     }
     
 }
+
+class AppNoMixers : Substance<AppState,NoMixers> {
 

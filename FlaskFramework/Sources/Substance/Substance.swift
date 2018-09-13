@@ -12,6 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
+
 open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
     
     typealias StateType = T

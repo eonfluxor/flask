@@ -25,7 +25,7 @@ class LockTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.at(substance)?.on(AppState.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                 
                 if calls == 0 {
                     expectation.fulfill()
@@ -59,7 +59,7 @@ class LockTests: SetupFlaskTests {
         let flask = Flask.instance(attachedTo:owner,mixing:substance)
         
         flask.reactor = { owner, reaction in
-            reaction.at(substance)?.on(AppState.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                 expectation.fulfill()
             })
         }
@@ -91,13 +91,13 @@ class LockTests: SetupFlaskTests {
         let flask = Flask.instance(attachedTo:owner,mixing:substance)
         
         flask.reactor = { owner, reaction in
-            reaction.at(substance)?.on(AppState.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                 
                 reaction.onLock?.release()
                 expectation.fulfill()
                 
             })
-            reaction.at(substance)?.on(AppState.named.text, { (change) in
+            reaction.at(substance)?.on(AppState.prop.text, { (change) in
                 expectation2.fulfill()
             })
         }
@@ -128,13 +128,13 @@ class LockTests: SetupFlaskTests {
         var counter = 0
         
         flask.reactor = { owner, reaction in
-            reaction.at(substance)?.on(AppState.named.counter, { (change) in
+            reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                
                 expectation.fulfill()
                 reaction.onLock?.release()
                 
             })
-            reaction.at(substance)?.on(AppState.named.text, { (change) in
+            reaction.at(substance)?.on(AppState.prop.text, { (change) in
                 if counter == 0 {
                     
                     expectation2.fulfill()

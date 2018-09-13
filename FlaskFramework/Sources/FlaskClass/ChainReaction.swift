@@ -44,7 +44,7 @@ public class ChainReaction{
         _abort(substances)
     }
     
-    public func andMix<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping(_ substance:T) -> Void)->ChainReaction{
+    public func with<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping(_ substance:T) -> Void)->ChainReaction{
         return mix(aSubstance, mixing)
     }
     

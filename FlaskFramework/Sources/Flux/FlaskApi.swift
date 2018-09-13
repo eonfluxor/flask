@@ -13,7 +13,7 @@ import Cocoa
 
 
 public protocol FlaskReactor{
-    func flaskReactor( attachedTo:AnyObject, reaction: FlaskReaction)
+    func flaskReactor( reaction: FlaskReaction)
 }
 
 public func AttachFlaskReactor<T:AnyObject & FlaskReactor>( to object:T, mixing substances:[SubstanceConcrete]){
@@ -46,7 +46,7 @@ extension Flask{
         flask.defineSubstances(substances)
         flask.bind()
         flask.reactor = { (owner, reaction) in
-            object.flaskReactor(attachedTo: owner, reaction: reaction)
+            object.flaskReactor( reaction: reaction)
         }
     }
     

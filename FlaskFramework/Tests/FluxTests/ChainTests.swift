@@ -20,7 +20,7 @@ class ChainingTests: SetupFlaskTests {
         let flask = Flask.instance(attachedTo:owner, mixing:substance)
         
         flask.reactor = { owner, reaction in
-            reaction.on(AppState.named.counter, { (change) in
+            reaction.on(AppState.prop.counter, { (change) in
                 expectation.fulfill()
                 
             })
@@ -56,33 +56,33 @@ class ChainingTests: SetupFlaskTests {
         
         flask.reactor = { owner, reaction in
             
-            reaction.on(AppState.named.counter, { (change) in
+            reaction.on(AppState.prop.counter, { (change) in
                 
                 let oldValue:Int? = change.oldValue()
                 let newValue:Int? = change.newValue()
                 XCTAssert(oldValue == 0)
                 XCTAssert(newValue == 1)
-                XCTAssert(change.key() == AppState.named.counter.rawValue)
+                XCTAssert(change.key() == AppState.prop.counter.rawValue)
                 XCTAssert(change.substance() === substance)
                 
                 expectation.fulfill()
             })
             
-            reaction.on(AppState.named.text, { (change) in
+            reaction.on(AppState.prop.text, { (change) in
                 
                 XCTAssert(change.oldValue() == "")
                 XCTAssert(change.newValue() == "reaction")
-                XCTAssert(change.key() == AppState.named.text.rawValue)
+                XCTAssert(change.key() == AppState.prop.text.rawValue)
                 XCTAssert(change.substance() === substance)
                 
                 expectation2.fulfill()
             })
             
-            reaction.on(AppState.named.object, { (change) in
+            reaction.on(AppState.prop.object, { (change) in
                 
                 XCTAssert( isNilorNull(change.oldValue()) )
                 XCTAssert(change.newValue() == aObject)
-                XCTAssert(change.key() == AppState.named.object.rawValue)
+                XCTAssert(change.key() == AppState.prop.object.rawValue)
                 XCTAssert(change.substance() === substance)
                 
                 expectation3.fulfill()
@@ -111,13 +111,13 @@ class ChainingTests: SetupFlaskTests {
         let flask = Flask.instance(attachedTo:owner, mixing:substance)
         
         flask.reactor = { owner, reaction in
-            reaction.on(AppState.named.counter, { (change) in
+            reaction.on(AppState.prop.counter, { (change) in
                 
                 XCTAssert(substance.state.counter == 2)
                 expectation.fulfill()
             })
             
-            reaction.on(AppState.named.text, { (change) in
+            reaction.on(AppState.prop.text, { (change) in
                 
                 XCTAssert(substance.state.text == "mix no override")
                 expectation2.fulfill()
@@ -147,7 +147,7 @@ class ChainingTests: SetupFlaskTests {
         let flask = Flask.instance(attachedTo:owner, mixing:substance)
         
         flask.reactor = { owner, reaction in
-            reaction.on(AppState.named.counter, { (change) in
+            reaction.on(AppState.prop.counter, { (change) in
                 expectation.fulfill()
 //                XCTAssert(substance.state.counter == 2)
 //                XCTAssert(substance.state.text == "mix no override")
