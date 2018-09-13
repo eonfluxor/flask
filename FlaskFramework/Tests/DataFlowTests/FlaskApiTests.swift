@@ -31,19 +31,19 @@ class InitializerTests: XCTestCase, FlaskReactor  {
     
     override func setUp() {
         substance!.name(as:"chain tests")
-        AttachFlask(to:self, mixing:[substance!])
+        AttachFlaskReactor(to:self, mixing:[substance!])
         expecation = self.expectation(description: "callbac on counter")
         expecation2 = self.expectation(description: "callbac on text")
         
     }
     override func tearDown(){
-        DetachFlask(from: self)
+        DetachFlaskReactor(from: self)
         substance = nil
     }
     
     func testOwnerInit(){
         
-        UseFlask(self)
+        UseFlaskReactor(at:self)
             .toMix(self.substance!) { (substance) in
                 substance.state.counter = 10
             }.andMix(self.substance!) { (substance) in

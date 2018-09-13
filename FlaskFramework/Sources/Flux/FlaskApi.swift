@@ -16,19 +16,20 @@ public protocol FlaskReactor{
     func flaskReactor( attachedTo:AnyObject, reaction: FlaskReaction)
 }
 
-public func AttachFlask<T:AnyObject & FlaskReactor>( to object:T, mixing substances:[SubstanceConcrete]){
+public func AttachFlaskReactor<T:AnyObject & FlaskReactor>( to object:T, mixing substances:[SubstanceConcrete]){
     Flask.attachFlask(to:object,mixing:substances)
 }
 
-public func DetachFlask<T:AnyObject & FlaskReactor>( from object:T){
+
+public func DetachFlaskReactor<T:AnyObject & FlaskReactor>( from object:T){
     Flask.detachFlask(from:object)
 }
 
 
-public func UseFlask<T:AnyObject & FlaskReactor>(_ object:T )->FlaskClass<T>{
+public func UseFlaskReactor<T:AnyObject & FlaskReactor>(at object:T )->FlaskClass<T>{
     let flasks = FlaskFlaskManager.getFlasks(from:object)
-    assert(flasks.count > 0, "No Flasks attached. Did you call `AttachFlask(to:mixing:)` ? ")
-    assert(flasks.count == 1, "UseFlask required `object` to have only one Flask attached")
+    assert(flasks.count > 0, "No Flasks attached. Did you call `AttachFlaskReactor(to:mixing:)` ? ")
+    assert(flasks.count == 1, "UseFlaskReactor required `object` to have only one Flask attached")
     return flasks.first as! FlaskClass<T>
 }
 

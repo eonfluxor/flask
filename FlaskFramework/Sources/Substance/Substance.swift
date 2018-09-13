@@ -227,9 +227,7 @@ public extension SubstanceConcrete {
                 self?.beginStateTransaction(context:context){
                      reaction(payload,react,abort)
                 }
-               
-                
-                
+      
             }
             
         }

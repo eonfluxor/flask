@@ -30,21 +30,14 @@ class FlaskFlaskManager{
     }
     
     static func removeFlask(_ flask:FlaskConcrete){
-        if let index = flasks.index(of: flask) {
-            _ = autoreleasepool{
-                flask.unbind(false)
-                flasks.remove(at: index)
-            }
-        }
+        flasks = flasks.filter{ $0 !== flask}
     }
     
     @discardableResult
     static func removeFlask(fromOwner owner: AnyObject)->Bool{
         
         let originalCount = flasks.count
-        let newFlasks = flasks.filter{ $0.getOwner() !== owner}
-        flasks = newFlasks
-        
+        flasks = flasks.filter{ $0.getOwner() !== owner}
         return flasks.count < originalCount
     }
     
