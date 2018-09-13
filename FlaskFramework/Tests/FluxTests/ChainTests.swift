@@ -28,12 +28,12 @@ class ChainingTests: SetupFlaskTests {
         
       
         
-        flask.mix(substance){ (substance) in
-            substance.stateMix.counter=1
-            
-        }.mix(substance) { (substance) in
-            substance.stateMix.counter=2
-        }.react()
+        flask
+            .mix(substance){ (substance) in
+                substance.stateMix.counter=1
+            }.mix(substance) { (substance) in
+                substance.stateMix.counter=2
+            }.react()
         
         waitForExpectations(timeout: 2, handler: nil)
         
@@ -155,9 +155,10 @@ class ChainingTests: SetupFlaskTests {
             })
         }
         
-        flask.mix(substance){ (substance) in
-            substance.stateMix.text="mix no override"
-            substance.stateMix.counter=1
+        flask
+            .mix(substance){ (substance) in
+                substance.stateMix.text="mix no override"
+                substance.stateMix.counter=1
             }.mix(substance) { (substance) in
                 substance.stateMix.counter=2
             }.abort()

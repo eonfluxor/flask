@@ -184,8 +184,9 @@ class FlaskTests: SetupFlaskTests {
             })
         }
         
-        flask.mix(Substances.app){ (substance) in
-            substance.stateMix.counter=1
+        flask
+            .mix(Substances.app){ (substance) in
+                substance.stateMix.counter=1
             }.mix(Substances.app) { (substance) in
                 substance.stateMix.counter=2
             }.react()
