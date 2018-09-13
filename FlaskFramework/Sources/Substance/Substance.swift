@@ -47,7 +47,7 @@ open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
         return val.rawValue as! String
     }
     
-    public func on(_ enumVal:A, _ reaction: @escaping BusMutation){
+    public func on(_ enumVal:A, _ reaction: @escaping FluxMutation){
         on(actionName(enumVal), reaction)
     }
     
@@ -191,16 +191,16 @@ public extension SubstanceConcrete{
 
 public extension SubstanceConcrete {
   
-    public func on(_ mixer:String, _ reaction: @escaping BusMutation){
+    public func on(_ mixer:String, _ reaction: @escaping FluxMutation){
         let weakRegistration={ [weak self] in
             
-            BusNotifier.addCallback(forMixer: mixer, object: self) { (notification) in
+            FluxNotifier.addCallback(forMixer: mixer, object: self) { (notification) in
                 
                 
                 let context = "Substance.on(mixer:reaction:)"
                 let payload = notification.payload
                 
-                let lock = payload?[BUS_LOCKED_BY] as? BusLock
+                let lock = payload?[BUS_LOCKED_BY] as? FluxLock
                 
                 var resolved = false
                 
@@ -233,7 +233,7 @@ public extension SubstanceConcrete {
 
 extension SubstanceConcrete {
     
-    func reduceAndReact(_ busLock: BusLock? = nil){
+    func reduceAndReact(_ busLock: FluxLock? = nil){
         
         let reaction = FlaskReaction(self as SubstanceConcrete)
         reaction.onLock = busLock

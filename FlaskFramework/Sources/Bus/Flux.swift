@@ -13,12 +13,12 @@ import UIKit
 import Cocoa
 #endif
 
-public class Bus {
+public class Flux {
     
     //////////////////
     // MARK: - LOCKS
     
-    var locks:[BusLock]=[]
+    var locks:[FluxLock]=[]
     
     //////////////////
     // MARK: - OPERATION QUEUE
@@ -48,8 +48,8 @@ public class Bus {
         return Dictionary<String, Array<FlaskWeakRef<FlaskConcrete>>>()
     }();
     
-    func lock()->BusLock{
-        return BusLock(bus:self)
+    func lock()->FluxLock{
+        return FluxLock(bus:self)
     }
     
 }
@@ -57,14 +57,14 @@ public class Bus {
 //////////////////
 // MARK: - PUBLIC METHODS
 
-extension Bus {
+extension Flux {
     
-    func applyMixer<T:RawRepresentable>(_ enumVal:T, payload:BusPayload? = nil){
+    func applyMixer<T:RawRepresentable>(_ enumVal:T, payload:FluxPayload? = nil){
         let bus = enumVal.rawValue as! String
         applyMixer(bus,payload:payload)
     }
     
-    func applyMixer(_ bus:String, payload:BusPayload? = nil ){
+    func applyMixer(_ bus:String, payload:FluxPayload? = nil ){
         enqueue(bus,payload: payload)
     }
     
@@ -73,19 +73,19 @@ extension Bus {
 //////////////////
 // MARK: - QUEUE
 
-extension Bus {
+extension Flux {
  
-    func enqueue(_ mixer:String, payload:BusPayload?){
+    func enqueue(_ mixer:String, payload:FluxPayload?){
         
         if (payload?[BUS_LOCKED_BY]) == nil {
-            applyMixerInBusQueue(mixer,payload:payload)
+            applyMixerInFluxQueue(mixer,payload:payload)
         }else{
             applyMixerInLockQueue(mixer,payload:payload)
         }
         
     }
     
-    func applyMixerInBusQueue(_ mixer:String, payload:BusPayload?){
+    func applyMixerInFluxQueue(_ mixer:String, payload:FluxPayload?){
         
         let completed = { [weak self] in
             if let me = self{
@@ -99,7 +99,7 @@ extension Bus {
             assert( self?.currentMixer == .none, "The sngle flow is broken!")
             self?.currentMixer = mixer
             
-            BusNotifier.postNotification(forMixer: mixer,
+            FluxNotifier.postNotification(forMixer: mixer,
                                          payload: payload,
                                          completion: completed)
             
@@ -111,7 +111,7 @@ extension Bus {
         busQueue.isSuspended = true
     }
     
-    func performInBusQueue(_ action:@escaping ()->Void){
+    func performInFluxQueue(_ action:@escaping ()->Void){
         
         busQueue.addOperation {
             action()
@@ -119,7 +119,7 @@ extension Bus {
 
     }
     
-    func applyMixerInLockQueue(_ mixer:String, payload:BusPayload?){
+    func applyMixerInLockQueue(_ mixer:String, payload:FluxPayload?){
         
         let completed = { [weak self] in
             if let me = self{
@@ -128,7 +128,7 @@ extension Bus {
         }
         
         busOnLockQueue.addOperation {
-            BusNotifier.postNotification(forMixer: mixer,
+            FluxNotifier.postNotification(forMixer: mixer,
                                          payload: payload,
                                          completion: completed)
             
@@ -144,7 +144,7 @@ extension Bus {
 //////////////////
 // MARK: - BINDINGS
 
-extension Bus {
+extension Flux {
    
     func bindFlask(_ substance:SubstanceConcrete, flask:FlaskConcrete) {
         
@@ -187,7 +187,7 @@ extension Bus {
 //////////////////
 // MARK: - MUTATIONS
 
-extension Bus {
+extension Flux {
    
     func reactChange(_ reaction:FlaskReaction){
         

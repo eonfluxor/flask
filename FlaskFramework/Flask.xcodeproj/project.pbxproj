@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		06CD357D3571E8D74FA9EF3D /* Pods_Flask_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E2614725FA0A1B2AD443CD /* Pods_Flask_iOS.framework */; };
 		0DEFB0BEFD9FB7B668AF908B /* Pods_Flask_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E158D5A8457C05541B83919 /* Pods_Flask_macOS.framework */; };
-		2622A5312148781F003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
+		2622A5312148781F003F4C38 /* FluxNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* FluxNotifier.swift */; };
 		2622A5332148828E003F4C38 /* BusNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5322148828E003F4C38 /* BusNotifierTests.swift */; };
 		2622A5342148828E003F4C38 /* BusNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5322148828E003F4C38 /* BusNotifierTests.swift */; };
 		2622A5352148828E003F4C38 /* BusNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5322148828E003F4C38 /* BusNotifierTests.swift */; };
-		2622A536214882BB003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
-		2622A537214882BC003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
-		2622A538214882BC003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
-		2622A539214882BD003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
-		2622A53B214882BF003F4C38 /* BusNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* BusNotifier.swift */; };
+		2622A536214882BB003F4C38 /* FluxNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* FluxNotifier.swift */; };
+		2622A537214882BC003F4C38 /* FluxNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* FluxNotifier.swift */; };
+		2622A538214882BC003F4C38 /* FluxNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* FluxNotifier.swift */; };
+		2622A539214882BD003F4C38 /* FluxNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* FluxNotifier.swift */; };
+		2622A53B214882BF003F4C38 /* FluxNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* FluxNotifier.swift */; };
 		2671C1532149B7C000888F3E /* FlaskApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671C1522149B7C000888F3E /* FlaskApi.swift */; };
 		2671C1572149B96800888F3E /* FlaskApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671C1542149B8EE00888F3E /* FlaskApiTests.swift */; };
 		2671C1582149B96900888F3E /* FlaskApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671C1542149B8EE00888F3E /* FlaskApiTests.swift */; };
@@ -78,18 +78,18 @@
 		26C53E91214790A90090AA0C /* FlaskClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskClass.swift */; };
 		26C53E92214790A90090AA0C /* FlaskClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskClass.swift */; };
 		26C53E93214790A90090AA0C /* FlaskClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E58214790A90090AA0C /* FlaskClass.swift */; };
-		26C53E94214790A90090AA0C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Bus.swift */; };
-		26C53E95214790A90090AA0C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Bus.swift */; };
-		26C53E96214790A90090AA0C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Bus.swift */; };
-		26C53E97214790A90090AA0C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Bus.swift */; };
-		26C53E98214790A90090AA0C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Bus.swift */; };
-		26C53E99214790A90090AA0C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Bus.swift */; };
-		26C53E9A214790A90090AA0C /* BusLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* BusLock.swift */; };
-		26C53E9B214790A90090AA0C /* BusLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* BusLock.swift */; };
-		26C53E9C214790A90090AA0C /* BusLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* BusLock.swift */; };
-		26C53E9D214790A90090AA0C /* BusLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* BusLock.swift */; };
-		26C53E9E214790A90090AA0C /* BusLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* BusLock.swift */; };
-		26C53E9F214790A90090AA0C /* BusLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* BusLock.swift */; };
+		26C53E94214790A90090AA0C /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Flux.swift */; };
+		26C53E95214790A90090AA0C /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Flux.swift */; };
+		26C53E96214790A90090AA0C /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Flux.swift */; };
+		26C53E97214790A90090AA0C /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Flux.swift */; };
+		26C53E98214790A90090AA0C /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Flux.swift */; };
+		26C53E99214790A90090AA0C /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5A214790A90090AA0C /* Flux.swift */; };
+		26C53E9A214790A90090AA0C /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* FluxLock.swift */; };
+		26C53E9B214790A90090AA0C /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* FluxLock.swift */; };
+		26C53E9C214790A90090AA0C /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* FluxLock.swift */; };
+		26C53E9D214790A90090AA0C /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* FluxLock.swift */; };
+		26C53E9E214790A90090AA0C /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* FluxLock.swift */; };
+		26C53E9F214790A90090AA0C /* FluxLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5B214790A90090AA0C /* FluxLock.swift */; };
 		26C53EA0214790A90090AA0C /* StoreChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5D214790A90090AA0C /* StoreChange.swift */; };
 		26C53EA1214790A90090AA0C /* StoreChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5D214790A90090AA0C /* StoreChange.swift */; };
 		26C53EA2214790A90090AA0C /* StoreChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E5D214790A90090AA0C /* StoreChange.swift */; };
@@ -108,24 +108,24 @@
 		26C53EAF214790A90090AA0C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* State.swift */; };
 		26C53EB0214790A90090AA0C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* State.swift */; };
 		26C53EB1214790A90090AA0C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E60214790A90090AA0C /* State.swift */; };
-		26C53EB2214790A90090AA0C /* StoreSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* StoreSerializer.swift */; };
-		26C53EB3214790A90090AA0C /* StoreSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* StoreSerializer.swift */; };
-		26C53EB4214790A90090AA0C /* StoreSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* StoreSerializer.swift */; };
-		26C53EB5214790A90090AA0C /* StoreSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* StoreSerializer.swift */; };
-		26C53EB6214790A90090AA0C /* StoreSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* StoreSerializer.swift */; };
-		26C53EB7214790A90090AA0C /* StoreSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* StoreSerializer.swift */; };
-		26C53EB8214790A90090AA0C /* StoreArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* StoreArchiver.swift */; };
-		26C53EB9214790A90090AA0C /* StoreArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* StoreArchiver.swift */; };
-		26C53EBA214790A90090AA0C /* StoreArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* StoreArchiver.swift */; };
-		26C53EBB214790A90090AA0C /* StoreArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* StoreArchiver.swift */; };
-		26C53EBC214790A90090AA0C /* StoreArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* StoreArchiver.swift */; };
-		26C53EBD214790A90090AA0C /* StoreArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* StoreArchiver.swift */; };
-		26C53EBE214790A90090AA0C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* Store.swift */; };
-		26C53EBF214790A90090AA0C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* Store.swift */; };
-		26C53EC0214790A90090AA0C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* Store.swift */; };
-		26C53EC1214790A90090AA0C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* Store.swift */; };
-		26C53EC2214790A90090AA0C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* Store.swift */; };
-		26C53EC3214790A90090AA0C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* Store.swift */; };
+		26C53EB2214790A90090AA0C /* SubstanceSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* SubstanceSerializer.swift */; };
+		26C53EB3214790A90090AA0C /* SubstanceSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* SubstanceSerializer.swift */; };
+		26C53EB4214790A90090AA0C /* SubstanceSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* SubstanceSerializer.swift */; };
+		26C53EB5214790A90090AA0C /* SubstanceSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* SubstanceSerializer.swift */; };
+		26C53EB6214790A90090AA0C /* SubstanceSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* SubstanceSerializer.swift */; };
+		26C53EB7214790A90090AA0C /* SubstanceSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E61214790A90090AA0C /* SubstanceSerializer.swift */; };
+		26C53EB8214790A90090AA0C /* SubstanceArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* SubstanceArchiver.swift */; };
+		26C53EB9214790A90090AA0C /* SubstanceArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* SubstanceArchiver.swift */; };
+		26C53EBA214790A90090AA0C /* SubstanceArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* SubstanceArchiver.swift */; };
+		26C53EBB214790A90090AA0C /* SubstanceArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* SubstanceArchiver.swift */; };
+		26C53EBC214790A90090AA0C /* SubstanceArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* SubstanceArchiver.swift */; };
+		26C53EBD214790A90090AA0C /* SubstanceArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E62214790A90090AA0C /* SubstanceArchiver.swift */; };
+		26C53EBE214790A90090AA0C /* Substance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* Substance.swift */; };
+		26C53EBF214790A90090AA0C /* Substance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* Substance.swift */; };
+		26C53EC0214790A90090AA0C /* Substance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* Substance.swift */; };
+		26C53EC1214790A90090AA0C /* Substance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* Substance.swift */; };
+		26C53EC2214790A90090AA0C /* Substance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* Substance.swift */; };
+		26C53EC3214790A90090AA0C /* Substance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53E63214790A90090AA0C /* Substance.swift */; };
 		26C53ED5214790C00090AA0C /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC5214790C00090AA0C /* ReducerTests.swift */; };
 		26C53ED6214790C00090AA0C /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC5214790C00090AA0C /* ReducerTests.swift */; };
 		26C53ED7214790C00090AA0C /* ReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53EC5214790C00090AA0C /* ReducerTests.swift */; };
@@ -156,12 +156,12 @@
 		26C53EF0214790C00090AA0C /* PauseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* PauseTests.swift */; };
 		26C53EF1214790C00090AA0C /* PauseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* PauseTests.swift */; };
 		26C53EF2214790C00090AA0C /* PauseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED0214790C00090AA0C /* PauseTests.swift */; };
-		26C53EF3214790C00090AA0C /* AppMolecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* AppMolecule.swift */; };
-		26C53EF4214790C00090AA0C /* AppMolecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* AppMolecule.swift */; };
-		26C53EF5214790C00090AA0C /* AppMolecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* AppMolecule.swift */; };
-		26C53EF6214790C00090AA0C /* Molecules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Molecules.swift */; };
-		26C53EF7214790C00090AA0C /* Molecules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Molecules.swift */; };
-		26C53EF8214790C00090AA0C /* Molecules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Molecules.swift */; };
+		26C53EF3214790C00090AA0C /* AppSubstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* AppSubstance.swift */; };
+		26C53EF4214790C00090AA0C /* AppSubstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* AppSubstance.swift */; };
+		26C53EF5214790C00090AA0C /* AppSubstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED2214790C00090AA0C /* AppSubstance.swift */; };
+		26C53EF6214790C00090AA0C /* Substances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Substances.swift */; };
+		26C53EF7214790C00090AA0C /* Substances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Substances.swift */; };
+		26C53EF8214790C00090AA0C /* Substances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED3214790C00090AA0C /* Substances.swift */; };
 		26C53EF9214790C00090AA0C /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED4214790C00090AA0C /* TestOwner.swift */; };
 		26C53EFA214790C00090AA0C /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED4214790C00090AA0C /* TestOwner.swift */; };
 		26C53EFB214790C00090AA0C /* TestOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C53ED4214790C00090AA0C /* TestOwner.swift */; };
@@ -203,7 +203,7 @@
 		1BC09794A7DC750FA3E76238 /* Pods_Flask_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flask_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_macOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-tvOS-Reaktor-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2622A5302148781F003F4C38 /* BusNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusNotifier.swift; sourceTree = "<group>"; };
+		2622A5302148781F003F4C38 /* FluxNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxNotifier.swift; sourceTree = "<group>"; };
 		2622A5322148828E003F4C38 /* BusNotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusNotifierTests.swift; sourceTree = "<group>"; };
 		2671C1522149B7C000888F3E /* FlaskApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlaskApi.swift; sourceTree = "<group>"; };
 		2671C1542149B8EE00888F3E /* FlaskApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlaskApiTests.swift; sourceTree = "<group>"; };
@@ -244,14 +244,14 @@
 		26C53E56214790A90090AA0C /* ChainReaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainReaction.swift; sourceTree = "<group>"; };
 		26C53E57214790A90090AA0C /* FlaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskManager.swift; sourceTree = "<group>"; };
 		26C53E58214790A90090AA0C /* FlaskClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskClass.swift; sourceTree = "<group>"; };
-		26C53E5A214790A90090AA0C /* Bus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
-		26C53E5B214790A90090AA0C /* BusLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLock.swift; sourceTree = "<group>"; };
+		26C53E5A214790A90090AA0C /* Flux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flux.swift; sourceTree = "<group>"; };
+		26C53E5B214790A90090AA0C /* FluxLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxLock.swift; sourceTree = "<group>"; };
 		26C53E5D214790A90090AA0C /* StoreChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreChange.swift; sourceTree = "<group>"; };
 		26C53E5E214790A90090AA0C /* FlaskReaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaskReaction.swift; sourceTree = "<group>"; };
 		26C53E60214790A90090AA0C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		26C53E61214790A90090AA0C /* StoreSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoreSerializer\U001b.swift"; sourceTree = "<group>"; };
-		26C53E62214790A90090AA0C /* StoreArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreArchiver.swift; sourceTree = "<group>"; };
-		26C53E63214790A90090AA0C /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		26C53E61214790A90090AA0C /* SubstanceSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SubstanceSerializer\U001b.swift"; sourceTree = "<group>"; };
+		26C53E62214790A90090AA0C /* SubstanceArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstanceArchiver.swift; sourceTree = "<group>"; };
+		26C53E63214790A90090AA0C /* Substance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Substance.swift; sourceTree = "<group>"; };
 		26C53EC5214790C00090AA0C /* ReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReducerTests.swift; sourceTree = "<group>"; };
 		26C53EC6214790C00090AA0C /* SerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationTests.swift; sourceTree = "<group>"; };
 		26C53EC7214790C00090AA0C /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
@@ -262,8 +262,8 @@
 		26C53ECD214790C00090AA0C /* NestingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestingTests.swift; sourceTree = "<group>"; };
 		26C53ECE214790C00090AA0C /* SetupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupTests.swift; sourceTree = "<group>"; };
 		26C53ED0214790C00090AA0C /* PauseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseTests.swift; sourceTree = "<group>"; };
-		26C53ED2214790C00090AA0C /* AppMolecule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMolecule.swift; sourceTree = "<group>"; };
-		26C53ED3214790C00090AA0C /* Molecules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Molecules.swift; sourceTree = "<group>"; };
+		26C53ED2214790C00090AA0C /* AppSubstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSubstance.swift; sourceTree = "<group>"; };
+		26C53ED3214790C00090AA0C /* Substances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Substances.swift; sourceTree = "<group>"; };
 		26C53ED4214790C00090AA0C /* TestOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestOwner.swift; sourceTree = "<group>"; };
 		37BA23FC2296D5E31DACBA2A /* Pods_Flask_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flask_macOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		381DEAC3DCFB39BEACA03807 /* Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reaktor-iOS-Reaktor-iOSTests/Pods-Reaktor-iOS-Reaktor-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -466,10 +466,10 @@
 			isa = PBXGroup;
 			children = (
 				26A0F925214834DC00555C8D /* Flask */,
-				26C53E59214790A90090AA0C /* Bus */,
 				26C53E55214790A90090AA0C /* FlaskClass */,
+				26C53E59214790A90090AA0C /* Flux */,
 				26C53E5C214790A90090AA0C /* Reaction */,
-				26C53E5F214790A90090AA0C /* Store */,
+				26C53E5F214790A90090AA0C /* Substance */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -551,13 +551,14 @@
 			path = FlaskClass;
 			sourceTree = "<group>";
 		};
-		26C53E59214790A90090AA0C /* Bus */ = {
+		26C53E59214790A90090AA0C /* Flux */ = {
 			isa = PBXGroup;
 			children = (
-				26C53E5A214790A90090AA0C /* Bus.swift */,
-				26C53E5B214790A90090AA0C /* BusLock.swift */,
-				2622A5302148781F003F4C38 /* BusNotifier.swift */,
+				26C53E5A214790A90090AA0C /* Flux.swift */,
+				26C53E5B214790A90090AA0C /* FluxLock.swift */,
+				2622A5302148781F003F4C38 /* FluxNotifier.swift */,
 			);
+			name = Flux;
 			path = Bus;
 			sourceTree = "<group>";
 		};
@@ -570,15 +571,15 @@
 			path = Reaction;
 			sourceTree = "<group>";
 		};
-		26C53E5F214790A90090AA0C /* Store */ = {
+		26C53E5F214790A90090AA0C /* Substance */ = {
 			isa = PBXGroup;
 			children = (
 				26C53E60214790A90090AA0C /* State.swift */,
-				26C53E61214790A90090AA0C /* StoreSerializer.swift */,
-				26C53E62214790A90090AA0C /* StoreArchiver.swift */,
-				26C53E63214790A90090AA0C /* Store.swift */,
+				26C53E61214790A90090AA0C /* SubstanceSerializer.swift */,
+				26C53E62214790A90090AA0C /* SubstanceArchiver.swift */,
+				26C53E63214790A90090AA0C /* Substance.swift */,
 			);
-			path = Store;
+			path = Substance;
 			sourceTree = "<group>";
 		};
 		26C53EC4214790C00090AA0C /* DataFlowTests */ = {
@@ -616,8 +617,8 @@
 		26C53ED1214790C00090AA0C /* SampleClasses */ = {
 			isa = PBXGroup;
 			children = (
-				26C53ED2214790C00090AA0C /* AppMolecule.swift */,
-				26C53ED3214790C00090AA0C /* Molecules.swift */,
+				26C53ED2214790C00090AA0C /* AppSubstance.swift */,
+				26C53ED3214790C00090AA0C /* Substances.swift */,
 				26C53ED4214790C00090AA0C /* TestOwner.swift */,
 			);
 			path = SampleClasses;
@@ -1101,16 +1102,16 @@
 			files = (
 				26C53E82214790A90090AA0C /* ChainReaction.swift in Sources */,
 				26C53EA6214790A90090AA0C /* FlaskReaction.swift in Sources */,
-				26C53EB8214790A90090AA0C /* StoreArchiver.swift in Sources */,
-				26C53EB2214790A90090AA0C /* StoreSerializer.swift in Sources */,
+				26C53EB8214790A90090AA0C /* SubstanceArchiver.swift in Sources */,
+				26C53EB2214790A90090AA0C /* SubstanceSerializer.swift in Sources */,
 				26C53E88214790A90090AA0C /* FlaskManager.swift in Sources */,
 				2671C1532149B7C000888F3E /* FlaskApi.swift in Sources */,
-				26C53EBE214790A90090AA0C /* Store.swift in Sources */,
-				2622A5312148781F003F4C38 /* BusNotifier.swift in Sources */,
-				26C53E9A214790A90090AA0C /* BusLock.swift in Sources */,
+				26C53EBE214790A90090AA0C /* Substance.swift in Sources */,
+				2622A5312148781F003F4C38 /* FluxNotifier.swift in Sources */,
+				26C53E9A214790A90090AA0C /* FluxLock.swift in Sources */,
 				26C53E6A214790A90090AA0C /* FlaskHelpers.swift in Sources */,
 				26C53E64214790A90090AA0C /* Flask.swift in Sources */,
-				26C53E94214790A90090AA0C /* Bus.swift in Sources */,
+				26C53E94214790A90090AA0C /* Flux.swift in Sources */,
 				26C53E70214790A90090AA0C /* FlaskDict.swift in Sources */,
 				26C53EAC214790A90090AA0C /* State.swift in Sources */,
 				26C53E7C214790A90090AA0C /* FlaskRef.swift in Sources */,
@@ -1124,23 +1125,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C53EE4214790C00090AA0C /* FluxTests.swift in Sources */,
-				26C53EB9214790A90090AA0C /* StoreArchiver.swift in Sources */,
+				26C53EB9214790A90090AA0C /* SubstanceArchiver.swift in Sources */,
 				26C53EA1214790A90090AA0C /* StoreChange.swift in Sources */,
-				26C53EBF214790A90090AA0C /* Store.swift in Sources */,
+				26C53EBF214790A90090AA0C /* Substance.swift in Sources */,
 				26C53EEA214790C00090AA0C /* NestingTests.swift in Sources */,
 				26C53EED214790C00090AA0C /* SetupTests.swift in Sources */,
 				26C53E71214790A90090AA0C /* FlaskDict.swift in Sources */,
-				26C53E95214790A90090AA0C /* Bus.swift in Sources */,
+				26C53E95214790A90090AA0C /* Flux.swift in Sources */,
 				26C53EDB214790C00090AA0C /* DictionaryTests.swift in Sources */,
 				26C53EF9214790C00090AA0C /* TestOwner.swift in Sources */,
 				26C53E0E214790730090AA0C /* Flask_iOSTests.swift in Sources */,
 				26C53E6B214790A90090AA0C /* FlaskHelpers.swift in Sources */,
 				2671C1572149B96800888F3E /* FlaskApiTests.swift in Sources */,
-				26C53EF6214790C00090AA0C /* Molecules.swift in Sources */,
+				26C53EF6214790C00090AA0C /* Substances.swift in Sources */,
 				26C53EE7214790C00090AA0C /* ChainTests.swift in Sources */,
-				26C53E9B214790A90090AA0C /* BusLock.swift in Sources */,
+				26C53E9B214790A90090AA0C /* FluxLock.swift in Sources */,
 				26C53EDE214790C00090AA0C /* KronTests.swift in Sources */,
-				26C53EF3214790C00090AA0C /* AppMolecule.swift in Sources */,
+				26C53EF3214790C00090AA0C /* AppSubstance.swift in Sources */,
 				26C53E83214790A90090AA0C /* ChainReaction.swift in Sources */,
 				26C53EAD214790A90090AA0C /* State.swift in Sources */,
 				26C53EF0214790C00090AA0C /* PauseTests.swift in Sources */,
@@ -1149,13 +1150,13 @@
 				26C53ED5214790C00090AA0C /* ReducerTests.swift in Sources */,
 				26C53E89214790A90090AA0C /* FlaskManager.swift in Sources */,
 				2622A5332148828E003F4C38 /* BusNotifierTests.swift in Sources */,
-				2622A536214882BB003F4C38 /* BusNotifier.swift in Sources */,
+				2622A536214882BB003F4C38 /* FluxNotifier.swift in Sources */,
 				2671C15A2149B99F00888F3E /* FlaskApi.swift in Sources */,
 				26C53ED8214790C00090AA0C /* SerializationTests.swift in Sources */,
 				26C53E8F214790A90090AA0C /* FlaskClass.swift in Sources */,
 				26C53EA7214790A90090AA0C /* FlaskReaction.swift in Sources */,
 				26C53E65214790A90090AA0C /* Flask.swift in Sources */,
-				26C53EB3214790A90090AA0C /* StoreSerializer.swift in Sources */,
+				26C53EB3214790A90090AA0C /* SubstanceSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1165,16 +1166,16 @@
 			files = (
 				26C53E84214790A90090AA0C /* ChainReaction.swift in Sources */,
 				26C53EA8214790A90090AA0C /* FlaskReaction.swift in Sources */,
-				26C53EBA214790A90090AA0C /* StoreArchiver.swift in Sources */,
-				26C53EB4214790A90090AA0C /* StoreSerializer.swift in Sources */,
+				26C53EBA214790A90090AA0C /* SubstanceArchiver.swift in Sources */,
+				26C53EB4214790A90090AA0C /* SubstanceSerializer.swift in Sources */,
 				26C53E8A214790A90090AA0C /* FlaskManager.swift in Sources */,
 				2671C15B2149B9A000888F3E /* FlaskApi.swift in Sources */,
-				26C53EC0214790A90090AA0C /* Store.swift in Sources */,
-				2622A537214882BC003F4C38 /* BusNotifier.swift in Sources */,
-				26C53E9C214790A90090AA0C /* BusLock.swift in Sources */,
+				26C53EC0214790A90090AA0C /* Substance.swift in Sources */,
+				2622A537214882BC003F4C38 /* FluxNotifier.swift in Sources */,
+				26C53E9C214790A90090AA0C /* FluxLock.swift in Sources */,
 				26C53E6C214790A90090AA0C /* FlaskHelpers.swift in Sources */,
 				26C53E66214790A90090AA0C /* Flask.swift in Sources */,
-				26C53E96214790A90090AA0C /* Bus.swift in Sources */,
+				26C53E96214790A90090AA0C /* Flux.swift in Sources */,
 				26C53E72214790A90090AA0C /* FlaskDict.swift in Sources */,
 				26C53EAE214790A90090AA0C /* State.swift in Sources */,
 				26C53E7E214790A90090AA0C /* FlaskRef.swift in Sources */,
@@ -1188,23 +1189,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C53EE5214790C00090AA0C /* FluxTests.swift in Sources */,
-				26C53EBB214790A90090AA0C /* StoreArchiver.swift in Sources */,
+				26C53EBB214790A90090AA0C /* SubstanceArchiver.swift in Sources */,
 				26C53EA3214790A90090AA0C /* StoreChange.swift in Sources */,
-				26C53EC1214790A90090AA0C /* Store.swift in Sources */,
+				26C53EC1214790A90090AA0C /* Substance.swift in Sources */,
 				26C53EEB214790C00090AA0C /* NestingTests.swift in Sources */,
 				26C53EEE214790C00090AA0C /* SetupTests.swift in Sources */,
 				26C53E73214790A90090AA0C /* FlaskDict.swift in Sources */,
-				26C53E97214790A90090AA0C /* Bus.swift in Sources */,
+				26C53E97214790A90090AA0C /* Flux.swift in Sources */,
 				26C53EDC214790C00090AA0C /* DictionaryTests.swift in Sources */,
 				26C53EFA214790C00090AA0C /* TestOwner.swift in Sources */,
 				26C53E2A214790800090AA0C /* Flask_macOSTests.swift in Sources */,
 				26C53E6D214790A90090AA0C /* FlaskHelpers.swift in Sources */,
 				2671C1582149B96900888F3E /* FlaskApiTests.swift in Sources */,
-				26C53EF7214790C00090AA0C /* Molecules.swift in Sources */,
+				26C53EF7214790C00090AA0C /* Substances.swift in Sources */,
 				26C53EE8214790C00090AA0C /* ChainTests.swift in Sources */,
-				26C53E9D214790A90090AA0C /* BusLock.swift in Sources */,
+				26C53E9D214790A90090AA0C /* FluxLock.swift in Sources */,
 				26C53EDF214790C00090AA0C /* KronTests.swift in Sources */,
-				26C53EF4214790C00090AA0C /* AppMolecule.swift in Sources */,
+				26C53EF4214790C00090AA0C /* AppSubstance.swift in Sources */,
 				26C53E85214790A90090AA0C /* ChainReaction.swift in Sources */,
 				26C53EAF214790A90090AA0C /* State.swift in Sources */,
 				26C53EF1214790C00090AA0C /* PauseTests.swift in Sources */,
@@ -1213,13 +1214,13 @@
 				26C53ED6214790C00090AA0C /* ReducerTests.swift in Sources */,
 				26C53E8B214790A90090AA0C /* FlaskManager.swift in Sources */,
 				2622A5342148828E003F4C38 /* BusNotifierTests.swift in Sources */,
-				2622A538214882BC003F4C38 /* BusNotifier.swift in Sources */,
+				2622A538214882BC003F4C38 /* FluxNotifier.swift in Sources */,
 				2671C15C2149B9A100888F3E /* FlaskApi.swift in Sources */,
 				26C53ED9214790C00090AA0C /* SerializationTests.swift in Sources */,
 				26C53E91214790A90090AA0C /* FlaskClass.swift in Sources */,
 				26C53EA9214790A90090AA0C /* FlaskReaction.swift in Sources */,
 				26C53E67214790A90090AA0C /* Flask.swift in Sources */,
-				26C53EB5214790A90090AA0C /* StoreSerializer.swift in Sources */,
+				26C53EB5214790A90090AA0C /* SubstanceSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1229,16 +1230,16 @@
 			files = (
 				26C53E86214790A90090AA0C /* ChainReaction.swift in Sources */,
 				26C53EAA214790A90090AA0C /* FlaskReaction.swift in Sources */,
-				26C53EBC214790A90090AA0C /* StoreArchiver.swift in Sources */,
-				26C53EB6214790A90090AA0C /* StoreSerializer.swift in Sources */,
+				26C53EBC214790A90090AA0C /* SubstanceArchiver.swift in Sources */,
+				26C53EB6214790A90090AA0C /* SubstanceSerializer.swift in Sources */,
 				26C53E8C214790A90090AA0C /* FlaskManager.swift in Sources */,
 				2671C15D2149B9A200888F3E /* FlaskApi.swift in Sources */,
-				26C53EC2214790A90090AA0C /* Store.swift in Sources */,
-				2622A539214882BD003F4C38 /* BusNotifier.swift in Sources */,
-				26C53E9E214790A90090AA0C /* BusLock.swift in Sources */,
+				26C53EC2214790A90090AA0C /* Substance.swift in Sources */,
+				2622A539214882BD003F4C38 /* FluxNotifier.swift in Sources */,
+				26C53E9E214790A90090AA0C /* FluxLock.swift in Sources */,
 				26C53E6E214790A90090AA0C /* FlaskHelpers.swift in Sources */,
 				26C53E68214790A90090AA0C /* Flask.swift in Sources */,
-				26C53E98214790A90090AA0C /* Bus.swift in Sources */,
+				26C53E98214790A90090AA0C /* Flux.swift in Sources */,
 				26C53E74214790A90090AA0C /* FlaskDict.swift in Sources */,
 				26C53EB0214790A90090AA0C /* State.swift in Sources */,
 				26C53E80214790A90090AA0C /* FlaskRef.swift in Sources */,
@@ -1252,23 +1253,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C53EE6214790C00090AA0C /* FluxTests.swift in Sources */,
-				26C53EBD214790A90090AA0C /* StoreArchiver.swift in Sources */,
+				26C53EBD214790A90090AA0C /* SubstanceArchiver.swift in Sources */,
 				26C53EA5214790A90090AA0C /* StoreChange.swift in Sources */,
-				26C53EC3214790A90090AA0C /* Store.swift in Sources */,
+				26C53EC3214790A90090AA0C /* Substance.swift in Sources */,
 				26C53EEC214790C00090AA0C /* NestingTests.swift in Sources */,
 				26C53EEF214790C00090AA0C /* SetupTests.swift in Sources */,
 				26C53E75214790A90090AA0C /* FlaskDict.swift in Sources */,
-				26C53E99214790A90090AA0C /* Bus.swift in Sources */,
+				26C53E99214790A90090AA0C /* Flux.swift in Sources */,
 				26C53EDD214790C00090AA0C /* DictionaryTests.swift in Sources */,
 				26C53EFB214790C00090AA0C /* TestOwner.swift in Sources */,
 				26C53E462147908E0090AA0C /* Flask_tvOSTests.swift in Sources */,
 				26C53E6F214790A90090AA0C /* FlaskHelpers.swift in Sources */,
 				2671C1592149B96A00888F3E /* FlaskApiTests.swift in Sources */,
-				26C53EF8214790C00090AA0C /* Molecules.swift in Sources */,
+				26C53EF8214790C00090AA0C /* Substances.swift in Sources */,
 				26C53EE9214790C00090AA0C /* ChainTests.swift in Sources */,
-				26C53E9F214790A90090AA0C /* BusLock.swift in Sources */,
+				26C53E9F214790A90090AA0C /* FluxLock.swift in Sources */,
 				26C53EE0214790C00090AA0C /* KronTests.swift in Sources */,
-				26C53EF5214790C00090AA0C /* AppMolecule.swift in Sources */,
+				26C53EF5214790C00090AA0C /* AppSubstance.swift in Sources */,
 				26C53E87214790A90090AA0C /* ChainReaction.swift in Sources */,
 				26C53EB1214790A90090AA0C /* State.swift in Sources */,
 				26C53EF2214790C00090AA0C /* PauseTests.swift in Sources */,
@@ -1277,13 +1278,13 @@
 				26C53ED7214790C00090AA0C /* ReducerTests.swift in Sources */,
 				26C53E8D214790A90090AA0C /* FlaskManager.swift in Sources */,
 				2622A5352148828E003F4C38 /* BusNotifierTests.swift in Sources */,
-				2622A53B214882BF003F4C38 /* BusNotifier.swift in Sources */,
+				2622A53B214882BF003F4C38 /* FluxNotifier.swift in Sources */,
 				2671C15E2149B9A200888F3E /* FlaskApi.swift in Sources */,
 				26C53EDA214790C00090AA0C /* SerializationTests.swift in Sources */,
 				26C53E93214790A90090AA0C /* FlaskClass.swift in Sources */,
 				26C53EAB214790A90090AA0C /* FlaskReaction.swift in Sources */,
 				26C53E69214790A90090AA0C /* Flask.swift in Sources */,
-				26C53EB7214790A90090AA0C /* StoreSerializer.swift in Sources */,
+				26C53EB7214790A90090AA0C /* SubstanceSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,7 @@ import Cocoa
 public class FlaskReaction {
 
     
-    weak public var onLock:BusLock?
+    weak public var onLock:FluxLock?
     private(set) var substance:SubstanceConcrete
     private(set) var changes:FlaskDictType
     

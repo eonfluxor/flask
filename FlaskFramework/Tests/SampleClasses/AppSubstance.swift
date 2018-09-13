@@ -13,7 +13,7 @@ import Cocoa
 #endif
 
 
-enum AppMixers : BusMixer {
+enum AppMixers : FluxMixer {
     case Count
     case Text
     case Object

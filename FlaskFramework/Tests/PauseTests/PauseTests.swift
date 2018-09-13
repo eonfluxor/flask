@@ -46,7 +46,7 @@ class LockTests: SetupFlaskTests {
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
-        Flask.purgeBusQueue()
+        Flask.purgeFluxQueue()
     }
     
     

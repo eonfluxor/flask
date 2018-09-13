@@ -1,5 +1,5 @@
 //
-//  BusLock.swift
+//  FluxLock.swift
 //  SwiftyFLUX
 //
 //  Created by hassan uriostegui on 9/3/18.
@@ -12,11 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-public class BusLock: FlaskEquatable {
+public class FluxLock: FlaskEquatable {
 
-    var bus:Bus
+    var bus:Flux
     
-    required public init(bus:Bus) {
+    required public init(bus:Flux) {
 
         self.bus = bus
         super.init()
@@ -29,19 +29,19 @@ public class BusLock: FlaskEquatable {
     }
 }
 
-public extension Bus{
+public extension Flux{
     
     public func removeLocks(){
         locks=[]
         applyLocks()
     }
     
-    func addLock(_ lock:BusLock){
+    func addLock(_ lock:FluxLock){
         locks.append(lock)
         applyLocks()
     }
     
-    func removeLock(_ lock:BusLock){
+    func removeLock(_ lock:FluxLock){
         locks=locks.filter {$0 != lock}
         applyLocks()
     }

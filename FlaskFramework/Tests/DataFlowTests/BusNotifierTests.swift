@@ -1,5 +1,5 @@
 //
-//  BusNotifier.swift
+//  FluxNotifier.swift
 //  Flask
 //
 //  Created by hassan uriostegui on 9/11/18.
@@ -17,7 +17,7 @@ class notifierTests: SetupFlaskTests {
         let payload = ["foo":"bar"]
         let mixer = "test"
         
-        BusNotifier.addCallback(forMixer: mixer, object: self) { (notification) in
+        FluxNotifier.addCallback(forMixer: mixer, object: self) { (notification) in
             
             let payload = notification.payload
             XCTAssert((payload!["foo"] as! String) == "bar")
@@ -25,7 +25,7 @@ class notifierTests: SetupFlaskTests {
             expectation.fulfill()
         }
         
-        BusNotifier.postNotification(forMixer: mixer, payload: payload)
+        FluxNotifier.postNotification(forMixer: mixer, payload: payload)
         
         waitForExpectations(timeout: 2, handler: nil)
     }

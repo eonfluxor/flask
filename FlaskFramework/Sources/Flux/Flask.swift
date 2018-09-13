@@ -18,7 +18,7 @@ public class Flask {
     
     
     /// This is the single bus
-    static public let bus = Bus()
+    static public let bus = Flux()
     /// Use this to preserve `nil` entries in swift dictionaries
     static public let Nil = nil as AnyHashable?
     /// Use this to preseve `nul` in FlaskDictRef instances
@@ -30,7 +30,7 @@ public class Flask {
 
 public extension Flask {
     
-    static public func purgeBusQueue(){
+    static public func purgeFluxQueue(){
         Flask.bus.busQueue.cancelAllOperations()
     }
     
@@ -61,20 +61,20 @@ public extension Flask {
 
 public extension Flask {
     
-    static public func lock()->BusLock{
-        return BusLock(bus:Flask.bus)
+    static public func lock()->FluxLock{
+        return FluxLock(bus:Flask.bus)
     }
     
     @discardableResult
-    static public func lock<T:RawRepresentable>(withMixer enumVal:T)->BusLock{
+    static public func lock<T:RawRepresentable>(withMixer enumVal:T)->FluxLock{
         return Flask.lock(withMixer:enumVal,payload:nil)
     }
     
     @discardableResult
-    static public func lock<T:RawRepresentable>(withMixer enumVal:T, payload:BusPayload?)->BusLock{
+    static public func lock<T:RawRepresentable>(withMixer enumVal:T, payload:FluxPayload?)->FluxLock{
         
         let bus = enumVal.rawValue as! String
-        let lock = BusLock(bus:Flask.bus)
+        let lock = FluxLock(bus:Flask.bus)
         
         var info = payload ?? [:]
         info[BUS_LOCKED_BY] = lock
@@ -93,7 +93,7 @@ public extension Flask {
 
 public extension Flask {
     
-    static public func applyMixer<T:RawRepresentable>(_ enumVal:T, payload:BusPayload? = nil){
+    static public func applyMixer<T:RawRepresentable>(_ enumVal:T, payload:FluxPayload? = nil){
         let bus = enumVal.rawValue as! String
         var info = payload ?? [:]
         info[FLUX_BUS_NAME] = bus

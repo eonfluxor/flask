@@ -1,5 +1,5 @@
 //
-//  BusNotifier.swift
+//  FluxNotifier.swift
 //  Flask-iOS
 //
 //  Created by hassan uriostegui on 9/11/18.
@@ -12,46 +12,46 @@ import UIKit
 import Cocoa
 #endif
 
-public typealias BusCompletionClosure = ()->Void
-public typealias BusBusPayload = [String:Any?]
-public typealias BusCallback = (_ notification:BusNotification)->Void
+public typealias FluxCompletionClosure = ()->Void
+public typealias BusFluxPayload = [String:Any?]
+public typealias FluxCallback = (_ notification:FluxNotification)->Void
 
-public struct BusNotification{
-    let mixer:BusMixer
+public struct FluxNotification{
+    let mixer:FluxMixer
     let object:AnyObject?
-    let payload:BusBusPayload?
+    let payload:BusFluxPayload?
 //    let react:()->
 }
 
-public class BusObserver:FlaskEquatable{
-    let callback:BusCallback
+public class FluxObserver:FlaskEquatable{
+    let callback:FluxCallback
     let objectRef:FlaskWeakRef<AnyObject>
     
-    required public init(callback:@escaping BusCallback, objectRef:FlaskWeakRef<AnyObject>){
+    required public init(callback:@escaping FluxCallback, objectRef:FlaskWeakRef<AnyObject>){
         self.callback = callback
         self.objectRef = objectRef
     }
 }
 
-public class BusNotifier {
+public class FluxNotifier {
 
-    static var observersMap:[BusMixer:[BusObserver]]=[:]
+    static var observersMap:[FluxMixer:[FluxObserver]]=[:]
 }
 
-extension BusNotifier {
+extension FluxNotifier {
     
-    static public func addCallback(forMixer mixer:BusMixer,
+    static public func addCallback(forMixer mixer:FluxMixer,
                                    object: AnyObject?,
-                                   _ callback:@escaping BusCallback){
+                                   _ callback:@escaping FluxCallback){
         
         let ref = FlaskWeakRef(value: object)
-        let observer = BusObserver(callback: callback, objectRef:ref)
+        let observer = FluxObserver(callback: callback, objectRef:ref)
         addObserver(forMixer: mixer, observer: observer )
     }
     
     static public func removeObservers(forObject object:AnyObject){
         
-        var newMap:[BusMixer:[BusObserver]]=[:]
+        var newMap:[FluxMixer:[FluxObserver]]=[:]
         for key in observersMap.keys {
             let observers = observersMap[key]!
             newMap[key] = observers.filter { $0.objectRef.value !== object}
@@ -60,8 +60,8 @@ extension BusNotifier {
         observersMap = newMap
     }
     
-    static public func addObserver(forMixer mixer:BusMixer,
-                                   observer:BusObserver){
+    static public func addObserver(forMixer mixer:FluxMixer,
+                                   observer:FluxObserver){
         
         var observers = getObservers(forMixer: mixer)
         observers.append(observer)
@@ -74,9 +74,9 @@ extension BusNotifier {
     
 }
 
-extension BusNotifier{
+extension FluxNotifier{
     
-    static public func getObservers(forMixer mixer:BusMixer)->[BusObserver]{
+    static public func getObservers(forMixer mixer:FluxMixer)->[FluxObserver]{
         
         if let observers = observersMap[mixer]{
             return observers
@@ -84,21 +84,21 @@ extension BusNotifier{
         return []
     }
     
-    static public func setObservers(forMixer mixer:BusMixer, observers:[BusObserver]){
+    static public func setObservers(forMixer mixer:FluxMixer, observers:[FluxObserver]){
         
         observersMap[mixer] = observers
     }
     
 }
 
-extension BusNotifier{
+extension FluxNotifier{
     
-    static public func postNotification(forMixer mixer:BusMixer, payload:BusPayload?, completion:BusCompletionClosure? = nil){
+    static public func postNotification(forMixer mixer:FluxMixer, payload:FluxPayload?, completion:FluxCompletionClosure? = nil){
         let observers = getObservers(forMixer: mixer)
 
         for observer in observers {
             
-            let notification = BusNotification(mixer: mixer,
+            let notification = FluxNotification(mixer: mixer,
                                                object:observer.objectRef.value,
                                                payload: payload)
             observer.callback(notification)
