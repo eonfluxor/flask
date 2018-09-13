@@ -14,7 +14,7 @@ import Cocoa
 
 import Delayed
 
-extension Substance {
+extension ReactiveSubstance {
     
     public func archiveKeySpace()->String{
         return "1"
@@ -33,7 +33,7 @@ extension Substance {
     }
 }
 
-extension Substance {
+extension ReactiveSubstance {
     
     func archiveIntent(){
         
@@ -79,7 +79,7 @@ extension Substance {
         
     }
 }
-extension Substance {
+extension ReactiveSubstance {
     
     @discardableResult
     func unarchiveIntent()->Bool{
@@ -105,7 +105,7 @@ extension Substance {
     }
 }
 
-extension Substance {
+extension ReactiveSubstance {
     public func purgeArchive(){
         let key = archiveKey()
         UserDefaults.standard.removeObject(forKey: key)

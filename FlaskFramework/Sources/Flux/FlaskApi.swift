@@ -37,6 +37,9 @@ public func MixSubstances<T:RawRepresentable>(with enumVal:T, payload:FluxPayloa
     Flask.applyMixer(enumVal, payload: payload)
 }
 
+public func NewSubstance<T:State>(definedBy:T.Type)->Substance<T>{
+    return Substance<T>()
+}
 
 extension Flask{
     

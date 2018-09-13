@@ -12,6 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
+struct FeedSate : State {
+    var feed = FlaskDictRef()
+}
+
 struct Substances  {
   static let app = App()
+  static let feed = NewSubstance(definedBy: FeedSate.self)
 }

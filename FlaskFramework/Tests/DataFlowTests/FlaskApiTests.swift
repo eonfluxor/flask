@@ -18,7 +18,7 @@ class InitializerTests: XCTestCase, FlaskReactor  {
     
     var expecation:XCTestExpectation?
     var expecation2:XCTestExpectation?
-    var substance:Substance? = App()
+    var substance:ReactiveSubstance? = App()
     
     func flaskReactor( reaction:FlaskReaction) {
         reaction.on(AppState.prop.counter) { (change) in

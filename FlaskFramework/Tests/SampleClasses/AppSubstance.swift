@@ -40,7 +40,7 @@ struct AppState : State {
     
 }
 
-class App : Substance<AppState,Mixers> {
+class App : ReactiveSubstance<AppState,Mixers> {
     
     override func defineMixers(){
         
@@ -57,5 +57,5 @@ class App : Substance<AppState,Mixers> {
     
 }
 
-class AppNoMixers : Substance<AppState,NoMixers> {}
+class Feed : Substance<AppState> {}
 

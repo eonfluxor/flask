@@ -12,8 +12,9 @@ import UIKit
 import Cocoa
 #endif
 
+open class Substance<T:State> : ReactiveSubstance<T, NoMixers>{}
 
-open class Substance<T:State,A:RawRepresentable> : SubstanceConcrete{
+open class ReactiveSubstance<T:State,A:RawRepresentable> : SubstanceConcrete{
     
     typealias StateType = T
     
