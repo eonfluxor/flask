@@ -16,11 +16,11 @@ import Delayed
 
 extension ReactiveSubstance {
     
-    public func archiveKeySpace()->String{
+    open func archiveKeySpace()->String{
         return "1"
     }
     
-    public func archiveKey()->String{
+    open func archiveKey()->String{
         return "Fx.\(archiveKeySpace()).\(name())"
     }
     

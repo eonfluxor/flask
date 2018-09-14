@@ -304,7 +304,7 @@ A call to  `mix()` ( aka `toMix()` ) returns a Flask `ChainReaction` instance th
 
 To continue the chain, just call mix (or any of its aliases) again. You must call `react()` or `abort()` (or its aliases) in order to resolve the transaction (otherwise your Flask will fail to perform further mix transactions).
 
-> Using the high level API
+> Using the high-level API
 
 ```swift
  GetFlaskReactor(at:self)
@@ -328,10 +328,10 @@ To continue the chain, just call mix (or any of its aliases) again. You must cal
             
         }.react()
 ```
-	
+    
 ### Locks
 
-When needed you can create a `FluxLock`. This will pause performing any mixes including `ReactiveSubstances` or `ChainReactions`.  You can create many Locks but you are responsbible of releasing them all to reactive the flux.
+When needed you can create a `FluxLock`. This will pause performing any mixes including `ReactiveSubstances` or `ChainReactions`.  You can create many Locks but you are responsible for releasing them all too reactive the flux.
 
 ```swift  
 let lock = Flask.lock()
@@ -376,17 +376,133 @@ Example:
 ```
 
 ### Nested Keys
+
+It's really easy to observe changes in nested keys: 
+
+* In your state create a `FlaskDictRef` property
+* Assign new values by wrapping your Dictionary in a `FlaskDictRef( Dictionary )`
+* Observe changes in your nested keys using dot syntax.
+
+Example:
+
+> Create a FlaskDictRef property
+
+
+```swift
+struct AppState : State {
+    
+    enum prop : StateProp{
+        case info
+    }
+    
+    var info:FlaskDictRef?
+}
+
 ```
-// Coming soon
+
+> Assign values
+
+```swift
+ flask.mix(substance){ (substance) in
+ 
+          let data:NSDictionary = [
+            "foo":"bar",
+            "nest":[
+                "data":"some"
+            ]
+            
+        ]
+        
+       substance.prop.info = FlaskDictRef(data)
+       
+  }.react()
+
+```
+
+> Observe changes
+
+```swift
+ reaction.on("info.nest.data", { (change) in
+      print(change.newValue()!)
+ })
 ```
 
 ### Archiving
+
+Archiving is a great alternative to SQL-Lite or CoreData when you don't need to perform queries or relational operations in your data. Consider that this feature relies on UserDefaults as storage destination.
+
+By default, archiving is off. To Enable archiving you just need to pass two extra parameters to the `Substance` or `ReactiveSubstance` initializer:
+
 ```
-// Coming soon
+let substance = MySubstanceClass(name:"uniqueName",archive:true)
 ```
-### Low level API
+The name has to be unique so make sure to use a proper naming convention for your app.
+
+The substances are then archived after being ile for 2 seconds when changes are detected. It's possible to disable archiving after instantiation by using the property `Substance.shouldArchive`.
+
+You can further customize the process by overriding any of the following methods in your Substances subclasses:
+
+```swift
+    override func archiveKeySpace()->String{
+        return "1"
+    }
+    
+    override func archiveKey()->String{
+        return "Fx.\(archiveKeySpace()).\(name())"
+    }
+    
+    override func archiveDelay()->Double{
+        return 2.0
+    }
+    
+    override func archiveDisabled()->Bool{
+        return !shouldArchive
+    }
 ```
-// Coming soon
+
+### Internal state props
+
+In case you want to ignore some State properties from being used in the changes reduction, just use the `_` prefix on the variable name:
+
+```
+struct AppState : State {
+    
+    var _internal = "`_` use this prefix for internal vars "
+    
+}
+```
+This could be useful if for whatever reason you are performing additional computations in your state. 
+
+### Low-level API
+
+Behind the scenes, most high-level functions rely on calling stating methods on the main `Flask` class.
+
+You can see them all [here](file:///Users/hassanvfx/projects/eonflux/flask/docs/Classes/Flask.html):
+
+
+```swift
+purgeFluxQueue()
+purgeFlasks()
+
+instance(attachedTo:mixing:)
+instance(attachedTo:mixing:)
+
+lock()
+lock(withMixer:)
+lock(withMixer:payload:)
+removeLocks()
+
+applyMixer(_:payload:)
+
+attachFlask(to:mixing:)
+detachFlask(from:)
+```
+
+You can also access the `FlaskManager` that holds all the attached `FlaskClass` instances
+
+```swift
+flasks
+purge()
 ```
 
 ## Guides
