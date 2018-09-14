@@ -2,4 +2,4 @@
 ./bumpTag.rb
 git commit -am 'release'
 git push origin master --tags
-
+pod trunk push
