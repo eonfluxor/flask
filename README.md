@@ -18,13 +18,13 @@ While the Flux architeture is abstract, explaining Flask is easy:
 
 ----
 
-> ####Flask lets you `Mix` `Substances` and `React` to their `State` `Changes`
+> **Flask** lets you **Mix** **Substances** and **React** to their **State** **Changes**
 
 ---
 
 Easy right?
 
-As such to preserve this natural intuition  `Flux Stores` are called `Substances` in  Flask. A `substance` would represents any homogeneous data structure in your application *(ie. feed, settings, or the application itself).*
+As such to preserve this natural intuition  `Flux Stores` are called a `Substance` in  `Flask`. A `Substance` would represents any homogeneous data structure in your application *(ie. feed, settings, or the application itself).*
 
 Flask allows to implement both the [Redux](https://github.com/reactjs/redux) and [Fluxor](http://fluxxor.com/) through a unified architecture.
 
@@ -37,7 +37,7 @@ And it's also easy to explain:
 ----
 Also very inituituve!
 
-And it's a direct analogy between the *Fluxor* pattern of `Reactive Stores` as `Reactive Substances`. And also the *Redux* pattern of `Store Reducers`  as a plain `Substance`.
+And it's a direct analogy between the *Fluxor* pattern of `Reactive Stores` as a `ReactiveSubstance` . And also the *Redux* pattern of `Store Reducers`  as a plain `Substance`.
 
 ## Motivation
 
@@ -47,64 +47,87 @@ With this in mind Flask goes beyond the nolvety of this architecture to develop 
 
 All this while the core technology offers a unified implementation of both the `Redux` and `Fluxor` patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). 
 
-## Redux Style
+## Redux Style Sample
 
 This is a gist of a basic ReSwift-like implementation. 
 
+>Define Substance Initial `State`
+
 ```swift
 struct AppState : State{
-
-	enum prop: StateProp{
-	  case counter, text
-	}
-	
-	var counter = 0
-	var text = ""
+    
+    enum prop: StateProp{
+        case counter, text
+    }
+    
+    var counter = 0
+    var text = ""
 }
 ```
 
+> Adopt `FlaskReactor` protocol
+
 ```swift
 class ViewController: UIViewController, FlaskReactor  {
-       
-    let substance = NewSubstance(definedBy: AppState)
-       
+```
+
+> Define a `Substance` instance
+
+  
+```swift  
+    let substance = NewSubstance(definedBy: AppState.self)
+```
+
+> Implement a `FlaskReactor ` protocol. Here you'll receive the `SubstanceChange` callbacks passing a `FlaskReaction` instance describing the changes.
+
+```swift    
     func flaskReactor(reaction: FlaskReaction) {
-    
+        
         reaction.on(AppState.prop.counter) { (change) in
-           print("counter = \(substance.state.counter)")
+            print("counter = \(substance.state.counter)")
         }
         reaction.on(AppState.prop.text) { (change) in
             print("text = \(substance.state.text)")
         }
         
     }
-    
+
+```
+
+> Attach a `FlaskClass` instance to this ViewController
+
+```swift    
     override func viewDidLoad() {
-      
-        AttachFlaskReactor(to:self, mixing:substance)
+        
+        AttachFlaskReactor(to:self, mixing:[substance])
         produceTestReaction()
     }
     
- 
-    func produceTestReaction(){    
+```
+
+> Mix the `Substance` properties
+
+
+```swift      
     
-        GetFlaskReactor(from:self)
-            .toMix(self.substance!) { (substance) in
+    func produceTestReaction(){
+        
+        GetFlaskReactor(at:self)
+            .toMix(self.substance) { (substance) in
                 substance.prop.counter = 10
-            }.with(self.substance!) { (substance) in
+            }.with(self.substance) { (substance) in
                 substance.prop.text = "changed!"
             }.andReact()
-            
+        
     }
-    
+
 }
-
 ```
-The above show cases Flask high-level API. Some things to consider:
+The above is a basic showcase of Flask high-level API. Other things to consider:
 
-* State is a read only property and it'a protected during the `mix` operatons.
-* While `mixing` you would mutate the state using `prop` (properties) instead of state.
-* Using `AttachFlaskReactor` creates a managed `Flask` instance that is **automatically disposed** when its owner instance (ViewController in this case) turns into `nil`.  
+* `Substance.state` is a read only property and it's protected during the `mix()` operatons.
+* While `mixing()` you would mutate the state using the `Substance.prop` accessor as `Substance.state` won't be available until the mix operation completes.
+* Using `AttachFlaskReactor` creates a managed `Flask` instance that is *automatically disposed* when its owner becomes `nil`.  
 
 Also keep in mind that:
  
@@ -112,12 +135,15 @@ Also keep in mind that:
 * These global functions are just idiomatic suggar and a  public low-level API is also available for more granular control.
 * When needed you may call `DetachFlaskReactor(from:)` to immediately dispose your Flask.
 
-## Fluxor Style
+## Fluxor Style Sample
 
+```
+//TODO
+```
 
 ## Why Flask?
 
-Flask implements both the [Redux](https://github.com/reactjs/redux) and [Fluxor](http://fluxxor.com/) through a unified architecture. Aditionally provides unique features not found in similar frameworks:
+Flask implements both the [Redux](https://github.com/reactjs/redux) and [Fluxor](http://fluxxor.com/) patterns through a unified architecture. Aditionally provides unique features not found in similar frameworks:
 
 * Chain Reactions 
 * Binding multiple stores
@@ -125,10 +151,9 @@ Flask implements both the [Redux](https://github.com/reactjs/redux) and [Fluxor]
 * Flux locks and exclusive dispatch
 * Automatic archiving to `UserDefaults`
 * Managed attachments with automatic disposal
-* Mixed use of both Redux and Fluxor patterns
 * Friendly high-level API
 * Access to low-level API for more granular control
-
+* Mixed use of both Redux and Fluxor patterns
 
 
 
@@ -147,7 +172,7 @@ import Flask
 ```
 ## Sample Project
 
-A sample project is available in this repo under
+A sample project is available in this repo inside the folder: 
 
 * FlaskSample/
 
@@ -155,9 +180,9 @@ Make sure to run `Pod install` to create your workspace.
 
 ## Test Cases
 
-The above sample project also ships with dozes of test cases as standard Xcode test units. It's a great source to learn more implementation patterns and have peace of mind about the code stability.
+The above sample project also ships with dozes of test cases as standard Xcode test units. It's a great source to learn more implementation patterns.
 
-This tests are automatically run in Travis-CI on each deployment and you can check the health status above.
+These tests are also automatically run with Travis-CI on each deployment and you can check the health status above for peace of mind.
    
 ## More Examples
 
@@ -176,11 +201,11 @@ Coming Soon
 
 ## Documentation
 
-Self-generated documentation available here:
+Jazzy generated documentation available here:
 
 [Documentation](https://eonfluxor.github.io/flask/)
 
-*Please note the documentation is work in progress.*
+> *Please note the documentation is work in progress.*
 
 
 ## Have a question?
