@@ -90,7 +90,7 @@ class ViewController: UIViewController, FlaskReactor  {
         Flask.lock(withMixer: EnvMixers.AsyncAction)
         
         // logout won't be performed until the above lock is released (see reactor code)
-        Flask.applyMixer(EnvMixers.Logout)
+        Flask.applyMixer(EnvMixers.Logout,payload:["user":userObject])
     
     }
     

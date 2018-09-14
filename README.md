@@ -11,6 +11,8 @@
 
 **Supported Swift Versions:** Swift 4.0
 
+*This is a pre-relase. The code is stable but documentation is wip.*
+
 # What is Flask?
 Flask is a multiplatform **[ iOS | OSX | tvOS ]** implementation of the unidirectional data flow architecture in Swift. Flask offers a *friendly API* and a robust feature set. 
 
@@ -35,6 +37,8 @@ Flask allows to implement both the [Redux](https://github.com/reactjs/redux) and
 ----
 This is a direct analogy between the *Fluxor* pattern of `Reactive Stores` as a `ReactiveSubstance` and the *Redux* pattern of `Store Reducers`  as a plain `Substance`.
 
+
+
 ## Motivation
 
 Flask should deliver the most robust feature set accesible through the most friendly API.
@@ -43,7 +47,38 @@ With this in mind Flask goes beyond the nolvety of this architecture to develop 
 
 All this while the core technology offers a unified implementation of both the `Redux` and `Fluxor` patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). 
 
-## Redux Style Sample
+## Why Flask?
+
+Flask implements both the [Redux](https://github.com/reactjs/redux) and [Fluxor](http://fluxxor.com/) patterns through a unified architecture. Aditionally provides unique features not found in similar frameworks:
+
+* Chain Reactions 
+* Binding multiple stores
+* Reduce changes with nested keys
+* Flux locks and exclusive dispatch
+* Automatic archiving to `UserDefaults`
+* Managed attachments with automatic disposal
+* Friendly high-level API
+* Access to low-level API for more granular control
+* Mixed use of both Redux and Fluxor patterns
+
+
+
+## CocoaPods
+
+If you use [CocoaPods](https://cocoapods.org/pods/Flask) to manage your dependencies, simply add **Flask** to your `Podfile`:
+
+```
+pod 'Flask'
+```
+
+And then import the module
+
+```
+import Flask
+```
+
+
+## Redux Style
 
 This is a gist of a basic ReSwift-like implementation. 
 
@@ -131,41 +166,87 @@ Also keep in mind that:
 * These global functions are just idiomatic suggar and a  public low-level API is also available for more granular control.
 * When needed you may call `DetachFlaskReactor(from:)` to immediately dispose your Flask.
 
-## Fluxor Style Sample
+## Fluxor Style
 
-```
-//TODO
-```
+The fluxor pattern requires more setup but it's very convinient for shared substances.
 
-## Why Flask?
+> Define the Global Mixers (aka dispatch actions)
 
-Flask implements both the [Redux](https://github.com/reactjs/redux) and [Fluxor](http://fluxxor.com/) patterns through a unified architecture. Aditionally provides unique features not found in similar frameworks:
-
-* Chain Reactions 
-* Binding multiple stores
-* Reduce changes with nested keys
-* Flux locks and exclusive dispatch
-* Automatic archiving to `UserDefaults`
-* Managed attachments with automatic disposal
-* Friendly high-level API
-* Access to low-level API for more granular control
-* Mixed use of both Redux and Fluxor patterns
-
-
-
-## CocoaPods
-
-If you use [CocoaPods](https://cocoapods.org/pods/Flask) to manage your dependencies, simply add **Flask** to your `Podfile`:
-
-```
-pod 'Flask'
+```swift
+enum EnvMixers : FluxMixer {
+    case Login
+    case Logout
+}
 ```
 
-And then import the module
+> Define Substance State
+
+```swift
+struct AppState : State {
+    
+    enum prop : StateProp{
+        case counter, title, asyncResult
+    }
+    
+    var counter = 0
+    var title = ""
+    
+    var object:FlaskNSRef? // reference to NSObject
+    var map:FlaskDictRef?  // NSDictionary wrapper for nested changes
+    
+    var _internal = "use underscore to ignore var changes"
+    
+}
+```
+
+> Define the Substance combining State and Mixers
+
+```swift
+class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
+    
+    override func defineMixers(){
+        
+        define(mix: .Login) { (payload, react, abort)  in
+            self.prop.title = "signed"
+            react()
+        }
+    }  
+}
 
 ```
-import Flask
+
+> Define the Substance Singletons
+
+
+```swift
+class Subs {
+    static let appReactive = AppReactiveSubstance()
+}
 ```
+
+> Implement the reactor
+
+```swift
+class ViewController: UIViewController, FlaskReactor  {
+       
+    func flaskReactor(reaction: FlaskReaction) {
+             
+      // if no name conflicts the .at(store) may be skipped
+        reaction.on(AppState.prop.title) { (change) in
+            print("global title = \(Subs.appReactive.state.title)")
+        }
+        
+    }
+}
+```
+
+> Apply the global Mixer (aka dispatch action)
+
+```swift
+ Flask.applyMixer(EnvMixers.Login, payload:["user":userObject])
+ Flask.applyMixer(EnvMixers.Logout)
+```
+
 ## Sample Project
 
 A sample project is available in this repo inside the folder: 
@@ -173,6 +254,8 @@ A sample project is available in this repo inside the folder:
 * FlaskSample/
 
 Make sure to run `Pod install` to create your workspace.
+
+The sample application implements both patterns simultaneously for further reference.
 
 ## Test Cases
 

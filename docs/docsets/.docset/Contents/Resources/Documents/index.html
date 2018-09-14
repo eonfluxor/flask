@@ -228,6 +228,8 @@
 <a href="https://travis-ci.org/eonfluxor/flask"><img src="https://travis-ci.org/eonfluxor/flask.svg?branch=master" alt="Build Status"></a></p>
 
 <p><strong>Supported Swift Versions:</strong> Swift 4.0</p>
+
+<p><em>This is a pre-relase. The code is stable but documentation is wip.</em></p>
 <h1 id='what-is-flask' class='heading'>What is Flask?</h1>
 
 <p>Flask is a multiplatform <strong>[ iOS | OSX | tvOS ]</strong> implementation of the unidirectional data flow architecture in Swift. Flask offers a <em>friendly API</em> and a robust feature set. </p>
@@ -244,7 +246,7 @@
 
 <p><strong>Easy right?</strong></p>
 
-<p>As such to preserve this natural intuition  <code>Flux Stores</code> are called a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> in  <code><a href="Classes/Flask.html">Flask</a></code>. A <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> would represents any homogeneous data structure in your application <em>(ie. feed, settings, or the application itself).</em></p>
+<p>As such to preserve this natural intuition  <code>Flux Stores</code> are called a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code>. In Flask a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> would represents any homogeneous data structure in your application <em>(ie. a feed, settings, or the application itself).</em></p>
 
 <p>Flask allows to implement both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxor</a> through a unified architecture. An altough this may some complicated it&rsquo;s also easy to explain:</p>
 
@@ -264,7 +266,31 @@
 <p>With this in mind Flask goes beyond the nolvety of this architecture to develop an expressive API borrowing semantics from high school lab classes creating a framework that is easy to understand through analogies of the physical world.</p>
 
 <p>All this while the core technology offers a unified implementation of both the <code>Redux</code> and <code>Fluxor</code> patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). </p>
-<h2 id='redux-style-sample' class='heading'>Redux Style Sample</h2>
+<h2 id='why-flask' class='heading'>Why Flask?</h2>
+
+<p>Flask implements both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxor</a> patterns through a unified architecture. Aditionally provides unique features not found in similar frameworks:</p>
+
+<ul>
+<li>Chain Reactions</li>
+<li>Binding multiple stores</li>
+<li>Reduce changes with nested keys</li>
+<li>Flux locks and exclusive dispatch</li>
+<li>Automatic archiving to <code>UserDefaults</code></li>
+<li>Managed attachments with automatic disposal</li>
+<li>Friendly high-level API</li>
+<li>Access to low-level API for more granular control</li>
+<li>Mixed use of both Redux and Fluxor patterns</li>
+</ul>
+<h2 id='cocoapods' class='heading'>CocoaPods</h2>
+
+<p>If you use <a href="https://cocoapods.org/pods/Flask">CocoaPods</a> to manage your dependencies, simply add <strong>Flask</strong> to your <code>Podfile</code>:</p>
+<pre class="highlight plaintext"><code>pod 'Flask'
+</code></pre>
+
+<p>And then import the module</p>
+<pre class="highlight plaintext"><code>import Flask
+</code></pre>
+<h2 id='redux-style' class='heading'>Redux Style</h2>
 
 <p>This is a gist of a basic ReSwift-like implementation. </p>
 
@@ -354,32 +380,84 @@
 <li>These global functions are just idiomatic suggar and a  public low-level API is also available for more granular control.</li>
 <li>When needed you may call <code><a href="Functions.html#/s:9Flask_iOS06DetachA7Reactoryx4from_tRlzCAA0aD0RzlF">DetachFlaskReactor(from:)</a></code> to immediately dispose your Flask.</li>
 </ul>
-<h2 id='fluxor-style-sample' class='heading'>Fluxor Style Sample</h2>
-<pre class="highlight plaintext"><code>//TODO
-</code></pre>
-<h2 id='why-flask' class='heading'>Why Flask?</h2>
+<h2 id='fluxor-style' class='heading'>Fluxor Style</h2>
 
-<p>Flask implements both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxor</a> patterns through a unified architecture. Aditionally provides unique features not found in similar frameworks:</p>
+<p>The fluxor pattern requires more setup but it&rsquo;s very convinient for shared substances.</p>
 
-<ul>
-<li>Chain Reactions</li>
-<li>Binding multiple stores</li>
-<li>Reduce changes with nested keys</li>
-<li>Flux locks and exclusive dispatch</li>
-<li>Automatic archiving to <code>UserDefaults</code></li>
-<li>Managed attachments with automatic disposal</li>
-<li>Friendly high-level API</li>
-<li>Access to low-level API for more granular control</li>
-<li>Mixed use of both Redux and Fluxor patterns</li>
-</ul>
-<h2 id='cocoapods' class='heading'>CocoaPods</h2>
-
-<p>If you use <a href="https://cocoapods.org/pods/Flask">CocoaPods</a> to manage your dependencies, simply add <strong>Flask</strong> to your <code>Podfile</code>:</p>
-<pre class="highlight plaintext"><code>pod 'Flask'
+<blockquote>
+<p>Define the Global Mixers (aka dispatch actions)</p>
+</blockquote>
+<pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">EnvMixers</span> <span class="p">:</span> <span class="kt">FluxMixer</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="kt">Login</span>
+    <span class="k">case</span> <span class="kt">Logout</span>
+<span class="p">}</span>
 </code></pre>
 
-<p>And then import the module</p>
-<pre class="highlight plaintext"><code>import Flask
+<blockquote>
+<p>Define Substance State</p>
+</blockquote>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">:</span> <span class="kt">State</span> <span class="p">{</span>
+
+    <span class="kd">enum</span> <span class="nv">prop</span> <span class="p">:</span> <span class="kt">StateProp</span><span class="p">{</span>
+        <span class="k">case</span> <span class="n">counter</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">asyncResult</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">title</span> <span class="o">=</span> <span class="s">""</span>
+
+    <span class="k">var</span> <span class="nv">object</span><span class="p">:</span><span class="kt">FlaskNSRef</span><span class="p">?</span> <span class="c1">// reference to NSObject</span>
+    <span class="k">var</span> <span class="nv">map</span><span class="p">:</span><span class="kt">FlaskDictRef</span><span class="p">?</span>  <span class="c1">// NSDictionary wrapper for nested changes</span>
+
+    <span class="k">var</span> <span class="nv">_internal</span> <span class="o">=</span> <span class="s">"use underscore to ignore var changes"</span>
+
+<span class="p">}</span>
+</code></pre>
+
+<blockquote>
+<p>Define the Substance combining State and Mixers</p>
+</blockquote>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AppReactiveSubstance</span> <span class="p">:</span> <span class="kt">ReactiveSubstance</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="p">,</span><span class="kt">EnvMixers</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">defineMixers</span><span class="p">(){</span>
+
+        <span class="nf">define</span><span class="p">(</span><span class="nv">mix</span><span class="p">:</span> <span class="o">.</span><span class="kt">Login</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">react</span><span class="p">,</span> <span class="n">abort</span><span class="p">)</span>  <span class="k">in</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"signed"</span>
+            <span class="nf">react</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>  
+<span class="p">}</span>
+
+</code></pre>
+
+<blockquote>
+<p>Define the Substance Singletons</p>
+</blockquote>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">Subs</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">appReactive</span> <span class="o">=</span> <span class="kt">AppReactiveSubstance</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre>
+
+<blockquote>
+<p>Implement the reactor</p>
+</blockquote>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">FlaskReactor</span>  <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">flaskReactor</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="c1">// if no name conflicts the .at(store) may be skipped</span>
+        <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="kt">AppState</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">title</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"global title = </span><span class="se">\(</span><span class="kt">Subs</span><span class="o">.</span><span class="n">appReactive</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">title</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<blockquote>
+<p>Apply the global Mixer (aka dispatch action)</p>
+</blockquote>
+<pre class="highlight swift"><code> <span class="kt">Flask</span><span class="o">.</span><span class="nf">applyMixer</span><span class="p">(</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:[</span><span class="s">"user"</span><span class="p">:</span><span class="n">userObject</span><span class="p">])</span>
+ <span class="kt">Flask</span><span class="o">.</span><span class="nf">applyMixer</span><span class="p">(</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Logout</span><span class="p">)</span>
 </code></pre>
 <h2 id='sample-project' class='heading'>Sample Project</h2>
 
@@ -390,6 +468,8 @@
 </ul>
 
 <p>Make sure to run <code>Pod install</code> to create your workspace.</p>
+
+<p>The sample application implements both patterns simultaneously for further reference.</p>
 <h2 id='test-cases' class='heading'>Test Cases</h2>
 
 <p>The above sample project also ships with dozes of test cases as standard Xcode test units. It&rsquo;s a great source to learn more implementation patterns.</p>

@@ -19,7 +19,7 @@ enum EnvMixers : FluxMixer {
 
 enum NavMixers : FluxMixer {
     case Home
-     case Settings
+    case Settings
 }
 
 class Subs {
