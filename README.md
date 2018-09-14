@@ -48,25 +48,23 @@ This is a direct analogy between the *Fluxor* pattern of `Reactive Stores` as a 
 
 Flask should deliver the most robust feature set accessible through the most friendly API.
 
-With this in mind, Flask goes beyond the novelty of this architecture to develop an expressive API borrowing semantics from high school lab classes creating a framework that is easy to understand through analogies of the physical world.
+With this in mind, Flask goes beyond the novelty of this architecture to develop an expressive API borrowing elemental science concepts to craft a framework that is easy to understand through analogies of the physical world.
 
 All this while the core technology offers a unified implementation of both the `Redux` and `Fluxor` patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). 
 
 ## Why Flask?
 
-Flask implements both the [Redux](https://github.com/reactjs/redux) and [Fluxor](http://fluxxor.com/) patterns through a unified architecture. Additionally provides unique features not found in similar frameworks:
+Flask provides unique features not found in similar frameworks:
 
-* Chain Reactions 
+* Chain reactions 
 * Binding multiple stores
-* Reduce changes with nested keys
+* Dictionary reduction supporting nested keys
 * Flux locks and exclusive dispatch
 * Automatic archiving to `UserDefaults`
-* Managed attachments with automatic disposal
+* Managed attachment with automatic disposal
 * Friendly high-level API
 * Access to low-level API for more granular control
 * Mixed use of both Redux and Fluxor patterns
-
-
 
 ## CocoaPods
 
@@ -114,7 +112,7 @@ class ViewController: UIViewController, FlaskReactor  {
     let substance = NewSubstance(definedBy: AppState.self)
 ```
 
-> Implement a `FlaskReactor ` protocol. Here you'll receive the `SubstanceChange` callbacks passing a `FlaskReaction` instance describing the changes.
+> Implement the `FlaskReactor ` protocol. Here you'll receive the `SubstanceChange` callbacks passing a `FlaskReaction` instance describing the changes.
 
 ```swift    
     func flaskReactor(reaction: FlaskReaction) {
@@ -175,7 +173,7 @@ Also keep in mind that:
 
 The fluxor pattern requires more setup but it's very convenient for shared substances.
 
-> Define the Global Mixers (aka dispatch actions)
+> Define the Global `FluxMixer` (aka dispatch actions)
 
 ```swift
 enum EnvMixers : FluxMixer {
@@ -184,7 +182,7 @@ enum EnvMixers : FluxMixer {
 }
 ```
 
-> Define Substance State
+> Define a `Substance` `State`
 
 ```swift
 struct AppState : State {
@@ -204,7 +202,7 @@ struct AppState : State {
 }
 ```
 
-> Define the Substance combining State and Mixers
+> Define a `Substance` combining `State` and global `FluxMixer`
 
 ```swift
 class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
@@ -220,7 +218,7 @@ class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
 
 ```
 
-> Define the Substance Singletons
+> Define a Substance Singletons
 
 
 ```swift
@@ -229,7 +227,7 @@ class Subs {
 }
 ```
 
-> Implement the reactor
+> Implement the `FlaskReactor` protocol in a ViewController (or any other object)
 
 ```swift
 class ViewController: UIViewController, FlaskReactor  {
@@ -245,12 +243,32 @@ class ViewController: UIViewController, FlaskReactor  {
 }
 ```
 
-> Apply the global Mixer (aka dispatch action)
+> And attach a `FlaskClass` instance in your configuration initializer 
+
+```swift    
+    override func viewDidLoad() {
+        
+        AttachFlaskReactor(to:self, mixing:[substance])
+        produceTestReaction()
+    }
+    
+```
+
+> Apply the global `FluxMixer` (aka dispatch action) from anywhere in the app
 
 ```swift
  Flask.applyMixer(EnvMixers.Login, payload:["user":userObject])
  Flask.applyMixer(EnvMixers.Logout)
 ```
+As you can notice the main difference are:
+
+* Required definition of global `FluxMixer` (aka dispatch actions).
+* Required definition of a `ReactiveSubstance`.
+* Required to `defineMixers()` in the `ReactiveSubstance`.
+* Required definition of a global singleton to access your `ReactiveSusbtance` from anywhere in the app.
+
+The above setup allows to easily call `Flask.applyMixer` from anywhere in the application to trigger the `FluxMixer` reactions in all the `ReactiveSubstance` instances implementing it.
+
 
 ## Sample Project
 
@@ -272,16 +290,61 @@ These tests are also automatically run with Travis-CI on each deployment and you
 
 More practical examples are in the works and we would love to  feature yours!
 
+### Chain Reaction
 ```
 // Coming soon
 ```
 
+### Locks
+```
+// Coming soon
+```
+
+### Mixing Lock
+```
+// Coming soon
+```
+
+### Nested Keys
+```
+// Coming soon
+```
+
+### Archiving
+```
+// Coming soon
+```
+### Low level API
+```
+// Coming soon
+```
 
 ## Guides
 
-```
-Coming Soon
-```
+Please review the above examples for Redux or Fluxor style implementations. More coming soon.
+
+
+## Discussion
+
+#### Why mixing Fluxor and Redux?
+
+It's simple, with  `ReactiveSubstance` classes you have the ability to make them all react in the same way to global `FluxMixer` events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style "inline" transformations.
+
+For instance, an App `ReactiveSubstance` make sense as it would react to global events like log out or navigation. Also, it's a perfect candidate to be archived enabling `Substance.shouldArchive` to act as a basic an in-app data storage. Still, you can use this App substance in any `FlaskReactor` implementation and further apply Redux style transformations in a more particular context.
+
+All this while the framework guarantees the unidirectional flow integrity despite mixing global `FluxMixer` events or local `Flask.mix` reactions.
+
+#### Why Substance instead of Store?
+
+> TODO
+
+#### How many Substances should I have?
+
+> TODO
+
+#### Advantages of Substance Archive.
+
+> TODO
 
 ## Documentation
 
