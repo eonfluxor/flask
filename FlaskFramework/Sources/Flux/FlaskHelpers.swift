@@ -22,7 +22,7 @@ public typealias MutationClosure<T> = (_ substance:T,_ react:()-> Void,_ abort:(
 public typealias FluxPayloadType = [String:Any?]
 public typealias FlaskDictType = [String:AnyHashable?]
 public typealias FluxMixer = String
-public typealias StateName = String
+public typealias StateProp = String
 
 
 let BUS_LOCKED_BY="BUS_LOCKED_BY"

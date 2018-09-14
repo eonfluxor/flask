@@ -7,9 +7,19 @@
 //
 
 import UIKit
+import Flask
 
+struct AppState : State{
+    
+    enum prop: StateProp{
+        case counter, text
+    }
+    
+    var counter = 0
+    var text = ""
+}
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, FlaskReactor  {
 
     override func viewDidLoad() {
         super.viewDidLoad()

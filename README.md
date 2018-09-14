@@ -4,7 +4,7 @@
  
 
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Flask.svg)](#cocoapods) 
-[![GitHub release](https://img.shields.io/github/release/eonfluxor/Flask.svg)](https://github.com/eonfluxor/delay/releases) 
+[![GitHub release](https://img.shields.io/github/release/eonfluxor/flask.svg)](https://github.com/eonfluxor/flask/releases) 
 ![Swift 4.0](https://img.shields.io/badge/Swift-4.1-orange.svg) 
 ![platforms](https://img.shields.io/cocoapods/p/Flask.svg)
 [![Build Status](https://travis-ci.org/eonfluxor/flask.svg?branch=master)](https://travis-ci.org/eonfluxor/flask)
@@ -16,7 +16,11 @@ Flask is a multiplatform **[ iOS | OSX | tvOS ]** implementation of the unidirec
 
 While the Flux architeture is abstract, explaining Flask is easy:
 
-> ###Flask lets you `Mix` `Substances` and `React` to their `State` `Changes`
+----
+
+> ####Flask lets you `Mix` `Substances` and `React` to their `State` `Changes`
+
+---
 
 Easy right?
 
@@ -26,8 +30,11 @@ Flask allows to implement both the [Redux](https://github.com/reactjs/redux) and
 
 And it's also easy to explain:
 
-> ###You can create `ReactiveSubstances` that `React` to environmental events, or plain `Substances` that are `Mixed` only inside your Flask
+----
 
+> ####You can create `ReactiveSubstances` that `React` to environmental events, or plain `Substances` that are `Mixed` only inside your Flask
+
+----
 Also very inituituve!
 
 And it's a direct analogy between the *Fluxor* pattern of `Reactive Stores` as `Reactive Substances`. And also the *Redux* pattern of `Store Reducers`  as a plain `Substance`.
@@ -112,24 +119,22 @@ Also keep in mind that:
 
 Flask implements both the [Redux](https://github.com/reactjs/redux) and [Fluxor](http://fluxxor.com/) through a unified architecture. Aditionally provides unique features not found in similar frameworks:
 
+* Chain Reactions 
 * Binding multiple stores
-* Reduce changes in nested keys
-* Locks and exclusive dispatch
-* Automatic archive / unarchive
-* Chained mutations
-* Automatic unsubscription
+* Reduce changes with nested keys
+* Flux locks and exclusive dispatch
+* Automatic archiving to `UserDefaults`
+* Managed attachments with automatic disposal
+* Mixed use of both Redux and Fluxor patterns
+* Friendly high-level API
+* Access to low-level API for more granular control
 
 
-## Documentation
 
-Self-generated documentation available here:
-
-[Documentation](https://eonfluxor.github.io/flask/)
 
 ## CocoaPods
 
-If you use [CocoaPods](https://cocoapods.org/pods/Flask) to manage your dependencies, simply add
-Kron to your `Podfile`:
+If you use [CocoaPods](https://cocoapods.org/pods/Flask) to manage your dependencies, simply add **Flask** to your `Podfile`:
 
 ```
 pod 'Flask'
@@ -161,6 +166,22 @@ More practical examples are on the works and we would love to  feature yours!
 ```
 // Coming soon
 ```
+
+
+## Guides
+
+```
+Coming Soon
+```
+
+## Documentation
+
+Self-generated documentation available here:
+
+[Documentation](https://eonfluxor.github.io/flask/)
+
+*Please note the documentation is work in progress.*
+
 
 ## Have a question?
 If you need any help, please visit our GitHub issues. Feel free to file an issue if you do not manage to find any solution from the archives.
