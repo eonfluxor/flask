@@ -521,7 +521,7 @@
 <p>To continue the chain, just call mix (or any of its aliases) again. You must call <code>react()</code> or <code>abort()</code> (or its aliases) in order to resolve the transaction (otherwise your Flask will fail to perform further mix transactions).</p>
 
 <blockquote>
-<p>Using the high level API</p>
+<p>Using the high-level API</p>
 </blockquote>
 <pre class="highlight swift"><code> <span class="kt">GetFlaskReactor</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span><span class="k">self</span><span class="p">)</span>
             <span class="o">.</span><span class="nf">toMix</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">substanceA</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">substance</span><span class="p">)</span> <span class="k">in</span>
@@ -547,7 +547,7 @@
 </code></pre>
 <h3 id='locks' class='heading'>Locks</h3>
 
-<p>When needed you can create a <code><a href="Classes/FluxLock.html">FluxLock</a></code>. This will pause performing any mixes including <code>ReactiveSubstances</code> or <code>ChainReactions</code>.  You can create many Locks but you are responsbible of releasing them all to reactive the flux.</p>
+<p>When needed you can create a <code><a href="Classes/FluxLock.html">FluxLock</a></code>. This will pause performing any mixes including <code>ReactiveSubstances</code> or <code>ChainReactions</code>.  You can create many Locks but you are responsible for releasing them all too reactive the flux.</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">lock</span> <span class="o">=</span> <span class="kt">Flask</span><span class="o">.</span><span class="nf">lock</span><span class="p">()</span>
 
 <span class="c1">// perform operations while the flux is paused</span>
@@ -590,13 +590,122 @@
 
 </code></pre>
 <h3 id='nested-keys' class='heading'>Nested Keys</h3>
-<pre class="highlight plaintext"><code>// Coming soon
+
+<p>It&rsquo;s really easy to observe changes in nested keys: </p>
+
+<ul>
+<li>In your state create a <code><a href="Classes/FlaskDictRef.html">FlaskDictRef</a></code> property</li>
+<li>Assign new values by wrapping your Dictionary in a <code>FlaskDictRef( Dictionary )</code></li>
+<li>Observe changes in your nested keys using dot syntax.</li>
+</ul>
+
+<p>Example:</p>
+
+<blockquote>
+<p>Create a FlaskDictRef property</p>
+</blockquote>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">:</span> <span class="kt">State</span> <span class="p">{</span>
+
+    <span class="kd">enum</span> <span class="nv">prop</span> <span class="p">:</span> <span class="kt">StateProp</span><span class="p">{</span>
+        <span class="k">case</span> <span class="n">info</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">info</span><span class="p">:</span><span class="kt">FlaskDictRef</span><span class="p">?</span>
+<span class="p">}</span>
+
+</code></pre>
+
+<blockquote>
+<p>Assign values</p>
+</blockquote>
+<pre class="highlight swift"><code> <span class="n">flask</span><span class="o">.</span><span class="nf">mix</span><span class="p">(</span><span class="n">substance</span><span class="p">){</span> <span class="p">(</span><span class="n">substance</span><span class="p">)</span> <span class="k">in</span>
+
+          <span class="k">let</span> <span class="nv">data</span><span class="p">:</span><span class="kt">NSDictionary</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s">"foo"</span><span class="p">:</span><span class="s">"bar"</span><span class="p">,</span>
+            <span class="s">"nest"</span><span class="p">:[</span>
+                <span class="s">"data"</span><span class="p">:</span><span class="s">"some"</span>
+            <span class="p">]</span>
+
+        <span class="p">]</span>
+
+       <span class="n">substance</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="kt">FlaskDictRef</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+  <span class="p">}</span><span class="o">.</span><span class="nf">react</span><span class="p">()</span>
+
+</code></pre>
+
+<blockquote>
+<p>Observe changes</p>
+</blockquote>
+<pre class="highlight swift"><code> <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="s">"info.nest.data"</span><span class="p">,</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
+      <span class="nf">print</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="nf">newValue</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
+ <span class="p">})</span>
 </code></pre>
 <h3 id='archiving' class='heading'>Archiving</h3>
-<pre class="highlight plaintext"><code>// Coming soon
+
+<p>Archiving is a great alternative to SQL-Lite or CoreData when you don&rsquo;t need to perform queries or relational operations in your data. Consider that this feature relies on UserDefaults as storage destination.</p>
+
+<p>By default, archiving is off. To Enable archiving you just need to pass two extra parameters to the <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> or <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> initializer:</p>
+<pre class="highlight plaintext"><code>let substance = MySubstanceClass(name:"uniqueName",archive:true)
 </code></pre>
-<h3 id='low-level-api' class='heading'>Low level API</h3>
-<pre class="highlight plaintext"><code>// Coming soon
+
+<p>The name has to be unique so make sure to use a proper naming convention for your app.</p>
+
+<p>The substances are then archived after being ile for 2 seconds when changes are detected. It&rsquo;s possible to disable archiving after instantiation by using the property <code>Substance.shouldArchive</code>.</p>
+
+<p>You can further customize the process by overriding any of the following methods in your Substances subclasses:</p>
+<pre class="highlight swift"><code>    <span class="k">override</span> <span class="kd">func</span> <span class="nf">archiveKeySpace</span><span class="p">()</span><span class="o">-&gt;</span><span class="kt">String</span><span class="p">{</span>
+        <span class="k">return</span> <span class="s">"1"</span>
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">archiveKey</span><span class="p">()</span><span class="o">-&gt;</span><span class="kt">String</span><span class="p">{</span>
+        <span class="k">return</span> <span class="s">"Fx.</span><span class="se">\(</span><span class="nf">archiveKeySpace</span><span class="p">()</span><span class="se">)</span><span class="s">.</span><span class="se">\(</span><span class="nf">name</span><span class="p">()</span><span class="se">)</span><span class="s">"</span>
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">archiveDelay</span><span class="p">()</span><span class="o">-&gt;</span><span class="kt">Double</span><span class="p">{</span>
+        <span class="k">return</span> <span class="mf">2.0</span>
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">archiveDisabled</span><span class="p">()</span><span class="o">-&gt;</span><span class="kt">Bool</span><span class="p">{</span>
+        <span class="k">return</span> <span class="o">!</span><span class="n">shouldArchive</span>
+    <span class="p">}</span>
+</code></pre>
+<h3 id='internal-state-props' class='heading'>Internal state props</h3>
+
+<p>In case you want to ignore some State properties from being used in the changes reduction, just use the <code>_</code> prefix on the variable name:</p>
+<pre class="highlight plaintext"><code>struct AppState : State {
+
+    var _internal = "`_` use this prefix for internal vars "
+
+}
+</code></pre>
+
+<p>This could be useful if for whatever reason you are performing additional computations in your state. </p>
+<h3 id='low-level-api' class='heading'>Low-level API</h3>
+
+<p>Behind the scenes, most high-level functions rely on calling stating methods on the main <code><a href="Classes/Flask.html">Flask</a></code> class.</p>
+
+<p>You can see them all <a href="file:///Users/hassanvfx/projects/eonflux/flask/docs/Classes/Flask.html">here</a>:</p>
+<pre class="highlight swift"><code><span class="nf">purgeFluxQueue</span><span class="p">()</span>
+<span class="nf">purgeFlasks</span><span class="p">()</span>
+
+<span class="nf">instance</span><span class="p">(</span><span class="nv">attachedTo</span><span class="p">:</span><span class="nv">mixing</span><span class="p">:)</span>
+<span class="nf">instance</span><span class="p">(</span><span class="nv">attachedTo</span><span class="p">:</span><span class="nv">mixing</span><span class="p">:)</span>
+
+<span class="nf">lock</span><span class="p">()</span>
+<span class="nf">lock</span><span class="p">(</span><span class="nv">withMixer</span><span class="p">:)</span>
+<span class="nf">lock</span><span class="p">(</span><span class="nv">withMixer</span><span class="p">:</span><span class="nv">payload</span><span class="p">:)</span>
+<span class="nf">removeLocks</span><span class="p">()</span>
+
+<span class="nf">applyMixer</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span><span class="nv">payload</span><span class="p">:)</span>
+
+<span class="nf">attachFlask</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span><span class="nv">mixing</span><span class="p">:)</span>
+<span class="nf">detachFlask</span><span class="p">(</span><span class="nv">from</span><span class="p">:)</span>
+</code></pre>
+
+<p>You can also access the <code><a href="Classes/FlaskManager.html">FlaskManager</a></code> that holds all the attached <code><a href="Classes/FlaskClass.html">FlaskClass</a></code> instances</p>
+<pre class="highlight swift"><code><span class="n">flasks</span>
+<span class="nf">purge</span><span class="p">()</span>
 </code></pre>
 <h2 id='guides' class='heading'>Guides</h2>
 
