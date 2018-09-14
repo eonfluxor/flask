@@ -13,7 +13,7 @@
 
 *This is a pre-release. The code is stable but documentation is WIP.*
 
-# What is Flask?
+# What is Flask Reactor?
 Flask is a multiplatform **[ iOS | OSX | tvOS ]** implementation of the unidirectional data flow architecture in Swift. Flask offers a *friendly API* and a robust feature set. 
 
 While the Flux architecture is abstract, explaining Flask is easy:
