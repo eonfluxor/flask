@@ -19,6 +19,8 @@ class archiveTests: SetupFlaskTests {
         let expectedValue = Int(Date().timeIntervalSince1970)
         
         let substance = self.substance!
+        substance.shouldArchive = true
+        
         let owner:TestOwner = TestOwner()
         let flask = Flask.instance(attachedTo:owner, mixing:substance)
         
@@ -40,7 +42,8 @@ class archiveTests: SetupFlaskTests {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             
-            let anotherSubstance = App(name:substanceName)
+            let anotherSubstance = App(name:substanceName,archive:true)
+           
             
             XCTAssert(anotherSubstance.state.counter == expectedValue)
             

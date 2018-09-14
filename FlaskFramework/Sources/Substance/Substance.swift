@@ -58,7 +58,6 @@ open class ReactiveSubstance<T:State,A:RawRepresentable> : SubstanceConcrete{
         return queue
     }()
     
-    public var shouldArchive = false
     
     //////////////////
     // MARK: - INITIALIZE
@@ -154,8 +153,10 @@ open class SubstanceConcrete:Hashable {
     var _namePrefix:String?
     var _nameSuffix:String?
     var _name:String?
+    public var shouldArchive = false
     
-    required  public init(name aName:String){
+    required  public init(name aName:String, archive shouldArchive:Bool = false){
+        self.shouldArchive = shouldArchive
         name(as:aName)
         initializeMetaClass()
     }

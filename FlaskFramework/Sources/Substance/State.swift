@@ -12,9 +12,7 @@ import UIKit
 import Cocoa
 #endif
 
-struct AnyState:State {
-    
-}
+
 
 public protocol State : Codable {
     init() //construct at initial state

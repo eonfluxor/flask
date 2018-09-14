@@ -12,13 +12,13 @@ import Cocoa
 #endif
 
 
-public class FlaskClass<D:AnyObject>:FlaskConcrete {
+public class FlaskClass<O:AnyObject>:FlaskConcrete {
     
-    weak var owner:D?
+    weak var owner:O?
     
-    public var reactor:ReactionClosure<D>  = { owner,reaction in }
+    public var reactor:ReactionClosure<O>  = { owner,reaction in }
     
-    required public init(_ owner:D){
+    required public init(_ owner:O){
         self.owner=owner
     }
     
