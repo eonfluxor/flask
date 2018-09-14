@@ -24,7 +24,7 @@ While the Flux architeture is abstract, explaining Flask is easy:
 
 **Easy right?**
 
-As such to preserve this natural intuition  `Flux Stores` are called a `Substance` in  `Flask`. A `Substance` would represents any homogeneous data structure in your application *(ie. feed, settings, or the application itself).*
+As such to preserve this natural intuition  `Flux Stores` are called a `Substance`. In Flask a `Substance` would represents any homogeneous data structure in your application *(ie. a feed, settings, or the application itself).*
 
 Flask allows to implement both the [Redux](https://github.com/reactjs/redux) and [Fluxor](http://fluxxor.com/) through a unified architecture. An altough this may some complicated it's also easy to explain:
 
