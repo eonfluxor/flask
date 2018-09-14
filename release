@@ -1,5 +1,5 @@
 ./document
 ./bumpTag.rb
 git commit -am 'release'
-git push orgin master --tags
+git push origin master --tags
 
