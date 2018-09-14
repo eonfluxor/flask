@@ -27,6 +27,7 @@
 		26972FC7214B3E150082E0C7 /* FluxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972FB8214B3E150082E0C7 /* FluxTests.swift */; };
 		26972FC8214B3E150082E0C7 /* ChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972FB9214B3E150082E0C7 /* ChainTests.swift */; };
 		26972FC9214B3E150082E0C7 /* NestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972FBA214B3E150082E0C7 /* NestingTests.swift */; };
+		26972FCD214B3EC80082E0C7 /* AppSubstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26972FCC214B3EC70082E0C7 /* AppSubstance.swift */; };
 		81132C43E6D6E453E49286AE /* Pods_FlaskSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E67B11477D1A0D0D02F0A7E3 /* Pods_FlaskSampleTests.framework */; };
 		CF6496C3D36619F8837242A0 /* Pods_FlaskSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC22A1806050690C1A7E3C9 /* Pods_FlaskSample.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		26972FB8214B3E150082E0C7 /* FluxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxTests.swift; sourceTree = "<group>"; };
 		26972FB9214B3E150082E0C7 /* ChainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainTests.swift; sourceTree = "<group>"; };
 		26972FBA214B3E150082E0C7 /* NestingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestingTests.swift; sourceTree = "<group>"; };
+		26972FCC214B3EC70082E0C7 /* AppSubstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "\U001bAppSubstance.swift"; sourceTree = "<group>"; };
 		2B35F0FDFC401043CBB8FB46 /* Pods-FlaskSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlaskSampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlaskSampleTests/Pods-FlaskSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		8A942A2E120C9DA16036C79F /* Pods-FlaskSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlaskSampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlaskSampleTests/Pods-FlaskSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B89097A3D5CE2C53F9A9C96F /* Pods-FlaskSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlaskSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlaskSample/Pods-FlaskSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		26972F73214B3D090082E0C7 /* FlaskSample */ = {
 			isa = PBXGroup;
 			children = (
+				26972FCC214B3EC70082E0C7 /* AppSubstance.swift */,
 				26972F74214B3D090082E0C7 /* AppDelegate.swift */,
 				26972F76214B3D090082E0C7 /* ViewController.swift */,
 				26972F78214B3D090082E0C7 /* Main.storyboard */,
@@ -391,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26972FCD214B3EC80082E0C7 /* AppSubstance.swift in Sources */,
 				26972F77214B3D090082E0C7 /* ViewController.swift in Sources */,
 				26972F75214B3D090082E0C7 /* AppDelegate.swift in Sources */,
 			);

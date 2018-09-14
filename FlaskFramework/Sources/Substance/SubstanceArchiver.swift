@@ -29,7 +29,7 @@ extension ReactiveSubstance {
     }
     
     open func archiveDisabled()->Bool{
-        return false
+        return !shouldArchive
     }
 }
 
