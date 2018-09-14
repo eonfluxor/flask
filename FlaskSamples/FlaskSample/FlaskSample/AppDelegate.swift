@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ReaktorSample
+//  FlaskSample
 //
-//  Created by hassan uriostegui on 9/10/18.
+//  Created by hassan uriostegui on 9/13/18.
 //  Copyright © 2018 eonflux. All rights reserved.
 //
 

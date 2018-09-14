@@ -207,18 +207,6 @@
 		2622A5322148828E003F4C38 /* BusNotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusNotifierTests.swift; sourceTree = "<group>"; };
 		2671C1522149B7C000888F3E /* FlaskApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlaskApi.swift; sourceTree = "<group>"; };
 		2671C1542149B8EE00888F3E /* FlaskApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlaskApiTests.swift; sourceTree = "<group>"; };
-		26A82A5F2146D783008C8009 /* Reaktor_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reaktor_iOS.h; sourceTree = "<group>"; };
-		26A82A602146D783008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26A82A6A2146D783008C8009 /* Reaktor_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor_iOSTests.swift; sourceTree = "<group>"; };
-		26A82A6C2146D783008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26A82A972146D7A8008C8009 /* Reaktor_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reaktor_macOS.h; sourceTree = "<group>"; };
-		26A82A982146D7A8008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26A82AA22146D7A8008C8009 /* Reaktor_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor_macOSTests.swift; sourceTree = "<group>"; };
-		26A82AA42146D7A8008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26A82AB32146D7B2008C8009 /* Reaktor_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reaktor_tvOS.h; sourceTree = "<group>"; };
-		26A82AB42146D7B2008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26A82ABE2146D7B2008C8009 /* Reaktor_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaktor_tvOSTests.swift; sourceTree = "<group>"; };
-		26A82AC02146D7B2008C8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26C53E00214790730090AA0C /* Flask_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flask_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C53E02214790730090AA0C /* Flask_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flask_iOS.h; sourceTree = "<group>"; };
 		26C53E03214790730090AA0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -378,12 +366,6 @@
 			children = (
 				26A82AC82146D80E008C8009 /* Sources */,
 				26A82AC92146D80E008C8009 /* Tests */,
-				26A82A5E2146D783008C8009 /* Reaktor-iOS */,
-				26A82A692146D783008C8009 /* Reaktor-iOSTests */,
-				26A82A962146D7A8008C8009 /* Reaktor-macOS */,
-				26A82AA12146D7A8008C8009 /* Reaktor-macOSTests */,
-				26A82AB22146D7B2008C8009 /* Reaktor-tvOS */,
-				26A82ABD2146D7B2008C8009 /* Reaktor-tvOSTests */,
 				26C53E01214790730090AA0C /* Flask-iOS */,
 				26C53E0C214790730090AA0C /* Flask-iOSTests */,
 				26C53E1D214790800090AA0C /* Flask-macOS */,
@@ -407,60 +389,6 @@
 				26C53E402147908E0090AA0C /* Flask-tvOSTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		26A82A5E2146D783008C8009 /* Reaktor-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				26A82A5F2146D783008C8009 /* Reaktor_iOS.h */,
-				26A82A602146D783008C8009 /* Info.plist */,
-			);
-			path = "Reaktor-iOS";
-			sourceTree = "<group>";
-		};
-		26A82A692146D783008C8009 /* Reaktor-iOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				26A82A6A2146D783008C8009 /* Reaktor_iOSTests.swift */,
-				26A82A6C2146D783008C8009 /* Info.plist */,
-			);
-			path = "Reaktor-iOSTests";
-			sourceTree = "<group>";
-		};
-		26A82A962146D7A8008C8009 /* Reaktor-macOS */ = {
-			isa = PBXGroup;
-			children = (
-				26A82A972146D7A8008C8009 /* Reaktor_macOS.h */,
-				26A82A982146D7A8008C8009 /* Info.plist */,
-			);
-			path = "Reaktor-macOS";
-			sourceTree = "<group>";
-		};
-		26A82AA12146D7A8008C8009 /* Reaktor-macOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				26A82AA22146D7A8008C8009 /* Reaktor_macOSTests.swift */,
-				26A82AA42146D7A8008C8009 /* Info.plist */,
-			);
-			path = "Reaktor-macOSTests";
-			sourceTree = "<group>";
-		};
-		26A82AB22146D7B2008C8009 /* Reaktor-tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				26A82AB32146D7B2008C8009 /* Reaktor_tvOS.h */,
-				26A82AB42146D7B2008C8009 /* Info.plist */,
-			);
-			path = "Reaktor-tvOS";
-			sourceTree = "<group>";
-		};
-		26A82ABD2146D7B2008C8009 /* Reaktor-tvOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				26A82ABE2146D7B2008C8009 /* Reaktor_tvOSTests.swift */,
-				26A82AC02146D7B2008C8009 /* Info.plist */,
-			);
-			path = "Reaktor-tvOSTests";
 			sourceTree = "<group>";
 		};
 		26A82AC82146D80E008C8009 /* Sources */ = {

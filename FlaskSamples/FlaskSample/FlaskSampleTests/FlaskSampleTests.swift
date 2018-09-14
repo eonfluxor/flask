@@ -1,15 +1,15 @@
 //
-//  Reaktor_iOSTests.swift
-//  Reaktor-iOSTests
+//  FlaskSampleTests.swift
+//  FlaskSampleTests
 //
-//  Created by hassan uriostegui on 9/10/18.
-//  Copyright © 2018 Eonflux - Hassan Uriostegui. All rights reserved.
+//  Created by hassan uriostegui on 9/13/18.
+//  Copyright © 2018 eonflux. All rights reserved.
 //
 
 import XCTest
-@testable import Reaktor_iOS
+@testable import FlaskSample
 
-class Reaktor_iOSTests: XCTestCase {
+class FlaskSampleTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
