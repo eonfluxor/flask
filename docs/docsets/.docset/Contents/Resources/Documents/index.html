@@ -229,12 +229,16 @@
 
 <p><strong>Supported Swift Versions:</strong> Swift 4.0</p>
 
-<p><em>This is a pre-relase. The code is stable but documentation is wip.</em></p>
+<p><em>This is a pre-release. The code is stable but documentation is WIP.</em></p>
 <h1 id='what-is-flask' class='heading'>What is Flask?</h1>
 
 <p>Flask is a multiplatform <strong>[ iOS | OSX | tvOS ]</strong> implementation of the unidirectional data flow architecture in Swift. Flask offers a <em>friendly API</em> and a robust feature set. </p>
 
-<p>While the Flux architeture is abstract, explaining Flask is easy:</p>
+<p>While the Flux architecture is abstract, explaining Flask is easy:</p>
+
+<p><p align="center"> 
+    <img src="http://res.cloudinary.com/dmje5xfzh/image/upload/c_scale,w_620/v1536896631/static/scheme01.jpg">
+ </p></p>
 
 <hr>
 
@@ -246,9 +250,9 @@
 
 <p><strong>Easy right?</strong></p>
 
-<p>As such to preserve this natural intuition  <code>Flux Stores</code> are called a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code>. In Flask a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> would represents any homogeneous data structure in your application <em>(ie. a feed, settings, or the application itself).</em></p>
+<p>As such to preserve this natural intuition  <code>Flux Stores</code> are called a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code>. In Flask a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> would represent any homogeneous data structure in your application <em>(ie. a feed, settings, or the application itself).</em></p>
 
-<p>Flask allows to implement both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxor</a> through a unified architecture. An altough this may some complicated it&rsquo;s also easy to explain:</p>
+<p>Flask allows implementing both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxor</a> patterns through a unified architecture. And although this integration may sound complicated, with Flask it&rsquo;s also easy to articulate:</p>
 
 <hr>
 
@@ -261,14 +265,14 @@
 <p>This is a direct analogy between the <em>Fluxor</em> pattern of <code>Reactive Stores</code> as a <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> and the <em>Redux</em> pattern of <code>Store Reducers</code>  as a plain <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code>.</p>
 <h2 id='motivation' class='heading'>Motivation</h2>
 
-<p>Flask should deliver the most robust feature set accesible through the most friendly API.</p>
+<p>Flask should deliver the most robust feature set accessible through the most friendly API.</p>
 
-<p>With this in mind Flask goes beyond the nolvety of this architecture to develop an expressive API borrowing semantics from high school lab classes creating a framework that is easy to understand through analogies of the physical world.</p>
+<p>With this in mind, Flask goes beyond the novelty of this architecture to develop an expressive API borrowing semantics from high school lab classes creating a framework that is easy to understand through analogies of the physical world.</p>
 
 <p>All this while the core technology offers a unified implementation of both the <code>Redux</code> and <code>Fluxor</code> patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). </p>
 <h2 id='why-flask' class='heading'>Why Flask?</h2>
 
-<p>Flask implements both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxor</a> patterns through a unified architecture. Aditionally provides unique features not found in similar frameworks:</p>
+<p>Flask implements both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxor</a> patterns through a unified architecture. Additionally provides unique features not found in similar frameworks:</p>
 
 <ul>
 <li>Chain Reactions</li>
@@ -283,7 +287,7 @@
 </ul>
 <h2 id='cocoapods' class='heading'>CocoaPods</h2>
 
-<p>If you use <a href="https://cocoapods.org/pods/Flask">CocoaPods</a> to manage your dependencies, simply add <strong>Flask</strong> to your <code>Podfile</code>:</p>
+<p>If you use <a href="https://cocoapods.org/pods/Flask">CocoaPods</a> , simply add <strong>Flask</strong> to your <code>Podfile</code>:</p>
 <pre class="highlight plaintext"><code>pod 'Flask'
 </code></pre>
 
@@ -368,7 +372,7 @@
 <p>The above is a basic showcase of Flask high-level API. Other things to consider:</p>
 
 <ul>
-<li><code>Substance.state</code> is a read only property and it&rsquo;s protected during the <code>mix()</code> operatons.</li>
+<li><code>Substance.state</code> is a read-only property and it&rsquo;s protected during the <code>mix()</code> operation.</li>
 <li>While <code>mixing()</code> you would mutate the state using the <code>Substance.prop</code> accessor as <code>Substance.state</code> won&rsquo;t be available until the mix operation completes.</li>
 <li>Using <code>AttachFlaskReactor</code> creates a managed <code><a href="Classes/Flask.html">Flask</a></code> instance that is <em>automatically disposed</em> when its owner becomes <code>nil</code>.<br></li>
 </ul>
@@ -377,12 +381,12 @@
 
 <ul>
 <li>It&rsquo;s possible to instantiate Flask using a substances array: <code>AttachFlaskReactor(to:self, mixing:[app,settings,login])</code></li>
-<li>These global functions are just idiomatic suggar and a  public low-level API is also available for more granular control.</li>
+<li>These global functions are just idiomatic sugar and a  public low-level API is also available for more granular control.</li>
 <li>When needed you may call <code><a href="Functions.html#/s:9Flask_iOS06DetachA7Reactoryx4from_tRlzCAA0aD0RzlF">DetachFlaskReactor(from:)</a></code> to immediately dispose your Flask.</li>
 </ul>
 <h2 id='fluxor-style' class='heading'>Fluxor Style</h2>
 
-<p>The fluxor pattern requires more setup but it&rsquo;s very convinient for shared substances.</p>
+<p>The fluxor pattern requires more setup but it&rsquo;s very convenient for shared substances.</p>
 
 <blockquote>
 <p>Define the Global Mixers (aka dispatch actions)</p>
@@ -472,12 +476,12 @@
 <p>The sample application implements both patterns simultaneously for further reference.</p>
 <h2 id='test-cases' class='heading'>Test Cases</h2>
 
-<p>The above sample project also ships with dozes of test cases as standard Xcode test units. It&rsquo;s a great source to learn more implementation patterns.</p>
+<p>The above sample project also ships with dozens of test cases as standard Xcode test units. It&rsquo;s a great source to learn more implementation patterns.</p>
 
 <p>These tests are also automatically run with Travis-CI on each deployment and you can check the health status above for peace of mind.</p>
 <h2 id='more-examples' class='heading'>More Examples</h2>
 
-<p>More practical examples are on the works and we would love to  feature yours!</p>
+<p>More practical examples are in the works and we would love to  feature yours!</p>
 <pre class="highlight plaintext"><code>// Coming soon
 </code></pre>
 <h2 id='guides' class='heading'>Guides</h2>
