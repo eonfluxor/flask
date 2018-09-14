@@ -249,7 +249,7 @@ class ViewController: UIViewController, FlaskReactor  {
     override func viewDidLoad() {
         
         AttachFlaskReactor(to:self, mixing:[substance])
-        produceTestReaction()
+      
     }
     
 ```
