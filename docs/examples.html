@@ -56,7 +56,7 @@
                 <a class="nav-group-task-link" href="examples.html">Examples</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="test-cases.html">Test Cases</a>
+                <a class="nav-group-task-link" href="gists.html">Gists</a>
               </li>
             </ul>
           </li>
@@ -218,11 +218,190 @@
           <div class="section-content">
             
             <h2 id='examples' class='heading'>Examples</h2>
+<h3 id='basic-demo' class='heading'>Basic Demo</h3>
 
-<ol>
-<li><strong>Sample</strong></li>
-</ol>
-<pre class="highlight plaintext"><code>//TODO
+<p>This example is shipped as part of the repo inside <em>FlaskSamples</em>.</p>
+
+<blockquote>
+<p>FlaskManifest.swift</p>
+</blockquote>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">Flask</span>
+
+<span class="c1">//Mark: - Global Reactive Substance Mixers</span>
+
+<span class="kd">enum</span> <span class="kt">EnvMixers</span> <span class="p">:</span> <span class="kt">FluxMixer</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="kt">Login</span>
+    <span class="k">case</span> <span class="kt">Logout</span>
+    <span class="k">case</span> <span class="kt">AsyncAction</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="kt">NavMixers</span> <span class="p">:</span> <span class="kt">FluxMixer</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="kt">Home</span>
+    <span class="k">case</span> <span class="kt">Settings</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="kt">Subs</span> <span class="p">{</span>
+
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">app</span> <span class="o">=</span> <span class="kt">AppSubstance</span><span class="p">()</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">appReactive</span> <span class="o">=</span> <span class="kt">AppReactiveSubstance</span><span class="p">()</span>
+<span class="p">}</span>
+
+</code></pre>
+
+<blockquote>
+<p>AppSubstance.swift</p>
+</blockquote>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">Flask</span>
+
+<span class="c1">//Mark: - A sample State definition</span>
+
+<span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">:</span> <span class="kt">State</span> <span class="p">{</span>
+
+    <span class="kd">enum</span> <span class="nv">prop</span> <span class="p">:</span> <span class="kt">StateProp</span><span class="p">{</span>
+        <span class="k">case</span> <span class="n">counter</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">asyncResult</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">title</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">var</span> <span class="nv">asyncResult</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">var</span> <span class="nv">object</span><span class="p">:</span><span class="kt">FlaskNSRef</span><span class="p">?</span>
+    <span class="k">var</span> <span class="nv">map</span><span class="p">:</span><span class="kt">FlaskDictRef</span><span class="p">?</span>
+
+    <span class="k">var</span> <span class="nv">_internal</span> <span class="o">=</span> <span class="s">"`_` use this prefix for internal vars "</span>
+
+<span class="p">}</span>
+
+<span class="c1">//Mark: - A sample Reactive Substance</span>
+
+<span class="kd">class</span> <span class="kt">AppReactiveSubstance</span> <span class="p">:</span> <span class="kt">ReactiveSubstance</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="p">,</span><span class="kt">EnvMixers</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">defineMixers</span><span class="p">(){</span>
+
+        <span class="nf">define</span><span class="p">(</span><span class="nv">mix</span><span class="p">:</span> <span class="o">.</span><span class="kt">Login</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">react</span><span class="p">,</span> <span class="n">abort</span><span class="p">)</span>  <span class="k">in</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"signed"</span>
+            <span class="nf">react</span><span class="p">()</span>
+        <span class="p">}</span>
+
+        <span class="nf">define</span><span class="p">(</span><span class="nv">mix</span><span class="p">:</span> <span class="o">.</span><span class="kt">Logout</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">react</span><span class="p">,</span> <span class="n">abort</span><span class="p">)</span>  <span class="k">in</span>
+           <span class="k">self</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"not signedd"</span>
+            <span class="nf">react</span><span class="p">()</span>
+        <span class="p">}</span>
+
+        <span class="nf">define</span><span class="p">(</span><span class="nv">mix</span><span class="p">:</span> <span class="o">.</span><span class="kt">AsyncAction</span><span class="p">){</span> <span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">react</span><span class="p">,</span> <span class="n">abort</span><span class="p">)</span>  <span class="k">in</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">asyncResult</span> <span class="o">=</span> <span class="s">"async action pending"</span>
+            <span class="nf">react</span><span class="p">()</span>
+        <span class="p">}</span>
+
+        <span class="nf">define</span><span class="p">(</span><span class="nv">mix</span><span class="p">:</span> <span class="kt">NavMixers</span><span class="o">.</span><span class="kt">Home</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">react</span><span class="p">,</span> <span class="n">abort</span><span class="p">)</span>  <span class="k">in</span>
+
+            <span class="nf">abort</span><span class="p">()</span>
+        <span class="p">}</span>
+
+        <span class="nf">define</span><span class="p">(</span><span class="nv">mix</span><span class="p">:</span> <span class="kt">NavMixers</span><span class="o">.</span><span class="kt">Settings</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">react</span><span class="p">,</span> <span class="n">abort</span><span class="p">)</span>  <span class="k">in</span>
+            <span class="c1">//TODO</span>
+            <span class="nf">abort</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="c1">//Mark: - A sample Substance</span>
+
+<span class="kd">class</span> <span class="kt">AppSubstance</span> <span class="p">:</span> <span class="kt">Substance</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="o">&gt;</span> <span class="p">{}</span>
+</code></pre>
+
+<blockquote>
+<p>ViewController.swift</p>
+</blockquote>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">Flask</span>
+
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">FlaskReactor</span>  <span class="p">{</span>
+
+    <span class="c1">//Mark: an inline Substance</span>
+    <span class="k">let</span> <span class="nv">substance</span> <span class="o">=</span> <span class="kt">NewSubstance</span><span class="p">(</span><span class="nv">definedBy</span><span class="p">:</span> <span class="kt">AppState</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+
+    <span class="kd">func</span> <span class="nf">flaskReactor</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">//using the state enums</span>
+        <span class="n">reaction</span>
+            <span class="o">.</span><span class="nf">at</span><span class="p">(</span><span class="n">substance</span><span class="p">)?</span>
+            <span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="kt">AppState</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">counter</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"local substance counter = </span><span class="se">\(</span><span class="n">substance</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">counter</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+
+        <span class="c1">//using prop as string</span>
+        <span class="n">reaction</span>
+            <span class="o">.</span><span class="nf">at</span><span class="p">(</span><span class="kt">Subs</span><span class="o">.</span><span class="n">appReactive</span><span class="p">)?</span>
+            <span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="s">"counter"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"global substance counter = </span><span class="se">\(</span><span class="kt">Subs</span><span class="o">.</span><span class="n">appReactive</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">counter</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+
+        <span class="c1">// if no name conflicts the .at(store) may be skipped</span>
+        <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="kt">AppState</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">title</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"global title = </span><span class="se">\(</span><span class="kt">Subs</span><span class="o">.</span><span class="n">appReactive</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">title</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="kt">AppState</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">asyncResult</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"global title = </span><span class="se">\(</span><span class="kt">Subs</span><span class="o">.</span><span class="n">appReactive</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">asyncResult</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+
+            <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">execute</span><span class="p">:</span> <span class="p">{</span>
+                <span class="c1">//release when the operation is completed</span>
+                <span class="n">reaction</span><span class="o">.</span><span class="n">onLock</span><span class="p">?</span><span class="o">.</span><span class="nf">release</span><span class="p">()</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+
+
+
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="kt">AttachFlaskReactor</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span><span class="k">self</span><span class="p">,</span> <span class="nv">mixing</span><span class="p">:[</span><span class="n">substance</span><span class="p">,</span> <span class="kt">Subs</span><span class="o">.</span><span class="n">appReactive</span><span class="p">])</span>
+        <span class="nf">produceTestReaction</span><span class="p">()</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">func</span> <span class="nf">produceTestReaction</span><span class="p">(){</span>
+
+        <span class="c1">//dipose saved state between sessions for testing</span>
+        <span class="n">substance</span><span class="o">.</span><span class="n">shouldArchive</span> <span class="o">=</span> <span class="kc">false</span>
+
+
+        <span class="kt">MixSubstances</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">)</span>
+
+        <span class="kt">GetFlaskReactor</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span><span class="k">self</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">toMix</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">substance</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">substance</span><span class="p">)</span> <span class="k">in</span>
+
+                <span class="c1">//local substance</span>
+                <span class="n">substance</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">10</span>
+
+            <span class="p">}</span><span class="o">.</span><span class="nf">with</span><span class="p">(</span><span class="kt">Subs</span><span class="o">.</span><span class="n">appReactive</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">substance</span><span class="p">)</span> <span class="k">in</span>
+
+                <span class="c1">//global substance</span>
+                <span class="n">substance</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">1000</span>
+
+            <span class="p">}</span><span class="o">.</span><span class="nf">andReact</span><span class="p">()</span>
+
+        <span class="c1">// a simple lock</span>
+        <span class="k">let</span> <span class="nv">lock</span> <span class="o">=</span> <span class="kt">Flask</span><span class="o">.</span><span class="nf">lock</span><span class="p">()</span>
+
+        <span class="c1">// perform operations while the flux is paused</span>
+        <span class="c1">// then release</span>
+        <span class="n">lock</span><span class="o">.</span><span class="nf">release</span><span class="p">()</span>
+
+        <span class="c1">// a mixer lock, blocks the normal flux</span>
+        <span class="c1">// an immediately performs this mixer</span>
+        <span class="kt">Flask</span><span class="o">.</span><span class="nf">lock</span><span class="p">(</span><span class="nv">withMixer</span><span class="p">:</span> <span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">AsyncAction</span><span class="p">)</span>
+
+        <span class="c1">// logout won't be performed until the above lock is released (see reactor code)</span>
+        <span class="kt">MixSubstances</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Logout</span><span class="p">)</span>
+    <span class="p">}</span>   
+<span class="p">}</span>
 </code></pre>
 
           </div>
