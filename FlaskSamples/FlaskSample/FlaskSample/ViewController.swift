@@ -62,8 +62,8 @@ class ViewController: UIViewController, FlaskReactor  {
         //dipose saved state between sessions for testing
         substance.shouldArchive = false
         
-
-        Flask.applyMixer(EnvMixers.Login)
+        
+        MixSubstances(with: EnvMixers.Login)
         
         GetFlaskReactor(at:self)
             .toMix(self.substance) { (substance) in
@@ -90,8 +90,7 @@ class ViewController: UIViewController, FlaskReactor  {
         Flask.lock(withMixer: EnvMixers.AsyncAction)
         
         // logout won't be performed until the above lock is released (see reactor code)
-        Flask.applyMixer(EnvMixers.Logout)
-    
+        MixSubstances(with: EnvMixers.Logout)
     }
     
 }
