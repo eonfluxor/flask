@@ -267,20 +267,20 @@
 
 <p>Flask should deliver the most robust feature set accessible through the most friendly API.</p>
 
-<p>With this in mind, Flask goes beyond the novelty of this architecture to develop an expressive API borrowing semantics from high school lab classes creating a framework that is easy to understand through analogies of the physical world.</p>
+<p>With this in mind, Flask goes beyond the novelty of this architecture to develop an expressive API borrowing elemental science concepts to craft a framework that is easy to understand through analogies of the physical world.</p>
 
 <p>All this while the core technology offers a unified implementation of both the <code>Redux</code> and <code>Fluxor</code> patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). </p>
 <h2 id='why-flask' class='heading'>Why Flask?</h2>
 
-<p>Flask implements both the <a href="https://github.com/reactjs/redux">Redux</a> and <a href="http://fluxxor.com/">Fluxor</a> patterns through a unified architecture. Additionally provides unique features not found in similar frameworks:</p>
+<p>Flask provides unique features not found in similar frameworks:</p>
 
 <ul>
-<li>Chain Reactions</li>
+<li>Chain reactions</li>
 <li>Binding multiple stores</li>
-<li>Reduce changes with nested keys</li>
+<li>Dictionary reduction supporting nested keys</li>
 <li>Flux locks and exclusive dispatch</li>
 <li>Automatic archiving to <code>UserDefaults</code></li>
-<li>Managed attachments with automatic disposal</li>
+<li>Managed attachment with automatic disposal</li>
 <li>Friendly high-level API</li>
 <li>Access to low-level API for more granular control</li>
 <li>Mixed use of both Redux and Fluxor patterns</li>
@@ -325,7 +325,7 @@
 </code></pre>
 
 <blockquote>
-<p>Implement a <code><a href="Protocols/FlaskReactor.html">FlaskReactor</a></code> protocol. Here you&rsquo;ll receive the <code><a href="Structs/SubstanceChange.html">SubstanceChange</a></code> callbacks passing a <code><a href="Classes/FlaskReaction.html">FlaskReaction</a></code> instance describing the changes.</p>
+<p>Implement the <code><a href="Protocols/FlaskReactor.html">FlaskReactor</a></code> protocol. Here you&rsquo;ll receive the <code><a href="Structs/SubstanceChange.html">SubstanceChange</a></code> callbacks passing a <code><a href="Classes/FlaskReaction.html">FlaskReaction</a></code> instance describing the changes.</p>
 </blockquote>
 <pre class="highlight swift"><code>    <span class="kd">func</span> <span class="nf">flaskReactor</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
 
@@ -389,7 +389,7 @@
 <p>The fluxor pattern requires more setup but it&rsquo;s very convenient for shared substances.</p>
 
 <blockquote>
-<p>Define the Global Mixers (aka dispatch actions)</p>
+<p>Define the Global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> (aka dispatch actions)</p>
 </blockquote>
 <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">EnvMixers</span> <span class="p">:</span> <span class="kt">FluxMixer</span> <span class="p">{</span>
     <span class="k">case</span> <span class="kt">Login</span>
@@ -398,7 +398,7 @@
 </code></pre>
 
 <blockquote>
-<p>Define Substance State</p>
+<p>Define a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> <code><a href="Protocols/State.html">State</a></code></p>
 </blockquote>
 <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">:</span> <span class="kt">State</span> <span class="p">{</span>
 
@@ -418,7 +418,7 @@
 </code></pre>
 
 <blockquote>
-<p>Define the Substance combining State and Mixers</p>
+<p>Define a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> combining <code><a href="Protocols/State.html">State</a></code> and global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code></p>
 </blockquote>
 <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AppReactiveSubstance</span> <span class="p">:</span> <span class="kt">ReactiveSubstance</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="p">,</span><span class="kt">EnvMixers</span><span class="o">&gt;</span> <span class="p">{</span>
 
@@ -434,7 +434,7 @@
 </code></pre>
 
 <blockquote>
-<p>Define the Substance Singletons</p>
+<p>Define a Substance Singletons</p>
 </blockquote>
 <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">Subs</span> <span class="p">{</span>
     <span class="kd">static</span> <span class="k">let</span> <span class="nv">appReactive</span> <span class="o">=</span> <span class="kt">AppReactiveSubstance</span><span class="p">()</span>
@@ -442,7 +442,7 @@
 </code></pre>
 
 <blockquote>
-<p>Implement the reactor</p>
+<p>Implement the <code><a href="Protocols/FlaskReactor.html">FlaskReactor</a></code> protocol in a ViewController (or any other object)</p>
 </blockquote>
 <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">FlaskReactor</span>  <span class="p">{</span>
 
@@ -458,11 +458,33 @@
 </code></pre>
 
 <blockquote>
-<p>Apply the global Mixer (aka dispatch action)</p>
+<p>And attach a <code><a href="Classes/FlaskClass.html">FlaskClass</a></code> instance in your configuration initializer </p>
+</blockquote>
+<pre class="highlight swift"><code>    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="kt">AttachFlaskReactor</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span><span class="k">self</span><span class="p">,</span> <span class="nv">mixing</span><span class="p">:[</span><span class="n">substance</span><span class="p">])</span>
+        <span class="nf">produceTestReaction</span><span class="p">()</span>
+    <span class="p">}</span>
+
+</code></pre>
+
+<blockquote>
+<p>Apply the global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> (aka dispatch action) from anywhere in the app</p>
 </blockquote>
 <pre class="highlight swift"><code> <span class="kt">Flask</span><span class="o">.</span><span class="nf">applyMixer</span><span class="p">(</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:[</span><span class="s">"user"</span><span class="p">:</span><span class="n">userObject</span><span class="p">])</span>
  <span class="kt">Flask</span><span class="o">.</span><span class="nf">applyMixer</span><span class="p">(</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Logout</span><span class="p">)</span>
 </code></pre>
+
+<p>As you can notice the main difference are:</p>
+
+<ul>
+<li>Required definition of global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> (aka dispatch actions).</li>
+<li>Required definition of a <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code>.</li>
+<li>Required to <code>defineMixers()</code> in the <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code>.</li>
+<li>Required definition of a global singleton to access your <code>ReactiveSusbtance</code> from anywhere in the app.</li>
+</ul>
+
+<p>The above setup allows to easily call <code>Flask.applyMixer</code> from anywhere in the application to trigger the <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> reactions in all the <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> instances implementing it.</p>
 <h2 id='sample-project' class='heading'>Sample Project</h2>
 
 <p>A sample project is available in this repo inside the folder: </p>
@@ -482,11 +504,50 @@
 <h2 id='more-examples' class='heading'>More Examples</h2>
 
 <p>More practical examples are in the works and we would love to  feature yours!</p>
+<h3 id='chain-reaction' class='heading'>Chain Reaction</h3>
+<pre class="highlight plaintext"><code>// Coming soon
+</code></pre>
+<h3 id='locks' class='heading'>Locks</h3>
+<pre class="highlight plaintext"><code>// Coming soon
+</code></pre>
+<h3 id='mixing-lock' class='heading'>Mixing Lock</h3>
+<pre class="highlight plaintext"><code>// Coming soon
+</code></pre>
+<h3 id='nested-keys' class='heading'>Nested Keys</h3>
+<pre class="highlight plaintext"><code>// Coming soon
+</code></pre>
+<h3 id='archiving' class='heading'>Archiving</h3>
+<pre class="highlight plaintext"><code>// Coming soon
+</code></pre>
+<h3 id='low-level-api' class='heading'>Low level API</h3>
 <pre class="highlight plaintext"><code>// Coming soon
 </code></pre>
 <h2 id='guides' class='heading'>Guides</h2>
-<pre class="highlight plaintext"><code>Coming Soon
-</code></pre>
+
+<p>Please review the above examples for Redux or Fluxor style implementations. More coming soon.</p>
+<h2 id='discussion' class='heading'>Discussion</h2>
+<h4 id='why-mixing-fluxor-and-redux' class='heading'>Why mixing Fluxor and Redux?</h4>
+
+<p>It&rsquo;s simple, with  <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> classes you have the ability to make them all react in the same way to global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style <q>inline</q> transformations.</p>
+
+<p>For instance, an App <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> make sense as it would react to global events like log out or navigation. Also, it&rsquo;s a perfect candidate to be archived enabling <code>Substance.shouldArchive</code> to act as a basic an in-app data storage. Still, you can use this App substance in any <code><a href="Protocols/FlaskReactor.html">FlaskReactor</a></code> implementation and further apply Redux style transformations in a more particular context.</p>
+
+<p>All this while the framework guarantees the unidirectional flow integrity despite mixing global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> events or local <code>Flask.mix</code> reactions.</p>
+<h4 id='why-substance-instead-of-store' class='heading'>Why Substance instead of Store?</h4>
+
+<blockquote>
+<p>TODO</p>
+</blockquote>
+<h4 id='how-many-substances-should-i-have' class='heading'>How many Substances should I have?</h4>
+
+<blockquote>
+<p>TODO</p>
+</blockquote>
+<h4 id='advantages-of-substance-archive' class='heading'>Advantages of Substance Archive.</h4>
+
+<blockquote>
+<p>TODO</p>
+</blockquote>
 <h2 id='documentation' class='heading'>Documentation</h2>
 
 <p>Jazzy generated documentation available here:</p>
@@ -514,7 +575,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://eonflux.io/" target="_blank" rel="external">Eonflux</a>. All rights reserved. (Last updated: 2018-09-13)</p>
+      <p>&copy; 2018 <a class="link" href="https://eonflux.io/" target="_blank" rel="external">Eonflux</a>. All rights reserved. (Last updated: 2018-09-14)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
