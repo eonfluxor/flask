@@ -18,6 +18,11 @@ Flask is a multiplatform **[ iOS | OSX | tvOS ]** implementation of the unidirec
 
 While the Flux architecture is abstract, explaining Flask is easy:
 
+
+ <p align="center"> 
+    <img src="http://res.cloudinary.com/dmje5xfzh/image/upload/c_scale,w_620/v1536896631/static/scheme01.jpg">
+ </p>
+ 
 ----
 
 > **Flask** lets you **Mix** **Substances** and **React** to their **State** **Changes**
