@@ -605,7 +605,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
       "line": 25,
-      "symbol": "StateName",
+      "symbol": "StateProp",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
