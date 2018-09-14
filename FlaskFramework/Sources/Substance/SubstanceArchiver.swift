@@ -43,7 +43,7 @@ extension ReactiveSubstance {
         
         let key = archiveKey()
         let delay = archiveDelay()
-        Kron.idle(timeOut: delay , key:key){ [weak self] key,ctx in
+        Kron.idle(timeOut: delay , resetKey:key){ [weak self] key,ctx in
             if let state = self?.state {
                 self?.archiveNow(state)
             }

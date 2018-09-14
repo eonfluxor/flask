@@ -19,13 +19,13 @@ class kronTests: XCTestCase {
         
         let context:Int = 90
         
-        Kron.idle(timeOut:1, key:"test", context: context){ (key,context) in
+        Kron.idle(timeOut:1, resetKey:"test", context: context){ (key,context) in
             expectation2.fulfill()
         }
-        Kron.idle(timeOut:1, key:"test", context: context){ (key,context) in
+        Kron.idle(timeOut:1, resetKey:"test", context: context){ (key,context) in
             expectation2.fulfill()
         }
-        Kron.idle(timeOut:1, key:"test", context: context){ (key,context) in
+        Kron.idle(timeOut:1, resetKey:"test", context: context){ (key,context) in
             expectation.fulfill()
             XCTAssert((context as! Int) == 90)
         }

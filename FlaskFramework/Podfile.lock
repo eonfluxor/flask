@@ -1,5 +1,5 @@
 PODS:
-  - Delayed (2.3.3)
+  - Delayed (2.3.6)
 
 DEPENDENCIES:
   - Delayed (> 2)
@@ -9,7 +9,7 @@ SPEC REPOS:
     - Delayed
 
 SPEC CHECKSUMS:
-  Delayed: cc137e738e40ca55fc658f9e3be0a86ef8dae6a7
+  Delayed: 84ce53e7a16a9fb93fdda058e2a21334a6567645
 
 PODFILE CHECKSUM: 5ab251e74e669a819f7b98c7af9853a69eb8e6ff
 
