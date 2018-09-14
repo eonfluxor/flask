@@ -290,23 +290,89 @@ The above sample project also ships with dozens of test cases as standard Xcode 
 
 These tests are also automatically run with Travis-CI on each deployment and you can check the health status above for peace of mind.
    
-## More Examples
+## Gists
 
 More practical examples are in the works and we would love to  feature yours!
 
 ### Chain Reaction
-```
-// Coming soon
-```
 
+A call to  `mix()` ( aka `toMix()` ) returns a Flask `ChainReaction` instance that can be futher chained until resolved.  A `ChainReaction` has the following methods:
+
+* mix(substance:)
+* react()
+* abort()
+
+To continue the chain, just call mix (or any of its aliases) again. You must call `react()` or `abort()` (or its aliases) in order to resolve the transaction (otherwise your Flask will fail to perform further mix transactions).
+
+> Using the high level API
+
+```swift
+ GetFlaskReactor(at:self)
+            .toMix(self.substanceA) { (substance) in
+                substance.prop.counter = 10
+                
+            }.with(self.substanceB) { (substance) in
+                substance.prop.text = "text"
+                
+            }.andReact()
+```
+> Using the low level API
+
+```swift
+   Flask
+       .mix(self.substanceA) { (substance) in
+            substance.prop.counter = 10
+            
+        }.mix(self.substanceB) { (substance) in
+            substance.prop.text = "text"
+            
+        }.react()
+```
+	
 ### Locks
-```
-// Coming soon
+
+When needed you can create a `FluxLock`. This will pause performing any mixes including `ReactiveSubstances` or `ChainReactions`.  You can create many Locks but you are responsbible of releasing them all to reactive the flux.
+
+```swift  
+let lock = Flask.lock()
+        
+// perform operations while the flux is paused
+
+lock.release()
 ```
 
-### Mixing Lock
+### Async Mixing with Locks
+
+Sometimes you need to perform a particular Mix operation that requires to pause all other mixings until the `FlaskReaction` is resolved.
+
+Performing this is really simple using a `ReactiveSubstance` 
+
+* Just create a `FluxLock` passing the name of your global EnvMixer. 
+* Perform your `ReactiveSubstance` mix as usual
+* Then in the `FluxReactor` inside the `FluxReaction` instance, you'll receive a pointer to your lock at  `reaction.onLock?` so you can release it.
+
+Example:
+
+> Request a Mix over a locked flux
+
+```swift
+        Flask.lock(withMixer: EnvMixers.AsyncAction)
 ```
-// Coming soon
+
+> Async Release
+
+```swift
+ reaction.on(AppState.prop.asyncResult) { (change) in
+ 
+            //pass the reaction to an async block 
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                //release when the operation is completed
+                reaction.onLock?.release()
+            });
+            
+   }
+        
 ```
 
 ### Nested Keys
@@ -346,7 +412,7 @@ All this while the framework guarantees the unidirectional flow integrity despit
 
 > TODO
 
-#### Advantages of Substance Archive.
+#### Advantages of Substance Archiving
 
 > TODO
 

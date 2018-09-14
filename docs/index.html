@@ -505,17 +505,89 @@
 <p>The above sample project also ships with dozens of test cases as standard Xcode test units. It&rsquo;s a great source to learn more implementation patterns.</p>
 
 <p>These tests are also automatically run with Travis-CI on each deployment and you can check the health status above for peace of mind.</p>
-<h2 id='more-examples' class='heading'>More Examples</h2>
+<h2 id='gists' class='heading'>Gists</h2>
 
 <p>More practical examples are in the works and we would love to  feature yours!</p>
 <h3 id='chain-reaction' class='heading'>Chain Reaction</h3>
-<pre class="highlight plaintext"><code>// Coming soon
+
+<p>A call to  <code>mix()</code> ( aka <code>toMix()</code> ) returns a Flask <code><a href="Classes/ChainReaction.html">ChainReaction</a></code> instance that can be futher chained until resolved.  A <code><a href="Classes/ChainReaction.html">ChainReaction</a></code> has the following methods:</p>
+
+<ul>
+<li>mix(substance:)</li>
+<li>react()</li>
+<li>abort()</li>
+</ul>
+
+<p>To continue the chain, just call mix (or any of its aliases) again. You must call <code>react()</code> or <code>abort()</code> (or its aliases) in order to resolve the transaction (otherwise your Flask will fail to perform further mix transactions).</p>
+
+<blockquote>
+<p>Using the high level API</p>
+</blockquote>
+<pre class="highlight swift"><code> <span class="kt">GetFlaskReactor</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span><span class="k">self</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">toMix</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">substanceA</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">substance</span><span class="p">)</span> <span class="k">in</span>
+                <span class="n">substance</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">10</span>
+
+            <span class="p">}</span><span class="o">.</span><span class="nf">with</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">substanceB</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">substance</span><span class="p">)</span> <span class="k">in</span>
+                <span class="n">substance</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"text"</span>
+
+            <span class="p">}</span><span class="o">.</span><span class="nf">andReact</span><span class="p">()</span>
+</code></pre>
+
+<blockquote>
+<p>Using the low level API</p>
+</blockquote>
+<pre class="highlight swift"><code>   <span class="kt">Flask</span>
+       <span class="o">.</span><span class="nf">mix</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">substanceA</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">substance</span><span class="p">)</span> <span class="k">in</span>
+            <span class="n">substance</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">10</span>
+
+        <span class="p">}</span><span class="o">.</span><span class="nf">mix</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">substanceB</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">substance</span><span class="p">)</span> <span class="k">in</span>
+            <span class="n">substance</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"text"</span>
+
+        <span class="p">}</span><span class="o">.</span><span class="nf">react</span><span class="p">()</span>
 </code></pre>
 <h3 id='locks' class='heading'>Locks</h3>
-<pre class="highlight plaintext"><code>// Coming soon
+
+<p>When needed you can create a <code><a href="Classes/FluxLock.html">FluxLock</a></code>. This will pause performing any mixes including <code>ReactiveSubstances</code> or <code>ChainReactions</code>.  You can create many Locks but you are responsbible of releasing them all to reactive the flux.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">lock</span> <span class="o">=</span> <span class="kt">Flask</span><span class="o">.</span><span class="nf">lock</span><span class="p">()</span>
+
+<span class="c1">// perform operations while the flux is paused</span>
+
+<span class="n">lock</span><span class="o">.</span><span class="nf">release</span><span class="p">()</span>
 </code></pre>
-<h3 id='mixing-lock' class='heading'>Mixing Lock</h3>
-<pre class="highlight plaintext"><code>// Coming soon
+<h3 id='async-mixing-with-locks' class='heading'>Async Mixing with Locks</h3>
+
+<p>Sometimes you need to perform a particular Mix operation that requires to pause all other mixings until the <code><a href="Classes/FlaskReaction.html">FlaskReaction</a></code> is resolved.</p>
+
+<p>Performing this is really simple using a <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> </p>
+
+<ul>
+<li>Just create a <code><a href="Classes/FluxLock.html">FluxLock</a></code> passing the name of your global EnvMixer.</li>
+<li>Perform your <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> mix as usual</li>
+<li>Then in the <code>FluxReactor</code> inside the <code>FluxReaction</code> instance, you&rsquo;ll receive a pointer to your lock at  <code>reaction.onLock?</code> so you can release it.</li>
+</ul>
+
+<p>Example:</p>
+
+<blockquote>
+<p>Request a Mix over a locked flux</p>
+</blockquote>
+<pre class="highlight swift"><code>        <span class="kt">Flask</span><span class="o">.</span><span class="nf">lock</span><span class="p">(</span><span class="nv">withMixer</span><span class="p">:</span> <span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">AsyncAction</span><span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>Async Release</p>
+</blockquote>
+<pre class="highlight swift"><code> <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="kt">AppState</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">asyncResult</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
+
+            <span class="c1">//pass the reaction to an async block </span>
+
+            <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">execute</span><span class="p">:</span> <span class="p">{</span>
+                <span class="c1">//release when the operation is completed</span>
+                <span class="n">reaction</span><span class="o">.</span><span class="n">onLock</span><span class="p">?</span><span class="o">.</span><span class="nf">release</span><span class="p">()</span>
+            <span class="p">});</span>
+
+   <span class="p">}</span>
+
 </code></pre>
 <h3 id='nested-keys' class='heading'>Nested Keys</h3>
 <pre class="highlight plaintext"><code>// Coming soon
@@ -547,7 +619,7 @@
 <blockquote>
 <p>TODO</p>
 </blockquote>
-<h4 id='advantages-of-substance-archive' class='heading'>Advantages of Substance Archive.</h4>
+<h4 id='advantages-of-substance-archiving' class='heading'>Advantages of Substance Archiving</h4>
 
 <blockquote>
 <p>TODO</p>
