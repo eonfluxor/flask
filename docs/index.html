@@ -471,7 +471,11 @@
 <blockquote>
 <p>Apply the global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> (aka dispatch action) from anywhere in the app</p>
 </blockquote>
-<pre class="highlight swift"><code> <span class="kt">Flask</span><span class="o">.</span><span class="nf">applyMixer</span><span class="p">(</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:[</span><span class="s">"user"</span><span class="p">:</span><span class="n">userObject</span><span class="p">])</span>
+<pre class="highlight swift"><code> <span class="kt">MixSubstances</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">)</span>
+
+ <span class="c1">//or</span>
+
+ <span class="kt">Flask</span><span class="o">.</span><span class="nf">applyMixer</span><span class="p">(</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:[</span><span class="s">"user"</span><span class="p">:</span><span class="n">userObject</span><span class="p">])</span>
  <span class="kt">Flask</span><span class="o">.</span><span class="nf">applyMixer</span><span class="p">(</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Logout</span><span class="p">)</span>
 </code></pre>
 
@@ -484,7 +488,7 @@
 <li>Required definition of a global singleton to access your <code>ReactiveSusbtance</code> from anywhere in the app.</li>
 </ul>
 
-<p>The above setup allows to easily call <code>Flask.applyMixer</code> from anywhere in the application to trigger the <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> reactions in all the <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> instances implementing it.</p>
+<p>The above setup allows to easily call <code>MixSubstances(with:)</code> (aka <code>Flask.applyMixer()</code>  from anywhere in the application to trigger the <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> reactions in all the <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> instances implementing it.</p>
 <h2 id='sample-project' class='heading'>Sample Project</h2>
 
 <p>A sample project is available in this repo inside the folder: </p>

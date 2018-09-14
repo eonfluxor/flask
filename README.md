@@ -257,6 +257,10 @@ class ViewController: UIViewController, FlaskReactor  {
 > Apply the global `FluxMixer` (aka dispatch action) from anywhere in the app
 
 ```swift
+ MixSubstances(with:EnvMixers.Login)
+ 
+ //or
+ 
  Flask.applyMixer(EnvMixers.Login, payload:["user":userObject])
  Flask.applyMixer(EnvMixers.Logout)
 ```
@@ -267,7 +271,7 @@ As you can notice the main difference are:
 * Required to `defineMixers()` in the `ReactiveSubstance`.
 * Required definition of a global singleton to access your `ReactiveSusbtance` from anywhere in the app.
 
-The above setup allows to easily call `Flask.applyMixer` from anywhere in the application to trigger the `FluxMixer` reactions in all the `ReactiveSubstance` instances implementing it.
+The above setup allows to easily call ` MixSubstances(with:)` (aka ` Flask.applyMixer()`  from anywhere in the application to trigger the `FluxMixer` reactions in all the `ReactiveSubstance` instances implementing it.
 
 
 ## Sample Project
