@@ -58,7 +58,7 @@ open class ReactiveSubstance<T:State,A:RawRepresentable> : SubstanceConcrete{
         return queue
     }()
     
-    public var shouldArchive = true
+    public var shouldArchive = false
     
     //////////////////
     // MARK: - INITIALIZE
