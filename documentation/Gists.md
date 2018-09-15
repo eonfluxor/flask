@@ -81,7 +81,7 @@ Example:
         
 ```
 
-### Nested Keys
+### Nested Dictionary
 
 It's really easy to observe changes in nested keys: 
 
@@ -132,6 +132,75 @@ struct AppState : State {
       print(change.newValue()!)
  })
 ```
+### Nested Structs
+
+It's possible to use nested structs and Observe changes in them:
+
+```swift
+
+func testStruct(){
+        
+        let expectation = self.expectation(description: "testStruct")
+        let expectation2 = self.expectation(description: "testStruct")
+        let expectation3 = self.expectation(description: "testStruct")
+        
+        struct nestedTestStruct:Codable{
+            var foo = "bar"
+            var object = FlaskNSRef(NSObject())
+        }
+        
+        struct testStruct:Codable{
+            var counter = 10
+            var nest = nestedTestStruct()
+        }
+        
+        struct state : State{
+            var info = testStruct()
+        }
+        
+        let NAME = "subtanceTest\( NSDate().timeIntervalSince1970)"
+        let mySubstance = NewSubstance(definedBy: state.self,named:NAME, archive:false)
+        mySubstance.shouldArchive = true
+        
+        let owner:TestOwner = TestOwner()
+        let flask = Flask.instance(attachedTo:owner, mixing:mySubstance)
+
+        
+        flask.reactor = { owner, reaction in
+            
+            mySubstance.archiveNow()
+            
+            reaction.on("info", { (change) in
+                expectation.fulfill()
+            })
+            reaction.on("info.counter", { (change) in
+                expectation2.fulfill()
+            })
+            reaction.on("info.nest.foo", { (change) in
+                expectation3.fulfill()
+            })
+        }
+        
+        flask.mix(mySubstance) { (substance) in
+            substance.prop.info.counter = 90
+            substance.prop.info.nest.foo = "mutated"
+            }.andReact()
+        
+        wait(for: [expectation,expectation2,expectation3], timeout: 2)
+        
+        let expectation4 = self.expectation(description: "must preserve after archive")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+           
+            let archivedSubstance = NewSubstance(definedBy: state.self,named:NAME,archive:true)
+            XCTAssert(archivedSubstance.state.info.nest.foo == "mutated", "Must preserve value")
+            expectation4.fulfill()
+        }
+        
+        wait(for: [expectation4], timeout: 4)
+    }
+```
+
 
 ### Archiving
 
