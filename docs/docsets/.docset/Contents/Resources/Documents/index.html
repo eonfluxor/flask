@@ -362,13 +362,22 @@
 <p>The fluxor pattern requires more setup but it&rsquo;s very convenient for shared substances.</p>
 
 <blockquote>
-<p>Substance.swift</p>
+<p>Manifest</p>
 </blockquote>
 <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">EnvMixers</span> <span class="p">:</span> <span class="kt">SubstanceMixer</span> <span class="p">{</span>
     <span class="k">case</span> <span class="kt">Login</span>
     <span class="k">case</span> <span class="kt">Logout</span>
 <span class="p">}</span>
 
+<span class="kd">class</span> <span class="kt">Subs</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">appReactive</span> <span class="o">=</span> <span class="kt">AppReactiveSubstance</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre>
+
+<blockquote>
+<p>Substance.swift</p>
+</blockquote>
+<pre class="highlight swift"><code>
 <span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">:</span> <span class="kt">State</span> <span class="p">{</span>
 
     <span class="kd">enum</span> <span class="nv">prop</span> <span class="p">:</span> <span class="kt">StateProp</span><span class="p">{</span>
@@ -391,14 +400,6 @@
     <span class="p">}</span>  
 <span class="p">}</span>
 
-</code></pre>
-
-<blockquote>
-<p>Manifest</p>
-</blockquote>
-<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">Subs</span> <span class="p">{</span>
-    <span class="kd">static</span> <span class="k">let</span> <span class="nv">appReactive</span> <span class="o">=</span> <span class="kt">AppReactiveSubstance</span><span class="p">()</span>
-<span class="p">}</span>
 </code></pre>
 
 <blockquote>

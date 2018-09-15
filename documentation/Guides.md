@@ -9,6 +9,9 @@ This is a gist of a basic ReSwift-like implementation.
 
 >Define Substance Initial `State`
 
+
+*Substance.swift*
+
 ```swift
 struct AppState : State{
     
@@ -20,6 +23,8 @@ struct AppState : State{
     var text = ""
 }
 ```
+
+*ViewController.swift*
 
 > Adopt `FlaskReactor` protocol
 
@@ -95,16 +100,24 @@ Also keep in mind that:
 
 The fluxor pattern requires more setup but it's very convenient for shared substances.
 
-> Define the Global `SubstanceMixer` (aka dispatch actions)
+*FlaskManifest.swift*
+> Define the Global `SubstanceMixer` (aka dispatch actions) and Substances singletons.
+
 
 ```swift
 enum EnvMixers : SubstanceMixer {
     case Login
     case Logout
 }
+
+class Subs {
+    static let appReactive = AppReactiveSubstance()
+}
+
 ```
 
-> Define a `Substance` `State`
+*Substance.swift*
+> Define each `Substance` `State`
 
 ```swift
 struct AppState : State {
@@ -139,16 +152,7 @@ class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
 }
 
 ```
-
-> Define a Substance Singletons
-
-
-```swift
-class Subs {
-    static let appReactive = AppReactiveSubstance()
-}
-```
-
+*ViewController.swift*
 > Implement the `FlaskReactor` protocol in a ViewController (or any other object)
 
 ```swift
@@ -176,6 +180,7 @@ class ViewController: UIViewController, FlaskReactor  {
     
 ```
 
+*Anywhere*
 > Apply the global `SubstanceMixer` (aka dispatch action) from anywhere in the app
 
 ```swift

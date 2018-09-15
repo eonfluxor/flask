@@ -149,13 +149,22 @@ class ViewController: UIViewController, FlaskReactor  {
 
 The fluxor pattern requires more setup but it's very convenient for shared substances.
 
-> Substance.swift
+> Manifest
 
 ```swift
 enum EnvMixers : SubstanceMixer {
     case Login
     case Logout
 }
+
+class Subs {
+    static let appReactive = AppReactiveSubstance()
+}
+```
+
+> Substance.swift
+
+```swift
 
 struct AppState : State {
     
@@ -181,13 +190,7 @@ class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
 
 ```
 
-> Manifest
 
-```swift
-class Subs {
-    static let appReactive = AppReactiveSubstance()
-}
-```
 
 > ViewController
 
