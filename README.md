@@ -56,15 +56,15 @@ All this while the core technology offers a unified implementation of both the `
 
 Flask provides unique features not found in similar frameworks:
 
-* Chain reactions. `ChainReaction`
-* Binding multiple stores. `Flask.instance(attachedTo:mixing:)`
-* Dictionary reduction supporting nested keys. `FlaskDictRef`
-* Flux locks and exclusive dispatch. `FluxLock`
-* Automatic archiving to *UserDefaults*. `SubstanceConcrete.shouldArchive`
-* Managed attachment with automatic disposal `FlaskManager`
-* Friendly high-level API `Flask`
-* Access to low-level API for more granular control `FlaskClass`
-* Mixed use of both Redux and Fluxor patterns. `ReactiveSubstance` and `Substance`
+* Chained mutations 
+* Binding multiple stores 
+* Dictionary reduction supporting nested keys 
+* Flux locks and exclusive dispatch
+* Automatic archiving to `UserDefaults`
+* Managed attachment with automatic disposal
+* Friendly high-level API
+* Access to low-level API for more granular control
+* Mixed use of both Redux and Fluxor patterns
 
 ## CocoaPods
 
