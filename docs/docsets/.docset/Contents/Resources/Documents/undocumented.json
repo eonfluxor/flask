@@ -351,6 +351,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/FlaskClass/FlaskManager.swift",
+      "line": 57,
+      "symbol": "FlaskManager.purgeAll()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/Flask.swift",
       "line": 33,
       "symbol": "Flask.purgeFluxQueue()",

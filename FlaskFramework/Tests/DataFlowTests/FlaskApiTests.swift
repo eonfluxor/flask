@@ -23,9 +23,11 @@ class InitializerTests: XCTestCase, FlaskReactor  {
     func flaskReactor( reaction:FlaskReaction) {
         reaction.on(AppState.prop.counter) { (change) in
             expecation?.fulfill()
+            expecation = nil
         }
         reaction.on(AppState.prop.text) { (change) in
             expecation2?.fulfill()
+            expecation2 = nil
         }
     }
     
