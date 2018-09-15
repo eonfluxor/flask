@@ -70,16 +70,23 @@ Flask provides unique features not found in similar frameworks:
 
 If you use [CocoaPods](https://cocoapods.org/pods/Flask) , simply add **Flask** to your `Podfile`:
 
-```
+```ruby
 pod 'Flask'
 ```
 
 And then import the module
 
-```
+```swift
 import Flask
 ```
 
+## New to Flux?
+
+You can learn all about of Flux in this didactic article from Lin Clark.
+[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207)
+
+Also the official docs:
+[Flux from facebook](https://facebook.github.io/flux/docs/overview.html)
 
 ## Redux Style
 
@@ -319,7 +326,7 @@ To continue the chain, just call mix (or any of its aliases) again. You must cal
 > Using the low level API
 
 ```swift
-   Flask
+   flaskInstance
        .mix(self.substanceA) { (substance) in
             substance.prop.counter = 10
             
@@ -464,7 +471,7 @@ You can further customize the process by overriding any of the following methods
 
 In case you want to ignore some State properties from being used in the changes reduction, just use the `_` prefix on the variable name:
 
-```
+```swift
 struct AppState : State {
     
     var _internal = "`_` use this prefix for internal vars "

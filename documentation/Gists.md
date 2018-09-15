@@ -25,7 +25,7 @@ To continue the chain, just call mix (or any of its aliases) again. You must cal
 > Using the low level API
 
 ```swift
-   Flask
+   flaskInstance
        .mix(self.substanceA) { (substance) in
             substance.prop.counter = 10
             
