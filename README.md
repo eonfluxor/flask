@@ -213,11 +213,11 @@ class ViewController: UIViewController, FlaskReactor  {
         produceTestReaction()
     }
 
-	func produceTestReaction(){
-	
-		MixSubstances(with:EnvMixers.Login, payload:["username":"foo"])
+    func produceTestReaction(){
+    
+        MixSubstances(with:EnvMixers.Login, payload:["username":"foo"])
  
- 	}
+     }
 }
 ```
 
@@ -329,7 +329,7 @@ Example:
 
 It's possible to use nested structs and Observe changes in them. The limitation around Structs is that all properties must conform to the Codable protocol.
 
-If you need to support passing objects as top level properties or nested, read below regarding Nested Dictionaries.
+If you need to support passing objects as top-level properties or nested, read below regarding Nested Dictionaries.
 
 ```swift
 
@@ -403,7 +403,7 @@ func testStruct(){
 
 In case you need to observe changes in NSObject you can use `FlaskRef`. This will wrap your object inside a class that supports the Codable protocol required by your State struct.
 
-When observing this keys you'll be notified whenever the object pointer to this object changes. This would allow you to observer changes in UI objects like UIViewController.
+When observing this keys you'll be notified whenever the object pointer to this object changes. This would allow you to observe changes in UI objects like UIViewController.
 
 ```swift
 struct myState : State{

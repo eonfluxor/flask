@@ -430,7 +430,7 @@
 
         <span class="kt">MixSubstances</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:[</span><span class="s">"username"</span><span class="p">:</span><span class="s">"foo"</span><span class="p">])</span>
 
-    <span class="p">}</span>
+     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 <h2 id='sample-project' class='heading'>Sample Project</h2>
@@ -533,61 +533,11 @@
    <span class="p">}</span>
 
 </code></pre>
-<h3 id='nested-dictionary' class='heading'>Nested Dictionary</h3>
-
-<p>It&rsquo;s really easy to observe changes in nested keys: </p>
-
-<ul>
-<li>In your state create a <code><a href="Classes/FlaskDictRef.html">FlaskDictRef</a></code> property</li>
-<li>Assign new values by wrapping your Dictionary in a <code>FlaskDictRef( Dictionary )</code></li>
-<li>Observe changes in your nested keys using dot syntax.</li>
-</ul>
-
-<p>Example:</p>
-
-<blockquote>
-<p>Create a FlaskDictRef property</p>
-</blockquote>
-<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">:</span> <span class="kt">State</span> <span class="p">{</span>
-
-    <span class="kd">enum</span> <span class="nv">prop</span> <span class="p">:</span> <span class="kt">StateProp</span><span class="p">{</span>
-        <span class="k">case</span> <span class="n">info</span>
-    <span class="p">}</span>
-
-    <span class="k">var</span> <span class="nv">info</span><span class="p">:</span><span class="kt">FlaskDictRef</span><span class="p">?</span>
-<span class="p">}</span>
-
-</code></pre>
-
-<blockquote>
-<p>Assign values</p>
-</blockquote>
-<pre class="highlight swift"><code> <span class="n">flask</span><span class="o">.</span><span class="nf">mix</span><span class="p">(</span><span class="n">substance</span><span class="p">){</span> <span class="p">(</span><span class="n">substance</span><span class="p">)</span> <span class="k">in</span>
-
-          <span class="k">let</span> <span class="nv">data</span><span class="p">:</span><span class="kt">NSDictionary</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s">"foo"</span><span class="p">:</span><span class="s">"bar"</span><span class="p">,</span>
-            <span class="s">"nest"</span><span class="p">:[</span>
-                <span class="s">"data"</span><span class="p">:</span><span class="s">"some"</span>
-            <span class="p">]</span>
-
-        <span class="p">]</span>
-
-       <span class="n">substance</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="kt">FlaskDictRef</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-  <span class="p">}</span><span class="o">.</span><span class="nf">react</span><span class="p">()</span>
-
-</code></pre>
-
-<blockquote>
-<p>Observe changes</p>
-</blockquote>
-<pre class="highlight swift"><code> <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="s">"info.nest.data"</span><span class="p">,</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
-      <span class="nf">print</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="nf">newValue</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
- <span class="p">})</span>
-</code></pre>
 <h3 id='nested-structs' class='heading'>Nested Structs</h3>
 
-<p>It&rsquo;s possible to use nested structs and Observe changes in them:</p>
+<p>It&rsquo;s possible to use nested structs and Observe changes in them. The limitation around Structs is that all properties must conform to the Codable protocol.</p>
+
+<p>If you need to support passing objects as top-level properties or nested, read below regarding Nested Dictionaries.</p>
 <pre class="highlight swift"><code>
 <span class="kd">func</span> <span class="nf">testStruct</span><span class="p">(){</span>
 
@@ -650,6 +600,69 @@
 
         <span class="nf">wait</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="p">[</span><span class="n">expectation4</span><span class="p">],</span> <span class="nv">timeout</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
     <span class="p">}</span>
+</code></pre>
+<h3 id='nsobjects-and-dictionaries' class='heading'>NSObjects and Dictionaries</h3>
+
+<p><strong>Objects and Archiving</strong> : <em>Please consider that NSObjects are not serializable and will be mapped to <code>nil</code> by the <code><a href="Classes/SubstanceSerializer.html">SubstanceSerializer</a></code></em></p>
+
+<p>In case you need to observe changes in NSObject you can use <code>FlaskRef</code>. This will wrap your object inside a class that supports the Codable protocol required by your State struct.</p>
+
+<p>When observing this keys you&rsquo;ll be notified whenever the object pointer to this object changes. This would allow you to observe changes in UI objects like UIViewController.</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="nv">myState</span> <span class="p">:</span> <span class="kt">State</span><span class="p">{</span>
+   <span class="k">var</span> <span class="nv">object</span> <span class="o">=</span> <span class="kt">FlaskRef</span><span class="p">(</span> <span class="kt">NSObject</span><span class="p">()</span> <span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre>
+
+<p>In case you need to deal with a hierarchy of nested objects the <code><a href="Classes/FlaskDictRef.html">FlaskDictRef</a></code> comes to the rescue.  Initialize an instance of this class with an NSDictionary and then you&rsquo;ll be able to observe changes on nested keys.</p>
+
+<ul>
+<li>In your state create a <code><a href="Classes/FlaskDictRef.html">FlaskDictRef</a></code> property</li>
+<li>Assign new values by wrapping your Dictionary in a <code>FlaskDictRef( Dictionary )</code></li>
+<li>Observe changes in your nested keys using dot syntax.</li>
+</ul>
+
+<p>Example:</p>
+
+<blockquote>
+<p>Create a FlaskDictRef property</p>
+</blockquote>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">:</span> <span class="kt">State</span> <span class="p">{</span>
+
+    <span class="kd">enum</span> <span class="nv">prop</span> <span class="p">:</span> <span class="kt">StateProp</span><span class="p">{</span>
+        <span class="k">case</span> <span class="n">info</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">info</span><span class="p">:</span><span class="kt">FlaskDictRef</span><span class="p">?</span>
+<span class="p">}</span>
+
+</code></pre>
+
+<blockquote>
+<p>Assign values</p>
+</blockquote>
+<pre class="highlight swift"><code> <span class="n">flask</span><span class="o">.</span><span class="nf">mix</span><span class="p">(</span><span class="n">substance</span><span class="p">){</span> <span class="p">(</span><span class="n">substance</span><span class="p">)</span> <span class="k">in</span>
+
+          <span class="k">let</span> <span class="nv">data</span><span class="p">:</span><span class="kt">NSDictionary</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s">"foo"</span><span class="p">:</span><span class="s">"bar"</span><span class="p">,</span>
+            <span class="s">"nest"</span><span class="p">:[</span>
+                <span class="s">"data"</span><span class="p">:</span><span class="s">"some"</span>
+            <span class="p">]</span>
+
+        <span class="p">]</span>
+
+       <span class="n">substance</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="kt">FlaskDictRef</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+  <span class="p">}</span><span class="o">.</span><span class="nf">react</span><span class="p">()</span>
+
+</code></pre>
+
+<blockquote>
+<p>Observe changes</p>
+</blockquote>
+<pre class="highlight swift"><code> <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="s">"info.nest.data"</span><span class="p">,</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
+      <span class="nf">print</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="nf">newValue</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
+ <span class="p">})</span>
 </code></pre>
 <h3 id='archiving' class='heading'>Archiving</h3>
 
