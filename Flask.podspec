@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Flask"
-  s.version      = '0.0.42'
+  s.version      = '0.0.43'
   s.summary      = "Flask Reactor"
   s.homepage     = "https://github.com/eonfluxor/flask"
   s.license      = "MIT"
