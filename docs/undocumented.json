@@ -464,14 +464,21 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskApi.swift",
-      "line": 46,
+      "line": 44,
+      "symbol": "NewSubstance(definedBy:named:archive:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskApi.swift",
+      "line": 50,
       "symbol": "Flask.attachFlask(to:mixing:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskApi.swift",
-      "line": 56,
+      "line": 60,
       "symbol": "Flask.detachFlask(from:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
@@ -625,28 +632,28 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
-      "line": 45,
+      "line": 47,
       "symbol": "FlaskEquatable",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
-      "line": 52,
+      "line": 54,
       "symbol": "FlaskWeakRef",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
-      "line": 61,
+      "line": 63,
       "symbol": "NoMixers",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
-      "line": 62,
+      "line": 64,
       "symbol": "NoMixers.None",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
@@ -835,16 +842,30 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/State.swift",
-      "line": 31,
+      "line": 32,
       "symbol": "State.toDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/State.swift",
-      "line": 63,
+      "line": 36,
+      "symbol": "State.toDictionary(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/State.swift",
+      "line": 88,
       "symbol": "State.toJsonDictionary()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/Substance.swift",
+      "line": null,
+      "symbol": "ReactiveSubstance",
+      "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
@@ -1087,7 +1108,14 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/SubstanceArchiver.swift",
-      "line": 109,
+      "line": 37,
+      "symbol": "ReactiveSubstance.archiveNow()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Substance/SubstanceArchiver.swift",
+      "line": 114,
       "symbol": "ReactiveSubstance.purgeArchive()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
