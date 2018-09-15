@@ -60,7 +60,7 @@ Flask provides unique features not found in similar frameworks:
 * Binding multiple stores. `Flask.instance(attachedTo:mixing:)`
 * Dictionary reduction supporting nested keys. `FlaskDictRef`
 * Flux locks and exclusive dispatch. `FluxLock`
-* Automatic archiving to *UserDefaults*. `Substance.shouldArchive`
+* Automatic archiving to *UserDefaults*. `SubstanceConcrete.shouldArchive`
 * Managed attachment with automatic disposal `FlaskManager`
 * Friendly high-level API `Flask`
 * Access to low-level API for more granular control `FlaskClass`
