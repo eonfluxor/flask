@@ -605,7 +605,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskHelpers.swift",
       "line": 24,
-      "symbol": "FluxMixer",
+      "symbol": "SubstanceMixer",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },

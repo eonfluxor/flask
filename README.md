@@ -180,10 +180,10 @@ Also keep in mind that:
 
 The fluxor pattern requires more setup but it's very convenient for shared substances.
 
-> Define the Global `FluxMixer` (aka dispatch actions)
+> Define the Global `SubstanceMixer` (aka dispatch actions)
 
 ```swift
-enum EnvMixers : FluxMixer {
+enum EnvMixers : SubstanceMixer {
     case Login
     case Logout
 }
@@ -209,7 +209,7 @@ struct AppState : State {
 }
 ```
 
-> Define a `Substance` combining `State` and global `FluxMixer`
+> Define a `Substance` combining `State` and global `SubstanceMixer`
 
 ```swift
 class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
@@ -261,7 +261,7 @@ class ViewController: UIViewController, FlaskReactor  {
     
 ```
 
-> Apply the global `FluxMixer` (aka dispatch action) from anywhere in the app
+> Apply the global `SubstanceMixer` (aka dispatch action) from anywhere in the app
 
 ```swift
  MixSubstances(with:EnvMixers.Login)
@@ -273,12 +273,12 @@ class ViewController: UIViewController, FlaskReactor  {
 ```
 As you can notice the main difference are:
 
-* Required definition of global `FluxMixer` (aka dispatch actions).
+* Required definition of global `SubstanceMixer` (aka dispatch actions).
 * Required definition of a `ReactiveSubstance`.
 * Required to `defineMixers()` in the `ReactiveSubstance`.
 * Required definition of a global singleton to access your `ReactiveSusbtance` from anywhere in the app.
 
-The above setup allows to easily call ` MixSubstances(with:)` (aka ` Flask.applyMixer()`  from anywhere in the application to trigger the `FluxMixer` reactions in all the `ReactiveSubstance` instances implementing it.
+The above setup allows to easily call ` MixSubstances(with:)` (aka ` Flask.applyMixer()`  from anywhere in the application to trigger the `SubstanceMixer` reactions in all the `ReactiveSubstance` instances implementing it.
 
 
 ## Sample Project
@@ -521,11 +521,11 @@ Please review the above examples for Redux or Fluxor style implementations. More
 
 #### Why mixing Fluxor and Redux?
 
-It's simple, with  `ReactiveSubstance` classes you have the ability to make them all react to global `FluxMixer` events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style "inline" transformations.
+It's simple, with  `ReactiveSubstance` classes you have the ability to make them all react to global `SubstanceMixer` events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style "inline" transformations.
 
 For instance, an App `ReactiveSubstance` make sense as it would react to global events like log out or navigation. Also, it's a perfect candidate to be archived enabling `Substance.shouldArchive` to act as a basic an in-app data storage. Still, you can use this App substance in any `FlaskReactor` implementation and further apply Redux style transformations in a more particular context.
 
-All this while the framework guarantees the unidirectional flow integrity despite mixing global `FluxMixer` events or local `Flask.mix` reactions.
+All this while the framework guarantees the unidirectional flow integrity despite mixing global `SubstanceMixer` events or local `Flask.mix` reactions.
 
 #### Why Substance instead of Store?
 

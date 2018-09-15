@@ -220,27 +220,34 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/FlaskClass/ChainReaction.swift",
       "line": 51,
+      "symbol": "ChainReaction.and(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/FlaskClass/ChainReaction.swift",
+      "line": 55,
       "symbol": "ChainReaction.mix(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/FlaskClass/ChainReaction.swift",
-      "line": 89,
+      "line": 93,
       "symbol": "FlaskConcrete.toMix(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/FlaskClass/ChainReaction.swift",
-      "line": 93,
+      "line": 97,
       "symbol": "FlaskConcrete.mix(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/FlaskClass/ChainReaction.swift",
-      "line": 127,
+      "line": 131,
       "symbol": "FlaskConcrete.reduceSubstancesChain(_:abort:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

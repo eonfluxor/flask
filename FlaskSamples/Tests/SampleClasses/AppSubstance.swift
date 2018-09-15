@@ -14,7 +14,7 @@ import Cocoa
 
 import Flask
 
-enum Mixers : FluxMixer {
+enum Mixers : SubstanceMixer {
     case Count
     case Text
     case Object

@@ -14,7 +14,7 @@ import Cocoa
 
 
 public struct FluxNotification{
-    public let mixer:FluxMixer
+    public let mixer:SubstanceMixer
     public let object:AnyObject?
     public let payload:FluxPayloadType?
 //    let react:()->
@@ -32,12 +32,12 @@ public class FluxObserver:FlaskEquatable{
 
 public class FluxNotifier {
 
-    static var observersMap:[FluxMixer:[FluxObserver]]=[:]
+    static var observersMap:[SubstanceMixer:[FluxObserver]]=[:]
 }
 
 extension FluxNotifier {
     
-    static public func addCallback(forMixer mixer:FluxMixer,
+    static public func addCallback(forMixer mixer:SubstanceMixer,
                                    object: AnyObject?,
                                    _ callback:@escaping FluxNotificationClosure){
         
@@ -48,7 +48,7 @@ extension FluxNotifier {
     
     static public func removeObservers(forObject object:AnyObject){
         
-        var newMap:[FluxMixer:[FluxObserver]]=[:]
+        var newMap:[SubstanceMixer:[FluxObserver]]=[:]
         for key in observersMap.keys {
             let observers = observersMap[key]!
             newMap[key] = observers.filter { $0.objectRef.value !== object}
@@ -57,7 +57,7 @@ extension FluxNotifier {
         observersMap = newMap
     }
     
-    static public func addObserver(forMixer mixer:FluxMixer,
+    static public func addObserver(forMixer mixer:SubstanceMixer,
                                    observer:FluxObserver){
         
         var observers = getObservers(forMixer: mixer)
@@ -73,7 +73,7 @@ extension FluxNotifier {
 
 extension FluxNotifier{
     
-    static public func getObservers(forMixer mixer:FluxMixer)->[FluxObserver]{
+    static public func getObservers(forMixer mixer:SubstanceMixer)->[FluxObserver]{
         
         if let observers = observersMap[mixer]{
             return observers
@@ -81,7 +81,7 @@ extension FluxNotifier{
         return []
     }
     
-    static public func setObservers(forMixer mixer:FluxMixer, observers:[FluxObserver]){
+    static public func setObservers(forMixer mixer:SubstanceMixer, observers:[FluxObserver]){
         
         observersMap[mixer] = observers
     }
@@ -90,7 +90,7 @@ extension FluxNotifier{
 
 extension FluxNotifier{
     
-    static public func postNotification(forMixer mixer:FluxMixer, payload:FluxPayloadType?, completion:FluxEmptyClosure? = nil){
+    static public func postNotification(forMixer mixer:SubstanceMixer, payload:FluxPayloadType?, completion:FluxEmptyClosure? = nil){
         let observers = getObservers(forMixer: mixer)
 
         for observer in observers {

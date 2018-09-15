@@ -58,6 +58,9 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="gists.html">Gists</a>
               </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="guides.html">Guides</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -188,9 +191,6 @@
                 <a class="nav-group-task-link" href="Typealiases.html#/s:9Flask_iOS16FluxEmptyClosurea">FluxEmptyClosure</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Typealiases.html#/s:9Flask_iOS19FluxMutationClosurea">FluxMutationClosure</a>
               </li>
               <li class="nav-group-task">
@@ -207,6 +207,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Typealiases.html#/s:9Flask_iOS9StatePropa">StateProp</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a>
               </li>
             </ul>
           </li>
@@ -396,9 +399,9 @@
 <p>The fluxor pattern requires more setup but it&rsquo;s very convenient for shared substances.</p>
 
 <blockquote>
-<p>Define the Global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> (aka dispatch actions)</p>
+<p>Define the Global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> (aka dispatch actions)</p>
 </blockquote>
-<pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">EnvMixers</span> <span class="p">:</span> <span class="kt">FluxMixer</span> <span class="p">{</span>
+<pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">EnvMixers</span> <span class="p">:</span> <span class="kt">SubstanceMixer</span> <span class="p">{</span>
     <span class="k">case</span> <span class="kt">Login</span>
     <span class="k">case</span> <span class="kt">Logout</span>
 <span class="p">}</span>
@@ -425,7 +428,7 @@
 </code></pre>
 
 <blockquote>
-<p>Define a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> combining <code><a href="Protocols/State.html">State</a></code> and global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code></p>
+<p>Define a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> combining <code><a href="Protocols/State.html">State</a></code> and global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code></p>
 </blockquote>
 <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AppReactiveSubstance</span> <span class="p">:</span> <span class="kt">ReactiveSubstance</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="p">,</span><span class="kt">EnvMixers</span><span class="o">&gt;</span> <span class="p">{</span>
 
@@ -476,7 +479,7 @@
 </code></pre>
 
 <blockquote>
-<p>Apply the global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> (aka dispatch action) from anywhere in the app</p>
+<p>Apply the global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> (aka dispatch action) from anywhere in the app</p>
 </blockquote>
 <pre class="highlight swift"><code> <span class="kt">MixSubstances</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">)</span>
 
@@ -489,13 +492,13 @@
 <p>As you can notice the main difference are:</p>
 
 <ul>
-<li>Required definition of global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> (aka dispatch actions).</li>
+<li>Required definition of global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> (aka dispatch actions).</li>
 <li>Required definition of a <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code>.</li>
 <li>Required to <code>defineMixers()</code> in the <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code>.</li>
 <li>Required definition of a global singleton to access your <code>ReactiveSusbtance</code> from anywhere in the app.</li>
 </ul>
 
-<p>The above setup allows to easily call <code>MixSubstances(with:)</code> (aka <code>Flask.applyMixer()</code>  from anywhere in the application to trigger the <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> reactions in all the <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> instances implementing it.</p>
+<p>The above setup allows to easily call <code>MixSubstances(with:)</code> (aka <code>Flask.applyMixer()</code>  from anywhere in the application to trigger the <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> reactions in all the <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> instances implementing it.</p>
 <h2 id='sample-project' class='heading'>Sample Project</h2>
 
 <p>A sample project is available in this repo inside the folder: </p>
@@ -720,11 +723,11 @@
 <h2 id='discussion' class='heading'>Discussion</h2>
 <h4 id='why-mixing-fluxor-and-redux' class='heading'>Why mixing Fluxor and Redux?</h4>
 
-<p>It&rsquo;s simple, with  <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> classes you have the ability to make them all react to global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style <q>inline</q> transformations.</p>
+<p>It&rsquo;s simple, with  <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> classes you have the ability to make them all react to global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style <q>inline</q> transformations.</p>
 
 <p>For instance, an App <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> make sense as it would react to global events like log out or navigation. Also, it&rsquo;s a perfect candidate to be archived enabling <code>Substance.shouldArchive</code> to act as a basic an in-app data storage. Still, you can use this App substance in any <code><a href="Protocols/FlaskReactor.html">FlaskReactor</a></code> implementation and further apply Redux style transformations in a more particular context.</p>
 
-<p>All this while the framework guarantees the unidirectional flow integrity despite mixing global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> events or local <code>Flask.mix</code> reactions.</p>
+<p>All this while the framework guarantees the unidirectional flow integrity despite mixing global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> events or local <code>Flask.mix</code> reactions.</p>
 <h4 id='why-substance-instead-of-store' class='heading'>Why Substance instead of Store?</h4>
 
 <blockquote>

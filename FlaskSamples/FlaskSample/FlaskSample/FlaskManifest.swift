@@ -11,13 +11,13 @@ import Flask
 
 //Mark: - Global Reactive Substance Mixers
 
-enum EnvMixers : FluxMixer {
+enum EnvMixers : SubstanceMixer {
     case Login
     case Logout
     case AsyncAction
 }
 
-enum NavMixers : FluxMixer {
+enum NavMixers : SubstanceMixer {
     case Home
     case Settings
 }

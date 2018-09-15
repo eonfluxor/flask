@@ -21,7 +21,7 @@ public typealias MutationClosure<T> = (_ substance:T,_ react:()-> Void,_ abort:(
 
 public typealias FluxPayloadType = [String:Any?]
 public typealias FlaskDictType = [String:AnyHashable?]
-public typealias FluxMixer = String
+public typealias SubstanceMixer = String
 public typealias StateProp = String
 
 
@@ -58,7 +58,7 @@ public class FlaskWeakRef<T> where T: AnyObject {
     }
 }
 
-public enum NoMixers:FluxMixer{
+public enum NoMixers:SubstanceMixer{
     case None
 }
 

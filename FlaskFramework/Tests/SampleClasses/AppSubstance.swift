@@ -13,13 +13,13 @@ import Cocoa
 #endif
 
 
-enum Mixers : FluxMixer {
+enum Mixers : SubstanceMixer {
     case Count
     case Text
     case Object
 }
 
-enum Mixers2 : FluxMixer {
+enum Mixers2 : SubstanceMixer {
     case Count
     case Text
     case Object
