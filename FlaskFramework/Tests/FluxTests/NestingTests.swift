@@ -19,16 +19,20 @@ class NestedStateTests: SetupFlaskTests {
         let expectation2 = self.expectation(description: "testFlaskDictRef")
         let expectation3 = self.expectation(description: "testFlaskDictRef optional(some)")
         let expectation4 = self.expectation(description: "testFlaskDictRef optional(nil)")
+        let expectation5 = self.expectation(description: "testFlaskDictRef object")
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
         let flask = Flask.instance(attachedTo:owner, mixing:substance)
         
+        let object = NSObject()
+        
         let data:NSDictionary = [
             "foo":"bar",
             "nest":[
                 "nest":["foo2":"bar2"],
-                "optional":"some"
+                "optional":"some",
+                "object":object
             ]
             
         ]
@@ -52,10 +56,15 @@ class NestedStateTests: SetupFlaskTests {
                 })
                 
                 reaction.on("map.nest.optional", { (change) in
-                    print(change.newValue()!)
                     XCTAssert(change.newValue()=="some")
                     expectation3.fulfill()
                 })
+                
+                reaction.on("map.nest.object", { (change) in
+                    XCTAssert(change.newValue()==object)
+                    expectation5.fulfill()
+                })
+                
                 
                 next()
             }

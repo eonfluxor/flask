@@ -323,61 +323,13 @@ Example:
         
 ```
 
-### Nested Dictionary
 
-It's really easy to observe changes in nested keys: 
-
-* In your state create a `FlaskDictRef` property
-* Assign new values by wrapping your Dictionary in a `FlaskDictRef( Dictionary )`
-* Observe changes in your nested keys using dot syntax.
-
-Example:
-
-> Create a FlaskDictRef property
-
-
-```swift
-struct AppState : State {
-    
-    enum prop : StateProp{
-        case info
-    }
-    
-    var info:FlaskDictRef?
-}
-
-```
-
-> Assign values
-
-```swift
- flask.mix(substance){ (substance) in
- 
-          let data:NSDictionary = [
-            "foo":"bar",
-            "nest":[
-                "data":"some"
-            ]
-            
-        ]
-        
-       substance.prop.info = FlaskDictRef(data)
-       
-  }.react()
-
-```
-
-> Observe changes
-
-```swift
- reaction.on("info.nest.data", { (change) in
-      print(change.newValue()!)
- })
-```
 
 ### Nested Structs
 
-It's possible to use nested structs and Observe changes in them:
+It's possible to use nested structs and Observe changes in them. The limitation around Structs is that all properties must conform to the Codable protocol.
+
+If you need to support passing objects as top level properties or nested, read below regarding Nested Dictionaries.
 
 ```swift
 
@@ -442,6 +394,72 @@ func testStruct(){
         
         wait(for: [expectation4], timeout: 4)
     }
+```
+
+### NSObjects and Dictionaries
+
+
+**Objects and Archiving** : *Please consider that NSObjects are not serializable and will be mapped to `nil` by the `SubstanceSerializer`*
+
+In case you need to observe changes in NSObject you can use `FlaskRef`. This will wrap your object inside a class that supports the Codable protocol required by your State struct.
+
+When observing this keys you'll be notified whenever the object pointer to this object changes. This would allow you to observer changes in UI objects like UIViewController.
+
+```swift
+struct myState : State{
+   var object = FlaskRef( NSObject() )
+}
+
+```
+
+In case you need to deal with a hierarchy of nested objects the `FlaskDictRef` comes to the rescue.  Initialize an instance of this class with an NSDictionary and then you'll be able to observe changes on nested keys.
+
+* In your state create a `FlaskDictRef` property
+* Assign new values by wrapping your Dictionary in a `FlaskDictRef( Dictionary )`
+* Observe changes in your nested keys using dot syntax.
+
+Example:
+
+> Create a FlaskDictRef property
+
+
+```swift
+struct AppState : State {
+    
+    enum prop : StateProp{
+        case info
+    }
+    
+    var info:FlaskDictRef?
+}
+
+```
+
+> Assign values
+
+```swift
+ flask.mix(substance){ (substance) in
+ 
+          let data:NSDictionary = [
+            "foo":"bar",
+            "nest":[
+                "data":"some"
+            ]
+            
+        ]
+        
+       substance.prop.info = FlaskDictRef(data)
+       
+  }.react()
+
+```
+
+> Observe changes
+
+```swift
+ reaction.on("info.nest.data", { (change) in
+      print(change.newValue()!)
+ })
 ```
 
 ### Archiving

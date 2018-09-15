@@ -13,11 +13,13 @@ class DictionaryTests: XCTestCase {
     
     func testDictionaryRef(){
         
+        let object = NSObject()
         let data:NSDictionary = [
             "foo":"bar",
             "nest":[
                 "nest":["foo2":"bar2"],
                 "optional":"some",
+                "object": object,
                 "none":Flask.Null
             ],
             "array":[1,2,3]
@@ -29,10 +31,11 @@ class DictionaryTests: XCTestCase {
         //structure
         XCTAssert((nest != nil))
         XCTAssert(dictRef.count() == 3)
-        XCTAssert(nest!.count() == 3)
+        XCTAssert(nest!.count() == 4)
         
         // nested value
         XCTAssert((nest!["optional"] as? String) == "some" )
+        XCTAssert((nest!["object"] as NSObject?) == object )
         XCTAssert((dictRef["array"] as? NSArray)?.count == 3 )
         
         // keep nil keys
