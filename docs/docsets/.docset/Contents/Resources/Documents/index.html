@@ -309,7 +309,7 @@
 <p>This is a gist of a basic ReSwift-like implementation. </p>
 
 <blockquote>
-<p>Define Substance Initial <code><a href="Protocols/State.html">State</a></code></p>
+<p>Substance.swift</p>
 </blockquote>
 <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">:</span> <span class="kt">State</span><span class="p">{</span>
 
@@ -323,21 +323,11 @@
 </code></pre>
 
 <blockquote>
-<p>Adopt <code><a href="Protocols/FlaskReactor.html">FlaskReactor</a></code> protocol</p>
+<p>ViewController</p>
 </blockquote>
 <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">FlaskReactor</span>  <span class="p">{</span>
-</code></pre>
 
-<blockquote>
-<p>Define a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> instance</p>
-</blockquote>
-<pre class="highlight swift"><code>    <span class="k">let</span> <span class="nv">substance</span> <span class="o">=</span> <span class="kt">NewSubstance</span><span class="p">(</span><span class="nv">definedBy</span><span class="p">:</span> <span class="kt">AppState</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
-</code></pre>
-
-<blockquote>
-<p>Implement the <code><a href="Protocols/FlaskReactor.html">FlaskReactor</a></code> protocol. Here you&rsquo;ll receive the <code><a href="Structs/SubstanceChange.html">SubstanceChange</a></code> callbacks passing a <code><a href="Classes/FlaskReaction.html">FlaskReaction</a></code> instance describing the changes.</p>
-</blockquote>
-<pre class="highlight swift"><code>    <span class="kd">func</span> <span class="nf">flaskReactor</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">flaskReactor</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
 
         <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="kt">AppState</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">counter</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
             <span class="nf">print</span><span class="p">(</span><span class="s">"counter = </span><span class="se">\(</span><span class="n">substance</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">counter</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
@@ -348,23 +338,12 @@
 
     <span class="p">}</span>
 
-</code></pre>
-
-<blockquote>
-<p>Attach a <code><a href="Classes/FlaskClass.html">FlaskClass</a></code> instance to this ViewController</p>
-</blockquote>
-<pre class="highlight swift"><code>    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
 
         <span class="kt">AttachFlaskReactor</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span><span class="k">self</span><span class="p">,</span> <span class="nv">mixing</span><span class="p">:[</span><span class="n">substance</span><span class="p">])</span>
         <span class="nf">produceTestReaction</span><span class="p">()</span>
     <span class="p">}</span>
 
-</code></pre>
-
-<blockquote>
-<p>Mix the <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> properties</p>
-</blockquote>
-<pre class="highlight swift"><code>
     <span class="kd">func</span> <span class="nf">produceTestReaction</span><span class="p">(){</span>
 
         <span class="kt">GetFlaskReactor</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span><span class="k">self</span><span class="p">)</span>
@@ -378,39 +357,19 @@
 
 <span class="p">}</span>
 </code></pre>
-
-<p>The above is a basic showcase of Flask high-level API. Other things to consider:</p>
-
-<ul>
-<li><code>Substance.state</code> is a read-only property and it&rsquo;s protected during the <code>mix()</code> operation.</li>
-<li>While <code>mixing()</code> you would mutate the state using the <code>Substance.prop</code> accessor as <code>Substance.state</code> won&rsquo;t be available until the mix operation completes.</li>
-<li>Using <code>AttachFlaskReactor</code> creates a managed <code><a href="Classes/Flask.html">Flask</a></code> instance that is <em>automatically disposed</em> when its owner becomes <code>nil</code>.<br></li>
-</ul>
-
-<p>Also keep in mind that:</p>
-
-<ul>
-<li>It&rsquo;s possible to instantiate Flask using a substances array: <code>AttachFlaskReactor(to:self, mixing:[app,settings,login])</code></li>
-<li>These global functions are just idiomatic sugar and a  public low-level API is also available for more granular control.</li>
-<li>When needed you may call <code><a href="Functions.html#/s:9Flask_iOS06DetachA7Reactoryx4from_tRlzCAA0aD0RzlF">DetachFlaskReactor(from:)</a></code> to immediately dispose your Flask.</li>
-</ul>
 <h2 id='fluxor-style' class='heading'>Fluxor Style</h2>
 
 <p>The fluxor pattern requires more setup but it&rsquo;s very convenient for shared substances.</p>
 
 <blockquote>
-<p>Define the Global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> (aka dispatch actions)</p>
+<p>Substance.swift</p>
 </blockquote>
 <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">EnvMixers</span> <span class="p">:</span> <span class="kt">SubstanceMixer</span> <span class="p">{</span>
     <span class="k">case</span> <span class="kt">Login</span>
     <span class="k">case</span> <span class="kt">Logout</span>
 <span class="p">}</span>
-</code></pre>
 
-<blockquote>
-<p>Define a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> <code><a href="Protocols/State.html">State</a></code></p>
-</blockquote>
-<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">:</span> <span class="kt">State</span> <span class="p">{</span>
+<span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">:</span> <span class="kt">State</span> <span class="p">{</span>
 
     <span class="kd">enum</span> <span class="nv">prop</span> <span class="p">:</span> <span class="kt">StateProp</span><span class="p">{</span>
         <span class="k">case</span> <span class="n">counter</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">asyncResult</span>
@@ -425,12 +384,8 @@
     <span class="k">var</span> <span class="nv">_internal</span> <span class="o">=</span> <span class="s">"use underscore to ignore var changes"</span>
 
 <span class="p">}</span>
-</code></pre>
 
-<blockquote>
-<p>Define a <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> combining <code><a href="Protocols/State.html">State</a></code> and global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code></p>
-</blockquote>
-<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AppReactiveSubstance</span> <span class="p">:</span> <span class="kt">ReactiveSubstance</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="p">,</span><span class="kt">EnvMixers</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="kt">AppReactiveSubstance</span> <span class="p">:</span> <span class="kt">ReactiveSubstance</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="p">,</span><span class="kt">EnvMixers</span><span class="o">&gt;</span> <span class="p">{</span>
 
     <span class="k">override</span> <span class="kd">func</span> <span class="nf">defineMixers</span><span class="p">(){</span>
 
@@ -444,7 +399,7 @@
 </code></pre>
 
 <blockquote>
-<p>Define a Substance Singletons</p>
+<p>Manifest</p>
 </blockquote>
 <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">Subs</span> <span class="p">{</span>
     <span class="kd">static</span> <span class="k">let</span> <span class="nv">appReactive</span> <span class="o">=</span> <span class="kt">AppReactiveSubstance</span><span class="p">()</span>
@@ -452,7 +407,7 @@
 </code></pre>
 
 <blockquote>
-<p>Implement the <code><a href="Protocols/FlaskReactor.html">FlaskReactor</a></code> protocol in a ViewController (or any other object)</p>
+<p>ViewController</p>
 </blockquote>
 <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">FlaskReactor</span>  <span class="p">{</span>
 
@@ -465,40 +420,20 @@
 
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
 
-<blockquote>
-<p>And attach a <code><a href="Classes/FlaskClass.html">FlaskClass</a></code> instance in your configuration initializer </p>
-</blockquote>
-<pre class="highlight swift"><code>    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
 
-        <span class="kt">AttachFlaskReactor</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span><span class="k">self</span><span class="p">,</span> <span class="nv">mixing</span><span class="p">:[</span><span class="n">substance</span><span class="p">])</span>
+        <span class="kt">AttachFlaskReactor</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span><span class="k">self</span><span class="p">,</span> <span class="nv">mixing</span><span class="p">:[</span><span class="kt">Subs</span><span class="o">.</span><span class="n">appReactive</span><span class="p">])</span>
 
     <span class="p">}</span>
 
-</code></pre>
-
-<blockquote>
-<p>Apply the global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> (aka dispatch action) from anywhere in the app</p>
-</blockquote>
-<pre class="highlight swift"><code> <span class="kt">MixSubstances</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">)</span>
+ <span class="kt">MixSubstances</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">)</span>
 
  <span class="c1">//or</span>
 
  <span class="kt">Flask</span><span class="o">.</span><span class="nf">applyMixer</span><span class="p">(</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:[</span><span class="s">"user"</span><span class="p">:</span><span class="n">userObject</span><span class="p">])</span>
  <span class="kt">Flask</span><span class="o">.</span><span class="nf">applyMixer</span><span class="p">(</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Logout</span><span class="p">)</span>
 </code></pre>
-
-<p>As you can notice the main difference are:</p>
-
-<ul>
-<li>Required definition of global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> (aka dispatch actions).</li>
-<li>Required definition of a <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code>.</li>
-<li>Required to <code>defineMixers()</code> in the <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code>.</li>
-<li>Required definition of a global singleton to access your <code>ReactiveSusbtance</code> from anywhere in the app.</li>
-</ul>
-
-<p>The above setup allows to easily call <code>MixSubstances(with:)</code> (aka <code>Flask.applyMixer()</code>  from anywhere in the application to trigger the <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> reactions in all the <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> instances implementing it.</p>
 <h2 id='sample-project' class='heading'>Sample Project</h2>
 
 <p>A sample project is available in this repo inside the folder: </p>
@@ -717,9 +652,6 @@
 <pre class="highlight swift"><code><span class="n">flasks</span>
 <span class="nf">purge</span><span class="p">()</span>
 </code></pre>
-<h2 id='guides' class='heading'>Guides</h2>
-
-<p>Please review the above examples for Redux or Fluxor style implementations. More coming soon.</p>
 <h2 id='discussion' class='heading'>Discussion</h2>
 <h4 id='why-mixing-fluxor-and-redux' class='heading'>Why mixing Fluxor and Redux?</h4>
 

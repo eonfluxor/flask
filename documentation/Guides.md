@@ -1,10 +1,13 @@
 # Guides
 
+Step by step implementation following different styles. Keep in mind you can mix both patterns at any point.
+
+
 ## Redux Style
 
 This is a gist of a basic ReSwift-like implementation. 
 
-> Substance.swift
+>Define Substance Initial `State`
 
 ```swift
 struct AppState : State{
@@ -18,11 +21,22 @@ struct AppState : State{
 }
 ```
 
-> ViewController
+> Adopt `FlaskReactor` protocol
 
 ```swift
 class ViewController: UIViewController, FlaskReactor  {
-   
+```
+
+> Define a `Substance` instance
+
+  
+```swift  
+    let substance = NewSubstance(definedBy: AppState.self)
+```
+
+> Implement the `FlaskReactor ` protocol. Here you'll receive the `SubstanceChange` callbacks passing a `FlaskReaction` instance describing the changes.
+
+```swift    
     func flaskReactor(reaction: FlaskReaction) {
         
         reaction.on(AppState.prop.counter) { (change) in
@@ -33,13 +47,25 @@ class ViewController: UIViewController, FlaskReactor  {
         }
         
     }
-   
+
+```
+
+> Attach a `FlaskClass` instance to this ViewController
+
+```swift    
     override func viewDidLoad() {
         
         AttachFlaskReactor(to:self, mixing:[substance])
         produceTestReaction()
     }
+    
+```
 
+> Mix the `Substance` properties
+
+
+```swift      
+    
     func produceTestReaction(){
         
         GetFlaskReactor(at:self)
@@ -53,20 +79,34 @@ class ViewController: UIViewController, FlaskReactor  {
 
 }
 ```
+The above is a basic showcase of Flask high-level API. Other things to consider:
 
+* `Substance.state` is a read-only property and it's protected during the `mix()` operation.
+* While `mixing()` you would mutate the state using the `Substance.prop` accessor as `Substance.state` won't be available until the mix operation completes.
+* Using `AttachFlaskReactor` creates a managed `Flask` instance that is *automatically disposed* when its owner becomes `nil`.  
+
+Also keep in mind that:
+ 
+* It's possible to instantiate Flask using a substances array: `AttachFlaskReactor(to:self, mixing:[app,settings,login])`
+* These global functions are just idiomatic sugar and a  public low-level API is also available for more granular control.
+* When needed you may call `DetachFlaskReactor(from:)` to immediately dispose your Flask.
 
 ## Fluxor Style
 
 The fluxor pattern requires more setup but it's very convenient for shared substances.
 
-> Substance.swift
+> Define the Global `SubstanceMixer` (aka dispatch actions)
 
 ```swift
 enum EnvMixers : SubstanceMixer {
     case Login
     case Logout
 }
+```
 
+> Define a `Substance` `State`
+
+```swift
 struct AppState : State {
     
     enum prop : StateProp{
@@ -82,7 +122,11 @@ struct AppState : State {
     var _internal = "use underscore to ignore var changes"
     
 }
+```
 
+> Define a `Substance` combining `State` and global `SubstanceMixer`
+
+```swift
 class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
     
     override func defineMixers(){
@@ -96,7 +140,8 @@ class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
 
 ```
 
-> Manifest
+> Define a Substance Singletons
+
 
 ```swift
 class Subs {
@@ -104,7 +149,7 @@ class Subs {
 }
 ```
 
-> ViewController
+> Implement the `FlaskReactor` protocol in a ViewController (or any other object)
 
 ```swift
 class ViewController: UIViewController, FlaskReactor  {
@@ -118,13 +163,22 @@ class ViewController: UIViewController, FlaskReactor  {
         
     }
 }
- 
+```
+
+> And attach a `FlaskClass` instance in your configuration initializer 
+
+```swift    
     override func viewDidLoad() {
         
-        AttachFlaskReactor(to:self, mixing:[substance])
+        AttachFlaskReactor(to:self, mixing:[Subs.appReactive])
       
     }
+    
+```
 
+> Apply the global `SubstanceMixer` (aka dispatch action) from anywhere in the app
+
+```swift
  MixSubstances(with:EnvMixers.Login)
  
  //or
@@ -132,4 +186,12 @@ class ViewController: UIViewController, FlaskReactor  {
  Flask.applyMixer(EnvMixers.Login, payload:["user":userObject])
  Flask.applyMixer(EnvMixers.Logout)
 ```
+As you can notice the main difference are:
+
+* Required definition of global `SubstanceMixer` (aka dispatch actions).
+* Required definition of a `ReactiveSubstance`.
+* Required to `defineMixers()` in the `ReactiveSubstance`.
+* Required definition of a global singleton to access your `ReactiveSusbtance` from anywhere in the app.
+
+The above setup allows to easily call ` MixSubstances(with:)` (aka ` Flask.applyMixer()`  from anywhere in the application to trigger the `SubstanceMixer` reactions in all the `ReactiveSubstance` instances implementing it.
 
