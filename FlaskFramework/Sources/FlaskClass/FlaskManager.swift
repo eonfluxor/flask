@@ -53,4 +53,12 @@ public class FlaskManager{
             removeFlask(flask)
         }
     }
+    
+    static public func purgeAll(){
+       
+        let myFlasks = flasks
+        for flask in myFlasks {
+            removeFlask(flask)
+        }
+    }
 }

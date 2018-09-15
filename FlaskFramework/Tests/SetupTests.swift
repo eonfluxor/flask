@@ -27,16 +27,13 @@ class SetupFlaskTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
-       
-        
+    
         substance = App()
         substance?.name(suffix:String(TestsCounter))
         substance?.name(prefix:TARGET_NAME)
         
         TestsCounter = TestsCounter + 1
-        FlaskManager.purge()
-//        XCTAssert(FlaskManager.flasks.count == 0, "all flasks should dispose before this test")
+        XCTAssert(FlaskManager.flasks.count == 0, "all flasks should dispose before this test")
     }
     
     override func tearDown() {
@@ -45,7 +42,7 @@ class SetupFlaskTests: XCTestCase {
         self.substance?.purgeArchive()
         self.substance = .none
         Flask.removeLocks()
-        FlaskManager.purge()
+        FlaskManager.purgeAll()
     }
     
     
