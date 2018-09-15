@@ -33,6 +33,7 @@ class SetupFlaskTests: XCTestCase {
         substance?.name(prefix:TARGET_NAME)
         
         TestsCounter = TestsCounter + 1
+        FlaskManager.purgeAll()
         XCTAssert(FlaskManager.flasks.count == 0, "all flasks should dispose before this test")
     }
     
