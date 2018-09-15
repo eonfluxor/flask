@@ -521,7 +521,7 @@ Please review the above examples for Redux or Fluxor style implementations. More
 
 #### Why mixing Fluxor and Redux?
 
-It's simple, with  `ReactiveSubstance` classes you have the ability to make them all react in the same way to global `FluxMixer` events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style "inline" transformations.
+It's simple, with  `ReactiveSubstance` classes you have the ability to make them all react to global `FluxMixer` events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style "inline" transformations.
 
 For instance, an App `ReactiveSubstance` make sense as it would react to global events like log out or navigation. Also, it's a perfect candidate to be archived enabling `Substance.shouldArchive` to act as a basic an in-app data storage. Still, you can use this App substance in any `FlaskReactor` implementation and further apply Redux style transformations in a more particular context.
 

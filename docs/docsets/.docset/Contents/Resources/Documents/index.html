@@ -720,7 +720,7 @@
 <h2 id='discussion' class='heading'>Discussion</h2>
 <h4 id='why-mixing-fluxor-and-redux' class='heading'>Why mixing Fluxor and Redux?</h4>
 
-<p>It&rsquo;s simple, with  <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> classes you have the ability to make them all react in the same way to global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style <q>inline</q> transformations.</p>
+<p>It&rsquo;s simple, with  <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> classes you have the ability to make them all react to global <code><a href="Typealiases.html#/s:9Flask_iOS9FluxMixera">FluxMixer</a></code> events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style <q>inline</q> transformations.</p>
 
 <p>For instance, an App <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> make sense as it would react to global events like log out or navigation. Also, it&rsquo;s a perfect candidate to be archived enabling <code>Substance.shouldArchive</code> to act as a basic an in-app data storage. Still, you can use this App substance in any <code><a href="Protocols/FlaskReactor.html">FlaskReactor</a></code> implementation and further apply Redux style transformations in a more particular context.</p>
 
