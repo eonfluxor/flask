@@ -408,26 +408,23 @@
 
     <span class="kd">func</span> <span class="nf">flaskReactor</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
 
-      <span class="c1">// if no name conflicts the .at(store) may be skipped</span>
         <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="kt">AppState</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">title</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
             <span class="nf">print</span><span class="p">(</span><span class="s">"global title = </span><span class="se">\(</span><span class="kt">Subs</span><span class="o">.</span><span class="n">appReactive</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">title</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
         <span class="p">}</span>
 
     <span class="p">}</span>
-<span class="p">}</span>
 
     <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
 
         <span class="kt">AttachFlaskReactor</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span><span class="k">self</span><span class="p">,</span> <span class="nv">mixing</span><span class="p">:[</span><span class="kt">Subs</span><span class="o">.</span><span class="n">appReactive</span><span class="p">])</span>
-
+        <span class="nf">produceTestReaction</span><span class="p">()</span>
     <span class="p">}</span>
 
- <span class="kt">MixSubstances</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">)</span>
+    <span class="kd">func</span> <span class="nf">produceTestReaction</span><span class="p">(){</span>
 
- <span class="c1">//or</span>
+        <span class="kt">MixSubstances</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:[</span><span class="s">"username"</span><span class="p">:</span><span class="s">"foo"</span><span class="p">])</span>
 
- <span class="kt">Flask</span><span class="o">.</span><span class="nf">applyMixer</span><span class="p">(</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Login</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:[</span><span class="s">"user"</span><span class="p">:</span><span class="n">userObject</span><span class="p">])</span>
- <span class="kt">Flask</span><span class="o">.</span><span class="nf">applyMixer</span><span class="p">(</span><span class="kt">EnvMixers</span><span class="o">.</span><span class="kt">Logout</span><span class="p">)</span>
+    <span class="p">}</span>
 </code></pre>
 <h2 id='sample-project' class='heading'>Sample Project</h2>
 

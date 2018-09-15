@@ -196,26 +196,23 @@ class ViewController: UIViewController, FlaskReactor  {
        
     func flaskReactor(reaction: FlaskReaction) {
              
-      // if no name conflicts the .at(store) may be skipped
         reaction.on(AppState.prop.title) { (change) in
             print("global title = \(Subs.appReactive.state.title)")
         }
         
     }
-}
  
     override func viewDidLoad() {
         
         AttachFlaskReactor(to:self, mixing:[Subs.appReactive])
-      
+        produceTestReaction()
     }
 
- MixSubstances(with:EnvMixers.Login)
+	func produceTestReaction(){
+	
+		MixSubstances(with:EnvMixers.Login, payload:["username":"foo"])
  
- //or
- 
- Flask.applyMixer(EnvMixers.Login, payload:["user":userObject])
- Flask.applyMixer(EnvMixers.Logout)
+ 	}
 ```
 
 
