@@ -80,6 +80,7 @@ class ChainingTests: SetupFlaskTests {
             
             reaction.on(AppState.prop.object, { (change) in
                 
+          
                 XCTAssert( isNilorNull(change.oldValue()) )
                 XCTAssert(change.newValue() == aObject)
                 XCTAssert(change.key() == AppState.prop.object.rawValue)

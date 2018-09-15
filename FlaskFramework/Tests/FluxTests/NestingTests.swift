@@ -96,6 +96,7 @@ class NestedStateTests: SetupFlaskTests {
         
         struct nestedTestStruct:Codable{
             var foo = "bar"
+            var object = FlaskNSRef(NSObject())
         }
         
         struct testStruct:Codable{
@@ -107,7 +108,8 @@ class NestedStateTests: SetupFlaskTests {
             var info = testStruct()
         }
         
-        let mySubstance = NewSubstance(definedBy: state.self,named:"StructNestTest",archive:false)
+        let NAME = "subtanceTest\( NSDate().timeIntervalSince1970)"
+        let mySubstance = NewSubstance(definedBy: state.self,named:NAME, archive:false)
         mySubstance.shouldArchive = true
         
         let owner:TestOwner = TestOwner()
@@ -132,13 +134,20 @@ class NestedStateTests: SetupFlaskTests {
         flask.mix(mySubstance) { (substance) in
             substance.prop.info.counter = 90
             substance.prop.info.nest.foo = "mutated"
-        }.andReact()
+            }.andReact()
         
-        waitForExpectations(timeout: 2, handler: nil)
-   
-    
-        let archivedSubstance = NewSubstance(definedBy: state.self,named:"StructNestTest",archive:true)
-        XCTAssert(archivedSubstance.state.info.nest.foo == "mutated", "Must preserve value")
+        wait(for: [expectation,expectation2,expectation3], timeout: 2)
+        
+        let expectation4 = self.expectation(description: "must preserve after archive")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+           
+            let archivedSubstance = NewSubstance(definedBy: state.self,named:NAME,archive:true)
+            XCTAssert(archivedSubstance.state.info.nest.foo == "mutated", "Must preserve value")
+            expectation4.fulfill()
+        }
+        
+        wait(for: [expectation4], timeout: 4)
     }
     
         

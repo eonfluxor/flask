@@ -58,7 +58,9 @@ Flask provides unique features not found in similar frameworks:
 
 * Chained mutations 
 * Binding multiple stores 
-* Dictionary reduction supporting nested keys 
+* Structs reductions with nested keys
+* NSObject pointer change reduction with `FlaskNSRef`
+* NSDictionary and Dictionary reduction supporting nested keys 
 * Flux locks and exclusive dispatch
 * Automatic archiving to `UserDefaults`
 * Managed attachment with automatic disposal

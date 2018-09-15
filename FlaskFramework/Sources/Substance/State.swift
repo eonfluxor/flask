@@ -48,6 +48,7 @@ public extension State{
                 continue
             }
             
+            
             //Note: We use Flask.Nil to cas nil as? Anyhashable otherwise the dictionary wont hold the value
             result[label] = Flask.Nil
             result[label] = value as? AnyHashable
@@ -59,10 +60,15 @@ public extension State{
                 result = nestedRef.dictionary as! FlaskDictType
             
             } else if( result[label] == Flask.Nil ){
-
+ 
+                let nest = toDictionary(from: value)
+                if( nest.count == 0){
+                    continue
+                }
+                
+                //this is a struct with properties
                 result[label] =  StringFromPointer(value)
                 
-                let nest = toDictionary(from: value)
                 for (key, val) in nest{
                     let nestedKey = "\(label).\(key)"
                     result[nestedKey] = val
