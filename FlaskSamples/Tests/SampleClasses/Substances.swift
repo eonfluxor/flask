@@ -12,6 +12,8 @@ import UIKit
 import Cocoa
 #endif
 
+import Flask
+
 struct FeedSate : State {
     var feed = FlaskDictRef()
 }
