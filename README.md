@@ -57,10 +57,10 @@ All this while the core technology offers a unified implementation of both the `
 Flask provides unique features not found in similar frameworks:
 
 * Chain reactions. `ChainReaction`
-* Binding multiple stores. `instance(attachedTo:mixing:)`
+* Binding multiple stores. `Flask.instance(attachedTo:mixing:)`
 * Dictionary reduction supporting nested keys. `FlaskDictRef`
 * Flux locks and exclusive dispatch. `FluxLock`
-* Automatic archiving to `UserDefaults`. `shouldArchive`
+* Automatic archiving to *UserDefaults*. `Substance.shouldArchive`
 * Managed attachment with automatic disposal `FlaskManager`
 * Friendly high-level API `Flask`
 * Access to low-level API for more granular control `FlaskClass`
