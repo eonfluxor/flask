@@ -372,16 +372,11 @@
 <span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">:</span> <span class="kt">State</span> <span class="p">{</span>
 
     <span class="kd">enum</span> <span class="nv">prop</span> <span class="p">:</span> <span class="kt">StateProp</span><span class="p">{</span>
-        <span class="k">case</span> <span class="n">counter</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">asyncResult</span>
+        <span class="k">case</span> <span class="n">counter</span><span class="p">,</span> <span class="n">title</span>
     <span class="p">}</span>
 
     <span class="k">var</span> <span class="nv">counter</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">var</span> <span class="nv">title</span> <span class="o">=</span> <span class="s">""</span>
-
-    <span class="k">var</span> <span class="nv">object</span><span class="p">:</span><span class="kt">FlaskNSRef</span><span class="p">?</span> <span class="c1">// reference to NSObject</span>
-    <span class="k">var</span> <span class="nv">map</span><span class="p">:</span><span class="kt">FlaskDictRef</span><span class="p">?</span>  <span class="c1">// NSDictionary wrapper for nested changes</span>
-
-    <span class="k">var</span> <span class="nv">_internal</span> <span class="o">=</span> <span class="s">"use underscore to ignore var changes"</span>
 
 <span class="p">}</span>
 

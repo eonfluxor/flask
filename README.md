@@ -160,16 +160,11 @@ enum EnvMixers : SubstanceMixer {
 struct AppState : State {
     
     enum prop : StateProp{
-        case counter, title, asyncResult
+        case counter, title
     }
     
     var counter = 0
     var title = ""
-    
-    var object:FlaskNSRef? // reference to NSObject
-    var map:FlaskDictRef?  // NSDictionary wrapper for nested changes
-    
-    var _internal = "use underscore to ignore var changes"
     
 }
 
