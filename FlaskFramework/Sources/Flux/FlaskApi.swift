@@ -41,6 +41,10 @@ public func NewSubstance<T:State>(definedBy:T.Type)->Substance<T>{
     return Substance<T>()
 }
 
+public func NewSubstance<T:State>(definedBy:T.Type,named:String,archive:Bool=false)->Substance<T>{
+    return Substance<T>(name: named, archive: archive)
+}
+
 extension Flask{
     
     static public func attachFlask<T:AnyObject & FlaskReactor>( to object:T, mixing substances:[SubstanceConcrete]){

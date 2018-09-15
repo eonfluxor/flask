@@ -107,14 +107,17 @@ class NestedStateTests: SetupFlaskTests {
             var info = testStruct()
         }
         
-        let mySubstance = NewSubstance(definedBy: state.self)
-        
+        let mySubstance = NewSubstance(definedBy: state.self,named:"StructNestTest",archive:false)
+        mySubstance.shouldArchive = true
         
         let owner:TestOwner = TestOwner()
         let flask = Flask.instance(attachedTo:owner, mixing:mySubstance)
 
         
         flask.reactor = { owner, reaction in
+            
+            mySubstance.archiveNow()
+            
             reaction.on("info", { (change) in
                 expectation.fulfill()
             })
@@ -128,10 +131,14 @@ class NestedStateTests: SetupFlaskTests {
         
         flask.mix(mySubstance) { (substance) in
             substance.prop.info.counter = 90
-            substance.prop.info.nest.foo = "var"
+            substance.prop.info.nest.foo = "mutated"
         }.andReact()
         
         waitForExpectations(timeout: 2, handler: nil)
+   
+    
+        let archivedSubstance = NewSubstance(definedBy: state.self,named:"StructNestTest",archive:true)
+        XCTAssert(archivedSubstance.state.info.nest.foo == "mutated", "Must preserve value")
     }
     
         

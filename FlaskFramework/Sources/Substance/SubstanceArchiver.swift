@@ -34,7 +34,12 @@ extension ReactiveSubstance {
 }
 
 extension ReactiveSubstance {
-    
+    public func archiveNow(){
+        
+        assert(!archiveDisabled(),"`shouldArchive` must be enabled or `archiveDisabled()` should return false")
+        _archiveNow(state)
+        
+    }
     func archiveIntent(){
         
         guard !archiveDisabled() else{
@@ -45,13 +50,13 @@ extension ReactiveSubstance {
         let delay = archiveDelay()
         Kron.idle(timeOut: delay , resetKey:key){ [weak self] key,ctx in
             if let state = self?.state {
-                self?.archiveNow(state)
+                self?._archiveNow(state)
             }
         }
         
     }
     
-    func archiveNow<T:State>(_ state:T){
+    func _archiveNow<T:State>(_ state:T){
         
 //        archiveQueue.addOperation { [weak self] in
         
