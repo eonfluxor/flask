@@ -48,6 +48,10 @@ public class ChainReaction{
         return mix(aSubstance, mixing)
     }
     
+    public func and<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping(_ substance:T) -> Void)->ChainReaction{
+        return mix(aSubstance, mixing)
+    }
+    
     public func mix<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping (_ substance:T) -> Void)->ChainReaction{
         
         let substance = flask.substance(aSubstance)
