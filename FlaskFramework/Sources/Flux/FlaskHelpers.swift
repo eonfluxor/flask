@@ -35,7 +35,9 @@ public func isNilorNull(_ value:Any?)->Bool{
   
     return false
 }
-
+func StringFromPointer(_ object:Any)->String{
+    return "\(Unmanaged.passUnretained(object as AnyObject).toOpaque())"
+}
 
 
 protocol FlaskAnyWithInit{

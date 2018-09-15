@@ -21,18 +21,23 @@ public protocol State : Codable {
 }
 
 
+struct AnyCodable :Codable{
+    
+}
 public extension State{
     
 //    var dictionary: [String: Any] {
 //        return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]
 //    }
-    
-    
     func toDictionary()->FlaskDictType{
+        return toDictionary(from:self)
+    }
+    
+    func toDictionary(from object:Any )->FlaskDictType{
 //        let dict = self.dictionary
         var result:FlaskDictType = [:]
         
-        let mirror = Mirror(reflecting: self)
+        let mirror = Mirror(reflecting: object)
         
         for (label, value) in mirror.children {
             guard let label = label else {
@@ -43,6 +48,7 @@ public extension State{
                 continue
             }
             
+            //Note: We use Flask.Nil to cas nil as? Anyhashable otherwise the dictionary wont hold the value
             result[label] = Flask.Nil
             result[label] = value as? AnyHashable
             
@@ -51,7 +57,20 @@ public extension State{
                                                                 root: FlaskDictRef(result as NSDictionary),
                                                                 children: value as! FlaskDictRef)
                 result = nestedRef.dictionary as! FlaskDictType
+            
+            } else if( result[label] == Flask.Nil ){
+
+                result[label] =  StringFromPointer(value)
+                
+                let nest = toDictionary(from: value)
+                for (key, val) in nest{
+                    let nestedKey = "\(label).\(key)"
+                    result[nestedKey] = val
+                }
+                
             }
+            
+            
         }
         
         
@@ -90,6 +109,7 @@ public extension State{
         return result
     }
    
+ 
     
 }
 

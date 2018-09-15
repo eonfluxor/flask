@@ -11,6 +11,8 @@ import XCTest
 
 class NestedStateTests: SetupFlaskTests {
     
+    
+    
     func testNestedState(){
         
         let expectation = self.expectation(description: "testFlaskDictRef")
@@ -61,7 +63,7 @@ class NestedStateTests: SetupFlaskTests {
             
             flask.mix(substance){ (substance) in
                 substance.prop.map = dictRef
-            }.react()
+                }.react()
         }
         
         
@@ -78,7 +80,7 @@ class NestedStateTests: SetupFlaskTests {
             
             flask.mix(substance) { (substance) in
                 substance.prop.map = dictRef2
-            }.react()
+                }.react()
         }
         
         firstTest ( secondTest )
@@ -86,4 +88,51 @@ class NestedStateTests: SetupFlaskTests {
         waitForExpectations(timeout: 2, handler: nil)
     }
     
+    func testStruct(){
+        
+        let expectation = self.expectation(description: "testStruct")
+        let expectation2 = self.expectation(description: "testStruct")
+        let expectation3 = self.expectation(description: "testStruct")
+        
+        struct nestedTestStruct:Codable{
+            var foo = "bar"
+        }
+        
+        struct testStruct:Codable{
+            var counter = 10
+            var nest = nestedTestStruct()
+        }
+        
+        struct state : State{
+            var info = testStruct()
+        }
+        
+        let mySubstance = NewSubstance(definedBy: state.self)
+        
+        
+        let owner:TestOwner = TestOwner()
+        let flask = Flask.instance(attachedTo:owner, mixing:mySubstance)
+
+        
+        flask.reactor = { owner, reaction in
+            reaction.on("info", { (change) in
+                expectation.fulfill()
+            })
+            reaction.on("info.counter", { (change) in
+                expectation2.fulfill()
+            })
+            reaction.on("info.nest.foo", { (change) in
+                expectation3.fulfill()
+            })
+        }
+        
+        flask.mix(mySubstance) { (substance) in
+            substance.prop.info.counter = 90
+            substance.prop.info.nest.foo = "var"
+        }.andReact()
+        
+        waitForExpectations(timeout: 2, handler: nil)
+    }
+    
+        
 }
