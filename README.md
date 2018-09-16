@@ -563,12 +563,24 @@ All this while the framework guarantees the unidirectional flow integrity despit
 > TODO
 
 ## Documentation
-
-Jazzy generated documentation available here:
-
-[Documentation](https://eonfluxor.github.io/flask/)
-
 > *Please note the documentation is work in progress.*
+
+Jazzy generated documentation available here: [Documentation](https://eonfluxor.github.io/flask/)
+
+
+## Flow Chart
+
+ <p align="center"> 
+    <img src="
+http://res.cloudinary.com/dmje5xfzh/image/upload/c_scale,w_1024/v1537117496/static/flas-flow01.png" >
+ </p>
+
+The above flowchart is an overview of the Flask pipeline.
+
+* Green are `Flask` components
+* Blue are `Flux` components
+* Pink are `Substance` components
+* Yellow are `State` representations
 
 
 ## Have a question?
