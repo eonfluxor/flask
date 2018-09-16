@@ -567,10 +567,9 @@ All this while the framework guarantees the unidirectional flow integrity despit
 
 Jazzy generated documentation available here: [Documentation](https://eonfluxor.github.io/flask/)
 
-
 ## Flow Chart
 
-![image](http://res.cloudinary.com/dmje5xfzh/image/upload/c_scale,w_1024/v1537117496/static/flas-flow01.png)
+![image](http://res.cloudinary.com/dmje5xfzh/image/upload/v1537117496/static/flas-flow01.jpg)
 
 The above flowchart is an overview of the Flask pipeline.
 
