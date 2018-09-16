@@ -570,10 +570,7 @@ Jazzy generated documentation available here: [Documentation](https://eonfluxor.
 
 ## Flow Chart
 
- <p align="center"> 
-    <img src="
-http://res.cloudinary.com/dmje5xfzh/image/upload/c_scale,w_1024/v1537117496/static/flas-flow01.png" >
- </p>
+![image](http://res.cloudinary.com/dmje5xfzh/image/upload/c_scale,w_1024/v1537117496/static/flas-flow01.png)
 
 The above flowchart is an overview of the Flask pipeline.
 
