@@ -43,6 +43,138 @@ Flask allows implementing both the [Redux](https://github.com/reactjs/redux) and
 
 This is a direct analogy between the *Fluxor* pattern of `Reactive Stores` as a `ReactiveSubstance` and the *Redux* pattern of `Store Reducers`  as a plain `Substance`.
 
+## Flow Chart
+
+![image](http://res.cloudinary.com/dmje5xfzh/image/upload/v1537117496/static/flas-flow01.jpg)
+
+The above flowchart is an overview of the Flask pipeline.
+
+* Green is `Flask` components
+* Blue is `Flux` components
+* Pink is `Substance` components
+* Yellow is `State` representations
+
+## How it works?
+
+These are the main components to interface with Flask:
+
+* **Substances:** Any data structure in your application
+* **Reactors:** Objects receiving data changes callbacks
+* **Flasks:**  Binding Substances and Reactors.
+* **Mixers:**  Transactional closures defining data mutations
+
+### Substances
+
+Substances are minimally initialized with a `State` structure. ReactiveSubstances require an additional `SubtanceMixer` enumeration to facilitate handling environmental mixers.
+
+* **Substance:** Easy to mutate using `Flask.mix`
+* **ReactiveSubstance:** Like Substances but also observing global Substance Mixers.
+
+Consider the following example:
+
+> State
+
+```swift
+struct AppState : State {
+    enum prop : StateProp{
+        case counter
+    }
+    var counter = 0
+}
+```
+> Substance
+
+```swift
+class Feed : Substance<AppState> {}
+```
+> Reactive Substance
+
+```swift
+enum Mixers : SubstanceMixer {
+    case Login
+}
+class App : ReactiveSubstance<AppState,Mixers> {
+    
+    override func defineMixers(){
+        define(mix: . Login) { (payload, react, abort)  in
+            self.prop.counter = self.prop.counter + 1
+            react()
+        }
+    }
+    
+}
+```
+
+
+### Mixers
+
+Flask data mutations are performed using Mixers. A mixer is a transactional closure where you can access an modify given substance properties. There are two types of mixers:
+
+* **Substance Mixer** These are declared as enumerations and passed as part of a `ReactiveSubstace` subclass definition. Internally the substance optionally subscribes to the cases where it needs to respond with internal data mutations inside a State Transaction context.
+* **Flask Mixer** These can be used anywhere by accessing the substances bound to a given `FlaskClass` instance. Calling `flask.mix( substance)`lets you declare a closure that includes a weak pointer to the requested substance in a State Transaction context where you can mutate the substance properties.
+
+So while *Substance Mixers* can be applied across all substances sharing the same observers the *Flask Mixers* are intended for more specific transformations and had the advantage of mutating multiple substances through the use of a `ChainReaction`.
+
+Consider the following samples:
+
+> Global Substance Mixer. High-level API
+
+```swift
+  MixSubstances(with:EnvMixers.Login, payload:["username":"foo"])
+```
+
+> Flask Mixer. High-level API
+
+```
+ GetFlaskReactor(at:self)
+            .toMix(self.substance!) { (substance) in
+                substance.prop.counter = 10
+            }.with(self.substance!) { (substance) in
+                substance.prop.text = "text"
+            }.andReact()
+```            
+
+### Flask
+
+There are two contexts in relation to `Flask`:
+
+* `Flask` As the static class used as API interface
+* `FlaskClass` Instances implementing the `Flask` architecture  
+
+You can easily infer the meaning by checking if the context is static or an instance.
+
+The `FlaskClass` instances (or **flask** for short) are initialized by the `FlaskManager` factory by passing a weak `owner` reference and an array of `[substances]`. Internally the framework takes care of lazily unbinding and disposing of the instances which `owner` has become nil. 
+
+Finally, the Flask needs to define a reactor closure where to receive the changes callbacks. You can see an example implementation here:
+
+```swift
+    let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        
+    flask.reactor={owner, reaction in
+        reaction.on(AppState.prop.counter, { (change) in
+            expectation.fulfill()
+        })
+    }
+```
+The above implementation is conviently wrapped using the `FlaskReactor` protocol in which case the implementation looks like this:
+
+```swift
+class ViewController: UIViewController, FlaskReactor  {
+
+    func flaskReactor(reaction: FlaskReaction) {
+        
+        reaction.on(AppState.prop.counter) { (change) in
+                print("counter = \(substance.state.counter)")
+        }
+
+  override func viewDidLoad() {
+       
+        AttachFlaskReactor(to:self, mixing:[substance, Subs.appReactive])
+        
+    }
+}
+```
+
 
 ## Motivation
 
@@ -240,7 +372,7 @@ These tests are also automatically run with Travis-CI on each deployment and you
    
 ## Gists
 
-More practical examples are in the works and we would love to  feature yours!
+More practical examples are in the works and we would love to feature yours!
 
 ### Chain Reaction
 
@@ -567,16 +699,7 @@ All this while the framework guarantees the unidirectional flow integrity despit
 
 Jazzy generated documentation available here: [Documentation](https://eonfluxor.github.io/flask/)
 
-## Flow Chart
 
-![image](http://res.cloudinary.com/dmje5xfzh/image/upload/v1537117496/static/flas-flow01.jpg)
-
-The above flowchart is an overview of the Flask pipeline.
-
-* Green are `Flask` components
-* Blue are `Flux` components
-* Pink are `Substance` components
-* Yellow are `State` representations
 
 
 ## Have a question?
