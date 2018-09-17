@@ -125,7 +125,7 @@ Inspect these methods to learn more about the low-level API.
 
 ### Substances
 
-Substances are minimally initialized with a `State` structure. ReactiveSubstances require an additional `SubtanceMixer` enumeration to facilitate handling environmental mixers.
+Substances are minimally initialized with a `State` structure. ReactiveSubstances require an additional `SubstanceMixer` enumeration to facilitate handling environmental mixers.
 
 * **Substance:** Easy to mutate using `Flask.mix`
 * **ReactiveSubstance:** Like Substances but also observing global Substance Mixers.
@@ -238,7 +238,7 @@ class ViewController: UIViewController, FlaskReactor  {
 
 In Flask, Flux is the unidirectional single dispatch bus that ensures that all mixing operations will be performed in an atomic way.
 
-All this happens under the hood and you don't need to interface with Flux other than dispatching SubtanceMixer events.
+All this happens under the hood and you don't need to interface with Flux other than dispatching SubstanceMixer events.
 
 However, it is possible to pause the Flux with a `FluxLock` and also perform exclusive mixes while the main flux is paused.  Even more, you can create asynchronous locks that would be released at a later time by actions performed in your reaction closure.
 
@@ -515,7 +515,7 @@ func testStruct(){
             var info = testStruct()
         }
         
-        let NAME = "subtanceTest\( NSDate().timeIntervalSince1970)"
+        let NAME = "substanceTest\( NSDate().timeIntervalSince1970)"
         let mySubstance = NewSubstance(definedBy: state.self,named:NAME, archive:false)
         mySubstance.shouldArchive = true
         

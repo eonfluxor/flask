@@ -344,7 +344,7 @@
 <p>Inspect these methods to learn more about the low-level API.</p>
 <h3 id='substances' class='heading'>Substances</h3>
 
-<p>Substances are minimally initialized with a <code><a href="Protocols/State.html">State</a></code> structure. ReactiveSubstances require an additional <code>SubtanceMixer</code> enumeration to facilitate handling environmental mixers.</p>
+<p>Substances are minimally initialized with a <code><a href="Protocols/State.html">State</a></code> structure. ReactiveSubstances require an additional <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> enumeration to facilitate handling environmental mixers.</p>
 
 <ul>
 <li><strong>Substance:</strong> Easy to mutate using <code>Flask.mix</code></li>
@@ -459,7 +459,7 @@
 
 <p>In Flask, Flux is the unidirectional single dispatch bus that ensures that all mixing operations will be performed in an atomic way.</p>
 
-<p>All this happens under the hood and you don&rsquo;t need to interface with Flux other than dispatching SubtanceMixer events.</p>
+<p>All this happens under the hood and you don&rsquo;t need to interface with Flux other than dispatching SubstanceMixer events.</p>
 
 <p>However, it is possible to pause the Flux with a <code><a href="Classes/FluxLock.html">FluxLock</a></code> and also perform exclusive mixes while the main flux is paused.  Even more, you can create asynchronous locks that would be released at a later time by actions performed in your reaction closure.</p>
 
@@ -721,7 +721,7 @@
             <span class="k">var</span> <span class="nv">info</span> <span class="o">=</span> <span class="nf">testStruct</span><span class="p">()</span>
         <span class="p">}</span>
 
-        <span class="k">let</span> <span class="nv">NAME</span> <span class="o">=</span> <span class="s">"subtanceTest</span><span class="se">\(</span> <span class="kt">NSDate</span><span class="p">()</span><span class="o">.</span><span class="n">timeIntervalSince1970</span><span class="se">)</span><span class="s">"</span>
+        <span class="k">let</span> <span class="nv">NAME</span> <span class="o">=</span> <span class="s">"substanceTest</span><span class="se">\(</span> <span class="kt">NSDate</span><span class="p">()</span><span class="o">.</span><span class="n">timeIntervalSince1970</span><span class="se">)</span><span class="s">"</span>
         <span class="k">let</span> <span class="nv">mySubstance</span> <span class="o">=</span> <span class="kt">NewSubstance</span><span class="p">(</span><span class="nv">definedBy</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="k">self</span><span class="p">,</span><span class="nv">named</span><span class="p">:</span><span class="kt">NAME</span><span class="p">,</span> <span class="nv">archive</span><span class="p">:</span><span class="kc">false</span><span class="p">)</span>
         <span class="n">mySubstance</span><span class="o">.</span><span class="n">shouldArchive</span> <span class="o">=</span> <span class="kc">true</span>
 
