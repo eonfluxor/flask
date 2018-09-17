@@ -269,6 +269,39 @@
 <hr>
 
 <p>This is a direct analogy between the <em>Fluxor</em> pattern of <code>Reactive Stores</code> as a <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> and the <em>Redux</em> pattern of <code>Store Reducers</code>  as a plain <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code>.</p>
+<h2 id='motivation' class='heading'>Motivation</h2>
+
+<p>Flask should deliver the most robust feature set accessible through the most friendly API.</p>
+
+<p>With this in mind, Flask goes beyond the novelty of this architecture to develop an expressive API borrowing elemental science concepts to craft a framework that is easy to understand through analogies of the physical world.</p>
+
+<p>All this while the core technology offers a unified implementation of both the <code>Redux</code> and <code>Fluxor</code> patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). </p>
+<h2 id='why-flask' class='heading'>Why Flask?</h2>
+
+<p>Flask provides unique features not found in similar frameworks:</p>
+
+<ul>
+<li>Chained mutations</li>
+<li>Binding multiple stores</li>
+<li>Structs reductions with nested keys</li>
+<li>NSObject pointer change reduction with <code><a href="Classes/FlaskNSRef.html">FlaskNSRef</a></code></li>
+<li>NSDictionary and Dictionary reduction supporting nested keys</li>
+<li>Flux locks and exclusive dispatch</li>
+<li>Automatic archiving to <code>UserDefaults</code></li>
+<li>Managed attachment with automatic disposal</li>
+<li>Friendly high-level API</li>
+<li>Access to low-level API for more granular control</li>
+<li>Mixed use of both Redux and Fluxor patterns</li>
+</ul>
+<h2 id='cocoapods' class='heading'>CocoaPods</h2>
+
+<p>If you use <a href="https://cocoapods.org/pods/Flask">CocoaPods</a> , simply add <strong>Flask</strong> to your <code>Podfile</code>:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'Flask'</span>
+</code></pre>
+
+<p>And then import the module</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Flask</span>
+</code></pre>
 <h2 id='flow-chart' class='heading'>Flow Chart</h2>
 
 <p><img src="http://res.cloudinary.com/dmje5xfzh/image/upload/v1537117496/static/flas-flow01.jpg" alt="image"></p>
@@ -290,7 +323,25 @@
 <li><strong>Reactors:</strong> Objects receiving data changes callbacks</li>
 <li><strong>Flasks:</strong>  Binding Substances and Reactors.</li>
 <li><strong>Mixers:</strong>  Transactional closures defining data mutations</li>
+<li><strong>Flux:</strong>  A single unidirectional mix transactions FIFO bus</li>
 </ul>
+<h3 id='api' class='heading'>API</h3>
+
+<p>These are the High-level API methods that you&rsquo;ll use more frequently:</p>
+<pre class="highlight swift"><code><span class="c1">// Managing your flask instance</span>
+<span class="kt">AttachFlaskReactor</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span><span class="nv">mixing</span><span class="p">:)</span>
+<span class="kt">DetachFlaskReactor</span><span class="p">(</span><span class="nv">from</span><span class="p">:)</span>
+<span class="kt">GetFlaskReactor</span><span class="p">(</span><span class="nv">at</span><span class="p">:)</span>
+
+<span class="c1">// Dispatching a substancer mixer</span>
+<span class="kt">MixSubstances</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span><span class="nv">payload</span><span class="p">:)</span>
+
+<span class="c1">// Creating non-reactive substances</span>
+<span class="kt">NewSubstance</span><span class="p">(</span><span class="nv">definedBy</span><span class="p">:)</span>
+<span class="kt">NewSubstance</span><span class="p">(</span><span class="nv">definedBy</span><span class="p">:</span><span class="nv">named</span><span class="p">:</span><span class="nv">archive</span><span class="p">:)</span>
+</code></pre>
+
+<p>Inspect these methods to learn more about the low-level API.</p>
 <h3 id='substances' class='heading'>Substances</h3>
 
 <p>Substances are minimally initialized with a <code><a href="Protocols/State.html">State</a></code> structure. ReactiveSubstances require an additional <code>SubtanceMixer</code> enumeration to facilitate handling environmental mixers.</p>
@@ -404,39 +455,15 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<h2 id='motivation' class='heading'>Motivation</h2>
+<h2 id='flux' class='heading'>Flux</h2>
 
-<p>Flask should deliver the most robust feature set accessible through the most friendly API.</p>
+<p>In Flask, Flux is the unidirectional single dispatch bus that ensures that all mixing operations will be performed in an atomic way.</p>
 
-<p>With this in mind, Flask goes beyond the novelty of this architecture to develop an expressive API borrowing elemental science concepts to craft a framework that is easy to understand through analogies of the physical world.</p>
+<p>All this happens under the hood and you don&rsquo;t need to interface with Flux other than dispatching SubtanceMixer events.</p>
 
-<p>All this while the core technology offers a unified implementation of both the <code>Redux</code> and <code>Fluxor</code> patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). </p>
-<h2 id='why-flask' class='heading'>Why Flask?</h2>
+<p>However, it is possible to pause the Flux with a <code><a href="Classes/FluxLock.html">FluxLock</a></code> and also perform exclusive mixes while the main flux is paused.  Even more, you can create asynchronous locks that would be released at a later time by actions performed in your reaction closure.</p>
 
-<p>Flask provides unique features not found in similar frameworks:</p>
-
-<ul>
-<li>Chained mutations</li>
-<li>Binding multiple stores</li>
-<li>Structs reductions with nested keys</li>
-<li>NSObject pointer change reduction with <code><a href="Classes/FlaskNSRef.html">FlaskNSRef</a></code></li>
-<li>NSDictionary and Dictionary reduction supporting nested keys</li>
-<li>Flux locks and exclusive dispatch</li>
-<li>Automatic archiving to <code>UserDefaults</code></li>
-<li>Managed attachment with automatic disposal</li>
-<li>Friendly high-level API</li>
-<li>Access to low-level API for more granular control</li>
-<li>Mixed use of both Redux and Fluxor patterns</li>
-</ul>
-<h2 id='cocoapods' class='heading'>CocoaPods</h2>
-
-<p>If you use <a href="https://cocoapods.org/pods/Flask">CocoaPods</a> , simply add <strong>Flask</strong> to your <code>Podfile</code>:</p>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'Flask'</span>
-</code></pre>
-
-<p>And then import the module</p>
-<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Flask</span>
-</code></pre>
+<p>Read more about Locks below.</p>
 <h2 id='new-to-flux' class='heading'>New to Flux?</h2>
 
 <p>You can learn all about of Flux in this didactic article from Lin Clark.

@@ -43,6 +43,45 @@ Flask allows implementing both the [Redux](https://github.com/reactjs/redux) and
 
 This is a direct analogy between the *Fluxor* pattern of `Reactive Stores` as a `ReactiveSubstance` and the *Redux* pattern of `Store Reducers`  as a plain `Substance`.
 
+## Motivation
+
+Flask should deliver the most robust feature set accessible through the most friendly API.
+
+With this in mind, Flask goes beyond the novelty of this architecture to develop an expressive API borrowing elemental science concepts to craft a framework that is easy to understand through analogies of the physical world.
+
+All this while the core technology offers a unified implementation of both the `Redux` and `Fluxor` patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). 
+
+## Why Flask?
+
+Flask provides unique features not found in similar frameworks:
+
+* Chained mutations 
+* Binding multiple stores 
+* Structs reductions with nested keys
+* NSObject pointer change reduction with `FlaskNSRef`
+* NSDictionary and Dictionary reduction supporting nested keys 
+* Flux locks and exclusive dispatch
+* Automatic archiving to `UserDefaults`
+* Managed attachment with automatic disposal
+* Friendly high-level API
+* Access to low-level API for more granular control
+* Mixed use of both Redux and Fluxor patterns
+
+## CocoaPods
+
+If you use [CocoaPods](https://cocoapods.org/pods/Flask) , simply add **Flask** to your `Podfile`:
+
+```ruby
+pod 'Flask'
+```
+
+And then import the module
+
+```swift
+import Flask
+```
+
+
 ## Flow Chart
 
 ![image](http://res.cloudinary.com/dmje5xfzh/image/upload/v1537117496/static/flas-flow01.jpg)
@@ -62,6 +101,27 @@ These are the main components to interface with Flask:
 * **Reactors:** Objects receiving data changes callbacks
 * **Flasks:**  Binding Substances and Reactors.
 * **Mixers:**  Transactional closures defining data mutations
+* **Flux:**  A single unidirectional mix transactions FIFO bus
+
+### API
+
+These are the High-level API methods that you'll use more frequently:
+
+```swift
+// Managing your flask instance
+AttachFlaskReactor(to:mixing:)
+DetachFlaskReactor(from:)
+GetFlaskReactor(at:)
+
+// Dispatching a substancer mixer
+MixSubstances(with:payload:)
+
+// Creating non-reactive substances
+NewSubstance(definedBy:)
+NewSubstance(definedBy:named:archive:)
+```
+
+Inspect these methods to learn more about the low-level API.
 
 ### Substances
 
@@ -174,45 +234,15 @@ class ViewController: UIViewController, FlaskReactor  {
     }
 }
 ```
+## Flux
 
+In Flask, Flux is the unidirectional single dispatch bus that ensures that all mixing operations will be performed in an atomic way.
 
-## Motivation
+All this happens under the hood and you don't need to interface with Flux other than dispatching SubtanceMixer events.
 
-Flask should deliver the most robust feature set accessible through the most friendly API.
+However, it is possible to pause the Flux with a `FluxLock` and also perform exclusive mixes while the main flux is paused.  Even more, you can create asynchronous locks that would be released at a later time by actions performed in your reaction closure.
 
-With this in mind, Flask goes beyond the novelty of this architecture to develop an expressive API borrowing elemental science concepts to craft a framework that is easy to understand through analogies of the physical world.
-
-All this while the core technology offers a unified implementation of both the `Redux` and `Fluxor` patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). 
-
-## Why Flask?
-
-Flask provides unique features not found in similar frameworks:
-
-* Chained mutations 
-* Binding multiple stores 
-* Structs reductions with nested keys
-* NSObject pointer change reduction with `FlaskNSRef`
-* NSDictionary and Dictionary reduction supporting nested keys 
-* Flux locks and exclusive dispatch
-* Automatic archiving to `UserDefaults`
-* Managed attachment with automatic disposal
-* Friendly high-level API
-* Access to low-level API for more granular control
-* Mixed use of both Redux and Fluxor patterns
-
-## CocoaPods
-
-If you use [CocoaPods](https://cocoapods.org/pods/Flask) , simply add **Flask** to your `Podfile`:
-
-```ruby
-pod 'Flask'
-```
-
-And then import the module
-
-```swift
-import Flask
-```
+Read more about Locks below.
 
 ## New to Flux?
 
