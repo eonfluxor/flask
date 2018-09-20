@@ -14,7 +14,7 @@ import Cocoa
 
 public typealias FluxEmptyClosure = ()->Void
 public typealias FluxNotificationClosure = (_ notification:FluxNotification)->Void
-public typealias FluxMutationClosure = (_ payload: Any?,_ react:()->Void, _ abort:()->Void ) -> Void
+public typealias FluxMutationClosure = (_ payload: FluxPayloadType?,_ react:()->Void, _ abort:()->Void ) -> Void
 public typealias ChangeClosure = (_ change:SubstanceChange)->Void
 public typealias ReactionClosure<T> = (_ attachedTo:T, _ reaction: FlaskReaction) -> Void
 public typealias MutationClosure<T> = (_ substance:T,_ react:()-> Void,_ abort:()-> Void) -> Void
