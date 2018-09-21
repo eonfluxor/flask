@@ -3,7 +3,7 @@
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
-//  Copyright © 2018 hassanvflask. All rights reserved.
+//  Copyright © 2018 hassanvreactor. All rights reserved.
 //
 
 import XCTest
@@ -18,9 +18,9 @@ class ChainingTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner, mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner, mixing:substance)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             reaction.on(AppState.prop.counter, { (change) in
                 expectation.fulfill()
                 
@@ -29,7 +29,7 @@ class ChainingTests: SetupFlaskTests {
         
       
         
-        flask
+        reactor
             .mix(substance){ (substance) in
                 substance.prop.counter=1
             }.mix(substance) { (substance) in
@@ -49,13 +49,13 @@ class ChainingTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
         let object = NSObject()
         let aObject = FlaskNSRef( object )
         
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             
             reaction.on(AppState.prop.counter, { (change) in
                 
@@ -91,7 +91,7 @@ class ChainingTests: SetupFlaskTests {
             
         }
         
-        flask.mix(substance) { (substance) in
+        reactor.mix(substance) { (substance) in
             substance.prop.counter = 1
             substance.prop.text = "reaction"
             substance.prop.object = aObject
@@ -109,9 +109,9 @@ class ChainingTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner, mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner, mixing:substance)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             reaction.on(AppState.prop.counter, { (change) in
                 
                 XCTAssert(substance.state.counter == 2)
@@ -125,7 +125,7 @@ class ChainingTests: SetupFlaskTests {
             })
         }
         
-        flask
+        reactor
             .mix(substance){ (substance) in
                 substance.prop.counter=2
             }.mix(substance) { (substance) in
@@ -145,9 +145,9 @@ class ChainingTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner, mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner, mixing:substance)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             reaction.on(AppState.prop.counter, { (change) in
                 expectation.fulfill()
 //                XCTAssert(substance.state.counter == 2)
@@ -156,7 +156,7 @@ class ChainingTests: SetupFlaskTests {
             })
         }
         
-        flask
+        reactor
             .mix(substance){ (substance) in
                 substance.prop.text="mix no override"
                 substance.prop.counter=1

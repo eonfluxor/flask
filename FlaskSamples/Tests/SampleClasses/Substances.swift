@@ -20,5 +20,5 @@ struct FeedSate : State {
 
 struct Substances  {
   static let app = App()
-  static let feed = NewSubstance(definedBy: FeedSate.self)
+  static let feed = Flask.newSubstance(definedBy: FeedSate.self)
 }

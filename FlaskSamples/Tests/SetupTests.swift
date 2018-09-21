@@ -21,8 +21,8 @@ class SetupFlaskTests: XCTestCase {
         substance = App()
         substance?.name(suffix:String(TestsCounter))
         TestsCounter = TestsCounter + 1
-        FlaskManager.purge()
-        XCTAssert(FlaskManager.flasks.count == 0, "all flasks should dispose before this test")
+        ReactorManager.purgeAll()
+        XCTAssert(ReactorManager.reactors.count == 0, "all flasks should dispose before this test")
     }
     
     override func tearDown() {
@@ -31,7 +31,7 @@ class SetupFlaskTests: XCTestCase {
         self.substance?.purgeArchive()
         self.substance = .none
         Flask.removeLocks()
-        FlaskManager.purge()
+        ReactorManager.purge()
     }
     
     
