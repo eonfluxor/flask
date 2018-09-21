@@ -74,7 +74,7 @@ Using chemistry semantics is an intuitive way to approach the flux-reactive patt
 ## Motivation
 Flask Reactor is the foundation of a comprehensive toolbox defining the "Flask Pattern" as a way to create reactive applications in Apple's Swift platform. As such Flask delivers the most robust feature set through an intuitive API.
 
-Flask goes beyond the novelty of the Reactive pattern to develop an expressive API using physical world analogies that are intuitive and easy to implement. All this while the core technology offers a unified implementation of both the `Redux` and `Fluxor` patterns and delivering advanced features not available in other frameworks (such as locks and nested keys reduction) and required for the development of higher-level frameworks (like a navigation router). 
+Flask goes beyond the novelty of the Reactive pattern to develop an expressive API using physical world analogies that are intuitive and easy to implement. All this while the core technology offers a unified implementation of both the `Redux` and `Fluxor` patterns and delivers advanced features not available in other frameworks (such as async-flux, locks and nested keys support). Such features are required for the development of higher-level frameworks (like the FlaskNavigation router or the FlaskAPI manager). 
 
 > Despite its power Flask is as easy to implement as the most popular frameworks (ie. ReSwift). Code complexity is optional and progressive depending on your own implementations.
 
