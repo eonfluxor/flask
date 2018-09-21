@@ -15,12 +15,12 @@ import Cocoa
 
 open class FlaskOperation: Operation {
     
-    typealias AsyncBlock = (FlaskOperation) -> Void
+    public typealias AsyncBlock = (FlaskOperation) -> Void
     
     var block: AsyncBlock?
     var fluxLock: FluxLock?
     
-    init(block: @escaping AsyncBlock) {
+    public init(block: @escaping AsyncBlock) {
         super.init()
         self.block = block
     }
