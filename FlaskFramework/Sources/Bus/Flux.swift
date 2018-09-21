@@ -87,29 +87,26 @@ extension Flux {
     
     func applyMixerInFluxQueue(_ mixer:String, payload:FluxPayloadType?){
         
-        let completed = { [weak self] in
-            if let me = self{
-                me.applyLocks()
-            }
-        }
         
-        busQueue.addOperation { [weak self] in
-            
-  
-            assert( self?.currentMixer == .none, "The sngle flow is broken!")
+        let operation = FlaskOperation{ [weak self] (operation) in
+
+            assert( self?.currentMixer == .none, "The single flow is broken!")
             self?.currentMixer = mixer
             
             FluxNotifier.postNotification(forMixer: mixer,
-                                         payload: payload,
-                                         completion: completed)
+                                          payload: payload,
+                                          operation: operation)
             
             
             self?.currentMixer = .none
             
         }
         
-        busQueue.isSuspended = true
+        busQueue.addOperation(operation)
+        
     }
+    
+    
     
     func performInFluxQueue(_ action:@escaping ()->Void){
         
@@ -120,21 +117,15 @@ extension Flux {
     }
     
     func applyMixerInLockQueue(_ mixer:String, payload:FluxPayloadType?){
-        
-        let completed = { [weak self] in
-            if let me = self{
-                me.busOnLockQueue.isSuspended = false
-            }
-        }
-        
-        busOnLockQueue.addOperation {
+   
+         let operation = FlaskOperation{  (operation) in
             FluxNotifier.postNotification(forMixer: mixer,
                                          payload: payload,
-                                         completion: completed)
+                                         operation: operation)
             
         }
         
-        busOnLockQueue.isSuspended = true
+        busOnLockQueue.addOperation(operation)
     }
  
 }
