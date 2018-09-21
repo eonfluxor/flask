@@ -43,13 +43,40 @@ Flask allows implementing both the [Redux](https://github.com/reactjs/redux) and
 
 This is a direct analogy between the *Fluxor* pattern of `Reactive Stores` as a `ReactiveSubstance` and the *Redux* pattern of `Store Reducers`  as a plain `Substance`.
 
+# Table of Contents
+
+- [Motivation](#motivation)
+- [Why Flask?](#why-flask)
+- [CocoaPods Installation](#cocoapods)
+- [Architecture](#architecture)
+- [Components](#components)
+  - [Flask API](#flask-api)
+  - [Substances](#substances)
+  - [Mixers](#mixers)
+  - [Reactor](#reactor)
+  - [Flux](#flux)
+- [Implementation](#implementation)
+  - [Redux Style](#redux-style)
+  - [Fluxor Style](#fluxor-style)
+- [Special Features](#special-features)
+  - [Chained Reactions](#chain-reactions)
+  - [Flux Locks](#locks)
+  - [Async Flux](#async-mixing-with-locks)
+  - [Nested Structs](#nested-structs)
+  - [NSObjects and Dictionaries](#nsobjects-and-dictionaries)
+  - [Archiving](#archiving)
+  - [Internal Properties](#internal-state-props)
+  - [Low-Level API](#low-level-api)
+- [Documentation](#documentation)
+
 ## Motivation
+Flask Reactor will be the foundation of a comprehensive toolbox defining the "Flask Pattern" as a way to create reactive applications in swift. As such glask should deliver the most robust feature set accessible through a very friendly API.
 
-Flask should deliver the most robust feature set accessible through the most friendly API.
+Flask goes beyond the novelty of the Reactive pattern to develop an expressive API through elemental science concepts to craft a framework that is easy to understand and use. After all the word `React` is itself defined [within the chemistry semantics](https://dictionary.cambridge.org/us/dictionary/english/react).
 
-With this in mind, Flask goes beyond the novelty of this architecture to develop an expressive API borrowing elemental science concepts to craft a framework that is easy to understand through analogies of the physical world.
+All this while the core technology offers a unified implementation of both the `Redux` and `Fluxor` patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction) and required for the development of higher-level frameworks (like a navigation router). 
 
-All this while the core technology offers a unified implementation of both the `Redux` and `Fluxor` patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). 
+> Despite its power Flask is as easy to implement as the most popular frameworks (ie. ReSwift). Code complexity is optional and progressive depending on your own implementations.
 
 ## Why Flask?
 
@@ -82,28 +109,28 @@ import Flask
 ```
 
 
-## Flow Chart
+# Architecture
 
 ![image](http://res.cloudinary.com/dmje5xfzh/image/upload/v1537117496/static/flas-flow01.jpg)
 
-The above flowchart is an overview of the Flask pipeline.
+The above flowchart is an overview of the `Flask` pipeline.
 
-* Green is `Flask` components
-* Blue is `Flux` components
-* Pink is `Substance` components
-* Yellow is `State` representations
+* Green are `Reactor` components
+* Blue are `Flux` components
+* Pink are `Substance` components
+* Yellow are `State` representations
 
 ## How it works?
 
 These are the main components to interface with Flask:
 
 * **Substances:** Any data structure in your application
-* **Reactors:** Objects receiving data changes callbacks
-* **Flasks:**  Binding Substances and Reactors.
 * **Mixers:**  Transactional closures defining data mutations
-* **Flux:**  A single unidirectional mix transactions FIFO bus
+* **Reactors:** Mixing Substances to produce reactions
+* **Flux:**  The single unidirectional bus connecting the pipeline
 
-### API
+# Components
+### Flask API
 
 These are the High-level API methods that you'll use more frequently:
 
@@ -194,18 +221,11 @@ Consider the following samples:
             }.andReact()
 ```            
 
-### Flask
-
-There are two contexts in relation to `Flask`:
-
-* `Flask` As the static class used as API interface
-* `Reactor` Instances implementing the `Flask` architecture  
-
-You can easily infer the meaning by checking if the context is static or an instance.
+###  Reactor
 
 The `Reactor` instances (or **reactor** for short) are initialized by the `ReactorManager` factory by passing a weak `owner` reference and an array of `[substances]`. Internally the framework takes care of lazily unbinding and disposing of the instances which `owner` has become nil. 
 
-Finally, the Flask needs to define a handler closure where to receive the changes callbacks. You can see an example implementation here:
+Each `Reactor` must define a handler closure where to receive the changes callbacks. You can see an example implementation here:
 
 ```swift
     let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
@@ -252,7 +272,9 @@ You can learn all about of Flux in this didactic article from Lin Clark.
 Also the official docs:
 [Flux from facebook](https://facebook.github.io/flux/docs/overview.html)
 
+# Implementation
 
+Here is a quick reference on how to implement Flask Reactor in relation to the Redux and Fluxor pattern.
 
 ## Redux Style
 
@@ -383,26 +405,7 @@ class ViewController: UIViewController, FlaskReactor  {
 }
 ```
 
-
-## Sample Project
-
-A sample project is available in this repo inside the folder: 
-
-* FlaskSample/
-
-Make sure to run `Pod install` to create your workspace.
-
-The sample application implements both patterns simultaneously for further reference.
-
-## Test Cases
-
-The above sample project also ships with dozens of test cases as standard Xcode test units. It's a great source to learn more implementation patterns.
-
-These tests are also automatically run with Travis-CI on each deployment and you can check the health status above for peace of mind.
-   
-## Gists
-
-More practical examples are in the works and we would love to feature yours!
+# Special Features
 
 ### Chain Reaction
 
@@ -702,35 +705,32 @@ reactors
 purge()
 ```
 
-## Discussion
+# Documentation
 
-#### Why mixing Fluxor and Redux?
+## Demo Project
 
-It's simple, with  `ReactiveSubstance` classes you have the ability to make them all react to global `SubstanceMixer` events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style "inline" transformations.
+A sample project is available in this repo inside the folder: 
 
-For instance, an App `ReactiveSubstance` make sense as it would react to global events like log out or navigation. Also, it's a perfect candidate to be archived enabling `Substance.shouldArchive` to act as a basic an in-app data storage. Still, you can use this App substance in any `FlaskReactor` implementation and further apply Redux style transformations in a more particular context.
+* FlaskSample/
 
-All this while the framework guarantees the unidirectional flow integrity despite mixing global `SubstanceMixer` events or local `Flask.mix` reactions.
+Make sure to run `Pod install` to create your workspace.
 
-#### Why Substance instead of Store?
+The sample application implements both patterns simultaneously for further reference.
 
-> TODO
+## Test Cases
 
-#### How many Substances should I have?
+The above sample project also ships with dozens of test cases as standard Xcode test units. It's a great source to learn more implementation patterns.
 
-> TODO
+These tests are also automatically run with Travis-CI on each deployment and you can check the health status above for peace of mind.
+   
+## Gists
 
-#### Advantages of Substance Archiving
+More practical examples are in the works and we would love to feature yours!
 
-> TODO
-
-## Documentation
+## API Documentation
 > *Please note the documentation is work in progress.*
 
 Jazzy generated documentation available here: [Documentation](https://eonfluxor.github.io/reactor/)
-
-
-
 
 ## Have a question?
 If you need any help, please visit our GitHub issues. Feel free to file an issue if you do not manage to find any solution from the archives.
