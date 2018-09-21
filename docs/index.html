@@ -262,13 +262,53 @@
 <hr>
 
 <p>This is a direct analogy between the <em>Fluxor</em> pattern of <code>Reactive Stores</code> as a <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> and the <em>Redux</em> pattern of <code>Store Reducers</code>  as a plain <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code>.</p>
+<h1 id='table-of-contents' class='heading'>Table of Contents</h1>
+
+<ul>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#why-flask">Why Flask?</a></li>
+<li><a href="#cocoapods">CocoaPods Installation</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#components">Components</a>
+
+<ul>
+<li><a href="#flask-api">Flask API</a></li>
+<li><a href="#substances">Substances</a></li>
+<li><a href="#mixers">Mixers</a></li>
+<li><a href="#reactor">Reactor</a></li>
+<li><a href="#flux">Flux</a></li>
+</ul></li>
+<li><a href="#implementation">Implementation</a>
+
+<ul>
+<li><a href="#redux-style">Redux Style</a></li>
+<li><a href="#fluxor-style">Fluxor Style</a></li>
+</ul></li>
+<li><a href="#special-features">Special Features</a>
+
+<ul>
+<li><a href="#chain-reactions">Chained Reactions</a></li>
+<li><a href="#locks">Flux Locks</a></li>
+<li><a href="#async-mixing-with-locks">Async Flux</a></li>
+<li><a href="#nested-structs">Nested Structs</a></li>
+<li><a href="#nsobjects-and-dictionaries">NSObjects and Dictionaries</a></li>
+<li><a href="#archiving">Archiving</a></li>
+<li><a href="#internal-state-props">Internal Properties</a></li>
+<li><a href="#low-level-api">Low-Level API</a></li>
+</ul></li>
+<li><a href="#documentation">Documentation</a></li>
+</ul>
 <h2 id='motivation' class='heading'>Motivation</h2>
 
-<p>Flask should deliver the most robust feature set accessible through the most friendly API.</p>
+<p>Flask Reactor will be the foundation of a comprehensive toolbox defining the <q>Flask Pattern</q> as a way to create reactive applications in swift. As such glask should deliver the most robust feature set accessible through a very friendly API.</p>
 
-<p>With this in mind, Flask goes beyond the novelty of this architecture to develop an expressive API borrowing elemental science concepts to craft a framework that is easy to understand through analogies of the physical world.</p>
+<p>Flask goes beyond the novelty of the Reactive pattern to develop an expressive API through elemental science concepts to craft a framework that is easy to understand and use. After all the word <code>React</code> is itself defined <a href="https://dictionary.cambridge.org/us/dictionary/english/react">within the chemistry semantics</a>.</p>
 
-<p>All this while the core technology offers a unified implementation of both the <code>Redux</code> and <code>Fluxor</code> patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction). </p>
+<p>All this while the core technology offers a unified implementation of both the <code>Redux</code> and <code>Fluxor</code> patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction) and required for the development of higher-level frameworks (like a navigation router). </p>
+
+<blockquote>
+<p>Despite its power Flask is as easy to implement as the most popular frameworks (ie. ReSwift). Code complexity is optional and progressive depending on your own implementations.</p>
+</blockquote>
 <h2 id='why-flask' class='heading'>Why Flask?</h2>
 
 <p>Flask provides unique features not found in similar frameworks:</p>
@@ -295,17 +335,17 @@
 <p>And then import the module</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Flask</span>
 </code></pre>
-<h2 id='flow-chart' class='heading'>Flow Chart</h2>
+<h1 id='architecture' class='heading'>Architecture</h1>
 
 <p><img src="http://res.cloudinary.com/dmje5xfzh/image/upload/v1537117496/static/flas-flow01.jpg" alt="image"></p>
 
-<p>The above flowchart is an overview of the Flask pipeline.</p>
+<p>The above flowchart is an overview of the <code><a href="Classes/Flask.html">Flask</a></code> pipeline.</p>
 
 <ul>
-<li>Green is <code><a href="Classes/Flask.html">Flask</a></code> components</li>
-<li>Blue is <code><a href="Classes/Flux.html">Flux</a></code> components</li>
-<li>Pink is <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> components</li>
-<li>Yellow is <code><a href="Protocols/State.html">State</a></code> representations</li>
+<li>Green are <code><a href="Classes/Reactor.html">Reactor</a></code> components</li>
+<li>Blue are <code><a href="Classes/Flux.html">Flux</a></code> components</li>
+<li>Pink are <code><a href="Classes.html#/s:9Flask_iOS9SubstanceC">Substance</a></code> components</li>
+<li>Yellow are <code><a href="Protocols/State.html">State</a></code> representations</li>
 </ul>
 <h2 id='how-it-works' class='heading'>How it works?</h2>
 
@@ -313,12 +353,12 @@
 
 <ul>
 <li><strong>Substances:</strong> Any data structure in your application</li>
-<li><strong>Reactors:</strong> Objects receiving data changes callbacks</li>
-<li><strong>Flasks:</strong>  Binding Substances and Reactors.</li>
 <li><strong>Mixers:</strong>  Transactional closures defining data mutations</li>
-<li><strong>Flux:</strong>  A single unidirectional mix transactions FIFO bus</li>
+<li><strong>Reactors:</strong> Mixing Substances to produce reactions</li>
+<li><strong>Flux:</strong>  The single unidirectional bus connecting the pipeline</li>
 </ul>
-<h3 id='api' class='heading'>API</h3>
+<h1 id='components' class='heading'>Components</h1>
+<h3 id='flask-api' class='heading'>Flask API</h3>
 
 <p>These are the High-level API methods that you&rsquo;ll use more frequently:</p>
 <pre class="highlight swift"><code><span class="c1">// Managing your reactor instance</span>
@@ -409,20 +449,11 @@
                 substance.prop.text = "text"
             }.andReact()
 </code></pre>
-<h3 id='flask' class='heading'>Flask</h3>
-
-<p>There are two contexts in relation to <code><a href="Classes/Flask.html">Flask</a></code>:</p>
-
-<ul>
-<li><code><a href="Classes/Flask.html">Flask</a></code> As the static class used as API interface</li>
-<li><code><a href="Classes/Reactor.html">Reactor</a></code> Instances implementing the <code><a href="Classes/Flask.html">Flask</a></code> architecture<br></li>
-</ul>
-
-<p>You can easily infer the meaning by checking if the context is static or an instance.</p>
+<h3 id='reactor' class='heading'>Reactor</h3>
 
 <p>The <code><a href="Classes/Reactor.html">Reactor</a></code> instances (or <strong>reactor</strong> for short) are initialized by the <code><a href="Classes/ReactorManager.html">ReactorManager</a></code> factory by passing a weak <code>owner</code> reference and an array of <code>[substances]</code>. Internally the framework takes care of lazily unbinding and disposing of the instances which <code>owner</code> has become nil. </p>
 
-<p>Finally, the Flask needs to define a handler closure where to receive the changes callbacks. You can see an example implementation here:</p>
+<p>Each <code><a href="Classes/Reactor.html">Reactor</a></code> must define a handler closure where to receive the changes callbacks. You can see an example implementation here:</p>
 <pre class="highlight swift"><code>    <span class="k">let</span> <span class="nv">reactor</span> <span class="o">=</span> <span class="kt">Flask</span><span class="o">.</span><span class="nf">reactor</span><span class="p">(</span><span class="nv">attachedTo</span><span class="p">:</span><span class="n">owner</span><span class="p">,</span><span class="nv">mixing</span><span class="p">:</span><span class="n">substance</span><span class="p">)</span>
 
     <span class="n">reactor</span><span class="o">.</span><span class="n">handler</span><span class="o">=</span><span class="p">{</span><span class="n">owner</span><span class="p">,</span> <span class="n">reaction</span> <span class="k">in</span>
@@ -464,6 +495,9 @@
 
 <p>Also the official docs:
 <a href="https://facebook.github.io/flux/docs/overview.html">Flux from facebook</a></p>
+<h1 id='implementation' class='heading'>Implementation</h1>
+
+<p>Here is a quick reference on how to implement Flask Reactor in relation to the Redux and Fluxor pattern.</p>
 <h2 id='redux-style' class='heading'>Redux Style</h2>
 
 <p>This is a gist of a basic ReSwift-like implementation. </p>
@@ -588,25 +622,7 @@
      <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<h2 id='sample-project' class='heading'>Sample Project</h2>
-
-<p>A sample project is available in this repo inside the folder: </p>
-
-<ul>
-<li>FlaskSample/</li>
-</ul>
-
-<p>Make sure to run <code>Pod install</code> to create your workspace.</p>
-
-<p>The sample application implements both patterns simultaneously for further reference.</p>
-<h2 id='test-cases' class='heading'>Test Cases</h2>
-
-<p>The above sample project also ships with dozens of test cases as standard Xcode test units. It&rsquo;s a great source to learn more implementation patterns.</p>
-
-<p>These tests are also automatically run with Travis-CI on each deployment and you can check the health status above for peace of mind.</p>
-<h2 id='gists' class='heading'>Gists</h2>
-
-<p>More practical examples are in the works and we would love to feature yours!</p>
+<h1 id='special-features' class='heading'>Special Features</h1>
 <h3 id='chain-reaction' class='heading'>Chain Reaction</h3>
 
 <p>A call to  <code>mix()</code> ( aka <code>mixing()</code> ) returns a Flask <code><a href="Classes/ChainReaction.html">ChainReaction</a></code> instance that can be futher chained until resolved.  A <code><a href="Classes/ChainReaction.html">ChainReaction</a></code> has the following methods:</p>
@@ -885,30 +901,27 @@
 <pre class="highlight swift"><code><span class="n">reactors</span>
 <span class="nf">purge</span><span class="p">()</span>
 </code></pre>
-<h2 id='discussion' class='heading'>Discussion</h2>
-<h4 id='why-mixing-fluxor-and-redux' class='heading'>Why mixing Fluxor and Redux?</h4>
+<h1 id='documentation' class='heading'>Documentation</h1>
+<h2 id='demo-project' class='heading'>Demo Project</h2>
 
-<p>It&rsquo;s simple, with  <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> classes you have the ability to make them all react to global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style <q>inline</q> transformations.</p>
+<p>A sample project is available in this repo inside the folder: </p>
 
-<p>For instance, an App <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> make sense as it would react to global events like log out or navigation. Also, it&rsquo;s a perfect candidate to be archived enabling <code>Substance.shouldArchive</code> to act as a basic an in-app data storage. Still, you can use this App substance in any <code><a href="Protocols/FlaskReactor.html">FlaskReactor</a></code> implementation and further apply Redux style transformations in a more particular context.</p>
+<ul>
+<li>FlaskSample/</li>
+</ul>
 
-<p>All this while the framework guarantees the unidirectional flow integrity despite mixing global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> events or local <code>Flask.mix</code> reactions.</p>
-<h4 id='why-substance-instead-of-store' class='heading'>Why Substance instead of Store?</h4>
+<p>Make sure to run <code>Pod install</code> to create your workspace.</p>
 
-<blockquote>
-<p>TODO</p>
-</blockquote>
-<h4 id='how-many-substances-should-i-have' class='heading'>How many Substances should I have?</h4>
+<p>The sample application implements both patterns simultaneously for further reference.</p>
+<h2 id='test-cases' class='heading'>Test Cases</h2>
 
-<blockquote>
-<p>TODO</p>
-</blockquote>
-<h4 id='advantages-of-substance-archiving' class='heading'>Advantages of Substance Archiving</h4>
+<p>The above sample project also ships with dozens of test cases as standard Xcode test units. It&rsquo;s a great source to learn more implementation patterns.</p>
 
-<blockquote>
-<p>TODO</p>
-</blockquote>
-<h2 id='documentation' class='heading'>Documentation</h2>
+<p>These tests are also automatically run with Travis-CI on each deployment and you can check the health status above for peace of mind.</p>
+<h2 id='gists' class='heading'>Gists</h2>
+
+<p>More practical examples are in the works and we would love to feature yours!</p>
+<h2 id='api-documentation' class='heading'>API Documentation</h2>
 
 <blockquote>
 <p><em>Please note the documentation is work in progress.</em></p>
