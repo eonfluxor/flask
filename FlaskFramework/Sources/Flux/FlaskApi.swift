@@ -10,8 +10,8 @@ import UIKit
 #elseif os(OSX) || os(macOS)
 import Cocoa
 #endif
-public protocol FlaskReactor{
-    func flaskReactor( reaction: FlaskReaction)
+public protocol FlaskReactorChanges{
+    func flaskReactorChanges( reaction: FlaskReaction)
 }
 
 extension Flask{
@@ -28,25 +28,25 @@ extension Flask{
         return Substance<T>(name: named, archive: archive)
     }
     
-    static public func getReactor<T:AnyObject & FlaskReactor>(attachedTo object:T )->FlaskClass<T>{
-        let flasks = FlaskManager.getFlasks(from:object)
-        assert(flasks.count > 0, "No Flasks attached. Did you call `Flask.attachReactor(to:mixing:)` ? ")
-        assert(flasks.count == 1, "Flask.getReactor required `object` to have only one Flask attached")
-        return flasks.first as! FlaskClass<T>
+    static public func getReactor<T:AnyObject & FlaskReactorChanges>(attachedTo object:T )->Reactor<T>{
+        let reactors = ReactorManager.getReactors(from:object)
+        assert(reactors.count > 0, "No Flasks attached. Did you call `Flask.attachReactor(to:mixing:)` ? ")
+        assert(reactors.count == 1, "Flask.getReactor required `object` to have only one Flask attached")
+        return reactors.first as! Reactor<T>
     }
     
-    static public func attachReactor<T:AnyObject & FlaskReactor>( to object:T, mixing substances:[SubstanceConcrete]){
+    static public func attachReactor<T:AnyObject & FlaskReactorChanges>( to object:T, mixing substances:[SubstanceConcrete]){
         
-        let flask = FlaskManager.instance(attachedTo:object)
-        flask.defineSubstances(substances)
-        flask.bind()
-        flask.reactor = { (owner, reaction) in
-            object.flaskReactor( reaction: reaction)
+        let reactor = ReactorManager.instance(attachedTo:object)
+        reactor.defineSubstances(substances)
+        reactor.bind()
+        reactor.handler = { (owner, reaction) in
+            object.flaskReactorChanges( reaction: reaction)
         }
     }
     
     static public func detachReactor(from object:AnyObject){
         
-        assert(FlaskManager.removeFlask(fromOwner: object),"The Flask was not connected, please balance enable/disable calls")
+        assert(ReactorManager.removeReactor(fromOwner: object),"The Flask was not connected, please balance enable/disable calls")
     }
 }

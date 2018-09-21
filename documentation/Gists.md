@@ -25,7 +25,7 @@ To continue the chain, just call mix (or any of its aliases) again. You must cal
 > Using the low level API
 
 ```swift
-   flaskInstance
+   reactorInstance
        .mix(self.substanceA) { (substance) in
             substance.prop.counter = 10
             
@@ -109,7 +109,7 @@ struct AppState : State {
 > Assign values
 
 ```swift
- flask.mix(substance){ (substance) in
+ reactor.mix(substance){ (substance) in
  
           let data:NSDictionary = [
             "foo":"bar",
@@ -163,10 +163,10 @@ func testStruct(){
         mySubstance.shouldArchive = true
         
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner, mixing:mySubstance)
+        let reactor = Flask.reactor(attachedTo:owner, mixing:mySubstance)
 
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             
             mySubstance.archiveNow()
             
@@ -181,7 +181,7 @@ func testStruct(){
             })
         }
         
-        flask.mix(mySubstance) { (substance) in
+        reactor.mix(mySubstance) { (substance) in
             substance.prop.info.counter = 90
             substance.prop.info.nest.foo = "mutated"
             }.andReact()
@@ -252,7 +252,7 @@ This could be useful if for whatever reason you are performing additional comput
 
 Behind the scenes, most high-level functions rely on calling stating methods on the main `Flask` class.
 
-You can see them all [here](file:///Users/hassanvfx/projects/eonflux/flask/docs/Classes/Flask.html):
+You can see them all [here](file:///Users/hassanvfx/projects/eonflux/reactor/docs/Classes/Flask.html):
 
 
 ```swift
@@ -273,10 +273,10 @@ attachReactor(to:mixing:)
 detachReactor(from:)
 ```
 
-You can also access the `FlaskManager` that holds all the attached `FlaskClass` instances
+You can also access the `ReactorManager` that holds all the attached `Reactor` instances
 
 ```swift
-flasks
+reactors
 purge()
 ```
 

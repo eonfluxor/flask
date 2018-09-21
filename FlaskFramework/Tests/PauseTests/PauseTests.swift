@@ -3,7 +3,7 @@
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
-//  Copyright © 2018 hassanvflask. All rights reserved.
+//  Copyright © 2018 hassanvreactor. All rights reserved.
 //
 
 import XCTest
@@ -19,11 +19,11 @@ class LockTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
         var calls = 0
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             
             reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                 
@@ -56,9 +56,9 @@ class LockTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                 expectation.fulfill()
             })
@@ -88,9 +88,9 @@ class LockTests: SetupFlaskTests {
      
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                 
                 reaction.onLock?.release()
@@ -123,11 +123,11 @@ class LockTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
         var counter = 0
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                
                 expectation.fulfill()
@@ -151,7 +151,7 @@ class LockTests: SetupFlaskTests {
         Flask.lock(withMixer:Mixers.Count, payload:  ["test":"testLockActon count"])
         Flask.lock(withMixer:Mixers.Text, payload:  ["test":"testLockActon count"])
         
-        flask.mix(substance) { (substance) in
+        reactor.mix(substance) { (substance) in
             substance.prop.text = "unchained!"
         }.react()
         

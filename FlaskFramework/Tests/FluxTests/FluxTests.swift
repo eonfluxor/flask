@@ -3,7 +3,7 @@
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 8/31/18.
-//  Copyright © 2018 hassanvflask. All rights reserved.
+//  Copyright © 2018 hassanvreactor. All rights reserved.
 //
 
 import XCTest
@@ -18,9 +18,9 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             
             reaction.on( AppState.prop.counter, { (change) in
                 expectation.fulfill()
@@ -44,9 +44,9 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             
             reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                 owner.reactionMethod(expectation)
@@ -69,15 +69,15 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
-        flask.reactor={owner, reaction in
+        reactor.handler={owner, reaction in
             reaction.on(AppState.prop.counter, { (change) in
                 expectation.fulfill()
             })
         }
         
-        flask.unbind()
+        reactor.unbind()
         Flask.substances(reactTo:Mixers.Count, payload: ["test":"empty"])
         
         waitForExpectations(timeout: 2, handler: nil)
@@ -93,14 +93,14 @@ class FlaskTests: SetupFlaskTests {
         let substance = self.substance!
         let owner:TestOwner? = TestOwner()
         
-        weak var flask = Flask.instance(attachedTo:owner!, mixing:substance)
+        weak var reactor = Flask.reactor(attachedTo:owner!, mixing:substance)
         
-        flask?.reactor = { owner, reaction in}
+        reactor?.handler = { owner, reaction in}
    
         
         DispatchQueue.main.async {
             
-            if flask != nil {
+            if reactor != nil {
                 expectation.fulfill()
             }
         }
@@ -116,19 +116,19 @@ class FlaskTests: SetupFlaskTests {
         let substance = self.substance!
         var weakOwner:TestOwner? = TestOwner()
         
-        weak var flask = Flask.instance(attachedTo:weakOwner!, mixing:substance)
+        weak var reactor = Flask.reactor(attachedTo:weakOwner!, mixing:substance)
         
-        flask?.reactor = { owner, reaction in}
+        reactor?.handler = { owner, reaction in}
         
         
         // Calling mix after disposing the owner
-        // should cause the factory to release this flask
+        // should cause the factory to release this reactor
         weakOwner = nil
         
         Flask.substances(reactTo:Mixers.Count, payload:  ["test":"ownerDispose"])
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:  {
-            if flask == nil {
+            if reactor == nil {
                 expectation.fulfill()
             }
         })
@@ -145,9 +145,9 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             
             reaction.on(AppState.prop.counter, { (change) in
                 
@@ -175,16 +175,16 @@ class FlaskTests: SetupFlaskTests {
         let expectation = self.expectation(description: "testGlobalSubstance testInlineMutation")
         
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner, mixing:Substances.app)
+        let reactor = Flask.reactor(attachedTo:owner, mixing:Substances.app)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             reaction.on(AppState.prop.counter, { (change) in
                 expectation.fulfill()
                 XCTAssert(Substances.app.state.counter == 2)
             })
         }
         
-        flask
+        reactor
             .mix(Substances.app){ (substance) in
                 substance.prop.counter=1
             }.mix(Substances.app) { (substance) in
@@ -204,15 +204,15 @@ class FlaskTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner, mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner, mixing:substance)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             reaction.on("_internal", { (change) in
                 expectation.fulfill()
             })
         }
         
-        flask.mix(substance){ (substance) in
+        reactor.mix(substance){ (substance) in
             substance.prop._internal="shouldn't cause mix"
         }.react()
         

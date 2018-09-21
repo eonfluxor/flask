@@ -26,10 +26,10 @@ struct AppState : State{
 
 *ViewController.swift*
 
-> Adopt `FlaskReactor` protocol
+> Adopt `FlaskReactorChanges` protocol
 
 ```swift
-class ViewController: UIViewController, FlaskReactor  {
+class ViewController: UIViewController, FlaskReactorChanges  {
 ```
 
 > Define a `Substance` instance
@@ -39,10 +39,10 @@ class ViewController: UIViewController, FlaskReactor  {
     let substance = Flask.newSubstance(definedBy: AppState.self)
 ```
 
-> Implement the `FlaskReactor ` protocol. Here you'll receive the `SubstanceChange` callbacks passing a `FlaskReaction` instance describing the changes.
+> Implement the `FlaskReactorChanges ` protocol. Here you'll receive the `SubstanceChange` callbacks passing a `FlaskReaction` instance describing the changes.
 
 ```swift    
-    func flaskReactor(reaction: FlaskReaction) {
+    func flaskReactorChanges(reaction: FlaskReaction) {
         
         reaction.on(AppState.prop.counter) { (change) in
             print("counter = \(substance.state.counter)")
@@ -55,7 +55,7 @@ class ViewController: UIViewController, FlaskReactor  {
 
 ```
 
-> Attach a `FlaskClass` instance to this ViewController
+> Attach a `Reactor` instance to this ViewController
 
 ```swift    
     override func viewDidLoad() {
@@ -153,12 +153,12 @@ class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
 
 ```
 *ViewController.swift*
-> Implement the `FlaskReactor` protocol in a ViewController (or any other object)
+> Implement the `FlaskReactorChanges` protocol in a ViewController (or any other object)
 
 ```swift
-class ViewController: UIViewController, FlaskReactor  {
+class ViewController: UIViewController, FlaskReactorChanges  {
        
-    func flaskReactor(reaction: FlaskReaction) {
+    func flaskReactorChanges(reaction: FlaskReaction) {
              
       // if no name conflicts the .at(store) may be skipped
         reaction.on(AppState.prop.title) { (change) in
@@ -169,7 +169,7 @@ class ViewController: UIViewController, FlaskReactor  {
 }
 ```
 
-> And attach a `FlaskClass` instance in your configuration initializer 
+> And attach a `Reactor` instance in your configuration initializer 
 
 ```swift    
     override func viewDidLoad() {

@@ -35,26 +35,26 @@ public extension Flask {
     }
     
     static public func purgeFlasks(){
-        FlaskManager.purge()
+        ReactorManager.purge()
     }
 }
 
 public extension Flask {
     
-    static public func instance<T:AnyObject>(attachedTo owner:T, mixing substance:SubstanceConcrete) -> FlaskClass<T>{
-        return Flask.instance(attachedTo:owner,mixing:[substance])
+    static public func reactor<T:AnyObject>(attachedTo owner:T, mixing substance:SubstanceConcrete) -> Reactor<T>{
+        return Flask.reactor(attachedTo:owner,mixing:[substance])
     }
     
-    static public func instance<T:AnyObject>(attachedTo owner:T, mixing substances:[SubstanceConcrete]) -> FlaskClass<T>{
-        let flask = Flask.instance(attachedTo:owner)
-        flask.defineSubstances(substances)
-        flask.bind()
-        return flask
+    static public func reactor<T:AnyObject>(attachedTo owner:T, mixing substances:[SubstanceConcrete]) -> Reactor<T>{
+        let reactor = Flask.reactor(attachedTo:owner)
+        reactor.defineSubstances(substances)
+        reactor.bind()
+        return reactor
     }
     
     
-    static private func instance<T:AnyObject>(attachedTo owner:T) -> FlaskClass<T>{
-        return FlaskManager.instance(attachedTo:owner)
+    static private func reactor<T:AnyObject>(attachedTo owner:T) -> Reactor<T>{
+        return ReactorManager.instance(attachedTo:owner)
     }
 }
 

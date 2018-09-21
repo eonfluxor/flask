@@ -99,12 +99,12 @@ class AppSubstance : Substance<AppState> {}
 import UIKit
 import Flask
 
-class ViewController: UIViewController, FlaskReactor  {
+class ViewController: UIViewController, FlaskReactorChanges  {
     
     //Mark: an inline Substance
     let substance = Flask.newSubstance(definedBy: AppState.self)
     
-    func flaskReactor(reaction: FlaskReaction) {
+    func flaskReactorChanges(reaction: FlaskReaction) {
         
         //using the state enums
         reaction
@@ -179,7 +179,7 @@ class ViewController: UIViewController, FlaskReactor  {
         // an immediately performs this mixer
         Flask.lock(withMixer: EnvMixers.AsyncAction)
         
-        // logout won't be performed until the above lock is released (see reactor code)
+        // logout won't be performed until the above lock is released (see handler code)
         Flask.substances(reactTo: EnvMixers.Logout)
     }   
 }

@@ -4,10 +4,10 @@
  
 
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Flask.svg)](#cocoapods) 
-[![GitHub release](https://img.shields.io/github/release/eonfluxor/flask.svg)](https://github.com/eonfluxor/flask/releases) 
+[![GitHub release](https://img.shields.io/github/release/eonfluxor/reactor.svg)](https://github.com/eonfluxor/reactor/releases) 
 ![Swift 4.0](https://img.shields.io/badge/Swift-4.1-orange.svg) 
 ![platforms](https://img.shields.io/cocoapods/p/Flask.svg)
-[![Build Status](https://travis-ci.org/eonfluxor/flask.svg?branch=master)](https://travis-ci.org/eonfluxor/flask)
+[![Build Status](https://travis-ci.org/eonfluxor/reactor.svg?branch=master)](https://travis-ci.org/eonfluxor/reactor)
 
 **Supported Swift Versions:** Swift 4.0
 
@@ -108,7 +108,7 @@ These are the main components to interface with Flask:
 These are the High-level API methods that you'll use more frequently:
 
 ```swift
-// Managing your flask instance
+// Managing your reactor instance
 Flask.attachReactor(to:mixing:)
 Flask.detachReactor(from:)
 Flask.getReactor(at:)
@@ -171,7 +171,7 @@ class App : ReactiveSubstance<AppState,Mixers> {
 Flask data mutations are performed using Mixers. A mixer is a transactional closure where you can access an modify given substance properties. There are two types of mixers:
 
 * **Substance Mixer** These are declared as enumerations and passed as part of a `ReactiveSubstace` subclass definition. Internally the substance optionally subscribes to the cases where it needs to respond with internal data mutations inside a State Transaction context.
-* **Flask Mixer** These can be used anywhere by accessing the substances bound to a given `FlaskClass` instance. Calling `flask.mix( substance)`lets you declare a closure that includes a weak pointer to the requested substance in a State Transaction context where you can mutate the substance properties.
+* **Flask Mixer** These can be used anywhere by accessing the substances bound to a given `Reactor` instance. Calling `reactor.mix( substance)`lets you declare a closure that includes a weak pointer to the requested substance in a State Transaction context where you can mutate the substance properties.
 
 So while *Substance Mixers* can be applied across all substances sharing the same observers the *Flask Mixers* are intended for more specific transformations and had the advantage of mutating multiple substances through the use of a `ChainReaction`.
 
@@ -199,29 +199,29 @@ Consider the following samples:
 There are two contexts in relation to `Flask`:
 
 * `Flask` As the static class used as API interface
-* `FlaskClass` Instances implementing the `Flask` architecture  
+* `Reactor` Instances implementing the `Flask` architecture  
 
 You can easily infer the meaning by checking if the context is static or an instance.
 
-The `FlaskClass` instances (or **flask** for short) are initialized by the `FlaskManager` factory by passing a weak `owner` reference and an array of `[substances]`. Internally the framework takes care of lazily unbinding and disposing of the instances which `owner` has become nil. 
+The `Reactor` instances (or **reactor** for short) are initialized by the `ReactorManager` factory by passing a weak `owner` reference and an array of `[substances]`. Internally the framework takes care of lazily unbinding and disposing of the instances which `owner` has become nil. 
 
-Finally, the Flask needs to define a reactor closure where to receive the changes callbacks. You can see an example implementation here:
+Finally, the Flask needs to define a handler closure where to receive the changes callbacks. You can see an example implementation here:
 
 ```swift
-    let flask = Flask.instance(attachedTo:owner,mixing:substance)
+    let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
-    flask.reactor={owner, reaction in
+    reactor.handler={owner, reaction in
         reaction.on(AppState.prop.counter, { (change) in
             expectation.fulfill()
         })
     }
 ```
-The above implementation is conviently wrapped using the `FlaskReactor` protocol in which case the implementation looks like this:
+The above implementation is conviently wrapped using the `FlaskReactorChanges` protocol in which case the implementation looks like this:
 
 ```swift
-class ViewController: UIViewController, FlaskReactor  {
+class ViewController: UIViewController, FlaskReactorChanges  {
 
-    func flaskReactor(reaction: FlaskReaction) {
+    func flaskReactorChanges(reaction: FlaskReaction) {
         
         reaction.on(AppState.prop.counter) { (change) in
                 print("counter = \(substance.state.counter)")
@@ -275,9 +275,9 @@ struct AppState : State{
 > ViewController
 
 ```swift
-class ViewController: UIViewController, FlaskReactor  {
+class ViewController: UIViewController, FlaskReactorChanges  {
    
-    func flaskReactor(reaction: FlaskReaction) {
+    func flaskReactorChanges(reaction: FlaskReaction) {
         
         reaction.on(AppState.prop.counter) { (change) in
             print("counter = \(substance.state.counter)")
@@ -359,9 +359,9 @@ class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
 > ViewController
 
 ```swift
-class ViewController: UIViewController, FlaskReactor  {
+class ViewController: UIViewController, FlaskReactorChanges  {
        
-    func flaskReactor(reaction: FlaskReaction) {
+    func flaskReactorChanges(reaction: FlaskReaction) {
              
         reaction.on(AppState.prop.title) { (change) in
             print("global title = \(Subs.appReactive.state.title)")
@@ -429,7 +429,7 @@ To continue the chain, just call mix (or any of its aliases) again. You must cal
 > Using the low level API
 
 ```swift
-   flaskInstance
+   reactorInstance
        .mix(self.substanceA) { (substance) in
             substance.prop.counter = 10
             
@@ -520,10 +520,10 @@ func testStruct(){
         mySubstance.shouldArchive = true
         
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner, mixing:mySubstance)
+        let reactor = Flask.reactor(attachedTo:owner, mixing:mySubstance)
 
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             
             mySubstance.archiveNow()
             
@@ -538,7 +538,7 @@ func testStruct(){
             })
         }
         
-        flask.mix(mySubstance) { (substance) in
+        reactor.mix(mySubstance) { (substance) in
             substance.prop.info.counter = 90
             substance.prop.info.nest.foo = "mutated"
             }.andReact()
@@ -600,7 +600,7 @@ struct AppState : State {
 > Assign values
 
 ```swift
- flask.mix(substance){ (substance) in
+ reactor.mix(substance){ (substance) in
  
           let data:NSDictionary = [
             "foo":"bar",
@@ -674,7 +674,7 @@ This could be useful if for whatever reason you are performing additional comput
 
 Behind the scenes, most high-level functions rely on calling stating methods on the main `Flask` class.
 
-You can see them all [here](file:///Users/hassanvfx/projects/eonflux/flask/docs/Classes/Flask.html):
+You can see them all [here](file:///Users/hassanvfx/projects/eonflux/reactor/docs/Classes/Flask.html):
 
 
 ```swift
@@ -695,10 +695,10 @@ attachReactor(to:mixing:)
 detachReactor(from:)
 ```
 
-You can also access the `FlaskManager` that holds all the attached `FlaskClass` instances
+You can also access the `ReactorManager` that holds all the attached `Reactor` instances
 
 ```swift
-flasks
+reactors
 purge()
 ```
 
@@ -708,7 +708,7 @@ purge()
 
 It's simple, with  `ReactiveSubstance` classes you have the ability to make them all react to global `SubstanceMixer` events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style "inline" transformations.
 
-For instance, an App `ReactiveSubstance` make sense as it would react to global events like log out or navigation. Also, it's a perfect candidate to be archived enabling `Substance.shouldArchive` to act as a basic an in-app data storage. Still, you can use this App substance in any `FlaskReactor` implementation and further apply Redux style transformations in a more particular context.
+For instance, an App `ReactiveSubstance` make sense as it would react to global events like log out or navigation. Also, it's a perfect candidate to be archived enabling `Substance.shouldArchive` to act as a basic an in-app data storage. Still, you can use this App substance in any `FlaskReactorChanges` implementation and further apply Redux style transformations in a more particular context.
 
 All this while the framework guarantees the unidirectional flow integrity despite mixing global `SubstanceMixer` events or local `Flask.mix` reactions.
 
@@ -727,7 +727,7 @@ All this while the framework guarantees the unidirectional flow integrity despit
 ## Documentation
 > *Please note the documentation is work in progress.*
 
-Jazzy generated documentation available here: [Documentation](https://eonfluxor.github.io/flask/)
+Jazzy generated documentation available here: [Documentation](https://eonfluxor.github.io/reactor/)
 
 
 
