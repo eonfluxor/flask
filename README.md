@@ -7,7 +7,7 @@
 [![GitHub release](https://img.shields.io/github/release/eonfluxor/flask.svg)](https://github.com/eonfluxor/flask/releases) 
 ![Swift 4.0](https://img.shields.io/badge/Swift-4.1-orange.svg) 
 ![platforms](https://img.shields.io/cocoapods/p/Flask.svg)
-[![Build Status](https://travis-ci.org/eonfluxor/reactor.svg?branch=master)](https://travis-ci.org/eonfluxor/flask)
+[![Build Status](https://travis-ci.org/eonfluxor/flask.svg?branch=master)](https://travis-ci.org/eonfluxor/flask)
 
 # What is Flask Reactor?
 Flask is a multiplatform **[ iOS | OSX | tvOS ]** implementation of the unidirectional data flow architecture in Swift. Flask offers a unique feature set beyond any similar frameworks through an *intuitive API*
