@@ -9,7 +9,7 @@
 import UIKit
 
 
-class FlaskOperation: Operation {
+open class FlaskOperation: Operation {
     
     typealias AsyncBlock = (FlaskOperation) -> Void
     
@@ -21,7 +21,7 @@ class FlaskOperation: Operation {
         self.block = block
     }
     
-    override func start() {
+    override open func start() {
         isExecuting = true
         if let executingBlock = self.block {
             executingBlock(self)
@@ -36,7 +36,7 @@ class FlaskOperation: Operation {
     }
     
     private var _executing: Bool = false
-    override var isExecuting: Bool {
+    override open var isExecuting: Bool {
         get {
             return _executing
         }
@@ -50,7 +50,7 @@ class FlaskOperation: Operation {
     }
     
     private var _finished: Bool = false;
-    override var isFinished: Bool {
+    override open var isFinished: Bool {
         get {
             return _finished
         }
@@ -64,9 +64,9 @@ class FlaskOperation: Operation {
     }
 }
 
-extension OperationQueue {
+public extension OperationQueue {
     
-    func addOperationWithAsyncBlock(block: FlaskOperation) {
+    public func addOperationWithAsyncBlock(block: FlaskOperation) {
         self.addOperation(block)
     }
 }

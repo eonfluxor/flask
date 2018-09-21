@@ -10,6 +10,11 @@
 		06CD357D3571E8D74FA9EF3D /* Pods_Flask_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E2614725FA0A1B2AD443CD /* Pods_Flask_iOS.framework */; };
 		0DEFB0BEFD9FB7B668AF908B /* Pods_Flask_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E158D5A8457C05541B83919 /* Pods_Flask_macOS.framework */; };
 		260AC7812154995900812FEA /* FlaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AC7802154995900812FEA /* FlaskOperation.swift */; };
+		260AC78421549D4B00812FEA /* FlaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AC7802154995900812FEA /* FlaskOperation.swift */; };
+		260AC78521549D4C00812FEA /* FlaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AC7802154995900812FEA /* FlaskOperation.swift */; };
+		260AC78621549D4E00812FEA /* FlaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AC7802154995900812FEA /* FlaskOperation.swift */; };
+		260AC78721549D4F00812FEA /* FlaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AC7802154995900812FEA /* FlaskOperation.swift */; };
+		260AC78821549D4F00812FEA /* FlaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AC7802154995900812FEA /* FlaskOperation.swift */; };
 		2622A5312148781F003F4C38 /* FluxNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* FluxNotifier.swift */; };
 		2622A5332148828E003F4C38 /* BusNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5322148828E003F4C38 /* BusNotifierTests.swift */; };
 		2622A5342148828E003F4C38 /* BusNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5322148828E003F4C38 /* BusNotifierTests.swift */; };
@@ -1083,6 +1088,7 @@
 				26C53EDE214790C00090AA0C /* KronTests.swift in Sources */,
 				26C53EF3214790C00090AA0C /* AppSubstance.swift in Sources */,
 				26C53E83214790A90090AA0C /* ChainReaction.swift in Sources */,
+				260AC78521549D4C00812FEA /* FlaskOperation.swift in Sources */,
 				26C53EAD214790A90090AA0C /* State.swift in Sources */,
 				26C53EF0214790C00090AA0C /* PauseTests.swift in Sources */,
 				26C53EE1214790C00090AA0C /* ArchivingTests.swift in Sources */,
@@ -1113,6 +1119,7 @@
 				26C53EC0214790A90090AA0C /* Substance.swift in Sources */,
 				2622A537214882BC003F4C38 /* FluxNotifier.swift in Sources */,
 				26C53E9C214790A90090AA0C /* FluxLock.swift in Sources */,
+				260AC78421549D4B00812FEA /* FlaskOperation.swift in Sources */,
 				26C53E6C214790A90090AA0C /* FlaskHelpers.swift in Sources */,
 				26C53E66214790A90090AA0C /* Flask.swift in Sources */,
 				26C53E96214790A90090AA0C /* Flux.swift in Sources */,
@@ -1147,6 +1154,7 @@
 				26C53EDF214790C00090AA0C /* KronTests.swift in Sources */,
 				26C53EF4214790C00090AA0C /* AppSubstance.swift in Sources */,
 				26C53E85214790A90090AA0C /* ChainReaction.swift in Sources */,
+				260AC78821549D4F00812FEA /* FlaskOperation.swift in Sources */,
 				26C53EAF214790A90090AA0C /* State.swift in Sources */,
 				26C53EF1214790C00090AA0C /* PauseTests.swift in Sources */,
 				26C53EE2214790C00090AA0C /* ArchivingTests.swift in Sources */,
@@ -1177,6 +1185,7 @@
 				26C53EC2214790A90090AA0C /* Substance.swift in Sources */,
 				2622A539214882BD003F4C38 /* FluxNotifier.swift in Sources */,
 				26C53E9E214790A90090AA0C /* FluxLock.swift in Sources */,
+				260AC78721549D4F00812FEA /* FlaskOperation.swift in Sources */,
 				26C53E6E214790A90090AA0C /* FlaskHelpers.swift in Sources */,
 				26C53E68214790A90090AA0C /* Flask.swift in Sources */,
 				26C53E98214790A90090AA0C /* Flux.swift in Sources */,
@@ -1211,6 +1220,7 @@
 				26C53EE0214790C00090AA0C /* KronTests.swift in Sources */,
 				26C53EF5214790C00090AA0C /* AppSubstance.swift in Sources */,
 				26C53E87214790A90090AA0C /* ChainReaction.swift in Sources */,
+				260AC78621549D4E00812FEA /* FlaskOperation.swift in Sources */,
 				26C53EB1214790A90090AA0C /* State.swift in Sources */,
 				26C53EF2214790C00090AA0C /* PauseTests.swift in Sources */,
 				26C53EE3214790C00090AA0C /* ArchivingTests.swift in Sources */,

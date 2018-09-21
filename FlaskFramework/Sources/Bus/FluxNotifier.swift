@@ -90,7 +90,7 @@ extension FluxNotifier{
 
 extension FluxNotifier{
     
-    static public func postNotification(forMixer mixer:SubstanceMixer, payload:FluxPayloadType?, completion:FluxEmptyClosure? = nil){
+    static public func postNotification(forMixer mixer:SubstanceMixer, payload:FluxPayloadType?, operation:FlaskOperation? = nil){
         let observers = getObservers(forMixer: mixer)
 
         for observer in observers {
@@ -101,8 +101,8 @@ extension FluxNotifier{
             observer.callback(notification)
         }
         
-        if let completion = completion {
-            completion()
+        if let operation = operation {
+            operation.complete()
         }
     }
 }
