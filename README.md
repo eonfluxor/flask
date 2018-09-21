@@ -14,7 +14,7 @@
 *This is a pre-release. The code is stable but documentation is WIP.*
 
 # What is Flask Reactor?
-Flask is a multiplatform **[ iOS | OSX | tvOS ]** implementation of the unidirectional data flow architecture in Swift. Flask offers a *friendly API* and a robust feature set. 
+Flask is a multiplatform **[ iOS | OSX | tvOS ]** implementation of the unidirectional data flow architecture in Swift. Flask offers a unique feature set beyond any similar frameworks through an *intuitive API*
 
 While the Flux architecture is abstract, explaining Flask is easy:
 
@@ -43,6 +43,8 @@ Flask allows implementing both the [Redux](https://github.com/reactjs/redux) and
 
 This is a direct analogy between the *Fluxor* pattern of `Reactive Stores` as a `ReactiveSubstance` and the *Redux* pattern of `Store Reducers`  as a plain `Substance`.
 
+Using chemistry semantics is an intuitive way to approach the flux-reactive patterns. After all, the word `React` is itself defined [within the chemistry domain](https://dictionary.cambridge.org/us/dictionary/english/react).
+
 # Table of Contents
 
 - [Motivation](#motivation)
@@ -70,11 +72,9 @@ This is a direct analogy between the *Fluxor* pattern of `Reactive Stores` as a 
 - [Documentation](#documentation)
 
 ## Motivation
-Flask Reactor will be the foundation of a comprehensive toolbox defining the "Flask Pattern" as a way to create reactive applications in swift. As such glask should deliver the most robust feature set accessible through a very friendly API.
+Flask Reactor is the foundation of a comprehensive toolbox defining the "Flask Pattern" as a way to create reactive applications in Apple's Swift platform. As such Flask delivers the most robust feature set through an intuitive API.
 
-Flask goes beyond the novelty of the Reactive pattern to develop an expressive API through elemental science concepts to craft a framework that is easy to understand and use. After all the word `React` is itself defined [within the chemistry semantics](https://dictionary.cambridge.org/us/dictionary/english/react).
-
-All this while the core technology offers a unified implementation of both the `Redux` and `Fluxor` patterns while delivering advanced features not available in other frameworks (such as locks and nested keys reduction) and required for the development of higher-level frameworks (like a navigation router). 
+Flask goes beyond the novelty of the Reactive pattern to develop an expressive API using physical world analogies that are intuitive and easy to implement. All this while the core technology offers a unified implementation of both the `Redux` and `Fluxor` patterns and delivering advanced features not available in other frameworks (such as locks and nested keys reduction) and required for the development of higher-level frameworks (like a navigation router). 
 
 > Despite its power Flask is as easy to implement as the most popular frameworks (ie. ReSwift). Code complexity is optional and progressive depending on your own implementations.
 
@@ -407,7 +407,7 @@ class ViewController: UIViewController, FlaskReactor  {
 
 # Special Features
 
-### Chain Reaction
+### Chain Reactions
 
 A call to  `mix()` ( aka `mixing()` ) returns a Flask `ChainReaction` instance that can be futher chained until resolved.  A `ChainReaction` has the following methods:
 
