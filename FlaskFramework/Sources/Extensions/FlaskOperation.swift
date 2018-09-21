@@ -34,7 +34,7 @@ open class FlaskOperation: Operation {
         }
     }
     
-    func complete() {
+    open func complete() {
         isExecuting = false
         isFinished = true
     }
