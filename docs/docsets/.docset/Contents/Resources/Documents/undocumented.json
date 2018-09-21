@@ -219,6 +219,13 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Extensions/FlaskOperation.swift",
+      "line": 37,
+      "symbol": "FlaskOperation.complete()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Extensions/FlaskOperation.swift",
       "line": 43,
       "symbol": "FlaskOperation.isExecuting",
       "symbol_kind": "source.lang.swift.decl.var.instance",
