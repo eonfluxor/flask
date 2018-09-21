@@ -117,8 +117,8 @@ Flask.getReactor(at:)
 Flask.substances(reactTo:payload:)
 
 // Creating non-reactive substances
-NewSubstance(definedBy:)
-NewSubstance(definedBy:named:archive:)
+Flask.newSubstance(definedBy:)
+Flask.newSubstance(definedBy:named:archive:)
 ```
 
 Inspect these methods to learn more about the low-level API.
@@ -516,7 +516,7 @@ func testStruct(){
         }
         
         let NAME = "substanceTest\( NSDate().timeIntervalSince1970)"
-        let mySubstance = NewSubstance(definedBy: state.self,named:NAME, archive:false)
+        let mySubstance = Flask.newSubstance(definedBy: state.self,named:NAME, archive:false)
         mySubstance.shouldArchive = true
         
         let owner:TestOwner = TestOwner()
@@ -549,7 +549,7 @@ func testStruct(){
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
            
-            let archivedSubstance = NewSubstance(definedBy: state.self,named:NAME,archive:true)
+            let archivedSubstance = Flask.newSubstance(definedBy: state.self,named:NAME,archive:true)
             XCTAssert(archivedSubstance.state.info.nest.foo == "mutated", "Must preserve value")
             expectation4.fulfill()
         }

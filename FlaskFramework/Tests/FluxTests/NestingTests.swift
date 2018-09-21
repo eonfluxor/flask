@@ -118,7 +118,7 @@ class NestedStateTests: SetupFlaskTests {
         }
         
         let NAME = "subtanceTest\( NSDate().timeIntervalSince1970)"
-        let mySubstance = NewSubstance(definedBy: state.self,named:NAME, archive:false)
+        let mySubstance = Flask.newSubstance(definedBy: state.self,named:NAME, archive:false)
         mySubstance.shouldArchive = true
         
         let owner:TestOwner = TestOwner()
@@ -151,7 +151,7 @@ class NestedStateTests: SetupFlaskTests {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
            
-            let archivedSubstance = NewSubstance(definedBy: state.self,named:NAME,archive:true)
+            let archivedSubstance = Flask.newSubstance(definedBy: state.self,named:NAME,archive:true)
             XCTAssert(archivedSubstance.state.info.nest.foo == "mutated", "Must preserve value")
             expectation4.fulfill()
         }

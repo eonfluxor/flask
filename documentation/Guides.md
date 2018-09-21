@@ -36,7 +36,7 @@ class ViewController: UIViewController, FlaskReactor  {
 
   
 ```swift  
-    let substance = NewSubstance(definedBy: AppState.self)
+    let substance = Flask.newSubstance(definedBy: AppState.self)
 ```
 
 > Implement the `FlaskReactor ` protocol. Here you'll receive the `SubstanceChange` callbacks passing a `FlaskReaction` instance describing the changes.

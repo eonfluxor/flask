@@ -10,25 +10,22 @@ import UIKit
 #elseif os(OSX) || os(macOS)
 import Cocoa
 #endif
-
-
 public protocol FlaskReactor{
     func flaskReactor( reaction: FlaskReaction)
-}
-
-
-public func NewSubstance<T:State>(definedBy:T.Type)->Substance<T>{
-    return Substance<T>()
-}
-
-public func NewSubstance<T:State>(definedBy:T.Type,named:String,archive:Bool=false)->Substance<T>{
-    return Substance<T>(name: named, archive: archive)
 }
 
 extension Flask{
     
     static public func substances<T:RawRepresentable>(reactTo enumVal:T, payload:FluxPayloadType? = nil){
         Flask.applyMixer(enumVal, payload: payload)
+    }
+    
+    static public func newSubstance<T:State>(definedBy:T.Type)->Substance<T>{
+        return Substance<T>()
+    }
+    
+    static public func newSubstance<T:State>(definedBy:T.Type,named:String,archive:Bool=false)->Substance<T>{
+        return Substance<T>(name: named, archive: archive)
     }
     
     static public func getReactor<T:AnyObject & FlaskReactor>(attachedTo object:T )->FlaskClass<T>{

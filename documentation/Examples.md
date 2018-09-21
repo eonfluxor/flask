@@ -102,7 +102,7 @@ import Flask
 class ViewController: UIViewController, FlaskReactor  {
     
     //Mark: an inline Substance
-    let substance = NewSubstance(definedBy: AppState.self)
+    let substance = Flask.newSubstance(definedBy: AppState.self)
     
     func flaskReactor(reaction: FlaskReaction) {
         
