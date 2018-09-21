@@ -14,13 +14,13 @@ import Cocoa
 
 import XCTest
 
-class InitializerTests: XCTestCase, FlaskReactorChanges  {
+class InitializerTests: XCTestCase, FlaskReactor  {
     
     var expecation:XCTestExpectation?
     var expecation2:XCTestExpectation?
     var substance:ReactiveSubstance? = App()
     
-    func flaskReactorChanges( reaction:FlaskReaction) {
+    func flaskReactions( reaction:FlaskReaction) {
         reaction.on(AppState.prop.counter) { (change) in
             expecation?.fulfill()
             expecation = nil

@@ -216,12 +216,12 @@ Finally, the Flask needs to define a handler closure where to receive the change
         })
     }
 ```
-The above implementation is conviently wrapped using the `FlaskReactorChanges` protocol in which case the implementation looks like this:
+The above implementation is conviently wrapped using the `FlaskReactor` protocol in which case the implementation looks like this:
 
 ```swift
-class ViewController: UIViewController, FlaskReactorChanges  {
+class ViewController: UIViewController, FlaskReactor  {
 
-    func flaskReactorChanges(reaction: FlaskReaction) {
+    func flaskReactions(reaction: FlaskReaction) {
         
         reaction.on(AppState.prop.counter) { (change) in
                 print("counter = \(substance.state.counter)")
@@ -275,9 +275,9 @@ struct AppState : State{
 > ViewController
 
 ```swift
-class ViewController: UIViewController, FlaskReactorChanges  {
+class ViewController: UIViewController, FlaskReactor  {
    
-    func flaskReactorChanges(reaction: FlaskReaction) {
+    func flaskReactions(reaction: FlaskReaction) {
         
         reaction.on(AppState.prop.counter) { (change) in
             print("counter = \(substance.state.counter)")
@@ -359,9 +359,9 @@ class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
 > ViewController
 
 ```swift
-class ViewController: UIViewController, FlaskReactorChanges  {
+class ViewController: UIViewController, FlaskReactor  {
        
-    func flaskReactorChanges(reaction: FlaskReaction) {
+    func flaskReactions(reaction: FlaskReaction) {
              
         reaction.on(AppState.prop.title) { (change) in
             print("global title = \(Subs.appReactive.state.title)")
@@ -708,7 +708,7 @@ purge()
 
 It's simple, with  `ReactiveSubstance` classes you have the ability to make them all react to global `SubstanceMixer` events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style "inline" transformations.
 
-For instance, an App `ReactiveSubstance` make sense as it would react to global events like log out or navigation. Also, it's a perfect candidate to be archived enabling `Substance.shouldArchive` to act as a basic an in-app data storage. Still, you can use this App substance in any `FlaskReactorChanges` implementation and further apply Redux style transformations in a more particular context.
+For instance, an App `ReactiveSubstance` make sense as it would react to global events like log out or navigation. Also, it's a perfect candidate to be archived enabling `Substance.shouldArchive` to act as a basic an in-app data storage. Still, you can use this App substance in any `FlaskReactor` implementation and further apply Redux style transformations in a more particular context.
 
 All this while the framework guarantees the unidirectional flow integrity despite mixing global `SubstanceMixer` events or local `Flask.mix` reactions.
 

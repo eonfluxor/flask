@@ -26,10 +26,10 @@ struct AppState : State{
 
 *ViewController.swift*
 
-> Adopt `FlaskReactorChanges` protocol
+> Adopt `FlaskReactor` protocol
 
 ```swift
-class ViewController: UIViewController, FlaskReactorChanges  {
+class ViewController: UIViewController, FlaskReactor  {
 ```
 
 > Define a `Substance` instance
@@ -39,10 +39,10 @@ class ViewController: UIViewController, FlaskReactorChanges  {
     let substance = Flask.newSubstance(definedBy: AppState.self)
 ```
 
-> Implement the `FlaskReactorChanges ` protocol. Here you'll receive the `SubstanceChange` callbacks passing a `FlaskReaction` instance describing the changes.
+> Implement the `FlaskReactor ` protocol. Here you'll receive the `SubstanceChange` callbacks passing a `FlaskReaction` instance describing the changes.
 
 ```swift    
-    func flaskReactorChanges(reaction: FlaskReaction) {
+    func flaskReactions(reaction: FlaskReaction) {
         
         reaction.on(AppState.prop.counter) { (change) in
             print("counter = \(substance.state.counter)")
@@ -153,12 +153,12 @@ class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
 
 ```
 *ViewController.swift*
-> Implement the `FlaskReactorChanges` protocol in a ViewController (or any other object)
+> Implement the `FlaskReactor` protocol in a ViewController (or any other object)
 
 ```swift
-class ViewController: UIViewController, FlaskReactorChanges  {
+class ViewController: UIViewController, FlaskReactor  {
        
-    func flaskReactorChanges(reaction: FlaskReaction) {
+    func flaskReactions(reaction: FlaskReaction) {
              
       // if no name conflicts the .at(store) may be skipped
         reaction.on(AppState.prop.title) { (change) in

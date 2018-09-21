@@ -153,7 +153,7 @@
             <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/FlaskReactorChanges.html">FlaskReactorChanges</a>
+                <a class="nav-group-task-link" href="Protocols/FlaskReactor.html">FlaskReactor</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/State.html">State</a>
@@ -432,10 +432,10 @@
     <span class="p">}</span>
 </code></pre>
 
-<p>The above implementation is conviently wrapped using the <code><a href="Protocols/FlaskReactorChanges.html">FlaskReactorChanges</a></code> protocol in which case the implementation looks like this:</p>
-<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">FlaskReactorChanges</span>  <span class="p">{</span>
+<p>The above implementation is conviently wrapped using the <code><a href="Protocols/FlaskReactor.html">FlaskReactor</a></code> protocol in which case the implementation looks like this:</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">FlaskReactor</span>  <span class="p">{</span>
 
-    <span class="kd">func</span> <span class="nf">flaskReactorChanges</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">flaskReactions</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
 
         <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="kt">AppState</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">counter</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
                 <span class="nf">print</span><span class="p">(</span><span class="s">"counter = </span><span class="se">\(</span><span class="n">substance</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">counter</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
@@ -485,9 +485,9 @@
 <blockquote>
 <p>ViewController</p>
 </blockquote>
-<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">FlaskReactorChanges</span>  <span class="p">{</span>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">FlaskReactor</span>  <span class="p">{</span>
 
-    <span class="kd">func</span> <span class="nf">flaskReactorChanges</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">flaskReactions</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
 
         <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="kt">AppState</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">counter</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
             <span class="nf">print</span><span class="p">(</span><span class="s">"counter = </span><span class="se">\(</span><span class="n">substance</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">counter</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
@@ -565,9 +565,9 @@
 <blockquote>
 <p>ViewController</p>
 </blockquote>
-<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">FlaskReactorChanges</span>  <span class="p">{</span>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">FlaskReactor</span>  <span class="p">{</span>
 
-    <span class="kd">func</span> <span class="nf">flaskReactorChanges</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">flaskReactions</span><span class="p">(</span><span class="nv">reaction</span><span class="p">:</span> <span class="kt">FlaskReaction</span><span class="p">)</span> <span class="p">{</span>
 
         <span class="n">reaction</span><span class="o">.</span><span class="nf">on</span><span class="p">(</span><span class="kt">AppState</span><span class="o">.</span><span class="n">prop</span><span class="o">.</span><span class="n">title</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">change</span><span class="p">)</span> <span class="k">in</span>
             <span class="nf">print</span><span class="p">(</span><span class="s">"global title = </span><span class="se">\(</span><span class="kt">Subs</span><span class="o">.</span><span class="n">appReactive</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">title</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
@@ -890,7 +890,7 @@
 
 <p>It&rsquo;s simple, with  <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> classes you have the ability to make them all react to global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> events (like login/logout) while keeping the flexibility of applying more contextual transformations using Redux style <q>inline</q> transformations.</p>
 
-<p>For instance, an App <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> make sense as it would react to global events like log out or navigation. Also, it&rsquo;s a perfect candidate to be archived enabling <code>Substance.shouldArchive</code> to act as a basic an in-app data storage. Still, you can use this App substance in any <code><a href="Protocols/FlaskReactorChanges.html">FlaskReactorChanges</a></code> implementation and further apply Redux style transformations in a more particular context.</p>
+<p>For instance, an App <code><a href="Classes/ReactiveSubstance.html">ReactiveSubstance</a></code> make sense as it would react to global events like log out or navigation. Also, it&rsquo;s a perfect candidate to be archived enabling <code>Substance.shouldArchive</code> to act as a basic an in-app data storage. Still, you can use this App substance in any <code><a href="Protocols/FlaskReactor.html">FlaskReactor</a></code> implementation and further apply Redux style transformations in a more particular context.</p>
 
 <p>All this while the framework guarantees the unidirectional flow integrity despite mixing global <code><a href="Typealiases.html#/s:9Flask_iOS14SubstanceMixera">SubstanceMixer</a></code> events or local <code>Flask.mix</code> reactions.</p>
 <h4 id='why-substance-instead-of-store' class='heading'>Why Substance instead of Store?</h4>

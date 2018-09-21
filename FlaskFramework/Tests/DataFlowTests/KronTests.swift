@@ -1,6 +1,6 @@
 //
 //  kronTests.swift
-//  flaskReactorChanges-iOSTests
+//  flaskReactions-iOSTests
 //
 //  Created by hassan uriostegui on 9/9/18.
 //  Copyright © 2018 Eonflux - Hassan Uriostegui. All rights reserved.

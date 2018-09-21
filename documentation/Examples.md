@@ -99,12 +99,12 @@ class AppSubstance : Substance<AppState> {}
 import UIKit
 import Flask
 
-class ViewController: UIViewController, FlaskReactorChanges  {
+class ViewController: UIViewController, FlaskReactor  {
     
     //Mark: an inline Substance
     let substance = Flask.newSubstance(definedBy: AppState.self)
     
-    func flaskReactorChanges(reaction: FlaskReaction) {
+    func flaskReactions(reaction: FlaskReaction) {
         
         //using the state enums
         reaction
