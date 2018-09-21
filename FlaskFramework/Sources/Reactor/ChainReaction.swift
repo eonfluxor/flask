@@ -17,12 +17,12 @@ typealias ChainedSubstancesClosure = (_ chainedSubstances:[SubstanceConcrete])->
 let CHAIN_REACTION_CONTEXT = "ChainReaction"
 public class ChainReaction{
     
-    let flask:FlaskConcrete
+    let reactor:ReactorConcrete
     var _react:ChainedSubstancesClosure
     var _abort:ChainedSubstancesClosure
     
-    init(flask:FlaskConcrete,react:@escaping ChainedSubstancesClosure,abort:@escaping ChainedSubstancesClosure) {
-        self.flask = flask
+    init(reactor:ReactorConcrete,react:@escaping ChainedSubstancesClosure,abort:@escaping ChainedSubstancesClosure) {
+        self.reactor = reactor
         self._react = react
         self._abort = abort
     }
@@ -54,7 +54,7 @@ public class ChainReaction{
     
     public func mix<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping (_ substance:T) -> Void)->ChainReaction{
         
-        let substance = flask.substance(aSubstance)
+        let substance = reactor.substance(aSubstance)
         
         let reactInChain = _react
         let abortInChain = _abort
@@ -82,15 +82,15 @@ public class ChainReaction{
             
         }
         
-        let chain = ChainReaction(flask:flask, react:_react, abort:_abort)
+        let chain = ChainReaction(reactor:reactor, react:_react, abort:_abort)
         return chain
     }
     
 }
 
-public extension FlaskConcrete{
+public extension ReactorConcrete{
     
-    public func toMix<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping(_ substance:T) -> Void)->ChainReaction{
+    public func mixing<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping(_ substance:T) -> Void)->ChainReaction{
         return mix(aSubstance, mixing)
     }
     
@@ -124,7 +124,7 @@ public extension FlaskConcrete{
         }
         
         
-        let chain = ChainReaction(flask:self, react:react, abort:abort)
+        let chain = ChainReaction(reactor:self, react:react, abort:abort)
         return chain
     }
     

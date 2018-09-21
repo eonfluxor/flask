@@ -12,11 +12,11 @@ import Cocoa
 #endif
 
 
-public class FlaskClass<O:AnyObject>:FlaskConcrete {
+public class Reactor<O:AnyObject>:ReactorConcrete {
     
     weak var owner:O?
     
-    public var reactor:ReactionClosure<O>  = { owner,reaction in }
+    public var handler:ReactionClosure<O>  = { owner,reaction in }
     
     required public init(_ owner:O){
         self.owner=owner
@@ -38,10 +38,10 @@ public class FlaskClass<O:AnyObject>:FlaskConcrete {
     override func handleReaction(_ reaction:FlaskReaction){
         
         if let owner = self.owner {
-            reactor(owner,reaction)
+            handler(owner,reaction)
         }else{
-            //dispose flask when the owner is no longer present
-            FlaskManager.removeFlask(self)
+            //dispose reactor when the owner is no longer present
+            ReactorManager.removeReactor(self)
         }
     }
     
@@ -52,7 +52,7 @@ public class FlaskClass<O:AnyObject>:FlaskConcrete {
 }
 
 
-public class FlaskConcrete:FlaskEquatable{
+public class ReactorConcrete:FlaskEquatable{
     
     var substances:[SubstanceConcrete]=[]
     var binded = false
@@ -82,7 +82,7 @@ public class FlaskConcrete:FlaskEquatable{
            
             { [weak self] in
                 if let wself = self {
-                    Flask.bus.bindFlask(substance, flask: wself)
+                    Flask.bus.bindFlask(substance, reactor: wself)
                 }
             }()
             
@@ -104,7 +104,7 @@ public class FlaskConcrete:FlaskEquatable{
         for substance in substances {
             { [weak self] in
                 if let wself = self {
-                    Flask.bus.unbindFlask(substance, flask: wself)
+                    Flask.bus.unbindFlask(substance, reactor: wself)
                 }
             }()
             
@@ -115,7 +115,7 @@ public class FlaskConcrete:FlaskEquatable{
     ///
     func handleReaction(_ reaction:FlaskReaction){}
     
-//    @discardableResult public mixing<T:SubstanceConcrete>(_ aSubstance:T, _ bus:@escaping MutationClosure<T>)->FlaskConcrete{
+//    @discardableResult public mixing<T:SubstanceConcrete>(_ aSubstance:T, _ bus:@escaping MutationClosure<T>)->ReactorConcrete{
 //        
 //        let substance = self.substance(aSubstance)
 //        substance.mixing(bus)
@@ -132,7 +132,7 @@ public class FlaskConcrete:FlaskEquatable{
         let registered = substances.contains { (aSubstance) -> Bool in
             aSubstance === substance
         }
-        assert(registered,"Substance instance is not mixing to this flask")
+        assert(registered,"Substance instance is not mixing to this reactor")
         return substance
     }
 

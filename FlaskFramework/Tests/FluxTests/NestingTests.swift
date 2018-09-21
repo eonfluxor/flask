@@ -3,7 +3,7 @@
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
-//  Copyright © 2018 hassanvflask. All rights reserved.
+//  Copyright © 2018 hassanvreactor. All rights reserved.
 //
 
 import XCTest
@@ -23,7 +23,7 @@ class NestedStateTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner, mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner, mixing:substance)
         
         let object = NSObject()
         
@@ -43,7 +43,7 @@ class NestedStateTests: SetupFlaskTests {
         let dictRef2 = FlaskDictRef(data2)
         
         let firstTest:(@escaping ()->Void)->Void = { next in
-            flask.reactor = { owner, reaction in
+            reactor.handler = { owner, reaction in
                 reaction.on("map.foo", { (change) in
                     print(change.newValue()!)
                     XCTAssert(change.newValue()=="bar")
@@ -70,7 +70,7 @@ class NestedStateTests: SetupFlaskTests {
             }
             
             
-            flask.mix(substance){ (substance) in
+            reactor.mix(substance){ (substance) in
                 substance.prop.map = dictRef
                 }.react()
         }
@@ -80,14 +80,14 @@ class NestedStateTests: SetupFlaskTests {
             
             // now empty all keys
             
-            flask.reactor = { owner, reaction in
+            reactor.handler = { owner, reaction in
                 reaction.on("map.nest.optional", { (change) in
                     XCTAssert(isNilorNull(change.newValue()))
                     expectation4.fulfill()
                 })
             }
             
-            flask.mix(substance) { (substance) in
+            reactor.mix(substance) { (substance) in
                 substance.prop.map = dictRef2
                 }.react()
         }
@@ -118,14 +118,14 @@ class NestedStateTests: SetupFlaskTests {
         }
         
         let NAME = "subtanceTest\( NSDate().timeIntervalSince1970)"
-        let mySubstance = NewSubstance(definedBy: state.self,named:NAME, archive:false)
+        let mySubstance = Flask.newSubstance(definedBy: state.self,named:NAME, archive:false)
         mySubstance.shouldArchive = true
         
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner, mixing:mySubstance)
+        let reactor = Flask.reactor(attachedTo:owner, mixing:mySubstance)
 
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             
             mySubstance.archiveNow()
             
@@ -140,7 +140,7 @@ class NestedStateTests: SetupFlaskTests {
             })
         }
         
-        flask.mix(mySubstance) { (substance) in
+        reactor.mix(mySubstance) { (substance) in
             substance.prop.info.counter = 90
             substance.prop.info.nest.foo = "mutated"
             }.andReact()
@@ -151,7 +151,7 @@ class NestedStateTests: SetupFlaskTests {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
            
-            let archivedSubstance = NewSubstance(definedBy: state.self,named:NAME,archive:true)
+            let archivedSubstance = Flask.newSubstance(definedBy: state.self,named:NAME,archive:true)
             XCTAssert(archivedSubstance.state.info.nest.foo == "mutated", "Must preserve value")
             expectation4.fulfill()
         }

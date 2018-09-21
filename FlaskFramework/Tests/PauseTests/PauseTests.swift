@@ -3,7 +3,7 @@
 //  SwiftyFLUXTests
 //
 //  Created by hassan uriostegui on 9/5/18.
-//  Copyright © 2018 hassanvflask. All rights reserved.
+//  Copyright © 2018 hassanvreactor. All rights reserved.
 //
 
 import XCTest
@@ -19,11 +19,11 @@ class LockTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
         var calls = 0
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             
             reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                 
@@ -36,13 +36,13 @@ class LockTests: SetupFlaskTests {
                 calls += 1
                 
                 _ = Flask.lock()
-                MixSubstances(with:Mixers.Count, payload:  ["test":"testLock"])
+                Flask.substances(reactTo:Mixers.Count, payload:  ["test":"testLock"])
                 
             })
         }
         
         DispatchQueue.main.async {
-            MixSubstances(with:Mixers.Count, payload: ["test":"testLock"])
+            Flask.substances(reactTo:Mixers.Count, payload: ["test":"testLock"])
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
@@ -56,9 +56,9 @@ class LockTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                 expectation.fulfill()
             })
@@ -68,7 +68,7 @@ class LockTests: SetupFlaskTests {
         
         let lock  = Flask.lock()
         let lock2  = Flask.lock()
-        MixSubstances(with:Mixers.Count, payload:  ["test":"testLockRelease"])
+        Flask.substances(reactTo:Mixers.Count, payload:  ["test":"testLockRelease"])
         
         DispatchQueue.main.async {
             lock.release()
@@ -88,9 +88,9 @@ class LockTests: SetupFlaskTests {
      
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                 
                 reaction.onLock?.release()
@@ -105,7 +105,7 @@ class LockTests: SetupFlaskTests {
         Flask.lock(withMixer:Mixers.Count, payload:  ["test":"testLockActon count"])
        
         //this should be performed after the lock releases
-        MixSubstances(with:Mixers.Text, payload:  ["test":"testLockAction text"])
+        Flask.substances(reactTo:Mixers.Text, payload:  ["test":"testLockAction text"])
         
         wait(for: [expectation], timeout: 2)
         
@@ -123,11 +123,11 @@ class LockTests: SetupFlaskTests {
         
         let substance = self.substance!
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner,mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
         
         var counter = 0
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             reaction.at(substance)?.on(AppState.prop.counter, { (change) in
                
                 expectation.fulfill()
@@ -151,7 +151,7 @@ class LockTests: SetupFlaskTests {
         Flask.lock(withMixer:Mixers.Count, payload:  ["test":"testLockActon count"])
         Flask.lock(withMixer:Mixers.Text, payload:  ["test":"testLockActon count"])
         
-        flask.mix(substance) { (substance) in
+        reactor.mix(substance) { (substance) in
             substance.prop.text = "unchained!"
         }.react()
         

@@ -44,8 +44,8 @@ public class Flux {
     //////////////////
     // MARK: - LAZY
     
-    lazy var flaskRefs: Dictionary<String, Array<FlaskWeakRef<FlaskConcrete>>> = {
-        return Dictionary<String, Array<FlaskWeakRef<FlaskConcrete>>>()
+    lazy var reactorRefs: Dictionary<String, Array<FlaskWeakRef<ReactorConcrete>>> = {
+        return Dictionary<String, Array<FlaskWeakRef<ReactorConcrete>>>()
     }();
     
     func lock()->FluxLock{
@@ -137,41 +137,41 @@ extension Flux {
 
 extension Flux {
    
-    func bindFlask(_ substance:SubstanceConcrete, flask:FlaskConcrete) {
+    func bindFlask(_ substance:SubstanceConcrete, reactor:ReactorConcrete) {
         
         let substanceName = substance.name()
         var substanceFlaskNSRefs = getSubstanceFlaskNSRefs(substanceName)
         
-        let ref = FlaskWeakRef(value:flask)
+        let ref = FlaskWeakRef(value:reactor)
         substanceFlaskNSRefs.append(ref)
         setSubstanceFlaskNSRefs(substanceName,substanceFlaskNSRefs)
         
     }
     
-    func unbindFlask(_ substance:SubstanceConcrete, flask:FlaskConcrete) {
+    func unbindFlask(_ substance:SubstanceConcrete, reactor:ReactorConcrete) {
         
         let substanceName = substance.name()
         let substanceFlaskNSRefs = getSubstanceFlaskNSRefs(substanceName)
         
-        let substanceFlaskNSRefsFiltered = substanceFlaskNSRefs.filter { $0.value != flask }
+        let substanceFlaskNSRefsFiltered = substanceFlaskNSRefs.filter { $0.value != reactor }
         
         setSubstanceFlaskNSRefs(substanceName,substanceFlaskNSRefsFiltered)
        
     }
     
-    func getSubstanceFlaskNSRefs(_ substanceName:String) -> Array<FlaskWeakRef<FlaskConcrete>>{
+    func getSubstanceFlaskNSRefs(_ substanceName:String) -> Array<FlaskWeakRef<ReactorConcrete>>{
         
-        if let flasks = self.flaskRefs[substanceName] {
-            return flasks
+        if let reactors = self.reactorRefs[substanceName] {
+            return reactors
         }
         
-        return Array<FlaskWeakRef<FlaskConcrete>>()
+        return Array<FlaskWeakRef<ReactorConcrete>>()
         
     }
     
-    func setSubstanceFlaskNSRefs(_ substanceName:String,_ refs:Array<FlaskWeakRef<FlaskConcrete>>){
+    func setSubstanceFlaskNSRefs(_ substanceName:String,_ refs:Array<FlaskWeakRef<ReactorConcrete>>){
         
-        self.flaskRefs[substanceName] = refs
+        self.reactorRefs[substanceName] = refs
     }
 }
 
@@ -186,8 +186,8 @@ extension Flux {
         let substanceFlaskNSRefs = getSubstanceFlaskNSRefs(substanceName)
         
         for substanceFlaskNSRef in substanceFlaskNSRefs {
-            if let flask = substanceFlaskNSRef.value{
-                flask.handleReaction( reaction)
+            if let reactor = substanceFlaskNSRef.value{
+                reactor.handleReaction( reaction)
             }
         }
         

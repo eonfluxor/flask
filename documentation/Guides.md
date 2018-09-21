@@ -36,13 +36,13 @@ class ViewController: UIViewController, FlaskReactor  {
 
   
 ```swift  
-    let substance = NewSubstance(definedBy: AppState.self)
+    let substance = Flask.newSubstance(definedBy: AppState.self)
 ```
 
 > Implement the `FlaskReactor ` protocol. Here you'll receive the `SubstanceChange` callbacks passing a `FlaskReaction` instance describing the changes.
 
 ```swift    
-    func flaskReactor(reaction: FlaskReaction) {
+    func flaskReactions(reaction: FlaskReaction) {
         
         reaction.on(AppState.prop.counter) { (change) in
             print("counter = \(substance.state.counter)")
@@ -55,12 +55,12 @@ class ViewController: UIViewController, FlaskReactor  {
 
 ```
 
-> Attach a `FlaskClass` instance to this ViewController
+> Attach a `Reactor` instance to this ViewController
 
 ```swift    
     override func viewDidLoad() {
         
-        AttachFlaskReactor(to:self, mixing:[substance])
+        Flask.attachReactor(to:self, mixing:[substance])
         produceTestReaction()
     }
     
@@ -73,8 +73,8 @@ class ViewController: UIViewController, FlaskReactor  {
     
     func produceTestReaction(){
         
-        GetFlaskReactor(at:self)
-            .toMix(self.substance) { (substance) in
+        Flask.getReactor(attachedTo:self)
+            .mixing(self.substance) { (substance) in
                 substance.prop.counter = 10
             }.with(self.substance) { (substance) in
                 substance.prop.text = "changed!"
@@ -88,13 +88,13 @@ The above is a basic showcase of Flask high-level API. Other things to consider:
 
 * `Substance.state` is a read-only property and it's protected during the `mix()` operation.
 * While `mixing()` you would mutate the state using the `Substance.prop` accessor as `Substance.state` won't be available until the mix operation completes.
-* Using `AttachFlaskReactor` creates a managed `Flask` instance that is *automatically disposed* when its owner becomes `nil`.  
+* Using `Flask.attachReactor` creates a managed `Flask` instance that is *automatically disposed* when its owner becomes `nil`.  
 
 Also keep in mind that:
  
-* It's possible to instantiate Flask using a substances array: `AttachFlaskReactor(to:self, mixing:[app,settings,login])`
+* It's possible to instantiate Flask using a substances array: `Flask.attachReactor(to:self, mixing:[app,settings,login])`
 * These global functions are just idiomatic sugar and a  public low-level API is also available for more granular control.
-* When needed you may call `DetachFlaskReactor(from:)` to immediately dispose your Flask.
+* When needed you may call `Flask.detachReactor(from:)` to immediately dispose your Flask.
 
 ## Fluxor Style
 
@@ -158,7 +158,7 @@ class AppReactiveSubstance : ReactiveSubstance<AppState,EnvMixers> {
 ```swift
 class ViewController: UIViewController, FlaskReactor  {
        
-    func flaskReactor(reaction: FlaskReaction) {
+    func flaskReactions(reaction: FlaskReaction) {
              
       // if no name conflicts the .at(store) may be skipped
         reaction.on(AppState.prop.title) { (change) in
@@ -169,12 +169,12 @@ class ViewController: UIViewController, FlaskReactor  {
 }
 ```
 
-> And attach a `FlaskClass` instance in your configuration initializer 
+> And attach a `Reactor` instance in your configuration initializer 
 
 ```swift    
     override func viewDidLoad() {
         
-        AttachFlaskReactor(to:self, mixing:[Subs.appReactive])
+        Flask.attachReactor(to:self, mixing:[Subs.appReactive])
       
     }
     
@@ -184,7 +184,7 @@ class ViewController: UIViewController, FlaskReactor  {
 > Apply the global `SubstanceMixer` (aka dispatch action) from anywhere in the app
 
 ```swift
- MixSubstances(with:EnvMixers.Login)
+ Flask.substances(reactTo:EnvMixers.Login)
  
  //or
  
@@ -198,5 +198,5 @@ As you can notice the main difference are:
 * Required to `defineMixers()` in the `ReactiveSubstance`.
 * Required definition of a global singleton to access your `ReactiveSusbtance` from anywhere in the app.
 
-The above setup allows to easily call ` MixSubstances(with:)` (aka ` Flask.applyMixer()`  from anywhere in the application to trigger the `SubstanceMixer` reactions in all the `ReactiveSubstance` instances implementing it.
+The above setup allows to easily call ` Flask.substances(reactTo:)` (aka ` Flask.applyMixer()`  from anywhere in the application to trigger the `SubstanceMixer` reactions in all the `ReactiveSubstance` instances implementing it.
 

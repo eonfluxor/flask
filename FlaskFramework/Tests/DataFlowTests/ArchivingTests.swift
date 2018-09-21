@@ -22,21 +22,21 @@ class archiveTests: SetupFlaskTests {
         substance.shouldArchive = true
         
         let owner:TestOwner = TestOwner()
-        let flask = Flask.instance(attachedTo:owner, mixing:substance)
+        let reactor = Flask.reactor(attachedTo:owner, mixing:substance)
         
-        flask.reactor = { owner, reaction in
+        reactor.handler = { owner, reaction in
             reaction.on(AppState.prop.counter, { (change) in
                 expectation.fulfill()
             })
         }
         
-        flask.mix(substance){ (substance) in
+        reactor.mix(substance){ (substance) in
             substance.prop.counter=expectedValue
         }.react()
         
         wait(for: [expectation], timeout: 2)
         
-        flask.unbind()
+        reactor.unbind()
         
         let substanceName = substance.name()
         
