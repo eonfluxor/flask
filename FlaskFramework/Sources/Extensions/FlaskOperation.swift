@@ -17,8 +17,8 @@ open class FlaskOperation: Operation {
     
     public typealias AsyncBlock = (FlaskOperation) -> Void
     
-    var block: AsyncBlock?
-    var fluxLock: FluxLock?
+    public var block: AsyncBlock?
+    public var fluxLock: FluxLock?
     
     public init(block: @escaping AsyncBlock) {
         super.init()

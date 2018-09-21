@@ -184,6 +184,20 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Extensions/FlaskOperation.swift",
+      "line": 18,
+      "symbol": "FlaskOperation.AsyncBlock",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Extensions/FlaskOperation.swift",
+      "line": 23,
+      "symbol": "FlaskOperation.init(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Extensions/FlaskOperation.swift",
       "line": 28,
       "symbol": "FlaskOperation.start()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
