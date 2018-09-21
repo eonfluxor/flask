@@ -142,7 +142,7 @@ class ViewController: UIViewController, FlaskReactor  {
     
     override func viewDidLoad() {
        
-        AttachFlaskReactor(to:self, mixing:[substance, Subs.appReactive])
+        Flask.attachReactor(to:self, mixing:[substance, Subs.appReactive])
         produceTestReaction()
     }
     
@@ -153,10 +153,10 @@ class ViewController: UIViewController, FlaskReactor  {
         substance.shouldArchive = false
         
         
-        MixSubstances(with: EnvMixers.Login)
+        Flask.substances(reactTo: EnvMixers.Login)
         
-        GetFlaskReactor(at:self)
-            .toMix(self.substance) { (substance) in
+        Flask.getReactor(attachedTo:self)
+            .mixing(self.substance) { (substance) in
                 
                 //local substance
                 substance.prop.counter = 10
@@ -180,7 +180,7 @@ class ViewController: UIViewController, FlaskReactor  {
         Flask.lock(withMixer: EnvMixers.AsyncAction)
         
         // logout won't be performed until the above lock is released (see reactor code)
-        MixSubstances(with: EnvMixers.Logout)
+        Flask.substances(reactTo: EnvMixers.Logout)
     }   
 }
 ```

@@ -210,6 +210,10 @@
 		1ED39F5CA53DD5E45FF3988C /* Pods_Reaktor_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reaktor_macOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AE2344475AD3B4DD6D11EC /* libPods-Reaktor-tvOS-Reaktor-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaktor-tvOS-Reaktor-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		260AC7802154995900812FEA /* FlaskOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlaskOperation.swift; sourceTree = "<group>"; };
+		260AC79B21554DB500812FEA /* Examples.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Examples.md; sourceTree = "<group>"; };
+		260AC79C21554DB500812FEA /* Gists.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Gists.md; sourceTree = "<group>"; };
+		260AC79D21554DB500812FEA /* Guides.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Guides.md; sourceTree = "<group>"; };
+		260AC79E21554DB500812FEA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		2622A5302148781F003F4C38 /* FluxNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxNotifier.swift; sourceTree = "<group>"; };
 		2622A5322148828E003F4C38 /* BusNotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusNotifierTests.swift; sourceTree = "<group>"; };
 		2671C1522149B7C000888F3E /* FlaskApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlaskApi.swift; sourceTree = "<group>"; };
@@ -363,6 +367,26 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		260AC79921554DA100812FEA /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				260AC79A21554DB500812FEA /* documentation */,
+				260AC79E21554DB500812FEA /* README.md */,
+			);
+			name = Docs;
+			sourceTree = "<group>";
+		};
+		260AC79A21554DB500812FEA /* documentation */ = {
+			isa = PBXGroup;
+			children = (
+				260AC79B21554DB500812FEA /* Examples.md */,
+				260AC79C21554DB500812FEA /* Gists.md */,
+				260AC79D21554DB500812FEA /* Guides.md */,
+			);
+			name = documentation;
+			path = ../documentation;
+			sourceTree = "<group>";
+		};
 		26A0F925214834DC00555C8D /* Flask */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +403,7 @@
 		26A82A342146D769008C8009 = {
 			isa = PBXGroup;
 			children = (
+				260AC79921554DA100812FEA /* Docs */,
 				26A82AC82146D80E008C8009 /* Sources */,
 				26A82AC92146D80E008C8009 /* Tests */,
 				26C53E01214790730090AA0C /* Flask-iOS */,

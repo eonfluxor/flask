@@ -16,26 +16,6 @@ public protocol FlaskReactor{
     func flaskReactor( reaction: FlaskReaction)
 }
 
-public func AttachFlaskReactor<T:AnyObject & FlaskReactor>( to object:T, mixing substances:[SubstanceConcrete]){
-    Flask.attachFlask(to:object,mixing:substances)
-}
-
-
-public func DetachFlaskReactor<T:AnyObject & FlaskReactor>( from object:T){
-    Flask.detachFlask(from:object)
-}
-
-
-public func GetFlaskReactor<T:AnyObject & FlaskReactor>(at object:T )->FlaskClass<T>{
-    let flasks = FlaskManager.getFlasks(from:object)
-    assert(flasks.count > 0, "No Flasks attached. Did you call `AttachFlaskReactor(to:mixing:)` ? ")
-    assert(flasks.count == 1, "GetFlaskReactor required `object` to have only one Flask attached")
-    return flasks.first as! FlaskClass<T>
-}
-
-public func MixSubstances<T:RawRepresentable>(with enumVal:T, payload:FluxPayloadType? = nil){
-    Flask.applyMixer(enumVal, payload: payload)
-}
 
 public func NewSubstance<T:State>(definedBy:T.Type)->Substance<T>{
     return Substance<T>()
@@ -47,7 +27,18 @@ public func NewSubstance<T:State>(definedBy:T.Type,named:String,archive:Bool=fal
 
 extension Flask{
     
-    static public func attachFlask<T:AnyObject & FlaskReactor>( to object:T, mixing substances:[SubstanceConcrete]){
+    static public func substances<T:RawRepresentable>(reactTo enumVal:T, payload:FluxPayloadType? = nil){
+        Flask.applyMixer(enumVal, payload: payload)
+    }
+    
+    static public func getReactor<T:AnyObject & FlaskReactor>(attachedTo object:T )->FlaskClass<T>{
+        let flasks = FlaskManager.getFlasks(from:object)
+        assert(flasks.count > 0, "No Flasks attached. Did you call `Flask.attachReactor(to:mixing:)` ? ")
+        assert(flasks.count == 1, "Flask.getReactor required `object` to have only one Flask attached")
+        return flasks.first as! FlaskClass<T>
+    }
+    
+    static public func attachReactor<T:AnyObject & FlaskReactor>( to object:T, mixing substances:[SubstanceConcrete]){
         
         let flask = FlaskManager.instance(attachedTo:object)
         flask.defineSubstances(substances)
@@ -57,7 +48,7 @@ extension Flask{
         }
     }
     
-    static public func detachFlask(from object:AnyObject){
+    static public func detachReactor(from object:AnyObject){
         
         assert(FlaskManager.removeFlask(fromOwner: object),"The Flask was not connected, please balance enable/disable calls")
     }

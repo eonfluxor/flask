@@ -109,12 +109,12 @@ These are the High-level API methods that you'll use more frequently:
 
 ```swift
 // Managing your flask instance
-AttachFlaskReactor(to:mixing:)
-DetachFlaskReactor(from:)
-GetFlaskReactor(at:)
+Flask.attachReactor(to:mixing:)
+Flask.detachReactor(from:)
+Flask.getReactor(at:)
 
 // Dispatching a substancer mixer
-MixSubstances(with:payload:)
+Flask.substances(reactTo:payload:)
 
 // Creating non-reactive substances
 NewSubstance(definedBy:)
@@ -180,14 +180,14 @@ Consider the following samples:
 > Global Substance Mixer. High-level API
 
 ```swift
-  MixSubstances(with:EnvMixers.Login, payload:["username":"foo"])
+  Flask.substances(reactTo:EnvMixers.Login, payload:["username":"foo"])
 ```
 
 > Flask Mixer. High-level API
 
 ```
- GetFlaskReactor(at:self)
-            .toMix(self.substance!) { (substance) in
+ Flask.getReactor(attachedTo:self)
+            .mixing(self.substance!) { (substance) in
                 substance.prop.counter = 10
             }.with(self.substance!) { (substance) in
                 substance.prop.text = "text"
@@ -229,7 +229,7 @@ class ViewController: UIViewController, FlaskReactor  {
 
   override func viewDidLoad() {
        
-        AttachFlaskReactor(to:self, mixing:[substance, Subs.appReactive])
+        Flask.attachReactor(to:self, mixing:[substance, Subs.appReactive])
         
     }
 }
@@ -290,14 +290,14 @@ class ViewController: UIViewController, FlaskReactor  {
    
     override func viewDidLoad() {
         
-        AttachFlaskReactor(to:self, mixing:[substance])
+        Flask.attachReactor(to:self, mixing:[substance])
         produceTestReaction()
     }
 
     func produceTestReaction(){
         
-        GetFlaskReactor(at:self)
-            .toMix(self.substance) { (substance) in
+        Flask.getReactor(attachedTo:self)
+            .mixing(self.substance) { (substance) in
                 substance.prop.counter = 10
             }.with(self.substance) { (substance) in
                 substance.prop.text = "changed!"
@@ -371,13 +371,13 @@ class ViewController: UIViewController, FlaskReactor  {
  
     override func viewDidLoad() {
         
-        AttachFlaskReactor(to:self, mixing:[Subs.appReactive])
+        Flask.attachReactor(to:self, mixing:[Subs.appReactive])
         produceTestReaction()
     }
 
     func produceTestReaction(){
     
-        MixSubstances(with:EnvMixers.Login, payload:["username":"foo"])
+        Flask.substances(reactTo:EnvMixers.Login, payload:["username":"foo"])
  
      }
 }
@@ -406,7 +406,7 @@ More practical examples are in the works and we would love to feature yours!
 
 ### Chain Reaction
 
-A call to  `mix()` ( aka `toMix()` ) returns a Flask `ChainReaction` instance that can be futher chained until resolved.  A `ChainReaction` has the following methods:
+A call to  `mix()` ( aka `mixing()` ) returns a Flask `ChainReaction` instance that can be futher chained until resolved.  A `ChainReaction` has the following methods:
 
 * mix(substance:)
 * react()
@@ -417,8 +417,8 @@ To continue the chain, just call mix (or any of its aliases) again. You must cal
 > Using the high-level API
 
 ```swift
- GetFlaskReactor(at:self)
-            .toMix(self.substanceA) { (substance) in
+ Flask.getReactor(attachedTo:self)
+            .mixing(self.substanceA) { (substance) in
                 substance.prop.counter = 10
                 
             }.with(self.substanceB) { (substance) in
@@ -691,8 +691,8 @@ removeLocks()
 
 applyMixer(_:payload:)
 
-attachFlask(to:mixing:)
-detachFlask(from:)
+attachReactor(to:mixing:)
+detachReactor(from:)
 ```
 
 You can also access the `FlaskManager` that holds all the attached `FlaskClass` instances

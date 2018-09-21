@@ -90,7 +90,7 @@ public class ChainReaction{
 
 public extension FlaskConcrete{
     
-    public func toMix<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping(_ substance:T) -> Void)->ChainReaction{
+    public func mixing<T:SubstanceConcrete>(_ aSubstance:T, _ mixing:@escaping(_ substance:T) -> Void)->ChainReaction{
         return mix(aSubstance, mixing)
     }
     

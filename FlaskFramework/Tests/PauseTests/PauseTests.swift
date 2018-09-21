@@ -36,13 +36,13 @@ class LockTests: SetupFlaskTests {
                 calls += 1
                 
                 _ = Flask.lock()
-                MixSubstances(with:Mixers.Count, payload:  ["test":"testLock"])
+                Flask.substances(reactTo:Mixers.Count, payload:  ["test":"testLock"])
                 
             })
         }
         
         DispatchQueue.main.async {
-            MixSubstances(with:Mixers.Count, payload: ["test":"testLock"])
+            Flask.substances(reactTo:Mixers.Count, payload: ["test":"testLock"])
         }
         
         waitForExpectations(timeout: 0.5, handler: nil)
@@ -68,7 +68,7 @@ class LockTests: SetupFlaskTests {
         
         let lock  = Flask.lock()
         let lock2  = Flask.lock()
-        MixSubstances(with:Mixers.Count, payload:  ["test":"testLockRelease"])
+        Flask.substances(reactTo:Mixers.Count, payload:  ["test":"testLockRelease"])
         
         DispatchQueue.main.async {
             lock.release()
@@ -105,7 +105,7 @@ class LockTests: SetupFlaskTests {
         Flask.lock(withMixer:Mixers.Count, payload:  ["test":"testLockActon count"])
        
         //this should be performed after the lock releases
-        MixSubstances(with:Mixers.Text, payload:  ["test":"testLockAction text"])
+        Flask.substances(reactTo:Mixers.Text, payload:  ["test":"testLockAction text"])
         
         wait(for: [expectation], timeout: 2)
         

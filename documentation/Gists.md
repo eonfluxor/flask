@@ -2,7 +2,7 @@
 
 ### Chain Reaction
 
-A call to  `mix()` ( aka `toMix()` ) returns a Flask `ChainReaction` instance that can be futher chained until resolved.  A `ChainReaction` has the following methods:
+A call to  `mix()` ( aka `mixing()` ) returns a Flask `ChainReaction` instance that can be futher chained until resolved.  A `ChainReaction` has the following methods:
 
 * mix(substance:)
 * react()
@@ -13,8 +13,8 @@ To continue the chain, just call mix (or any of its aliases) again. You must cal
 > Using the high-level API
 
 ```swift
- GetFlaskReactor(at:self)
-            .toMix(self.substanceA) { (substance) in
+ Flask.getReactor(attachedTo:self)
+            .mixing(self.substanceA) { (substance) in
                 substance.prop.counter = 10
                 
             }.with(self.substanceB) { (substance) in
@@ -269,8 +269,8 @@ removeLocks()
 
 applyMixer(_:payload:)
 
-attachFlask(to:mixing:)
-detachFlask(from:)
+attachReactor(to:mixing:)
+detachReactor(from:)
 ```
 
 You can also access the `FlaskManager` that holds all the attached `FlaskClass` instances
