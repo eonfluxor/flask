@@ -311,14 +311,14 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskApi.swift",
       "line": 13,
-      "symbol": "FlaskReactorChanges",
+      "symbol": "FlaskReactor",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Flux/FlaskApi.swift",
       "line": 14,
-      "symbol": "FlaskReactorChanges.flaskReactorChanges(reaction:)",
+      "symbol": "FlaskReactor.flaskReactions(reaction:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
