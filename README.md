@@ -20,7 +20,7 @@ While the Flux architecture is abstract, explaining Flask is easy:
  
 ----
 
-> **Flask** lets you **Mix** **Substances** and **React** to their **State** **Changes**
+> **A Flask Reactor** lets you **Mix** **Substances** and **React** to their **State** **Changes**
 
 ---
 
@@ -32,7 +32,7 @@ Flask allows implementing both the [Redux](https://github.com/reactjs/redux) and
 
 ----
 
-> Flask lets you create **ReactiveSubstances** that react to environmental events called **Mixers** as well as plain **Substances** meant to be **Mixed** inside a particular **Flask**.
+> Flask lets you create **ReactiveSubstances** that react to environmental events called **Mixers** as well as plain **Substances** meant to be **Mixed** inside a particular **Reactor**.
 
 ----
 
