@@ -17,7 +17,7 @@ public class FluxLock: FlaskEquatable {
 
     let bus:Flux
     let _autorelease:Bool
-    var onRelease:FluxLockReleaseBlock? = nil
+    public var onRelease:FluxLockReleaseBlock? = nil
     
     required public init(bus:Flux,autorelease:Bool = false) {
         
