@@ -12,12 +12,16 @@ import UIKit
 import Cocoa
 #endif
 
+public typealias FluxLockReleaseBlock = (_ payload:Any?)->Void
 public class FluxLock: FlaskEquatable {
 
-    var bus:Flux
+    let bus:Flux
+    let _autorelease:Bool
+    var onRelease:FluxLockReleaseBlock? = nil
     
-    required public init(bus:Flux) {
-
+    required public init(bus:Flux,autorelease:Bool = false) {
+        
+        self._autorelease = autorelease
         self.bus = bus
         super.init()
         
@@ -26,6 +30,15 @@ public class FluxLock: FlaskEquatable {
     
     public func release(){
         bus.removeLock(self)
+        if let block = onRelease {
+            block(nil)
+            onRelease = nil
+        }
+    }
+    
+    public func autorelease(){
+        if !_autorelease { return }
+        release()
     }
 }
 

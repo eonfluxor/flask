@@ -61,20 +61,16 @@ public extension Flask {
 
 public extension Flask {
     
-    static public func lock()->FluxLock{
-        return FluxLock(bus:Flask.bus)
+    static public func lock(autorelease:Bool = false)->FluxLock{
+        return FluxLock(bus:Flask.bus,autorelease:autorelease)
     }
     
-    @discardableResult
-    static public func lock<T:RawRepresentable>(withMixer enumVal:T)->FluxLock{
-        return Flask.lock(withMixer:enumVal,payload:nil)
-    }
     
     @discardableResult
-    static public func lock<T:RawRepresentable>(withMixer enumVal:T, payload:FluxPayloadType?)->FluxLock{
+    static public func lock<T:RawRepresentable>(withMixer enumVal:T, payload:FluxPayloadType? = nil,autorelease:Bool = false)->FluxLock{
         
         let bus = enumVal.rawValue as! String
-        let lock = FluxLock(bus:Flask.bus)
+        let lock = FluxLock(bus:Flask.bus,autorelease:autorelease)
         
         var info = payload ?? [:]
         info[BUS_LOCKED_BY] = lock

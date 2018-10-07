@@ -11,6 +11,49 @@ import XCTest
 
 class LockTests: SetupFlaskTests {
     
+    func testLockOnRelease(){
+        
+        let expectation = self.expectation(description: "testLock Mutation")
+        
+        let substance = self.substance!
+        let owner:TestOwner = TestOwner()
+        let reactor = Flask.reactor(attachedTo:owner,mixing:substance)
+        
+        
+        reactor.handler = { owner, reaction in
+            
+            reaction.at(substance)?.on(AppState.prop.counter, { (change) in
+                reaction.onLock?.release()
+            })
+        }
+        
+        
+        let lock = Flask.lock(withMixer: Mixers.Count, payload: ["test":"testLock"], autorelease: true)
+        lock.onRelease = { payload in
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 0.5, handler: nil)
+        Flask.purgeFluxQueue()
+    }
+    
+    func testLockAutoreleaseNoChange(){
+        
+        let expectation = self.expectation(description: "testLock Mutation")
+        
+        let substance = self.substance!
+        let owner:TestOwner = TestOwner()
+        _ = Flask.reactor(attachedTo:owner,mixing:substance)
+        
+        
+        Flask.lock(withMixer: Mixers.Text, payload: ["test":"testLock"], autorelease: true)
+        let lock = Flask.lock(withMixer: Mixers.Text, payload: ["test":"testLock"], autorelease: true)
+        lock.onRelease = { payload in
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 0.5, handler: nil)
+        Flask.purgeFluxQueue()
+    }
+    
     func testLock(){
         
         let expectation = self.expectation(description: "testLock Mutation")
