@@ -255,6 +255,7 @@ public extension SubstanceConcrete {
                 
                 let abort = {
                     self?.abortStateTransaction(context:context)
+                    lock?.autorelease()
                     resolved=true
                 }
                 
@@ -275,11 +276,12 @@ extension SubstanceConcrete {
     func reduceAndReact(_ busLock: FluxLock? = nil){
         
         let reaction = FlaskReaction(self as SubstanceConcrete)
-        reaction.onLock = busLock
         
         if( reaction.changed()){
+            reaction.onLock = busLock
             Flask.bus.reactChange(reaction)
         }else{
+            busLock?.autorelease()
         }
         
     }
