@@ -28,10 +28,10 @@ public class FluxLock: FlaskEquatable {
         self.bus.addLock(self)
     }
     
-    public func release(){
+    public func release(context:Any? = nil){
         bus.removeLock(self)
         if let block = onRelease {
-            block(nil)
+            block(context)
             onRelease = nil
         }
     }
