@@ -30,6 +30,13 @@
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxLock.swift",
+      "line": 20,
+      "symbol": "FluxLock.onRelease",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxLock.swift",
       "line": 22,
       "symbol": "FluxLock.init(bus:autorelease:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
