@@ -15,6 +15,9 @@
 		260AC78621549D4E00812FEA /* FlaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AC7802154995900812FEA /* FlaskOperation.swift */; };
 		260AC78721549D4F00812FEA /* FlaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AC7802154995900812FEA /* FlaskOperation.swift */; };
 		260AC78821549D4F00812FEA /* FlaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AC7802154995900812FEA /* FlaskOperation.swift */; };
+		2618B6562177E0FB00D2D5EE /* Rollback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268FF0E52176970300CE4C82 /* Rollback.swift */; };
+		2618B6572177E0FC00D2D5EE /* Rollback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268FF0E52176970300CE4C82 /* Rollback.swift */; };
+		2618B6582177E0FD00D2D5EE /* Rollback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268FF0E52176970300CE4C82 /* Rollback.swift */; };
 		2622A5312148781F003F4C38 /* FluxNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5302148781F003F4C38 /* FluxNotifier.swift */; };
 		2622A5332148828E003F4C38 /* BusNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5322148828E003F4C38 /* BusNotifierTests.swift */; };
 		2622A5342148828E003F4C38 /* BusNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2622A5322148828E003F4C38 /* BusNotifierTests.swift */; };
@@ -218,6 +221,7 @@
 		2622A5322148828E003F4C38 /* BusNotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusNotifierTests.swift; sourceTree = "<group>"; };
 		2671C1522149B7C000888F3E /* FlaskApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlaskApi.swift; sourceTree = "<group>"; };
 		2671C1542149B8EE00888F3E /* FlaskApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlaskApiTests.swift; sourceTree = "<group>"; };
+		268FF0E52176970300CE4C82 /* Rollback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rollback.swift; sourceTree = "<group>"; };
 		26C53E00214790730090AA0C /* Flask_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flask_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C53E02214790730090AA0C /* Flask_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flask_iOS.h; sourceTree = "<group>"; };
 		26C53E03214790730090AA0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -579,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				26C53ED0214790C00090AA0C /* PauseTests.swift */,
+				268FF0E52176970300CE4C82 /* Rollback.swift */,
 			);
 			path = PauseTests;
 			sourceTree = "<group>";
@@ -1128,6 +1133,7 @@
 				26C53EA7214790A90090AA0C /* FlaskReaction.swift in Sources */,
 				26C53E65214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EB3214790A90090AA0C /* SubstanceSerializer.swift in Sources */,
+				2618B6562177E0FB00D2D5EE /* Rollback.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1194,6 +1200,7 @@
 				26C53EA9214790A90090AA0C /* FlaskReaction.swift in Sources */,
 				26C53E67214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EB5214790A90090AA0C /* SubstanceSerializer.swift in Sources */,
+				2618B6572177E0FC00D2D5EE /* Rollback.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1260,6 +1267,7 @@
 				26C53EAB214790A90090AA0C /* FlaskReaction.swift in Sources */,
 				26C53E69214790A90090AA0C /* Flask.swift in Sources */,
 				26C53EB7214790A90090AA0C /* SubstanceSerializer.swift in Sources */,
+				2618B6582177E0FD00D2D5EE /* Rollback.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
