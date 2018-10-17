@@ -45,7 +45,7 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Bus/FluxLock.swift",
       "line": 31,
-      "symbol": "FluxLock.release()",
+      "symbol": "FluxLock.release(context:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
