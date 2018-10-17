@@ -88,7 +88,7 @@ public class FlaskDictRef: NSObject, Codable, StateSerializer {
     }
     
     static public func == (lhs: FlaskDictRef, rhs: FlaskDictRef) -> Bool {
-        return lhs == rhs
+        return lhs === rhs
     }
     
     required public init(from decoder: Decoder) throws {
