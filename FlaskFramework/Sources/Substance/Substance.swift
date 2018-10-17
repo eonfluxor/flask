@@ -19,6 +19,7 @@ open class ReactiveSubstance<T:State,A:RawRepresentable> : SubstanceConcrete{
     typealias StateType = T
     
     private var _stateSnapshot: T = T()
+    private var _stateRollback: T?
     
     private var _state: T = T()
     public private(set) var state:T{
@@ -69,8 +70,8 @@ open class ReactiveSubstance<T:State,A:RawRepresentable> : SubstanceConcrete{
     
     //////////////////
     // MARK: - STATE ACTIONS
-
-   
+    
+    
     
     public func actionName(_ val:A)->String{
         return val.rawValue as! String
@@ -92,7 +93,7 @@ open class ReactiveSubstance<T:State,A:RawRepresentable> : SubstanceConcrete{
     }
     
     
-   
+    
     
     /// PRIVATE
     
@@ -104,7 +105,7 @@ open class ReactiveSubstance<T:State,A:RawRepresentable> : SubstanceConcrete{
     func stateFromSnapshot()->T{
         return self._stateSnapshot
     }
-
+    
     
     override func beginStateTransaction(context:String,_ transaction:()->Void){
         
@@ -116,11 +117,11 @@ open class ReactiveSubstance<T:State,A:RawRepresentable> : SubstanceConcrete{
         
         if pendingStateTransaction == nil ||
             pendingStateTransaction != context{
-              snapshotState()
+            snapshotState()
         }
         pendingStateTransaction = context;
         //CAPTURE ORIGINAL STATE FOR ROLLBACK
-      
+        
         
         //OPTIMISCALLY MUTATE THE STATE
         prop = _state
@@ -134,7 +135,7 @@ open class ReactiveSubstance<T:State,A:RawRepresentable> : SubstanceConcrete{
     override func commitStateTransaction(context:String){
         
         assert(pendingStateTransaction == context,"Must balance a call to `start` with `commit|abort` stateTransaction for context \(String(describing: pendingStateTransaction))")
-
+        
         _state = prop
         pendingStateTransaction = nil
     }
@@ -190,7 +191,7 @@ open class SubstanceConcrete:Hashable {
     }
     
     public func name(suffix:String){
-         _nameSuffix = suffix
+        _nameSuffix = suffix
     }
     
     open func defineMixers(){}
@@ -228,7 +229,7 @@ public extension SubstanceConcrete{
 
 
 public extension SubstanceConcrete {
-  
+    
     public func define(mix mixer:String, _ reaction: @escaping FluxMutationClosure){
         let weakRegistration={ [weak self] in
             
@@ -260,9 +261,9 @@ public extension SubstanceConcrete {
                 }
                 
                 self?.beginStateTransaction(context:context){
-                     reaction(payload,react,abort)
+                    reaction(payload,react,abort)
                 }
-      
+                
             }
             
         }
@@ -290,7 +291,7 @@ extension SubstanceConcrete {
 
 public extension SubstanceConcrete {
     
-
+    
     public func get(_ key:String) -> String{
         
         assertStateKey(key)
@@ -307,3 +308,39 @@ public extension SubstanceConcrete {
     
 }
 
+//////////////////
+// MARK: - ROLLBACK
+extension ReactiveSubstance {
+    
+    func captureState(newState:T? = nil,_ completion:@escaping ()->Void = {}){
+        assert(_stateRollback == nil, "_stateRollback already captured!" )
+        Flask.bus.performInFluxQueue { [weak self] in
+            if let newState = newState {
+                self?._stateRollback = newState
+            } else{
+                self?._stateRollback = self?._state
+            }
+            completion()
+        }
+        
+    }
+    
+    func rollbackState(_ completion:@escaping ()->Void = {}){
+        assert(_stateRollback != nil, "_stateRollback not captured!" )
+        guard let _stateRollback = _stateRollback else { return }
+        
+        Flask.bus.performInFluxQueue { [weak self] in
+            self?._state =  _stateRollback
+            self?._stateRollback = nil
+            completion()
+        }
+    }
+    
+    func commitState(_ completion:@escaping ()->Void = {}){
+        Flask.bus.performInFluxQueue { [weak self] in
+            self?._stateRollback = nil
+            completion()
+        }
+    }
+    
+}
