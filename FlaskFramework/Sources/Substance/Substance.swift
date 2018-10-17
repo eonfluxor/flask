@@ -312,7 +312,7 @@ public extension SubstanceConcrete {
 // MARK: - ROLLBACK
 extension ReactiveSubstance {
     
-    func captureState(newState:T? = nil,_ completion:@escaping ()->Void = {}){
+    public func captureState(newState:T? = nil,_ completion:@escaping ()->Void = {}){
         assert(_stateRollback == nil, "_stateRollback already captured!" )
         Flask.bus.performInFluxQueue { [weak self] in
             if let newState = newState {
@@ -325,7 +325,7 @@ extension ReactiveSubstance {
         
     }
     
-    func rollbackState(_ completion:@escaping ()->Void = {}){
+    public func rollbackState(_ completion:@escaping ()->Void = {}){
         assert(_stateRollback != nil, "_stateRollback not captured!" )
         guard let _stateRollback = _stateRollback else { return }
         
@@ -336,7 +336,7 @@ extension ReactiveSubstance {
         }
     }
     
-    func commitState(_ completion:@escaping ()->Void = {}){
+    public func commitState(_ completion:@escaping ()->Void = {}){
         Flask.bus.performInFluxQueue { [weak self] in
             self?._stateRollback = nil
             completion()
