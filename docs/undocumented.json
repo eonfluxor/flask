@@ -661,41 +661,34 @@
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Reaction/SubstanceChange.swift",
       "line": 18,
-      "symbol": "SubstanceChange.unwrapValue(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Reaction/SubstanceChange.swift",
-      "line": 25,
       "symbol": "SubstanceChange.oldValue()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Reaction/SubstanceChange.swift",
-      "line": 28,
+      "line": 24,
       "symbol": "SubstanceChange.newValue()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Reaction/SubstanceChange.swift",
-      "line": 32,
+      "line": 31,
       "symbol": "SubstanceChange.key()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Reaction/SubstanceChange.swift",
-      "line": 36,
+      "line": 35,
       "symbol": "SubstanceChange.substance()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/hassanvfx/projects/eonflux/flask/FlaskFramework/Sources/Reaction/SubstanceChange.swift",
-      "line": 41,
+      "line": 40,
       "symbol": "SubstanceChange",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
