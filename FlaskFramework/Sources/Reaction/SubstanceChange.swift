@@ -14,19 +14,18 @@ import Cocoa
 
 public extension SubstanceChange{
     
-    
-    public func unwrapValue<A>(_ val:A?) ->A?{
-//        if let object = val as? FlaskNSRef {
-//            return object.object as? A
-//        }
-        return val
-    }
-    
+  
     public func oldValue<A>()->A?{
-        return unwrapValue(oldVal) as? A
+        if oldVal == nil {
+            return nil
+        }
+        return oldVal as? A
     }
     public func newValue<A>()->A?{
-        return unwrapValue(newVal) as? A
+        if newVal == nil {
+            return nil
+        }
+        return newVal as? A
     }
     
     public func key()->String?{
